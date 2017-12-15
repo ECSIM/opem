@@ -1,0 +1,15 @@
+sudo: true
+
+language: python
+
+python:
+  - 3.5
+
+install:
+  - pip install -r requirements.txt
+  - python setup.py install
+
+script:
+  - python -m opem test
+after_success:
+  - codecov
