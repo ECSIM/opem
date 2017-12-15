@@ -193,8 +193,10 @@ def Output_Save(OutputDict,InputDict):
     file=open("Simulation-Result.opem","w")
     file.write("Simulation Date : "+str(datetime.datetime.now())+"\n")
     file.write("**********\n")
-    Input_Keys=InputDict.keys()
-    Output_Keys=OutputDict.keys()
+    Input_Keys=list(InputDict.keys())
+    Output_Keys=list(OutputDict.keys())
+    Input_Keys.sort()
+    Output_Keys.sort()
     file.write("Simulation Inputs : \n\n")
     for key in Input_Keys:
         file.write(key + " : " + str(InputDict[key]) + "\n")
@@ -206,13 +208,16 @@ def Output_Save(OutputDict,InputDict):
     file.close()
 
 
-def Static_Analysis():
+def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     '''
     This function run static analysis with calling other functions
     :return: None
     '''
     try:
-        Input_Dict=Get_Input()
+        if TestMode==False:
+            Input_Dict=InputMethod()
+        else:
+            Input_Dict=InputMethod
         print("Analyzing . . .")
         Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
         Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
@@ -228,7 +233,8 @@ def Static_Analysis():
 
         print("Done!")
         Output_Save(Output_Dict, Input_Dict)
-        print("Result In Simulation-Result.opem -->"+os.getcwd())
+        if TestMode==False:
+            print("Result In Simulation-Result.opem -->"+os.getcwd())
     except Exception:
         print("[Error] Simulation Faild!(Check Your Inputs)")
 
