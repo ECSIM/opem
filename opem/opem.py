@@ -39,6 +39,21 @@ def CO2_Calc(PO2,T):
     except Exception:
         print("[Error] CO2 Calculation Faild")
 
+def Rho_Calc(i,A,T,lambda_param):
+    '''
+    This function calculate Rho
+    :param i: Cell load current [A]
+    :param A: active area [cm^2]
+    :param T: Cell Operation Temperature [K]
+    :param lambda_param: is an adjustable parameter with a possible maximum value of 23
+    :return: Rho -- > Membrane Specific Resistivity [ohm.cm]
+    '''
+    try:
+        result=(181.6*(1+0.03*(i/A)+0.062*((T/303)**2)*((i/A)**2.5)))/((lambda_param-0.634-3*(i/A))*math.exp(4.18*((T-303)/T)))
+        return result
+    except Exception:
+        print("[Error] Rho Calculation Faild")
+
 
 
 
