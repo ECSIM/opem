@@ -133,6 +133,13 @@ def Efficiency_Calc(Vcell):
         print("[Error] PEM Efficiency Calculation Faild")
 
 def VStack_Calc(N,Enernst,Loss):
+    '''
+    This function calculate VStack
+    :param N: number of single cells
+    :param Enernst: Enernst Voltage [V}
+    :param Loss: Loss [V]
+    :return: VStack [V]
+    '''
     try:
         reuslt=N*(Enernst-Loss)
         return reuslt
@@ -140,6 +147,10 @@ def VStack_Calc(N,Enernst,Loss):
         print("[Error] VStack Calculation Error")
 
 def Get_Input():
+    '''
+    This function get inputs from users
+    :return: Input Values as a list
+    '''
     Input_Keys=list(InputDict.keys())
     Input_Keys.sort()
     Input_Values=[]
@@ -149,6 +160,11 @@ def Get_Input():
     return Input_Values
 
 def Output_Save(OutputDict):
+    '''
+    This function write analysis result in Simulation-Result.opem file
+    :param OutputDict: Analysis Result Dictionary
+    :return: None
+    '''
     file=open("Simulation-Result.opem","w")
     OutputKeys=OutputDict.keys()
     for key in OutputKeys:
@@ -157,6 +173,10 @@ def Output_Save(OutputDict):
 
 
 def Static_Analysis():
+    '''
+    This function run static analysis with calling other functions
+    :return: None
+    '''
     Input_Vector=Get_Input()
     print(Input_Vector)
     T=float(Input_Vector[4])
