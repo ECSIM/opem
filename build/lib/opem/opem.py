@@ -2,6 +2,7 @@
 import math
 from .params import *
 import os
+import datetime
 
 def isfloat(value):
   try:
@@ -158,22 +159,24 @@ def VStack_Calc(N,Enernst,Loss):
 def Get_Input():
     '''
     This function get inputs from users
-    :return: Input Values as a list
+    :return: Input Dictionary
     '''
     try:
-        Input_Keys=list(InputDict.keys())
+        Input_Keys=list(InputParams.keys())
         Input_Keys.sort()
         Input_Values=[]
         for item in Input_Keys:
             Input_Flag=False
             while(Input_Flag==False):
-                Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
+                Input_Item=input("Please Enter "+item+"("+InputParams[item]+")")
                 if isfloat(Input_Item)==True:
                     Input_Flag=True
                 else:
                     print("[Error] Bad Input Try Again")
             Input_Values.append(Input_Item)
-        return Input_Values
+        Input_Values=list(map(float,Input_Values))
+        print(dict(zip(Input_Keys,Input_Values)))
+        return dict(zip(Input_Keys,Input_Values))
     except Exception:
         print("Bad Input")
         return False
@@ -185,6 +188,8 @@ def Output_Save(OutputDict):
     :return: None
     '''
     file=open("Simulation-Result.opem","w")
+    file.write("Simulation Date : "+str(datetime.datetime.now())+"\n")
+    file.write("**********\n")
     OutputKeys=OutputDict.keys()
     for key in OutputKeys:
         file.write(key+" : "+OutputDict[key]+"\n")
@@ -196,32 +201,18 @@ def Static_Analysis():
     This function run static analysis with calling other functions
     :return: None
     '''
-    Input_Vector=Get_Input()
-    T=float(Input_Vector[4])
-    print(T)
-    PH2=float(Input_Vector[2])
-    print(PH2)
-    PO2=float(Input_Vector[3])
-    print(PO2)
-    i=float(Input_Vector[5])
-    print(i)
-    A=float(Input_Vector[0])
-    print(A)
-    l=float(Input_Vector[6])
-    print(l)
-    lambda_param=float(Input_Vector[7])
-    N=float(Input_Vector[1])
-    print(N)
-    Enernst=Enernst_Calc(T,PH2,PO2)
-    Eta_Act=Eta_Act_Calc(T,PO2,PH2,i,A)
-    Eta_Ohmic=Eta_Ohmic_Calc(i,l,A,T,lambda_param)
-    Eta_Conc=Eta_Conc_Calc(i,A)
+    Input_Dict=Get_Input()
+    Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
+    Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
+    Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"])
+    Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"])
     Loss=Eta_Act+Eta_Ohmic+Eta_Conc
     Vcell=Enernst-Loss
     Efficiency=Efficiency_Calc(Vcell)
-    Power=Vcell*i
+    Power=Vcell*Input_Dict["i"]
+    VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
     OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
-                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power)}
+                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power),"VStack":str(VStack)}
     print("Analyzing . . .")
     Output_Save(OutputDict)
     print("Done!")
