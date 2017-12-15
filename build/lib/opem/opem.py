@@ -168,14 +168,18 @@ def Get_Input():
         for item in Input_Keys:
             Input_Flag=False
             while(Input_Flag==False):
-                Input_Item=input("Please Enter "+item+"("+InputParams[item]+")")
+                Input_Item=input("Please Enter "+item+"("+InputParams[item]+") : ")
                 if isfloat(Input_Item)==True:
                     Input_Flag=True
                 else:
                     print("[Error] Bad Input Try Again")
             Input_Values.append(Input_Item)
         Input_Values=list(map(float,Input_Values))
-        return dict(zip(Input_Keys,Input_Values))
+        Output=dict(zip(Input_Keys,Input_Values))
+        if Output["lambda"]>23:
+            Output["lambda"]=23
+            print("[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
+        return Output
     except Exception:
         print("Bad Input")
         return False
