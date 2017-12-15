@@ -130,7 +130,36 @@ def Efficiency_Calc(Vcell):
     except Exception:
         print("[Error] PEM Efficiency Calculation Faild")
 
-def Static_Analysis
+def Get_Input():
+    Input_Keys=list(InputDict.keys())
+    Input_Values=[]
+    for item in Input_Keys:
+        Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
+        Input_Values.append(Input_Item)
+    return Input_Values
+
+def Static_Analysis():
+    Input_Vector=Get_Input()
+    T=float(Input_Vector[0])
+    PH2=float(Input_Vector[1])
+    PO2=float(Input_Vector[2])
+    i=float(Input_Vector[3])
+    A=float(Input_Vector[4])
+    l=float(Input_Vector[5])
+    lambda_param=float(Input_Vector[6])
+    N=float(Input_Vector[7])
+    Enernst=Enernst_Calc(T,PH2,PO2)
+    Eta_Act=Eta_Act_Calc(T,PO2,PH2,i,A)
+    Eta_Ohmic=Eta_Ohmic_Calc(i,l,A,T,lambda_param)
+    Eta_Conc=Eta_Conc_Calc(i,A)
+    Loss=Eta_Act+Eta_Ohmic+Eta_Conc
+    Vcell=Enernst-Loss
+    Efficiency=Efficiency_Calc(Vcell)
+    Power=Vcell*i
+    
+
+
+
 
 
 

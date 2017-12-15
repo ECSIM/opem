@@ -7,3 +7,6 @@ xi1=-0.984
 xi3=7.6*(10**-5)
 xi4=-1.93*(10**-4)
 
+InputDict={"T":"Cell Operation Temperature [K]","PH2":"Partial Pressure [atm]","PO2":"Partial Pressure [atm]",
+           "i":"Cell load current [A]","A":"active area [cm2]","l":"Membrane Thickness [cm]","lambda":"is an adjustable parameter with a possible maximum value of 23",
+           "N":"Number Of Single Cells"}
