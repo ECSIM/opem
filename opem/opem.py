@@ -138,6 +138,14 @@ def Get_Input():
         Input_Values.append(Input_Item)
     return Input_Values
 
+def Output_Save(OutputDict):
+    file=open("Simulation-Result.opem","w")
+    OutputKeys=OutputDict.keys()
+    for key in OutputKeys:
+        file.write(key+" : "+OutputDict[key]+"\n")
+    file.close()
+
+
 def Static_Analysis():
     Input_Vector=Get_Input()
     T=float(Input_Vector[0])
@@ -156,7 +164,9 @@ def Static_Analysis():
     Vcell=Enernst-Loss
     Efficiency=Efficiency_Calc(Vcell)
     Power=Vcell*i
-    
+    OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
+                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power)}
+
 
 
 

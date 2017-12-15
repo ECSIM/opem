@@ -1,15 +1,16 @@
+# -*- coding: utf-8 -*-
 from distutils.core import setup
 setup(
-  name = 'telecheck',
-  packages = ['telecheck'],
+  name = 'opem',
+  packages = ['opem'],
   version = '0.1',
-  description = 'Telegram ID Recommender',
-  long_description='''Telegram ID Recommender''',
-  author = 'Sepand Haghighi',
-  author_email = 'sepand@qpage.ir',
-  url = 'https://github.com/sepandhaghighi/telecheck',
-  download_url = 'https://github.com/sepandhaghighi/telecheck/tarball/v0.1',
-  keywords = ["Telegram","python","ID","Username","User","Recommender","Generator"],
+  description = 'Open Source PEM Cell Simulation Tool',
+  long_description='''Open Source PEM Cell Simulation Tool''',
+  author = 'Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
+  author_email = 'opem@ecsim.ir',
+  url = 'https://github.com/ecsim/opem',
+  download_url = 'https://github.com/ecsim/opem/tarball/v0.1',
+  keywords = ["OPEM","PEM","FC","CELL","Fuel Cell"],
   install_requires=[
       'art',
 	  'codecov',
