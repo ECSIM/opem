@@ -132,13 +132,6 @@ def Efficiency_Calc(Vcell):
     except Exception:
         print("[Error] PEM Efficiency Calculation Faild")
 
-def VStack_Calc(N,Enernst,Loss):
-    try:
-        reuslt=N*(Enernst-Loss)
-        return reuslt
-    except Exception:
-        print("[Error] VStack Calculation Error")
-
 def Get_Input():
     Input_Keys=list(InputDict.keys())
     Input_Keys.sort()
@@ -159,13 +152,13 @@ def Output_Save(OutputDict):
 def Static_Analysis():
     Input_Vector=Get_Input()
     print(Input_Vector)
-    T=float(Input_Vector[4])
-    PH2=float(Input_Vector[2])
-    PO2=float(Input_Vector[3])
-    i=float(Input_Vector[5])
+    T=float(Input_Vector[0])
+    PH2=float(Input_Vector[5])
+    PO2=float(Input_Vector[4])
+    i=float(Input_Vector[3])
     A=float(Input_Vector[0])
-    l=float(Input_Vector[6])
-    lambda_param=float(Input_Vector[7])
+    l=float(Input_Vector[2])
+    lambda_param=float(Input_Vector[6])
     N=float(Input_Vector[1])
     Enernst=Enernst_Calc(T,PH2,PO2)
     Eta_Act=Eta_Act_Calc(T,PO2,PH2,i,A)
