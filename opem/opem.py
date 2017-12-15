@@ -55,7 +55,7 @@ def Rho_Calc(i,A,T,lambda_param):
     except Exception:
         print("[Error] Rho Calculation Faild")
 
-def xi2_Calc(A,PH2,T):
+def Xi2_Calc(A,PH2,T):
     '''
     This function calculate Xi2
     :param A: active area [cm^2]
@@ -112,11 +112,23 @@ def Eta_Act_Calc(T,PO2,PH2,i,A):
     '''
     try:
         CO2=CO2_Calc(PO2,T)
-        xi2=xi2_Calc(A,PH2,T)
+        xi2=Xi2_Calc(A,PH2,T)
         result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
         return result
     except Exception:
         print("[Error] Eta Activation Calculation Faild")
+
+def Efficiency_Calc(Vcell):
+    '''
+    This function calculate PEM Cell Efficiency
+    :param Vcell: Cell Voltage [V]
+    :return: Efficiency
+    '''
+    try:
+        result=(uF*Vcell)/HHV
+        return result
+    except Exception:
+        print("[Error] PEM Efficiency Calculation Faild")
 
 
 
