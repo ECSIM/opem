@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import math
+from .params import *
 def Enerst_Calc(T,PH2,PO2):
     '''
     This function calculate Enerst
@@ -53,6 +54,14 @@ def Rho_Calc(i,A,T,lambda_param):
         return result
     except Exception:
         print("[Error] Rho Calculation Faild")
+
+def Eta_Conc_Calc(i,A):
+    try:
+        i_star=(i*1000)/A
+        result=m*math.exp(n*i_star)
+        return result
+    except Exception:
+        print("[Error] Eta Concentration Calculation Faild")
 
 
 
