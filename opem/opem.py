@@ -14,7 +14,18 @@ def Enerst_Calc(T,PH2,PO2):
     except Exception:
         print("[Error] Enerst Calculation Faild")
 
-
+def CH2_Calc(PH2,T):
+    '''
+    This function calculate CH2
+    :param PH2: Partial Pressure [atm]
+    :param T: Cell Operation Temperature [K]
+    :return: CH2 [mol/cm^3]
+    '''
+    try:
+        result=PH2/(1.09*(10**6)*math.exp(77/T))
+        return result
+    except Exception:
+        print("[Error] CH2 Calculation Faild")
 
 
 
