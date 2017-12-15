@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 import math
 from .params import *
+import os
+
+def isfloat(value):
+  try:
+    float(value)
+    return True
+  except ValueError:
+    return False
+
 def Enernst_Calc(T,PH2,PO2):
     '''
     This function calculate Enernst
@@ -151,13 +160,23 @@ def Get_Input():
     This function get inputs from users
     :return: Input Values as a list
     '''
-    Input_Keys=list(InputDict.keys())
-    Input_Keys.sort()
-    Input_Values=[]
-    for item in Input_Keys:
-        Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
-        Input_Values.append(Input_Item)
-    return Input_Values
+    try:
+        Input_Keys=list(InputDict.keys())
+        Input_Keys.sort()
+        Input_Values=[]
+        for item in Input_Keys:
+            Input_Flag=False
+            while(Input_Flag==False):
+                Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
+                if isfloat(Input_Item)==True:
+                    Input_Flag=True
+                else:
+                    print("[Error] Bad Input Try Again")
+            Input_Values.append(Input_Item)
+        return Input_Values
+    except Exception:
+        print("Bad Input")
+        return False
 
 def Output_Save(OutputDict):
     '''
@@ -178,7 +197,6 @@ def Static_Analysis():
     :return: None
     '''
     Input_Vector=Get_Input()
-    print(Input_Vector)
     T=float(Input_Vector[4])
     PH2=float(Input_Vector[2])
     PO2=float(Input_Vector[3])
@@ -197,7 +215,10 @@ def Static_Analysis():
     Power=Vcell*i
     OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
                 "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power)}
+    print("Analyzing . . .")
     Output_Save(OutputDict)
+    print("Done!")
+    print("Result In Simulation-Result.opem -->"+os.getcwd())
 
 
 

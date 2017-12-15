@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 import math
 from .params import *
+import os
+
+def isfloat(value):
+  try:
+    float(value)
+    return True
+  except ValueError:
+    return False
+
 def Enernst_Calc(T,PH2,PO2):
     '''
     This function calculate Enernst
@@ -132,16 +141,49 @@ def Efficiency_Calc(Vcell):
     except Exception:
         print("[Error] PEM Efficiency Calculation Faild")
 
+def VStack_Calc(N,Enernst,Loss):
+    '''
+    This function calculate VStack
+    :param N: number of single cells
+    :param Enernst: Enernst Voltage [V}
+    :param Loss: Loss [V]
+    :return: VStack [V]
+    '''
+    try:
+        reuslt=N*(Enernst-Loss)
+        return reuslt
+    except Exception:
+        print("[Error] VStack Calculation Error")
+
 def Get_Input():
-    Input_Keys=list(InputDict.keys())
-    Input_Keys.sort()
-    Input_Values=[]
-    for item in Input_Keys:
-        Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
-        Input_Values.append(Input_Item)
-    return Input_Values
+    '''
+    This function get inputs from users
+    :return: Input Values as a list
+    '''
+    try:
+        Input_Keys=list(InputDict.keys())
+        Input_Keys.sort()
+        Input_Values=[]
+        for item in Input_Keys:
+            Input_Flag=False
+            while(Input_Flag==False):
+                Input_Item=input("Please Enter "+item+"("+InputDict[item]+")")
+                if isfloat(Input_Item)==True:
+                    Input_Flag=True
+                else:
+                    print("[Error] Bad Input Try Again")
+            Input_Values.append(Input_Item)
+        return Input_Values
+    except Exception:
+        print("Bad Input")
+        return False
 
 def Output_Save(OutputDict):
+    '''
+    This function write analysis result in Simulation-Result.opem file
+    :param OutputDict: Analysis Result Dictionary
+    :return: None
+    '''
     file=open("Simulation-Result.opem","w")
     OutputKeys=OutputDict.keys()
     for key in OutputKeys:
@@ -150,16 +192,26 @@ def Output_Save(OutputDict):
 
 
 def Static_Analysis():
+    '''
+    This function run static analysis with calling other functions
+    :return: None
+    '''
     Input_Vector=Get_Input()
-    print(Input_Vector)
-    T=float(Input_Vector[0])
-    PH2=float(Input_Vector[5])
-    PO2=float(Input_Vector[4])
-    i=float(Input_Vector[3])
+    T=float(Input_Vector[4])
+    print(T)
+    PH2=float(Input_Vector[2])
+    print(PH2)
+    PO2=float(Input_Vector[3])
+    print(PO2)
+    i=float(Input_Vector[5])
+    print(i)
     A=float(Input_Vector[0])
-    l=float(Input_Vector[2])
-    lambda_param=float(Input_Vector[6])
+    print(A)
+    l=float(Input_Vector[6])
+    print(l)
+    lambda_param=float(Input_Vector[7])
     N=float(Input_Vector[1])
+    print(N)
     Enernst=Enernst_Calc(T,PH2,PO2)
     Eta_Act=Eta_Act_Calc(T,PO2,PH2,i,A)
     Eta_Ohmic=Eta_Ohmic_Calc(i,l,A,T,lambda_param)
@@ -170,7 +222,10 @@ def Static_Analysis():
     Power=Vcell*i
     OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
                 "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power)}
+    print("Analyzing . . .")
     Output_Save(OutputDict)
+    print("Done!")
+    print("Result In Simulation-Result.opem -->"+os.getcwd())
 
 
 
