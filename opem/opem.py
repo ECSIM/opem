@@ -56,12 +56,52 @@ def Rho_Calc(i,A,T,lambda_param):
         print("[Error] Rho Calculation Faild")
 
 def Eta_Conc_Calc(i,A):
+    '''
+    This function calculate Eta Concentration
+    :param i: Cell load current [A]
+    :param A: active area [cm^2]
+    :return: Eta Concentration
+    '''
     try:
         i_star=(i*1000)/A
         result=m*math.exp(n*i_star)
         return result
     except Exception:
         print("[Error] Eta Concentration Calculation Faild")
+
+def Eta_Ohmic_Calc(i,l,A,T,lambda_param):
+    '''
+    This function calculate Eta Ohmic
+    :param i: cell load current [A]
+    :param l: Membrane Thickness [cm]
+    :param A: active area [cm^2]
+    :param T: Cell Operation Temperature [K]
+    :param lambda_param: is an adjustable parameter with a possible maximum value of 23
+    :return: Eta Ohmic
+    '''
+    try:
+        Rho=Rho_Calc(i,A,T,lambda_param)
+        R_prot=(Rho*l)/A
+        result=i*R_prot
+        return result
+    except Exception:
+        print("[Error] Eta Ohmic Calculation Faild")
+
+def Eta_Act_Calc(T,PO2,PH2,i,A):
+    '''
+    This function calculate Eta Activation
+    :param T: Cell Operation Temperature [K]
+    :param PO2: Partial Pressure [atm]
+    :param i: cell load current [A]
+    :return:  Eta Activation
+    '''
+    try:
+        CO2=CO2_Calc(PO2,T)
+        xi2=xi2_Calc(A,PH2,T)
+        result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
+        return result
+    except Exception:
+        print("[Error] Eta Activation Calculation Faild")
 
 
 
