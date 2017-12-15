@@ -175,13 +175,12 @@ def Get_Input():
                     print("[Error] Bad Input Try Again")
             Input_Values.append(Input_Item)
         Input_Values=list(map(float,Input_Values))
-        print(dict(zip(Input_Keys,Input_Values)))
         return dict(zip(Input_Keys,Input_Values))
     except Exception:
         print("Bad Input")
         return False
 
-def Output_Save(OutputDict):
+def Output_Save(OutputDict,InputDict):
     '''
     This function write analysis result in Simulation-Result.opem file
     :param OutputDict: Analysis Result Dictionary
@@ -190,9 +189,15 @@ def Output_Save(OutputDict):
     file=open("Simulation-Result.opem","w")
     file.write("Simulation Date : "+str(datetime.datetime.now())+"\n")
     file.write("**********\n")
-    OutputKeys=OutputDict.keys()
-    for key in OutputKeys:
-        file.write(key+" : "+OutputDict[key]+"\n")
+    Input_Keys=InputDict.keys()
+    Output_Keys=OutputDict.keys()
+    file.write("Simulation Inputs : \n\n")
+    for key in Input_Keys:
+        file.write(key + " : " + str(InputDict[key]) + "\n")
+    file.write("**********\n")
+    file.write("Simulation Outputs : \n\n")
+    for key in Output_Keys:
+        file.write(key+" : "+str(OutputDict[key])+"\n")
     file.close()
 
 
@@ -211,10 +216,10 @@ def Static_Analysis():
     Efficiency=Efficiency_Calc(Vcell)
     Power=Vcell*Input_Dict["i"]
     VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-    OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
-                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power),"VStack":str(VStack)}
+    Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
+                "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
     print("Analyzing . . .")
-    Output_Save(OutputDict)
+    Output_Save(Output_Dict,Input_Dict)
     print("Done!")
     print("Result In Simulation-Result.opem -->"+os.getcwd())
 
