@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 import math
 from .params import *
-def Enerst_Calc(T,PH2,PO2):
+def Enernst_Calc(T,PH2,PO2):
     '''
-    This function calculate Enerst
+    This function calculate Enernst
     :param T: Cell Operation Temperature [K]
     :param PH2: Partial Pressure [atm]
     :param PO2: partial Pressure [atm]
-    :return: Enerst [V}
+    :return: Enernst [V}
     '''
     try:
         result=1.229-(8.5*(10**-4))*(T-298.15)+(4.308*(10**-5))*T*(math.log(PH2)+0.5*math.log(PO2))
         return result
     except Exception:
-        print("[Error] Enerst Calculation Faild")
+        print("[Error] Enernst Calculation Faild")
 
 def CH2_Calc(PH2,T):
     '''
@@ -129,6 +129,8 @@ def Efficiency_Calc(Vcell):
         return result
     except Exception:
         print("[Error] PEM Efficiency Calculation Faild")
+
+def Static_Analysis
 
 
 
