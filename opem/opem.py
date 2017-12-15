@@ -213,8 +213,9 @@ def Static_Analysis():
     Vcell=Enernst-Loss
     Efficiency=Efficiency_Calc(Vcell)
     Power=Vcell*i
+    VStack=VStack_Calc(N,Enernst,Loss)
     OutputDict={"Enernst":str(Enernst),"Eta Activation":str(Eta_Act),"Eta Ohmic":str(Eta_Ohmic),"Eta Concentration":str(Eta_Conc),"Loss":str(Loss),
-                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power)}
+                "Vcell":str(Vcell),"PEM Efficiency":str(Efficiency),"Power":str(Power),"VStack":str(VStack)}
     print("Analyzing . . .")
     Output_Save(OutputDict)
     print("Done!")
