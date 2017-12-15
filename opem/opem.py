@@ -55,6 +55,21 @@ def Rho_Calc(i,A,T,lambda_param):
     except Exception:
         print("[Error] Rho Calculation Faild")
 
+def xi2_Calc(A,PH2,T):
+    '''
+    This function calculate Xi2
+    :param A: active area [cm^2]
+    :param PH2: Partial Pressure [atm]
+    :param T: Cell Operation Temperature [K]
+    :return: Xi2
+    '''
+    try:
+        CH2=CH2_Calc(PH2,T)
+        result=0.00286+0.0002*math.log(A)+(4.3*(10**-5))*math.log(CH2)
+        return result
+    except Exception:
+        print("[Error] Xi2 Calculation Faild")
+
 def Eta_Conc_Calc(i,A):
     '''
     This function calculate Eta Concentration
