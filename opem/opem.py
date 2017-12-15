@@ -27,6 +27,18 @@ def CH2_Calc(PH2,T):
     except Exception:
         print("[Error] CH2 Calculation Faild")
 
+def CO2_Calc(PO2,T):
+    '''
+    This function calculate CO2
+    :param PO2: Partial Pressure [atm]
+    :param T: Cell Operation Temperature [K]
+    :return: CO2 [mol/cm^3]
+    '''
+    try:
+        result=PO2/(5.08*(10**6)*math.exp(-498/T))
+    except Exception:
+        print("[Error] CO2 Calculation Faild")
+
 
 
 
