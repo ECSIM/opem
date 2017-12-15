@@ -202,6 +202,7 @@ def Output_Save(OutputDict,InputDict):
     file.write("Simulation Outputs : \n\n")
     for key in Output_Keys:
         file.write(key+" : "+str(OutputDict[key])+"\n")
+        print(key+" : "+str(OutputDict[key]))
     file.close()
 
 
@@ -210,22 +211,26 @@ def Static_Analysis():
     This function run static analysis with calling other functions
     :return: None
     '''
-    Input_Dict=Get_Input()
-    Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
-    Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
-    Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"])
-    Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"])
-    Loss=Eta_Act+Eta_Ohmic+Eta_Conc
-    Vcell=Enernst-Loss
-    Efficiency=Efficiency_Calc(Vcell)
-    Power=Vcell*Input_Dict["i"]
-    VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-    Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
-                "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
-    print("Analyzing . . .")
-    Output_Save(Output_Dict,Input_Dict)
-    print("Done!")
-    print("Result In Simulation-Result.opem -->"+os.getcwd())
+    try:
+        Input_Dict=Get_Input()
+        print("Analyzing . . .")
+        Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
+        Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
+        Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"])
+        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"])
+        Loss=Eta_Act+Eta_Ohmic+Eta_Conc
+        Vcell=Enernst-Loss
+        Efficiency=Efficiency_Calc(Vcell)
+        Power=Vcell*Input_Dict["i"]
+        VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
+        Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
+                    "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+
+        print("Done!")
+        Output_Save(Output_Dict, Input_Dict)
+        print("Result In Simulation-Result.opem -->"+os.getcwd())
+    except Exception:
+        print("[Error] Simulation Faild!(Check Your Inputs)")
 
 
 

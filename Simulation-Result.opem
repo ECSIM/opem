@@ -1,24 +1,24 @@
-Simulation Date : 2017-12-16 01:36:04.601635
+Simulation Date : 2017-12-16 01:39:52.816682
 **********
 Simulation Inputs : 
 
-lambda : 23
-PH2 : 23.0
-T : 55.0
-A : 23.0
-l : 55.0
-i : 44.0
-PO2 : 44.0
+T : 23.0
 N : 23.0
+l : 23.0
+A : 23.0
+PO2 : 23.0
+lambda : 23.0
+PH2 : 23.0
+i : 23.0
 **********
 Simulation Outputs : 
 
-Vcell : -188121087938.76697
-VStack : -4326785022591.64
-Loss : 188121087940.21457
-Eta Ohmic : 188121087808.12842
-Eta Activation : -0.872028508025305
-Eta Concentration : 132.9581809438306
-PEM Efficiency : -120590440986.38908
-Enernst : 1.4475898694545257
-Power : -8277327869305.746
+VStack : -6.433448588541056e+25
+Vcell : -2.7971515602352417e+24
+PEM Efficiency : -1.7930458719456676e+24
+Power : -6.433448588541056e+25
+Loss : 2.7971515602352417e+24
+Enernst : 1.467537659633367
+Eta Concentration : 0.08942873961125186
+Eta Ohmic : 2.7971515602352417e+24
+Eta Activation : -0.915335663986228
