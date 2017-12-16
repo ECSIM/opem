@@ -46,6 +46,19 @@ Just fill an issue and describe it. We'll check it ASAP!
 or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir"). 
 
 
+## TODO		
+
+- [x] Static Analysis
+  - [x] Nernst Voltage
+  - [x] PEMFC losses model
+  - [x] Power of PEMFC
+  - [x] Efficiency of PEMFC
+- [ ] GUI
+  - [ ] Plot Graphs
+  - [ ] Input/Output
+- [ ] Dynamic Analysis
+
+
 ## Contribution			
 
 You can fork the repository, improve or fix some part of it and then send the pull requests back if you want to see them here. I really appreciate that. ❤️			
