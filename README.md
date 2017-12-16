@@ -12,6 +12,8 @@
 	
 ----------
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01608bd81ef947abaa086929f1721498)](https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&utm_medium=referral&utm_content=ECSIM/opem&utm_campaign=badger)
+
 ## Overview			
 OPEM is an open source PEM cell simulation tool
 
