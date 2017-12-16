@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 '''
->>> from telecheck import *
 >>> import coverage
 >>> from opem import *
 >>> import random
