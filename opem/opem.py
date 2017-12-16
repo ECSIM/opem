@@ -126,8 +126,7 @@ def Eta_Act_Calc(T,PO2,PH2,i,A):
         xi2=Xi2_Calc(A,PH2,T)
         result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
         return result
-    except Exception as e:
-        print(str(e))
+    except Exception:
         print("[Error] Eta Activation Calculation Faild")
 
 def Efficiency_Calc(Vcell):

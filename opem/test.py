@@ -85,6 +85,35 @@ PEM Efficiency : -7.0579034599876636
 Power : -36.3340870120165
 VStack : -220.20658795161512
 Vcell : -11.010329397580756
+>>> T='20000000000'
+>>> PH2='10000000'
+>>> PO2='1000000000'
+>>> i='160000000'
+>>> A='30000000000'
+>>> l='50000000000'
+>>> lambda_param='50000000000'
+>>> N='80000000000'
+>>> Enernst_Calc(T,PH2,PO2)
+[Error] Enernst Calculation Faild
+>>> CH2_Calc(PH2,T)
+[Error] CH2 Calculation Faild
+>>> CO2_Calc(PO2,T)
+[Error] CO2 Calculation Faild
+>>> Rho_Calc(i,A,T,lambda_param)
+[Error] Rho Calculation Faild
+>>> Xi2_Calc(A,PH2,T)
+[Error] CH2 Calculation Faild
+[Error] Xi2 Calculation Faild
+>>> Eta_Conc_Calc(i,A)
+[Error] Eta Concentration Calculation Faild
+>>> Eta_Ohmic_Calc(i,l,A,T,lambda_param)
+[Error] Rho Calculation Faild
+[Error] Eta Ohmic Calculation Faild
+>>> Eta_Act_Calc(T,PO2,PH2,i,A)
+[Error] CO2 Calculation Faild
+[Error] CH2 Calculation Faild
+[Error] Xi2 Calculation Faild
+[Error] Eta Activation Calculation Faild
 >>> cov.stop()
 >>> cov.save()
 
