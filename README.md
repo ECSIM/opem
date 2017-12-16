@@ -30,7 +30,7 @@ OPEM is an open source PEM cell simulation tool
 
 ## Usage
 
-### CLI
+### CLI (Command Line Interface)
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `python -m opem` or `python3 -m opem`
 - Enter PEM cell parameters
