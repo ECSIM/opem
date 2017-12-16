@@ -13,7 +13,7 @@
 ----------
 
 ## Overview			
-OPEM is a open source PEM cell simulation tool
+OPEM is an open source PEM cell simulation tool
 
 ## Installation		
 
