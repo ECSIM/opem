@@ -7,6 +7,7 @@
 <a href="https://codecov.io/gh/ECSIM/opem">
   <img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
 </a>
+<a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
 
 </div>
 	
