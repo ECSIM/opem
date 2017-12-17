@@ -9,4 +9,4 @@ xi4=-1.93*(10**-4)
 Version=0.1
 InputParams={"T":"Cell Operation Temperature [K]","PH2":"Partial Pressure [atm]","PO2":"Partial Pressure [atm]",
            "i":"Cell load current [A]","A":"active area [cm2]","l":"Membrane Thickness [cm]","lambda":"is an adjustable parameter with a possible maximum value of 23",
-           "N":"Number Of Single Cells","R":"R-Electronic [ohm] (*Optional)"}
+           "N":"Number Of Single Cells","R":"R-Electronic [ohm]"}
