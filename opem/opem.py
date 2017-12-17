@@ -134,7 +134,7 @@ def Eta_Act_Calc(T,PO2,PH2,i,A):
         if i!=0:
             CO2=CO2_Calc(PO2,T)
             xi2=Xi2_Calc(A,PH2,T)
-            result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
+            result=-(xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i))
             return result
         else:
             return 0

@@ -53,27 +53,27 @@ Vcell : 1.19075
 Analyzing . . .
 Done!
 Enernst : 1.19075
-Eta Activation : -0.5205357898108074
+Eta Activation : 0.5205357898108074
 Eta Concentration : 0.006487441729730628
 Eta Ohmic : 0.48876763670032947
-Loss : -0.0252807113807473
-PEM Efficiency : 0.7795068662697098
-Power : 30.76557699793291
-VStack : 1.2160307113807474
-Vcell : 1.2160307113807474
+Loss : 1.0157908682408676
+PEM Efficiency : 0.1121532895891874
+Power : 4.426466033506049
+VStack : 0.17495913175913236
+Vcell : 0.17495913175913236
 >>> Test_Vector_3={"T":343.15,"PH2":1,"PO2":1,"i":50.6,"A":50.6,"l":0.178,"lambda":23,"N":1,"R":0}
 >>> Static_Analysis(Test_Vector_3,TestMode=True)
 Analyzing . . .
 Done!
 Enernst : 1.19075
-Eta Activation : -0.5664415066275723
+Eta Activation : 0.5664415066275723
 Eta Concentration : 0.017577796618689752
 Eta Ohmic : 1.1356047108209584
-Loss : 0.5867410008120758
-PEM Efficiency : 0.387185255889695
-Power : 30.562855358908962
-VStack : 0.6040089991879242
-Vcell : 0.6040089991879242
+Loss : 1.7196240140672205
+PEM Efficiency : -0.3390218038892439
+Power : -26.761025111801363
+VStack : -0.5288740140672206
+Vcell : -0.5288740140672206
 >>> Test_Vector_4={"T":343.15,"PH2":1,"PO2":1,"i":75.9,"A":50.6,"l":0.178,"lambda":23,"N":1,"R":0}
 >>> Static_Analysis(Test_Vector_4,TestMode=True)
 Analyzing . . .
