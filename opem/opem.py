@@ -90,8 +90,8 @@ def Eta_Conc_Calc(i,A):
     '''
     try:
         if i!=0:
-            i_star=(i*1000)/A
-            result=m*math.exp(n*i_star)
+            J=i/A
+            result=-B*math.log(1-(J/JMax))
             return result
         else:
             return 0

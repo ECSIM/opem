@@ -54,52 +54,44 @@ Analyzing . . .
 Done!
 Enernst : 1.19075
 Eta Activation : -0.5205357898108074
-Eta Concentration : 0.0016379445009943273
+Eta Concentration : 0.006487441729730628
 Eta Ohmic : 0.48876763670032947
-Loss : -0.030130208609483598
-PEM Efficiency : 0.7826155183394127
-Power : 30.888269277819937
-VStack : 1.2208802086094837
-Vcell : 1.2208802086094837
+Loss : -0.0252807113807473
+PEM Efficiency : 0.7795068662697098
+Power : 30.76557699793291
+VStack : 1.2160307113807474
+Vcell : 1.2160307113807474
 >>> Test_Vector_3={"T":343.15,"PH2":1,"PO2":1,"i":50.6,"A":50.6,"l":0.178,"lambda":23,"N":1,"R":0}
 >>> Static_Analysis(Test_Vector_3,TestMode=True)
 Analyzing . . .
 Done!
 Enernst : 1.19075
 Eta Activation : -0.5664415066275723
-Eta Concentration : 0.08942873961125186
+Eta Concentration : 0.017577796618689752
 Eta Ohmic : 1.1356047108209584
-Loss : 0.6585919438046379
-PEM Efficiency : 0.34112695909959106
-Power : 26.92719764348532
-VStack : 0.532158056195362
-Vcell : 0.532158056195362
+Loss : 0.5867410008120758
+PEM Efficiency : 0.387185255889695
+Power : 30.562855358908962
+VStack : 0.6040089991879242
+Vcell : 0.6040089991879242
 >>> Test_Vector_4={"T":343.15,"PH2":1,"PO2":1,"i":75.9,"A":50.6,"l":0.178,"lambda":23,"N":1,"R":0}
 >>> Static_Analysis(Test_Vector_4,TestMode=True)
 Analyzing . . .
-Done!
-Enernst : 1.19075
-Eta Activation : -0.5932946295341045
-Eta Concentration : 4.882643742570118
-Eta Ohmic : 2.103719891323974
-Loss : 6.393069004359988
-PEM Efficiency : -3.3348198745897353
-Power : -394.85601243092304
-VStack : -5.202319004359987
-Vcell : -5.202319004359987
+[Error] Eta Concentration Calculation Faild
+[Error] Simulation Faild!(Check Your Inputs)
 >>> Test_Vector_R={"T":343.15,"PH2":1,"PO2":1,"i":25.3,"A":50.6,"l":0.178,"lambda":23,"N":1,"R":22}
 >>> Static_Analysis(Test_Vector_R,TestMode=True)
 Analyzing . . .
 Done!
 Enernst : 1.19075
 Eta Activation : -0.5205357898108074
-Eta Concentration : 0.0016379445009943273
+Eta Concentration : 0.006487441729730628
 Eta Ohmic : 557.0887676367004
-Loss : 556.5698697913906
-PEM Efficiency : -356.0122562765324
-Power : -14051.091730722183
-VStack : -555.3791197913906
-Vcell : -555.3791197913906
+Loss : 556.5747192886193
+PEM Efficiency : -356.01536492860214
+Power : -14051.214423002071
+VStack : -555.3839692886194
+Vcell : -555.3839692886194
 >>> T='20000000000'
 >>> PH2='10000000'
 >>> PO2='1000000000'
