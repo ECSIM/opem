@@ -89,9 +89,12 @@ def Eta_Conc_Calc(i,A):
     :return: Eta Concentration
     '''
     try:
-        i_star=(i*1000)/A
-        result=m*math.exp(n*i_star)
-        return result
+        if i!=0:
+            i_star=(i*1000)/A
+            result=m*math.exp(n*i_star)
+            return result
+        else:
+            return 0
     except Exception:
         print("[Error] Eta Concentration Calculation Faild")
 
@@ -106,10 +109,13 @@ def Eta_Ohmic_Calc(i,l,A,T,lambda_param):
     :return: Eta Ohmic
     '''
     try:
-        Rho=Rho_Calc(i,A,T,lambda_param)
-        R_prot=(Rho*l)/A
-        result=i*R_prot
-        return result
+        if i!=0:
+            Rho=Rho_Calc(i,A,T,lambda_param)
+            R_prot=(Rho*l)/A
+            result=i*R_prot
+            return result
+        else:
+            return 0
     except Exception:
         print("[Error] Eta Ohmic Calculation Faild")
 
@@ -122,10 +128,13 @@ def Eta_Act_Calc(T,PO2,PH2,i,A):
     :return:  Eta Activation
     '''
     try:
-        CO2=CO2_Calc(PO2,T)
-        xi2=Xi2_Calc(A,PH2,T)
-        result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
-        return result
+        if i!=0:
+            CO2=CO2_Calc(PO2,T)
+            xi2=Xi2_Calc(A,PH2,T)
+            result=xi1+xi2*T+xi3*T*math.log(CO2)+xi4*T*math.log(i)
+            return result
+        else:
+            return 0
     except Exception:
         print("[Error] Eta Activation Calculation Faild")
 

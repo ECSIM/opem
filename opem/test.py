@@ -11,14 +11,14 @@ True
 True
 >>> isfloat('ss')
 False
->>> T=200
+>>> T=343.15
 >>> PH2=1
 >>> PO2=1
->>> i=1.5
->>> A=30
->>> l=5
->>> lambda_param=5
->>> N=8
+>>> i=0
+>>> A=50.6
+>>> l=0.178
+>>> lambda_param=23
+>>> N=1
 >>> Enernst_Calc(T,PH2,PO2)
 1.3124275
 >>> CH2_Calc(PH2,T)
