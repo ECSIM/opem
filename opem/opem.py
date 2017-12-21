@@ -81,7 +81,7 @@ def Xi2_Calc(A,PH2,T):
     except Exception:
         print("[Error] Xi2 Calculation Faild")
 
-def Eta_Conc_Calc(i,A):
+def Eta_Conc_Calc(i,A,Jn,JMax):
     '''
     This function calculate Eta Concentration
     :param i: Cell load current [A]
@@ -90,7 +90,7 @@ def Eta_Conc_Calc(i,A):
     '''
     try:
         if i!=0:
-            J=i/A
+            J=(i/A)+Jn
             result=-B*math.log(1-(J/JMax))
             return result
         else:
@@ -233,7 +233,7 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
         Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
         Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
-        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"])
+        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"],Input_Dict["Jn"],Input_Dict["JMax"])
         Loss=Eta_Act+Eta_Ohmic+Eta_Conc
         Vcell=Enernst-Loss
         Efficiency=Efficiency_Calc(Vcell)
