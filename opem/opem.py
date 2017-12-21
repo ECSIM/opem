@@ -241,7 +241,6 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
         Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
                     "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
-
         print("Done!")
         Output_Save(Output_Dict, Input_Dict)
         if TestMode==False:
