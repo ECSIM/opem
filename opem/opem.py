@@ -229,7 +229,6 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
             Input_Dict=InputMethod()
         else:
             Input_Dict=InputMethod
-        print(Input_Dict)
         print("Analyzing . . .")
         Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
         Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
@@ -242,10 +241,8 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
         Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
                     "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
-        print(Output_Dict)
         print("Done!")
-        #Output_Save(Output_Dict, Input_Dict)
-        return VStack
+        Output_Save(Output_Dict, Input_Dict)
         if TestMode==False:
             print("Result In Simulation-Result.opem -->"+os.getcwd())
     except Exception:
