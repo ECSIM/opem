@@ -81,7 +81,7 @@ def Xi2_Calc(A,PH2,T):
     except Exception:
         print("[Error] Xi2 Calculation Faild")
 
-def Eta_Conc_Calc(i,A,Jn,JMax):
+def Eta_Conc_Calc(i,A,B,JMax):
     '''
     This function calculate Eta Concentration
     :param i: Cell load current [A]
@@ -90,7 +90,7 @@ def Eta_Conc_Calc(i,A,Jn,JMax):
     '''
     try:
         if i!=0:
-            J=(i/A)+Jn
+            J=(i/A)
             result=-B*math.log(1-(J/JMax))
             return result
         else:
@@ -229,11 +229,12 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
             Input_Dict=InputMethod()
         else:
             Input_Dict=InputMethod
+        print(Input_Dict)
         print("Analyzing . . .")
         Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
         Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
         Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
-        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"],Input_Dict["Jn"],Input_Dict["JMax"])
+        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
         Loss=Eta_Act+Eta_Ohmic+Eta_Conc
         Vcell=Enernst-Loss
         Efficiency=Efficiency_Calc(Vcell)
@@ -241,8 +242,10 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
         Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
                     "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+        print(Output_Dict)
         print("Done!")
-        Output_Save(Output_Dict, Input_Dict)
+        #Output_Save(Output_Dict, Input_Dict)
+        return VStack
         if TestMode==False:
             print("Result In Simulation-Result.opem -->"+os.getcwd())
     except Exception:
