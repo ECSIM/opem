@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import math
-from .params import *
+from .Amphlett_Params import *
 import os
 import datetime
 from art import text2art

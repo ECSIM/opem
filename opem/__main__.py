@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from .opem import *
-from .params import *
+from .Amphlett import *
+from .Amphlett_Params import *
 from art import tprint
 import doctest
 import sys
