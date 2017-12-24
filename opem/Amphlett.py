@@ -191,6 +191,9 @@ def Get_Input():
         if Output["lambda"]>23:
             Output["lambda"]=23
             print("[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
+        elif Output["lambda"]<14:
+            Output["lambda"] = 23
+            print("[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
         return Output
     except Exception:
         print("Bad Input")
