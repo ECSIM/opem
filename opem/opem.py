@@ -224,7 +224,7 @@ def Output_Init(InputDict):
     file.write(Art)
     file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
     file.write("**********\n")
-    file.write("Amphlett Static Model")
+    file.write("Amphlett Static Model\n\n")
     file.write("**********\n")
     file.write("Simulation Inputs : \n\n")
     Input_Keys = list(InputDict.keys())
