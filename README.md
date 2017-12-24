@@ -68,9 +68,9 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] Efficiency of PEMFC
   - [ ] Larminiee-Dicks Static Model
   - [ ] Chamberline-Kim Static Model
-- [ ] Flat Output
+- [X] Flat Output
     - [x] Simulation Result
-    - [ ] CSV File
+    - [X] CSV File
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
