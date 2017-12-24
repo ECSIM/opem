@@ -205,11 +205,11 @@ def Output_Save(OutputDict,i,file):
 
     Output_Keys=list(OutputDict.keys())
     Output_Keys.sort()
-    file.write("I :"+str(i)+"\n\n")
+    file.write("I :"+str(i)+" A \n\n")
     print("I : "+str(i))
     for key in Output_Keys:
-        file.write(key+" : "+str(OutputDict[key])+"\n")
-        print(key+" : "+str(OutputDict[key]))
+        file.write(key+" : "+str(OutputDict[key][0])+" "+OutputDict[key][1]+"\n")
+        print(key+" : "+str(OutputDict[key][0])+" "+OutputDict[key][1])
     file.write("###########\n")
     print("###########")
 def Output_Init(InputDict):
@@ -261,11 +261,13 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
                 Efficiency=Efficiency_Calc(Vcell)
                 Power=Vcell*i
                 VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-                Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
-                            "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+                Output_Dict={"Enernst":[Enernst,"V"],"Eta Activation":[Eta_Act,"V"],"Eta Ohmic":[Eta_Ohmic,"V"],"Eta Concentration":[Eta_Conc,"V"],"Loss":[Loss,"V"],
+                            "Vcell":[Vcell,"V"],"PEM Efficiency":[Efficiency,""],"Power":[Power,"W"],"VStack":[VStack,"V"]}
                 Output_Save(Output_Dict, i, OutputFile)
                 i=i+IStep
-            except Exception :
+            except Exception as e :
+                i = i + IStep
+                print(str(e))
                 OutputFile.write("[Simulation Error]\n")
         OutputFile.close()
         print("Done!")
