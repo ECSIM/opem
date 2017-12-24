@@ -199,7 +199,10 @@ def Get_Input():
 def Output_Save(OutputParamsKeys,OutputDict,i,file):
     '''
     This function write analysis result in Simulation-Result.opem file
+    :param OutputParamsKeys : Output Params as dict
     :param OutputDict: Analysis Result Dictionary
+    :param i: Current
+    :param file : file object
     :return: None
     '''
 
@@ -212,7 +215,7 @@ def Output_Save(OutputParamsKeys,OutputDict,i,file):
     print("###########")
 def Output_Init(InputDict):
     '''
-    This function initial output file
+    This function initialize output file
     :param InputDict: Input Test Vector
     :type InputDict:dict
     :return: file object
@@ -233,6 +236,11 @@ def Output_Init(InputDict):
     return file
 
 def CSV_Init(OutputParamsKeys):
+    '''
+    This function initialize csv file
+    :param OutputParamsKeys: Output Params as dict
+    :return: file object
+    '''
     file=open("Amphlett-Model-Result.csv","w")
     file.write("I (A),")
     for index,item in enumerate(OutputParamsKeys):
@@ -243,6 +251,14 @@ def CSV_Init(OutputParamsKeys):
     return file
 
 def CSV_Save(OutputParamsKeys,OutputDict,i,file):
+    '''
+    This Function Save Parameters In CSV File
+    :param OutputParamsKeys: Output Params
+    :param OutputDict: Output Values Dictionary
+    :param i: Current
+    :param file: CSV_File object
+    :return: None
+    '''
     file.write(str(i)+",")
     for key in OutputParamsKeys:
         file.write(str(OutputDict[key]))
