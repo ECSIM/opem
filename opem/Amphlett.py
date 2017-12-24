@@ -87,7 +87,7 @@ def Eta_Conc_Calc(i,A,B,JMax):
     This function calculate Eta Concentration
     :param i: Cell load current [A]
     :param A: active area [cm^2]
-    :return: Eta Concentration
+    :return: Eta Concentration [V]
     '''
     try:
         if i!=0:
@@ -107,7 +107,7 @@ def Eta_Ohmic_Calc(i,l,A,T,lambda_param,R_elec=None):
     :param A: active area [cm^2]
     :param T: Cell Operation Temperature [K]
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
-    :return: Eta Ohmic
+    :return: Eta Ohmic [V]
     '''
     try:
         if i!=0:
@@ -129,7 +129,7 @@ def Eta_Act_Calc(T,PO2,PH2,i,A):
     :param T: Cell Operation Temperature [K]
     :param PO2: Partial Pressure [atm]
     :param i: cell load current [A]
-    :return:  Eta Activation
+    :return:  Eta Activation [V]
     '''
     try:
         if i!=0:
@@ -204,7 +204,7 @@ def Output_Save(OutputParamsKeys,OutputDict,i,file):
     This function write analysis result in Simulation-Result.opem file
     :param OutputParamsKeys : Output Params as dict
     :param OutputDict: Analysis Result Dictionary
-    :param i: Current
+    :param i: cell load current [A]
     :param file : file object
     :return: None
     '''
@@ -258,7 +258,7 @@ def CSV_Save(OutputParamsKeys,OutputDict,i,file):
     This Function Save Parameters In CSV File
     :param OutputParamsKeys: Output Params
     :param OutputDict: Output Values Dictionary
-    :param i: Current
+    :param i: cell load current [A]
     :param file: CSV_File object
     :return: None
     '''
@@ -269,18 +269,37 @@ def CSV_Save(OutputParamsKeys,OutputDict,i,file):
             file.write(",")
     file.write("\n")
 def Loss_Calc(Eta_Act,Eta_Ohmic,Eta_Conc):
+    '''
+    This function calculate loss
+    :param Eta_Act: Eta Activation [V]
+    :param Eta_Ohmic: Eta Ohmic [V]
+    :param Eta_Conc: Eta Concentration [V]
+    :return: Loss [V]
+    '''
     try:
         result=Eta_Act+Eta_Ohmic+Eta_Conc
         return result
     except Exception:
         print("[Error] Loss Calculation Error")
 def Vcell_Calc(Enernst,Loss):
+    '''
+    This function calculate cell voltage
+    :param Enernst:  Enernst [V}
+    :param Loss:  Loss [V]
+    :return:  Cell voltage [V]
+    '''
     try:
         result=Enernst-Loss
         return result
     except Exception:
         print("[Error] Vcell Calculation Error")
 def Power_Calc(Vcell,i):
+    '''
+    This function calculate power
+    :param Vcell: Vell Voltage [V]
+    :param i: cell load current [A]
+    :return: Cell power [W]
+    '''
     try:
         result=Vcell*i
         return result
