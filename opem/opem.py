@@ -196,20 +196,18 @@ def Get_Input():
         print("Bad Input")
         return False
 
-def Output_Save(OutputDict,i,file):
+def Output_Save(OutputParamsKeys,OutputDict,i,file):
     '''
     This function write analysis result in Simulation-Result.opem file
     :param OutputDict: Analysis Result Dictionary
     :return: None
     '''
 
-    Output_Keys=list(OutputDict.keys())
-    Output_Keys.sort()
     file.write("I :"+str(i)+" A \n\n")
     print("I : "+str(i))
-    for key in Output_Keys:
-        file.write(key+" : "+str(OutputDict[key][0])+" "+OutputDict[key][1]+"\n")
-        print(key+" : "+str(OutputDict[key][0])+" "+OutputDict[key][1])
+    for key in OutputParamsKeys:
+        file.write(key+" : "+str(OutputDict[key])+" "+OutputParams[key]+"\n")
+        print(key+" : "+str(OutputDict[key])+" "+OutputParams[key])
     file.write("###########\n")
     print("###########")
 def Output_Init(InputDict):
@@ -220,7 +218,7 @@ def Output_Init(InputDict):
     :return: file object
     '''
     Art = text2art("Opem")
-    file = open("Simulation-Result.opem", "w")
+    file = open("Amphlett-Model-Result.opem", "w")
     file.write(Art)
     file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
     file.write("**********\n")
@@ -234,17 +232,38 @@ def Output_Init(InputDict):
     file.write("**********\n")
     return file
 
+def CSV_Init(OutputParamsKeys):
+    file=open("Amphlett-Model-Result.csv","w")
+    file.write("I (A),")
+    for index,item in enumerate(OutputParamsKeys):
+        file.write(item+" ("+OutputParams[item]+")")
+        if index<len(OutputParamsKeys)-1:
+            file.write(",")
+    file.write("\n")
+    return file
+
+def CSV_Save(OutputParamsKeys,OutputDict,i,file):
+    file.write(str(i)+",")
+    for key in OutputParamsKeys:
+        file.write(str(OutputDict[key]))
+        if key!=OutputParamsKeys[-1]:
+            file.write(",")
+    file.write("\n")
+
 def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     '''
     This function run static analysis with calling other functions
     :return: None
     '''
     try:
+        OutputParamsKeys = list(OutputParams.keys())
+        OutputParamsKeys.sort()
         if TestMode==False:
             Input_Dict=InputMethod()
         else:
             Input_Dict=InputMethod
         OutputFile=Output_Init(Input_Dict)
+        CSVFile=CSV_Init(OutputParamsKeys)
         print("Analyzing . . .")
         IEndMax=Input_Dict["JMax"]*Input_Dict["A"]
         IEnd=min(IEndMax,Input_Dict["i-stop"])
@@ -261,18 +280,18 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
                 Efficiency=Efficiency_Calc(Vcell)
                 Power=Vcell*i
                 VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-                Output_Dict={"Enernst":[Enernst,"V"],"Eta Activation":[Eta_Act,"V"],"Eta Ohmic":[Eta_Ohmic,"V"],"Eta Concentration":[Eta_Conc,"V"],"Loss":[Loss,"V"],
-                            "Vcell":[Vcell,"V"],"PEM Efficiency":[Efficiency,""],"Power":[Power,"W"],"VStack":[VStack,"V"]}
-                Output_Save(Output_Dict, i, OutputFile)
+                Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
+                            "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+                Output_Save(OutputParamsKeys,Output_Dict, i, OutputFile)
+                CSV_Save(OutputParamsKeys,Output_Dict,i,CSVFile)
                 i=i+IStep
-            except Exception as e :
+            except Exception:
                 i = i + IStep
-                print(str(e))
                 OutputFile.write("[Simulation Error]\n")
         OutputFile.close()
         print("Done!")
         if TestMode==False:
-            print("Result In Simulation-Result.opem -->"+os.getcwd())
+            print("Result In Amphlett-Model-Result.opem -->"+os.getcwd())
     except Exception:
         if OutputFile.closed==False:
             OutputFile.close()
