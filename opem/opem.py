@@ -3,6 +3,7 @@ import math
 from .params import *
 import os
 import datetime
+from art import text2art
 
 def isfloat(value):
   try:
@@ -195,29 +196,41 @@ def Get_Input():
         print("Bad Input")
         return False
 
-def Output_Save(OutputDict,InputDict):
+def Output_Save(OutputDict,i,file):
     '''
     This function write analysis result in Simulation-Result.opem file
     :param OutputDict: Analysis Result Dictionary
     :return: None
     '''
-    file=open("Simulation-Result.opem","w")
-    file.write("Simulation Date : "+str(datetime.datetime.now())+"\n")
-    file.write("**********\n")
-    Input_Keys=list(InputDict.keys())
+
     Output_Keys=list(OutputDict.keys())
-    Input_Keys.sort()
     Output_Keys.sort()
-    file.write("Simulation Inputs : \n\n")
-    for key in Input_Keys:
-        file.write(key + " : " + str(InputDict[key]) + "\n")
-    file.write("**********\n")
-    file.write("Simulation Outputs : \n\n")
+    file.write("I :"+str(i)+"\n\n")
+    print("I : "+str(i))
     for key in Output_Keys:
         file.write(key+" : "+str(OutputDict[key])+"\n")
         print(key+" : "+str(OutputDict[key]))
-    file.close()
-
+    file.write("###########\n")
+    print("###########")
+def Output_Init(InputDict):
+    '''
+    This function initial output file
+    :param InputDict: Input Test Vector
+    :type InputDict:dict
+    :return: file object
+    '''
+    Art = text2art("Opem")
+    file = open("Simulation-Result.opem", "w")
+    file.write(Art)
+    file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
+    file.write("**********\n")
+    file.write("Simulation Inputs : \n\n")
+    Input_Keys = list(InputDict.keys())
+    Input_Keys.sort()
+    for key in Input_Keys:
+        file.write(key + " : " + str(InputDict[key]) + "\n")
+    file.write("**********\n")
+    return file
 
 def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     '''
@@ -229,23 +242,36 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
             Input_Dict=InputMethod()
         else:
             Input_Dict=InputMethod
+        OutputFile=Output_Init(Input_Dict)
         print("Analyzing . . .")
+        IEndMax=Input_Dict["JMax"]*Input_Dict["A"]
+        IEnd=min(IEndMax,Input_Dict["i-stop"])
+        IStep=Input_Dict["i-step"]
         Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
-        Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],Input_Dict["i"],Input_Dict["A"])
-        Eta_Ohmic=Eta_Ohmic_Calc(Input_Dict["i"],Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
-        Eta_Conc=Eta_Conc_Calc(Input_Dict["i"],Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
-        Loss=Eta_Act+Eta_Ohmic+Eta_Conc
-        Vcell=Enernst-Loss
-        Efficiency=Efficiency_Calc(Vcell)
-        Power=Vcell*Input_Dict["i"]
-        VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-        Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
-                    "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+        i=Input_Dict["i-start"]
+        while(i<IEnd):
+            try:
+                Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],i,Input_Dict["A"])
+                Eta_Ohmic=Eta_Ohmic_Calc(i,Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
+                Eta_Conc=Eta_Conc_Calc(i,Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
+                Loss=Eta_Act+Eta_Ohmic+Eta_Conc
+                Vcell=Enernst-Loss
+                Efficiency=Efficiency_Calc(Vcell)
+                Power=Vcell*i
+                VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
+                Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
+                            "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+                Output_Save(Output_Dict, i, OutputFile)
+                i=i+IStep
+            except Exception:
+                OutputFile.wirte("[Simulation Error]\n")
+        OutputFile.close()
         print("Done!")
-        Output_Save(Output_Dict, Input_Dict)
         if TestMode==False:
             print("Result In Simulation-Result.opem -->"+os.getcwd())
     except Exception:
+        if OutputFile.closed==False:
+            OutputFile.close()
         print("[Error] Simulation Faild!(Check Your Inputs)")
 
 
