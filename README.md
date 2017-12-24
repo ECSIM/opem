@@ -38,10 +38,15 @@ OPEM is an open source PEM cell simulation tool
 	-  T :  Cell Operation Temperature [K]
 	-  PH2 : Partial Pressure [atm]
 	-  PO2 : Partial Pressure [atm]
-	-  i : Cell load current [A]
+	-  i-start : Cell load current start point [A]
+	-  i-step : Cell load current step
+	-  i-stop : Cell load current end point [A]
 	-  A : active area [cm2]
 	-  l : Membrane Thickness [cm]
 	-  lambda : is an adjustable parameter with a possible maximum value of 23
+	-  R : R-Electronic [ohm] (*Optional) 
+	-  B : Tafel Slope 
+	-  JMax : maximum current density [A/cm2]
 	-  N : Number Of Single Cells
 - Find Your Result In `Simulation-Result.opem` file (Open with Notepad)		
 
@@ -55,11 +60,12 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 
 ## TODO		
 
-- [x] Static Analysis
-  - [x] Nernst Voltage
-  - [x] PEMFC losses model
-  - [x] Power of PEMFC
-  - [x] Efficiency of PEMFC
+- [ ] Static Analysis
+  - [x] Amphlett Static Model
+  	- [x] Nernst Voltage
+  	- [x] PEMFC losses model
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
