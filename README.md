@@ -38,17 +38,17 @@ OPEM is an open source PEM cell simulation tool
 	-  `T` :  Cell Operation Temperature [K]
 	-  `PH2` : Partial Pressure [atm]
 	-  `PO2` : Partial Pressure [atm]
-	-  `i-start` : Cell load current start point [A]
-	-  `i-step` : Cell load current step
-	-  `i-stop` : Cell load current end point [A]
+	-  `i-start` : Cell operating current start point [A]
+	-  `i-step` : Cell operating current step
+	-  `i-stop` : Cell operating current end point [A]
 	-  `A` : active area [cm2]
 	-  `l` : Membrane Thickness [cm]
-	-  `lambda` : is an adjustable parameter with a possible maximum value of 23
+	-  `lambda` : is an adjustable parameter with a min value of 14 and max value of 23
 	-  `R` : R-Electronic [ohm] (*Optional) 
-	-  `B` : Tafel Slope 
+	-  `B` : An empirical constant depending on the cell and its operation state (Tafel Slope) [V]
 	-  `JMax` : maximum current density [A/cm2]
 	-  `N` : Number Of Single Cells
-- Find Your Result In `Simulation-Result.opem` file (Open with Notepad)		
+- Find Your Result In `.opem` & `.csv` files	
 
 		
 
@@ -66,6 +66,8 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] PEMFC losses model
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
+  - [ ] Larminiee-Dicks Static Model
+  - [ ] Chamberline-Kim Static Model
 - [ ] Flat Output
     - [x] Simulation Result
     - [ ] CSV File
@@ -73,6 +75,14 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   - [ ] Plot Graphs
   - [ ] Input/Output
 - [ ] Dynamic Analysis
+  - [ ] Impedance model of fuel cell
+  - [ ] Dicks-Larminie Danymic Model
+  - [ ] Becherif-Hissel Dynamic model
+  - [ ] PEMFC Charge Transport
+  - [ ] PEMFC Mass Trasport
+  - [ ] PEMF Heat Transfer
+  - [ ] PEMFC Catalyst Layers
+  - [ ] PEMFC Flow Feild Plates
 
 
 ## Contribution			
