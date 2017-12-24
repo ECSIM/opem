@@ -268,7 +268,24 @@ def CSV_Save(OutputParamsKeys,OutputDict,i,file):
         if key!=OutputParamsKeys[-1]:
             file.write(",")
     file.write("\n")
-
+def Loss_Calc(Eta_Act,Eta_Ohmic,Eta_Conc):
+    try:
+        result=Eta_Act+Eta_Ohmic+Eta_Conc
+        return result
+    except Exception:
+        print("[Error] Loss Calculation Error")
+def Vcell_Calc(Enernst,Loss):
+    try:
+        result=Enernst-Loss
+        return result
+    except Exception:
+        print("[Error] Vcell Calculation Error")
+def Power_Calc(Vcell,i):
+    try:
+        result=Vcell*i
+        return result
+    except Exception:
+        print("[Error] Power Calculation Error")
 def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     '''
     This function run static analysis with calling other functions
@@ -277,6 +294,7 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     try:
         OutputParamsKeys = list(OutputParams.keys())
         OutputParamsKeys.sort()
+        Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if TestMode==False:
             Input_Dict=InputMethod()
         else:
@@ -287,33 +305,37 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         IEndMax=Input_Dict["JMax"]*Input_Dict["A"]
         IEnd=min(IEndMax,Input_Dict["i-stop"])
         IStep=Input_Dict["i-step"]
-        Enernst=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
+        Output_Dict["Enernst"]=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
         i=Input_Dict["i-start"]
         while(i<IEnd):
             try:
-                Eta_Act=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],i,Input_Dict["A"])
-                Eta_Ohmic=Eta_Ohmic_Calc(i,Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
-                Eta_Conc=Eta_Conc_Calc(i,Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
-                Loss=Eta_Act+Eta_Ohmic+Eta_Conc
-                Vcell=Enernst-Loss
-                Efficiency=Efficiency_Calc(Vcell)
-                Power=Vcell*i
-                VStack=VStack_Calc(Input_Dict["N"],Enernst,Loss)
-                Output_Dict={"Enernst":Enernst,"Eta Activation":Eta_Act,"Eta Ohmic":Eta_Ohmic,"Eta Concentration":Eta_Conc,"Loss":Loss,
-                            "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
+
+                Output_Dict["Eta Activation"]=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],i,Input_Dict["A"])
+                Output_Dict["Eta Ohmic"]=Eta_Ohmic_Calc(i,Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
+                Output_Dict["Eta Concentration"]=Eta_Conc_Calc(i,Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
+                Output_Dict["Loss"]=Loss_Calc(Output_Dict["Eta Activation"],Output_Dict["Eta Ohmic"],Output_Dict["Eta Concentration"])
+                Output_Dict["Vcell"]=Vcell_Calc(Output_Dict["Enernst"],Output_Dict["Loss"])
+                Output_Dict["PEM Efficiency"]=Efficiency_Calc(Output_Dict["Vcell"])
+                Output_Dict["Power"]=Power_Calc(Output_Dict["Vcell"],i)
+                Output_Dict["VStack"]=VStack_Calc(Input_Dict["N"],Output_Dict["Enernst"],Output_Dict["Loss"])
+
                 Output_Save(OutputParamsKeys,Output_Dict, i, OutputFile)
                 CSV_Save(OutputParamsKeys,Output_Dict,i,CSVFile)
                 i=i+IStep
             except Exception:
                 i = i + IStep
                 OutputFile.write("[Simulation Error]\n")
+                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         OutputFile.close()
+        CSVFile.close()
         print("Done!")
         if TestMode==False:
             print("Result In Amphlett-Model-Result.opem -->"+os.getcwd())
     except Exception:
         if OutputFile.closed==False:
             OutputFile.close()
+        if CSVFile.closed==False:
+            CSVFile.close()
         print("[Error] Simulation Faild!(Check Your Inputs)")
 
 
