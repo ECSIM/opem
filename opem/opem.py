@@ -263,8 +263,8 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
                             "Vcell":Vcell,"PEM Efficiency":Efficiency,"Power":Power,"VStack":VStack}
                 Output_Save(Output_Dict, i, OutputFile)
                 i=i+IStep
-            except Exception:
-                OutputFile.wirte("[Simulation Error]\n")
+            except Exception :
+                OutputFile.write("[Simulation Error]\n")
         OutputFile.close()
         print("Done!")
         if TestMode==False:
