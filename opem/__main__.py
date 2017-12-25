@@ -11,9 +11,14 @@ if __name__=="__main__":
     if "TEST" in argsup:
         doctest.testfile("test.py", optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=True)
     else:
-        tprint("OPEM")
-        tprint("v"+str(Version))
-        Static_Analysis()
+        ExitFlag=False
+        while(ExitFlag==False):
+            tprint("OPEM")
+            tprint("v"+str(Version))
+            Static_Analysis()
+            InputIndex = input("Press [R] to restart OPEM or any other key to exit.")
+            if InputIndex.upper() != "R":
+                ExitFlag = True
 
 
 
