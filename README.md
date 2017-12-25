@@ -101,6 +101,30 @@ You can fork the repository, improve or fix some part of it and then send the pu
 Remember to write a few tests for your code before sending pull requests. 
 
 
+## Reference
+
+1- <q>J. C. Amphlett, R. M. Baumert, R. F. Mann, B. A. Peppley, and P. R. Roberge. 1995. "Performance Modeling of the Ballard Mark IV Solid Polymer Electrolyte Fuel Cell." J. Electrochem. Soc. (The Electrochemical Society, Inc.) 142 (1): 9-15. doi: 10.1149/1.2043959. </q>
+
+2- <q>Jeferson M. Correa, Felix A. Farret, Vladimir A. Popov, Marcelo G. Simoes. 2005. "Sensitivity Analysis of the Modeling Parameters Used in Simulation of Proton Exchange Membrane Fuel Cells." IEEE Transactions on Energy Conversion (IEEE) 20 (1): 211-218. doi:10.1109/TEC.2004.842382.</q>
+
+## Cite
+
+If you use OPEM in your research , please cite this :
+
+<pre>
+
+@misc{https://doi.org/10.5281/zenodo.1133110,
+  doi = {10.5281/zenodo.1133110},
+  author = {{Sepand Haghighi} and {Kasra Askari} and {Sarmin Hamidi} and Rahimi,  Mohammad Mahdi},
+  keywords = {Cell,  PEM,  Fuel Cell,  electrochemistry},
+  title = {Opem : An Open Source Pem Cell Simulation Tool},
+  pages = {--},
+  publisher = {Zenodo},
+  year = {2017}
+}
+
+
+</pre>
 
 ## License
 
