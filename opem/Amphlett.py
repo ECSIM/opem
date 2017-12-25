@@ -311,6 +311,9 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     :return: None
     '''
     try:
+        print("###########")
+        print("Amphlett-Model Simulation")
+        print("###########")
         OutputParamsKeys = list(OutputParams.keys())
         OutputParamsKeys.sort()
         Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
