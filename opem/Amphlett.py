@@ -350,6 +350,7 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
         print("Done!")
         if TestMode==False:
             print("Result In Amphlett-Model-Result.opem -->"+os.getcwd())
+            print("Output-Table In Amphlett-Model-Result.csv --> "+os.getcwd())
     except Exception:
         if OutputFile.closed==False:
             OutputFile.close()
