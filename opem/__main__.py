@@ -9,7 +9,7 @@ if __name__=="__main__":
     args=sys.argv
     argsup=list(map(str.upper,args))
     if "TEST" in argsup:
-        doctest.testfile("test.py", optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=True)
+        doctest.testfile("test.py", optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
     else:
         ExitFlag=False
         while(ExitFlag==False):
