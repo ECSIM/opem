@@ -16,7 +16,7 @@
 ----------
 
 ## Overview			
-OPEM is an open source PEM cell simulation tool
+The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simulation package for polymer electrolyte fuel cells. It contains a database of physical phenomena equations,  and kinetics mathematical models in order to perform static/dynamic analysis of PEMFC. The goal of the software is to prepare a platform for collaborative development of  PEMFC mathematical models.
 
 ## Installation		
 
