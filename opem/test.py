@@ -75,7 +75,7 @@ False
 Amphlett-Model Simulation
 ###########
 Analyzing . . .
-[Error] Simulation Faild!(Check Your Inputs)
+[Error] Amphlett Simulation Faild!(Check Your Inputs)
 >>> Loss_Calc(122,22,None)
 [Error] Loss Calculation Error
 >>> Vcell_Calc(122,None)
