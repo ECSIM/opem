@@ -53,6 +53,11 @@ OPEM is an open source PEM cell simulation tool
 	-  `N` : Number Of Single Cells
 - Find Your Result In `.opem` & `.csv` files	
 
+<div align="center">
+
+<a href="https://asciinema.org/a/154228" target="_blank"><img src="https://asciinema.org/a/154228.png" /></a>
+
+</div>
 		
 
 ## Issues & Bug Reports			
