@@ -30,6 +30,8 @@ OPEM is an open source PEM cell simulation tool
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 
+### Exe Version (Only Windows)
+- Download and run [Exe-Version 0.1](https://www.dropbox.com/s/5r72n1ayqbs3oq3/OPEM%28V0.1%29.zip?dl=0)
 ## Usage
 
 ### CLI (Command Line Interface)
