@@ -73,6 +73,12 @@ False
 >>> Static_Analysis(InputMethod={},TestMode=True)
 Analyzing . . .
 [Error] Simulation Faild!(Check Your Inputs)
+>>> Loss_Calc(122,22,None)
+[Error] Loss Calculation Error
+>>> Vcell_Calc(122,None)
+[Error] Vcell Calculation Error
+>>> Power_Calc(122,None)
+[Error] Power Calculation Error
 >>> Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":75,"i-step":0.1,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016}
 >>> Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 Analyzing . . .
