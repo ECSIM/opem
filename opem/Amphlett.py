@@ -323,7 +323,7 @@ def Static_Analysis(InputMethod=Get_Input,TestMode=False):
             Input_Dict=InputMethod
         OutputFile=Output_Init(Input_Dict)
         CSVFile=CSV_Init(OutputParamsKeys)
-        print("Amphlett Analyzing . . .")
+        print("Analyzing . . .")
         IEndMax=Input_Dict["JMax"]*Input_Dict["A"]
         IEnd=min(IEndMax,Input_Dict["i-stop"])
         IStep=Input_Dict["i-step"]

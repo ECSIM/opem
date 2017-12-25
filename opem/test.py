@@ -71,6 +71,9 @@ False
 >>> VStack_Calc(12,22,None)
 [Error] VStack Calculation Error
 >>> Static_Analysis(InputMethod={},TestMode=True)
+###########
+Amphlett-Model Simulation
+###########
 Analyzing . . .
 [Error] Simulation Faild!(Check Your Inputs)
 >>> Loss_Calc(122,22,None)
@@ -81,6 +84,9 @@ Analyzing . . .
 [Error] Power Calculation Error
 >>> Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":75,"i-step":0.1,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016}
 >>> Static_Analysis(InputMethod=Test_Vector,TestMode=True)
+###########
+Amphlett-Model Simulation
+###########
 Analyzing . . .
 I : 0
 Enernst : 1.19075 V
