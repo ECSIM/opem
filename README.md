@@ -7,6 +7,8 @@
 <a href="https://codecov.io/gh/ECSIM/opem">
   <img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
 </a>
+<a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
+<a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
 
 </div>
@@ -14,7 +16,7 @@
 ----------
 
 ## Overview			
-OPEM is an open source PEM cell simulation tool
+The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simulation package for polymer electrolyte fuel cells. It contains a database of physical phenomena equations,  and kinetics mathematical models in order to perform static/dynamic analysis of PEMFC. The goal of the software is to prepare a platform for collaborative development of  PEMFC mathematical models.
 
 ## Installation		
 
@@ -29,22 +31,34 @@ OPEM is an open source PEM cell simulation tool
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 
+### Exe Version (Only Windows)
+- Download and run [Exe-Version 0.1](https://www.dropbox.com/s/5r72n1ayqbs3oq3/OPEM%28V0.1%29.zip?dl=0)
 ## Usage
 
 ### CLI (Command Line Interface)
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `python -m opem` or `python3 -m opem`
 - Enter PEM cell parameters
-	-  T :  Cell Operation Temperature [K]
-	-  PH2 : Partial Pressure [atm]
-	-  PO2 : Partial Pressure [atm]
-	-  i : Cell load current [A]
-	-  A : active area [cm2]
-	-  l : Membrane Thickness [cm]
-	-  lambda : is an adjustable parameter with a possible maximum value of 23
-	-  N : Number Of Single Cells
-- Find Your Result In `Simulation-Result.opem` file (Open with Notepad)		
+	-  `T` :  Cell Operation Temperature [K]
+	-  `PH2` : Partial Pressure [atm]
+	-  `PO2` : Partial Pressure [atm]
+	-  `i-start` : Cell operating current start point [A]
+	-  `i-step` : Cell operating current step
+	-  `i-stop` : Cell operating current end point [A]
+	-  `A` : active area [cm2]
+	-  `l` : Membrane Thickness [cm]
+	-  `lambda` : is an adjustable parameter with a min value of 14 and max value of 23
+	-  `R` : R-Electronic [ohm] (*Optional) 
+	-  `B` : An empirical constant depending on the cell and its operation state (Tafel Slope) [V]
+	-  `JMax` : maximum current density [A/cm2]
+	-  `N` : Number Of Single Cells
+- Find Your Result In `.opem` & `.csv` files	
 
+<div align="center">
+
+<a href="https://asciinema.org/a/154228" target="_blank"><img src="https://asciinema.org/a/154228.png" /></a>
+
+</div>
 		
 
 ## Issues & Bug Reports			
@@ -55,15 +69,29 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 
 ## TODO		
 
-- [x] Static Analysis
-  - [x] Nernst Voltage
-  - [x] PEMFC losses model
-  - [x] Power of PEMFC
-  - [x] Efficiency of PEMFC
+- [ ] Static Analysis
+  - [x] Amphlett Static Model
+  	- [x] Nernst Voltage
+  	- [x] PEMFC losses model
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
+  - [ ] Larminiee-Dicks Static Model
+  - [ ] Chamberline-Kim Static Model
+- [X] Flat Output
+    - [x] Simulation Result
+    - [X] CSV File
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
 - [ ] Dynamic Analysis
+  - [ ] Impedance model of fuel cell
+  - [ ] Dicks-Larminie Danymic Model
+  - [ ] Becherif-Hissel Dynamic model
+  - [ ] PEMFC Charge Transport
+  - [ ] PEMFC Mass Trasport
+  - [ ] PEMF Heat Transfer
+  - [ ] PEMFC Catalyst Layers
+  - [ ] PEMFC Flow Feild Plates
 
 
 ## Contribution			
@@ -73,6 +101,30 @@ You can fork the repository, improve or fix some part of it and then send the pu
 Remember to write a few tests for your code before sending pull requests. 
 
 
+## Reference
+
+<blockquote>1-J. C. Amphlett, R. M. Baumert, R. F. Mann, B. A. Peppley, and P. R. Roberge. 1995. "Performance Modeling of the Ballard Mark IV Solid Polymer Electrolyte Fuel Cell." J. Electrochem. Soc. (The Electrochemical Society, Inc.) 142 (1): 9-15. doi: 10.1149/1.2043959. </blockquote>
+
+<blockquote>2-Jeferson M. Correa, Felix A. Farret, Vladimir A. Popov, Marcelo G. Simoes. 2005. "Sensitivity Analysis of the Modeling Parameters Used in Simulation of Proton Exchange Membrane Fuel Cells." IEEE Transactions on Energy Conversion (IEEE) 20 (1): 211-218. doi:10.1109/TEC.2004.842382.</blockquote>
+
+## Cite
+
+If you use OPEM in your research , please cite this :
+
+<pre>
+
+@misc{https://doi.org/10.5281/zenodo.1133110,
+  doi = {10.5281/zenodo.1133110},
+  author = {{Sepand Haghighi} and {Kasra Askari} and {Sarmin Hamidi} and Rahimi,  Mohammad Mahdi},
+  keywords = {Cell,  PEM,  Fuel Cell,  electrochemistry},
+  title = {Opem : An Open Source Pem Cell Simulation Tool},
+  pages = {--},
+  publisher = {Zenodo},
+  year = {2017}
+}
+
+
+</pre>
 
 ## License
 

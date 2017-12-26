@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import math
-from .params import *
+from .Amphlett_Params import *
 import os
 import datetime
+from art import text2art
 
 
 def isfloat(value):
@@ -90,17 +91,17 @@ def Xi2_Calc(A, PH2, T):
         print("[Error] Xi2 Calculation Faild")
 
 
-def Eta_Conc_Calc(i, A, Jn, JMax):
+def Eta_Conc_Calc(i,A,B,JMax):
     '''
     This function calculate Eta Concentration
     :param i: Cell load current [A]
     :param A: active area [cm^2]
-    :return: Eta Concentration
+    :return: Eta Concentration [V]
     '''
     try:
-        if i != 0:
-            J = (i / A) + Jn
-            result = -B * math.log(1 - (J / JMax))
+        if i!=0:
+            J=(i/A)
+            result=-B*math.log(1-(J/JMax))
             return result
         else:
             return 0
@@ -116,7 +117,7 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
     :param A: active area [cm^2]
     :param T: Cell Operation Temperature [K]
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
-    :return: Eta Ohmic
+    :return: Eta Ohmic [V]
     '''
     try:
         if i != 0:
@@ -139,7 +140,7 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
     :param T: Cell Operation Temperature [K]
     :param PO2: Partial Pressure [atm]
     :param i: cell load current [A]
-    :return:  Eta Activation
+    :return:  Eta Activation [V]
     '''
     try:
         if i != 0:
@@ -204,63 +205,173 @@ def Get_Input():
         if Output["lambda"] > 23:
             Output["lambda"] = 23
             print("[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
+        elif Output["lambda"]<14:
+            Output["lambda"] = 23
+            print("[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
         return Output
     except Exception:
         print("Bad Input")
         return False
 
-
-def Output_Save(OutputDict, InputDict):
+def Output_Save(OutputParamsKeys,OutputDict,i,file):
     '''
     This function write analysis result in Simulation-Result.opem file
+    :param OutputParamsKeys : Output Params as dict
     :param OutputDict: Analysis Result Dictionary
+    :param i: cell load current [A]
+    :param file : file object
     :return: None
     '''
-    file = open("Simulation-Result.opem", "w")
+
+    file.write("I :"+str(i)+" A \n\n")
+    print("I : "+str(i))
+    for key in OutputParamsKeys:
+        file.write(key+" : "+str(OutputDict[key])+" "+OutputParams[key]+"\n")
+        print(key+" : "+str(OutputDict[key])+" "+OutputParams[key])
+    file.write("###########\n")
+    print("###########")
+
+def Output_Init(InputDict):
+    '''
+    This function initialize output file
+    :param InputDict: Input Test Vector
+    :type InputDict:dict
+    :return: file object
+    '''
+    Art = text2art("Opem")
+    file = open("Amphlett-Model-Result.opem", "w")
+    file.write(Art)
     file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
     file.write("**********\n")
-    Input_Keys = list(InputDict.keys())
-    Output_Keys = list(OutputDict.keys())
-    Input_Keys.sort()
-    Output_Keys.sort()
+    file.write("Amphlett Static Model\n\n")
+    file.write("**********\n")
     file.write("Simulation Inputs : \n\n")
+    Input_Keys = list(InputDict.keys())
+    Input_Keys.sort()
     for key in Input_Keys:
         file.write(key + " : " + str(InputDict[key]) + "\n")
     file.write("**********\n")
-    file.write("Simulation Outputs : \n\n")
-    for key in Output_Keys:
-        file.write(key + " : " + str(OutputDict[key]) + "\n")
-        print(key + " : " + str(OutputDict[key]))
-    file.close()
+    return file
 
+def CSV_Init(OutputParamsKeys):
+    '''
+    This function initialize csv file
+    :param OutputParamsKeys: Output Params as dict
+    :return: file object
+    '''
+    file=open("Amphlett-Model-Result.csv","w")
+    file.write("I (A),")
+    for index,item in enumerate(OutputParamsKeys):
+        file.write(item+" ("+OutputParams[item]+")")
+        if index<len(OutputParamsKeys)-1:
+            file.write(",")
+    file.write("\n")
+    return file
 
-def Static_Analysis(InputMethod=Get_Input, TestMode=False):
+def CSV_Save(OutputParamsKeys,OutputDict,i,file):
+    '''
+    This Function Save Parameters In CSV File
+    :param OutputParamsKeys: Output Params
+    :param OutputDict: Output Values Dictionary
+    :param i: cell load current [A]
+    :param file: CSV_File object
+    :return: None
+    '''
+    file.write(str(i)+",")
+    for key in OutputParamsKeys:
+        file.write(str(OutputDict[key]))
+        if key!=OutputParamsKeys[-1]:
+            file.write(",")
+    file.write("\n")
+def Loss_Calc(Eta_Act,Eta_Ohmic,Eta_Conc):
+    '''
+    This function calculate loss
+    :param Eta_Act: Eta Activation [V]
+    :param Eta_Ohmic: Eta Ohmic [V]
+    :param Eta_Conc: Eta Concentration [V]
+    :return: Loss [V]
+    '''
+    try:
+        result=Eta_Act+Eta_Ohmic+Eta_Conc
+        return result
+    except Exception:
+        print("[Error] Loss Calculation Error")
+def Vcell_Calc(Enernst,Loss):
+    '''
+    This function calculate cell voltage
+    :param Enernst:  Enernst [V}
+    :param Loss:  Loss [V]
+    :return:  Cell voltage [V]
+    '''
+    try:
+        result=Enernst-Loss
+        return result
+    except Exception:
+        print("[Error] Vcell Calculation Error")
+def Power_Calc(Vcell,i):
+    '''
+    This function calculate power
+    :param Vcell: Vell Voltage [V]
+    :param i: cell load current [A]
+    :return: Cell power [W]
+    '''
+    try:
+        result=Vcell*i
+        return result
+    except Exception:
+        print("[Error] Power Calculation Error")
+def Static_Analysis(InputMethod=Get_Input,TestMode=False):
     '''
     This function run static analysis with calling other functions
     :return: None
     '''
     try:
-        if TestMode == False:
-            Input_Dict = InputMethod()
+        print("###########")
+        print("Amphlett-Model Simulation")
+        print("###########")
+        OutputParamsKeys = list(OutputParams.keys())
+        OutputParamsKeys.sort()
+        Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
+        if TestMode==False:
+            Input_Dict=InputMethod()
         else:
-            Input_Dict = InputMethod
+            Input_Dict=InputMethod
+        OutputFile=Output_Init(Input_Dict)
+        CSVFile=CSV_Init(OutputParamsKeys)
         print("Analyzing . . .")
-        Enernst = Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
-        Eta_Act = Eta_Act_Calc(Input_Dict["T"], Input_Dict["PO2"], Input_Dict["PH2"], Input_Dict["i"], Input_Dict["A"])
-        Eta_Ohmic = Eta_Ohmic_Calc(Input_Dict["i"], Input_Dict["l"], Input_Dict["A"], Input_Dict["T"],
-                                   Input_Dict["lambda"], R_elec=Input_Dict["R"])
-        Eta_Conc = Eta_Conc_Calc(Input_Dict["i"], Input_Dict["A"], Input_Dict["Jn"], Input_Dict["JMax"])
-        Loss = Eta_Act + Eta_Ohmic + Eta_Conc
-        Vcell = Enernst - Loss
-        Efficiency = Efficiency_Calc(Vcell)
-        Power = Vcell * Input_Dict["i"]
-        VStack = VStack_Calc(Input_Dict["N"], Enernst, Loss)
-        Output_Dict = {"Enernst": Enernst, "Eta Activation": Eta_Act, "Eta Ohmic": Eta_Ohmic,
-                       "Eta Concentration": Eta_Conc, "Loss": Loss,
-                       "Vcell": Vcell, "PEM Efficiency": Efficiency, "Power": Power, "VStack": VStack}
+        IEndMax=Input_Dict["JMax"]*Input_Dict["A"]
+        IEnd=min(IEndMax,Input_Dict["i-stop"])
+        IStep=Input_Dict["i-step"]
+        Output_Dict["Enernst"]=Enernst_Calc(Input_Dict["T"],Input_Dict["PH2"],Input_Dict["PO2"])
+        i=Input_Dict["i-start"]
+        while(i<IEnd):
+            try:
+
+                Output_Dict["Eta Activation"]=Eta_Act_Calc(Input_Dict["T"],Input_Dict["PO2"],Input_Dict["PH2"],i,Input_Dict["A"])
+                Output_Dict["Eta Ohmic"]=Eta_Ohmic_Calc(i,Input_Dict["l"],Input_Dict["A"],Input_Dict["T"],Input_Dict["lambda"],R_elec=Input_Dict["R"])
+                Output_Dict["Eta Concentration"]=Eta_Conc_Calc(i,Input_Dict["A"],Input_Dict["B"],Input_Dict["JMax"])
+                Output_Dict["Loss"]=Loss_Calc(Output_Dict["Eta Activation"],Output_Dict["Eta Ohmic"],Output_Dict["Eta Concentration"])
+                Output_Dict["Vcell"]=Vcell_Calc(Output_Dict["Enernst"],Output_Dict["Loss"])
+                Output_Dict["PEM Efficiency"]=Efficiency_Calc(Output_Dict["Vcell"])
+                Output_Dict["Power"]=Power_Calc(Output_Dict["Vcell"],i)
+                Output_Dict["VStack"]=VStack_Calc(Input_Dict["N"],Output_Dict["Enernst"],Output_Dict["Loss"])
+
+                Output_Save(OutputParamsKeys,Output_Dict, i, OutputFile)
+                CSV_Save(OutputParamsKeys,Output_Dict,i,CSVFile)
+                i=i+IStep
+            except Exception:
+                i = i + IStep
+                OutputFile.write("[Simulation Error]\n")
+                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        OutputFile.close()
+        CSVFile.close()
         print("Done!")
-        Output_Save(Output_Dict, Input_Dict)
-        if TestMode == False:
-            print("Result In Simulation-Result.opem -->" + os.getcwd())
+        if TestMode==False:
+            print("Result In Amphlett-Model-Result.opem -->"+os.getcwd())
+            print("Output-Table In Amphlett-Model-Result.csv --> "+os.getcwd())
     except Exception:
-        print("[Error] Simulation Faild!(Check Your Inputs)")
+        if OutputFile.closed==False:
+            OutputFile.close()
+        if CSVFile.closed==False:
+            CSVFile.close()
+        print("[Error] Amphlett Simulation Faild!(Check Your Inputs)")

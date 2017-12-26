@@ -10,11 +10,10 @@ setup(
   author_email = 'opem@ecsim.ir',
   url = 'https://github.com/ecsim/opem',
   download_url = 'https://github.com/ecsim/opem/tarball/v0.1',
-  keywords = ["OPEM","PEM","FC","CELL","Fuel Cell"],
+  keywords = ["OPEM","PEM","FC","CELL","Fuel Cell","Chemistry"],
   install_requires=[
       'art',
 	  'codecov',
-      'requests',
       ],
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -24,7 +23,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Internet',
+        'Topic :: Scientific/Engineering :: Chemistry',
     ],
   license='MIT',
 )
