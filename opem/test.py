@@ -46,28 +46,28 @@ False
 >>> lambda_param='50000000000'
 >>> N='80000000000'
 >>> Enernst_Calc(T,PH2,PO2)
-[Error] Enernst Calculation Faild
+[Error] Enernst Calculation Failed
 >>> CH2_Calc(PH2,T)
-[Error] CH2 Calculation Faild
+[Error] CH2 Calculation Failed
 >>> CO2_Calc(PO2,T)
-[Error] CO2 Calculation Faild
+[Error] CO2 Calculation Failed
 >>> Rho_Calc(i,A,T,lambda_param)
-[Error] Rho Calculation Faild
+[Error] Rho Calculation Failed
 >>> Xi2_Calc(A,PH2,T)
-[Error] CH2 Calculation Faild
-[Error] Xi2 Calculation Faild
+[Error] CH2 Calculation Failed
+[Error] Xi2 Calculation Failed
 >>> Eta_Conc_Calc(i,A,Jn,JMax)
-[Error] Eta Concentration Calculation Faild
+[Error] Eta Concentration Calculation Failed
 >>> Eta_Ohmic_Calc(i,l,A,T,lambda_param)
-[Error] Rho Calculation Faild
-[Error] Eta Ohmic Calculation Faild
+[Error] Rho Calculation Failed
+[Error] Eta Ohmic Calculation Failed
 >>> Eta_Act_Calc(T,PO2,PH2,i,A)
-[Error] CO2 Calculation Faild
-[Error] CH2 Calculation Faild
-[Error] Xi2 Calculation Faild
-[Error] Eta Activation Calculation Faild
+[Error] CO2 Calculation Failed
+[Error] CH2 Calculation Failed
+[Error] Xi2 Calculation Failed
+[Error] Eta Activation Calculation Failed
 >>> Efficiency_Calc("11111")
-[Error] PEM Efficiency Calculation Faild
+[Error] PEM Efficiency Calculation Failed
 >>> VStack_Calc(12,22,None)
 [Error] VStack Calculation Error
 >>> Static_Analysis(InputMethod={},TestMode=True)
@@ -75,7 +75,7 @@ False
 Amphlett-Model Simulation
 ###########
 Analyzing . . .
-[Error] Amphlett Simulation Faild!(Check Your Inputs)
+[Error] Amphlett Simulation Failed!(Check Your Inputs)
 >>> Loss_Calc(122,22,None)
 [Error] Loss Calculation Error
 >>> Vcell_Calc(122,None)
