@@ -41,7 +41,7 @@ def CH2_Calc(PH2, T):
         result = PH2 / (1.09 * (10 ** 6) * math.exp(77 / T))
         return result
     except Exception:
-        print("[Error] CH2 Calculation Faild")
+        print("[Error] CH2 Calculation Failed")
 
 
 def CO2_Calc(PO2, T):
@@ -152,7 +152,7 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
         else:
             return 0
     except Exception:
-        print("[Error] Eta Activation Calculation Faild")
+        print("[Error] Eta Activation Calculation Failed")
 
 
 def Efficiency_Calc(Vcell):
@@ -165,7 +165,7 @@ def Efficiency_Calc(Vcell):
         result = (uF * Vcell) / HHV
         return result
     except Exception:
-        print("[Error] PEM Efficiency Calculation Faild")
+        print("[Error] PEM Efficiency Calculation Failed")
 
 
 def VStack_Calc(N, Enernst, Loss):
