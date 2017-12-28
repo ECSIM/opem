@@ -1,3 +1,5 @@
 # -*- coding: utf-8 -*-
-from .Amphlett import *
-from .Amphlett_Params import *
+import opem.Amphlett
+import opem.Larminiee
+import opem.Larminiee_Params
+import opem.Amphlett_Params
