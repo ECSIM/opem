@@ -28,6 +28,6 @@ if __name__ == "__main__":
                 AnalysisIndex=-1
             if AnalysisIndex-1 in range(len(MenuKeys)):
                 Menu[MenuKeys[AnalysisIndex-1]]()
-            InputIndex = input("Press [R] to restart OPEM or any other key to exit.")
-            if InputIndex.upper() != "R":
-                ExitFlag = True
+                InputIndex = input("Press [R] to restart OPEM or any other key to exit.")
+                if InputIndex.upper() != "R":
+                    ExitFlag = True
