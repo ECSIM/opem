@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import coverage
->>> from opem import *
+>>> from opem.Amphlett import *
 >>> import random
 >>> cov=coverage.Coverage()
 >>> cov.start()
@@ -68,7 +68,7 @@ False
 [Error] Eta Activation Calculation Failed
 >>> Efficiency_Calc("11111")
 [Error] PEM Efficiency Calculation Failed
->>> VStack_Calc(12,22,None)
+>>> VStack_Calc(12,None)
 [Error] VStack Calculation Error
 >>> Static_Analysis(InputMethod={},TestMode=True)
 ###########
