@@ -168,16 +168,15 @@ def Efficiency_Calc(Vcell):
         print("[Error] PEM Efficiency Calculation Failed")
 
 
-def VStack_Calc(N, Enernst, Loss):
+def VStack_Calc(N, Vcell):
     """
     This function calculate VStack
     :param N: number of single cells
-    :param Enernst: Enernst Voltage [V}
-    :param Loss: Loss [V]
+    :param Vcell: Cell Voltage [V}
     :return: VStack [V]
     """
     try:
-        result = N * (Enernst - Loss)
+        result = N * (Vcell)
         return result
     except Exception:
         print("[Error] VStack Calculation Error")
@@ -374,7 +373,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["Vcell"] = Vcell_Calc(Output_Dict["Enernst"], Output_Dict["Loss"])
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
-                Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Enernst"], Output_Dict["Loss"])
+                Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
 
                 Output_Save(OutputParamsKeys, Output_Dict, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)

@@ -6,7 +6,6 @@ m = 3 * (10 ** -5)
 xi1 = -0.948
 xi3 = 7.6 * (10 ** -5)
 xi4 = -1.93 * (10 ** -4)
-Version = 0.1
 InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                "i-stop": "Cell operating current end point [A]", "A": "active area [cm2]",
