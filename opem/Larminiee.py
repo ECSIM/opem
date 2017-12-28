@@ -35,17 +35,11 @@ def Get_Input():
             Input_Values.append(Input_Item)
         Input_Values = list(map(float, Input_Values))
         Output = dict(zip(Input_Keys, Input_Values))
-        if Output["lambda"] > 23:
-            Output["lambda"] = 23
-            print("[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
-        elif Output["lambda"] < 14:
-            Output["lambda"] = 23
-            print("[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
         if Output["alpha"]>1:
-            Output["lambda"] = 1
+            Output["alpha"] = 1
             print("[Warning] Opem Automatically Set Alpha To Maximum Value (1) ")
         elif Output["alpha"]<0:
-            Output["lambda"] = 0
+            Output["alpha"] = 0
             print("[Warning] Opem Automatically Set Alpha To Maximum Value (0) ")
         return Output
     except Exception:
