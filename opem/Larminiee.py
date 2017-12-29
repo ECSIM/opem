@@ -134,7 +134,7 @@ def Vcell_Calc(Enernst, i,i_0,i_n,i_lim,T,alpha,R_M):
     try:
         A1=(R1*T)/(2*alpha*F)
         B1=(R1*T)/(2*F)
-        result=Enernst-A1*(math.log((i+i_n)/i_0))-R_M*(i+i_n)-B1*(math.log(1-((i+i_n)/i_lim)))
+        result=Enernst-A1*(math.log((i+i_n)/i_0))-R_M*(i-i_n)-B1*(math.log(1-((i-i_n)/i_lim)))
         return result
     except Exception as e:
         print("[Error] Vcell Calculation Error")
