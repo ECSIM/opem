@@ -336,6 +336,8 @@ def Power_Calc(Vcell, i):
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
     This function run static analysis with calling other functions
+    :param InputMethod : Input Function Or Input Test Vector
+    :param TestMode : Test Mode Flag
     :return: None
     """
     OutputFile = None

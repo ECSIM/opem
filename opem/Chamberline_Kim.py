@@ -120,6 +120,13 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
 
 def Vcell_Calc(E0,b,R,m,n,i,A):
     """
+    :param E0: Open circuit voltage [V]
+    :param b: Tafel's parameter for the oxygen reduction [V]
+    :param R: Resistance [ohm.cm2]
+    :param m: Diffusion's parameters [V]
+    :param n: Diffusion's parameters [V]
+    :param i: Cell operating current [A]
+    :param A: Active area [cm2]
     This function calculate cell voltage
     :return:  Cell voltage [V]
     """
@@ -134,6 +141,8 @@ def Vcell_Calc(E0,b,R,m,n,i,A):
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
     This function run static analysis with calling other functions
+    :param InputMethod : Input Function Or Input Test Vector
+    :param TestMode : Test Mode Flag
     :return: None
     """
     OutputFile = None

@@ -17,6 +17,8 @@ def isfloat(value):
 def Get_Input():
     """
     This function get inputs from users
+    :param InputMethod : Input Function Or Input Test Vector
+    :param TestMode : Test Mode Flag
     :return: Input Dictionary
     """
     try:
