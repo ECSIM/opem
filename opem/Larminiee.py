@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import math
-from .Larminiee_Params import *
 from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc,isfloat
-from .Amphlett_Params import uF,HHV
+from .Params import Larminiee_InputParams as InputParams
+from .Params import Larminiee_OutputParams as OutputParams
+from .Params import F,R1
 import os
 import datetime
 from art import text2art

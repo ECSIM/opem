@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
-from .Chamberline_Kim_Params import *
+from .Params import Chamberline_InputParams as InputParams
+from .Params import Chamberline_OutputParams as OutputParams
 from .Amphlett import Efficiency_Calc,Power_Calc,VStack_Calc,PowerStack_Calc,isfloat
 import os
 import datetime

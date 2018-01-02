@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import math
-from .Amphlett_Params import *
+from .Params import Amphlett_InputParams as InputParams
+from .Params import Amphlett_OutputParams as OutputParams
+from .Params import xi1,xi3,xi4,HHV,uF
 import os
 import datetime
 from art import text2art
