@@ -333,6 +333,20 @@ def Power_Calc(Vcell, i):
         print("[Error] Power Calculation Error")
 
 
+def PowerStack_Calc(Power,N):
+    '''
+    This function calculate power_stack
+    :param Power: Single Cell power [W]
+    :param N: number of single cells
+    :return: Power Stack [W]
+    '''
+    try:
+        result=N*Power
+        return result
+    except Exception:
+        print("[Error] Power Stack Calculation Error")
+
+
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
     This function run static analysis with calling other functions
@@ -376,7 +390,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
-
+                Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["VStack"],Input_Dict["N"])
                 Output_Save(OutputParamsKeys, Output_Dict, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = i + IStep

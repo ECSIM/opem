@@ -5,4 +5,4 @@ InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the
                "i-stop": "Cell operating current end point [A]",
                "A": "Active area [cm^2]",
                "N": "Number Of Single Cells"}
-OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V"}
+OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}

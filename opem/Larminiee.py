@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 from .Larminiee_Params import *
-from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc
+from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
 from .Amphlett_Params import uF,HHV
 import os
 import datetime
@@ -175,7 +175,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
-
+                Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
                 Output_Save(OutputParamsKeys, Output_Dict, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = i + IStep

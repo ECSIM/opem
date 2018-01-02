@@ -9,4 +9,4 @@ InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [
                "I_N": "Internal Current [A]",
                "I_0":"Exchange Current [A]",
                "I_Lim":"Limiting Current [A]"}
-OutputParams = {"Enernst": "V","Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V"}
+OutputParams = {"Enernst": "V","Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
