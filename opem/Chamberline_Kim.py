@@ -1,18 +1,11 @@
 # -*- coding: utf-8 -*-
 import math
 from .Chamberline_Kim_Params import *
-from .Amphlett import Efficiency_Calc,Power_Calc,VStack_Calc,PowerStack_Calc
+from .Amphlett import Efficiency_Calc,Power_Calc,VStack_Calc,PowerStack_Calc,isfloat
 import os
 import datetime
 from art import text2art
 
-
-def isfloat(value):
-    try:
-        float(value)
-        return True
-    except ValueError:
-        return False
 def Get_Input():
     """
     This function get inputs from users
@@ -158,7 +151,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
             Input_Dict = InputMethod()
         else:
             Input_Dict = InputMethod
-        print(Input_Dict)
         OutputFile = Output_Init(Input_Dict)
         CSVFile = CSV_Init(OutputParamsKeys)
         print("Analyzing . . .")
