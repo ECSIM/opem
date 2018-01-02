@@ -1,19 +1,12 @@
 # -*- coding: utf-8 -*-
 import math
 from .Larminiee_Params import *
-from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
+from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc,isfloat
 from .Amphlett_Params import uF,HHV
 import os
 import datetime
 from art import text2art
 
-
-def isfloat(value):
-    try:
-        float(value)
-        return True
-    except ValueError:
-        return False
 def Get_Input():
     """
     This function get inputs from users
