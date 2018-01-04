@@ -595,6 +595,14 @@ Done!
 >>> A=50.0
 >>> Vcell_Calc(E0,b,R,m,n,i,A)
 1.244827379954939
+>>> Vcell_Calc(None,b,R,m,n,i,A)
+[Error] Vcell Calculation Error
+>>> Static_Analysis(InputMethod={}, TestMode=True)
+###########
+Chamberline-Kim-Model Simulation
+###########
+Analyzing . . .
+[Error] Chamberline-Kim Simulation Failed!(Check Your Inputs)
 >>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1}
 >>> Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
