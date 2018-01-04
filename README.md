@@ -116,7 +116,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</table> 
 		</html>
 		* For more information about this model visit <a href="Documents/Amphlett.ipynb">here</a>
-	2. Larminiee-Dicks Static Model
+	2. Larminie-Dicks Static Model
 	3. Chamberline-Kim Static Model
 		<html>
 		<table style="text-align:center;">
@@ -204,7 +204,7 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] PEMFC losses model
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-  - [ ] Larminiee-Dicks Static Model
+  - [ ] Larminie-Dicks Static Model
   - [ ] Chamberline-Kim Static Model
 - [X] Flat Output
     - [x] Simulation Result

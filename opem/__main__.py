@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .Amphlett import Static_Analysis as Amphlett_Analysis
-from .Larminiee import Static_Analysis as Larminiee_Analysis
+from .Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from .Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
 from art import tprint
 import doctest
