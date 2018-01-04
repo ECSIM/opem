@@ -120,7 +120,7 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
 
 
 
-def Vcell_Calc(Enernst, i,i_0,i_n,i_lim,T,alpha,R_M):
+def Vcell_Calc(E0, i,J_0,J_n,J_L,T,alpha,R_M,A):
     """
     This function calculate cell voltage
     :param Enernst:  Enernst [V}
@@ -128,9 +128,10 @@ def Vcell_Calc(Enernst, i,i_0,i_n,i_lim,T,alpha,R_M):
     :return:  Cell voltage [V]
     """
     try:
+        J=i/A
         A1=(R1*T)/(2*alpha*F)
         B1=(R1*T)/(2*F)
-        result=Enernst-A1*(math.log((i+i_n)/i_0))-R_M*(i-i_n)-B1*(math.log(1-((i-i_n)/i_lim)))
+        result=E0-A1*(math.log((J+J_n)/J_0))-R_M*(J+J_n)+B1*(math.log(1-((J+J_n)/J_L)))
         return result
     except Exception as e:
         print("[Error] Vcell Calculation Error")
@@ -160,12 +161,11 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         print("Analyzing . . .")
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
-        Output_Dict["Enernst"]= Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
         i = Input_Dict["i-start"]
         while i < IEnd:
             try:
-                Output_Dict["Vcell"] = Vcell_Calc(Output_Dict["Enernst"],i,Input_Dict["I_0"],Input_Dict["I_N"],Input_Dict["I_Lim"],Input_Dict["T"],
-                                                  Input_Dict["alpha"],Input_Dict["R"])
+                Output_Dict["Vcell"] = Vcell_Calc(E0=Input_Dict["E0"],i=i,J_0=Input_Dict["J_0"],J_n=Input_Dict["J_n"],J_L=Input_Dict["J_L"],T=Input_Dict["T"],
+                                                  alpha=Input_Dict["alpha"],R_M=Input_Dict["R"],A=Input_Dict["A"])
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
