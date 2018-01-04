@@ -11,6 +11,18 @@ True
 True
 >>> isfloat('ss')
 False
+>>> filter_lambda({"lambda":24})
+[Warning] Opem Automatically Set Lambda To Maximum Value (23)
+{'lambda': 23}
+>>> filter_alpha({"alpha":2})
+[Warning] Opem Automatically Set Alpha To Maximum Value (1)
+{'alpha': 1}
+>>> filter_lambda({"lambda":13})
+[Warning] Opem Automatically Set Lambda To Minimum Value (14)
+{'lambda': 23}
+>>> filter_alpha({"alpha":-0.1})
+[Warning] Opem Automatically Set Alpha To Maximum Value (0)
+{'alpha': 0}
 >>> T=343.15
 >>> PH2=1
 >>> PO2=1

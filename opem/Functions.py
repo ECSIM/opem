@@ -139,7 +139,7 @@ def filter_alpha(Input_Dict):
         if Input_Dict["alpha"] > 1:
             Input_Dict["alpha"] = 1
             print("[Warning] Opem Automatically Set Alpha To Maximum Value (1) ")
-        elif Output["alpha"] < 0:
+        elif Input_Dict["alpha"] < 0:
             Input_Dict["alpha"] = 0
             print("[Warning] Opem Automatically Set Alpha To Maximum Value (0) ")
         return Input_Dict
