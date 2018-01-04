@@ -39,19 +39,144 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `python -m opem` or `python3 -m opem`
 - Enter PEM cell parameters
-	-  `T` :  Cell Operation Temperature [K]
-	-  `PH2` : Partial Pressure [atm]
-	-  `PO2` : Partial Pressure [atm]
-	-  `i-start` : Cell operating current start point [A]
-	-  `i-step` : Cell operating current step
-	-  `i-stop` : Cell operating current end point [A]
-	-  `A` : active area [cm2]
-	-  `l` : Membrane Thickness [cm]
-	-  `lambda` : is an adjustable parameter with a min value of 14 and max value of 23
-	-  `R` : R-Electronic [ohm] (*Optional) 
-	-  `B` : An empirical constant depending on the cell and its operation state (Tafel Slope) [V]
-	-  `JMax` : maximum current density [A/cm2]
-	-  `N` : Number Of Single Cells
+	1. Amphlett Static Model
+		<table style="text-align:center;">
+			<tr>
+				<td >Input</td>
+				<td >Description</td>
+				<td >Unit</td>
+			</tr>
+			<tr>
+				<td>T</td>
+				<td>Cell Operation Temperature</td>
+				<td>K</td>
+			</tr>
+			<tr>
+				<td>PH2</td>
+				<td>Partial Pressure</td>
+				<td>atm</td>
+			</tr>
+			<tr>
+				<td>PO2</td>
+				<td>Partial Pressure</td>
+				<td>atm</td>
+			</tr>
+			<tr>
+				<td>i-start</td>
+				<td>Cell operating current start point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-step</td>
+				<td>Cell operating current step</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-stop</td>
+				<td>Cell operating current end point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>Active area</td>
+				<td>cm2</td>
+			</tr>
+			<tr>
+				<td>l</td>
+				<td>Membrane Thickness</td>
+				<td>cm</td>
+			</tr>
+			<tr>
+				<td>lambda</td>
+				<td>is an adjustable parameter with a min value of 14 and max value of 23</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>R(*Optional)</td>
+				<td>R-Electronic</td>
+				<td>ohm</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>JMax</td>
+				<td>Maximum current density</td>
+				<td>A/cm2</td>
+			</tr>
+			<tr>
+				<td>N</td>
+				<td>Number Of Single Cells</td>
+				<td>--</td>
+			</tr>
+				
+		</table> 
+		* For more information about this model visit [here](Documents/Amphlett.ipynb "Amphlett.ipynb")
+	2. Larminiee-Dicks Static Model
+	3. Chamberline-Kim Static Model
+		<table style="text-align:center;">
+			<tr>
+				<td >Input</td>
+				<td >Description</td>
+				<td >Unit</td>
+			</tr>
+			<tr>
+				<td>E0</td>
+				<td>Open circuit voltage</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>b</td>
+				<td>Tafel's parameter for the oxygen reduction</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>R</td>
+				<td>Resistance</td>
+				<td>ohm.cm^2</td>
+			</tr>
+			<tr>
+				<td>i-start</td>
+				<td>Cell operating current start point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-step</td>
+				<td>Cell operating current step</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-stop</td>
+				<td>Cell operating current end point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>Active area</td>
+				<td>cm2</td>
+			</tr>
+			<tr>
+				<td>m</td>
+				<td>Diffusion's parameters</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>n</td>
+				<td>Diffusion's parameters</td>
+				<td>(A^-1)(cm^2)</td>
+			</tr>
+			<tr>
+				<td>N</td>
+				<td>Number Of Single Cells</td>
+				<td>--</td>
+			</tr>
+				
+		</table>
+		* For more information about this model visit [here](Documents/Chamberline_Kim.ipynb "Chamberline_Kim.ipynb")
+		
+		
 - Find Your Result In `.opem` & `.csv` files	
 
 <div align="center">
