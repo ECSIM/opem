@@ -26,9 +26,9 @@ Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i-stop": "Cell operating current end point [A]",
                "N": "Number Of Single Cells", "R": "Membrane and Contact Resistances [ohm]",
                "alpha": "Charge Transfer Coefficient",
-               "J_n": "Internal current density [A.cm-2]",
-               "J_0":"Exchange current density at which the overvoltage begins to move from zero [A.cm-2]",
-               "J_L":"limiting current density [A.cm-2]",
+               "i_n": "Internal current [A]",
+               "i_0":"Exchange current at which the overvoltage begins to move from zero [A]",
+               "i_L":"limiting current [A]",
                 "A": "Active area [cm^2]"}
 Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
 
