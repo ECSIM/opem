@@ -115,7 +115,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 				
 		</table> 
 		</html>
-		* For more information about this model visit [here](Documents/Amphlett.ipynb "Amphlett.ipynb")
+		* For more information about this model visit <a href="Documents/Amphlett.ipynb">here</a>
 	2. Larminiee-Dicks Static Model
 	3. Chamberline-Kim Static Model
 		<html>
@@ -178,7 +178,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 				
 		</table>
 		</html>
-		* For more information about this model visit [here](Documents/Chamberline_Kim.ipynb "Chamberline_Kim.ipynb")
+		* For more information about this model visit <a href="Documents/Chamberline_Kim.ipynb">here</a>
 		
 		
 - Find Your Result In `.opem` & `.csv` files	
