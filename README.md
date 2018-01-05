@@ -42,7 +42,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 - Enter PEM cell parameters
 	1. Amphlett Static Model
 		<html>
-		<table style="text-align:center;">
+		<table align="center">
 			<tr>
 				<td >Input</td>
 				<td >Description</td>
@@ -119,7 +119,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		* For more information about this model visit <a href="Documents/Amphlett.ipynb">here</a>
 	2. Larminie-Dicks Static Model
 		<html>
-		<table style="text-align:center;">
+		<table align="center">
 			<tr>
 				<td >Input</td>
 				<td >Description</td>
@@ -186,7 +186,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		* For more information about this model visit <a href="Documents/Larminie_Dicks.ipynb">here</a>
 	3. Chamberline-Kim Static Model
 		<html>
-		<table style="text-align:center;">
+		<table align="center">
 			<tr>
 				<td >Input</td>
 				<td >Description</td>
