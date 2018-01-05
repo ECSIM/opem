@@ -9,8 +9,22 @@ import os
 def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
     """
     This function calculate cell voltage
-    :param Enernst:  Enernst [V}
-    :param Loss:  Loss [V]
+    :param E0:  Fuel Cell reversible no loss voltage [V]
+    :type E0 : float
+    :param i : Cell operating current [A]
+    :type i : float
+    :param i_0: Exchange current at which the overvoltage begins to move from zero [A]
+    :type i_0 : float
+    :param i_n : Internal current [A]
+    :type i_n : float
+    :param i_L : Limiting current [A]
+    :type i_L : float
+    :param R_M : The membrane and contact resistances [ohm]
+    :type R_M : float
+    :param A : The slope of the Tafel line [V]
+    :type A : float
+    :param B : Constant in the mass transfer term [V}
+    :type B : float
     :return:  Cell voltage [V]
     """
     try:
@@ -22,7 +36,11 @@ def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function run static analysis with calling other functions
+    This function run Larminie-Dicks static analysis with calling other functions
+    :param InputMethod : Input Function Or Input Test Vector
+    :param TestMode : Test Mode Flag
+    :type InputMethod : dict or Get_Input function object
+    :type TestMode:bool
     :return: None
     """
     OutputFile = None

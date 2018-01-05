@@ -12,9 +12,12 @@ def Enernst_Calc(T, PH2, PO2):
     """
     This function calculate Enernst
     :param T: Cell Operation Temperature [K]
+    :type T : float
     :param PH2: Partial Pressure [atm]
+    :type PH2 : float
     :param PO2: partial Pressure [atm]
-    :return: Enernst [V}
+    :type PO2: float
+    :return: Enernst [V} as float
     """
     try:
         result = 1.229 - (8.5 * (10 ** -4)) * (T - 298.15) + (4.308 * (10 ** -5)) * T * (
@@ -28,8 +31,10 @@ def CH2_Calc(PH2, T):
     """
     This function calculate CH2
     :param PH2: Partial Pressure [atm]
+    :type PH2 : float
     :param T: Cell Operation Temperature [K]
-    :return: CH2 [mol/cm^3]
+    :type T:float
+    :return: CH2 [mol/cm^3] as float
     """
     try:
         result = PH2 / (1.09 * (10 ** 6) * math.exp(77 / T))
@@ -42,8 +47,10 @@ def CO2_Calc(PO2, T):
     """
     This function calculate CO2
     :param PO2: Partial Pressure [atm]
+    :type PO2 : float
     :param T: Cell Operation Temperature [K]
-    :return: CO2 [mol/cm^3]
+    :type T : float
+    :return: CO2 [mol/cm^3] as float
     """
     try:
         result = PO2 / (5.08 * (10 ** 6) * math.exp(-498 / T))
@@ -56,10 +63,14 @@ def Rho_Calc(i, A, T, lambda_param):
     """
     This function calculate Rho
     :param i: Cell load current [A]
+    :type i : float
     :param A: active area [cm^2]
+    :type A:float
     :param T: Cell Operation Temperature [K]
+    :type T:float
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
-    :return: Rho -- > Membrane Specific Resistivity [ohm.cm]
+    :type lambda_param : float
+    :return: Rho -- > Membrane Specific Resistivity [ohm.cm] as float
     """
     try:
         result = (181.6 * (1 + 0.03 * (i / A) + 0.062 * ((T / 303) ** 2) * ((i / A) ** 2.5))) / (
@@ -73,9 +84,12 @@ def Xi2_Calc(A, PH2, T):
     """
     This function calculate Xi2
     :param A: active area [cm^2]
+    :type A : float
     :param PH2: Partial Pressure [atm]
+    :type PH2:float
     :param T: Cell Operation Temperature [K]
-    :return: Xi2
+    :type T:float
+    :return: Xi2 as float
     """
     try:
         CH2 = CH2_Calc(PH2, T)
@@ -89,8 +103,10 @@ def Eta_Conc_Calc(i, A, B, JMax):
     """
     This function calculate Eta Concentration
     :param i: Cell load current [A]
+    :type i :float
     :param A: active area [cm^2]
-    :return: Eta Concentration [V]
+    :type A : float
+    :return: Eta Concentration [V] as float
     """
     try:
         if i != 0:
@@ -106,13 +122,19 @@ def Eta_Conc_Calc(i, A, B, JMax):
 def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
     """
     This function calculate Eta Ohmic
-    :param R_elec:
+    :param R_elec: R-Electronic [ohm]
+    :type R_elec:float
     :param i: cell load current [A]
+    :type i:float
     :param l: Membrane Thickness [cm]
+    :type l:float
     :param A: active area [cm^2]
+    :type A:float
     :param T: Cell Operation Temperature [K]
+    :type T:float
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
-    :return: Eta Ohmic [V]
+    :type lambda_param:float
+    :return: Eta Ohmic [V] as float
     """
     try:
         if i != 0:
@@ -133,9 +155,12 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
     """
     This function calculate Eta Activation
     :param T: Cell Operation Temperature [K]
+    :type T:float
     :param PO2: Partial Pressure [atm]
+    :type PO2:float
     :param i: cell load current [A]
-    :return:  Eta Activation [V]
+    :type i:float
+    :return:  Eta Activation [V] as float
     """
     try:
         if i != 0:
@@ -153,7 +178,8 @@ def Efficiency_Calc(Vcell):
     """
     This function calculate PEM Cell Efficiency
     :param Vcell: Cell Voltage [V]
-    :return: Efficiency
+    :type Vcell:float
+    :return: Efficiency as float
     """
     try:
         result = (uF * Vcell) / HHV
@@ -166,8 +192,10 @@ def VStack_Calc(N, Vcell):
     """
     This function calculate VStack
     :param N: number of single cells
+    :type N  :int
     :param Vcell: Cell Voltage [V}
-    :return: VStack [V]
+    :type Vcell:float
+    :return: VStack [V] as float
     """
     try:
         result = N * (Vcell)
@@ -179,9 +207,12 @@ def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
     """
     This function calculate loss
     :param Eta_Act: Eta Activation [V]
+    :type Eta_Act : float
     :param Eta_Ohmic: Eta Ohmic [V]
+    :type Eta_Ohmic : float
     :param Eta_Conc: Eta Concentration [V]
-    :return: Loss [V]
+    :type Eta_Conc : float
+    :return: Loss [V] as float
     """
     try:
         result = Eta_Act + Eta_Ohmic + Eta_Conc
@@ -194,8 +225,10 @@ def Vcell_Calc(Enernst, Loss):
     """
     This function calculate cell voltage
     :param Enernst:  Enernst [V}
+    :type Enernst : float
     :param Loss:  Loss [V]
-    :return:  Cell voltage [V]
+    :type Loss : float
+    :return:  Cell voltage [V] as float
     """
     try:
         result = Enernst - Loss
@@ -208,8 +241,10 @@ def Power_Calc(Vcell, i):
     """
     This function calculate power
     :param Vcell: Vell Voltage [V]
+    :type Vcell : float
     :param i: cell load current [A]
-    :return: Cell power [W]
+    :type i : float
+    :return: Cell power [W] as float
     """
     try:
         result = Vcell * i
@@ -222,8 +257,10 @@ def PowerStack_Calc(Power,N):
     '''
     This function calculate power_stack
     :param Power: Single Cell power [W]
+    :type Power : float
     :param N: number of single cells
-    :return: Power Stack [W]
+    :type N : int
+    :return: Power Stack [W] as float
     '''
     try:
         result=N*Power
@@ -234,9 +271,11 @@ def PowerStack_Calc(Power,N):
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function run static analysis with calling other functions
+    This function run Amphlett static analysis with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
     :param TestMode : Test Mode Flag
+    :type InputMethod : dict or Get_Input function object
+    :type TestMode:bool
     :return: None
     """
     OutputFile = None

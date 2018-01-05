@@ -5,6 +5,12 @@ from art import text2art
 
 
 def isfloat(value):
+    '''
+    This function check input for float conversion
+    :param value: input value
+    :type value:str
+    :return: True if input_value is a number and False otherwise
+    '''
     try:
         float(value)
         return True
@@ -20,6 +26,9 @@ def input_test(a):
 def Get_Input(InputParams,input_item=input):
     """
     This function get inputs from users
+    :param InputParams : InputParams  for each  model
+    :type InputParams :dict
+    :param input_item : input function (this parameter added for Get_Input doctest)
     :return: Input Dictionary
     """
     try:
@@ -47,9 +56,14 @@ def Get_Input(InputParams,input_item=input):
 def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file):
     """
     This function write analysis result in Simulation-Result.opem file
-    :param OutputParamsKeys : Output Params as dict
+    :param OutputParamsKeys : OutputParams Key as  list
+    :type OutputParamsKeys : list
     :param OutputDict: Analysis Result Dictionary
+    :type OutputDict:dict
+    :param OutputParams : Output Params as dict
+    :type OutputParams : dict
     :param i: cell load current [A]
+    :type i : float
     :param file : file object
     :return: None
     """
@@ -68,6 +82,8 @@ def Output_Init(InputDict,Title):
     This function initialize output file
     :param InputDict: Input Test Vector
     :type InputDict:dict
+    :param Title : Simulation Title
+    :type Title :str
     :return: file object
     """
     Art = text2art("Opem")
@@ -89,7 +105,10 @@ def Output_Init(InputDict,Title):
 def CSV_Init(OutputParamsKeys,OutputParams,Title):
     """
     This function initialize csv file
-    :param OutputParamsKeys: Output Params as dict
+    :param OutputParamsKeys: OutputParams Key as list
+    :type OutputParamsKeys : list
+    :param OutputParams : Output Params as dict
+    :type OutputParams : dict
     :return: file object
     """
     file = open(Title+"-Model-Result.csv", "w")
@@ -105,10 +124,14 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title):
 def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
     This Function Save Parameters In CSV File
-    :param OutputParamsKeys: Output Params
-    :param OutputDict: Output Values Dictionary
+    :param OutputParamsKeys : OutputParams Key as  list
+    :type OutputParamsKeys : list
+    :param OutputDict: Analysis Result Dictionary
+    :type OutputDict:dict
     :param i: cell load current [A]
-    :param file: CSV_File object
+    :type i : float
+    :param file : file object
+    :return: None
     :return: None
     """
     file.write(str(i) + ",")
@@ -123,6 +146,7 @@ def filter_lambda(Input_Dict):
     '''
     This function filter lambda parameter
     :param Input_Dict: Input Parameters Dictionary
+    :type Input_Dict : dict
     :return: Modified Dictionary
     '''
     try:
@@ -140,6 +164,7 @@ def filter_alpha(Input_Dict):
     '''
     This function filter alpha parameter
     :param Input_Dict: Input Parameters Dictionary
+    :type Input_Dict : dict
     :return: Modified Dictionary
     '''
     try:

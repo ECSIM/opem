@@ -11,14 +11,21 @@ from art import text2art
 
 def Vcell_Calc(E0,b,R,m,n,i,A):
     """
-    :param E0: Open circuit voltage [V]
-    :param b: Tafel's parameter for the oxygen reduction [V]
-    :param R: Resistance [ohm.cm2]
-    :param m: Diffusion's parameters [V]
-    :param n: Diffusion's parameters [V]
-    :param i: Cell operating current [A]
-    :param A: Active area [cm2]
     This function calculate cell voltage
+    :param E0: Open circuit voltage [V]
+    :type E0 : float
+    :param b: Tafel's parameter for the oxygen reduction [V]
+    :type b : float
+    :param R: Resistance [ohm.cm2]
+    :type R : float
+    :param m: Diffusion's parameters [V]
+    :type m : float
+    :param n: Diffusion's parameters [V]
+    :type n : float
+    :param i: Cell operating current [A]
+    :type i : float
+    :param A: Active area [cm2]
+    :type A : float
     :return:  Cell voltage [V]
     """
     try:
@@ -31,9 +38,11 @@ def Vcell_Calc(E0,b,R,m,n,i,A):
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function run static analysis with calling other functions
+    This function run Chamberline-Kim static analysis with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
     :param TestMode : Test Mode Flag
+    :type InputMethod : dict or Get_Input function object
+    :type TestMode:bool
     :return: None
     """
     OutputFile = None
