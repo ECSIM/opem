@@ -52,6 +52,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                                                   i_L=Input_Dict["i_L"],R_M=Input_Dict["RM"],B=Input_Dict["B"],A=Input_Dict["A"])
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
+                Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
+                Output_Dict["Power-Stack"] = PowerStack_Calc(Output_Dict["Power"], Input_Dict["N"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = i + IStep

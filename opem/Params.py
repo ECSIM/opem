@@ -28,8 +28,8 @@ Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i_n": "Internal current [A]",
                "i_0":"Exchange current at which the overvoltage begins to move from zero [A]",
                "i_L":"limiting current [A]",
-                "A": "The slope of the Tafel line [V]"}
-Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W"}
+                "A": "The slope of the Tafel line [V]","N": "Number Of Single Cells"}
+Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W","VStack": "V","Power-Stack":"W"}
 
 Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the oxygen reduction [V]", "R": "Resistance [ohm.cm^2]",
                "m": "Diffusion's parameters [V]", "n": "Diffusion's parameters [(A^-1)(cm^2)]",
