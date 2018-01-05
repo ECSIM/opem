@@ -169,7 +169,6 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 				<td>Limiting current</td>
 				<td>A</td>
 			</tr>
-			
 			<tr>
 				<td>RM</td>
 				<td>The membrane and contact resistances</td>
