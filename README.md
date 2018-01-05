@@ -33,7 +33,9 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 
 ### Exe Version (Only Windows)
-- Download and run [Exe-Version 0.2](https://www.dropbox.com/s/5r72n1ayqbs3oq3/OPEM%28V0.1%29.zip?dl=0)
+- Download [Exe-Version 0.2](https://www.dropbox.com/s/5r72n1ayqbs3oq3/OPEM%28V0.1%29.zip?dl=0)
+- Extract Zip File
+- Run `OPEM.exe`
 ## Usage
 
 ### CLI (Command Line Interface)
