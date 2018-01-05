@@ -21,16 +21,15 @@ Amphlett_OutputParams = {"Enernst": "V", "Eta Activation": "V", "Eta Ohmic": "V"
 
 
 Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
-                "T": "Cell Operation Temperature [K]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                "i-stop": "Cell operating current end point [A]",
-               "N": "Number Of Single Cells", "R": "Membrane and Contact Resistances [ohm]",
-               "alpha": "Charge Transfer Coefficient",
+               "RM": "The membrane and contact resistances [ohm]",
+               "B": "Constant in the mass transfer term [V]",
                "i_n": "Internal current [A]",
                "i_0":"Exchange current at which the overvoltage begins to move from zero [A]",
                "i_L":"limiting current [A]",
-                "A": "Active area [cm^2]"}
-Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
+                "A": "The slope of the Tafel line [V]"}
+Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W"}
 
 Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the oxygen reduction [V]", "R": "Resistance [ohm.cm^2]",
                "m": "Diffusion's parameters [V]", "n": "Diffusion's parameters [(A^-1)(cm^2)]",

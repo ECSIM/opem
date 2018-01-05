@@ -3,11 +3,10 @@ import math
 from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
 from .Params import Larminiee_InputParams as InputParams
 from .Params import Larminiee_OutputParams as OutputParams
-from .Params import F,R1
 from .Functions import *
 import os
 
-def Vcell_Calc(E0, i,i_0,i_n,i_L,T,alpha,R_M,A):
+def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
     """
     This function calculate cell voltage
     :param Enernst:  Enernst [V}
@@ -15,13 +14,7 @@ def Vcell_Calc(E0, i,i_0,i_n,i_L,T,alpha,R_M,A):
     :return:  Cell voltage [V]
     """
     try:
-        J=i/A
-        J_n=(i_n/A)
-        J_0=(i_0/A)
-        J_L=(i_L/A)
-        A1=(R1*T)/(2*alpha*F)
-        B1=(R1*T)/(2*F)
-        result=E0-A1*(math.log10((J+J_n)/J_0))-R_M*(J+J_n)-B1*(math.log10(1-((J+J_n)/J_L)))
+        result=E0-A*(math.log((i+i_n)/i_0))-R_M*(i+i_n)+B*(math.log(1-((i+i_n)/i_L)))
         return result
     except Exception:
         print("[Error] Vcell Calculation Error")
@@ -55,12 +48,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         i = Input_Dict["i-start"]
         while i < IEnd:
             try:
-                Output_Dict["Vcell"] = Vcell_Calc(E0=Input_Dict["E0"],i=i,i_0=Input_Dict["i_0"],i_n=Input_Dict["i_n"],i_L=Input_Dict["i_L"],T=Input_Dict["T"],
-                                                  alpha=Input_Dict["alpha"],R_M=Input_Dict["R"],A=Input_Dict["A"])
+                Output_Dict["Vcell"] = Vcell_Calc(E0=Input_Dict["E0"],i=i,i_0=Input_Dict["i_0"],i_n=Input_Dict["i_n"],
+                                                  i_L=Input_Dict["i_L"],R_M=Input_Dict["RM"],B=Input_Dict["B"],A=Input_Dict["A"])
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
-                Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
-                Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = i + IStep
