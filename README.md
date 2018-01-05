@@ -81,7 +81,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 			<tr>
 				<td align="center">A</td>
 				<td align="center">Active area</td>
-				<td align="center">cm2</td>
+				<td align="center">cm^2</td>
 			</tr>
 			<tr>
 				<td align="center">l</td>
@@ -106,7 +106,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 			<tr>
 				<td align="center">JMax</td>
 				<td align="center">Maximum current density</td>
-				<td align="center">A/cm2</td>
+				<td align="center">A/(cm^2)</td>
 			</tr>
 			<tr>
 				<td align="center">N</td>
@@ -225,7 +225,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 			<tr>
 				<td align="center">A</td>
 				<td align="center">Active area</td>
-				<td align="center">cm2</td>
+				<td align="center">cm^2</td>
 			</tr>
 			<tr>
 				<td align="center">m</td>
