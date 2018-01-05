@@ -42,76 +42,76 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 - Enter PEM cell parameters
 	1. Amphlett Static Model
 		<html>
-		<table align="center">
+		<table>
 			<tr>
-				<td >Input</td>
-				<td >Description</td>
-				<td >Unit</td>
+				<td align="center">Input</td>
+				<td align="center">Description</td>
+				<td align="center">Unit</td>
 			</tr>
 			<tr>
-				<td>T</td>
-				<td>Cell Operation Temperature</td>
-				<td>K</td>
+				<td align="center">T</td>
+				<td align="center">Cell Operation Temperature</td>
+				<td align="center">K</td>
 			</tr>
 			<tr>
-				<td>PH2</td>
-				<td>Partial Pressure</td>
-				<td>atm</td>
+				<td align="center">PH2</td>
+				<td align="center">Partial Pressure</td>
+				<td align="center">atm</td>
 			</tr>
 			<tr>
-				<td>PO2</td>
-				<td>Partial Pressure</td>
-				<td>atm</td>
+				<td align="center">PO2</td>
+				<td align="center">Partial Pressure</td>
+				<td align="center">atm</td>
 			</tr>
 			<tr>
-				<td>i-start</td>
-				<td>Cell operating current start point</td>
-				<td>A</td>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-step</td>
-				<td>Cell operating current step</td>
-				<td>A</td>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-stop</td>
-				<td>Cell operating current end point</td>
-				<td>A</td>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>A</td>
-				<td>Active area</td>
-				<td>cm2</td>
+				<td align="center">A</td>
+				<td align="center">Active area</td>
+				<td align="center">cm2</td>
 			</tr>
 			<tr>
-				<td>l</td>
-				<td>Membrane Thickness</td>
-				<td>cm</td>
+				<td align="center">l</td>
+				<td align="center">Membrane Thickness</td>
+				<td align="center">cm</td>
 			</tr>
 			<tr>
-				<td>lambda</td>
-				<td>is an adjustable parameter with a min value of 14 and max value of 23</td>
-				<td>--</td>
+				<td align="center">lambda</td>
+				<td align="center">is an adjustable parameter with a min value of 14 and max value of 23</td>
+				<td align="center">--</td>
 			</tr>
 			<tr>
-				<td>R(*Optional)</td>
-				<td>R-Electronic</td>
-				<td>ohm</td>
+				<td align="center">R(*Optional)</td>
+				<td align="center">R-Electronic</td>
+				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td>B</td>
-				<td> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
-				<td>V</td>
+				<td align="center">B</td>
+				<td align="center"> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>JMax</td>
-				<td>Maximum current density</td>
-				<td>A/cm2</td>
+				<td align="center">JMax</td>
+				<td align="center">Maximum current density</td>
+				<td align="center">A/cm2</td>
 			</tr>
 			<tr>
-				<td>N</td>
-				<td>Number Of Single Cells</td>
-				<td>--</td>
+				<td align="center">N</td>
+				<td align="center">Number Of Single Cells</td>
+				<td align="center">--</td>
 			</tr>
 				
 		</table> 
@@ -119,66 +119,66 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		* For more information about this model visit <a href="Documents/Amphlett.ipynb">here</a>
 	2. Larminie-Dicks Static Model
 		<html>
-		<table align="center">
+		<table>
 			<tr>
-				<td >Input</td>
-				<td >Description</td>
-				<td >Unit</td>
+				<td align="center">Input</td>
+				<td align="center">Description</td>
+				<td align="center">Unit</td>
 			</tr>
 			<tr>
-				<td>E0</td>
-				<td>Fuel Cell reversible no loss voltage</td>
-				<td>V</td>
+				<td align="center">E0</td>
+				<td align="center">Fuel Cell reversible no loss voltage</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>A</td>
-				<td>The slope of the Tafel line</td>
-				<td>V</td>
+				<td align="center">A</td>
+				<td align="center">The slope of the Tafel line</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>B</td>
-				<td>Constant in the mass transfer term</td>
-				<td>V</td>
+				<td align="center">B</td>
+				<td align="center">Constant in the mass transfer term</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>i-start</td>
-				<td>Cell operating current start point</td>
-				<td>A</td>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-step</td>
-				<td>Cell operating current step</td>
-				<td>A</td>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-stop</td>
-				<td>Cell operating current end point</td>
-				<td>A</td>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i_n</td>
-				<td>Internal current</td>
-				<td>A</td>
+				<td align="center">i_n</td>
+				<td align="center">Internal current</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i_0</td>
-				<td>Exchange current at which the overvoltage begins to move from zero	</td>
-				<td>A</td>
+				<td align="center">i_0</td>
+				<td align="center">Exchange current at which the overvoltage begins to move from zero	</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i_L</td>
-				<td>Limiting current</td>
-				<td>A</td>
+				<td align="center">i_L</td>
+				<td align="center">Limiting current</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>RM</td>
-				<td>The membrane and contact resistances</td>
-				<td>ohm</td>
+				<td align="center">RM</td>
+				<td align="center">The membrane and contact resistances</td>
+				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td>N</td>
-				<td>Number Of Single Cells</td>
-				<td>--</td>
+				<td align="center">N</td>
+				<td align="center">Number Of Single Cells</td>
+				<td align="center">--</td>
 			</tr>
 				
 		</table>
@@ -186,61 +186,61 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		* For more information about this model visit <a href="Documents/Larminie_Dicks.ipynb">here</a>
 	3. Chamberline-Kim Static Model
 		<html>
-		<table align="center">
+		<table>
 			<tr>
-				<td >Input</td>
-				<td >Description</td>
-				<td >Unit</td>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
 			</tr>
 			<tr>
-				<td>E0</td>
-				<td>Open circuit voltage</td>
-				<td>V</td>
+				<td align="center">E0</td>
+				<td align="center">Open circuit voltage</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>b</td>
-				<td>Tafel's parameter for the oxygen reduction</td>
-				<td>V</td>
+				<td align="center">b</td>
+				<td align="center">Tafel's parameter for the oxygen reduction</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>R</td>
-				<td>Resistance</td>
-				<td>ohm.cm^2</td>
+				<td align="center">R</td>
+				<td align="center">Resistance</td>
+				<td align="center">ohm.cm^2</td>
 			</tr>
 			<tr>
-				<td>i-start</td>
-				<td>Cell operating current start point</td>
-				<td>A</td>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-step</td>
-				<td>Cell operating current step</td>
-				<td>A</td>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>i-stop</td>
-				<td>Cell operating current end point</td>
-				<td>A</td>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
 			</tr>
 			<tr>
-				<td>A</td>
-				<td>Active area</td>
-				<td>cm2</td>
+				<td align="center">A</td>
+				<td align="center">Active area</td>
+				<td align="center">cm2</td>
 			</tr>
 			<tr>
-				<td>m</td>
-				<td>Diffusion's parameters</td>
-				<td>V</td>
+				<td align="center">m</td>
+				<td align="center">Diffusion's parameters</td>
+				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td>n</td>
-				<td>Diffusion's parameters</td>
-				<td>(A^-1)(cm^2)</td>
+				<td align="center">n</td>
+				<td align="center">Diffusion's parameters</td>
+				<td align="center">(A^-1)(cm^2)</td>
 			</tr>
 			<tr>
-				<td>N</td>
-				<td>Number Of Single Cells</td>
-				<td>--</td>
+				<td align="center">N</td>
+				<td align="center">Number Of Single Cells</td>
+				<td align="center">--</td>
 			</tr>
 				
 		</table>
