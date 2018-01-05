@@ -1,5 +1,4 @@
 codecov
 art
-PyQt5
 
 

@@ -6,7 +6,7 @@ from .Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
 from art import tprint
 import doctest
 import sys
-Version=0.1
+Version=0.2
 
 if __name__ == "__main__":
     args = sys.argv
