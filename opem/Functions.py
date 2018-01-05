@@ -10,7 +10,14 @@ def isfloat(value):
         return True
     except ValueError:
         return False
-def Get_Input(InputParams):
+def input_test(a):
+    '''
+    This function is for test Get_Input
+    :param a: input
+    :return: "1"
+    '''
+    return "1"
+def Get_Input(InputParams,input_item=input):
     """
     This function get inputs from users
     :return: Input Dictionary
@@ -23,7 +30,7 @@ def Get_Input(InputParams):
             Input_Flag = False
             Input_Item = None
             while not Input_Flag:
-                Input_Item = input("Please Enter " + item + "(" + InputParams[item] + ") : ")
+                Input_Item = input_item("Please Enter " + item + "(" + InputParams[item] + ") : ")
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:

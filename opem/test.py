@@ -1119,6 +1119,13 @@ VStack : 18.167291473272865 V
 Vcell : 0.7898822379683854 V
 ###########
 Done!
+>>> Input_dict=Get_Input({"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]"},input_item=input_test)
+>>> Input_keys=list(Input_dict.keys())
+>>> Input_keys.sort()
+>>> print(Input_keys)
+['PH2', 'PO2', 'T']
+>>> print(list(Input_dict.values()))
+[1.0, 1.0, 1.0]
 >>> cov.stop()
 >>> cov.save()
 
