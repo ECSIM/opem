@@ -117,6 +117,73 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</html>
 		* For more information about this model visit <a href="Documents/Amphlett.ipynb">here</a>
 	2. Larminie-Dicks Static Model
+		<html>
+		<table style="text-align:center;">
+			<tr>
+				<td >Input</td>
+				<td >Description</td>
+				<td >Unit</td>
+			</tr>
+			<tr>
+				<td>E0</td>
+				<td>Fuel Cell reversible no loss voltage</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>The slope of the Tafel line</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td>Constant in the mass transfer term</td>
+				<td>V</td>
+			</tr>
+			<tr>
+				<td>i-start</td>
+				<td>Cell operating current start point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-step</td>
+				<td>Cell operating current step</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i-stop</td>
+				<td>Cell operating current end point</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i_n</td>
+				<td>Internal current</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i_0</td>
+				<td>Exchange current at which the overvoltage begins to move from zero	</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>i_L</td>
+				<td>Limiting current</td>
+				<td>A</td>
+			</tr>
+			
+			<tr>
+				<td>RM</td>
+				<td>The membrane and contact resistances</td>
+				<td>ohm</td>
+			</tr>
+			<tr>
+				<td>N</td>
+				<td>Number Of Single Cells</td>
+				<td>--</td>
+			</tr>
+				
+		</table>
+		</html>
+		* For more information about this model visit <a href="Documents/Larminie_Dicks.ipynb">here</a>
 	3. Chamberline-Kim Static Model
 		<html>
 		<table style="text-align:center;">
@@ -198,14 +265,20 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 
 ## TODO		
 
-- [ ] Static Analysis
+- [x] Static Analysis
   - [x] Amphlett Static Model
   	- [x] Nernst Voltage
   	- [x] PEMFC losses model
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-  - [ ] Larminie-Dicks Static Model
-  - [ ] Chamberline-Kim Static Model
+  - [x] Larminie-Dicks Static Model
+  	- [x] PEMFC losses model
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
+  - [x] Chamberline-Kim Static Model
+  	- [x] PEMFC losses model
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
 - [X] Flat Output
     - [x] Simulation Result
     - [X] CSV File
