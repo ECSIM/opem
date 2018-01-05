@@ -833,6 +833,12 @@ Done!
 0.8677440917797067
 >>> Vcell_Calc(E0=None, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
 [Error] Vcell Calculation Error
+>>> Static_Analysis(InputMethod={}, TestMode=True)
+###########
+Larminie-Dicks-Model Simulation
+###########
+Analyzing . . .
+[Error] Larminiee Simulation Failed!(Check Your Inputs)
 >>> Test_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1}
 >>> Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
