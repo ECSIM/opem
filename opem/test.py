@@ -1128,7 +1128,7 @@ Done!
 [1.0, 1.0, 1.0]
 >>> from opem.Dynamic import *
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":100,"i-step":0.1}
->>> Static_Analysis(InputMethod=Test_Vector, TestMode=True)
+>>> Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 >>> cov.stop()
 >>> cov.save()
 
