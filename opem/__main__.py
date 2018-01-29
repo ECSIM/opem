@@ -3,6 +3,7 @@
 from .Amphlett import Static_Analysis as Amphlett_Analysis
 from .Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from .Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
+from .Dynamic import Static_Analysis as Dynamic_Analysis
 from art import tprint
 import doctest
 import sys
@@ -11,7 +12,7 @@ Version=0.2
 if __name__ == "__main__":
     args = sys.argv
     argsup = list(map(str.upper, args))
-    Menu={"Amphlett_Analysis":Amphlett_Analysis,"Larminiee_Analysis":Larminiee_Analysis,"Chamberline_Kim_Analysis":Chamberline_Kim_Analysis}
+    Menu={"Amphlett_Analysis":Amphlett_Analysis,"Larminiee_Analysis":Larminiee_Analysis,"Chamberline_Kim_Analysis":Chamberline_Kim_Analysis,"Dynamic_Analysis":Dynamic_Analysis}
     MenuKeys=list(Menu.keys())
     MenuKeys.sort()
     if "TEST" in argsup:

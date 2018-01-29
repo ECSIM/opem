@@ -6,8 +6,10 @@ m = 3 * (10 ** -5)
 xi1 = -0.948
 xi3 = 7.6 * (10 ** -5)
 xi4 = -1.93 * (10 ** -4)
-F=96500
-R1=8.314
+#F=96500
+#R1=8.314
+R=8314.47
+F=96484600
 Amphlett_InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                "i-stop": "Cell operating current end point [A]", "A": "active area [cm^2]",
@@ -38,3 +40,14 @@ Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's param
                "A": "Active area [cm^2]",
                "N": "Number Of Single Cells"}
 Chamberline_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
+
+
+Dynamic_InputParams={"N0":"Number of fuel cells in the stack","E0":"opencell voltage [V]",
+                     "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm]",
+                     "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm]","tH2":"Hydrogen time constant [s]",
+                     "tO2":"Oxygen time constant [s]","qH2":"Molar flow of hydrogen [kmol.s^(-1)]",
+                     "rho":"Hydrogen-Oxygen flow rate","Rint":"Fuel cell internal resistance [ohm]",
+                     "B":"Activation voltage constant [V]","C":"Constant [A^(-1)]",
+                     "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
+                     "i-stop": "Cell operating current end point [A]"}
+Dynamic_Outparams = {"Vcell":"V","Power":"W","PEM Efficiency": "","PO2":"atm","PH2":"atm","E":"V"}
