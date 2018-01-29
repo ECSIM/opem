@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import math
-from .Amphlett import Enernst_Calc,Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
+from .Amphlett import Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
 from .Params import Larminiee_InputParams as InputParams
 from .Params import Larminiee_OutputParams as OutputParams
 from .Functions import *

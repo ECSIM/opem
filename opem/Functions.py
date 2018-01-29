@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 import datetime
 from art import text2art
 
