@@ -2,7 +2,8 @@
 import math
 from .Params import Dynamic_InputParams as InputParams
 from .Params import Dynamic_Outparams as OutputParams
-from .Params import R,F,uF,HHV
+from .Params import R,F
+from .Amphlett import Efficiency_Calc,Power_Calc
 from .Functions import *
 import os
 
@@ -11,13 +12,17 @@ import os
 def Enernst_Calc(E0,N0,T, PH2, PO2):
     """
     This function calculate Enernst
+    :param E0: Opencell voltage [V]
+    :type E0 : float
+    :param N0: Number of fuel cells in the stack
+    :type N0 : int
     :param T: Cell Operation Temperature [K]
     :type T : float
-    :param PH2: Partial Pressure [atm]
+    :param PH2:  Partial Pressure [atm]
     :type PH2 : float
-    :param PO2: partial Pressure [atm]
-    :type PO2: float
-    :return: Enernst [V} as float
+    :param PO2: Partial Pressure [atm]
+    :type PO2 : float
+    :return: Enernest [V] as float
     """
     try:
         result = N0*(E0+(R*T/(2*F))*math.log(PH2*((PO2)**0.5)))
@@ -28,12 +33,17 @@ def Enernst_Calc(E0,N0,T, PH2, PO2):
 
 def PH2_Calc(KH2,tH2,Kr,I,qH2):
     """
-    This function calculate CH2
-    :param PH2: Partial Pressure [atm]
-    :type PH2 : float
-    :param T: Cell Operation Temperature [K]
-    :type T:float
-    :return: CH2 [mol/cm^3] as float
+    This function calculate PH2
+    :param KH2: Hydrogen Valve Constant [kmol.s^(-1).atm]
+    :type KH2 : float
+    :param tH2: Hydrogen time constant [s]
+    :type tH2 : float
+    :param Kr: #TODO
+    :param I: Cell load current [A]
+    :type I : float
+    :param qH2: Molar flow of hydrogen [kmol.s^(-1)]
+    :type qH2 : float
+    :return: PH2 [atm] as float
     """
     try:
         result = ((1/KH2)/(1+tH2))*(qH2-2*Kr*I)
@@ -44,12 +54,17 @@ def PH2_Calc(KH2,tH2,Kr,I,qH2):
 
 def PO2_Calc(KO2,tO2,Kr,I,qO2):
     """
-    This function calculate CO2
-    :param PO2: Partial Pressure [atm]
-    :type PO2 : float
-    :param T: Cell Operation Temperature [K]
-    :type T : float
-    :return: CO2 [mol/cm^3] as float
+    This function calculate PO2
+    :param KO2: Oxygen Valve Constant [kmol.s^(-1).atm]
+    :type KO2 : float
+    :param tO2: Oxygen time constant [s]
+    :type tO2 : float
+    :param Kr: #TODO
+    :param I: Cell load current [A]
+    :type I : float
+    :param qO2: Molar flow of oxygen [kmol.s^(-1)
+    :type qO2 : float
+    :return: PO2 [atm] as float
     """
     try:
         result = ((1/KO2)/(1+tO2))*(qO2-Kr*I)
@@ -60,16 +75,10 @@ def PO2_Calc(KO2,tO2,Kr,I,qO2):
 
 def Kr_Calc(N0):
     """
-    This function calculate Rho
-    :param i: Cell load current [A]
-    :type i : float
-    :param A: active area [cm^2]
-    :type A:float
-    :param T: Cell Operation Temperature [K]
-    :type T:float
-    :param lambda_param: is an adjustable parameter with a possible maximum value of 23
-    :type lambda_param : float
-    :return: Rho -- > Membrane Specific Resistivity [ohm.cm] as float
+    This function calculate Kr
+    :param N0: Number of fuel cells in the stack
+    :type N0 : int
+    :return: Kr as float
     """
     try:
         result = N0/(4*F)
@@ -77,46 +86,23 @@ def Kr_Calc(N0):
     except Exception:
         print("[Error] Kr Calculation Failed")
 
-def Efficiency_Calc(Vcell):
-    """
-    This function calculate PEM Cell Efficiency
-    :param Vcell: Cell Voltage [V]
-    :type Vcell:float
-    :return: Efficiency as float
-    """
-    try:
-        result = (uF * Vcell) / HHV
-        return result
-    except Exception:
-        print("[Error] PEM Efficiency Calculation Failed")
-
-
-def VStack_Calc(N, Vcell):
-    """
-    This function calculate VStack
-    :param N: number of single cells
-    :type N  :int
-    :param Vcell: Cell Voltage [V}
-    :type Vcell:float
-    :return: VStack [V] as float
-    """
-    try:
-        result = N * (Vcell)
-        return result
-    except Exception:
-        print("[Error] VStack Calculation Error")
-
 
 
 
 def Vcell_Calc(Enernst, B,C,I,Rint):
     """
-    This function calculate cell voltage
-    :param Enernst:  Enernst [V}
+    This function calculate Vcell
+    :param Enernst: Enernst [V]
     :type Enernst : float
-    :param Loss:  Loss [V]
-    :type Loss : float
-    :return:  Cell voltage [V] as float
+    :param B: Activation voltage constant [V]
+    :type B: float
+    :param C: Constant [A^(-1)
+    :type C : float
+    :param I: Cell load current [A]
+    :type I: float
+    :param Rint: Fuel cell internal resistance [ohm]
+    :type Rint : float
+    :return: Vcell [V] as float
     """
     try:
         result = Enernst-B*math.log(C*I)-Rint*I
@@ -126,12 +112,12 @@ def Vcell_Calc(Enernst, B,C,I,Rint):
 
 def qO2_Calc(qH2,rho):
     """
-    This function calculate cell voltage
-    :param Enernst:  Enernst [V}
-    :type Enernst : float
-    :param Loss:  Loss [V]
-    :type Loss : float
-    :return:  Cell voltage [V] as float
+    This function calculate qO2
+    :param qH2: Molar flow of hydrogen [kmol.s^(-1)]
+    :type qH2 : float
+    :param rho: Hydrogen-Oxygen flow rate
+    :type rho : float
+    :return: qO2 [kmol.s^(-1)] as float
     """
     try:
         result = (qH2/rho)
@@ -140,27 +126,14 @@ def qO2_Calc(qH2,rho):
         print("[Error] Vcell Calculation Error")
 
 
-def Power_Calc(Vcell, i):
+
+
+
+
+
+def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function calculate power
-    :param Vcell: Vell Voltage [V]
-    :type Vcell : float
-    :param i: cell load current [A]
-    :type i : float
-    :return: Cell power [W] as float
-    """
-    try:
-        result = Vcell * i
-        return result
-    except Exception:
-        print("[Error] Power Calculation Error")
-
-
-
-
-def Static_Analysis(InputMethod=Get_Input, TestMode=False):
-    """
-    This function run Amphlett static analysis with calling other functions
+    This function run Dynamic analysis #TODO with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
     :param TestMode : Test Mode Flag
     :type InputMethod : dict or Get_Input function object

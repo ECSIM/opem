@@ -42,7 +42,7 @@ Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's param
 Chamberline_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
 
 
-Dynamic_InputParams={"N0":"Number of fuel cells in the stack","E0":"opencell voltage [V]",
+Dynamic_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm]","tH2":"Hydrogen time constant [s]",
                      "tO2":"Oxygen time constant [s]","qH2":"Molar flow of hydrogen [kmol.s^(-1)]",
