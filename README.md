@@ -22,7 +22,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 ## Installation		
 
 ### Source Code
-- Download [Version 0.2](https://github.com/ecsim/opem/archive/v0.2.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 0.3](https://github.com/ecsim/opem/archive/v0.3.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
