@@ -248,6 +248,94 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</table>
 		</html>
 		* For more information about this model visit <a href="Documents/Chamberline_Kim.ipynb">here</a>
+	4. Padulles Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">FuelCell temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">Kmol/s.atm</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">Kmol/s.atm</td>
+			</tr>
+			<tr>
+				<td align="center">tH2</td>
+				<td align="center">Hydrogen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">tO2</td>
+				<td align="center">Oxygen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">B</td>
+				<td align="center">Activation voltage constant</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">C</td>
+				<td align="center">Activation constant parameter</td>
+				<td align="center">A^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">Rint</td>
+				<td align="center">FuelCell internal resistance</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">qH2</td>
+				<td align="center">Molar flow of hydrogen</td>
+				<td align="center">kmol/s</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+			
+				
+		</table>
+		</html>
+		* For more information about this model visit <a href="Documents/Padulles.ipynb">here</a>
 		
 		
 - Find Your Result In `.opem` & `.csv` files	
@@ -316,6 +404,10 @@ Remember to write a few tests for your code before sending pull requests.
 
 <blockquote>
 4- I. Sadli, P. Thounthong, J.-P. Martin, S. Rael, B. Davat. 2006. "Behaviour of a PEMFC supplying a low voltage static converter." Journal of Power Sources (Elsevier) 156: 119–125. doi:10.1016/j.jpowsour.2005.08.021.
+</blockquote>
+
+<blockquote>
+5- J. Padulles, G.W. Ault, J.R. McDonald. 2000. "An integrated SOFC plant dynamic model for power systems simulation." Journal of Power Sources (Elsevier) 86 (1-2): 495-500. doi:10.1016/S0378-7753(99)00430-9.
 </blockquote>
 
 
