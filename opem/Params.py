@@ -50,4 +50,4 @@ Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell vo
                      "B":"Activation voltage constant [V]","C":"Constant [A^(-1)]",
                      "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                      "i-stop": "Cell operating current end point [A]"}
-Padulles_Outparams = {"Vcell":"V","Power":"W","PEM Efficiency": "","PO2":"atm","PH2":"atm","E":"V"}
+Padulles_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","E":"V"}
