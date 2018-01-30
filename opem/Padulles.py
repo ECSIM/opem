@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
-from .Params import Dynamic_InputParams as InputParams
-from .Params import Dynamic_Outparams as OutputParams
+from .Params import Padulles_InputParams as InputParams
+from .Params import Padulles_Outparams as OutputParams
 from .Params import R,F,uF,HHV
 from .Amphlett import Power_Calc
 from .Functions import *
