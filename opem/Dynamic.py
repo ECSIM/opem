@@ -2,8 +2,8 @@
 import math
 from .Params import Dynamic_InputParams as InputParams
 from .Params import Dynamic_Outparams as OutputParams
-from .Params import R,F
-from .Amphlett import Efficiency_Calc,Power_Calc
+from .Params import R,F,uF,HHV
+from .Amphlett import Power_Calc
 from .Functions import *
 import os
 
@@ -127,6 +127,20 @@ def qO2_Calc(qH2,rho):
 
 
 
+def Efficiency_Calc(Vcell,N):
+    """
+    This function calculate PEM Cell Efficiency
+    :param Vcell: Cell Voltage [V]
+    :type Vcell:float
+    :param N0: Number of fuel cells in the stack
+    :type N0 : int
+    :return: Efficiency as float
+    """
+    try:
+        result = (uF * Vcell) / (N*HHV)
+        return result
+    except Exception:
+        print("[Error] PEM Efficiency Calculation Failed")
 
 
 
@@ -168,7 +182,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["PH2"]=PH2_Calc(Input_Dict["KH2"],Input_Dict["tH2"],Kr,i,Input_Dict["qH2"])
                 Output_Dict["E"]=Enernst_Calc(Input_Dict["E0"],Input_Dict["N0"],Input_Dict["T"],Output_Dict["PH2"],Output_Dict["PO2"])
                 Output_Dict["Vcell"]=Vcell_Calc(Output_Dict["E"],Input_Dict["B"],Input_Dict["C"],i,Input_Dict["Rint"])
-                Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
+                Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"],Input_Dict["N0"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
