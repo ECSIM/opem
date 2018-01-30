@@ -38,7 +38,8 @@ def PH2_Calc(KH2,tH2,Kr,I,qH2):
     :type KH2 : float
     :param tH2: Hydrogen time constant [s]
     :type tH2 : float
-    :param Kr: #TODO
+    :param Kr: Modeling constant [Kmol/s.A]
+    :type Kr : float
     :param I: Cell load current [A]
     :type I : float
     :param qH2: Molar flow of hydrogen [kmol.s^(-1)]
@@ -59,7 +60,8 @@ def PO2_Calc(KO2,tO2,Kr,I,qO2):
     :type KO2 : float
     :param tO2: Oxygen time constant [s]
     :type tO2 : float
-    :param Kr: #TODO
+    :param Kr: Modeling constant [Kmol/s.A]
+    :type Kr : float
     :param I: Cell load current [A]
     :type I : float
     :param qO2: Molar flow of oxygen [kmol.s^(-1)
@@ -147,7 +149,7 @@ def Efficiency_Calc(Vcell,N):
 
 def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function run Dynamic analysis #TODO with calling other functions
+    This function run Padulles analysis  with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
     :param TestMode : Test Mode Flag
     :type InputMethod : dict or Get_Input function object
@@ -157,7 +159,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     OutputFile = None
     CSVFile = None
     try:
-        Simulation_Title="Dynamic"
+        Simulation_Title="Padulles"
         print("###########")
         print(Simulation_Title+"-Model Simulation")
         print("###########")
