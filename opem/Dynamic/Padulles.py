@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import math
-from .Params import Padulles_InputParams as InputParams
-from .Params import Padulles_Outparams as OutputParams
-from .Params import R,F,uF,HHV
-from .Amphlett import Power_Calc
-from .Functions import *
+from opem.Params import Padulles_InputParams as InputParams
+from opem.Params import Padulles_Outparams as OutputParams
+from opem.Params import R,F,uF,HHV
+from opem.Static.Amphlett import Power_Calc
+from opem.Functions import *
 import os
 
 

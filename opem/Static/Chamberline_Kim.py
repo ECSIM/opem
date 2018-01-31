@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import math
-from .Params import Chamberline_InputParams as InputParams
-from .Params import Chamberline_OutputParams as OutputParams
-from .Amphlett import Efficiency_Calc,Power_Calc,VStack_Calc,PowerStack_Calc
-from .Functions import *
+from opem.Params import Chamberline_InputParams as InputParams
+from opem.Params import Chamberline_OutputParams as OutputParams
+from opem.Static.Amphlett import Efficiency_Calc,Power_Calc,VStack_Calc,PowerStack_Calc
+from opem.Functions import *
 import os
 import datetime
 from art import text2art

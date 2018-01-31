@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import coverage
->>> from opem.Amphlett import *
+>>> from opem.Static.Amphlett import *
 >>> import random
 >>> cov=coverage.Coverage()
 >>> cov.start()
@@ -585,7 +585,7 @@ VStack : 0.8222862630668619 V
 Vcell : 0.8222862630668619 V
 ###########
 Done!
->>> from opem.Chamberline_Kim import *
+>>> from opem.Static.Chamberline_Kim import *
 >>> E0=0.982
 >>> b=0.0689
 >>> R=0.328
@@ -820,7 +820,7 @@ VStack : 1.1319218672996567 V
 Vcell : 1.1319218672996567 V
 ###########
 Done!
->>> from opem.Larminie_Dicks import *
+>>> from opem.Static.Larminie_Dicks import *
 >>> E0=1.178
 >>> A=0.0587
 >>> B=0.0517
@@ -1126,8 +1126,8 @@ Done!
 ['PH2', 'PO2', 'T']
 >>> print(list(Input_dict.values()))
 [1.0, 1.0, 1.0]
->>> from opem.Padulles import *
->>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":100,"i-step":0.1}
+>>> from opem.Dynamic.Padulles import *
+>>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1}
 >>> Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Model Simulation

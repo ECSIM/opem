@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import opem.Amphlett
-import opem.Larminie_Dicks
-import opem.Chamberline_Kim
+import opem.Static.Amphlett
+import opem.Static.Larminie_Dicks
+import opem.Static.Chamberline_Kim
 import opem.Params
 import opem.Functions
-import opem.Padulles
+import opem.Dynamic.Padulles

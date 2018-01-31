@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import math
-from .Amphlett import Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
-from .Params import Larminiee_InputParams as InputParams
-from .Params import Larminiee_OutputParams as OutputParams
-from .Functions import *
+from opem.Static.Amphlett import Power_Calc,Efficiency_Calc,Rho_Calc,VStack_Calc,PowerStack_Calc
+from opem.Params import Larminiee_InputParams as InputParams
+from opem.Params import Larminiee_OutputParams as OutputParams
+from opem.Functions import *
 import os
 
 def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):

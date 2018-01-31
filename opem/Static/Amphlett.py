@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import math
-from .Params import Amphlett_InputParams as InputParams
-from .Params import Amphlett_OutputParams as OutputParams
-from .Params import xi1,xi3,xi4,HHV,uF
-from .Functions import *
+from opem.Params import Amphlett_InputParams as InputParams
+from opem.Params import Amphlett_OutputParams as OutputParams
+from opem.Params import xi1,xi3,xi4,HHV,uF
+from opem.Functions import *
 import os
 
 
