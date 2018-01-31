@@ -1463,6 +1463,16 @@ Padulles I-Model Simulation
 ###########
 Analyzing . . .
 [Error] Dynamic Simulation Failed!(Check Your Inputs)
+>>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1)
+[Error] Enernst Calculation Failed
+>>> PH2_Calc(KH2=None,tH2=1,Kr=0.3,I=3,qH2=0.3)
+[Error] PH2 Calculation Failed
+>>> PO2_Calc(KO2=None,tO2=1.2,Kr=0.3,I=5,qO2=0.3)
+[Error] PO2 Calculation Failed
+>>> Kr_Calc(N0=None)
+[Error] Kr Calculation Failed
+>>> qO2_Calc(qH2=2,rho=0)
+[Error] qO2 Calculation Error
 >>> cov.stop()
 >>> cov.save()
 

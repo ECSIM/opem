@@ -125,7 +125,7 @@ def qO2_Calc(qH2,rho):
         result = (qH2/rho)
         return result
     except Exception:
-        print("[Error] Vcell Calculation Error")
+        print("[Error] qO2 Calculation Error")
 
 
 
