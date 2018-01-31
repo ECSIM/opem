@@ -376,6 +376,26 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   - [ ] Plot Graphs
   - [ ] Input/Output
 - [ ] Dynamic Analysis
+  - [x] Padulles Dynamic Model I
+    - [x] Nernst Voltage
+  	- [x] Voltage of PEMFC
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
+  - [ ] Padulles Dynamic Model II
+    - [ ] Nernst Voltage
+  	- [ ] Voltage of PEMFC
+  	- [ ] Power of PEMFC
+  	- [ ] Efficiency of PEMFC
+  - [ ] Padulles-Hauer Dynamic Model
+    - [ ] Nernst Voltage
+  	- [ ] Voltage of PEMFC
+  	- [ ] Power of PEMFC
+  	- [ ] Efficiency of PEMFC
+  - [ ] Padulles-Hauer-Pathapati-Amphlett Dynamic Model
+    - [ ] Nernst Voltage
+  	- [ ] Voltage of PEMFC
+  	- [ ] Power of PEMFC
+  	- [ ] Efficiency of PEMFC
   - [ ] Impedance model of fuel cell
   - [ ] Dicks-Larminie Danymic Model
   - [ ] Becherif-Hissel Dynamic model
