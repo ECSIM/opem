@@ -2,7 +2,7 @@
 from distutils.core import setup
 setup(
   name = 'opem',
-  packages = ['opem'],
+  packages = ['opem','opem.Static','opem.Dynamic'],
   version = '0.3',
   description = 'Open Source PEM Cell Simulation Tool',
   long_description='''Open Source PEM Cell Simulation Tool''',
