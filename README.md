@@ -269,12 +269,12 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 			<tr>
 				<td align="center">KH2</td>
 				<td align="center">Hydrogen valve constant</td>
-				<td align="center">Kmol/s.atm</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
 			</tr>
 			<tr>
 				<td align="center">KO2</td>
 				<td align="center">Oxygen valve constant</td>
-				<td align="center">Kmol/s.atm</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
 			</tr>
 			<tr>
 				<td align="center">tH2</td>
