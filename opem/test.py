@@ -1126,11 +1126,11 @@ Done!
 ['PH2', 'PO2', 'T']
 >>> print(list(Input_dict.values()))
 [1.0, 1.0, 1.0]
->>> from opem.Dynamic.Padulles import *
+>>> from opem.Dynamic.Padulles1 import *
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1}
 >>> Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
-Padulles-Model Simulation
+Padulles I-Model Simulation
 ###########
 Analyzing . . .
 [Error] Vcell Calculation Error
@@ -1457,6 +1457,12 @@ PH2 : 2.159388537918463 atm
 PO2 : 2.0915322161021423 atm
 ###########
 Done!
+>>> Dynamic_Analysis(InputMethod={}, TestMode=True)
+###########
+Padulles I-Model Simulation
+###########
+Analyzing . . .
+[Error] Dynamic Simulation Failed!(Check Your Inputs)
 >>> cov.stop()
 >>> cov.save()
 

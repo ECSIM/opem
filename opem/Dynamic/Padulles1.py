@@ -149,7 +149,7 @@ def Efficiency_Calc(Vcell,N):
 
 def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     """
-    This function run Padulles analysis  with calling other functions
+    This function run Padulles I analysis  with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
     :param TestMode : Test Mode Flag
     :type InputMethod : dict or Get_Input function object
@@ -159,7 +159,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     OutputFile = None
     CSVFile = None
     try:
-        Simulation_Title="Padulles"
+        Simulation_Title="Padulles I"
         print("###########")
         print(Simulation_Title+"-Model Simulation")
         print("###########")
