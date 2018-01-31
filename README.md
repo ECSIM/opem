@@ -248,7 +248,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</table>
 		</html>
 		* For more information about this model visit <a href="Documents/Chamberline_Kim.ipynb">here</a>
-	4. Padulles Dynamic Model
+	4. Padulles Dynamic Model I
 		<html>
 		<table>
 			<tr>
