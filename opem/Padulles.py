@@ -34,11 +34,11 @@ def Enernst_Calc(E0,N0,T, PH2, PO2):
 def PH2_Calc(KH2,tH2,Kr,I,qH2):
     """
     This function calculate PH2
-    :param KH2: Hydrogen Valve Constant [kmol.s^(-1).atm]
+    :param KH2: Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]
     :type KH2 : float
     :param tH2: Hydrogen time constant [s]
     :type tH2 : float
-    :param Kr: Modeling constant [Kmol/s.A]
+    :param Kr: Modeling constant [kmol.s^(-1).A^(-1)]
     :type Kr : float
     :param I: Cell load current [A]
     :type I : float
@@ -56,11 +56,11 @@ def PH2_Calc(KH2,tH2,Kr,I,qH2):
 def PO2_Calc(KO2,tO2,Kr,I,qO2):
     """
     This function calculate PO2
-    :param KO2: Oxygen Valve Constant [kmol.s^(-1).atm]
+    :param KO2: Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]
     :type KO2 : float
     :param tO2: Oxygen time constant [s]
     :type tO2 : float
-    :param Kr: Modeling constant [Kmol/s.A]
+    :param Kr: Modeling constant [kmol.s^(-1).A^(-1)]
     :type Kr : float
     :param I: Cell load current [A]
     :type I : float
@@ -80,7 +80,7 @@ def Kr_Calc(N0):
     This function calculate Kr
     :param N0: Number of fuel cells in the stack
     :type N0 : int
-    :return: Kr as float
+    :return: Kr [kmol.s^(-1).A^(-1)] as float
     """
     try:
         result = N0/(4*F)
