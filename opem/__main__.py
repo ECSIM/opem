@@ -8,7 +8,7 @@ from .Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from art import tprint
 import doctest
 import sys
-Version=0.3
+Version=0.4
 
 if __name__ == "__main__":
     args = sys.argv
