@@ -485,11 +485,11 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] Voltage of PEMFC
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-  - [ ] Padulles Dynamic Model II
-    - [ ] Nernst Voltage
-  	- [ ] Voltage of PEMFC
-  	- [ ] Power of PEMFC
-  	- [ ] Efficiency of PEMFC
+  - [x] Padulles Dynamic Model II
+    - [x] Nernst Voltage
+  	- [x] Voltage of PEMFC
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
   - [ ] Padulles-Hauer Dynamic Model
     - [ ] Nernst Voltage
   	- [ ] Voltage of PEMFC
