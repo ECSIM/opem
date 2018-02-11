@@ -69,7 +69,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     OutputFile = None
     CSVFile = None
     try:
-        Simulation_Title="Padulles II"
+        Simulation_Title="Padulles-II"
         print("###########")
         print(Simulation_Title+"-Model Simulation")
         print("###########")
@@ -80,8 +80,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
             Input_Dict = InputMethod(InputParams)
         else:
             Input_Dict = InputMethod
-        OutputFile = Output_Init(Input_Dict,Simulation_Title)
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title)
+        OutputFile = Output_Init(Input_Dict,Simulation_Title,Input_Dict["Name"])
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Input_Dict["Name"])
         print("Analyzing . . .")
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]

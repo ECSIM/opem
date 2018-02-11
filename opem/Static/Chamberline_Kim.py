@@ -59,8 +59,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
             Input_Dict = InputMethod(InputParams)
         else:
             Input_Dict = InputMethod
-        OutputFile = Output_Init(Input_Dict,Simualtion_Title)
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simualtion_Title)
+        OutputFile = Output_Init(Input_Dict,Simualtion_Title,Input_Dict["Name"])
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simualtion_Title,Input_Dict["Name"])
         print("Analyzing . . .")
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]

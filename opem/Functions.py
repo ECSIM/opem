@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 from art import text2art
+import os
 
 
 def isfloat(value):
@@ -34,6 +35,13 @@ def Get_Input(InputParams,input_item=input):
         Input_Keys = list(InputParams.keys())
         Input_Keys.sort()
         Input_Values = []
+        Name=""
+        while(True):
+            Name=input("Please Enter Simulation Name :")
+            if len(Name)!=0:
+                break
+            else:
+                print("[Error] Bad Name Try Again")
         for item in Input_Keys:
             Input_Flag = False
             Input_Item = None
@@ -46,6 +54,7 @@ def Get_Input(InputParams,input_item=input):
             Input_Values.append(Input_Item)
         Input_Values = list(map(float, Input_Values))
         Output = dict(zip(Input_Keys, Input_Values))
+        Output["Name"]=Name
         return Output
     except Exception:
         print("Bad Input")
@@ -76,7 +85,7 @@ def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file):
     print("###########")
 
 
-def Output_Init(InputDict,Title):
+def Output_Init(InputDict,Title,Name):
     """
     This function initialize output file
     :param InputDict: Input Test Vector
@@ -86,7 +95,9 @@ def Output_Init(InputDict,Title):
     :return: file object
     """
     Art = text2art("Opem")
-    file = open(Title+"-Model-Result.opem", "w")
+    if Title not in os.listdir(os.getcwd()):
+        os.mkdir(Title)
+    file = open(os.path.join(Title,Name+".opem"), "w")
     file.write(Art)
     file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
     file.write("**********\n")
@@ -101,7 +112,7 @@ def Output_Init(InputDict,Title):
     return file
 
 
-def CSV_Init(OutputParamsKeys,OutputParams,Title):
+def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     """
     This function initialize csv file
     :param OutputParamsKeys: OutputParams Key as list
@@ -110,7 +121,9 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title):
     :type OutputParams : dict
     :return: file object
     """
-    file = open(Title+"-Model-Result.csv", "w")
+    if Title not in os.listdir(os.getcwd()):
+        os.mkdir(Title)
+    file = open(os.path.join(Title,Name+".csv"), "w")
     file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
         file.write(item + " (" + OutputParams[item] + ")")

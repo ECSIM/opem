@@ -293,8 +293,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         else:
             Input_Dict = InputMethod
         Input_Dict=filter_lambda(Input_Dict)
-        OutputFile = Output_Init(Input_Dict,Simulation_Title)
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title)
+        OutputFile = Output_Init(Input_Dict,Simulation_Title,Input_Dict["Name"])
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Input_Dict["Name"])
         print("Analyzing . . .")
         IEndMax = Input_Dict["JMax"] * Input_Dict["A"]
         IEnd = min(IEndMax, Input_Dict["i-stop"])
