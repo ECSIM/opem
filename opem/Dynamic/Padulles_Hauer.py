@@ -1,0 +1,89 @@
+# -*- coding: utf-8 -*-
+import math
+from opem.Params import Padulles_Hauer_InputParams as InputParams
+from opem.Params import Padulles_Hauer_Outparams as OutputParams
+from opem.Static.Amphlett import Power_Calc
+from opem.Dynamic.Padulles1 import PH2_Calc,PO2_Calc,Kr_Calc,Vcell_Calc,qO2_Calc,Efficiency_Calc
+from opem.Dynamic.Padulles2 import Enernst_Calc,PH2O_Calc
+from opem.Functions import *
+import os
+
+
+
+
+def qH2_Calc(qMethanol,CV,t1,t2):
+    '''
+    This function calculate qH2
+    :param qMethanol: Molar flow of Methanol [kmol.s^(-1)
+    :type qMethanol : float
+    :param CV: Conversion factor
+    :type CV : float
+    :param t1: Reformer time constant
+    :type t1 : float
+    :param t2 : Reformer time constant
+    :type t2 : float
+    :return: qH2 as float
+    '''
+    try:
+        result=(qMethanol*CV)/(t1+((t2)**2)+(t1+t2)+1)
+        return result
+    except Exception:
+        print("[Error] qH2 Calculation Failed")
+
+def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
+    """
+    This function run Padulles I analysis  with calling other functions
+    :param InputMethod : Input Function Or Input Test Vector
+    :param TestMode : Test Mode Flag
+    :type InputMethod : dict or Get_Input function object
+    :type TestMode:bool
+    :return: None
+    """
+    OutputFile = None
+    CSVFile = None
+    try:
+        Simulation_Title="Padulles-Hauer"
+        print("###########")
+        print(Simulation_Title+"-Model Simulation")
+        print("###########")
+        OutputParamsKeys = list(OutputParams.keys())
+        OutputParamsKeys.sort()
+        Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
+        if not TestMode:
+            Input_Dict = InputMethod(InputParams)
+        else:
+            Input_Dict = InputMethod
+        print("Analyzing . . .")
+        Name = Input_Dict["Name"]
+        OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
+        IEnd = Input_Dict["i-stop"]
+        IStep = Input_Dict["i-step"]
+        i = Input_Dict["i-start"]
+        Kr=Kr_Calc(Input_Dict["N0"])
+        qH2=qH2_Calc(Input_Dict["qMethanol"],Input_Dict["CV"],Input_Dict["t1"],Input_Dict["t2"])
+        qO2=qO2_Calc(qH2,Input_Dict["rho"])
+        while i < IEnd:
+            try:
+                Output_Dict["PO2"]=PO2_Calc(Input_Dict["KO2"],Input_Dict["tO2"],Kr,i,qO2)
+                Output_Dict["PH2"]=PH2_Calc(Input_Dict["KH2"],Input_Dict["tH2"],Kr,i,qH2)
+                Output_Dict["PH2O"]=PH2O_Calc(Input_Dict["KH2O"],Input_Dict["tH2O"],Kr,i,qH2)
+                Output_Dict["E"]=Enernst_Calc(Input_Dict["E0"],Input_Dict["N0"],Input_Dict["T"],Output_Dict["PH2"],Output_Dict["PO2"],Output_Dict["PH2O"])
+                Output_Dict["FC Voltage"]=Vcell_Calc(Output_Dict["E"],Input_Dict["B"],Input_Dict["C"],i,Input_Dict["Rint"])
+                Output_Dict["FC Efficiency"] = Efficiency_Calc(Output_Dict["FC Voltage"],Input_Dict["N0"])
+                Output_Dict["FC Power"] = Power_Calc(Output_Dict["FC Voltage"], i)
+                Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
+                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+                i = i + IStep
+            except Exception as e:
+                print(str(e))
+                i = i + IStep
+                Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
+                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        OutputFile.close()
+        CSVFile.close()
+        print("Done!")
+        if not TestMode:
+            print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
+    except Exception:
+        print("[Error] Padulles-Hauer Dynamic Simulation Failed!(Check Your Inputs)")
