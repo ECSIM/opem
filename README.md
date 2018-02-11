@@ -473,9 +473,10 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] PEMFC losses model
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-- [X] Flat Output
+- [ ] Flat Output
     - [x] Simulation Result
     - [X] CSV File
+    - [ ] HTML
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
