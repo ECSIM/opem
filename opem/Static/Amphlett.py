@@ -293,9 +293,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         else:
             Input_Dict = InputMethod
         Input_Dict=filter_lambda(Input_Dict)
-        OutputFile = Output_Init(Input_Dict,Simulation_Title,Input_Dict["Name"])
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Input_Dict["Name"])
         print("Analyzing . . .")
+        Name = Input_Dict["Name"]
+        OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
         IEndMax = Input_Dict["JMax"] * Input_Dict["A"]
         IEnd = min(IEndMax, Input_Dict["i-stop"])
         IStep = Input_Dict["i-step"]
@@ -329,11 +330,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         CSVFile.close()
         print("Done!")
         if not TestMode:
-            print("Result In "+Simulation_Title+"-Model-Result.opem -->" + os.getcwd())
-            print("Output-Table In"+Simulation_Title+"-Model-Result.csv --> " + os.getcwd())
+            print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
     except Exception:
-        if not OutputFile.closed:
-            OutputFile.close()
-        if not CSVFile.closed:
-            CSVFile.close()
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

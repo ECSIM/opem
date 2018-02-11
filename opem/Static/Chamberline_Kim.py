@@ -59,9 +59,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
             Input_Dict = InputMethod(InputParams)
         else:
             Input_Dict = InputMethod
-        OutputFile = Output_Init(Input_Dict,Simualtion_Title,Input_Dict["Name"])
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simualtion_Title,Input_Dict["Name"])
         print("Analyzing . . .")
+        Name = Input_Dict["Name"]
+        OutputFile = Output_Init(Input_Dict,Simualtion_Title,Name)
+        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simualtion_Title,Name)
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         i = Input_Dict["i-start"]
@@ -84,11 +85,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         CSVFile.close()
         print("Done!")
         if not TestMode:
-            print("Result In "+Simualtion_Title+"-Model-Result.opem -->" + os.getcwd())
-            print("Output-Table In "+Simualtion_Title+"-Model-Result.csv --> " + os.getcwd())
+            print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
     except Exception:
-        if not OutputFile.closed:
-            OutputFile.close()
-        if not CSVFile.closed:
-            CSVFile.close()
         print("[Error] Chamberline-Kim Simulation Failed!(Check Your Inputs)")

@@ -37,7 +37,7 @@ def Get_Input(InputParams,input_item=input):
         Input_Values = []
         Name=""
         while(True):
-            Name=input("Please Enter Simulation Name :")
+            Name=input_item("Please Enter Simulation Name :")
             if len(Name)!=0:
                 break
             else:

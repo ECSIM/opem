@@ -98,7 +98,7 @@ Analyzing . . .
 [Error] Vcell Calculation Error
 >>> Power_Calc(122,None)
 [Error] Power Calculation Error
->>> Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":4,"i-step":0.1,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016}
+>>> Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":4,"i-step":0.1,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"test1"}
 >>> Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 ###########
 Amphlett-Model Simulation
@@ -603,7 +603,7 @@ Chamberline-Kim-Model Simulation
 ###########
 Analyzing . . .
 [Error] Chamberline-Kim Simulation Failed!(Check Your Inputs)
->>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1}
+>>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1,"Name":"test2"}
 >>> Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chamberline-Kim-Model Simulation
@@ -839,7 +839,7 @@ Larminie-Dicks-Model Simulation
 ###########
 Analyzing . . .
 [Error] Larminiee Simulation Failed!(Check Your Inputs)
->>> Test_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1}
+>>> Test_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Larminie-Dicks-Model Simulation
@@ -1123,14 +1123,12 @@ Done!
 >>> Input_keys=list(Input_dict.keys())
 >>> Input_keys.sort()
 >>> print(Input_keys)
-['PH2', 'PO2', 'T']
->>> print(list(Input_dict.values()))
-[1.0, 1.0, 1.0]
+['Name', 'PH2', 'PO2', 'T']
 >>> from opem.Dynamic.Padulles1 import *
->>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1}
+>>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
-Padulles I-Model Simulation
+Padulles-I-Model Simulation
 ###########
 Analyzing . . .
 [Error] Vcell Calculation Error
@@ -1459,7 +1457,7 @@ PO2 : 2.0915322161021423 atm
 Done!
 >>> Dynamic_Analysis(InputMethod={}, TestMode=True)
 ###########
-Padulles I-Model Simulation
+Padulles-I-Model Simulation
 ###########
 Analyzing . . .
 [Error] Dynamic Simulation Failed!(Check Your Inputs)
@@ -1474,10 +1472,10 @@ Analyzing . . .
 >>> qO2_Calc(qH2=2,rho=0)
 [Error] qO2 Calculation Error
 >>> from opem.Dynamic.Padulles2 import *
->>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"qH2O":0.0004,"i-start":0.1,"i-stop":4,"i-step":0.1}
+>>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"qH2O":0.0004,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
-Padulles II-Model Simulation
+Padulles-II-Model Simulation
 ###########
 Analyzing . . .
 I : 0.1
@@ -1838,7 +1836,7 @@ Done!
 [Error] PH2O Calculation Failed
 >>> Dynamic_Analysis(InputMethod={}, TestMode=True)
 ###########
-Padulles II-Model Simulation
+Padulles-II-Model Simulation
 ###########
 Analyzing . . .
 [Error] Dynamic Simulation Failed!(Check Your Inputs)
