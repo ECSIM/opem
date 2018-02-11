@@ -61,7 +61,7 @@ Padulles2_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell v
                      "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                      "i-stop": "Cell operating current end point [A]",
                      "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
-                     "tH2O": "Water time constant [s]","qH2O":"Molar flow of water [kmol.s^(-1)]"}
+                     "tH2O": "Water time constant [s]"}
 Padulles2_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
 
 Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
