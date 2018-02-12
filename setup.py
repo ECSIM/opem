@@ -3,6 +3,7 @@ from distutils.core import setup
 setup(
   name = 'opem',
   packages = ['opem','opem.Static','opem.Dynamic'],
+  package_data={'': ["script.js"]},
   version = '0.4',
   description = 'Open Source PEM Cell Simulation Tool',
   long_description='''Open Source PEM Cell Simulation Tool''',
