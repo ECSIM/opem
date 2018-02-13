@@ -3,11 +3,16 @@ import datetime
 from art import text2art
 from .Script import *
 from .Params import Version
-from functools import partial
 import io
 import os
 
-
+def get_precision(input_number):
+    input_string=str(input_number)
+    if "." in input_string:
+        splitted_input=input_string.split(".")
+        return len(splitted_input[1])
+    else:
+        return 0
 def isfloat(value):
     '''
     This function check input for float conversion

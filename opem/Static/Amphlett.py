@@ -301,6 +301,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         IEndMax = Input_Dict["JMax"] * Input_Dict["A"]
         IEnd = min(IEndMax, Input_Dict["i-stop"])
         IStep = Input_Dict["i-step"]
+        Precision = get_precision(IStep)
         Output_Dict["Enernst"] = Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
         i = Input_Dict["i-start"]
         i_list=[]
@@ -324,10 +325,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 power_list.append(Output_Dict["Power"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-                i = i + IStep
+                i = rounder(i + IStep,Precision)
             except Exception as e:
                 print(str(e))
-                i = i + IStep
+                i = rounder(i + IStep,Precision)
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
 
