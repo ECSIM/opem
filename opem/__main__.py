@@ -7,9 +7,10 @@ from .Dynamic.Padulles1 import Dynamic_Analysis as Padulles1_Analysis
 from .Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from .Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from art import tprint
+from .Params import Version
 import doctest
 import sys
-Version=0.4
+
 
 if __name__ == "__main__":
     args = sys.argv
