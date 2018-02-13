@@ -3,6 +3,7 @@ import datetime
 from art import text2art
 from .Script import *
 from .Params import Version
+from functools import partial
 import io
 import os
 
@@ -19,6 +20,21 @@ def isfloat(value):
         return True
     except ValueError:
         return False
+
+def rounder(input_number,digit=2):
+    '''
+    This function round input number
+    :param input_number: input number
+    :type input_number : anything
+    :param digit: precision
+    :type digit : int
+    :return: round number as float
+    '''
+    if isfloat(input_number)==True:
+        return round(input_number,digit)
+    else:
+        return input_number
+
 def input_test(a):
     '''
     This function is for test Get_Input
@@ -172,8 +188,6 @@ def HTML_Input_Table(Input_Dict,Input_Params,file):
             file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
             file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
     file.write("</table>")
-
-
 
 
 def HTML_End(file):
