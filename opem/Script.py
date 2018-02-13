@@ -13,11 +13,11 @@ JS_SCRIPT=r'''
 '''
 
 LINE_CHART='''
-<div style="width:400px;margin:auto;">
-    <canvas id="myChart" width="100" height="100"></canvas>
+<div style="width:{6};margin:auto;">
+    <canvas id="{5}" width="100" height="100"></canvas>
         </div>
 <script>
-var ctx = document.getElementById("myChart").getContext('2d');
+var ctx = document.getElementById("{5}").getContext('2d');
 var myChart = new Chart(ctx, {{
     type: 'line',
     data: {{

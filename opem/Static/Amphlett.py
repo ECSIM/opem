@@ -330,7 +330,12 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 i = i + IStep
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)", file=HTMLFile)
+
+        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
+                   chart_name="Power",size="600px",file=HTMLFile)
+        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
+                   chart_name="Power2",size="600px",file=HTMLFile)
+        HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
         HTML_End(HTMLFile)
         OutputFile.close()
         CSVFile.close()
