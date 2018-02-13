@@ -297,14 +297,17 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         Name = Input_Dict["Name"]
         OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
         CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
+        HTMLFile=HTML_Init(Simulation_Title,Name)
         IEndMax = Input_Dict["JMax"] * Input_Dict["A"]
         IEnd = min(IEndMax, Input_Dict["i-stop"])
         IStep = Input_Dict["i-step"]
         Output_Dict["Enernst"] = Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
         i = Input_Dict["i-start"]
+        i_list=[]
+        power_list=[]
         while i < IEnd:
             try:
-
+                i_list.append(i)
                 Output_Dict["Eta Activation"] = Eta_Act_Calc(Input_Dict["T"], Input_Dict["PO2"], Input_Dict["PH2"], i,
                                                              Input_Dict["A"])
                 Output_Dict["Eta Ohmic"] = Eta_Ohmic_Calc(i, Input_Dict["l"], Input_Dict["A"], Input_Dict["T"],
@@ -318,6 +321,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
+                power_list.append(Output_Dict["Power"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = i + IStep
@@ -326,10 +330,14 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 i = i + IStep
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)", file=HTMLFile)
+        HTML_End(HTMLFile)
         OutputFile.close()
         CSVFile.close()
+        HTMLFile.close()
         print("Done!")
         if not TestMode:
             print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
-    except Exception:
+    except Exception as e:
+        print(str(e))
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

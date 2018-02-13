@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
 from art import text2art
+from .Script import *
+import io
 import os
 
 
@@ -111,7 +113,6 @@ def Output_Init(InputDict,Title,Name):
     file.write("**********\n")
     return file
 
-
 def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     """
     This function initialize csv file
@@ -132,6 +133,32 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     file.write("\n")
     return file
 
+def HTML_Init(Title,Name):
+    """
+    This function initialize html file
+    :param OutputParamsKeys: OutputParams Key as list
+    :type OutputParamsKeys : list
+    :param OutputParams : Output Params as dict
+    :type OutputParams : dict
+    :return: file object
+    """
+    if Title not in os.listdir(os.getcwd()):
+        os.mkdir(Title)
+    file=io.open(os.path.join(Title,Name+".html"),"w", encoding="utf-8")
+    file.write("<html>\n")
+    file.write("<head>\n")
+    file.write("<script>\n"+JS_SCRIPT+"\n</script>\n")
+    file.write("</head>\n<body>\n")
+    return file
+
+def HTML_Chart(x,y,color,x_label,y_label,file):
+    file.write(LINE_CHART.format(x,y,color,y_label,x_label))
+
+
+def HTML_End(file):
+
+    file.write("</body>\n")
+    file.write("</html>")
 
 def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
