@@ -163,7 +163,9 @@ def HTML_Input_Table(Input_Dict,Input_Params,file):
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+"Input\n</td>")
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Description\n</td>")
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Value\n</td>\n</tr>\n")
-    for key in Input_Dict.keys():
+    Input_Keys=list(Input_Dict.keys())
+    Input_Keys.sort()
+    for key in Input_Keys:
         if key!="Name":
             file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
             file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
