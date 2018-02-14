@@ -1464,7 +1464,7 @@ Analyzing . . .
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1)
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1)
 >>> PH2_Calc(KH2=None,tH2=1,Kr=0.3,I=3,qH2=0.3)
-[Error] PH2 Calculation Failed
+[Error] PH2 Calculation Failed (KH2:None, tH2:1, Kr:0.3, I:3, qH2:0.3)
 >>> PO2_Calc(KO2=None,tO2=1.2,Kr=0.3,I=5,qO2=0.3)
 [Error] PO2 Calculation Failed (KO2:None, tO2:1.2, Kr:0.3, I:5, qO2:0.3)
 >>> Kr_Calc(N0=None)
@@ -2205,6 +2205,8 @@ Padulles-Hauer-Model Simulation
 ###########
 Analyzing . . .
 [Error] Padulles-Hauer Dynamic Simulation Failed!(Check Your Inputs)
+>>> qH2_Calc(qMethanol=None,CV=2,t1=2,t2=2)
+[Error] qH2 Calculation Failed (qMethanol:None, CV:2, t1:2, t2:2)
 >>> cov.stop()
 >>> cov.save()
 
