@@ -24,7 +24,7 @@ def Enernst_Calc(T, PH2, PO2):
             math.log(PH2) + 0.5 * math.log(PO2))
         return result
     except Exception:
-        print("[Error] Enernst Calculation Failed")
+        print("[Error] Enernst Calculation Failed (T:%s , PH2:%s, PO2:%s)"%(str(T),str(PH2),str(PO2)))
 
 
 def CH2_Calc(PH2, T):
@@ -40,7 +40,7 @@ def CH2_Calc(PH2, T):
         result = PH2 / (1.09 * (10 ** 6) * math.exp(77 / T))
         return result
     except Exception:
-        print("[Error] CH2 Calculation Failed")
+        print("[Error] CH2 Calculation Failed (PH2:%s, T:%s)"%(str(PH2),str(T)))
 
 
 def CO2_Calc(PO2, T):
@@ -56,7 +56,7 @@ def CO2_Calc(PO2, T):
         result = PO2 / (5.08 * (10 ** 6) * math.exp(-498 / T))
         return result
     except Exception:
-        print("[Error] CO2 Calculation Failed")
+        print("[Error] CO2 Calculation Failed (PO2:%s, T:%s)"%(str(PO2),str(T)))
 
 
 def Rho_Calc(i, A, T, lambda_param):
@@ -77,7 +77,7 @@ def Rho_Calc(i, A, T, lambda_param):
             (lambda_param - 0.634 - 3 * (i / A)) * math.exp(4.18 * ((T - 303) / T)))
         return result
     except Exception:
-        print("[Error] Rho Calculation Failed")
+        print("[Error] Rho Calculation Failed (i:%s, A:%s, T:%s, lambda:%s)"%(str(i),str(A),str(T),str(lambda_param)))
 
 
 def Xi2_Calc(A, PH2, T):
@@ -96,7 +96,7 @@ def Xi2_Calc(A, PH2, T):
         result = 0.00286 + 0.0002 * math.log(A) + (4.3 * (10 ** -5)) * math.log(CH2)
         return result
     except Exception:
-        print("[Error] Xi2 Calculation Failed")
+        print("[Error] Xi2 Calculation Failed (A:%s, PH2:%s, T:%s)"%(str(A),str(PH2),str(T)))
 
 
 def Eta_Conc_Calc(i, A, B, JMax):
@@ -116,7 +116,8 @@ def Eta_Conc_Calc(i, A, B, JMax):
         else:
             return 0
     except Exception:
-        print("[Error] Eta Concentration Calculation Failed")
+        print("[Error] Eta Concentration Calculation Failed (i:%s, A:%s, B:%s, JMax:%s)"%(str(i),str(A),
+                                                                                          str(B),str(JMax)))
 
 
 def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
@@ -148,7 +149,10 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
         else:
             return 0
     except Exception:
-        print("[Error] Eta Ohmic Calculation Failed")
+        print("[Error] Eta Ohmic Calculation Failed (i:%s, l:%s, A:%s, T:%s, lambda:%s, R_elec:%s)"%(str(i),str(l),
+                                                                                                     str(A),str(T),
+                                                                                                     str(lambda_param),
+                                                                                                     str(R_elec)))
 
 
 def Eta_Act_Calc(T, PO2, PH2, i, A):
@@ -171,7 +175,8 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
         else:
             return 0
     except Exception:
-        print("[Error] Eta Activation Calculation Failed")
+        print("[Error] Eta Activation Calculation Failed (T:%s, PO2:%s, PH2:%s, i:%s, A:%s)"%(str(T),str(PO2),str(PH2),
+                                                                                              str(i),str(A)))
 
 
 def Efficiency_Calc(Vcell):
@@ -185,7 +190,7 @@ def Efficiency_Calc(Vcell):
         result = (uF * Vcell) / HHV
         return result
     except Exception:
-        print("[Error] PEM Efficiency Calculation Failed")
+        print("[Error] PEM Efficiency Calculation Failed (Vcell:%s)"%str(Vcell))
 
 
 def VStack_Calc(N, Vcell):
@@ -201,7 +206,7 @@ def VStack_Calc(N, Vcell):
         result = N * (Vcell)
         return result
     except Exception:
-        print("[Error] VStack Calculation Error")
+        print("[Error] VStack Calculation Error (N:%s, Vcell:%s)"%(str(N),str(Vcell)))
 
 def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
     """
@@ -218,7 +223,8 @@ def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
         result = Eta_Act + Eta_Ohmic + Eta_Conc
         return result
     except Exception:
-        print("[Error] Loss Calculation Error")
+        print("[Error] Loss Calculation Error (Eta_Act:%s, Eta_Ohmic:%s, Eta_Conc:%s)"%(str(Eta_Act),str(Eta_Ohmic),
+                                                                                        str(Eta_Conc)))
 
 
 def Vcell_Calc(Enernst, Loss):
@@ -234,7 +240,7 @@ def Vcell_Calc(Enernst, Loss):
         result = Enernst - Loss
         return result
     except Exception:
-        print("[Error] Vcell Calculation Error")
+        print("[Error] Vcell Calculation Error (Enernst:%s, Loss:%s)"%(str(Enernst),str(Loss)))
 
 
 def Power_Calc(Vcell, i):
@@ -250,7 +256,7 @@ def Power_Calc(Vcell, i):
         result = Vcell * i
         return result
     except Exception:
-        print("[Error] Power Calculation Error")
+        print("[Error] Power Calculation Error (Vcell:%s, i:%s)"%(str(Vcell),str(i)))
 
 
 def PowerStack_Calc(Power,N):
@@ -266,7 +272,7 @@ def PowerStack_Calc(Power,N):
         result=N*Power
         return result
     except Exception:
-        print("[Error] Power Stack Calculation Error")
+        print("[Error] Power Stack Calculation Error (Power:%s, N:%s)"%(str(Power),str(N)))
 
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, ReportMode=True):

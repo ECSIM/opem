@@ -52,7 +52,7 @@ False
 >>> PowerStack_Calc(2,2)
 4
 >>> PowerStack_Calc(None,2)
-[Error] Power Stack Calculation Error
+[Error] Power Stack Calculation Error (Power:None, N:2)
 >>> T='20000000000'
 >>> PH2='10000000'
 >>> PO2='1000000000'
@@ -62,30 +62,30 @@ False
 >>> lambda_param='50000000000'
 >>> N='80000000000'
 >>> Enernst_Calc(T,PH2,PO2)
-[Error] Enernst Calculation Failed
+[Error] Enernst Calculation Failed (T:20000000000 , PH2:10000000, PO2:1000000000)
 >>> CH2_Calc(PH2,T)
-[Error] CH2 Calculation Failed
+[Error] CH2 Calculation Failed (PH2:10000000, T:20000000000)
 >>> CO2_Calc(PO2,T)
-[Error] CO2 Calculation Failed
+[Error] CO2 Calculation Failed (PO2:1000000000, T:20000000000)
 >>> Rho_Calc(i,A,T,lambda_param)
-[Error] Rho Calculation Failed
+[Error] Rho Calculation Failed (i:160000000, A:30000000000, T:20000000000, lambda:50000000000)
 >>> Xi2_Calc(A,PH2,T)
-[Error] CH2 Calculation Failed
-[Error] Xi2 Calculation Failed
->>> Eta_Conc_Calc(i,A,Jn,JMax)
-[Error] Eta Concentration Calculation Failed
+[Error] CH2 Calculation Failed (PH2:10000000, T:20000000000)
+[Error] Xi2 Calculation Failed (A:30000000000, PH2:10000000, T:20000000000)
+>>> Eta_Conc_Calc(i,A,None,None)
+[Error] Eta Concentration Calculation Failed (i:160000000, A:30000000000, B:None, JMax:None)
 >>> Eta_Ohmic_Calc(i,l,A,T,lambda_param)
-[Error] Rho Calculation Failed
-[Error] Eta Ohmic Calculation Failed
+[Error] Rho Calculation Failed (i:160000000, A:30000000000, T:20000000000, lambda:50000000000)
+[Error] Eta Ohmic Calculation Failed (i:160000000, l:50000000000, A:30000000000, T:20000000000, lambda:50000000000, R_elec:None)
 >>> Eta_Act_Calc(T,PO2,PH2,i,A)
-[Error] CO2 Calculation Failed
-[Error] CH2 Calculation Failed
-[Error] Xi2 Calculation Failed
-[Error] Eta Activation Calculation Failed
->>> Efficiency_Calc("11111")
-[Error] PEM Efficiency Calculation Failed
+[Error] CO2 Calculation Failed (PO2:1000000000, T:20000000000)
+[Error] CH2 Calculation Failed (PH2:10000000, T:20000000000)
+[Error] Xi2 Calculation Failed (A:30000000000, PH2:10000000, T:20000000000)
+[Error] Eta Activation Calculation Failed (T:20000000000, PO2:1000000000, PH2:10000000, i:160000000, A:30000000000)
+>>> Efficiency_Calc(None)
+[Error] PEM Efficiency Calculation Failed (Vcell:None)
 >>> VStack_Calc(12,None)
-[Error] VStack Calculation Error
+[Error] VStack Calculation Error (N:12, Vcell:None)
 >>> Amphlett_Data=Static_Analysis(InputMethod={},TestMode=True)
 ###########
 Amphlett-Model Simulation
@@ -93,11 +93,11 @@ Amphlett-Model Simulation
 Analyzing . . .
 [Error] Amphlett Simulation Failed!(Check Your Inputs)
 >>> Loss_Calc(122,22,None)
-[Error] Loss Calculation Error
+[Error] Loss Calculation Error (Eta_Act:122, Eta_Ohmic:22, Eta_Conc:None)
 >>> Vcell_Calc(122,None)
-[Error] Vcell Calculation Error
->>> Power_Calc(122,None)
-[Error] Power Calculation Error
+[Error] Vcell Calculation Error (Enernst:122, Loss:None)
+>>> Vcell_Calc(122,None)
+[Error] Vcell Calculation Error (Enernst:122, Loss:None)
 >>> Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":4,"i-step":0.1,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"test1"}
 >>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 ###########
