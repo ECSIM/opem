@@ -102,6 +102,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         if not TestMode:
             print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
-            return {"Power": Power_List, "I": I_List, "VStack": Vstack_List}
+            return {"P": Power_List, "I": I_List, "V": Vstack_List}
     except Exception:
         print("[Error] Chamberline-Kim Simulation Failed!(Check Your Inputs)")

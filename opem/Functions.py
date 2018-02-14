@@ -155,6 +155,10 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     file.write("\n")
     return file
 
+def None_Omit(Input_Str):
+    result=Input_Str
+    result.replace("None",'"None"')
+    return result
 def HTML_Init(Title,Name):
     """
     This function initialize html file
@@ -176,7 +180,8 @@ def HTML_Init(Title,Name):
     return file
 
 def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
-    file.write(LINE_CHART.format(x,y,color,y_label,x_label,chart_name,size))
+    y_data=None_Omit(y)
+    file.write(LINE_CHART.format(x,y_data,color,y_label,x_label,chart_name,size))
 
 def HTML_Input_Table(Input_Dict,Input_Params,file):
     file.write('<table style="border:1px solid black;border-collapse: collapse;margin:auto;">\n')

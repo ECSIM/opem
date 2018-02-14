@@ -116,9 +116,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
-                   chart_name="Power-Stack", size="600px", file=HTMLFile)
+                   chart_name="FC-Power", size="600px", file=HTMLFile)
         HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
-                   chart_name="Voltage-Stack", size="600px", file=HTMLFile)
+                   chart_name="FC-Voltage", size="600px", file=HTMLFile)
         HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
         HTML_End(HTMLFile)
         OutputFile.close()
@@ -127,5 +127,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
         print("Done!")
         if not TestMode:
             print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
+        else:
+            return {"P": Power_List, "I": I_List, "V": Vstack_List}
     except Exception:
         print("[Error] Dynamic Simulation Failed!(Check Your Inputs)")
