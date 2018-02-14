@@ -348,6 +348,5 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
             print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
             return {"P":Power_List,"I":I_List,"V":Vstack_List}
-    except Exception as e:
-        print(str(e))
+    except Exception:
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")
