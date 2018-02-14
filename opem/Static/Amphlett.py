@@ -304,11 +304,12 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         Precision = get_precision(IStep)
         Output_Dict["Enernst"] = Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
         i = Input_Dict["i-start"]
-        i_list=[]
-        power_list=[]
+        I_List=[]
+        Power_List=[]
+        Vstack_List=[]
         while i < IEnd:
             try:
-                i_list.append(i)
+                I_List.append(i)
                 Output_Dict["Eta Activation"] = Eta_Act_Calc(Input_Dict["T"], Input_Dict["PO2"], Input_Dict["PH2"], i,
                                                              Input_Dict["A"])
                 Output_Dict["Eta Ohmic"] = Eta_Ohmic_Calc(i, Input_Dict["l"], Input_Dict["A"], Input_Dict["T"],
@@ -321,8 +322,9 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
+                Vstack_List.append(Output_Dict["VStack"])
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
-                power_list.append(Output_Dict["Power"])
+                Power_List.append(Output_Dict["Power-Stack"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = rounder(i + IStep,Precision)
@@ -332,10 +334,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
 
-        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
-                   chart_name="Power",size="600px",file=HTMLFile)
-        HTML_Chart(x=str(i_list), y=str(power_list), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
-                   chart_name="Power2",size="600px",file=HTMLFile)
+        HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
+                   chart_name="Power-Stack",size="600px",file=HTMLFile)
+        HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
+                   chart_name="Voltage-Stack",size="600px",file=HTMLFile)
         HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
         HTML_End(HTMLFile)
         OutputFile.close()
@@ -344,6 +346,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         print("Done!")
         if not TestMode:
             print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
+        else:
+            return {"Power":Power_List,"I":I_List,"VStack":Vstack_List}
     except Exception as e:
         print(str(e))
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

@@ -62,29 +62,46 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False):
         Name=Input_Dict["Name"]
         OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
         CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
+        HTMLFile = HTML_Init(Simulation_Title, Name)
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
+        Precision = get_precision(IStep)
         i = Input_Dict["i-start"]
+        I_List = []
+        Power_List = []
+        Vstack_List = []
         while i < IEnd:
             try:
+                I_List.append(i)
                 Output_Dict["Vcell"] = Vcell_Calc(E0=Input_Dict["E0"],i=i,i_0=Input_Dict["i_0"],i_n=Input_Dict["i_n"],
                                                   i_L=Input_Dict["i_L"],R_M=Input_Dict["RM"],B=Input_Dict["B"],A=Input_Dict["A"])
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
                 Output_Dict["Power-Stack"] = PowerStack_Calc(Output_Dict["Power"], Input_Dict["N"])
+                Vstack_List.append(Output_Dict["VStack"])
+                Power_List.append(Output_Dict["Power-Stack"])
                 Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-                i = i + IStep
+                i = rounder(i + IStep, Precision)
             except Exception as e:
                 print(e)
-                i = i + IStep
+                i = rounder(i + IStep, Precision)
                 Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
                 CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
+                   chart_name="Power-Stack", size="600px", file=HTMLFile)
+        HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
+                   chart_name="Voltage-Stack", size="600px", file=HTMLFile)
+        HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+        HTML_End(HTMLFile)
         OutputFile.close()
         CSVFile.close()
+        HTMLFile.close()
         print("Done!")
         if not TestMode:
             print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
+        else:
+            return {"Power": Power_List, "I": I_List, "VStack": Vstack_List}
     except Exception:
         print("[Error] Larminiee Simulation Failed!(Check Your Inputs)")

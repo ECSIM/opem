@@ -23,7 +23,7 @@ var myChart = new Chart(ctx, {{
     data: {{
         labels: {0},
         datasets: [{{
-            label: 'Power(W)',
+            label: '{5}',
             fill:false,
             data: {1},
             borderColor:'{2}',
