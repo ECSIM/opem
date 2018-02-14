@@ -31,7 +31,14 @@ def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
         result=E0-A*(math.log((i+i_n)/i_0))-R_M*(i+i_n)+B*(math.log(1-((i+i_n)/i_L)))
         return result
     except Exception:
-        print("[Error] Vcell Calculation Error")
+        print("[Error] Vcell Calculation Error (E0:%s, i:%s, i_0:%s, i_n:%s, i_L:%s, R_M:%s, A:%s, B:%s)"%(str(E0),
+                                                                                                           str(i),
+                                                                                                           str(i_0),
+                                                                                                           str(i_n),
+                                                                                                           str(i_L),
+                                                                                                           str(R_M),
+                                                                                                           str(A),
+                                                                                                           str(B)))
 
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, ReportMode=True):

@@ -31,7 +31,9 @@ def Enernst_Calc(E0,N0,T, PH2, PO2,PH2O):
         result = N0*(E0+(R*T/(2*F))*math.log((PH2*math.sqrt(PO2))/PH2O))
         return result
     except Exception:
-        print("[Error] Enernst Calculation Failed")
+        print("[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s, PH2O:%s)"%(str(E0),str(N0),
+                                                                                                  str(T),str(PH2),
+                                                                                                  str(PO2),str(PH2O)))
 
 def PH2O_Calc(KH2O,tH2O,Kr,I,qH2O):
     """
@@ -52,7 +54,8 @@ def PH2O_Calc(KH2O,tH2O,Kr,I,qH2O):
         result = ((1/KH2O)/(1+tH2O))*(qH2O-2*Kr*I)
         return result
     except Exception:
-        print("[Error] PH2O Calculation Failed")
+        print("[Error] PH2O Calculation Failed (KH2O:%s, tH2O:%s, Kr:%s, I:%s, qH2O:%s)"%(str(KH2O),str(tH2O),str(Kr),
+                                                                                          str(I),str(qH2O)))
 
 
 

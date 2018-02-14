@@ -596,7 +596,7 @@ Done!
 >>> Vcell_Calc(E0,b,R,m,n,i,A)
 1.244827379954939
 >>> Vcell_Calc(None,b,R,m,n,i,A)
-[Error] Vcell Calculation Error
+[Error] Vcell Calculation Error (E0:None, b:0.0689, R:0.328, m:0.000125, n:9.45, i:1, A:50.0)
 >>> Static_Analysis(InputMethod={}, TestMode=True)
 ###########
 Chamberline-Kim-Model Simulation
@@ -832,7 +832,7 @@ Done!
 >>> Vcell_Calc(E0=E0, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
 0.8677440917797067
 >>> Vcell_Calc(E0=None, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
-[Error] Vcell Calculation Error
+[Error] Vcell Calculation Error (E0:None, i:1, i_0:0.00654, i_n:0.23, i_L:100, R_M:0.0018, A:0.0587, B:0.0517)
 >>> Static_Analysis(InputMethod={}, TestMode=True)
 ###########
 Larminie-Dicks-Model Simulation
@@ -1131,9 +1131,9 @@ Done!
 Padulles-I-Model Simulation
 ###########
 Analyzing . . .
-[Error] Vcell Calculation Error
-[Error] PEM Efficiency Calculation Failed
-[Error] Power Calculation Error
+[Error] Vcell Calculation Error (Enernst:54.28850557413407, B:0.04777, C:0.0136, I:0, Rint:0.00303)
+[Error] PEM Efficiency Calculation Failed (Vcell:None, N:88)
+[Error] Power Calculation Error (Vcell:None, i:0)
 I : 0
 E : 54.28850557413407 V
 FC Efficiency : None
@@ -1462,15 +1462,15 @@ Padulles-I-Model Simulation
 Analyzing . . .
 [Error] Dynamic Simulation Failed!(Check Your Inputs)
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1)
-[Error] Enernst Calculation Failed
+[Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1)
 >>> PH2_Calc(KH2=None,tH2=1,Kr=0.3,I=3,qH2=0.3)
 [Error] PH2 Calculation Failed
 >>> PO2_Calc(KO2=None,tO2=1.2,Kr=0.3,I=5,qO2=0.3)
-[Error] PO2 Calculation Failed
+[Error] PO2 Calculation Failed (KO2:None, tO2:1.2, Kr:0.3, I:5, qO2:0.3)
 >>> Kr_Calc(N0=None)
-[Error] Kr Calculation Failed
+[Error] Kr Calculation Failed (N0:None)
 >>> qO2_Calc(qH2=2,rho=0)
-[Error] qO2 Calculation Error
+[Error] qO2 Calculation Error (qH2:2, rho:0)
 >>> from opem.Dynamic.Padulles2 import *
 >>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"qH2O":0.0004,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Padulles_II_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
@@ -1831,9 +1831,9 @@ PO2 : 2.0966679355517246 atm
 ###########
 Done!
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1,PH2O=2.1)
-[Error] Enernst Calculation Failed
+[Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1, PH2O:2.1)
 >>> PH2O_Calc(KH2O=None,tH2O=1,Kr=0.3,I=3,qH2O=0.3)
-[Error] PH2O Calculation Failed
+[Error] PH2O Calculation Failed (KH2O:None, tH2O:1, Kr:0.3, I:3, qH2O:0.3)
 >>> Dynamic_Analysis(InputMethod={}, TestMode=True)
 ###########
 Padulles-II-Model Simulation

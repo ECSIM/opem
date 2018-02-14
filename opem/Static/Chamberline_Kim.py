@@ -33,7 +33,9 @@ def Vcell_Calc(E0,b,R,m,n,i,A):
         result=E0-b*math.log(J)-R*J-m*math.exp(n*J)
         return result
     except Exception:
-        print("[Error] Vcell Calculation Error")
+        print("[Error] Vcell Calculation Error (E0:%s, b:%s, R:%s, m:%s, n:%s, i:%s, A:%s)"%(str(E0),str(b),str(R),
+                                                                                             str(m),str(n),str(i),
+                                                                                             str(A)))
 
 
 def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, ReportMode=True):
