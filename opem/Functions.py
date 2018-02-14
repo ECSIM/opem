@@ -172,7 +172,7 @@ def HTML_Init(Title,Name):
     file.write("<title>"+Name+"</title>\n")
     file.write("<script>\n"+JS_SCRIPT+"\n</script>\n")
     file.write("</head>\n<body>\n")
-    file.write('<h1 style="border-bottom:1px solid black;text-align:center;">OPEM Report</h1>\n')
+    file.write('<h1 style="border-bottom:1px solid black;text-align:center;">OPEM Report ('+Title+" Model)"+'</h1>\n')
     return file
 
 def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
@@ -184,14 +184,13 @@ def HTML_Input_Table(Input_Dict,Input_Params,file):
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+"Input\n</td>")
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Description\n</td>")
     file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Value\n</td>\n</tr>\n")
-    Input_Keys=list(Input_Dict.keys())
-    Input_Keys.sort()
-    for key in Input_Keys:
-        if key!="Name":
-            file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-            file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
-            file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
-            file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
+    Input_Params_Keys=list(Input_Params.keys())
+    Input_Params_Keys.sort()
+    for key in Input_Params_Keys:
+        file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
     file.write("</table>")
 
 
