@@ -30,7 +30,7 @@ def qH2_Calc(qMethanol,CV,t1,t2):
     except Exception:
         print("[Error] qH2 Calculation Failed")
 
-def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
+def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, ReportMode=True):
     """
     This function run Padulles I analysis  with calling other functions
     :param InputMethod : Input Function Or Input Test Vector
@@ -43,9 +43,10 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
     CSVFile = None
     try:
         Simulation_Title="Padulles-Hauer"
-        print("###########")
-        print(Simulation_Title+"-Model Simulation")
-        print("###########")
+        if PrintMode==True:
+            print("###########")
+            print(Simulation_Title+"-Model Simulation")
+            print("###########")
         OutputParamsKeys = list(OutputParams.keys())
         OutputParamsKeys.sort()
         Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
@@ -53,11 +54,13 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
             Input_Dict = InputMethod(InputParams)
         else:
             Input_Dict = InputMethod
-        print("Analyzing . . .")
+        if PrintMode==True:
+            print("Analyzing . . .")
         Name = Input_Dict["Name"]
-        OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
-        CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
-        HTMLFile = HTML_Init(Simulation_Title, Name)
+        if ReportMode==True:
+            OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
+            CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
+            HTMLFile = HTML_Init(Simulation_Title, Name)
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = get_precision(IStep)
@@ -80,26 +83,31 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False):
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(Output_Dict["FC Voltage"],Input_Dict["N0"])
                 Output_Dict["FC Power"] = Power_Calc(Output_Dict["FC Voltage"], i)
                 Power_List.append(Output_Dict["FC Power"])
-                Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile)
-                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+                if ReportMode==True:
+                    Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile,PrintMode)
+                    CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = rounder(i + IStep, Precision)
             except Exception as e:
                 print(str(e))
                 i = rounder(i + IStep, Precision)
-                Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile)
-                CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-        HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
-                   chart_name="FC-Power", size="600px", file=HTMLFile)
-        HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
-                   chart_name="FC-Voltage", size="600px", file=HTMLFile)
-        HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
-        HTML_End(HTMLFile)
-        OutputFile.close()
-        CSVFile.close()
-        HTMLFile.close()
-        print("Done!")
+                if ReportMode==True:
+                    Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
+                    CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        if ReportMode==True:
+            HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
+                    chart_name="FC-Power", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
+                    chart_name="FC-Voltage", size="600px", file=HTMLFile)
+            HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+            HTML_End(HTMLFile)
+            OutputFile.close()
+            CSVFile.close()
+            HTMLFile.close()
+        if PrintMode==True:
+            print("Done!")
         if not TestMode:
-            print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
+            if PrintMode==True:
+                print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
         else:
             return {"P": Power_List, "I": I_List, "V": Vstack_List}
     except Exception:

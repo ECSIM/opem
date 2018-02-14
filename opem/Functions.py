@@ -91,7 +91,7 @@ def Get_Input(InputParams,input_item=input):
         return False
 
 
-def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file):
+def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file,PrintMode):
     """
     This function write analysis result in Simulation-Result.opem file
     :param OutputParamsKeys : OutputParams Key as  list
@@ -107,13 +107,15 @@ def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file):
     """
 
     file.write("I :" + str(i) + " A \n\n")
-    print("I : " + str(i))
+    if PrintMode==True:
+        print("I : " + str(i))
     for key in OutputParamsKeys:
         file.write(key + " : " + str(OutputDict[key]) + " " + OutputParams[key] + "\n")
-        print(key + " : " + str(OutputDict[key]) + " " + OutputParams[key])
+        if PrintMode==True:
+            print(key + " : " + str(OutputDict[key]) + " " + OutputParams[key])
     file.write("###########\n")
-    print("###########")
-
+    if PrintMode==True:
+        print("###########")
 
 def Output_Init(InputDict,Title,Name):
     """
@@ -169,7 +171,7 @@ def None_Omit(Input_Str):
     :return: modified string as str
     '''
     result=Input_Str
-    result.replace("None",'"None"')
+    result=result.replace("None",'\"None\"')
     return result
 def HTML_Init(Title,Name):
     """
