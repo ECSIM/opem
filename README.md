@@ -22,7 +22,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 ## Installation		
 
 ### Source Code
-- Download [Version 0.4](https://github.com/ecsim/opem/archive/v0.4.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 0.5](https://github.com/ecsim/opem/archive/v0.5.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -33,7 +33,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 0.4](https://www.dropbox.com/s/c2t9k6u86kqtrih/OPEM%28v0.4%29.zip?dl=0)
+- Download [Exe-Version 0.5](https://www.dropbox.com/s/c2t9k6u86kqtrih/OPEM%28v0.4%29.zip?dl=0)
 - Extract Zip File
 - Run `OPEM.exe`
 ## Usage
@@ -555,7 +555,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		* For more information about this model visit <a href="Documents/Padulles_Hauer.ipynb">here</a>
 		
 		
-- Find Your Result In `.opem` & `.csv` files	
+- Find Your Reports In `Model_Name` Folder
 
 <div align="center">
 
@@ -586,10 +586,10 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] PEMFC losses model
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-- [ ] Flat Output
+- [x] Flat Output
     - [x] Simulation Result
     - [X] CSV File
-    - [ ] HTML
+    - [x] HTML
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
@@ -604,11 +604,11 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] Voltage of PEMFC
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-  - [ ] Padulles-Hauer Dynamic Model
-    - [ ] Nernst Voltage
-  	- [ ] Voltage of PEMFC
-  	- [ ] Power of PEMFC
-  	- [ ] Efficiency of PEMFC
+  - [x] Padulles-Hauer Dynamic Model
+    - [x] Nernst Voltage
+  	- [x] Voltage of PEMFC
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
   - [ ] Padulles-Hauer-Pathapati-Amphlett Dynamic Model
     - [ ] Nernst Voltage
   	- [ ] Voltage of PEMFC
@@ -647,7 +647,11 @@ Remember to write a few tests for your code before sending pull requests.
 <blockquote>
 5- J. Padulles, G.W. Ault, J.R. McDonald. 2000. "An integrated SOFC plant dynamic model for power systems simulation." Journal of Power Sources (Elsevier) 86 (1-2): 495-500. doi:10.1016/S0378-7753(99)00430-9.
 </blockquote>
-
+						
+<blockquote>
+6- Hauer, K.-H. 2001. "Analysis tool for fuel cell vehicle hardware and software (controls) with an application to fuel economy comparisons of alternative system designs." Ph.D. dissertation, Transportation Technology
+and Policy, University of California Davis.
+<blockquote>
 
 ## Cite
 
