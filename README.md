@@ -440,6 +440,119 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</table>
 		</html>
 		* For more information about this model visit <a href="Documents/Padulles2.ipynb">here</a>
+	5. Padulles-Hauer Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">FuelCell temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KH2O</td>
+				<td align="center">Water valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">tH2</td>
+				<td align="center">Hydrogen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">tH2O</td>
+				<td align="center">Water time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">tO2</td>
+				<td align="center">Oxygen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">t1</td>
+				<td align="center">Reformer time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">t2</td>
+				<td align="center">Reformer time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">B</td>
+				<td align="center">Activation voltage constant</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">C</td>
+				<td align="center">Activation constant parameter</td>
+				<td align="center">A^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">CV</td>
+				<td align="center">Conversion factor</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">Rint</td>
+				<td align="center">FuelCell internal resistance</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">qMethanol</td>
+				<td align="center">Molar flow of methanol</td>
+				<td align="center">kmol/s</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+			
+				
+		</table>
+		</html>
+		* For more information about this model visit <a href="Documents/Padulles_Hauer.ipynb">here</a>
 		
 		
 - Find Your Result In `.opem` & `.csv` files	
