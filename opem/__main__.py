@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 print(str(i+1)+"-"+item)
             try:
                 AnalysisIndex=int(input(("Please Choose Analysis : ")))
-            except:
+            except Exception:
                 AnalysisIndex=-1
             if AnalysisIndex-1 in range(len(MenuKeys)):
                 Menu[MenuKeys[AnalysisIndex-1]]()

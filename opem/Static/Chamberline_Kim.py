@@ -32,7 +32,7 @@ def Vcell_Calc(E0,b,R,m,n,i,A):
         J=i/A
         result=E0-b*math.log(J)-R*J-m*math.exp(n*J)
         return result
-    except Exception as e:
+    except Exception:
         print("[Error] Vcell Calculation Error")
 
 
