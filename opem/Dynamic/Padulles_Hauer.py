@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import math
 from opem.Params import Padulles_Hauer_InputParams as InputParams
 from opem.Params import Padulles_Hauer_Outparams as OutputParams
 from opem.Static.Amphlett import Power_Calc
