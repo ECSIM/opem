@@ -651,7 +651,7 @@ Remember to write a few tests for your code before sending pull requests.
 <blockquote>
 6- Hauer, K.-H. 2001. "Analysis tool for fuel cell vehicle hardware and software (controls) with an application to fuel economy comparisons of alternative system designs." Ph.D. dissertation, Transportation Technology
 and Policy, University of California Davis.
-<blockquote>
+</blockquote>
 
 ## Cite
 
