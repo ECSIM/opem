@@ -45,7 +45,11 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
     :param TestMode : Test Mode Flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :return: None
+    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :type PrintMode:bool
+    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :type ReportMode: bool
+    :return: Result as dict
     """
     OutputFile = None
     CSVFile = None
