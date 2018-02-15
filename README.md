@@ -630,6 +630,9 @@ You can fork the repository, improve or fix some part of it and then send the pu
 
 Remember to write a few tests for your code before sending pull requests. 
 
+## Thanks
+
+* [Chart.js](https://github.com/chartjs/Chart.js "Chartjs") for this awesome tool ;-)
 
 ## Reference
 
@@ -652,6 +655,7 @@ Remember to write a few tests for your code before sending pull requests.
 6- Hauer, K.-H. 2001. "Analysis tool for fuel cell vehicle hardware and software (controls) with an application to fuel economy comparisons of alternative system designs." Ph.D. dissertation, Transportation Technology
 and Policy, University of California Davis.
 </blockquote>
+
 
 ## Cite
 
