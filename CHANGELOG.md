@@ -36,7 +36,7 @@ notable changes.
 ### Added
 - Explanation of the recommended reverse chronological release ordering.
 
-## 0.1 - 2017-12-25
+## [0.1] - 2017-12-25
 ### Added
 - This CHANGELOG file to hopefully serve as an evolving example of a
   standardized open source project CHANGELOG.
@@ -45,7 +45,12 @@ notable changes.
 - Good examples and basic guidelines, including proper date formatting.
 - Counter-examples: "What makes unicorns cry?"
 
-
+[Unreleased]: https://github.com/ECSIM/opem/compare/v0.5...HEAD
+[0.5]: https://github.com/ECSIM/opem/compare/v0.4...v0.5
+[0.4]: https://github.com/ECSIM/opem/compare/v0.3...v0.4
+[0.3]: https://github.com/ECSIM/opem/compare/v0.2...v0.3
+[0.2]: https://github.com/ECSIM/opem/compare/v0.1...v0.2
+[0.1]: https://github.com/ECSIM/opem/compare/1e238cd...v0.1
 
 
 
