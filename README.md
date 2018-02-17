@@ -19,23 +19,7 @@
 ## Overview			
 The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simulation package for polymer electrolyte fuel cells. It contains a database of physical phenomena equations,  and kinetics mathematical models in order to perform static/dynamic analysis of PEMFC. The goal of the software is to prepare a platform for collaborative development of  PEMFC mathematical models.
 
-## Installation		
 
-### Source Code
-- Download [Version 0.5](https://github.com/ecsim/opem/archive/v0.5.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
-- Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
-- Run `python3 setup.py install` or `python setup.py install` (Need root access)				
-
-### PyPI
-
-
-- Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install opem` or `pip3 install opem` (Need root access)
-
-### Exe Version (Only Windows)
-- Download [Exe-Version 0.5](https://www.dropbox.com/s/s2j2ok3ha2t2omr/OPEM%28v0.5%29.zip?dl=0)
-- Extract Zip File
-- Run `OPEM.exe`
 ## Usage
 
 ### CLI (Command Line Interface)
@@ -623,12 +607,6 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   - [ ] PEMFC Catalyst Layers
   - [ ] PEMFC Flow Feild Plates
 
-
-## Contribution			
-
-You can fork the repository, improve or fix some part of it and then send the pull requests back if you want to see them here. I really appreciate that. ❤️			
-
-Remember to write a few tests for your code before sending pull requests. 
 
 ## Thanks
 
