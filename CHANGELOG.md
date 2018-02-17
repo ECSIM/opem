@@ -8,42 +8,54 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.5] - 2018-01-17
 ### Added
-- Markdown links to version tags on release headings.
-- Unreleased section to gather unreleased changes and encourage note
-keeping prior to releases.
+TODO
 
 ## [0.4] - 2018-02-06
 ### Added
-- Better explanation of the difference between the file ("CHANGELOG")
-and its function "the change log".
+- Test case of Padullas model 2
+- Padullas model 2 in Jupyter Notebook
+
 
 ### Changed
-- Refer to a "change log" instead of a "CHANGELOG" throughout the site
-to differentiate between the file and the purpose of the file — the
-logging of changes.
+- Travis and appveyor configs
+- Padullas Model
+- Jupyter Notebook documentation
 
 ### Removed
-- Remove empty sections from CHANGELOG, they occupy too much space and
-create too much noise in the file. People will have to assume that the
-missing sections were intentionally left out because they contained no
-notable changes.
+- RHO in Larmninee model
 
 ## [0.3] - 2018-02-01
 ### Added
-- "Why should I care?" section mentioning The Changelog podcast.
+- Dynamic Models
+- GUI folder
+
+
+### Changed
+- Test Cases for static models
+- Padullas refactored
+- Jupyter Notebook Padullas
 
 ## [0.2] - 2018-01-6
 ### Added
-- Explanation of the recommended reverse chronological release ordering.
+- Test case and CI
+- Jupyter notebook and documentation about Amphlett
+- exe-version
+- docs: add badge
+- Larmninee Model
+- pyqt5 to requirments
+
+### Removed
+- python2.7 setup for pyQt
+
+### Changed
+ - style to PEP8
 
 ## [0.1] - 2017-12-25
 ### Added
-- This CHANGELOG file to hopefully serve as an evolving example of a
-  standardized open source project CHANGELOG.
-- CNAME file to enable GitHub Pages custom domain
-- README now contains answers to common questions about CHANGELOGs
-- Good examples and basic guidelines, including proper date formatting.
-- Counter-examples: "What makes unicorns cry?"
+- Static analyze prototype
+- Amphlett analyze
+- CSV output files
+- documents and README
 
 [Unreleased]: https://github.com/ECSIM/opem/compare/v0.5...HEAD
 [0.5]: https://github.com/ECSIM/opem/compare/v0.4...v0.5
