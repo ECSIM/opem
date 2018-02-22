@@ -80,3 +80,22 @@ Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Openc
                             "CV":"Conversion factor"}
 Padulles_Hauer_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
 
+
+Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
+                     "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
+                     "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
+                     "tO2":"Oxygen time constant [s]","t1":"Reformer time constant [s]","t2":"Reformer time constant [s]",
+                     "rho":"Hydrogen-Oxygen flow rate","R": "R-Electronic [ohm] (*Optional)",
+                     "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
+                     "i-stop": "Cell operating current end point [A]",
+                     "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
+                     "tH2O": "Water time constant [s]","qMethanol":"Methanol flow rate [kmol.s^(-1)]",
+                     "CV":"Conversion factor","A": "active area [cm^2]","l": "Membrane Thickness [cm]",
+                     "lambda": "is an adjustable parameter with a min value of 14 and max value of 23",
+                     "B": "An empirical constant depending on the cell and its operation state (Tafel Slope) [V]",
+                     "JMax": "maximum current density [A/(cm^2)]"
+                                 }
+
+Padulles_Amphlett_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm",
+                            "E":"V","Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V"}
+
