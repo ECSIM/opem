@@ -10,3 +10,4 @@
 4. [Padulles Dynamic Model I](Padulles1.ipynb "Padulles Dynamic Model I")
 5. [Padulles Dynamic Model II](Padulles2.ipynb "Padulles Dynamic Model II")
 6. [Padulles-Hauer Dynamic Model](Padulles_Hauer.ipynb "Padulles-Hauer Dynamic Model")
+7. [Padulles-Amphlett Dynamic Model](Padulles_Amphlett.ipynb "Padulles-Amphlett Dynamic Model")
