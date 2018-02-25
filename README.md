@@ -538,6 +538,134 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 		</table>
 		</html>
 		* For more information about this model visit <a href="Documents/Padulles_Hauer.ipynb">here</a>
+	6. Padulles-Amphlett Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">FuelCell temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KH2O</td>
+				<td align="center">Water valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">tH2</td>
+				<td align="center">Hydrogen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">tH2O</td>
+				<td align="center">Water time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">tO2</td>
+				<td align="center">Oxygen time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">t1</td>
+				<td align="center">Reformer time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">t2</td>
+				<td align="center">Reformer time constant</td>
+				<td align="center">s</td>
+			</tr>
+			<tr>
+				<td align="center">A</td>
+				<td align="center">Active area</td>
+				<td align="center">cm^2</td>
+			</tr>
+			<tr>
+				<td align="center">l</td>
+				<td align="center">Membrane Thickness</td>
+				<td align="center">cm</td>
+			</tr>
+			<tr>
+				<td align="center">lambda</td>
+				<td align="center">is an adjustable parameter with a min value of 14 and max value of 23</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">R(*Optional)</td>
+				<td align="center">R-Electronic</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">B</td>
+				<td align="center"> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">JMax</td>
+				<td align="center">Maximum current density</td>
+				<td align="center">A/(cm^2)</td>
+			</tr>
+			<tr>
+				<td align="center">CV</td>
+				<td align="center">Conversion factor</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">qMethanol</td>
+				<td align="center">Molar flow of methanol</td>
+				<td align="center">kmol/s</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+			
+				
+		</table>
+		</html>
+		* For more information about this model visit <a href="Documents/Padulles_Amphlett.ipynb">here</a>
 		
 		
 - Find Your Reports In `Model_Name` Folder
@@ -578,7 +706,7 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 - [ ] GUI
   - [ ] Plot Graphs
   - [ ] Input/Output
-- [ ] Dynamic Analysis
+- [x] Dynamic Analysis
   - [x] Padulles Dynamic Model I
     - [x] Nernst Voltage
   	- [x] Voltage of PEMFC
@@ -594,19 +722,11 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] Voltage of PEMFC
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
-  - [ ] Padulles-Hauer-Pathapati-Amphlett Dynamic Model
-    - [ ] Nernst Voltage
-  	- [ ] Voltage of PEMFC
-  	- [ ] Power of PEMFC
-  	- [ ] Efficiency of PEMFC
-  - [ ] Impedance model of fuel cell
-  - [ ] Dicks-Larminie Danymic Model
-  - [ ] Becherif-Hissel Dynamic model
-  - [ ] PEMFC Charge Transport
-  - [ ] PEMFC Mass Trasport
-  - [ ] PEMF Heat Transfer
-  - [ ] PEMFC Catalyst Layers
-  - [ ] PEMFC Flow Feild Plates
+  - [x] Padulles-Hauer-Pathapati-Amphlett Dynamic Model
+    - [x] Nernst Voltage
+  	- [x] Voltage of PEMFC
+  	- [x] Power of PEMFC
+  	- [x] Efficiency of PEMFC
 
 
 ## Thanks
@@ -633,6 +753,10 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 <blockquote>
 6- Hauer, K.-H. 2001. "Analysis tool for fuel cell vehicle hardware and software (controls) with an application to fuel economy comparisons of alternative system designs." Ph.D. dissertation, Transportation Technology
 and Policy, University of California Davis.
+</blockquote>
+
+<blockquote>
+7- J. C. Amphlett, R. M. Baumert, R. F. Mann, B. A. Peppley, and P. R. Roberge. 1995. "Performance Modeling of the Ballard Mark IV Solid Polymer Electrolyte Fuel Cell." J. Electrochem. Soc. (The Electrochemical Society, Inc.) 142 (1): 9-15. doi: 10.1149/1.2043959.
 </blockquote>
 
 
