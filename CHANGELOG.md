@@ -6,27 +6,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.5] - 2018-01-17
+## [0.5] - 2018-02-16
 ### Added
-TODO
+- Padulles-Hauer Dynamic Model
+- Simulation Name
+- Interactive HTML Report
+### Changed
+- qH2O and qH2 In Padulles Dynamic Model 2 Merged
+- Static Analysis Function Output
+- Dynamic Analysis Function Output
+- ReportMode & PrintMode Flags
 
 ## [0.4] - 2018-02-06
 ### Added
 - Test case of Padullas model 2
-- Padullas model 2 in Jupyter Notebook
+- Padulles Dynamic Model 2
 
 
 ### Changed
 - Travis and appveyor configs
-- Padullas Model
 - Jupyter Notebook documentation
 
 ### Removed
 - RHO in Larmninee model
 
-## [0.3] - 2018-02-01
+## [0.3] - 2018-01-31
 ### Added
-- Dynamic Models
+- Padulles Dynamic Model 1
 - GUI folder
 
 
@@ -35,20 +41,22 @@ TODO
 - Padullas refactored
 - Jupyter Notebook Padullas
 
-## [0.2] - 2018-01-6
+## [0.2] - 2018-01-05
 ### Added
 - Test case and CI
-- Jupyter notebook and documentation about Amphlett
+- Jupyter notebook and documentation
 - exe-version
-- docs: add badge
-- Larmninee Model
+- Badges
+- Larminie-Dicks Static Model
+- Chamberline-Kim Static Model
 - pyqt5 to requirments
 
 ### Removed
 - python2.7 setup for pyQt
 
 ### Changed
- - style to PEP8
+ - Style to PEP8
+ - Power Stack
 
 ## [0.1] - 2017-12-25
 ### Added
