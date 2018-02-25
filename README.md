@@ -17,8 +17,7 @@
 	
 ----------				
 
-Table of contents
-=================
+## Table of contents					
    * [Overview](#overview)
    * [Installation](INSTALL.md)
    * [Usage](#usage)
