@@ -24,6 +24,8 @@ Amphlett_InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial P
 Amphlett_OutputParams = {"Enernst": "V", "Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V",
                 "Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
 
+Amphlett_Params_Default={"R":0}
+
 
 Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -80,8 +82,10 @@ Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Openc
                             "CV":"Conversion factor"}
 Padulles_Hauer_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
 
+Padulles_Amphlett_Params_Default={"R":0,"E0":1.229}
 
-Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
+Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V], Default Value:"
+                                                                               +str(Padulles_Amphlett_Params_Default["E0"]),
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
                      "tO2":"Oxygen time constant [s]","t1":"Reformer time constant [s]","t2":"Reformer time constant [s]",
@@ -98,4 +102,6 @@ Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"
 
 Padulles_Amphlett_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm",
                             "E":"V","Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V"}
+
+
 

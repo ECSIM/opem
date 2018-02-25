@@ -53,7 +53,7 @@ def input_test(a):
     :return: "1"
     '''
     return "1"
-def Get_Input(InputParams,input_item=input):
+def Get_Input(InputParams,input_item=input,params_default={}):
     """
     This function get inputs from users
     :param InputParams : InputParams  for each  model
@@ -80,7 +80,11 @@ def Get_Input(InputParams,input_item=input):
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:
-                    print("[Error] Bad Input Try Again")
+                    if item in params_default.keys():
+                        Input_Item=params_default[item]
+                        Input_Flag=True
+                    else:
+                        print("[Error] Bad Input Try Again")
             Input_Values.append(Input_Item)
         Input_Values = list(map(float, Input_Values))
         Output = dict(zip(Input_Keys, Input_Values))

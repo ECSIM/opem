@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from opem.Params import Padulles_Amphlett_InputParams as InputParams
 from opem.Params import Padulles_Amphlett_Outparams as OutputParams
+from opem.Params import Padulles_Amphlett_Params_Default as Defaults
 from opem.Static.Amphlett import Power_Calc,Eta_Act_Calc,Eta_Conc_Calc,Eta_Ohmic_Calc,Loss_Calc
 from opem.Dynamic.Padulles1 import PH2_Calc,PO2_Calc,Kr_Calc,qO2_Calc,Efficiency_Calc
 from opem.Dynamic.Padulles2 import Enernst_Calc,PH2O_Calc
@@ -48,9 +49,10 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
         OutputParamsKeys.sort()
         Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if not TestMode:
-            Input_Dict = InputMethod(InputParams)
+            Input_Dict = InputMethod(InputParams,params_default=Defaults)
         else:
             Input_Dict = InputMethod
+        Input_Dict = filter_lambda(Input_Dict)
         if PrintMode==True:
             print("Analyzing . . .")
         Name = Input_Dict["Name"]
@@ -58,6 +60,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
             OutputFile = Output_Init(Input_Dict,Simulation_Title,Name)
             CSVFile = CSV_Init(OutputParamsKeys,OutputParams,Simulation_Title,Name)
             HTMLFile = HTML_Init(Simulation_Title, Name)
+        IEndMax = Input_Dict["JMax"] * Input_Dict["A"]
+        IEnd = min(IEndMax, Input_Dict["i-stop"])
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = get_precision(IStep)

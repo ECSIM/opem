@@ -2,6 +2,7 @@
 import math
 from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
+from opem.Params import Amphlett_Params_Default as Defaults
 from opem.Params import xi1,xi3,xi4,HHV,uF
 from opem.Functions import *
 import os
@@ -300,7 +301,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         OutputParamsKeys.sort()
         Output_Dict = dict(zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if not TestMode:
-            Input_Dict = InputMethod(InputParams)
+            Input_Dict = InputMethod(InputParams,params_default=Defaults)
         else:
             Input_Dict = InputMethod
         Input_Dict=filter_lambda(Input_Dict)
@@ -365,5 +366,5 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
             return {"P":Power_List,"I":I_List,"V":Vstack_List}
-    except Exception:
+    except Exception as e:
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")
