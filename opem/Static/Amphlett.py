@@ -304,6 +304,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             Input_Dict = InputMethod(InputParams,params_default=Defaults)
         else:
             Input_Dict = InputMethod
+            Input_Dict = filter_default(input_dict=Input_Dict,params_default=Defaults)
         Input_Dict=filter_lambda(Input_Dict)
         if PrintMode==True:
             print("Analyzing . . .")

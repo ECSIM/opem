@@ -5,7 +5,11 @@ from .Script import *
 from .Params import Version
 import io
 import os
-
+def filter_default(input_dict,params_default):
+    for i in params_default.keys():
+        if i not in input_dict.keys():
+            input_dict[i]=params_default[i]
+    return input_dict
 def get_precision(input_number):
     '''
     This function return precision of input number
