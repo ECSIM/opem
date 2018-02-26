@@ -14,6 +14,7 @@ setup(
   install_requires=[
       'art',
 	  'codecov',
+      'requests',
       ],
     classifiers=[
         'Development Status :: 3 - Alpha',
