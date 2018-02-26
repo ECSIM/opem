@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 Version=0.6
 Website="http://www.ecsim.ir/opem"
-UpdateUrl="http://www.ecsim.ir/opem/update.html"
+UpdateUrl="http://www.ecsim.ir/opem/update"
 
 HHV = 1.482
 uF = 0.95

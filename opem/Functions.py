@@ -11,8 +11,10 @@ def check_update():
         update_obj=requests.get(UpdateUrl)
         update_data=update_obj.text
         if float(update_data)>Version:
+            print("###########")
             print("New Version ("+update_data+") Is Available!")
             print("Website : "+Website)
+            print("###########")
     except Exception:
         pass
 
