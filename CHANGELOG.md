@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.6] - 2018-02-26
 ### Added
 - Padulles-Amphlett Dynamic Model
+- Check Update Function
 
 ### Changed
 - Get_Input Function Default Params
