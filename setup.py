@@ -3,13 +3,13 @@ from distutils.core import setup
 setup(
   name = 'opem',
   packages = ['opem','opem.Static','opem.Dynamic'],
-  version = '0.5',
+  version = '0.6',
   description = 'Open Source PEM Cell Simulation Tool',
   long_description='''Open Source PEM Cell Simulation Tool''',
   author = 'Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
   author_email = 'opem@ecsim.ir',
   url = 'https://github.com/ecsim/opem',
-  download_url = 'https://github.com/ecsim/opem/tarball/v0.5',
+  download_url = 'https://github.com/ecsim/opem/tarball/v0.6',
   keywords = ["OPEM","PEM","FC","CELL","Fuel Cell","Chemistry"],
   install_requires=[
       'art',
