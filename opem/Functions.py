@@ -2,9 +2,20 @@
 import datetime
 from art import text2art
 from .Script import *
-from .Params import Version
+from .Params import Version,Website,UpdateUrl
 import io
 import os
+import requests
+def check_update():
+    try:
+        update_obj=requests.get(UpdateUrl)
+        update_data=update_obj.text
+        if float(update_data)>Version:
+            print("New Version ("+update_data+") Is Available!")
+            print("Website : "+Website)
+    except Exception:
+        pass
+
 def filter_default(input_dict,params_default):
     for i in params_default.keys():
         if i not in input_dict.keys():

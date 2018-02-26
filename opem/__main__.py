@@ -9,6 +9,7 @@ from .Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from .Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
 from .Params import Version
+from .Functions import check_update
 import doctest
 import sys
 
@@ -27,6 +28,7 @@ if __name__ == "__main__":
         doctest.testfile("test.py", optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
     else:
         ExitFlag = False
+        check_update()
         while not ExitFlag:
             tprint("OPEM")
             tprint("v" + str(Version))
