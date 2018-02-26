@@ -24,6 +24,7 @@
    * [Issues & Bug Reports](#issues--bug-reports)
    * [Contribution](CONTRIBUTING.md)
    * [TODO](#todo)
+   * [Outputs](#outputs)
    * [Thanks](#thanks)
    * [Reference](#reference)
    * [Cite](#cite)
@@ -741,6 +742,12 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
   	- [x] Voltage of PEMFC
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
+
+## Outputs	
+
+1. [HTML](http://opem.ecsim.ir/test.html)
+2. [CSV](otherfiles/test.csv)
+3. [OPEM](otherfiles/test.opem)	
 
 
 ## Thanks
