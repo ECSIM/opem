@@ -1,5 +1,5 @@
 ## Contribution			
 
-You can fork the repository, improve or fix some part of it and then send the pull requests back if you want to see them here. I really appreciate that. ❤️			
+Changes and improvements are more than welcome! ❤️ Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into `develop` 			
 
 Remember to write a few tests for your code before sending pull requests. 
