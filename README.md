@@ -25,6 +25,7 @@
    * [Contribution](CONTRIBUTING.md)
    * [TODO](#todo)
    * [Outputs](#outputs)
+   * [Dependencies](#dependencies)
    * [Thanks](#thanks)
    * [Reference](#reference)
    * [Cite](#cite)
@@ -749,6 +750,10 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 2. [CSV](otherfiles/test.csv)
 3. [OPEM](otherfiles/test.opem)	
 
+## Dependencies
+1. [art](http://www.shaghighi.ir/art/)
+2. [requests](http://docs.python-requests.org/en/master/)
+3. [codecov](https://codecov.io/)
 
 ## Thanks
 
