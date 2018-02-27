@@ -10,12 +10,18 @@ setup(
   author_email = 'opem@ecsim.ir',
   url = 'https://github.com/ecsim/opem',
   download_url = 'https://github.com/ecsim/opem/tarball/v0.6',
-  keywords = ["OPEM","PEM","FC","CELL","Fuel Cell","Chemistry"],
+  keywords = "OPEM PEM FC CELL Fuel-Cell Chemistry",
+  project_urls={
+    'Webpage': 'http://opem.ecsim.ir',
+    'Say Thanks!': 'https://saythanks.io/to/ecsim',
+    'Source': 'https://github.com/ecsim/opem',
+     },
   install_requires=[
       'art',
 	  'codecov',
       'requests',
       ],
+  python_requires='>=3.4',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: End Users/Desktop',
