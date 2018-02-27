@@ -751,9 +751,7 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 3. [OPEM](otherfiles/test.opem)	
 
 ## Dependencies
-1. [art](http://www.shaghighi.ir/art/)
-2. [requests](http://docs.python-requests.org/en/master/)
-3. [codecov](https://codecov.io/)
+<a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a>
 
 ## Thanks
 
