@@ -2,24 +2,31 @@ build: false
 
 environment:
   matrix:
-
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5.2"
-      PYTHON_ARCH: "32"
-
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5.2"
+    - PYTHON: "C:\\Python31"
+      PYTHON_VERSION: "3.1.0"
       PYTHON_ARCH: "64"
 	  
-	- PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python31"
+      PYTHON_VERSION: "3.1.0"
+      PYTHON_ARCH: "32"
+	  
+    - PYTHON: "C:\\Python34"
       PYTHON_VERSION: "3.4.0"
       PYTHON_ARCH: "64"
 	  
-	- PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python34"
       PYTHON_VERSION: "3.4.0"
       PYTHON_ARCH: "32"
-	
-	- PYTHON: "C:\\Python36"
+	  
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: "3.5.2"
+      PYTHON_ARCH: "32"
+	  
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: "3.5.2"
+      PYTHON_ARCH: "64"	
+	  
+    - PYTHON: "C:\\Python36"
       PYTHON_VERSION: "3.6.0"
       PYTHON_ARCH: "64"
 
