@@ -3,11 +3,11 @@ build: false
 environment:
   matrix:
   - PYTHON: "C:\\Python31"
-    PYTHON_VERSION: "3.1.0"
+    PYTHON_VERSION: "3.1.1"
     PYTHON_ARCH: "64"
     
   - PYTHON: "C:\\Python31"
-    PYTHON_VERSION: "3.1.0"
+    PYTHON_VERSION: "3.1.1"
     PYTHON_ARCH: "32"
     
   - PYTHON: "C:\\Python34"
