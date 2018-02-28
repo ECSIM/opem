@@ -5,7 +5,9 @@ setup(
   packages = ['opem','opem.Static','opem.Dynamic'],
   version = '0.6',
   description = 'Open Source PEM Cell Simulation Tool',
-  long_description='''Open Source PEM Cell Simulation Tool''',
+  long_description='''The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simulation package for polymer electrolyte fuel cells.
+  It contains a database of physical phenomena equations,  and kinetics mathematical models in order to perform static/dynamic analysis of PEMFC.
+  The goal of the software is to prepare a platform for collaborative development of  PEMFC mathematical models.''',
   author = 'Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
   author_email = 'opem@ecsim.ir',
   url = 'https://github.com/ecsim/opem',
