@@ -756,6 +756,7 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 ## Thanks
 
 * [Chart.js](https://github.com/chartjs/Chart.js "Chartjs") for this awesome tool ;-)
+* [PyInstaller](https://github.com/pyinstaller/pyinstaller)
 
 ## Reference
 
