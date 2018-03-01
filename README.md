@@ -41,7 +41,7 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 
 ### CLI (Command Line Interface)
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m opem` or `python3 -m opem`
+- Run `python -m opem` or `python3 -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters
 	1. Amphlett Static Model
 		<html>
