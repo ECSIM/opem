@@ -5,13 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.6] - 2018-02-26
+## [0.6] - 2018-03-1
 ### Added
 - Padulles-Amphlett Dynamic Model
 - Check Update Function
+- Webpage Document Section
 
 ### Changed
 - Get_Input Function Default Params
+- Exe-File Incompatibility Fixed
 
 
 ## [0.5] - 2018-02-16
