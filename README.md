@@ -747,8 +747,8 @@ or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir").
 ## Outputs	
 
 1. [HTML](http://www.ecsim.ir/opem/outputs/test.html)
-2. [CSV](otherfiles/test.csv)
-3. [OPEM](otherfiles/test.opem)	
+2. [CSV](otherfile/test.csv)
+3. [OPEM](otherfile/test.opem)	
 
 ## Dependencies
 <a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a>
