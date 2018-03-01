@@ -21,3 +21,9 @@
 - Download [Exe-Version 0.5](https://www.dropbox.com/s/s2j2ok3ha2t2omr/OPEM%28v0.5%29.zip?dl=0)
 - Extract Zip File
 - Run `OPEM.exe`
+
+### Exe-specific Notes
+For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to include the Visual C++ run-time .dlls: Python 3.5 uses Visual Studio 2015 run-time, which has been renamed into “Universal CRT“ and has become part of Windows 10. For Windows Vista through Windows 8.1 there are Windows Update packages, which may or may not be installed in the target-system. So you have the following options:
+
+1. Download OPEM >= 0.6 (Recommended)
+2. Download and install [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
