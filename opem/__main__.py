@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from .Static.Amphlett import Static_Analysis as Amphlett_Analysis
-from .Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
-from .Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
-from .Dynamic.Padulles1 import Dynamic_Analysis as Padulles1_Analysis
-from .Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
-from .Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
-from .Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
+from opem.Static.Amphlett import Static_Analysis as Amphlett_Analysis
+from opem.Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
+from opem.Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
+from opem.Dynamic.Padulles1 import Dynamic_Analysis as Padulles1_Analysis
+from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
+from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
+from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from .Params import Version
-from .Functions import check_update
+from opem.Params import Version
+from opem.Functions import check_update
 import doctest
 import sys
 

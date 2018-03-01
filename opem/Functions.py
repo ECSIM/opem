@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
 from art import text2art
-from .Script import *
-from .Params import Version,Website,UpdateUrl
+from opem.Script import *
+from opem.Params import Version,Website,UpdateUrl
 import io
 import os
 import requests
