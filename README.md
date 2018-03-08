@@ -706,6 +706,10 @@ The Open-Source PEMFC Simulation Tool (Opem) is an open-source mathematical simu
 Just fill an issue and describe it. We'll check it ASAP!							
 or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir"). 
 
+Gitter is another option :				
+
+[![Gitter](https://badges.gitter.im/ECSIM/opem.svg)](https://gitter.im/ECSIM/opem?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 ## Todo		
 
