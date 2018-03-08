@@ -811,6 +811,9 @@ If you use OPEM in your research , please cite this :
 
 </pre>
 
+Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)									
+
+
 <a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a>
 
 ## License
