@@ -316,6 +316,35 @@ def filter_lambda(Input_Dict):
     except Exception:
         return Input_Dict
 
+def left_justify(words, width):
+    return ' '.join(words).ljust(width)
+
+def justify(words, width):
+    line = []
+    col = 0
+    for word in words:
+        if line and col + len(word) > width:
+            if len(line) == 1:
+                yield left_justify(line, width)
+            else:
+                # After n + 1 spaces are placed between each pair of
+                # words, there are r spaces left over; these result in
+                # wider spaces at the left.
+                n, r = divmod(width - col + 1, len(line) - 1)
+                narrow = ' ' * (n + 1)
+                if r == 0:
+                    yield narrow.join(line)
+                else:
+                    wide = ' ' * (n + 2)
+                    yield wide.join(line[:r] + [narrow.join(line[r:])])
+            line, col = [], 0
+        line.append(word)
+        col += len(word) + 1
+    if line:
+        yield left_justify(line, width)
+
+
+
 def filter_alpha(Input_Dict):
     '''
     This function filter alpha parameter

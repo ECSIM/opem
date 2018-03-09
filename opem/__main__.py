@@ -8,8 +8,8 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version
-from opem.Functions import check_update
+from opem.Params import Version,Overview
+from opem.Functions import check_update,justify
 import doctest
 import sys
 
@@ -32,6 +32,8 @@ if __name__ == "__main__":
         while not ExitFlag:
             tprint("OPEM")
             tprint("v" + str(Version))
+            print("\n".join(justify(Overview.split(),100)))
+            input("\nPress any key to continue\n")
             for i,item in enumerate(MenuKeys):
                 print(str(i+1)+"-"+item)
             try:
