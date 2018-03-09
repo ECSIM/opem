@@ -317,9 +317,25 @@ def filter_lambda(Input_Dict):
         return Input_Dict
 
 def left_justify(words, width):
+    '''
+    This function left justify words
+    :param words: list of words
+    :type words : list
+    :param width: width of each line
+    :type width: int
+    :return: left justified words as list
+    '''
     return ' '.join(words).ljust(width)
 
 def justify(words, width):
+    '''
+    This function justify input words
+    :param words: list of words
+    :type words : list
+    :param width: width of each line
+    :type width : int
+    :return: list of justified words as list
+    '''
     line = []
     col = 0
     for word in words:
