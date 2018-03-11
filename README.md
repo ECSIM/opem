@@ -16,7 +16,8 @@
 	
 ----------				
 
-## Table of contents					
+## Table of contents
+   * [What is PEM?](PEM.md)					
    * [Overview](#overview)
    * [Installation](INSTALL.md)
    * [Usage](#usage)
