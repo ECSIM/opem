@@ -38,6 +38,14 @@ Amphlett_OutputParams = {"Enernst": "V", "Eta Activation": "V", "Eta Ohmic": "V"
 
 Amphlett_Params_Default={"R":0}
 
+Amphlett_Description='''
+Amphlett static model is a parametric model that predicting the performance of a solid polymer electrolyte,
+proton exchange membrane (PEM) fuel cell. Main concepts in the Amphlett model includes Nernst voltage, PEMFC losses
+(activation polarization loss, ohmic polarization loss and concentration polarization loss), power and efficiency
+of fuel cell. This parametric model of PEMFC using a combination of mechanistic and empirical approach. The ideal
+standard potential (Nernst potential) of an H2/O2 FC is 1.229 V with liquid water product. The actual cell potential
+is decreased from its reference potential because of irreversible losses.
+'''
 
 Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -50,6 +58,15 @@ Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                 "A": "The slope of the Tafel line [V]","N": "Number Of Single Cells"}
 Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W","VStack": "V","Power-Stack":"W"}
 
+Larminiee_Description='''
+Larminie-Dicks model is obtained for large variation of the load parameters. In this model, the fuel cell is represented
+by means of its voltage–current characteristic obtained in static operating mode. In fact, Larminie-Dicks static model
+presents the fuel cell voltage as a function of the current magnitude. The obtained polarization curve is composed of
+three main regions corresponding to the predominance of electrochemical activation phenomena (region I), a linear
+part (region II) where the voltage drop is mainly due to electronic and ionic internal resistances and the last
+region where the diffusion kinetics of gases through the electrodes becomes the limiting factor (region III). This
+last zone is characterized by a rapid voltage fall.
+'''
 Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the oxygen reduction [V]", "R": "Resistance [ohm.cm^2]",
                "m": "Diffusion's parameters [V]", "n": "Diffusion's parameters [(A^-1)(cm^2)]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -58,7 +75,20 @@ Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's param
                "N": "Number Of Single Cells"}
 Chamberline_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
 
-
+Chamberline_Description='''
+Chamberlin-Kim static model is an empirical equation which was developed to fit the experimental cell potential (E) vs.
+current density (J) data for proton exchange membrane fuel cells (PEMFCs), at several temperatures, pressures, and
+oxygen compositions in the cathode gas mixture. The exponential term compensates for the mass-transport regions of the
+V vs. i plot; i.e., the increase in slope of the pseudolinear region and the subsequent rapid fall-off of the cell
+potential with increasing current density. The terms E0 and b yield the electrode kinetic parameters for oxygen
+reduction in the PEMFC and R represents the resistance, predominantly ohmic and, to a small extent, the charge
+transfer resistance of the electro-oxidation of hydrogen. The exponential term characterizes the mass-transport
+region of the V vs. i plot. The parameter n has more pronounced effects than the parameter m in this region. In
+Chamberline Kim’s model, the values of the parameters(five parameters: E0, b, R, m, n) vary depending on many
+variables, including the composition of the Membrane Electrode Assemblies(MEA), the fuel and oxidant used, besides
+the local temperature, pressure, and humidity of the MEA. They also depend on the stack itself, so that it can not
+be transposed to another fuel cell without new parameter identification.
+'''
 Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
@@ -68,6 +98,13 @@ Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell vo
                      "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                      "i-stop": "Cell operating current end point [A]"}
 Padulles_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","E":"V"}
+
+
+Padulles_Description='''
+In this model, Nernst and fuel cell potential were modeled as a function of oxygen and hydrogen gases partial pressure
+that can be calculated from independent variables or constants. The partial pressure of gases is proportional to
+the molar flow of each gas.
+'''
 
 Padulles2_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
@@ -81,6 +118,12 @@ Padulles2_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell v
                      "tH2O": "Water time constant [s]"}
 Padulles2_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
 
+Padulles2_Description='''
+In this model, Nernst and fuel cell potential were modeled as a function of water, oxygen and hydrogen gases partial
+pressure that can be calculated from independent variables or constants. The partial pressure of gases is proportional
+to the molar flow of each gas.
+'''
+
 Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
@@ -93,6 +136,13 @@ Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Openc
                      "tH2O": "Water time constant [s]","qMethanol":"Methanol flow rate [kmol.s^(-1)]",
                             "CV":"Conversion factor"}
 Padulles_Hauer_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
+
+Padulles_Hauer_Description='''
+Padulles-Hauer Dynamic Model is a dynamic electrochemical simulation model of a grid independent proton exchange
+membrane (PEM) fuel cell. This model includes a methanol reformer to generate hydrogen from methanol and the PEM stack.
+The model is used to predict the output voltage and power of a PEMFC. It has to be noted that the reformer model is a
+second order transfer function.
+'''
 
 Padulles_Amphlett_Params_Default={"R":0,"E0":1.229}
 
@@ -114,6 +164,34 @@ Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"
 
 Padulles_Amphlett_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm",
                             "E":"V","Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V"}
+
+Padulles_Amphlett_Description='''
+This model is an integration of Padulles-Hauer dynamic model with Amphlett static model. The advantage of this dynamic
+model is using Amphlett equation for simulating the polarization values. Amphlett model as the most complicated and
+preferable static model, but the most precise. Based on this model, the obtained polarization voltage is identical to
+the experimental results.
+'''
+
+General_Padulles_Description='''
+The Padulles dynamic model can predict the transient response of cell voltage, temperature of the cell, hydrogen/oxygen
+out flow rates and cathode and anode channel temperatures/pressures under sudden change in load current. Hence, a
+dynamic fuel cell simulation is developed in this model, which incorporates the dynamics of flow and pressure in the
+anode and cathode channels and mass/ heat transfer transient features in the fuel cell body. This model based on some
+assumption such; the gases are ideal, the stack is fed with hydrogen and air, temperature is stable at all times, the
+ratio of pressures between the interior and exterior of the channel is large, The channels that transport gases along
+the electrodes have a fixed volume, only source of losses is ohmic and Nernst equation can be applied too.
+'''
+
+Description_Menu={"Amphlett_Analysis (Static)":Amphlett_Description,"Larminiee_Analysis (Static)":Larminiee_Description,
+                  "Chamberline_Kim_Analysis (Static)":Chamberline_Description,
+                  "Padulles_Analysis I (Dynamic)":Padulles_Description,
+                  "Padulles_Analysis II (Dynamic)":Padulles2_Description,
+                  "Padulles_Hauer Analysis (Dynamic)":Padulles_Hauer_Description,
+                  "Padulles_Amphlett Analysis (Dynamic)":Padulles_Amphlett_Description,
+                  "General Padulles":General_Padulles_Description,"Overview":Overview}
+
+
+
 
 
 

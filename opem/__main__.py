@@ -8,8 +8,8 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version,Overview
-from opem.Functions import check_update,justify
+from opem.Params import Version,Description_Menu
+from opem.Functions import check_update,description_print
 import doctest
 import sys
 
@@ -32,8 +32,7 @@ if __name__ == "__main__":
         while not ExitFlag:
             tprint("OPEM")
             tprint("v" + str(Version))
-            print("\n".join(justify(Overview.split(),100)))
-            input("\nPress any key to continue\n")
+            description_print("Overview",Description_Menu)
             for i,item in enumerate(MenuKeys):
                 print(str(i+1)+"-"+item)
             try:
@@ -41,7 +40,9 @@ if __name__ == "__main__":
             except Exception:
                 AnalysisIndex=-1
             if AnalysisIndex-1 in range(len(MenuKeys)):
-                Menu[MenuKeys[AnalysisIndex-1]]()
+                AnalysisName=MenuKeys[AnalysisIndex-1]
+                description_print(AnalysisName, Description_Menu)
+                Menu[AnalysisName]()
                 InputIndex = input("Press [R] to restart OPEM or any other key to exit.")
                 if InputIndex.upper() != "R":
                     ExitFlag = True

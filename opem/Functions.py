@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import datetime
 from art import text2art
 from opem.Script import *
@@ -6,15 +7,19 @@ from opem.Params import Version,Website,UpdateUrl
 import io
 import os
 import requests
+
+
+def line(num=11,char="#"):
+    print(char*num)
 def check_update():
     try:
         update_obj=requests.get(UpdateUrl)
         update_data=update_obj.text
         if float(update_data)>Version:
-            print("###########")
+            line()
             print("New Version ("+update_data+") Is Available!")
             print("Website : "+Website)
-            print("###########")
+            line()
     except Exception:
         pass
 
@@ -186,7 +191,7 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
 
 def None_Omit(Input_Str):
     '''
-    This function repleace None object with "None" string
+    This function replace None object with "None" string
     :param Input_Str: Input String
     :type Input_Str : str
     :return: modified string as str
@@ -358,6 +363,18 @@ def justify(words, width):
         col += len(word) + 1
     if line:
         yield left_justify(line, width)
+
+
+def description_print(Analysis_Name,Description_Dict,Width=100):
+    line()
+    if Analysis_Name.find("Padulles")!=-1:
+        print("\n")
+        print("\n".join(justify(Description_Dict["General Padulles"].split(), Width)))
+    print("\n")
+    print("\n".join(justify(Description_Dict[Analysis_Name].split(), Width)))
+    print("\n")
+    line()
+    input("\nPress any key to continue\n")
 
 
 
