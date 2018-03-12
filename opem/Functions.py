@@ -10,8 +10,20 @@ import requests
 
 
 def line(num=11,char="#"):
+    '''
+    This function print line of char
+    :param num: number of character in this line
+    :type num : int
+    :param char: character
+    :type char : str
+    :return: None
+    '''
     print(char*num)
 def check_update():
+    '''
+    This function check for new opem version in  website
+    :return: None
+    '''
     try:
         update_obj=requests.get(UpdateUrl)
         update_data=update_obj.text
@@ -24,6 +36,14 @@ def check_update():
         pass
 
 def filter_default(input_dict,params_default):
+    '''
+    This function filter input parameters with default params
+    :param input_dict: input parameters
+    :type input_dict : dict
+    :param params_default: default parameters
+    :type params_default : dict
+    :return: modified input_dict as dict
+    '''
     for i in params_default.keys():
         if i not in input_dict.keys():
             input_dict[i]=params_default[i]
@@ -366,6 +386,16 @@ def justify(words, width):
 
 
 def description_print(Analysis_Name,Description_Dict,Width=100):
+    '''
+    This function print justified text for overview and each model description in console
+    :param Analysis_Name: Analysis model name
+    :type Analysis_Name : str
+    :param Description_Dict: Description dict ( in Params)
+    :type Description_Dict : dict
+    :param Width: Width of each line (for justify)
+    :type Width : int
+    :return: None
+    '''
     line()
     if Analysis_Name.find("Padulles")!=-1:
         print("\n")
