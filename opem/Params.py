@@ -190,6 +190,14 @@ Description_Menu={"Amphlett_Analysis (Static)":Amphlett_Description,"Larminiee_A
                   "Padulles_Amphlett Analysis (Dynamic)":Padulles_Amphlett_Description,
                   "General Padulles":General_Padulles_Description,"Overview":Overview}
 
+Description_Links={"Amphlett_Analysis (Static)":"http://www.ecsim.ir/opem/doc/Static/Amphlett.html",
+                  "Larminiee_Analysis (Static)":"http://www.ecsim.ir/opem/doc/Static/Larminie_Dicks.html",
+                  "Chamberline_Kim_Analysis (Static)":"http://www.ecsim.ir/opem/doc/Static/Chamberline_Kim.html",
+                  "Padulles_Analysis I (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles1.html",
+                  "Padulles_Analysis II (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html",
+                  "Padulles_Hauer Analysis (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html",
+                  "Padulles_Amphlett Analysis (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html"}
+
 
 
 

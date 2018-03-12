@@ -7,6 +7,7 @@ from opem.Params import Version,Website,UpdateUrl
 import io
 import os
 import requests
+import webbrowser
 
 
 def line(num=11,char="#"):
@@ -385,7 +386,7 @@ def justify(words, width):
         yield left_justify(line, width)
 
 
-def description_print(Analysis_Name,Description_Dict,Width=100,TestMode=False):
+def description_print(Analysis_Name,Description_Dict,Width=100):
     '''
     This function print justified text for overview and each model description in console
     :param Analysis_Name: Analysis model name
@@ -404,10 +405,14 @@ def description_print(Analysis_Name,Description_Dict,Width=100,TestMode=False):
     print("\n".join(justify(Description_Dict[Analysis_Name].split(), Width)))
     print("\n")
     line()
-    if TestMode==False:
-        input("\nPress any key to continue\n")
 
-
+def description_control(Analysis_Name,User_Input,Links_Dict):
+    if User_Input.upper()=="M":
+        webbrowser.open_new(Links_Dict[Analysis_Name])
+    elif User_Input.upper()=="T":
+        pass
+    else:
+        pass
 
 def filter_alpha(Input_Dict):
     '''

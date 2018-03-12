@@ -8,8 +8,8 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version,Description_Menu
-from opem.Functions import check_update,description_print
+from opem.Params import Version,Description_Menu,Description_Links
+from opem.Functions import check_update,description_print,description_control
 import doctest
 import sys
 
@@ -42,6 +42,9 @@ if __name__ == "__main__":
             if AnalysisIndex-1 in range(len(MenuKeys)):
                 AnalysisName=MenuKeys[AnalysisIndex-1]
                 description_print(AnalysisName, Description_Menu)
+                UserInput=input("\nPress [M]: More Information,[T]: Run Standard Test Vector or any other key to "
+                                "continue \n")
+                description_control(AnalysisName, UserInput, Description_Links)
                 Menu[AnalysisName]()
                 InputIndex = input("Press [R] to restart OPEM or any other key to exit.")
                 if InputIndex.upper() != "R":
