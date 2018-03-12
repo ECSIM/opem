@@ -60,7 +60,7 @@ Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W","VSta
 
 Larminiee_Description='''
 Larminie-Dicks model is obtained for large variation of the load parameters. In this model, the fuel cell is represented
-by means of its voltage–current characteristic obtained in static operating mode. In fact, Larminie-Dicks static model
+by means of its voltage-current characteristic obtained in static operating mode. In fact, Larminie-Dicks static model
 presents the fuel cell voltage as a function of the current magnitude. The obtained polarization curve is composed of
 three main regions corresponding to the predominance of electrochemical activation phenomena (region I), a linear
 part (region II) where the voltage drop is mainly due to electronic and ionic internal resistances and the last
@@ -84,7 +84,7 @@ potential with increasing current density. The terms E0 and b yield the electrod
 reduction in the PEMFC and R represents the resistance, predominantly ohmic and, to a small extent, the charge
 transfer resistance of the electro-oxidation of hydrogen. The exponential term characterizes the mass-transport
 region of the V vs. i plot. The parameter n has more pronounced effects than the parameter m in this region. In
-Chamberline Kim’s model, the values of the parameters(five parameters: E0, b, R, m, n) vary depending on many
+Chamberline Kim's model, the values of the parameters(five parameters: E0, b, R, m, n) vary depending on many
 variables, including the composition of the Membrane Electrode Assemblies(MEA), the fuel and oxidant used, besides
 the local temperature, pressure, and humidity of the MEA. They also depend on the stack itself, so that it can not
 be transposed to another fuel cell without new parameter identification.
