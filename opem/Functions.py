@@ -385,7 +385,7 @@ def justify(words, width):
         yield left_justify(line, width)
 
 
-def description_print(Analysis_Name,Description_Dict,Width=100):
+def description_print(Analysis_Name,Description_Dict,Width=100,TestMode=False):
     '''
     This function print justified text for overview and each model description in console
     :param Analysis_Name: Analysis model name
@@ -404,7 +404,8 @@ def description_print(Analysis_Name,Description_Dict,Width=100):
     print("\n".join(justify(Description_Dict[Analysis_Name].split(), Width)))
     print("\n")
     line()
-    input("\nPress any key to continue\n")
+    if TestMode==False:
+        input("\nPress any key to continue\n")
 
 
 

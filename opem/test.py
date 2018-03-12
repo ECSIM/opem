@@ -2732,7 +2732,15 @@ Analyzing . . .
 2.9
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)
 [Error] Vcell Calculation Error (Enernst:4.5, Loss:0.4, N:None)
-
+>>> from opem import *
+>>> Functions.description_print("Model1",{"Model1":"Test"},TestMode=True)
+###########
+<BLANKLINE>
+<BLANKLINE>
+Test
+<BLANKLINE>
+<BLANKLINE>
+###########
 >>> cov.stop()
 >>> cov.save()
 
