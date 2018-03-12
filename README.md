@@ -794,6 +794,23 @@ Gitter is another option :
 and Policy, University of California Davis.
 </blockquote>
 
+<blockquote>
+7- A. Saadi, M. Becherif, A. Aboubou, M.Y. Ayad. 2013. "Comparison of proton exchange membrane fuel cell static models." Renewable Energy (Elsevier) 56: 64-71. doi:dx.doi.org/10.1016/j.renene.2012.10.012.
+</blockquote>
+
+<blockquote>
+8- Diego Feroldi, Marta Basualdo. 2012. "Description of PEM Fuel Cells System." Green Energy and Technology (Springer) 49-72. doi:10.1007/978-1-84996-184-4_2
+</blockquote>
+
+<blockquote>
+9- Gottesfeld, Shimshon. n.d. The Polymer Electrolyte Fuel Cell: Materials Issues in a Hydrogen Fueled Power Source.
+ http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm
+</blockquote>
+
+<blockquote>
+10- Mohamed Becherif, Aïcha Saadi, Daniel Hissel, Abdennacer Aboubou, Mohamed Yacine Ayad. 2011.
+ "Static and dynamic proton exchange membrane fuel cell models." Journal of Hydrocarbons Mines and Environmental Research 2 (1)
+</blockquote>
 
 ## Cite
 
