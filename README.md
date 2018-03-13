@@ -769,8 +769,9 @@ Gitter is another option :
 
 ## Thanks
 
-* [Chart.js](https://github.com/chartjs/Chart.js "Chartjs") for this awesome tool ;-)
+* [Chart.js](https://github.com/chartjs/Chart.js "Chartjs")
 * [PyInstaller](https://github.com/pyinstaller/pyinstaller)
+* [Draw.io](https://www.draw.io/)
 
 ## Reference
 
