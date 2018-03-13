@@ -47,7 +47,7 @@ standard potential (Nernst potential) of an H2/O2 FC is 1.229 V with liquid wate
 is decreased from its reference potential because of irreversible losses.
 '''
 
-Amphlett_Standard_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":100,"i-step":0.1,"A":50.6,"l":0.0178,
+Amphlett_Standard_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":75,"i-step":0.1,"A":50.6,"l":0.0178,
                           "lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"Amphlett_Test"}
 Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -71,7 +71,7 @@ last zone is characterized by a rapid voltage fall.
 '''
 
 Larminiee_Standard_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,
-                           "i-start":0.1,"i-stop":100,"i-step":0.1,"Name":"Larminiee_Test"}
+                           "i-start":0.1,"i-stop":98,"i-step":0.1,"Name":"Larminiee_Test"}
 Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the oxygen reduction [V]", "R": "Resistance [ohm.cm^2]",
                "m": "Diffusion's parameters [V]", "n": "Diffusion's parameters [(A^-1)(cm^2)]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -95,7 +95,7 @@ the local temperature, pressure, and humidity of the MEA. They also depend on th
 be transposed to another fuel cell without new parameter identification.
 '''
 Chamberline_Standard_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,
-                             "i-stop":100,"i-step":0.1,"Name":"Chamberline_Test"}
+                             "i-stop":42.5,"i-step":0.1,"Name":"Chamberline_Test"}
 
 Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
@@ -190,7 +190,7 @@ the experimental results.
 Padulles_Amphlett_Standard_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,
                                    "KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,
                                    "tH2O":18.418,"B":0.016,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,
-                                   "i-stop":4,"i-step":0.1,"Name":"Padulles_Amphlett_Test"}
+                                   "i-stop":75,"i-step":0.1,"Name":"Padulles_Amphlett_Test"}
 General_Padulles_Description='''
 The Padulles dynamic model can predict the transient response of cell voltage, temperature of the cell, hydrogen/oxygen
 out flow rates and cathode and anode channel temperatures/pressures under sudden change in load current. Hence, a
