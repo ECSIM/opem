@@ -8,6 +8,7 @@ import io
 import os
 import requests
 import webbrowser
+import sys
 
 
 def line(num=11,char="#"):
@@ -152,15 +153,17 @@ def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file,PrintMode):
     :param file : file object
     :return: None
     """
-
-    file.write("I :" + str(i) + " A \n\n")
+    spliter="\n"
+    if 'win' not in sys.platform:
+        spliter="\r\n"
+    file.write("I :" + str(i) + " A "+spliter*2)
     if PrintMode==True:
         print("I : " + str(i))
     for key in OutputParamsKeys:
-        file.write(key + " : " + str(OutputDict[key]) + " " + OutputParams[key] + "\n")
+        file.write(key + " : " + str(OutputDict[key]) + " " + OutputParams[key] + spliter)
         if PrintMode==True:
             print(key + " : " + str(OutputDict[key]) + " " + OutputParams[key])
-    file.write("###########\n")
+    file.write("###########"+spliter)
     if PrintMode==True:
         print("###########")
 
@@ -173,21 +176,24 @@ def Output_Init(InputDict,Title,Name):
     :type Title :str
     :return: file object
     """
+    spliter="\n"
+    if 'win' not in sys.platform:
+        spliter="\r\n"
     Art = text2art("Opem")
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
     file = open(os.path.join(Title,Name+".opem"), "w")
     file.write(Art)
-    file.write("Simulation Date : " + str(datetime.datetime.now()) + "\n")
-    file.write("**********\n")
-    file.write(Title+" Model\n\n")
-    file.write("**********\n")
-    file.write("Simulation Inputs : \n\n")
+    file.write("Simulation Date : " + str(datetime.datetime.now()) + spliter)
+    file.write("**********"+spliter)
+    file.write(Title+" Model"+spliter*2)
+    file.write("**********"+spliter)
+    file.write("Simulation Inputs : "+spliter*2)
     Input_Keys = list(InputDict.keys())
     Input_Keys.sort()
     for key in Input_Keys:
-        file.write(key + " : " + str(InputDict[key]) + "\n")
-    file.write("**********\n")
+        file.write(key + " : " + str(InputDict[key]) + spliter)
+    file.write("**********"+spliter)
     return file
 
 def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
