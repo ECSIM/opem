@@ -47,6 +47,8 @@ standard potential (Nernst potential) of an H2/O2 FC is 1.229 V with liquid wate
 is decreased from its reference potential because of irreversible losses.
 '''
 
+Amphlett_Standard_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":100,"i-step":0.1,"A":50.6,"l":0.0178,
+                          "lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"Amphlett_Test"}
 Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                "i-stop": "Cell operating current end point [A]",
@@ -67,6 +69,9 @@ part (region II) where the voltage drop is mainly due to electronic and ionic in
 region where the diffusion kinetics of gases through the electrodes becomes the limiting factor (region III). This
 last zone is characterized by a rapid voltage fall.
 '''
+
+Larminiee_Standard_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,
+                           "i-start":0.1,"i-stop":100,"i-step":0.1,"Name":"Larminiee_Test"}
 Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's parameter for the oxygen reduction [V]", "R": "Resistance [ohm.cm^2]",
                "m": "Diffusion's parameters [V]", "n": "Diffusion's parameters [(A^-1)(cm^2)]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
@@ -89,6 +94,9 @@ variables, including the composition of the Membrane Electrode Assemblies(MEA), 
 the local temperature, pressure, and humidity of the MEA. They also depend on the stack itself, so that it can not
 be transposed to another fuel cell without new parameter identification.
 '''
+Chamberline_Standard_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,
+                             "i-stop":100,"i-step":0.1,"Name":"Chamberline_Test"}
+
 Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
@@ -106,6 +114,9 @@ that can be calculated from independent variables or constants. The partial pres
 the molar flow of each gas.
 '''
 
+Padulles_Standard_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,
+                          "C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":100,"i-step":0.1,
+                          "Name":"PadullesI_Test"}
 Padulles2_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
@@ -123,7 +134,9 @@ In this model, Nernst and fuel cell potential were modeled as a function of wate
 pressure that can be calculated from independent variables or constants. The partial pressure of gases is proportional
 to the molar flow of each gas.
 '''
-
+Padulles2_Standard_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,
+                           "tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,
+                           "qH2O":0.0004,"i-start":0.1,"i-stop":100,"i-step":0.1,"Name":"Padulles2_Vector"}
 Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
@@ -143,7 +156,10 @@ membrane (PEM) fuel cell. This model includes a methanol reformer to generate hy
 The model is used to predict the output voltage and power of a PEMFC. It has to be noted that the reformer model is a
 second order transfer function.
 '''
-
+Padulles_Hauer_Standard_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,
+                                "tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,
+                                "rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":100,"i-step":0.1,
+                                "Name":"Padulles_Hauer_Test"}
 Padulles_Amphlett_Params_Default={"R":0,"E0":1.229}
 
 Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V], Default Value:"
@@ -171,7 +187,10 @@ model is using Amphlett equation for simulating the polarization values. Amphlet
 preferable static model, but the most precise. Based on this model, the obtained polarization voltage is identical to
 the experimental results.
 '''
-
+Padulles_Amphlett_Standard_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,
+                                   "KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,
+                                   "tH2O":18.418,"B":0.016,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,
+                                   "i-stop":4,"i-step":0.1,"Name":"Padulles_Amphlett_Test"}
 General_Padulles_Description='''
 The Padulles dynamic model can predict the transient response of cell voltage, temperature of the cell, hydrogen/oxygen
 out flow rates and cathode and anode channel temperatures/pressures under sudden change in load current. Hence, a
@@ -197,6 +216,13 @@ Description_Links={"Amphlett_Analysis (Static)":"http://www.ecsim.ir/opem/doc/St
                   "Padulles_Analysis II (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html",
                   "Padulles_Hauer Analysis (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html",
                   "Padulles_Amphlett Analysis (Dynamic)":"http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html"}
+Vectors={"Amphlett_Analysis (Static)":Amphlett_Standard_Vector,
+                  "Larminiee_Analysis (Static)":Larminiee_Standard_Vector,
+                  "Chamberline_Kim_Analysis (Static)":Chamberline_Standard_Vector,
+                  "Padulles_Analysis I (Dynamic)":Padulles_Standard_Vector,
+                  "Padulles_Analysis II (Dynamic)":Padulles2_Standard_Vector,
+                  "Padulles_Hauer Analysis (Dynamic)":Padulles_Hauer_Standard_Vector,
+                  "Padulles_Amphlett Analysis (Dynamic)":Padulles_Amphlett_Standard_Vector}
 
 
 

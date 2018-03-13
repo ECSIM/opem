@@ -406,13 +406,13 @@ def description_print(Analysis_Name,Description_Dict,Width=100):
     print("\n")
     line()
 
-def description_control(Analysis_Name,User_Input,Links_Dict):
+def description_control(Analysis_Name,Analysis_List,User_Input,Links_Dict,Vectors_Dict):
     if User_Input.upper()=="M":
         webbrowser.open_new(Links_Dict[Analysis_Name])
     elif User_Input.upper()=="T":
-        pass
+        Analysis_List[Analysis_Name](InputMethod=Vectors_Dict[Analysis_Name],TestMode=True)
     else:
-        pass
+        Analysis_List[Analysis_Name]()
 
 def filter_alpha(Input_Dict):
     '''
