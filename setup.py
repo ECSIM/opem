@@ -27,7 +27,7 @@ setup(
      },
   platforms=["any"],
   install_requires=[
-      'art',
+      'art>0.7',
 	  'codecov',
       'requests',
       ],
