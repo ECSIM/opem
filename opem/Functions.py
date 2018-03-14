@@ -439,6 +439,18 @@ def filter_alpha(Input_Dict):
         return Input_Dict
 
 def warning_check_1(Vcell,I_Warning,I,warning_flag):
+    '''
+    This function check Vcell is negative or not
+    :param Vcell: Vcell of FC Voltage
+    :type Vcell : float
+    :param I_Warning: First I of negative range
+    :type I_Warning : float
+    :param I: Test current
+    :type I : float
+    :param warning_flag: Input warning flag
+    :type warning_flag : bool
+    :return:  update warning_flag and I_Warning [bool,float]
+    '''
     if warning_flag==False:
         try:
             if Vcell<0:
@@ -451,6 +463,14 @@ def warning_check_1(Vcell,I_Warning,I,warning_flag):
         return [True,I_Warning]
 
 def warning_check_2(Vcell,warning_flag):
+    '''
+    This function check Vcell is None or not
+    :param Vcell: Vcell of FC Voltage
+    :type Vcell : float
+    :param warning_flag: Input warning flag
+    :type warning_flag : bool
+    :return:  update warning_flag as bool
+    '''
     if warning_flag==False:
         if Vcell==None:
             return True
@@ -460,6 +480,20 @@ def warning_check_2(Vcell,warning_flag):
         return True
 
 def warning_print(warning_flag_1,warning_flag_2,I_Warning,file,PrintMode):
+    '''
+    This function print warning message and write messages to HTML report
+    :param warning_flag_1: First warning message (Vcell <0)
+    :type warning_flag_1 : bool
+    :param warning_flag_2: Second warning message (Vcell==None)
+    :type warning_flag_2 : bool
+    :param I_Warning: First I of negative range
+    :type I_Warning : float
+    :param file: html file object
+    :type file : file object
+    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :type PrintMode:bool
+    :return:
+    '''
     if warning_flag_1==True:
         file.write('<p style="color:red;font-size:20px;text-align:center;">'+Warning_Message_1
                    .format(str(I_Warning))+'</p>\n')
