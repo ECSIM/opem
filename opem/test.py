@@ -1454,6 +1454,7 @@ FC Voltage : 54.40948895930328 V
 PH2 : 2.159388537918463 atm
 PO2 : 2.0915322161021423 atm
 ###########
+Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
 Done!
 >>> Dynamic_Analysis(InputMethod={}, TestMode=True)
 ###########

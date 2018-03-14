@@ -14,6 +14,10 @@ parameters including the active area and membrane thickness. In addition, some o
 models of PEMFC that have been proposed in the OPEM, just focus on one particular FC stack,and
 some others take into account a part or all auxiliaries such as reformers. OPEM is a platform for
 collaborative development of PEMFC models.'''
+
+Warning_Message_1="Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
+Warning_Message_2="Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file" \
+                  " for review. If you are confident about this parameters, ignore this error."
 HHV = 1.482
 uF = 0.95
 n = 8 * (10 ** -3)

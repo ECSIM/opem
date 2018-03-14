@@ -3,7 +3,7 @@
 import datetime
 from art import text2art
 from opem.Script import *
-from opem.Params import Version,Website,UpdateUrl
+from opem.Params import Version,Website,UpdateUrl,Warning_Message_1,Warning_Message_2
 import io
 import os
 import requests
@@ -437,3 +437,34 @@ def filter_alpha(Input_Dict):
         return Input_Dict
     except Exception:
         return Input_Dict
+
+def warning_check_1(Vcell,I_Warning,I,warning_flag):
+    if warning_flag==False:
+        try:
+            if Vcell<0:
+                return [True,I]
+            else:
+                return [False,I]
+        except Exception:
+            return [False,I]
+    else:
+        return [True,I_Warning]
+
+def warning_check_2(Vcell,warning_flag):
+    if warning_flag==False:
+        if Vcell==None:
+            return True
+        else:
+            return False
+    else:
+        return True
+
+def warning_print(warning_flag_1,warning_flag_2,I_Warning,file):
+    if warning_flag_1==True:
+        file.write('<p style="color:red;font-size:20px;">'+Warning_Message_1
+                   .format(str(I_Warning))+'</p>\n')
+        print(Warning_Message_1)
+    if warning_flag_2==True:
+        file.write('<p style="color:red;font-size:20px;">'+Warning_Message_2+'</p>\n')
+        print(Warning_Message_2)
+

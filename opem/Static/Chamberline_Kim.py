@@ -53,6 +53,9 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
     """
     OutputFile = None
     CSVFile = None
+    Warning1 = False
+    Warning2 = False
+    I_Warning = 0
     try:
         Simulation_Title="Chamberline-Kim"
         if PrintMode==True:
@@ -84,6 +87,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             try:
                 I_List.append(i)
                 Output_Dict["Vcell"] = Vcell_Calc(Input_Dict["E0"],Input_Dict["b"],Input_Dict["R"],Input_Dict["m"],Input_Dict["n"],i,Input_Dict["A"])
+                [Warning1, I_Warning] = warning_check_1(Output_Dict["Vcell"], I_Warning, i, Warning1)
+                Warning2 = warning_check_2(Vcell=Output_Dict["Vcell"], warning_flag=Warning2)
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
@@ -106,6 +111,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="Voltage-Stack", size="600px", file=HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+            warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile)
             HTML_End(HTMLFile)
             OutputFile.close()
             CSVFile.close()

@@ -39,6 +39,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
     """
     OutputFile = None
     CSVFile = None
+    Warning1 = False
+    Warning2 = False
+    I_Warning = 0
     try:
         Simulation_Title="Padulles-Amphlett"
         if PrintMode==True:
@@ -89,6 +92,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 Output_Dict["PH2O"]=PH2O_Calc(Input_Dict["KH2O"],Input_Dict["tH2O"],Kr,i,qH2)
                 Output_Dict["E"]=Enernst_Calc(Input_Dict["E0"],Input_Dict["N0"],Input_Dict["T"],Output_Dict["PH2"],Output_Dict["PO2"],Output_Dict["PH2O"])
                 Output_Dict["FC Voltage"]=Vcell_Calc(Output_Dict["E"], Output_Dict["Loss"],Input_Dict["N0"])
+                [Warning1, I_Warning] = warning_check_1(Output_Dict["FC Voltage"], I_Warning, i, Warning1)
+                Warning2 = warning_check_2(Vcell=Output_Dict["FC Voltage"], warning_flag=Warning2)
                 Vstack_List.append(Output_Dict["FC Voltage"])
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(Output_Dict["FC Voltage"],Input_Dict["N0"])
                 Output_Dict["FC Power"] = Power_Calc(Output_Dict["FC Voltage"], i)
@@ -109,6 +114,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="FC-Voltage", size="600px", file=HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+            warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile)
             HTML_End(HTMLFile)
             OutputFile.close()
             CSVFile.close()
