@@ -4,6 +4,7 @@ from opem.Static.Amphlett import Power_Calc,Efficiency_Calc,VStack_Calc,PowerSta
 from opem.Params import Larminiee_InputParams as InputParams
 from opem.Params import Larminiee_OutputParams as OutputParams
 from opem.Functions import *
+from opem.Params import Larminiee_Description
 import os
 
 def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
@@ -110,11 +111,13 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         if ReportMode==True:
+            HTML_Desc(Simulation_Title, Larminiee_Description, HTMLFile)
+            HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="Power-Stack", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="Voltage-Stack", size="600px", file=HTMLFile)
-            HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)

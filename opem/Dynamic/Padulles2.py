@@ -2,7 +2,7 @@
 import math
 from opem.Params import Padulles2_InputParams as InputParams
 from opem.Params import Padulles2_Outparams as OutputParams
-from opem.Params import R,F
+from opem.Params import R,F,Padulles2_Description
 from opem.Static.Amphlett import Power_Calc
 from opem.Dynamic.Padulles1 import PH2_Calc,PO2_Calc,Kr_Calc,Vcell_Calc,qO2_Calc,Efficiency_Calc
 from opem.Functions import *
@@ -133,11 +133,12 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False,PrintMode=True, Repor
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         if ReportMode==True:
+            HTML_Desc(Simulation_Title, Padulles2_Description, HTMLFile)
+            HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="FC-Power", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="FC-Voltage", size="600px", file=HTMLFile)
-            HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)

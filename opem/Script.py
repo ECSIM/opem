@@ -13,7 +13,7 @@ JS_SCRIPT=r'''
 '''
 
 LINE_CHART='''
-<div style="width:{6};margin:auto;">
+<div style="width:{6};margin:15px;">
     <canvas id="{5}" width="100" height="100"></canvas>
         </div>
 <script>
