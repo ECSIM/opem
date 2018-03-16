@@ -227,14 +227,14 @@ def None_Omit(Input_Str):
     result=result.replace("None",'\"None\"')
     return result
 def HTML_Init(Title,Name):
-    """
+    '''
     This function initialize html file
-    :param OutputParamsKeys: OutputParams Key as list
-    :type OutputParamsKeys : list
-    :param OutputParams : Output Params as dict
-    :type OutputParams : dict
-    :return: file object
-    """
+    :param Title: Simulation title (analysis model)
+    :type Title : str
+    :param Name: file name
+    :type Name : str
+    :return: HTML file as file obj
+    '''
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
     file=io.open(os.path.join(Title,Name+".html"),"w", encoding="utf-8")
@@ -249,6 +249,16 @@ def HTML_Init(Title,Name):
     return file
 
 def HTML_Desc(Title,Description,file):
+    '''
+    This function write model description in html file
+    :param Title: Simulation title (analysis model)
+    :type Title : str
+    :param Description: Model description
+    :type Description : str
+    :param file: html file object
+    :type file : file object
+    :return: None
+    '''
     file.write('<h2 style="color:#ff7600;">What is '+Title+' ?</h2>\n')
     file.write('<p style = "text-align:justify;margin:15px;">'+Description+"</p>\n")
 
