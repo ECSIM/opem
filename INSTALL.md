@@ -2,7 +2,7 @@
 
 ### Source Code
 - Download [Python3.x](https://www.python.org/downloads/) (>=3.3)
-- Download [Version 0.6](https://github.com/ecsim/opem/archive/v0.6.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 0.7](https://github.com/ecsim/opem/archive/v0.7.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -18,7 +18,7 @@
 
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 0.6](https://www.dropbox.com/s/ehn1e11vr6azi2x/OPEM%28v0.6%29.zip?dl=0)
+- Download [Exe-Version 0.7](https://www.dropbox.com/s/ehn1e11vr6azi2x/OPEM%28v0.6%29.zip?dl=0)
 - Extract Zip File
 - Run `OPEM.exe`
 
