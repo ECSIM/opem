@@ -17,92 +17,18 @@
 </script>
 </head>
 <body>
-<h1 style="border-bottom:1px solid black;text-align:center;">OPEM Report (Amphlett Model)</h1>
-
-<div style="width:600px;margin:auto;">
-    <canvas id="Power-Stack" width="100" height="100"></canvas>
-        </div>
-<script>
-var ctx = document.getElementById("Power-Stack").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
-        datasets: [{
-            label: 'Power-Stack',
-            fill:false,
-            data: [0.0, 0.1072482958282681, 0.2052761611172405, 0.29979933150428645, 0.3920327165753869, 0.4825532947945601, 0.5717008813767012, 0.6597000002134213, 0.7467102170794577, 0.8328508282477683, 0.9182144215535232, 1.0028749536944233, 1.0868928646385256, 1.1703184750174012, 1.2531943319175447, 1.3355568810485454, 1.417437691058521, 1.498864370613474, 1.5798612689779254, 1.6604500204546115, 1.7406499739060304, 1.8204785361705675, 1.8999514499278993, 1.9790830209466792, 2.057886305741922, 2.136373267906203, 2.2145549093911394, 2.292441381564352, 2.3700420797928925, 2.4473657244989955, 2.524420431023553, 2.6012137701649807, 2.677752820899156, 2.7540442165034262, 2.8300941850850854, 2.9059085853379534, 2.9814929382093656, 3.056852455046042, 3.1319920626950446, 3.2069164259607614],
-            borderColor:'rgba(255,99,132,1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:false,
-                },
-                scaleLabel: {
-                            display: true,
-                            labelString: 'P(W)'
-                        }
-            }],
-            xAxes: [{
-                ticks: {
-                    beginAtZero:false,
-                },
-                scaleLabel: {
-                            display: true,
-                            labelString: 'I(A)'
-                        }
-            }]
-        }
-    }
-});
-</script>
-
-<div style="width:600px;margin:auto;">
-    <canvas id="Voltage-Stack" width="100" height="100"></canvas>
-        </div>
-<script>
-var ctx = document.getElementById("Voltage-Stack").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
-        datasets: [{
-            label: 'Voltage-Stack',
-            fill:false,
-            data: [1.19075, 1.072482958282681, 1.0263808055862025, 0.9993311050142881, 0.9800817914384672, 0.9651065895891202, 0.9528348022945019, 0.9424285717334592, 0.933387771349322, 0.925389809164187, 0.9182144215535232, 0.9117045033585666, 0.905744053865438, 0.9002449807826162, 0.895138808512532, 0.8903712540323636, 0.8858985569115755, 0.8816849238902789, 0.8777007049877363, 0.873921063397164, 0.8703249869530152, 0.8668945410336035, 0.8636142954217724, 0.8604708786724693, 0.8574526273924674, 0.8545493071624812, 0.8517518882273614, 0.8490523635423525, 0.8464435999260331, 0.8439192153444812, 0.8414734770078509, 0.8391012161822519, 0.8367977565309862, 0.8345588534858868, 0.8323806426720839, 0.8302595958108439, 0.8281924828359348, 0.8261763392016329, 0.8242084375513276, 0.8222862630668619],
-            borderColor:'rgba(99,100,255,1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:false,
-                },
-                scaleLabel: {
-                            display: true,
-                            labelString: 'V(V)'
-                        }
-            }],
-            xAxes: [{
-                ticks: {
-                    beginAtZero:false,
-                },
-                scaleLabel: {
-                            display: true,
-                            labelString: 'I(A)'
-                        }
-            }]
-        }
-    }
-});
-</script>
-<table style="border:1px solid black;border-collapse: collapse;margin:auto;">
+<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">OPEM</span> Report (Amphlett Model)</h1>
+<h2 style="color:#ff7600;">What is Amphlett ?</h2>
+<p style = "text-align:justify;margin:15px;">
+Amphlett static model is a parametric model that predicting the performance of a solid polymer electrolyte,
+proton exchange membrane (PEM) fuel cell. Main concepts in the Amphlett model includes Nernst voltage, PEMFC losses
+(activation polarization loss, ohmic polarization loss and concentration polarization loss), power and efficiency
+of fuel cell. This parametric model of PEMFC using a combination of mechanistic and empirical approach. The ideal
+standard potential (Nernst potential) of an H2/O2 FC is 1.229 V with liquid water product. The actual cell potential
+is decreased from its reference potential because of irreversible losses.
+</p>
+<h2 style="color:#ff7600;">Inputs</h2>
+<table style="border:1px solid black;border-collapse: collapse;margin:15px;">
 <tr align="center" style="border:1px solid black;border-collapse: collapse;">
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">
 Input
@@ -242,6 +168,92 @@ is an adjustable parameter with a min value of 14 and max value of 23
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">
 23
 </td>
-</table><p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By <a href="http://opem.ecsim.ir">OPEM</a> Version 0.6</p>
+</table>
+<h2 style="color:#ff7600;">Graphs</h2>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="Power-Stack" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("Power-Stack").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [{
+            label: 'Power-Stack',
+            fill:false,
+            data: [0.0, 0.1072482958282681, 0.2052761611172405, 0.29979933150428645, 0.3920327165753869, 0.4825532947945601, 0.5717008813767012, 0.6597000002134213, 0.7467102170794577, 0.8328508282477683, 0.9182144215535232, 1.0028749536944233, 1.0868928646385256, 1.1703184750174012, 1.2531943319175447, 1.3355568810485454, 1.417437691058521, 1.498864370613474, 1.5798612689779254, 1.6604500204546115, 1.7406499739060304, 1.8204785361705675, 1.8999514499278993, 1.9790830209466792, 2.057886305741922, 2.136373267906203, 2.2145549093911394, 2.292441381564352, 2.3700420797928925, 2.4473657244989955, 2.524420431023553, 2.6012137701649807, 2.677752820899156, 2.7540442165034262, 2.8300941850850854, 2.9059085853379534, 2.9814929382093656, 3.056852455046042, 3.1319920626950446, 3.2069164259607614],
+            borderColor:'rgba(255,99,132,1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'P(W)'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="Voltage-Stack" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("Voltage-Stack").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [{
+            label: 'Voltage-Stack',
+            fill:false,
+            data: [1.19075, 1.072482958282681, 1.0263808055862025, 0.9993311050142881, 0.9800817914384672, 0.9651065895891202, 0.9528348022945019, 0.9424285717334592, 0.933387771349322, 0.925389809164187, 0.9182144215535232, 0.9117045033585666, 0.905744053865438, 0.9002449807826162, 0.895138808512532, 0.8903712540323636, 0.8858985569115755, 0.8816849238902789, 0.8777007049877363, 0.873921063397164, 0.8703249869530152, 0.8668945410336035, 0.8636142954217724, 0.8604708786724693, 0.8574526273924674, 0.8545493071624812, 0.8517518882273614, 0.8490523635423525, 0.8464435999260331, 0.8439192153444812, 0.8414734770078509, 0.8391012161822519, 0.8367977565309862, 0.8345588534858868, 0.8323806426720839, 0.8302595958108439, 0.8281924828359348, 0.8261763392016329, 0.8242084375513276, 0.8222862630668619],
+            borderColor:'rgba(99,100,255,1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'V(V)'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By <a style="text-decoration:none;color:#ff7600;" href="http://opem.ecsim.ir">OPEM</a> Version 0.7</p>
 </body>
 </html>
