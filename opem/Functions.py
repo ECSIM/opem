@@ -435,7 +435,15 @@ def description_control(Analysis_Name,Analysis_List,User_Input,Links_Dict,Vector
     if User_Input.upper()=="M":
         webbrowser.open_new(Links_Dict[Analysis_Name])
     elif User_Input.upper()=="T":
-        Analysis_List[Analysis_Name](InputMethod=Vectors_Dict[Analysis_Name],TestMode=True)
+        line()
+        print(Analysis_Name+" Standard Test Vector\n")
+        Test_Vector=Vectors_Dict[Analysis_Name]
+        for i in Test_Vector.keys():
+            print(i+" : "+str(Test_Vector[i]))
+        print("\n")
+        line()
+        input_temp=input("Press any key to continue")
+        Analysis_List[Analysis_Name](InputMethod=Test_Vector,TestMode=True)
     else:
         Analysis_List[Analysis_Name]()
 
