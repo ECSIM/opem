@@ -52,7 +52,7 @@ Modelling and simulation of proton-exchange membrane fuel cells (PEMFC) may work
 ### CLI (Command Line Interface)
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `python -m opem` or `python3 -m opem` (or run `OPEM.exe`)
-- Enter PEM cell parameters
+- Enter PEM cell parameters (or run standard test vectors)
 	1. Amphlett Static Model
 		<html>
 		<table>
