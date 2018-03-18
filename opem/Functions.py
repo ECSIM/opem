@@ -85,10 +85,13 @@ def rounder(input_number,digit=2):
     :type digit : int
     :return: round number as float
     '''
-    if isfloat(input_number)==True:
-        return round(input_number,digit)
-    else:
-        return input_number
+    try:
+        if isfloat(input_number)==True:
+            return round(input_number,digit)
+        else:
+            return input_number
+    except Exception:
+        return None
 
 def input_test(a):
     '''
