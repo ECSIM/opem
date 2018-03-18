@@ -323,6 +323,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         Output_Dict["Enernst"] = Enernst_Calc(Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
         i = Input_Dict["i-start"]
         I_List=[]
+        Efficiency_List=[]
         Power_List=[]
         Vstack_List=[]
         while i < IEnd:
@@ -343,6 +344,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
                 Vstack_List.append(Output_Dict["VStack"])
+                Efficiency_List.append(Output_Dict["PEM Efficiency"])
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
                 Power_List.append(Output_Dict["Power-Stack"])
                 if ReportMode==True:
@@ -362,6 +364,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                     chart_name="Power-Stack",size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="Voltage-Stack",size="600px",file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
+                       chart_name="Efficiency", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
@@ -374,6 +378,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             if PrintMode==True:
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
-            return {"P":Power_List,"I":I_List,"V":Vstack_List}
+            return {"P":Power_List,"I":I_List,"V":Vstack_List,"EFF":Efficiency_List}
     except Exception as e:
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

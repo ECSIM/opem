@@ -105,6 +105,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False,PrintMode=True, Repor
         I_List = []
         Power_List = []
         Vstack_List = []
+        Efficiency_List = []
         Kr=Kr_Calc(Input_Dict["N0"])
         qO2=qO2_Calc(Input_Dict["qH2"],Input_Dict["rho"])
         qH2O=Input_Dict["qH2"]
@@ -120,6 +121,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False,PrintMode=True, Repor
                 Warning2 = warning_check_2(Vcell=Output_Dict["FC Voltage"], warning_flag=Warning2)
                 Vstack_List.append(Output_Dict["FC Voltage"])
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(Output_Dict["FC Voltage"],Input_Dict["N0"])
+                Efficiency_List.append(Output_Dict["FC Efficiency"])
                 Output_Dict["FC Power"] = Power_Calc(Output_Dict["FC Voltage"], i)
                 Power_List.append(Output_Dict["FC Power"])
                 if ReportMode==True:
@@ -139,6 +141,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False,PrintMode=True, Repor
                     chart_name="FC-Power", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="FC-Voltage", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
+                       chart_name="Efficiency", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
@@ -151,6 +155,6 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False,PrintMode=True, Repor
             if PrintMode==True:
                 print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
         else:
-            return {"P": Power_List, "I": I_List, "V": Vstack_List}
+            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List}
     except Exception:
         print("[Error] Dynamic Simulation Failed!(Check Your Inputs)")
