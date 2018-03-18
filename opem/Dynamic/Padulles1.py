@@ -197,6 +197,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
         Power_List = []
         Vstack_List = []
         Efficiency_List = []
+        PH2_List=[]
+        PO2_List=[]
         Kr=Kr_Calc(Input_Dict["N0"])
         qO2=qO2_Calc(Input_Dict["qH2"],Input_Dict["rho"])
         while i < IEnd:
@@ -204,6 +206,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 I_List.append(i)
                 Output_Dict["PO2"]=PO2_Calc(Input_Dict["KO2"],Input_Dict["tO2"],Kr,i,qO2)
                 Output_Dict["PH2"]=PH2_Calc(Input_Dict["KH2"],Input_Dict["tH2"],Kr,i,Input_Dict["qH2"])
+                PH2_List.append(Output_Dict["PH2"])
+                PO2_List.append(Output_Dict["PO2"])
                 Output_Dict["E"]=Enernst_Calc(Input_Dict["E0"],Input_Dict["N0"],Input_Dict["T"],Output_Dict["PH2"],Output_Dict["PO2"])
                 Output_Dict["FC Voltage"]=Vcell_Calc(Output_Dict["E"],Input_Dict["B"],Input_Dict["C"],i,Input_Dict["Rint"])
                 [Warning1, I_Warning] = warning_check_1(Output_Dict["FC Voltage"], I_Warning, i, Warning1)
@@ -232,6 +236,10 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                     chart_name="FC-Voltage", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
                        chart_name="Efficiency", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(PO2_List), color='	rgb(0, 255, 128)', x_label="I(A)", y_label="PO2(atm)",
+                       chart_name="PO2", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(PH2_List), color='	rgb(128, 0, 255)', x_label="I(A)", y_label="PH2(atm)",
+                       chart_name="PH2", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
@@ -244,6 +252,6 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
             if PrintMode==True:
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
-            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List}
+            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"PO2":PO2_List,"PH2":PH2_List}
     except Exception:
         print("[Error] Dynamic Simulation Failed!(Check Your Inputs)")
