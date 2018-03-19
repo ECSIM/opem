@@ -21,6 +21,7 @@ def line(num=11,char="#"):
     :return: None
     '''
     print(char*num)
+
 def check_update():
     '''
     This function check for new opem version in  website
@@ -270,24 +271,33 @@ def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
     This function write chartjs chart in html file
     :param x: x data as a string list
     :type x : str
-    :param y: y data as string list
-    :type y : str
-    :param color: color code of chart
-    :type color : str
+    :param y: y data as string list (or list of y)
+    :param color: color code of chart (or list of color)
     :param x_label:x-axis label
     :type x_label : str
     :param y_label:y-axis label
     :type y_label : str
-    :param chart_name: chart name
-    :type chart_name : str
+    :param chart_name: chart name (or list of chart_name)
     :param size: chart size in pixel
     :type size : str
     :param file: html file object
     :type file : file object
     :return: None
     '''
-    y_data=None_Omit(y)
-    file.write(LINE_CHART.format(x,y_data,color,y_label,x_label,chart_name,size))
+    chart_data=""
+    chart_title=chart_name
+    if isinstance(y,list)==True:
+        y_data=list(map(None_Omit,y))
+        for index,data in enumerate(y_data):
+            chart_data+=CHART_DATA.format(chart_name[index],data,color[index])
+            if index!=len(y_data)-1:
+                chart_data+=","
+            chart_data+="\n"
+        chart_title=chart_name[0]
+    else:
+        y_data=None_Omit(y)
+        chart_data=CHART_DATA.format(chart_name,y_data,color)
+    file.write(LINE_CHART.format(x,y_label,x_label,chart_title,size,chart_data))
 
 def HTML_Input_Table(Input_Dict,Input_Params,file):
     '''

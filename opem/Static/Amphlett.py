@@ -326,15 +326,21 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         Efficiency_List=[]
         Power_List=[]
         Vstack_List=[]
+        Eta_Ohmic_List=[]
+        Eta_Conc_List=[]
+        Eta_Active_List=[]
         while i < IEnd:
             try:
                 I_List.append(i)
                 Output_Dict["Eta Activation"] = Eta_Act_Calc(Input_Dict["T"], Input_Dict["PO2"], Input_Dict["PH2"], i,
                                                              Input_Dict["A"])
+                Eta_Active_List.append(Output_Dict["Eta Activation"])
                 Output_Dict["Eta Ohmic"] = Eta_Ohmic_Calc(i, Input_Dict["l"], Input_Dict["A"], Input_Dict["T"],
                                                           Input_Dict["lambda"], R_elec=Input_Dict["R"])
+                Eta_Ohmic_List.append(Output_Dict["Eta Ohmic"])
                 Output_Dict["Eta Concentration"] = Eta_Conc_Calc(i, Input_Dict["A"], Input_Dict["B"],
                                                                  Input_Dict["JMax"])
+                Eta_Conc_List.append(Output_Dict["Eta Concentration"])
                 Output_Dict["Loss"] = Loss_Calc(Output_Dict["Eta Activation"], Output_Dict["Eta Ohmic"],
                                                 Output_Dict["Eta Concentration"])
                 Output_Dict["Vcell"] = Vcell_Calc(Output_Dict["Enernst"], Output_Dict["Loss"])
@@ -364,6 +370,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                     chart_name="Power-Stack",size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="Voltage-Stack",size="600px",file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=[str(Eta_Active_List),str(Eta_Conc_List),str(Eta_Ohmic_List)],
+                       color=['rgba(255,99,132,1)','rgba(99,100,255,1)','rgb(238, 210, 141)'],
+                       x_label="I(A)", y_label="V(V)", chart_name=["Eta Active","Eta Conc",
+                                                                   "Eta Ohmic"],size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
                        chart_name="Efficiency", size="600px", file=HTMLFile)
             HTML_Chart(x=str(list(map(rounder,Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)', x_label="P(W)", y_label="EFF",
@@ -381,5 +391,5 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
             return {"P":Power_List,"I":I_List,"V":Vstack_List,"EFF":Efficiency_List}
-    except Exception as e:
+    except Exception:
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

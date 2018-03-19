@@ -13,22 +13,16 @@ JS_SCRIPT=r'''
 '''
 
 LINE_CHART='''
-<div style="width:{6};margin:15px;">
-    <canvas id="{5}" width="100" height="100"></canvas>
+<div style="width:{4};margin:15px;">
+    <canvas id="{3}" width="100" height="100"></canvas>
         </div>
 <script>
-var ctx = document.getElementById("{5}").getContext('2d');
+var ctx = document.getElementById("{3}").getContext('2d');
 var myChart = new Chart(ctx, {{
     type: 'line',
     data: {{
         labels: {0},
-        datasets: [{{
-            label: '{5}',
-            fill:false,
-            data: {1},
-            borderColor:'{2}',
-            borderWidth: 1
-        }}]
+        datasets: [{5}]
     }},
     options: {{
         scales: {{
@@ -38,7 +32,7 @@ var myChart = new Chart(ctx, {{
                 }},
                 scaleLabel: {{
                             display: true,
-                            labelString: '{3}'
+                            labelString: '{1}'
                         }}
             }}],
             xAxes: [{{
@@ -47,11 +41,21 @@ var myChart = new Chart(ctx, {{
                 }},
                 scaleLabel: {{
                             display: true,
-                            labelString: '{4}'
+                            labelString: '{2}'
                         }}
             }}]
         }}
     }}
 }});
 </script>
+'''
+
+CHART_DATA='''
+{{
+            label: '{0}',
+            fill:false,
+            data: {1},
+            borderColor:'{2}',
+            borderWidth: 1
+        }}
 '''
