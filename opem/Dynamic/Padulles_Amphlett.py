@@ -78,6 +78,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
         PH2_List = []
         PO2_List = []
         PH2O_List = []
+        Eta_Ohmic_List = []
+        Eta_Conc_List = []
+        Eta_Active_List = []
         Kr=Kr_Calc(Input_Dict["N0"])
         qH2=qH2_Calc(Input_Dict["qMethanol"],Input_Dict["CV"],Input_Dict["t1"],Input_Dict["t2"])
         qO2=qO2_Calc(qH2,Input_Dict["rho"])
@@ -90,10 +93,13 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 PO2_List.append(Output_Dict["PO2"])
                 Output_Dict["Eta Activation"] = Eta_Act_Calc(Input_Dict["T"], Output_Dict["PO2"], Output_Dict["PH2"], i,
                                                              Input_Dict["A"])
+                Eta_Active_List.append(Output_Dict["Eta Activation"])
                 Output_Dict["Eta Ohmic"] = Eta_Ohmic_Calc(i, Input_Dict["l"], Input_Dict["A"], Input_Dict["T"],
                                                           Input_Dict["lambda"], R_elec=Input_Dict["R"])
+                Eta_Ohmic_List.append(Output_Dict["Eta Ohmic"])
                 Output_Dict["Eta Concentration"] = Eta_Conc_Calc(i, Input_Dict["A"], Input_Dict["B"],
                                                                  Input_Dict["JMax"])
+                Eta_Conc_List.append(Output_Dict["Eta Concentration"])
                 Output_Dict["Loss"] = Loss_Calc(Output_Dict["Eta Activation"], Output_Dict["Eta Ohmic"],
                                                 Output_Dict["Eta Concentration"])
                 Output_Dict["PH2O"]=PH2O_Calc(Input_Dict["KH2O"],Input_Dict["tH2O"],Kr,i,qH2)
@@ -124,6 +130,10 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                     chart_name="FC-Power", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="FC-Voltage", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=[str(Eta_Active_List), str(Eta_Conc_List), str(Eta_Ohmic_List)],
+                       color=['rgba(255,99,132,1)', 'rgba(99,100,255,1)', 'rgb(238, 210, 141)'],
+                       x_label="I(A)", y_label="V(V)", chart_name=["Eta Active", "Eta Conc",
+                                                                   "Eta Ohmic"], size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
                        chart_name="Efficiency", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(PO2_List), color='	rgb(0, 255, 128)', x_label="I(A)", y_label="PO2(atm)",

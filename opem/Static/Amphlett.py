@@ -9,6 +9,12 @@ import os
 
 
 
+def R_Calc(V,i):
+    try:
+        return V/i
+    except Exception:
+        print("[Error] R Total Calculation Failed (V:%s ,i:%s)" % (str(V), str(i)))
+
 def Enernst_Calc(T, PH2, PO2):
     """
     This function calculate Enernst
@@ -329,6 +335,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         Eta_Ohmic_List=[]
         Eta_Conc_List=[]
         Eta_Active_List=[]
+        #R_List=[]
         while i < IEnd:
             try:
                 I_List.append(i)
@@ -349,6 +356,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 Output_Dict["PEM Efficiency"] = Efficiency_Calc(Output_Dict["Vcell"])
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
+                #Output_Dict["R Total"] = R_Calc(Output_Dict["VStack"],i)
+                #R_List.append(Output_Dict["R Total"])
                 Vstack_List.append(Output_Dict["VStack"])
                 Efficiency_List.append(Output_Dict["PEM Efficiency"])
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
@@ -368,6 +377,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="Power-Stack",size="600px",file=HTMLFile)
+            #HTML_Chart(x=str(I_List), y=str(R_List), color='rgb(159, 82, 71)', x_label="I(A)", y_label="R(ohm)",
+                       #chart_name="R Total", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
                     chart_name="Voltage-Stack",size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=[str(Eta_Active_List),str(Eta_Conc_List),str(Eta_Ohmic_List)],

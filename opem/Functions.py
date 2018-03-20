@@ -297,7 +297,8 @@ def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
     else:
         y_data=None_Omit(y)
         chart_data=CHART_DATA.format(chart_name,y_data,color)
-    file.write(LINE_CHART.format(x,y_label,x_label,chart_title,size,chart_data))
+    x_data=None_Omit(x)
+    file.write(LINE_CHART.format(x_data,y_label,x_label,chart_title,size,chart_data))
 
 def HTML_Input_Table(Input_Dict,Input_Params,file):
     '''
