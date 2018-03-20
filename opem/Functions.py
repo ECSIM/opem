@@ -285,7 +285,7 @@ def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
     :return: None
     '''
     chart_data=""
-    chart_title=chart_name
+    chart_title=str(chart_name)
     if isinstance(y,list)==True:
         y_data=list(map(None_Omit,y))
         for index,data in enumerate(y_data):
@@ -293,7 +293,6 @@ def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
             if index!=len(y_data)-1:
                 chart_data+=","
             chart_data+="\n"
-        chart_title=chart_name[0]
     else:
         y_data=None_Omit(y)
         chart_data=CHART_DATA.format(chart_name,y_data,color)
