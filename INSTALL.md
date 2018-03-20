@@ -27,3 +27,9 @@ For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to i
 
 1. Download OPEM >= 0.6 (Recommended)
 2. Download and install [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
+
+### DMG Version (MacOS)
+- Download [DMG-Version 0.7]()
+- Open DMG File
+- Copy `OPEM` into your system
+- Run `OPEM`
