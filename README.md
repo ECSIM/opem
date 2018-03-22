@@ -422,11 +422,6 @@ Modelling and simulation of proton-exchange membrane fuel cells (PEMFC) may work
 				<td align="center">kmol/s</td>
 			</tr>
 			<tr>
-				<td align="center">qH2O</td>
-				<td align="center">Molar flow of water</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
 				<td align="center">N0</td>
 				<td align="center">Number of cells</td>
 				<td align="center">--</td>

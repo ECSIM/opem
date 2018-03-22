@@ -140,7 +140,7 @@ to the molar flow of each gas.
 '''
 Padulles2_Standard_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,
                            "tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,
-                           "qH2O":0.0004,"i-start":0.1,"i-stop":100,"i-step":0.1,"Name":"Padulles2_Vector"}
+                           "i-start":0.1,"i-stop":100,"i-step":0.1,"Name":"Padulles2_Vector"}
 Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell voltage [V]",
                      "T": "Cell Operation Temperature [K]","KH2":"Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "KO2":"Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]","tH2":"Hydrogen time constant [s]",
