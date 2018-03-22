@@ -33,3 +33,7 @@ For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to i
 - Open DMG File
 - Copy `OPEM` into your system
 - Run `OPEM`
+
+
+### Telegram Bot
+- Message [OPEM BOT](https://t.me/opembot)
