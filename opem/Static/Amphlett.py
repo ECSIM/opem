@@ -373,14 +373,15 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         if ReportMode==True:
+            Estimated_V=linear_plot(x=I_List,y=Vstack_List)
             HTML_Desc(Simulation_Title, Amphlett_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="Power-Stack",size="600px",file=HTMLFile)
             #HTML_Chart(x=str(I_List), y=str(R_List), color='rgb(159, 82, 71)', x_label="I(A)", y_label="R(ohm)",
                        #chart_name="R Total", size="600px", file=HTMLFile)
-            HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
-                    chart_name="Voltage-Stack",size="600px",file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=[str(Vstack_List),str(Estimated_V)], color=['rgba(99,100,255,1)','rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)",
+                    chart_name=["Voltage-Stack","Linear-Apx"],size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=[str(Eta_Active_List),str(Eta_Conc_List),str(Eta_Ohmic_List)],
                        color=['rgba(255,99,132,1)','rgba(99,100,255,1)','rgb(238, 210, 141)'],
                        x_label="I(A)", y_label="V(V)", chart_name=["Eta Active","Eta Conc",
@@ -402,5 +403,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
             return {"P":Power_List,"I":I_List,"V":Vstack_List,"EFF":Efficiency_List}
-    except Exception:
+    except Exception as e:
+        print(str(e))
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

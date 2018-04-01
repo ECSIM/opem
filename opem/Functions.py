@@ -10,6 +10,43 @@ import requests
 import webbrowser
 import sys
 
+def linear_plot(x,y):
+    clear_x = []
+    clear_y = []
+    estimate_y = []
+    none_x=[]
+    for index,item in enumerate(y):
+        if item != "None":
+            clear_y.append(item)
+            clear_x.append(x[index])
+        else:
+            none_x.append(x[index])
+    [B1,B0]=estimate_coef(clear_x,clear_y)
+    for i in x :
+        if x not in none_x:
+            estimate_y.append(B0+B1*i)
+        else:
+            estimate_y.append("None")
+    return estimate_y
+
+def estimate_coef(clear_x,clear_y):
+    try:
+        n=len(clear_x)
+        mean_x=sum(clear_x)/n
+        mean_y=sum(clear_y)/n
+        SS_xy=0
+        SS_xx=0
+        for index,item in enumerate(clear_x):
+            SS_xx+=item**2
+            SS_xy+=item*clear_y[index]
+        SS_xx-=n*(mean_x)**2
+        SS_xy-=n*mean_x*mean_y
+        B1=SS_xy/SS_xx
+        B0=mean_y-B1*mean_x
+        return [B1,B0]
+    except Exception:
+        return [0,0]
+
 
 def line(num=11,char="#"):
     '''

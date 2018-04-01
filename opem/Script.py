@@ -50,6 +50,44 @@ var myChart = new Chart(ctx, {{
 </script>
 '''
 
+MULTI_AXES_LINE_CHART='''
+<div style="width:{4};margin:15px;">
+    <canvas id="{3}" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("{3}").getContext('2d');
+var myChart = new Chart(ctx, {{
+    type: 'line',
+    data: {{
+        labels: {0},
+        datasets: [{5}]
+    }},
+    options: {{
+        scales: {{
+            yAxes: [{{
+                ticks: {{
+                    beginAtZero:false,
+                }},
+                scaleLabel: {{
+                            display: true,
+                            labelString: '{1}'
+                        }}
+            }}],
+            xAxes: [{{
+                ticks: {{
+                    beginAtZero:false,
+                }},
+                scaleLabel: {{
+                            display: true,
+                            labelString: '{2}'
+                        }}
+            }}]
+        }}
+    }}
+}});
+</script>
+'''
+
 CHART_DATA='''
 {{
             label: '{0}',

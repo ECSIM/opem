@@ -228,12 +228,14 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
         if ReportMode==True:
+            Estimated_V = linear_plot(x=I_List, y=Vstack_List)
             HTML_Desc(Simulation_Title, Padulles_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="FC-Power", size="600px", file=HTMLFile)
-            HTML_Chart(x=str(I_List), y=str(Vstack_List), color='rgba(99,100,255,1)', x_label="I(A)", y_label="V(V)",
-                    chart_name="FC-Voltage", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=[str(Vstack_List), str(Estimated_V)],
+                       color=['rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)",
+                       chart_name=["FC-Voltage", "Linear-Apx"], size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
                        chart_name="Efficiency", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(PO2_List), color='	rgb(0, 255, 128)', x_label="I(A)", y_label="PO2(atm)",
