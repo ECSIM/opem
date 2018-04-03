@@ -10,6 +10,20 @@ import requests
 import webbrowser
 import sys
 
+def integrate(y_vals, h):
+    try:
+        i=1
+        total=y_vals[0]+y_vals[-1]
+        for y in y_vals[1:-1]:
+            if i%2 == 0:
+                total+=2*y
+            else:
+                total+=4*y
+            i+=1
+        return total*(h/3.0)
+    except Exception:
+        return "None"
+
 def linear_plot(x,y):
     clear_x = []
     clear_y = []
@@ -27,7 +41,7 @@ def linear_plot(x,y):
             estimate_y.append(B0+B1*i)
         else:
             estimate_y.append("None")
-    return estimate_y
+    return [estimate_y,B0,B1]
 
 def estimate_coef(clear_x,clear_y):
     try:
@@ -395,7 +409,36 @@ def HTML_Input_Table(Input_Dict,Input_Params,file):
         file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
         file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
     file.write("</table>\n")
-    file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
+
+
+def HTML_Overall_Params_Table(Input_Dict,Input_Params,file,header=False):
+    '''
+    This function add table to html file
+    :param Input_Dict: Input values dictionary
+    :type Input_Dict : dict
+    :param Input_Params: Input params dictionary
+    :type Input_Params : dict
+    :param file: html file object
+    :type file : file object
+    :return: None
+    '''
+    if header==True:
+        file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
+    file.write('<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
+    file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+"Parameter\n</td>")
+    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Description\n</td>")
+    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Value\n</td>\n</tr>\n")
+    Input_Params_Keys=list(Input_Params.keys())
+    Input_Params_Keys.sort()
+    for key in Input_Params_Keys:
+        file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
+        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
+    file.write("</table>\n")
+    if header==True:
+        file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
 
 
 def HTML_End(file):

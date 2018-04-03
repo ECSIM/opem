@@ -3,11 +3,38 @@ import math
 from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
 from opem.Params import Amphlett_Params_Default as Defaults
-from opem.Params import xi1,xi3,xi4,HHV,uF,Amphlett_Description
+from opem.Params import xi1,xi3,xi4,HHV,uF,Amphlett_Description,Overall_Params_Max_Description,\
+    Overall_Params_Linear_Description,Eth
 from opem.Functions import *
 import os
 
+def Power_Total_Calc(VStack_List,i_step):
+    try:
+        Filtered_List=list(filter(lambda x:x!="None",VStack_List))
+        Filtered_List_Not=list(map(lambda x:Eth-x,Filtered_List))
+        Total_Elec_Power=integrate(Filtered_List, i_step)
+        Total_Thermal_Power=integrate(Filtered_List_Not,i_step)
+        return [Total_Elec_Power,Total_Thermal_Power]
+    except Exception:
+        return ["None","None"]
+def Linear_Aprox_Params_Calc(B0,B1):
+    Wmax=0
+    Vcell_Wmax=0
+    try:
+        Wmax=(B0**2)/(4*B1)
+    except Exception:
+        Wmax="None"
+    try:
+        Vcell_Wmax=(B0/2)
+    except Exception:
+        Vcell_Wmax="None"
+    return [abs(Wmax),Vcell_Wmax]
 
+def Max_Params_Calc(Power_List,EFF_List,VStack_List):
+    Max_Power=max(list(filter(lambda x:x!="None",Power_List)))
+    Max_EFF=EFF_List[Power_List.index(Max_Power)]
+    Max_VStack=VStack_List[Power_List.index(Max_Power)]
+    return {"Max_Power":Max_Power,"Max_EFF":Max_EFF,"Max_VStack":Max_VStack}
 
 def R_Calc(V,i):
     try:
@@ -300,6 +327,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
     Warning1=False
     Warning2=False
     I_Warning=0
+    Overall_Params_Max={}
+    Overall_Params_Linear={}
     try:
         Simulation_Title="Amphlett"
         if PrintMode==True:
@@ -372,16 +401,31 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 if ReporttMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        [Estimated_V, B0, B1] = linear_plot(x=I_List, y=Vstack_List)
+        Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
+        Max_Params = Max_Params_Calc(Power_List,Efficiency_List,Vstack_List)
+        Power_Total = Power_Total_Calc(Vstack_List, IStep)
+        Overall_Params_Linear["Pmax(L-Approx)"]=Linear_Approx_Params[0]
+        Overall_Params_Linear["B0"] = B0
+        Overall_Params_Linear["B1"] = B1
+        Overall_Params_Linear["VFC|Pmax(L-Approx)"]=Linear_Approx_Params[1]
+
+        Overall_Params_Max["Pmax"]=Max_Params["Max_Power"]
+        Overall_Params_Max["VFC|Pmax"]=Max_Params["Max_VStack"]
+        Overall_Params_Max["Efficiency|Pmax"]=Max_Params["Max_EFF"]
+        Overall_Params_Max["Ptotal(Elec)"]=Power_Total[0]
+        Overall_Params_Max["Ptotal(Thermal)"]=Power_Total[1]
         if ReportMode==True:
-            Estimated_V=linear_plot(x=I_List,y=Vstack_List)
             HTML_Desc(Simulation_Title, Amphlett_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+            HTML_Overall_Params_Table(Overall_Params_Max, Overall_Params_Max_Description, file=HTMLFile,header=True)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="Power-Stack",size="600px",file=HTMLFile)
             #HTML_Chart(x=str(I_List), y=str(R_List), color='rgb(159, 82, 71)', x_label="I(A)", y_label="R(ohm)",
                        #chart_name="R Total", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=[str(Vstack_List),str(Estimated_V)], color=['rgba(99,100,255,1)','rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)",
                     chart_name=["Voltage-Stack","Linear-Apx"],size="600px",file=HTMLFile)
+            HTML_Overall_Params_Table(Overall_Params_Linear, Overall_Params_Linear_Description, file=HTMLFile, header=False)
             HTML_Chart(x=str(I_List), y=[str(Eta_Active_List),str(Eta_Conc_List),str(Eta_Ohmic_List)],
                        color=['rgba(255,99,132,1)','rgba(99,100,255,1)','rgb(238, 210, 141)'],
                        x_label="I(A)", y_label="V(V)", chart_name=["Eta Active","Eta Conc",

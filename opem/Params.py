@@ -29,6 +29,7 @@ xi4 = -1.93 * (10 ** -4)
 #R1=8.314
 R=8314.47
 F=96484600
+Eth=1.23
 Amphlett_InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]",
                "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                "i-stop": "Cell operating current end point [A]", "A": "active area [cm^2]",
@@ -227,6 +228,17 @@ Vectors={"Amphlett_Analysis (Static)":Amphlett_Standard_Vector,
                   "Padulles_Analysis II (Dynamic)":Padulles2_Standard_Vector,
                   "Padulles_Hauer Analysis (Dynamic)":Padulles_Hauer_Standard_Vector,
                   "Padulles_Amphlett Analysis (Dynamic)":Padulles_Amphlett_Standard_Vector}
+
+Overall_Params_Max_Description={"Pmax":"Maximum power","VFC|Pmax":"Cell voltage at maximum power",
+                                "Efficiency|Pmax":"Cell efficiency at maximum power",
+                                "Ptotal(Elec)":"Total electrical power",
+                                "Ptotal(Thermal)":"Total thermal power"}
+Overall_Params_Linear_Description={
+                            "B0":"Intercept of the curve obtained by linear approximation",
+                            "B1":"Slope of the curve obtained by linear approximation",
+                            "Pmax(L-Approx)":"Maximum power obtained by linear approximation",
+                            "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation",
+                            }
 
 
 
