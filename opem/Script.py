@@ -51,26 +51,39 @@ var myChart = new Chart(ctx, {{
 '''
 
 MULTI_AXES_LINE_CHART='''
-<div style="width:{4};margin:15px;">
-    <canvas id="{3}" width="100" height="100"></canvas>
+<div style="width:{5};margin:15px;">
+    <canvas id="{4}" width="100" height="100"></canvas>
         </div>
 <script>
-var ctx = document.getElementById("{3}").getContext('2d');
+var ctx = document.getElementById("{4}").getContext('2d');
 var myChart = new Chart(ctx, {{
     type: 'line',
     data: {{
         labels: {0},
-        datasets: [{5}]
+        datasets: [{6}]
     }},
     options: {{
         scales: {{
             yAxes: [{{
+                id: 'A',
+                position: 'left',
                 ticks: {{
                     beginAtZero:false,
                 }},
                 scaleLabel: {{
                             display: true,
                             labelString: '{1}'
+                        }}
+            }},
+            {{
+                id: 'B',
+                position: 'right',
+                ticks: {{
+                    beginAtZero:false,
+                }},
+                scaleLabel: {{
+                            display: true,
+                            labelString: '{2}'
                         }}
             }}],
             xAxes: [{{
@@ -79,7 +92,7 @@ var myChart = new Chart(ctx, {{
                 }},
                 scaleLabel: {{
                             display: true,
-                            labelString: '{2}'
+                            labelString: '{3}'
                         }}
             }}]
         }}
@@ -95,5 +108,16 @@ CHART_DATA='''
             data: {1},
             borderColor:'{2}',
             borderWidth: 1
+        }}
+'''
+
+MULTI_AXES_CHART_DATA='''
+{{
+            label: '{0}',
+            fill:false,
+            data: {1},
+            borderColor:'{2}',
+            borderWidth: 1,
+            yAxisID: {3}
         }}
 '''

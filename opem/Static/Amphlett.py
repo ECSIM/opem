@@ -388,7 +388,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                                                                    "Eta Ohmic"],size="600px",file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Efficiency_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="EFF",
                        chart_name="Efficiency", size="600px", file=HTMLFile)
-            HTML_Chart(x=str(list(map(rounder,Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)', x_label="P(W)", y_label="EFF",
+            HTML_Chart(x=str(list(map(rounder, Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)',
+                       x_label="P(W)", y_label="EFF",
                        chart_name="Efficiency vs Power", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
