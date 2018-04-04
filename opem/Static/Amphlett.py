@@ -8,10 +8,15 @@ from opem.Params import xi1,xi3,xi4,HHV,uF,Amphlett_Description,Overall_Params_M
 from opem.Functions import *
 import os
 
-def Power_Total_Calc(VStack_List,i_step):
+def Power_Thermal_Calc(VStack,N,i):
+    try:
+        return i*((N*Eth)-VStack)
+    except Exception:
+        return "None"
+def Power_Total_Calc(VStack_List,i_step,N):
     try:
         Filtered_List=list(filter(lambda x:x!="None",VStack_List))
-        Filtered_List_Not=list(map(lambda x:Eth-x,Filtered_List))
+        Filtered_List_Not=list(map(lambda x:(N*Eth)-x,Filtered_List))
         Total_Elec_Power=integrate(Filtered_List, i_step)
         Total_Thermal_Power=integrate(Filtered_List_Not,i_step)
         return [Total_Elec_Power,Total_Thermal_Power]
@@ -364,6 +369,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         Eta_Ohmic_List=[]
         Eta_Conc_List=[]
         Eta_Active_List=[]
+        Power_Thermal_List=[]
         #R_List=[]
         while i < IEnd:
             try:
@@ -389,6 +395,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 #R_List.append(Output_Dict["R Total"])
                 Vstack_List.append(Output_Dict["VStack"])
                 Efficiency_List.append(Output_Dict["PEM Efficiency"])
+                Power_Thermal_List.append(Power_Thermal_Calc(VStack=Output_Dict["VStack"],N=Input_Dict["N"],i=i))
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
                 Power_List.append(Output_Dict["Power-Stack"])
                 if ReportMode==True:
@@ -404,7 +411,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         [Estimated_V, B0, B1] = linear_plot(x=I_List, y=Vstack_List)
         Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
         Max_Params = Max_Params_Calc(Power_List,Efficiency_List,Vstack_List)
-        Power_Total = Power_Total_Calc(Vstack_List, IStep)
+        Power_Total = Power_Total_Calc(Vstack_List, IStep, Input_Dict["N"])
         Overall_Params_Linear["Pmax(L-Approx)"]=Linear_Approx_Params[0]
         Overall_Params_Linear["B0"] = B0
         Overall_Params_Linear["B1"] = B1
@@ -435,6 +442,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             HTML_Chart(x=str(list(map(rounder, Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)',
                        x_label="P(W)", y_label="EFF",
                        chart_name="Efficiency vs Power", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Power_Thermal_List), color='rgb(255, 0, 255)', x_label="I(A)", y_label="P(W)",
+                       chart_name="Power(Thermal)", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
