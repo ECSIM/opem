@@ -395,9 +395,10 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 #R_List.append(Output_Dict["R Total"])
                 Vstack_List.append(Output_Dict["VStack"])
                 Efficiency_List.append(Output_Dict["PEM Efficiency"])
-                Power_Thermal_List.append(Power_Thermal_Calc(VStack=Output_Dict["VStack"],N=Input_Dict["N"],i=i))
+                Output_Dict["Power-Thermal"]=Power_Thermal_Calc(VStack=Output_Dict["VStack"],N=Input_Dict["N"],i=i)
                 Output_Dict["Power-Stack"]=PowerStack_Calc(Output_Dict["Power"],Input_Dict["N"])
                 Power_List.append(Output_Dict["Power-Stack"])
+                Power_Thermal_List.append(Output_Dict["Power-Thermal"])
                 if ReportMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
@@ -457,6 +458,5 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
             return {"P":Power_List,"I":I_List,"V":Vstack_List,"EFF":Efficiency_List}
-    except Exception as e:
-        print(str(e))
+    except Exception:
         print("[Error] Amphlett Simulation Failed!(Check Your Inputs)")

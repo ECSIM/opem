@@ -39,7 +39,7 @@ Amphlett_InputParams = {"T": "Cell Operation Temperature [K]", "PH2": "Partial P
                "B": "An empirical constant depending on the cell and its operation state (Tafel Slope) [V]",
                "JMax": "maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {"Enernst": "V", "Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V",
-                "Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
+                "Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W","Power-Thermal":"W"}
 
 Amphlett_Params_Default={"R":0}
 
