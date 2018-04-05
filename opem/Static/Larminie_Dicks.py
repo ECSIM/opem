@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import math
-from opem.Static.Amphlett import Power_Calc,Efficiency_Calc,VStack_Calc,PowerStack_Calc
+from opem.Static.Amphlett import Power_Calc,Efficiency_Calc,VStack_Calc,PowerStack_Calc,Power_Thermal_Calc,Power_Total_Calc,Linear_Aprox_Params_Calc,Max_Params_Calc
 from opem.Params import Larminiee_InputParams as InputParams
 from opem.Params import Larminiee_OutputParams as OutputParams
 from opem.Functions import *
-from opem.Params import Larminiee_Description
+from opem.Params import Larminiee_Description,Overall_Params_Max_Description,Overall_Params_Linear_Description
 import os
 
 def Vcell_Calc(E0, i,i_0,i_n,i_L,R_M,A,B):
@@ -60,6 +60,8 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
     Warning1 = False
     Warning2 = False
     I_Warning = 0
+    Overall_Params_Max = {}
+    Overall_Params_Linear = {}
     try:
         Simulation_Title="Larminie-Dicks"
         if PrintMode==True:
@@ -89,6 +91,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         Efficiency_List = []
         Power_List = []
         Vstack_List = []
+        Power_Thermal_List = []
         while i < IEnd:
             try:
                 I_List.append(i)
@@ -99,9 +102,11 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 Output_Dict["Power"] = Power_Calc(Output_Dict["Vcell"], i)
                 Output_Dict["VStack"] = VStack_Calc(Input_Dict["N"], Output_Dict["Vcell"])
                 Output_Dict["Power-Stack"] = PowerStack_Calc(Output_Dict["Power"], Input_Dict["N"])
+                Output_Dict["Power-Thermal"] = Power_Thermal_Calc(VStack=Output_Dict["VStack"], N=Input_Dict["N"], i=i)
                 Vstack_List.append(Output_Dict["VStack"])
                 Efficiency_List.append(Output_Dict["PEM Efficiency"])
                 Power_List.append(Output_Dict["Power-Stack"])
+                Power_Thermal_List.append(Output_Dict["Power-Thermal"])
                 if ReportMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
@@ -112,8 +117,21 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
                 if ReportMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        [Estimated_V, B0, B1] = linear_plot(x=I_List, y=Vstack_List)
+        Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
+        Max_Params = Max_Params_Calc(Power_List, Efficiency_List, Vstack_List)
+        Power_Total = Power_Total_Calc(Vstack_List, IStep, Input_Dict["N"])
+        Overall_Params_Linear["Pmax(L-Approx)"] = Linear_Approx_Params[0]
+        Overall_Params_Linear["B0"] = B0
+        Overall_Params_Linear["B1"] = B1
+        Overall_Params_Linear["VFC|Pmax(L-Approx)"] = Linear_Approx_Params[1]
+
+        Overall_Params_Max["Pmax"] = Max_Params["Max_Power"]
+        Overall_Params_Max["VFC|Pmax"] = Max_Params["Max_VStack"]
+        Overall_Params_Max["Efficiency|Pmax"] = Max_Params["Max_EFF"]
+        Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
+        Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode==True:
-            Estimated_V = linear_plot(x=I_List, y=Vstack_List)
             HTML_Desc(Simulation_Title, Larminiee_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
@@ -126,6 +144,9 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             HTML_Chart(x=str(list(map(rounder, Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)',
                        x_label="P(W)", y_label="EFF",
                        chart_name="Efficiency vs Power", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Power_Thermal_List), color='rgb(255, 0, 255)', x_label="I(A)",
+                       y_label="P(W)",
+                       chart_name="Power(Thermal)", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
@@ -138,6 +159,6 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
             if PrintMode==True:
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
-            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List}
+            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"Ph":Power_Thermal_List}
     except Exception:
         print("[Error] Larminiee Simulation Failed!(Check Your Inputs)")

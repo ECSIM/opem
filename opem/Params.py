@@ -63,7 +63,7 @@ Larminiee_InputParams = {"E0":"Fuel Cell reversible no loss voltage [V]",
                "i_0":"Exchange current at which the overvoltage begins to move from zero [A]",
                "i_L":"limiting current [A]",
                 "A": "The slope of the Tafel line [V]","N": "Number Of Single Cells"}
-Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W","VStack": "V","Power-Stack":"W"}
+Larminiee_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W","VStack": "V","Power-Stack":"W","Power-Thermal":"W"}
 
 Larminiee_Description='''
 Larminie-Dicks model is obtained for large variation of the load parameters. In this model, the fuel cell is represented
