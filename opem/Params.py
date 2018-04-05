@@ -229,15 +229,15 @@ Vectors={"Amphlett_Analysis (Static)":Amphlett_Standard_Vector,
                   "Padulles_Hauer Analysis (Dynamic)":Padulles_Hauer_Standard_Vector,
                   "Padulles_Amphlett Analysis (Dynamic)":Padulles_Amphlett_Standard_Vector}
 
-Overall_Params_Max_Description={"Pmax":"Maximum power","VFC|Pmax":"Cell voltage at maximum power",
+Overall_Params_Max_Description={"Pmax":"Maximum power [W]","VFC|Pmax":"Cell voltage at maximum power [V]",
                                 "Efficiency|Pmax":"Cell efficiency at maximum power",
-                                "Ptotal(Elec)":"Total electrical power",
-                                "Ptotal(Thermal)":"Total thermal power"}
+                                "Ptotal(Elec)":"Total electrical power [W]",
+                                "Ptotal(Thermal)":"Total thermal power [W]"}
 Overall_Params_Linear_Description={
                             "B0":"Intercept of the curve obtained by linear approximation",
                             "B1":"Slope of the curve obtained by linear approximation",
-                            "Pmax(L-Approx)":"Maximum power obtained by linear approximation",
-                            "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation",
+                            "Pmax(L-Approx)":"Maximum power obtained by linear approximation [W]",
+                            "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation [V]",
                             }
 
 
