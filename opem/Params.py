@@ -83,7 +83,7 @@ Chamberline_InputParams = {"E0": "Open circuit voltage [V]", "b": "Tafel's param
                "i-stop": "Cell operating current end point [A]",
                "A": "Active area [cm^2]",
                "N": "Number Of Single Cells"}
-Chamberline_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W"}
+Chamberline_OutputParams = {"Vcell": "V", "PEM Efficiency": "", "Power": "W", "VStack": "V","Power-Stack":"W","Power-Thermal":"W"}
 
 Chamberline_Description='''
 Chamberlin-Kim static model is an empirical equation which was developed to fit the experimental cell potential (E) vs.
