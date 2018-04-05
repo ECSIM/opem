@@ -2,12 +2,12 @@
 from opem.Params import Padulles_Amphlett_InputParams as InputParams
 from opem.Params import Padulles_Amphlett_Outparams as OutputParams
 from opem.Params import Padulles_Amphlett_Params_Default as Defaults
-from opem.Static.Amphlett import Power_Calc,Eta_Act_Calc,Eta_Conc_Calc,Eta_Ohmic_Calc,Loss_Calc
+from opem.Static.Amphlett import Power_Calc,Eta_Act_Calc,Eta_Conc_Calc,Eta_Ohmic_Calc,Loss_Calc,Power_Thermal_Calc,Power_Total_Calc,Linear_Aprox_Params_Calc,Max_Params_Calc
 from opem.Dynamic.Padulles1 import PH2_Calc,PO2_Calc,Kr_Calc,qO2_Calc,Efficiency_Calc
 from opem.Dynamic.Padulles2 import Enernst_Calc,PH2O_Calc
 from opem.Dynamic.Padulles_Hauer import qH2_Calc
 from opem.Functions import *
-from opem.Params import Padulles_Amphlett_Description
+from opem.Params import Padulles_Amphlett_Description,Overall_Params_Max_Description,Overall_Params_Linear_Description
 import os
 
 def Vcell_Calc(Enernst, Loss, N):
@@ -43,6 +43,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
     Warning1 = False
     Warning2 = False
     I_Warning = 0
+    Overall_Params_Max = {}
+    Overall_Params_Linear = {}
     try:
         Simulation_Title="Padulles-Amphlett"
         if PrintMode==True:
@@ -81,6 +83,7 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
         Eta_Ohmic_List = []
         Eta_Conc_List = []
         Eta_Active_List = []
+        Power_Thermal_List = []
         Kr=Kr_Calc(Input_Dict["N0"])
         qH2=qH2_Calc(Input_Dict["qMethanol"],Input_Dict["CV"],Input_Dict["t1"],Input_Dict["t2"])
         qO2=qO2_Calc(qH2,Input_Dict["rho"])
@@ -112,7 +115,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(Output_Dict["FC Voltage"],Input_Dict["N0"])
                 Efficiency_List.append(Output_Dict["FC Efficiency"])
                 Output_Dict["FC Power"] = Power_Calc(Output_Dict["FC Voltage"], i)
+                Output_Dict["Power-Thermal"] = Power_Thermal_Calc(VStack=Output_Dict["FC Voltage"], N=Input_Dict["N0"], i=i)
                 Power_List.append(Output_Dict["FC Power"])
+                Power_Thermal_List.append(Output_Dict["Power-Thermal"])
                 if ReportMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict,OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
@@ -123,8 +128,21 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 if ReportMode==True:
                     Output_Save(OutputParamsKeys, Output_Dict, OutputParams, i, OutputFile,PrintMode)
                     CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
+        [Estimated_V, B0, B1] = linear_plot(x=I_List, y=Vstack_List)
+        Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
+        Max_Params = Max_Params_Calc(Power_List, Efficiency_List, Vstack_List)
+        Power_Total = Power_Total_Calc(Vstack_List, IStep, Input_Dict["N0"])
+        Overall_Params_Linear["Pmax(L-Approx)"] = Linear_Approx_Params[0]
+        Overall_Params_Linear["B0"] = B0
+        Overall_Params_Linear["B1"] = B1
+        Overall_Params_Linear["VFC|Pmax(L-Approx)"] = Linear_Approx_Params[1]
+
+        Overall_Params_Max["Pmax"] = Max_Params["Max_Power"]
+        Overall_Params_Max["VFC|Pmax"] = Max_Params["Max_VStack"]
+        Overall_Params_Max["Efficiency|Pmax"] = Max_Params["Max_EFF"]
+        Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
+        Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode==True:
-            Estimated_V = linear_plot(x=I_List, y=Vstack_List)
             HTML_Desc(Simulation_Title, Padulles_Amphlett_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
@@ -148,6 +166,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
             HTML_Chart(x=str(list(map(rounder, Power_List))), y=str(Efficiency_List), color='rgb(238, 210, 141)',
                        x_label="P(W)", y_label="EFF",
                        chart_name="Efficiency vs Power", size="600px", file=HTMLFile)
+            HTML_Chart(x=str(I_List), y=str(Power_Thermal_List), color='rgb(255, 0, 255)', x_label="I(A)",
+                       y_label="P(W)",
+                       chart_name="Power(Thermal)", size="600px", file=HTMLFile)
             warning_print(warning_flag_1=Warning1, warning_flag_2=Warning2, I_Warning=I_Warning, file=HTMLFile,
                           PrintMode=PrintMode)
             HTML_End(HTMLFile)
@@ -161,6 +182,6 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
         else:
             return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"PO2":PO2_List,"PH2":PH2_List,
-                    "PH2O":PH2O_List}
+                    "PH2O":PH2O_List,"Ph":Power_Thermal_List}
     except Exception:
         print("[Error] Padulles-Amphlett Dynamic Simulation Failed!(Check Your Inputs)")

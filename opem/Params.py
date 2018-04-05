@@ -110,7 +110,7 @@ Padulles_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell vo
                      "B":"Activation voltage constant [V]","C":"Constant [A^(-1)]",
                      "i-start": "Cell operating current start point [A]", "i-step": "Cell operating current step",
                      "i-stop": "Cell operating current end point [A]"}
-Padulles_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","E":"V"}
+Padulles_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","E":"V","Power-Thermal":"W"}
 
 
 Padulles_Description='''
@@ -132,7 +132,7 @@ Padulles2_InputParams={"N0":"Number of fuel cells in the stack","E0":"Opencell v
                      "i-stop": "Cell operating current end point [A]",
                      "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "tH2O": "Water time constant [s]"}
-Padulles2_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
+Padulles2_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V","Power-Thermal":"W"}
 
 Padulles2_Description='''
 In this model, Nernst and fuel cell potential were modeled as a function of water, oxygen and hydrogen gases partial
@@ -153,7 +153,7 @@ Padulles_Hauer_InputParams={"N0":"Number of fuel cells in the stack","E0":"Openc
                      "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
                      "tH2O": "Water time constant [s]","qMethanol":"Methanol flow rate [kmol.s^(-1)]",
                             "CV":"Conversion factor"}
-Padulles_Hauer_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V"}
+Padulles_Hauer_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm","E":"V","Power-Thermal":"W"}
 
 Padulles_Hauer_Description='''
 Padulles-Hauer Dynamic Model is a dynamic electrochemical simulation model of a grid independent proton exchange
@@ -184,7 +184,7 @@ Padulles_Amphlett_InputParams = {"N0":"Number of fuel cells in the stack","E0":"
                                  }
 
 Padulles_Amphlett_Outparams = {"FC Voltage":"V","FC Power":"W","FC Efficiency": "","PO2":"atm","PH2":"atm","PH2O":"atm",
-                            "E":"V","Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V"}
+                            "E":"V","Eta Activation": "V", "Eta Ohmic": "V", "Eta Concentration": "V", "Loss": "V","Power-Thermal":"W"}
 
 Padulles_Amphlett_Description='''
 This model is an integration of Padulles-Hauer dynamic model with Amphlett static model. The advantage of this dynamic
