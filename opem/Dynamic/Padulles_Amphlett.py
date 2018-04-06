@@ -185,6 +185,6 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
                 print("Result In -->" + os.path.join(os.getcwd(),Simulation_Title))
         else:
             return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"PO2":PO2_List,"PH2":PH2_List,
-                    "PH2O":PH2O_List,"Ph":Power_Thermal_List}
+                    "PH2O":PH2O_List,"Ph":Power_Thermal_List,"V0":B0,"K":B1}
     except Exception:
         print("[Error] Padulles-Amphlett Dynamic Simulation Failed!(Check Your Inputs)")
