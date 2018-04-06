@@ -9,11 +9,31 @@ from opem.Functions import *
 import os
 
 def Power_Thermal_Calc(VStack,N,i):
+    '''
+    This function calculate thermal power
+    :param VStack: VStack [V]
+    :type VStack : float
+    :param N: number of single cells
+    :type N : int
+    :param i: Cell load current [A]
+    :type i : float
+    :return: Thermal power [W]
+    '''
     try:
         return i*((N*Eth)-VStack)
     except Exception:
         return None
 def Power_Total_Calc(VStack_List,i_step,N):
+    '''
+    This function calculate total elec power and total thermal power by calling integrate function
+    :param VStack_List: Vstack list
+    :type VStack_List : list
+    :param i_step: Cell load current step
+    :type i_step : float
+    :param N: number of single cells
+    :type N : int
+    :return: [Total elec power,Total thermal power] as list
+    '''
     try:
         Filtered_List=list(filter(lambda x:x!=None,VStack_List))
         Filtered_List_Not=list(map(lambda x:(N*Eth)-x,Filtered_List))
@@ -23,6 +43,14 @@ def Power_Total_Calc(VStack_List,i_step,N):
     except Exception:
         return [None,None]
 def Linear_Aprox_Params_Calc(B0,B1):
+    '''
+    This function calculate linear approximation overall parameters
+    :param B0: intercept
+    :type B0 : float
+    :param B1: slope
+    :type B1 : float
+    :return: [Wmax,Vcell_Wmax] as list
+    '''
     Wmax=0
     Vcell_Wmax=0
     try:
@@ -40,12 +68,30 @@ def Linear_Aprox_Params_Calc(B0,B1):
     return [Wmax,Vcell_Wmax]
 
 def Max_Params_Calc(Power_List,EFF_List,VStack_List):
+    '''
+    This function calculate maximum overall parameters
+    :param Power_List: Power list
+    :type Power_List : list
+    :param EFF_List: Efficiency list
+    :type EFF_List : list
+    :param VStack_List: Vstack list
+    :type VStack_List : list
+    :return: {Max Power,Max Efficiency,Max VStack] as list
+    '''
     Max_Power=max(list(filter(lambda x:x!=None,Power_List)))
     Max_EFF=EFF_List[Power_List.index(Max_Power)]
     Max_VStack=VStack_List[Power_List.index(Max_Power)]
     return {"Max_Power":Max_Power,"Max_EFF":Max_EFF,"Max_VStack":Max_VStack}
 
 def R_Calc(V,i):
+    '''
+    This functtion calculate cell total resistance
+    :param V: cell voltage [V]
+    :type V : float
+    :param i: Cell load current [A]
+    :type i : float
+    :return: Resistance as float [ohm]
+    '''
     try:
         return V/i
     except Exception:
