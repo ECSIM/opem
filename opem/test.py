@@ -5,6 +5,13 @@
 >>> import random
 >>> cov=coverage.Coverage()
 >>> cov.start()
+>>> data=[i for i in range(100)]
+>>> integrate(data,1)
+4867.666666666666
+>>> data[0]=None
+>>> integrate(data,1)
+>>> linear_plot([1,2,3],[2,4,6])
+[[2.0, 4.0, 6.0], 0.0, 2.0]
 >>> isfloat("2")
 True
 >>> isfloat("2.02")
