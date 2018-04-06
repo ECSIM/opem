@@ -22,7 +22,7 @@ def integrate(y_vals, h):
             i+=1
         return total*(h/3.0)
     except Exception:
-        return "None"
+        return None
 
 def linear_plot(x,y):
     clear_x = []
@@ -30,7 +30,7 @@ def linear_plot(x,y):
     estimate_y = []
     none_x=[]
     for index,item in enumerate(y):
-        if item != "None":
+        if item != None:
             clear_y.append(item)
             clear_x.append(x[index])
         else:
@@ -40,7 +40,7 @@ def linear_plot(x,y):
         if x not in none_x:
             estimate_y.append(B0+B1*i)
         else:
-            estimate_y.append("None")
+            estimate_y.append(None)
     return [estimate_y,B0,B1]
 
 def estimate_coef(clear_x,clear_y):

@@ -12,31 +12,35 @@ def Power_Thermal_Calc(VStack,N,i):
     try:
         return i*((N*Eth)-VStack)
     except Exception:
-        return "None"
+        return None
 def Power_Total_Calc(VStack_List,i_step,N):
     try:
-        Filtered_List=list(filter(lambda x:x!="None",VStack_List))
+        Filtered_List=list(filter(lambda x:x!=None,VStack_List))
         Filtered_List_Not=list(map(lambda x:(N*Eth)-x,Filtered_List))
         Total_Elec_Power=integrate(Filtered_List, i_step)
         Total_Thermal_Power=integrate(Filtered_List_Not,i_step)
         return [Total_Elec_Power,Total_Thermal_Power]
     except Exception:
-        return ["None","None"]
+        return [None,None]
 def Linear_Aprox_Params_Calc(B0,B1):
     Wmax=0
     Vcell_Wmax=0
     try:
         Wmax=(B0**2)/(4*B1)
     except Exception:
-        Wmax="None"
+        Wmax=None
     try:
         Vcell_Wmax=(B0/2)
     except Exception:
-        Vcell_Wmax="None"
-    return [abs(Wmax),Vcell_Wmax]
+        Vcell_Wmax=None
+    if Wmax!=None:
+        Wmax=abs(Wmax)
+    if Vcell_Wmax!=None:
+        Vcell_Wmax=abs(Vcell_Wmax)
+    return [Wmax,Vcell_Wmax]
 
 def Max_Params_Calc(Power_List,EFF_List,VStack_List):
-    Max_Power=max(list(filter(lambda x:x!="None",Power_List)))
+    Max_Power=max(list(filter(lambda x:x!=None,Power_List)))
     Max_EFF=EFF_List[Power_List.index(Max_Power)]
     Max_VStack=VStack_List[Power_List.index(Max_Power)]
     return {"Max_Power":Max_Power,"Max_EFF":Max_EFF,"Max_VStack":Max_VStack}
