@@ -11,6 +11,14 @@ import webbrowser
 import sys
 
 def integrate(y_vals, h):
+    '''
+    This function calculate integral with Simpson's Rule
+    :param y_vals: output values
+    :type y_valS : list
+    :param h: interval
+    :type h : float
+    :return: integrate output as float
+    '''
     try:
         i=1
         total=y_vals[0]+y_vals[-1]
@@ -25,6 +33,14 @@ def integrate(y_vals, h):
         return None
 
 def linear_plot(x,y):
+    '''
+    This function clear input data and call estimate_coef
+    :param x:  x data
+    :type x : list
+    :param y: y data
+    :type y : list
+    :return: [estimated_y,intercept,slope] as list
+    '''
     clear_x = []
     clear_y = []
     estimate_y = []
@@ -44,6 +60,14 @@ def linear_plot(x,y):
     return [estimate_y,B0,B1]
 
 def estimate_coef(clear_x,clear_y):
+    '''
+    This function use simple linear regression for linear approxiamtion
+    :param clear_x: cleared_x
+    :type clear_x : list
+    :param clear_y: cleared_y
+    :type clear_y : list
+    :return: [slope,intercept]
+    '''
     try:
         n=len(clear_x)
         mean_x=sum(clear_x)/n
