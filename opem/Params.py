@@ -234,8 +234,8 @@ Overall_Params_Max_Description={"Pmax":"Maximum power [W]","VFC|Pmax":"Cell volt
                                 "Ptotal(Elec)":"Total electrical power [W]",
                                 "Ptotal(Thermal)":"Total thermal power [W]"}
 Overall_Params_Linear_Description={
-                            "B0":"Intercept of the curve obtained by linear approximation",
-                            "B1":"Slope of the curve obtained by linear approximation",
+                            "V0":"Intercept of the curve obtained by linear approximation",
+                            "K":"Slope of the curve obtained by linear approximation",
                             "Pmax(L-Approx)":"Maximum power obtained by linear approximation [W]",
                             "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation [V]",
                             }

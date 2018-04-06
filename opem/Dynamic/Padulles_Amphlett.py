@@ -133,8 +133,8 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
         Max_Params = Max_Params_Calc(Power_List, Efficiency_List, Vstack_List)
         Power_Total = Power_Total_Calc(Vstack_List, IStep, Input_Dict["N0"])
         Overall_Params_Linear["Pmax(L-Approx)"] = Linear_Approx_Params[0]
-        Overall_Params_Linear["B0"] = B0
-        Overall_Params_Linear["B1"] = B1
+        Overall_Params_Linear["V0"] = B0
+        Overall_Params_Linear["K"] = B1
         Overall_Params_Linear["VFC|Pmax(L-Approx)"] = Linear_Approx_Params[1]
 
         Overall_Params_Max["Pmax"] = Max_Params["Max_Power"]
