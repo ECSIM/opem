@@ -130,6 +130,7 @@ def Static_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repor
         if ReportMode==True:
             HTML_Desc(Simulation_Title, Chamberline_Description, HTMLFile)
             HTML_Input_Table(Input_Dict=Input_Dict, Input_Params=InputParams, file=HTMLFile)
+            HTML_Overall_Params_Table(Overall_Params_Max, Overall_Params_Max_Description, file=HTMLFile, header=True)
             HTML_Chart(x=str(I_List), y=str(Power_List), color='rgba(255,99,132,1)', x_label="I(A)", y_label="P(W)",
                     chart_name="Power-Stack", size="600px", file=HTMLFile)
             HTML_Chart(x=str(I_List), y=[str(Vstack_List), str(Estimated_V)],
