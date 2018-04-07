@@ -93,12 +93,9 @@ False
 [Error] PEM Efficiency Calculation Failed (Vcell:None)
 >>> VStack_Calc(12,None)
 [Error] VStack Calculation Error (N:12, Vcell:None)
->>> Amphlett_Data=Static_Analysis(InputMethod={},TestMode=True)
-###########
-Amphlett-Model Simulation
-###########
-Analyzing . . .
-[Error] Amphlett Simulation Failed!(Check Your Inputs)
+>>> Amphlett_Data=Static_Analysis(InputMethod={},TestMode=True,PrintMode=False)
+>>> Amphlett_Data["Status"]
+False
 >>> Loss_Calc(122,22,None)
 [Error] Loss Calculation Error (Eta_Act:122, Eta_Ohmic:22, Eta_Conc:None)
 >>> Vcell_Calc(122,None)
@@ -644,12 +641,9 @@ Done!
 1.244827379954939
 >>> Vcell_Calc(None,b,R,m,n,i,A)
 [Error] Vcell Calculation Error (E0:None, b:0.0689, R:0.328, m:0.000125, n:9.45, i:1, A:50.0)
->>> Static_Analysis(InputMethod={}, TestMode=True)
-###########
-Chamberline-Kim-Model Simulation
-###########
-Analyzing . . .
-[Error] Chamberline-Kim Simulation Failed!(Check Your Inputs)
+>>> Chamberline_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
+>>> Chamberline_Data["Status"]
+False
 >>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1,"Name":"test2"}
 >>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -910,12 +904,9 @@ Done!
 0.8677440917797067
 >>> Vcell_Calc(E0=None, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
 [Error] Vcell Calculation Error (E0:None, i:1, i_0:0.00654, i_n:0.23, i_L:100, R_M:0.0018, A:0.0587, B:0.0517)
->>> Static_Analysis(InputMethod={}, TestMode=True)
-###########
-Larminie-Dicks-Model Simulation
-###########
-Analyzing . . .
-[Error] Larminiee Simulation Failed!(Check Your Inputs)
+>>> Larminie_Dicks_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
+>>> Larminie_Dicks_Data["Status"]
+False
 >>> Test_Vector={"A":0.0587,"E0":1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -1612,12 +1603,9 @@ Power-Thermal : 209.9389930587172 W
 ###########
 Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
 Done!
->>> Dynamic_Analysis(InputMethod={}, TestMode=True)
-###########
-Padulles-I-Model Simulation
-###########
-Analyzing . . .
-[Error] Dynamic Simulation Failed!(Check Your Inputs)
+>>> Padulles_I_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
+>>> Padulles_I_Data["Status"]
+False
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1)
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1)
 >>> PH2_Calc(KH2=None,tH2=1,Kr=0.3,I=3,qH2=0.3)
@@ -2030,12 +2018,9 @@ Done!
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1, PH2O:2.1)
 >>> PH2O_Calc(KH2O=None,tH2O=1,Kr=0.3,I=3,qH2O=0.3)
 [Error] PH2O Calculation Failed (KH2O:None, tH2O:1, Kr:0.3, I:3, qH2O:0.3)
->>> Dynamic_Analysis(InputMethod={}, TestMode=True)
-###########
-Padulles-II-Model Simulation
-###########
-Analyzing . . .
-[Error] Dynamic Simulation Failed!(Check Your Inputs)
+>>> Padulles_II_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
+>>> Padulles_II_Data["Status"]
+False
 >>> from opem.Dynamic.Padulles_Hauer import *
 >>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
@@ -2434,12 +2419,9 @@ PO2 : 0.19032492078676233 atm
 Power-Thermal : 12.082876212203196 W
 ###########
 Done!
->>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod={}, TestMode=True)
-###########
-Padulles-Hauer-Model Simulation
-###########
-Analyzing . . .
-[Error] Padulles-Hauer Dynamic Simulation Failed!(Check Your Inputs)
+>>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
+>>> Padulles_Hauer_Data["Status"]
+False
 >>> qH2_Calc(qMethanol=None,CV=2,t1=2,t2=2)
 [Error] qH2 Calculation Failed (qMethanol:None, CV:2, t1:2, t2:2)
 >>> from opem.Dynamic.Padulles_Amphlett import *
@@ -2996,12 +2978,9 @@ PO2 : 0.19032492078676233 atm
 Power-Thermal : 8.819465079445965 W
 ###########
 Done!
->>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod={}, TestMode=True)
-###########
-Padulles-Amphlett-Model Simulation
-###########
-Analyzing . . .
-[Error] Padulles-Amphlett Dynamic Simulation Failed!(Check Your Inputs)
+>>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod={}, TestMode=True, PrintMode=False)
+>>> Padulles_Amphlett_Data["Status"]
+False
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=4)
 2.9
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)

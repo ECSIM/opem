@@ -171,8 +171,9 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
     I_Warning = 0
     Overall_Params_Max = {}
     Overall_Params_Linear = {}
+    Simulation_Title = "Padulles-I"
     try:
-        Simulation_Title="Padulles-I"
+
         if PrintMode==True:
             print("###########")
             print(Simulation_Title+"-Model Simulation")
@@ -282,7 +283,10 @@ def Dynamic_Analysis(InputMethod=Get_Input, TestMode=False, PrintMode=True, Repo
             if PrintMode==True:
                 print("Result In -->" + os.path.join(os.getcwd(), Simulation_Title))
         else:
-            return {"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"PO2":PO2_List,"PH2":PH2_List,
+            return {"Status":True,"P": Power_List, "I": I_List, "V": Vstack_List,"EFF":Efficiency_List,"PO2":PO2_List,"PH2":PH2_List,
                     "Ph": Power_Thermal_List,"V0":B0,"K":B1}
     except Exception:
-        print("[Error] Dynamic Simulation Failed!(Check Your Inputs)")
+        if TestMode==True:
+            return {"Status":False,"Message":"[Error] "+Simulation_Title+" Simulation Failed!(Check Your Inputs)"}
+        else:
+            print("[Error] "+Simulation_Title+" Simulation Failed!(Check Your Inputs)")
