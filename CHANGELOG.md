@@ -5,6 +5,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.8] - 2018-04-7
+### Added
+- Overall Parameters
+- Linear Approximation
+- Power(Thermal) Parameter
+- Efficiency vs I Plot
+- PH2 vs I Plot
+- PO2 vs I Plot
+- Power vs Efficiency Plot
+- Loss vs I Plot
+- Power(Thermal) vs I Plot
+- macOS Version
+
+### Changed
+- Simulation Error
+
 ## [0.7] - 2018-03-17
 ### Added
 - Standard Test Vectors
@@ -86,7 +102,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSV Output Files
 - Documents And README
 
-[Unreleased]: https://github.com/ECSIM/opem/compare/v0.7...HEAD
+[Unreleased]: https://github.com/ECSIM/opem/compare/v0.8...HEAD
+[0.8]: https://github.com/ECSIM/opem/compare/v0.7...v0.8
 [0.7]: https://github.com/ECSIM/opem/compare/v0.6...v0.7
 [0.6]: https://github.com/ECSIM/opem/compare/v0.5...v0.6
 [0.5]: https://github.com/ECSIM/opem/compare/v0.4...v0.5
