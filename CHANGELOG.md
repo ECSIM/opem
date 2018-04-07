@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.8] - 2018-04-7
+## [0.8] - 2018-04-8
 ### Added
 - Overall Parameters
 - Linear Approximation
@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - macOS Version
 
 ### Changed
-- Simulation Error
+- Simulation Error Response
 
 ## [0.7] - 2018-03-17
 ### Added
