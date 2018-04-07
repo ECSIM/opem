@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
   name = 'opem',
   packages = ['opem','opem.Static','opem.Dynamic'],
-  version = '0.7',
+  version = '0.8',
   description = 'Open Source PEM Cell Simulation Tool',
   long_description='''
   Modelling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful
@@ -18,7 +18,7 @@ setup(
   author = 'Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
   author_email = 'opem@ecsim.ir',
   url = 'https://github.com/ecsim/opem',
-  download_url = 'https://github.com/ecsim/opem/tarball/v0.7',
+  download_url = 'https://github.com/ecsim/opem/tarball/v0.8',
   keywords = "OPEM PEM FC CELL Fuel-Cell Chemistry",
   project_urls={
     'Webpage': 'http://opem.ecsim.ir',
