@@ -18,7 +18,7 @@
 
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 0.8](https://www.dropbox.com/s/kzl84l7g727mqk0/OPEM%28v0.7%29.zip?dl=0)
+- Download [Exe-Version 0.8](https://www.dropbox.com/s/bwvlyyx32hudc9g/OPEM%28v0.8%29.zip?dl=0)
 - Extract Zip File
 - Run `OPEM.exe`
 
