@@ -169,6 +169,68 @@ is an adjustable parameter with a min value of 14 and max value of 23
 23
 </td>
 </table>
+<h2 style="color:#ff7600;">Overall Parameters</h2>
+<table style="border:1px solid black;border-collapse: collapse;margin:15px;">
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Parameter
+</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Description
+</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Value
+</td>
+</tr>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Efficiency|Pmax
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Cell efficiency at maximum power
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+0.527106578889014
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Pmax
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Maximum power [W]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+3.2069164259607614
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Ptotal(Elec)
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Total electrical power [W]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+3.4513224121275345
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Ptotal(Thermal)
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Total thermal power [W]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+1.3046775878724657
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+VFC|Pmax
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Cell voltage at maximum power [V]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+0.8222862630668619
+</td>
+</table>
 <h2 style="color:#ff7600;">Graphs</h2>
 
 <div style="width:600px;margin:15px;">
@@ -180,20 +242,15 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
-        datasets: [{
+        datasets: [
+{
             label: 'Power-Stack',
             fill:false,
             data: [0.0, 0.1072482958282681, 0.2052761611172405, 0.29979933150428645, 0.3920327165753869, 0.4825532947945601, 0.5717008813767012, 0.6597000002134213, 0.7467102170794577, 0.8328508282477683, 0.9182144215535232, 1.0028749536944233, 1.0868928646385256, 1.1703184750174012, 1.2531943319175447, 1.3355568810485454, 1.417437691058521, 1.498864370613474, 1.5798612689779254, 1.6604500204546115, 1.7406499739060304, 1.8204785361705675, 1.8999514499278993, 1.9790830209466792, 2.057886305741922, 2.136373267906203, 2.2145549093911394, 2.292441381564352, 2.3700420797928925, 2.4473657244989955, 2.524420431023553, 2.6012137701649807, 2.677752820899156, 2.7540442165034262, 2.8300941850850854, 2.9059085853379534, 2.9814929382093656, 3.056852455046042, 3.1319920626950446, 3.2069164259607614],
             borderColor:'rgba(255,99,132,1)',
             borderWidth: 1
-        },
-                  {
-            label: 'Voltage-Stack',
-            fill:false,
-            data: [1.19075, 1.072482958282681, 1.0263808055862025, 0.9993311050142881, 0.9800817914384672, 0.9651065895891202, 0.9528348022945019, 0.9424285717334592, 0.933387771349322, 0.925389809164187, 0.9182144215535232, 0.9117045033585666, 0.905744053865438, 0.9002449807826162, 0.895138808512532, 0.8903712540323636, 0.8858985569115755, 0.8816849238902789, 0.8777007049877363, 0.873921063397164, 0.8703249869530152, 0.8668945410336035, 0.8636142954217724, 0.8604708786724693, 0.8574526273924674, 0.8545493071624812, 0.8517518882273614, 0.8490523635423525, 0.8464435999260331, 0.8439192153444812, 0.8414734770078509, 0.8391012161822519, 0.8367977565309862, 0.8345588534858868, 0.8323806426720839, 0.8302595958108439, 0.8281924828359348, 0.8261763392016329, 0.8242084375513276, 0.8222862630668619],
-            borderColor:'rgba(99,100,255,1)',
-            borderWidth: 1
-        }]
+        }
+]
     },
     options: {
         scales: {
@@ -221,8 +278,304 @@ var myChart = new Chart(ctx, {
 </script>
 
 <div style="width:600px;margin:15px;">
-    <canvas id="Voltage-Stack" width="100" height="100"></canvas>
+    <canvas id="['Voltage-Stack', 'Linear-Apx']" width="100" height="100"></canvas>
         </div>
-<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By <a style="text-decoration:none;color:#ff7600;" href="http://opem.ecsim.ir">OPEM</a> Version 0.7</p>
+<script>
+var ctx = document.getElementById("['Voltage-Stack', 'Linear-Apx']").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [
+{
+            label: 'Voltage-Stack',
+            fill:false,
+            data: [1.19075, 1.072482958282681, 1.0263808055862025, 0.9993311050142881, 0.9800817914384672, 0.9651065895891202, 0.9528348022945019, 0.9424285717334592, 0.933387771349322, 0.925389809164187, 0.9182144215535232, 0.9117045033585666, 0.905744053865438, 0.9002449807826162, 0.895138808512532, 0.8903712540323636, 0.8858985569115755, 0.8816849238902789, 0.8777007049877363, 0.873921063397164, 0.8703249869530152, 0.8668945410336035, 0.8636142954217724, 0.8604708786724693, 0.8574526273924674, 0.8545493071624812, 0.8517518882273614, 0.8490523635423525, 0.8464435999260331, 0.8439192153444812, 0.8414734770078509, 0.8391012161822519, 0.8367977565309862, 0.8345588534858868, 0.8323806426720839, 0.8302595958108439, 0.8281924828359348, 0.8261763392016329, 0.8242084375513276, 0.8222862630668619],
+            borderColor:'rgba(99,100,255,1)',
+            borderWidth: 1
+        }
+,
+
+{
+            label: 'Linear-Apx',
+            fill:false,
+            data: [1.0040929839792478, 0.9985096338312938, 0.9929262836833397, 0.9873429335353856, 0.9817595833874315, 0.9761762332394774, 0.9705928830915234, 0.9650095329435693, 0.9594261827956152, 0.9538428326476611, 0.948259482499707, 0.942676132351753, 0.9370927822037989, 0.9315094320558447, 0.9259260819078906, 0.9203427317599365, 0.9147593816119824, 0.9091760314640284, 0.9035926813160743, 0.8980093311681202, 0.8924259810201661, 0.886842630872212, 0.881259280724258, 0.8756759305763039, 0.8700925804283498, 0.8645092302803957, 0.8589258801324416, 0.8533425299844876, 0.8477591798365335, 0.8421758296885794, 0.8365924795406253, 0.8310091293926711, 0.825425779244717, 0.8198424290967631, 0.8142590789488089, 0.8086757288008548, 0.8030923786529007, 0.7975090285049466, 0.7919256783569926, 0.7863423282090385],
+            borderColor:'rgb(238, 210, 141)',
+            borderWidth: 1
+        }
+
+]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'V(V)'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+<table style="border:1px solid black;border-collapse: collapse;margin:15px;">
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Parameter
+</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Description
+</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Value
+</td>
+</tr>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+K
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Slope of the curve obtained by linear approximation [A^(-1)]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+-0.05583350147954085
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Pmax(L-Approx)
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Maximum power obtained by linear approximation [W]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+4.514326944217295
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+V0
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Intercept of the curve obtained by linear approximation [V]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+1.0040929839792478
+</td>
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+VFC|Pmax(L-Approx)
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+Cell voltage at maximum power obtained by linear approximation [V]
+</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
+0.5020464919896239
+</td>
+</table>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="['Eta Active', 'Eta Conc', 'Eta Ohmic']" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("['Eta Active', 'Eta Conc', 'Eta Ohmic']").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [
+{
+            label: 'Eta Active',
+            fill:false,
+            data: [0, 0.11807074742083559, 0.1639764642376006, 0.1908295871441327, 0.20988218105436562, 0.22466052101362555, 0.23673530396089773, 0.2469443874769634, 0.25578789787113065, 0.26358842686742984, 0.2705662378303906, 0.27687843565296244, 0.28264102077766273, 0.28794208521933035, 0.29285010429372843, 0.29741936073692266, 0.3016936146878957, 0.3057086591103234, 0.30949414368419487, 0.3130749049111216, 0.3164719546471556, 0.31970322720026056, 0.32278415246972747, 0.3257281015786805, 0.32854673759442776, 0.33125029460641553, 0.3338478020360954, 0.336347266590727, 0.33875582111049346, 0.3410798472843882, 0.3433250775536877, 0.3454966803001176, 0.3475993315046607, 0.34963727537625955, 0.35161437592708844, 0.3535341610697534, 0.3553998605009599, 0.3572144383935416, 0.35898062172788664, 0.36070092494262745],
+            borderColor:'rgba(255,99,132,1)',
+            borderWidth: 1
+        }
+,
+
+{
+            label: 'Eta Conc',
+            fill:false,
+            data: [0, 2.109426805213159e-05, 4.221638333089875e-05, 6.336641945755048e-05, 8.454445034568427e-05, 0.00010575055020278165, 0.00012698479353178086, 0.000148247255132642, 0.00016953801010392253, 0.00019085713384438152, 0.00021220470205456714, 0.0002335807907384422, 0.00025498547620500224, 0.0002764188350699048, 0.00029788094425712723, 0.00031937188100060893, 0.0003408917228459314, 0.00036244054765199196, 0.00038401843359268825, 0.00040562545915863245, 0.0004272617031588504, 0.00044892724472251814, 0.00047062216330069346, 0.0004923465386680586, 0.0005141004509246927, 0.0005358839804978295, 0.0005576972081436541, 0.0005795402149490941, 0.0006014130823336223, 0.0006233158920510905, 0.0006452487261915484, 0.0006672116671831024, 0.0006892047977937692, 0.0007112282011333409, 0.0007332819606552831, 0.0007553661601586168, 0.000777480883789843, 0.0007996262160448594, 0.0008218022417708932, 0.0008440090461684635],
+            borderColor:'rgba(99,100,255,1)',
+            borderWidth: 1
+        }
+,
+
+{
+            label: 'Eta Ohmic',
+            fill:false,
+            data: [0, 0.00017520002843124318, 0.0003505137928660484, 0.0005259414221215358, 0.0007014830568214833, 0.0008771388470514419, 0.0010529089510685316, 0.001228793534444728, 0.0014047927694433354, 0.0015809068345387157, 0.0017571359140316743, 0.001933480197732536, 0.002109939880694226, 0.002286515162983545, 0.0024632062494824017, 0.002640013349713048, 0.0028169366776829123, 0.0029939764517456784, 0.0031711328944759895, 0.003348406232555746, 0.0035257966966703337, 0.003703304521413451, 0.0038809299451994456, 0.004058673210182234, 0.004236534562180054, 0.004414514250605397, 0.004592612528399569, 0.004770829651971409, 0.00494916588113977, 0.005127621479079398, 0.005306196712269878, 0.005484891850447433, 0.00566370716655928, 0.005842642936720367, 0.00602169944017227, 0.006200876959244138, 0.0063801757793154595, 0.0065595961887805875, 0.0067391384790148525, 0.0069188029443421825],
+            borderColor:'rgb(238, 210, 141)',
+            borderWidth: 1
+        }
+
+]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'V(V)'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="Efficiency" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("Efficiency").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [
+{
+            label: 'Efficiency',
+            fill:false,
+            data: [0.763301282051282, 0.6874890758222313, 0.6579364138373093, 0.6405968621886462, 0.628257558614402, 0.618658070249436, 0.610791539932373, 0.60412087931632, 0.5983254944546936, 0.5931985956180685, 0.5885989881753353, 0.5844259636913888, 0.5806051627342551, 0.5770801158862924, 0.5738069285336743, 0.5707508038668997, 0.567883690327933, 0.5651826435194095, 0.5626286570434207, 0.5602058098699769, 0.5579006326621893, 0.5557016288676945, 0.553598907321649, 0.5515838965849162, 0.5496491201233765, 0.5477880174118469, 0.5459948001457445, 0.5442643356040721, 0.5425920512346366, 0.5409738559900521, 0.5394060750050326, 0.537885394988623, 0.5364088182890937, 0.5349736240294146, 0.5335773350462076, 0.5322176896223357, 0.5308926172025222, 0.5296002174369442, 0.5283387420200818, 0.527106578889014],
+            borderColor:'rgb(255, 0, 255)',
+            borderWidth: 1
+        }
+]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'EFF'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="Efficiency vs Power" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("Efficiency vs Power").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0.0, 0.11, 0.21, 0.3, 0.39, 0.48, 0.57, 0.66, 0.75, 0.83, 0.92, 1.0, 1.09, 1.17, 1.25, 1.34, 1.42, 1.5, 1.58, 1.66, 1.74, 1.82, 1.9, 1.98, 2.06, 2.14, 2.21, 2.29, 2.37, 2.45, 2.52, 2.6, 2.68, 2.75, 2.83, 2.91, 2.98, 3.06, 3.13, 3.21],
+        datasets: [
+{
+            label: 'Efficiency vs Power',
+            fill:false,
+            data: [0.763301282051282, 0.6874890758222313, 0.6579364138373093, 0.6405968621886462, 0.628257558614402, 0.618658070249436, 0.610791539932373, 0.60412087931632, 0.5983254944546936, 0.5931985956180685, 0.5885989881753353, 0.5844259636913888, 0.5806051627342551, 0.5770801158862924, 0.5738069285336743, 0.5707508038668997, 0.567883690327933, 0.5651826435194095, 0.5626286570434207, 0.5602058098699769, 0.5579006326621893, 0.5557016288676945, 0.553598907321649, 0.5515838965849162, 0.5496491201233765, 0.5477880174118469, 0.5459948001457445, 0.5442643356040721, 0.5425920512346366, 0.5409738559900521, 0.5394060750050326, 0.537885394988623, 0.5364088182890937, 0.5349736240294146, 0.5335773350462076, 0.5322176896223357, 0.5308926172025222, 0.5296002174369442, 0.5283387420200818, 0.527106578889014],
+            borderColor:'rgb(238, 210, 141)',
+            borderWidth: 1
+        }
+]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'EFF'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'P(W)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+
+<div style="width:600px;margin:15px;">
+    <canvas id="Power(Thermal)" width="100" height="100"></canvas>
+        </div>
+<script>
+var ctx = document.getElementById("Power(Thermal)").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9],
+        datasets: [
+{
+            label: 'Power(Thermal)',
+            fill:false,
+            data: [0.0, 0.015751704171731908, 0.0407238388827595, 0.06920066849571356, 0.09996728342461313, 0.13244670520543989, 0.16629911862329885, 0.20129999978657856, 0.23728978292054237, 0.2741491717522317, 0.3117855784464768, 0.3501250463055768, 0.3891071353614744, 0.428681524982599, 0.4688056680824551, 0.5094431189514546, 0.5505623089414792, 0.5921356293865259, 0.6341387310220746, 0.6765499795453883, 0.7193500260939696, 0.7625214638294325, 0.8060485500721009, 0.8499169790533205, 0.8941136942580782, 0.9386267320937969, 0.9834450906088604, 1.0285586184356483, 1.073957920207107, 1.1196342755010045, 1.1655795689764472, 1.2117862298350193, 1.2582471791008443, 1.3049557834965735, 1.3519058149149146, 1.3990914146620463, 1.4465070617906346, 1.4941475449539583, 1.5420079373049551, 1.5900835740392385],
+            borderColor:'rgb(255, 0, 255)',
+            borderWidth: 1
+        }
+]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'P(W)'
+                        }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'I(A)'
+                        }
+            }]
+        }
+    }
+});
+</script>
+<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By <a style="text-decoration:none;color:#ff7600;" href="http://opem.ecsim.ir">OPEM</a> Version 0.8</p>
 </body>
 </html>
