@@ -46,33 +46,37 @@ With a valid mathematical model, PEMFC system performance can be better understo
 ![Block diagram of software](../otherfile/OPEM_BLOCK_DIAGRAM.jpg) 
 
 
+# Supported models								
+
 Supported models include two general categories of static models and dynamic models. Static models are briefly outlined here:							
 
 
-### Amphlett analysis
-that main concepts include Nernst voltage, PEMFC losses (activation polarization loss, ohmic polarization loss, and concentration polarization loss), power and efficiency of the fuel cell.[@Amphlett1995; @Correa2005; @Saadi2013]
+## Amphlett analysis			
 
-### Larminie analysis
-that was developed to proportionate the experimental cell potential (E) vs. current density (J) data for proton exchange membrane fuel cells (PEMFCs), at various pressures, temperatures, and oxygen compositions in the cathode gas mixture.[@Sadli2006; @Saadi2013]
+That main concepts include Nernst voltage, PEMFC losses (activation polarization loss, ohmic polarization loss, and concentration polarization loss), power and efficiency of the fuel cell.[@Amphlett1995; @Correa2005; @Saadi2013]
 
-### Chamberline-Kim analysis
+## Larminie analysis				
 
-that is represented by means of its voltage-current characteristic obtained in static operating mode. In fact, Larminie-Dicks static model presents the fuel cell voltage as a function of the current magnitude.[@Kim1995; @Saadi2013]
+That was developed to proportionate the experimental cell potential (E) vs. current density (J) data for proton exchange membrane fuel cells (PEMFCs), at various pressures, temperatures, and oxygen compositions in the cathode gas mixture.[@Sadli2006; @Saadi2013]
+
+## Chamberline-Kim analysis
+
+That is represented by means of its voltage-current characteristic obtained in static operating mode. In fact, Larminie-Dicks static model presents the fuel cell voltage as a function of the current magnitude.[@Kim1995; @Saadi2013]
 
 And also dynamic models includes:								
 
 
-### Padulles analysis I,II
+## Padulles analysis I,II
 
-that the electrodes channel temperatures/pressures, transient response of cell voltage, gases outflow rates and the temperature of the cell under the sudden change in load current can be predicted. In model I, Nernst and fuel cell potential were modeled as a function of oxygen and hydrogen gases partial pressure that can be calculated from independent variables or constants and in model II, Nernst and fuel cell potential were modeled as a function of water, oxygen and hydrogen gases partial pressure that can be calculated from independent variables or constants.[@Padulls2000]
+That the electrodes channel temperatures/pressures, transient response of cell voltage, gases outflow rates and the temperature of the cell under the sudden change in load current can be predicted. In model I, Nernst and fuel cell potential were modeled as a function of oxygen and hydrogen gases partial pressure that can be calculated from independent variables or constants and in model II, Nernst and fuel cell potential were modeled as a function of water, oxygen and hydrogen gases partial pressure that can be calculated from independent variables or constants.[@Padulls2000]
 
-### Padulles-Hauer analysis
+## Padulles-Hauer analysis
 
-that is a model includes a methanol reformer to generate hydrogen from methanol and the PEM stack and this is an advantage for dynamic simulation of padulles analysis. [@Hauer2001; @Padulls2000]
+That is a model includes a methanol reformer to generate hydrogen from methanol and the PEM stack and this is an advantage for dynamic simulation of padulles analysis. [@Hauer2001; @Padulls2000]
 
-### Padulles-Amphlett analysis
+## Padulles-Amphlett analysis
 
-that is an integration of Padulles-Hauer dynamic model with Amphlett static model. The superiority of this model is using Amphlett equation for simulating the polarization values. [@Padulls2000; @Hauer2001; @Amphlett1995]
+That is an integration of Padulles-Hauer dynamic model with Amphlett static model. The superiority of this model is using Amphlett equation for simulating the polarization values. [@Padulls2000; @Hauer2001; @Amphlett1995]
 
  
 
