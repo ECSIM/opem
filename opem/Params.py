@@ -239,9 +239,3 @@ Overall_Params_Linear_Description={
                             "Pmax(L-Approx)":"Maximum power obtained by linear approximation [W]",
                             "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation [V]",
                             }
-
-
-
-
-
-
