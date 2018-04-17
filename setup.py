@@ -7,7 +7,7 @@ setup(
   description = 'Open Source PEM Cell Simulation Tool',
   long_description='''
   Modelling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful
-  tool in the Research & development of renewable energy sources.The Open-Source PEMFC Simulation Tool (OPEM) is a
+  tool in the research & development of renewable energy sources.The Open-Source PEMFC Simulation Tool (OPEM) is a
   modelling tool for evaluating the performance of proton exchange membrane fuel cells. This package is a combination
   of some models (static/dynamic) which are predicting the optimum operating parameters of PEMFC. OPEM contained generic
   models that will accept as input, not only values of the operating variables such as anode and cathode feed gas,

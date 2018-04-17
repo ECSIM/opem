@@ -4,7 +4,7 @@ Website="http://www.ecsim.ir/opem"
 UpdateUrl="http://www.ecsim.ir/opem/update"
 Overview='''
 Modelling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a
-powerful tool in the Research & development of renewable energy sources.The Open-Source
+powerful tool in the research & development of renewable energy sources.The Open-Source
 PEMFC Simulation Tool (OPEM) is a modelling tool for evaluating the performance of proton
 exchange membrane fuel cells. This package is a combination of some models (static/dynamic)
 which are predicting the optimum operating parameters of PEMFC. OPEM contained generic
@@ -239,9 +239,3 @@ Overall_Params_Linear_Description={
                             "Pmax(L-Approx)":"Maximum power obtained by linear approximation [W]",
                             "VFC|Pmax(L-Approx)":"Cell voltage at maximum power obtained by linear approximation [V]",
                             }
-
-
-
-
-
-
