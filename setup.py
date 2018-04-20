@@ -1,5 +1,16 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
+from pathlib import Path
+import logging
+
+def get_requirements():
+    requirements_path = Path(__file__).parent / 'requirements.txt'
+    logging.info('Requirements path: {}'.format(requirements_path.resolve()))
+    with open(str(requirements_path)) as f:
+        requirements = f.read().splitlines()
+    return requirements
+
+
 setup(
   name = 'opem',
   packages = ['opem','opem.Static','opem.Dynamic'],
@@ -26,11 +37,7 @@ setup(
     'Source': 'https://github.com/ecsim/opem',
      },
   platforms=["any"],
-  install_requires=[
-      'art>0.7',
-	  'codecov',
-      'requests',
-      ],
+  install_requires = get_requirements(),
   python_requires='>=3.3',
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -45,3 +52,5 @@ setup(
     ],
   license='MIT',
 )
+
+
