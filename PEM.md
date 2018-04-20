@@ -43,3 +43,13 @@ The single cell is completed by current collector plates, which usually contain 
 
 </div>
 
+
+
+## Source					
+
+<blockquote>
+Gottesfeld, Shimshon. n.d. The Polymer Electrolyte Fuel Cell: Materials Issues in a Hydrogen Fueled Power Source.
+ http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm
+</blockquote>
+
+
