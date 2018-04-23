@@ -3,12 +3,13 @@
 import datetime
 from art import text2art
 from opem.Script import *
-from opem.Params import Version,Website,UpdateUrl,Warning_Message_1,Warning_Message_2
+from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
 import io
 import os
 import requests
 import webbrowser
 import sys
+
 
 def integrate(y_vals, h):
     '''
@@ -20,19 +21,20 @@ def integrate(y_vals, h):
     :return: integrate output as float
     '''
     try:
-        i=1
-        total=y_vals[0]+y_vals[-1]
+        i = 1
+        total = y_vals[0] + y_vals[-1]
         for y in y_vals[1:-1]:
-            if i%2 == 0:
-                total+=2*y
+            if i % 2 == 0:
+                total += 2 * y
             else:
-                total+=4*y
-            i+=1
-        return total*(h/3.0)
+                total += 4 * y
+            i += 1
+        return total * (h / 3.0)
     except Exception:
         return None
 
-def linear_plot(x,y):
+
+def linear_plot(x, y):
     '''
     This function clear input data and call estimate_coef
     :param x:  x data
@@ -44,22 +46,23 @@ def linear_plot(x,y):
     clear_x = []
     clear_y = []
     estimate_y = []
-    none_x=[]
-    for index,item in enumerate(y):
-        if item != None:
+    none_x = []
+    for index, item in enumerate(y):
+        if item is not None:
             clear_y.append(item)
             clear_x.append(x[index])
         else:
             none_x.append(x[index])
-    [B1,B0]=estimate_coef(clear_x,clear_y)
-    for i in x :
+    [B1, B0] = estimate_coef(clear_x, clear_y)
+    for i in x:
         if x not in none_x:
-            estimate_y.append(B0+B1*i)
+            estimate_y.append(B0 + B1 * i)
         else:
             estimate_y.append(None)
-    return [estimate_y,B0,B1]
+    return [estimate_y, B0, B1]
 
-def estimate_coef(clear_x,clear_y):
+
+def estimate_coef(clear_x, clear_y):
     '''
     This function use simple linear regression for linear approxiamtion
     :param clear_x: cleared_x
@@ -69,24 +72,24 @@ def estimate_coef(clear_x,clear_y):
     :return: [slope,intercept]
     '''
     try:
-        n=len(clear_x)
-        mean_x=sum(clear_x)/n
-        mean_y=sum(clear_y)/n
-        SS_xy=0
-        SS_xx=0
-        for index,item in enumerate(clear_x):
-            SS_xx+=item**2
-            SS_xy+=item*clear_y[index]
-        SS_xx-=n*(mean_x)**2
-        SS_xy-=n*mean_x*mean_y
-        B1=SS_xy/SS_xx
-        B0=mean_y-B1*mean_x
-        return [B1,B0]
+        n = len(clear_x)
+        mean_x = sum(clear_x) / n
+        mean_y = sum(clear_y) / n
+        SS_xy = 0
+        SS_xx = 0
+        for index, item in enumerate(clear_x):
+            SS_xx += item**2
+            SS_xy += item * clear_y[index]
+        SS_xx -= n * (mean_x)**2
+        SS_xy -= n * mean_x * mean_y
+        B1 = SS_xy / SS_xx
+        B0 = mean_y - B1 * mean_x
+        return [B1, B0]
     except Exception:
-        return [0,0]
+        return [0, 0]
 
 
-def line(num=11,char="#"):
+def line(num=11, char="#"):
     '''
     This function print line of char
     :param num: number of character in this line
@@ -95,7 +98,8 @@ def line(num=11,char="#"):
     :type char : str
     :return: None
     '''
-    print(char*num)
+    print(char * num)
+
 
 def check_update():
     '''
@@ -103,17 +107,18 @@ def check_update():
     :return: None
     '''
     try:
-        update_obj=requests.get(UpdateUrl)
-        update_data=update_obj.text
-        if float(update_data)>Version:
+        update_obj = requests.get(UpdateUrl)
+        update_data = update_obj.text
+        if float(update_data) > Version:
             line()
-            print("New Version ("+update_data+") Is Available!")
-            print("Website : "+Website)
+            print("New Version (" + update_data + ") Is Available!")
+            print("Website : " + Website)
             line()
     except Exception:
         pass
 
-def filter_default(input_dict,params_default):
+
+def filter_default(input_dict, params_default):
     '''
     This function filter input parameters with default params
     :param input_dict: input parameters
@@ -124,8 +129,10 @@ def filter_default(input_dict,params_default):
     '''
     for i in params_default.keys():
         if i not in input_dict.keys():
-            input_dict[i]=params_default[i]
+            input_dict[i] = params_default[i]
     return input_dict
+
+
 def get_precision(input_number):
     '''
     This function return precision of input number
@@ -133,12 +140,14 @@ def get_precision(input_number):
     :type input_number : float
     :return: precision as int
     '''
-    input_string=str(input_number)
+    input_string = str(input_number)
     if "." in input_string:
-        splitted_input=input_string.split(".")
+        splitted_input = input_string.split(".")
         return len(splitted_input[1])
     else:
         return 0
+
+
 def isfloat(value):
     '''
     This function check input for float conversion
@@ -152,7 +161,8 @@ def isfloat(value):
     except ValueError:
         return False
 
-def rounder(input_number,digit=2):
+
+def rounder(input_number, digit=2):
     '''
     This function round input number
     :param input_number: input number
@@ -162,12 +172,13 @@ def rounder(input_number,digit=2):
     :return: round number as float
     '''
     try:
-        if isfloat(input_number)==True:
-            return round(input_number,digit)
+        if isfloat(input_number):
+            return round(input_number, digit)
         else:
             return input_number
     except Exception:
         return None
+
 
 def input_test(a):
     '''
@@ -176,7 +187,9 @@ def input_test(a):
     :return: "1"
     '''
     return "1"
-def Get_Input(InputParams,input_item=input,params_default={}):
+
+
+def Get_Input(InputParams, input_item=input, params_default={}):
     """
     This function get inputs from users
     :param InputParams : InputParams  for each  model
@@ -185,13 +198,12 @@ def Get_Input(InputParams,input_item=input,params_default={}):
     :return: Input Dictionary
     """
     try:
-        Input_Keys = list(InputParams.keys())
-        Input_Keys.sort()
+        Input_Keys = sorted(InputParams.keys())
         Input_Values = []
-        Name=""
+        Name = ""
         while(True):
-            Name=input_item("Please Enter Simulation Name :")
-            if len(Name)!=0:
+            Name = input_item("Please Enter Simulation Name :")
+            if len(Name) != 0:
                 break
             else:
                 print("[Error] Bad Name Try Again")
@@ -199,26 +211,33 @@ def Get_Input(InputParams,input_item=input,params_default={}):
             Input_Flag = False
             Input_Item = None
             while not Input_Flag:
-                Input_Item = input_item("Please Enter " + item + "(" + InputParams[item] + ") : ")
+                Input_Item = input_item(
+                    "Please Enter " + item + "(" + InputParams[item] + ") : ")
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:
                     if item in params_default.keys():
-                        Input_Item=params_default[item]
-                        Input_Flag=True
+                        Input_Item = params_default[item]
+                        Input_Flag = True
                     else:
                         print("[Error] Bad Input Try Again")
             Input_Values.append(Input_Item)
         Input_Values = list(map(float, Input_Values))
         Output = dict(zip(Input_Keys, Input_Values))
-        Output["Name"]=Name
+        Output["Name"] = Name
         return Output
     except Exception:
         print("Bad Input")
         return False
 
 
-def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file,PrintMode):
+def Output_Save(
+        OutputParamsKeys,
+        OutputDict,
+        OutputParams,
+        i,
+        file,
+        PrintMode):
     """
     This function write analysis result in Simulation-Result.opem file
     :param OutputParamsKeys : OutputParams Key as  list
@@ -232,21 +251,27 @@ def Output_Save(OutputParamsKeys, OutputDict,OutputParams, i, file,PrintMode):
     :param file : file object
     :return: None
     """
-    spliter="\n"
+    spliter = "\n"
     if 'win' not in sys.platform:
-        spliter="\r\n"
-    file.write("I :" + str(i) + " A "+spliter*2)
-    if PrintMode==True:
+        spliter = "\r\n"
+    file.write("I :" + str(i) + " A " + spliter * 2)
+    if PrintMode:
         print("I : " + str(i))
     for key in OutputParamsKeys:
-        file.write(key + " : " + str(OutputDict[key]) + " " + OutputParams[key] + spliter)
-        if PrintMode==True:
+        file.write(key +
+                   " : " +
+                   str(OutputDict[key]) +
+                   " " +
+                   OutputParams[key] +
+                   spliter)
+        if PrintMode:
             print(key + " : " + str(OutputDict[key]) + " " + OutputParams[key])
-    file.write("###########"+spliter)
-    if PrintMode==True:
+    file.write("###########" + spliter)
+    if PrintMode:
         print("###########")
 
-def Output_Init(InputDict,Title,Name):
+
+def Output_Init(InputDict, Title, Name):
     """
     This function initialize output file
     :param InputDict: Input Test Vector
@@ -255,27 +280,27 @@ def Output_Init(InputDict,Title,Name):
     :type Title :str
     :return: file object
     """
-    spliter="\n"
+    spliter = "\n"
     if 'win' not in sys.platform:
-        spliter="\r\n"
+        spliter = "\r\n"
     Art = text2art("Opem")
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title,Name+".opem"), "w")
+    file = open(os.path.join(Title, Name + ".opem"), "w")
     file.write(Art)
     file.write("Simulation Date : " + str(datetime.datetime.now()) + spliter)
-    file.write("**********"+spliter)
-    file.write(Title+" Model"+spliter*2)
-    file.write("**********"+spliter)
-    file.write("Simulation Inputs : "+spliter*2)
-    Input_Keys = list(InputDict.keys())
-    Input_Keys.sort()
+    file.write("**********" + spliter)
+    file.write(Title + " Model" + spliter * 2)
+    file.write("**********" + spliter)
+    file.write("Simulation Inputs : " + spliter * 2)
+    Input_Keys = sorted(InputDict.keys())
     for key in Input_Keys:
         file.write(key + " : " + str(InputDict[key]) + spliter)
-    file.write("**********"+spliter)
+    file.write("**********" + spliter)
     return file
 
-def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
+
+def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     """
     This function initialize csv file
     :param OutputParamsKeys: OutputParams Key as list
@@ -286,7 +311,7 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     """
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title,Name+".csv"), "w")
+    file = open(os.path.join(Title, Name + ".csv"), "w")
     file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
         file.write(item + " (" + OutputParams[item] + ")")
@@ -295,6 +320,7 @@ def CSV_Init(OutputParamsKeys,OutputParams,Title,Name):
     file.write("\n")
     return file
 
+
 def None_Omit(Input_Str):
     '''
     This function replace None object with "None" string
@@ -302,10 +328,12 @@ def None_Omit(Input_Str):
     :type Input_Str : str
     :return: modified string as str
     '''
-    result=Input_Str
-    result=result.replace("None",'\"None\"')
+    result = Input_Str
+    result = result.replace("None", '\"None\"')
     return result
-def HTML_Init(Title,Name):
+
+
+def HTML_Init(Title, Name):
     '''
     This function initialize html file
     :param Title: Simulation title (analysis model)
@@ -316,18 +344,20 @@ def HTML_Init(Title,Name):
     '''
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file=io.open(os.path.join(Title,Name+".html"),"w", encoding="utf-8")
+    file = io.open(os.path.join(Title, Name + ".html"), "w", encoding="utf-8")
     file.write("<html>\n")
     file.write("<head>\n")
-    file.write("<title>"+Name+"</title>\n")
-    file.write("<script>\n"+JS_SCRIPT+"\n</script>\n")
+    file.write("<title>" + Name + "</title>\n")
+    file.write("<script>\n" + JS_SCRIPT + "\n</script>\n")
     file.write("</head>\n<body>\n")
-    file.write('<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
-               'OPEM</span>'
-               ' Report ('+Title+" Model)"+'</h1>\n')
+    file.write(
+        '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
+        'OPEM</span>'
+        ' Report (' + Title + " Model)" + '</h1>\n')
     return file
 
-def HTML_Desc(Title,Description,file):
+
+def HTML_Desc(Title, Description, file):
     '''
     This function write model description in html file
     :param Title: Simulation title (analysis model)
@@ -338,10 +368,14 @@ def HTML_Desc(Title,Description,file):
     :type file : file object
     :return: None
     '''
-    file.write('<h2 style="color:#ff7600;">What is '+Title+' ?</h2>\n')
-    file.write('<p style = "text-align:justify;margin:15px;">'+Description+"</p>\n")
+    file.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
+    file.write(
+        '<p style = "text-align:justify;margin:15px;">' +
+        Description +
+        "</p>\n")
 
-def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
+
+def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     '''
     This function write chartjs chart in html file
     :param x: x data as a string list
@@ -359,23 +393,40 @@ def HTML_Chart(x,y,color,x_label,y_label,chart_name,size,file):
     :type file : file object
     :return: None
     '''
-    chart_data=""
-    chart_title=str(chart_name)
-    if isinstance(y,list)==True:
-        y_data=list(map(None_Omit,y))
-        for index,data in enumerate(y_data):
-            chart_data+=CHART_DATA.format(chart_name[index],data,color[index])
-            if index!=len(y_data)-1:
-                chart_data+=","
-            chart_data+="\n"
+    chart_data = ""
+    chart_title = str(chart_name)
+    if isinstance(y, list):
+        y_data = list(map(None_Omit, y))
+        for index, data in enumerate(y_data):
+            chart_data += CHART_DATA.format(
+                chart_name[index], data, color[index])
+            if index != len(y_data) - 1:
+                chart_data += ","
+            chart_data += "\n"
     else:
-        y_data=None_Omit(y)
-        chart_data=CHART_DATA.format(chart_name,y_data,color)
-    x_data=None_Omit(x)
-    file.write(LINE_CHART.format(x_data,y_label,x_label,chart_title,size,chart_data))
+        y_data = None_Omit(y)
+        chart_data = CHART_DATA.format(chart_name, y_data, color)
+    x_data = None_Omit(x)
+    file.write(
+        LINE_CHART.format(
+            x_data,
+            y_label,
+            x_label,
+            chart_title,
+            size,
+            chart_data))
 
 
-def HTML_Chart_Multi(x,y,color,x_label,y_label,chart_name,size,axes,file):
+def HTML_Chart_Multi(
+        x,
+        y,
+        color,
+        x_label,
+        y_label,
+        chart_name,
+        size,
+        axes,
+        file):
     '''
     This function write chartjs chart in html file
     :param x: x data as a string list
@@ -393,22 +444,33 @@ def HTML_Chart_Multi(x,y,color,x_label,y_label,chart_name,size,axes,file):
     :type file : file object
     :return: None
     '''
-    chart_data=""
-    chart_title=str(chart_name)
-    if isinstance(y,list)==True:
-        y_data=list(map(None_Omit,y))
-        for index,data in enumerate(y_data):
-            chart_data+=MULTI_AXES_CHART_DATA.format(chart_name[index],data,color[index],axes[index])
-            if index!=len(y_data)-1:
-                chart_data+=","
-            chart_data+="\n"
+    chart_data = ""
+    chart_title = str(chart_name)
+    if isinstance(y, list):
+        y_data = list(map(None_Omit, y))
+        for index, data in enumerate(y_data):
+            chart_data += MULTI_AXES_CHART_DATA.format(
+                chart_name[index], data, color[index], axes[index])
+            if index != len(y_data) - 1:
+                chart_data += ","
+            chart_data += "\n"
     else:
-        y_data=None_Omit(y)
-        chart_data=MULTI_AXES_CHART_DATA.format(chart_name,y_data,color,axes)
-    x_data=None_Omit(x)
-    file.write(MULTI_AXES_LINE_CHART.format(x_data,y_label[0],y_label[1],x_label,chart_title,size,chart_data))
+        y_data = None_Omit(y)
+        chart_data = MULTI_AXES_CHART_DATA.format(
+            chart_name, y_data, color, axes)
+    x_data = None_Omit(x)
+    file.write(
+        MULTI_AXES_LINE_CHART.format(
+            x_data,
+            y_label[0],
+            y_label[1],
+            x_label,
+            chart_title,
+            size,
+            chart_data))
 
-def HTML_Input_Table(Input_Dict,Input_Params,file):
+
+def HTML_Input_Table(Input_Dict, Input_Params, file):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
@@ -420,22 +482,40 @@ def HTML_Input_Table(Input_Dict,Input_Params,file):
     :return: None
     '''
     file.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
-    file.write('<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+"Input\n</td>")
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Description\n</td>")
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Value\n</td>\n</tr>\n")
-    Input_Params_Keys=list(Input_Params.keys())
-    Input_Params_Keys.sort()
+    file.write(
+        '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
+    file.write(
+        '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Input\n</td>")
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Description\n</td>")
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Value\n</td>\n</tr>\n")
+    Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
+        file.write(
+            '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            key +
+            "\n</td>\n")
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            Input_Params[key] +
+            "\n</td>\n")
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            str(
+                Input_Dict[key]) +
+            "\n</td>\n")
     file.write("</table>\n")
 
 
-def HTML_Overall_Params_Table(Input_Dict,Input_Params,file,header=False):
+def HTML_Overall_Params_Table(Input_Dict, Input_Params, file, header=False):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
@@ -446,22 +526,40 @@ def HTML_Overall_Params_Table(Input_Dict,Input_Params,file,header=False):
     :type file : file object
     :return: None
     '''
-    if header==True:
+    if header:
         file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
-    file.write('<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+"Parameter\n</td>")
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Description\n</td>")
-    file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' + "Value\n</td>\n</tr>\n")
-    Input_Params_Keys=list(Input_Params.keys())
-    Input_Params_Keys.sort()
+    file.write(
+        '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
+    file.write(
+        '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Parameter\n</td>")
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Description\n</td>")
+    file.write(
+        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+        "Value\n</td>\n</tr>\n")
+    Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write('<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+key+"\n</td>\n")
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+Input_Params[key]+"\n</td>\n")
-        file.write('<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n'+str(Input_Dict[key])+"\n</td>\n")
+        file.write(
+            '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            key +
+            "\n</td>\n")
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            Input_Params[key] +
+            "\n</td>\n")
+        file.write(
+            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
+            str(
+                Input_Dict[key]) +
+            "\n</td>\n")
     file.write("</table>\n")
-    if header==True:
+    if header:
         file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
 
 
@@ -473,11 +571,13 @@ def HTML_End(file):
     :return: None
     '''
 
-    file.write('<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By ' \
-    '<a style="text-decoration:none;color:#ff7600;" '
-               'href="http://opem.ecsim.ir">OPEM</a> Version ' + str(Version) + '</p>\n')
+    file.write(
+        '<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By '
+        '<a style="text-decoration:none;color:#ff7600;" '
+        'href="http://opem.ecsim.ir">OPEM</a> Version ' + str(Version) + '</p>\n')
     file.write("</body>\n")
     file.write("</html>")
+
 
 def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
@@ -518,6 +618,7 @@ def filter_lambda(Input_Dict):
     except Exception:
         return Input_Dict
 
+
 def left_justify(words, width):
     '''
     This function left justify words
@@ -528,6 +629,7 @@ def left_justify(words, width):
     :return: left justified words as list
     '''
     return ' '.join(words).ljust(width)
+
 
 def justify(words, width):
     '''
@@ -562,7 +664,7 @@ def justify(words, width):
         yield left_justify(line, width)
 
 
-def description_print(Analysis_Name,Description_Dict,Width=100):
+def description_print(Analysis_Name, Description_Dict, Width=100):
     '''
     This function print justified text for overview and each model description in console
     :param Analysis_Name: Analysis model name
@@ -574,29 +676,40 @@ def description_print(Analysis_Name,Description_Dict,Width=100):
     :return: None
     '''
     line()
-    if Analysis_Name.find("Padulles")!=-1:
+    if Analysis_Name.find("Padulles") != -1:
         print("\n")
-        print("\n".join(justify(Description_Dict["General Padulles"].split(), Width)))
+        print(
+            "\n".join(
+                justify(
+                    Description_Dict["General Padulles"].split(),
+                    Width)))
     print("\n")
     print("\n".join(justify(Description_Dict[Analysis_Name].split(), Width)))
     print("\n")
     line()
 
-def description_control(Analysis_Name,Analysis_List,User_Input,Links_Dict,Vectors_Dict):
-    if User_Input.upper()=="M":
+
+def description_control(
+        Analysis_Name,
+        Analysis_List,
+        User_Input,
+        Links_Dict,
+        Vectors_Dict):
+    if User_Input.upper() == "M":
         webbrowser.open_new(Links_Dict[Analysis_Name])
-    elif User_Input.upper()=="T":
+    elif User_Input.upper() == "T":
         line()
-        print(Analysis_Name+" Standard Test Vector\n")
-        Test_Vector=Vectors_Dict[Analysis_Name]
+        print(Analysis_Name + " Standard Test Vector\n")
+        Test_Vector = Vectors_Dict[Analysis_Name]
         for i in Test_Vector.keys():
-            print(i+" : "+str(Test_Vector[i]))
+            print(i + " : " + str(Test_Vector[i]))
         print("\n")
         line()
-        input_temp=input("Press any key to continue")
-        Analysis_List[Analysis_Name](InputMethod=Test_Vector,TestMode=True)
+        input_temp = input("Press any key to continue")
+        Analysis_List[Analysis_Name](InputMethod=Test_Vector, TestMode=True)
     else:
         Analysis_List[Analysis_Name]()
+
 
 def filter_alpha(Input_Dict):
     '''
@@ -616,7 +729,8 @@ def filter_alpha(Input_Dict):
     except Exception:
         return Input_Dict
 
-def warning_check_1(Vcell,I_Warning,I,warning_flag):
+
+def warning_check_1(Vcell, I_Warning, I, warning_flag):
     '''
     This function check Vcell is negative or not
     :param Vcell: Vcell of FC Voltage
@@ -629,18 +743,19 @@ def warning_check_1(Vcell,I_Warning,I,warning_flag):
     :type warning_flag : bool
     :return:  update warning_flag and I_Warning [bool,float]
     '''
-    if warning_flag==False:
+    if not warning_flag:
         try:
-            if Vcell<0:
-                return [True,I]
+            if Vcell < 0:
+                return [True, I]
             else:
-                return [False,I]
+                return [False, I]
         except Exception:
-            return [False,I]
+            return [False, I]
     else:
-        return [True,I_Warning]
+        return [True, I_Warning]
 
-def warning_check_2(Vcell,warning_flag):
+
+def warning_check_2(Vcell, warning_flag):
     '''
     This function check Vcell is None or not
     :param Vcell: Vcell of FC Voltage
@@ -649,15 +764,16 @@ def warning_check_2(Vcell,warning_flag):
     :type warning_flag : bool
     :return:  update warning_flag as bool
     '''
-    if warning_flag==False:
-        if Vcell==None:
+    if not warning_flag:
+        if Vcell is None:
             return True
         else:
             return False
     else:
         return True
 
-def warning_print(warning_flag_1,warning_flag_2,I_Warning,file,PrintMode):
+
+def warning_print(warning_flag_1, warning_flag_2, I_Warning, file, PrintMode):
     '''
     This function print warning message and write messages to HTML report
     :param warning_flag_1: First warning message (Vcell <0)
@@ -672,13 +788,18 @@ def warning_print(warning_flag_1,warning_flag_2,I_Warning,file,PrintMode):
     :type PrintMode:bool
     :return:
     '''
-    if warning_flag_1==True:
-        file.write('<p style="color:red;font-size:20px;text-align:center;">'+Warning_Message_1
-                   .format(str(I_Warning))+'</p>\n')
-        if PrintMode==True:
+    if warning_flag_1:
+        file.write(
+            '<p style="color:red;font-size:20px;text-align:center;">' +
+            Warning_Message_1 .format(
+                str(I_Warning)) +
+            '</p>\n')
+        if PrintMode:
             print(Warning_Message_1)
-    if warning_flag_2==True:
-        file.write('<p style="color:red;font-size:20px;text-align:center;">'+Warning_Message_2+'</p>\n')
-        if PrintMode==True:
+    if warning_flag_2:
+        file.write(
+            '<p style="color:red;font-size:20px;text-align:center;">' +
+            Warning_Message_2 +
+            '</p>\n')
+        if PrintMode:
             print(Warning_Message_2)
-
