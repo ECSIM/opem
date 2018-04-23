@@ -85,7 +85,7 @@ def Max_Params_Calc(Power_List,EFF_List,VStack_List):
 
 def R_Calc(V,i):
     '''
-    This functtion calculate cell total resistance
+    This function calculate cell total resistance
     :param V: cell voltage [V]
     :type V : float
     :param i: Cell load current [A]
@@ -335,7 +335,7 @@ def Vcell_Calc(Enernst, Loss):
 def Power_Calc(Vcell, i):
     """
     This function calculate power
-    :param Vcell: Vell Voltage [V]
+    :param Vcell: Vcell Voltage [V]
     :type Vcell : float
     :param i: cell load current [A]
     :type i : float
