@@ -17,7 +17,7 @@
 ----------				
 
 ## Table of contents
-   * [What is PEM?](PEM.md)					
+   * [What is PEM?](http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm)					
    * [Overview](#overview)
    * [Installation](INSTALL.md)
    * [Usage](#usage)
