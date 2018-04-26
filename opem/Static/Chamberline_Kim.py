@@ -6,8 +6,6 @@ from opem.Static.Amphlett import Efficiency_Calc, Power_Calc, VStack_Calc, Power
 import opem.Functions
 from opem.Params import Chamberline_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description
 import os
-import datetime
-from art import text2art
 
 
 def Vcell_Calc(E0, b, R, m, n, i, A):
