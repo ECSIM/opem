@@ -12,9 +12,42 @@ from opem.Params import Version, Description_Menu, Description_Links, Vectors
 from opem.Functions import check_update, description_print, description_control
 import doctest
 import sys
+import coverage
+import os
 
+def run_test(Test_Path):
+    cov = coverage.Coverage()
+    cov.start()
+    doctest.testfile(os.path.join(Test_Path, "Amphlett_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Chamberline_Kim_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Functions_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Larminie_Dicks_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Padulles_Amphlett_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Padulles_Hauer_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Padulles1_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    doctest.testfile(os.path.join(Test_Path, "Padulles2_test.py"),
+                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+                     verbose=False)
+    cov.stop()
+    cov.report()
+    cov.save()
 
 if __name__ == "__main__":
+    Test_Path="Test"
     args = sys.argv
     argsup = list(map(str.upper, args))
     Menu = {
@@ -27,10 +60,7 @@ if __name__ == "__main__":
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis}
     MenuKeys = sorted(Menu.keys())
     if "TEST" in argsup:
-        doctest.testfile(
-            "test.py",
-            optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-            verbose=False)
+        run_test(Test_Path)
     else:
         ExitFlag = False
         check_update()
