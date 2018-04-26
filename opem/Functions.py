@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 from art import text2art
-from opem.Script import *
+import opem.Script
 from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
 import io
 import os
@@ -265,7 +265,11 @@ def Output_Save(
                    OutputParams[key] +
                    spliter)
         if PrintMode:
-            print(key + " : " + str(OutputDict[key]) + " " + OutputParams[key])
+            print(key +
+    " : " +
+    str(OutputDict[key]) +
+    " " +
+     OutputParams[key])
     file.write("###########" + spliter)
     if PrintMode:
         print("###########")
@@ -288,7 +292,8 @@ def Output_Init(InputDict, Title, Name):
         os.mkdir(Title)
     file = open(os.path.join(Title, Name + ".opem"), "w")
     file.write(Art)
-    file.write("Simulation Date : " + str(datetime.datetime.now()) + spliter)
+    file.write("Simulation Date : " + \
+               str(datetime.datetime.now()) + spliter)
     file.write("**********" + spliter)
     file.write(Title + " Model" + spliter * 2)
     file.write("**********" + spliter)
@@ -344,11 +349,17 @@ def HTML_Init(Title, Name):
     '''
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = io.open(os.path.join(Title, Name + ".html"), "w", encoding="utf-8")
+    file = io.open(
+    os.path.join(
+        Title,
+        Name +
+        ".html"),
+        "w",
+         encoding="utf-8")
     file.write("<html>\n")
     file.write("<head>\n")
     file.write("<title>" + Name + "</title>\n")
-    file.write("<script>\n" + JS_SCRIPT + "\n</script>\n")
+    file.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
     file.write("</head>\n<body>\n")
     file.write(
         '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
@@ -398,17 +409,17 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     if isinstance(y, list):
         y_data = list(map(None_Omit, y))
         for index, data in enumerate(y_data):
-            chart_data += CHART_DATA.format(
+            chart_data += opem.Script.CHART_DATA.format(
                 chart_name[index], data, color[index])
             if index != len(y_data) - 1:
                 chart_data += ","
             chart_data += "\n"
     else:
         y_data = None_Omit(y)
-        chart_data = CHART_DATA.format(chart_name, y_data, color)
+        chart_data = opem.Script.CHART_DATA.format(chart_name, y_data, color)
     x_data = None_Omit(x)
     file.write(
-        LINE_CHART.format(
+        opem.Script.LINE_CHART.format(
             x_data,
             y_label,
             x_label,
@@ -449,18 +460,18 @@ def HTML_Chart_Multi(
     if isinstance(y, list):
         y_data = list(map(None_Omit, y))
         for index, data in enumerate(y_data):
-            chart_data += MULTI_AXES_CHART_DATA.format(
+            chart_data += opem.Script.MULTI_AXES_CHART_DATA.format(
                 chart_name[index], data, color[index], axes[index])
             if index != len(y_data) - 1:
                 chart_data += ","
             chart_data += "\n"
     else:
         y_data = None_Omit(y)
-        chart_data = MULTI_AXES_CHART_DATA.format(
+        chart_data = opem.Script.MULTI_AXES_CHART_DATA.format(
             chart_name, y_data, color, axes)
     x_data = None_Omit(x)
     file.write(
-        MULTI_AXES_LINE_CHART.format(
+        opem.Script.MULTI_AXES_LINE_CHART.format(
             x_data,
             y_label[0],
             y_label[1],
@@ -515,7 +526,11 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
     file.write("</table>\n")
 
 
-def HTML_Overall_Params_Table(Input_Dict, Input_Params, file, header=False):
+def HTML_Overall_Params_Table(
+    Input_Dict,
+    Input_Params,
+    file,
+     header=False):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
@@ -610,10 +625,12 @@ def filter_lambda(Input_Dict):
     try:
         if Input_Dict["lambda"] > 23:
             Input_Dict["lambda"] = 23
-            print("[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
+            print(
+                "[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
         elif Input_Dict["lambda"] < 14:
             Input_Dict["lambda"] = 23
-            print("[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
+            print(
+                "[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
         return Input_Dict
     except Exception:
         return Input_Dict
@@ -684,7 +701,11 @@ def description_print(Analysis_Name, Description_Dict, Width=100):
                     Description_Dict["General Padulles"].split(),
                     Width)))
     print("\n")
-    print("\n".join(justify(Description_Dict[Analysis_Name].split(), Width)))
+    print(
+    "\n".join(
+        justify(
+            Description_Dict[Analysis_Name].split(),
+             Width)))
     print("\n")
     line()
 
@@ -706,7 +727,8 @@ def description_control(
         print("\n")
         line()
         input_temp = input("Press any key to continue")
-        Analysis_List[Analysis_Name](InputMethod=Test_Vector, TestMode=True)
+        Analysis_List[Analysis_Name](
+    InputMethod=Test_Vector, TestMode=True)
     else:
         Analysis_List[Analysis_Name]()
 
@@ -773,7 +795,12 @@ def warning_check_2(Vcell, warning_flag):
         return True
 
 
-def warning_print(warning_flag_1, warning_flag_2, I_Warning, file, PrintMode):
+def warning_print(
+    warning_flag_1,
+    warning_flag_2,
+    I_Warning,
+    file,
+     PrintMode):
     '''
     This function print warning message and write messages to HTML report
     :param warning_flag_1: First warning message (Vcell <0)

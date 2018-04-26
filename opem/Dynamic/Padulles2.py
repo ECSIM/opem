@@ -5,7 +5,7 @@ from opem.Params import Padulles2_Outparams as OutputParams
 from opem.Params import R, F, Padulles2_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 from opem.Dynamic.Padulles1 import PH2_Calc, PO2_Calc, Kr_Calc, Vcell_Calc, qO2_Calc, Efficiency_Calc
-from opem.Functions import *
+import opem.Functions
 import os
 
 
@@ -61,7 +61,7 @@ def PH2O_Calc(KH2O, tH2O, Kr, I, qH2O):
 
 
 def Dynamic_Analysis(
-        InputMethod=Get_Input,
+        InputMethod=opem.Functions.Get_Input,
         TestMode=False,
         PrintMode=True,
         ReportMode=True):
@@ -102,16 +102,17 @@ def Dynamic_Analysis(
             print("Analyzing . . .")
         Name = Input_Dict["Name"]
         if ReportMode:
-            OutputFile = Output_Init(Input_Dict, Simulation_Title, Name)
-            CSVFile = CSV_Init(
+            OutputFile = opem.Functions.Output_Init(
+                Input_Dict, Simulation_Title, Name)
+            CSVFile = opem.Functions.CSV_Init(
                 OutputParamsKeys,
                 OutputParams,
                 Simulation_Title,
                 Name)
-            HTMLFile = HTML_Init(Simulation_Title, Name)
+            HTMLFile = opem.Functions.HTML_Init(Simulation_Title, Name)
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
-        Precision = get_precision(IStep)
+        Precision = opem.Functions.get_precision(IStep)
         i = Input_Dict["i-start"]
         I_List = []
         Power_List = []
@@ -145,9 +146,9 @@ def Dynamic_Analysis(
                     Output_Dict["PH2O"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
                     Output_Dict["E"], Input_Dict["B"], Input_Dict["C"], i, Input_Dict["Rint"])
-                [Warning1, I_Warning] = warning_check_1(
+                [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
-                Warning2 = warning_check_2(
+                Warning2 = opem.Functions.warning_check_2(
                     Vcell=Output_Dict["FC Voltage"],
                     warning_flag=Warning2)
                 Vstack_List.append(Output_Dict["FC Voltage"])
@@ -161,28 +162,31 @@ def Dynamic_Analysis(
                 Power_List.append(Output_Dict["FC Power"])
                 Power_Thermal_List.append(Output_Dict["Power-Thermal"])
                 if ReportMode:
-                    Output_Save(
+                    opem.Functions.Output_Save(
                         OutputParamsKeys,
                         Output_Dict,
                         OutputParams,
                         i,
                         OutputFile,
                         PrintMode)
-                    CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-                i = rounder(i + IStep, Precision)
+                    opem.Functions.CSV_Save(
+    OutputParamsKeys, Output_Dict, i, CSVFile)
+                i = opem.Functions.rounder(i + IStep, Precision)
             except Exception as e:
                 print(str(e))
-                i = rounder(i + IStep, Precision)
+                i = opem.Functions.rounder(i + IStep, Precision)
                 if ReportMode:
-                    Output_Save(
+                    opem.Functions.Output_Save(
                         OutputParamsKeys,
                         Output_Dict,
                         OutputParams,
                         i,
                         OutputFile,
                         PrintMode)
-                    CSV_Save(OutputParamsKeys, Output_Dict, i, CSVFile)
-        [Estimated_V, B0, B1] = linear_plot(x=I_List, y=Vstack_List)
+                    opem.Functions.CSV_Save(
+    OutputParamsKeys, Output_Dict, i, CSVFile)
+        [Estimated_V, B0, B1] = opem.Functions.linear_plot(
+            x=I_List, y=Vstack_List)
         Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
         Max_Params = Max_Params_Calc(Power_List, Efficiency_List, Vstack_List)
         Power_Total = Power_Total_Calc(Vstack_List, IStep, Input_Dict["N0"])
@@ -197,17 +201,18 @@ def Dynamic_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
-            HTML_Desc(Simulation_Title, Padulles2_Description, HTMLFile)
-            HTML_Input_Table(
+            opem.Functions.HTML_Desc(
+    Simulation_Title, Padulles2_Description, HTMLFile)
+            opem.Functions.HTML_Input_Table(
                 Input_Dict=Input_Dict,
                 Input_Params=InputParams,
                 file=HTMLFile)
-            HTML_Overall_Params_Table(
+            opem.Functions.HTML_Overall_Params_Table(
                 Overall_Params_Max,
                 Overall_Params_Max_Description,
                 file=HTMLFile,
                 header=True)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Power_List),
                 color='rgba(255,99,132,1)',
@@ -216,17 +221,17 @@ def Dynamic_Analysis(
                 chart_name="FC-Power",
                 size="600px",
                 file=HTMLFile)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List), y=[
                     str(Vstack_List), str(Estimated_V)], color=[
                     'rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)", chart_name=[
                     "FC-Voltage", "Linear-Apx"], size="600px", file=HTMLFile)
-            HTML_Overall_Params_Table(
+            opem.Functions.HTML_Overall_Params_Table(
                 Overall_Params_Linear,
                 Overall_Params_Linear_Description,
                 file=HTMLFile,
                 header=False)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Efficiency_List),
                 color='rgb(255, 0, 255)',
@@ -235,7 +240,7 @@ def Dynamic_Analysis(
                 chart_name="Efficiency",
                 size="600px",
                 file=HTMLFile)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(PO2_List),
                 color='	rgb(0, 255, 128)',
@@ -244,7 +249,7 @@ def Dynamic_Analysis(
                 chart_name="PO2",
                 size="600px",
                 file=HTMLFile)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(PH2_List),
                 color='	rgb(128, 0, 255)',
@@ -253,7 +258,7 @@ def Dynamic_Analysis(
                 chart_name="PH2",
                 size="600px",
                 file=HTMLFile)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(PH2O_List),
                 color='	rgb(165, 185, 112)',
@@ -262,7 +267,7 @@ def Dynamic_Analysis(
                 chart_name="PH2O",
                 size="600px",
                 file=HTMLFile)
-            HTML_Chart(x=str(list(map(rounder,
+            opem.Functions.HTML_Chart(x=str(list(map(opem.Functions.rounder,
                                       Power_List))),
                        y=str(Efficiency_List),
                        color='rgb(238, 210, 141)',
@@ -271,7 +276,7 @@ def Dynamic_Analysis(
                        chart_name="Efficiency vs Power",
                        size="600px",
                        file=HTMLFile)
-            HTML_Chart(
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Power_Thermal_List),
                 color='rgb(255, 0, 255)',
@@ -280,13 +285,13 @@ def Dynamic_Analysis(
                 chart_name="Power(Thermal)",
                 size="600px",
                 file=HTMLFile)
-            warning_print(
+            opem.Functions.warning_print(
                 warning_flag_1=Warning1,
                 warning_flag_2=Warning2,
                 I_Warning=I_Warning,
                 file=HTMLFile,
                 PrintMode=PrintMode)
-            HTML_End(HTMLFile)
+            opem.Functions.HTML_End(HTMLFile)
             OutputFile.close()
             CSVFile.close()
             HTMLFile.close()
