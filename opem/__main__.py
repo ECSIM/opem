@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-
+'''
+OPEM Main File
+'''
+import doctest
+import sys
+import coverage
+import os
 from opem.Static.Amphlett import Static_Analysis as Amphlett_Analysis
 from opem.Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from opem.Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
@@ -10,36 +16,39 @@ from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett
 from art import tprint
 from opem.Params import Version, Description_Menu, Description_Links, Vectors
 from opem.Functions import check_update, description_print, description_control
-import doctest
-import sys
-import coverage
-import os
 
-def run_test(Test_Path):
+
+def run_test(test_path):
+    '''
+    This function run test cases
+    :param test_path: test files path
+    :type test_path : str
+    :return: None
+    '''
     cov = coverage.Coverage()
     cov.start()
-    doctest.testfile(os.path.join(Test_Path, "Amphlett_test.py"),
+    doctest.testfile(os.path.join(test_path, "Amphlett_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Chamberline_Kim_test.py"),
+    doctest.testfile(os.path.join(test_path, "Chamberline_Kim_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Functions_test.py"),
+    doctest.testfile(os.path.join(test_path, "Functions_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Larminie_Dicks_test.py"),
+    doctest.testfile(os.path.join(test_path, "Larminie_Dicks_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Padulles_Amphlett_test.py"),
+    doctest.testfile(os.path.join(test_path, "Padulles_Amphlett_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Padulles_Hauer_test.py"),
+    doctest.testfile(os.path.join(test_path, "Padulles_Hauer_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Padulles1_test.py"),
+    doctest.testfile(os.path.join(test_path, "Padulles1_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
-    doctest.testfile(os.path.join(Test_Path, "Padulles2_test.py"),
+    doctest.testfile(os.path.join(test_path, "Padulles2_test.py"),
                      optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
                      verbose=False)
     cov.stop()
@@ -47,9 +56,9 @@ def run_test(Test_Path):
     cov.save()
 
 if __name__ == "__main__":
-    Test_Path="Test"
-    args = sys.argv
-    argsup = list(map(str.upper, args))
+    TESTPATH = "Test"
+    ARGS = sys.argv
+    ARGSUP = list(map(str.upper, ARGS))
     Menu = {
         "Amphlett_Analysis (Static)": Amphlett_Analysis,
         "Larminiee_Analysis (Static)": Larminiee_Analysis,
@@ -58,35 +67,35 @@ if __name__ == "__main__":
         "Padulles_Analysis II (Dynamic)": Padulles2_Analysis,
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis}
-    MenuKeys = sorted(Menu.keys())
-    if "TEST" in argsup:
-        run_test(Test_Path)
+    MENUKEYS = sorted(Menu.keys())
+    if "TEST" in ARGSUP:
+        run_test(TESTPATH)
     else:
-        ExitFlag = False
+        EXITFLAG = False
         check_update()
-        while not ExitFlag:
+        while not EXITFLAG:
             tprint("OPEM")
             tprint("v" + str(Version))
             description_print("Overview", Description_Menu)
-            for i, item in enumerate(MenuKeys):
+            for i, item in enumerate(MENUKEYS):
                 print(str(i + 1) + "-" + item)
             try:
-                AnalysisIndex = int(input(("Please Choose Analysis : ")))
+                ANALYSISINDEX = int(input(("Please Choose Analysis : ")))
             except Exception:
-                AnalysisIndex = -1
-            if AnalysisIndex - 1 in range(len(MenuKeys)):
-                AnalysisName = MenuKeys[AnalysisIndex - 1]
-                description_print(AnalysisName, Description_Menu)
-                UserInput = input(
+                ANALYSISINDEX = -1
+            if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
+                ANALYSISNAME = MENUKEYS[ANALYSISINDEX - 1]
+                description_print(ANALYSISNAME, Description_Menu)
+                USERINPUT = input(
                     "\nEnter [M]: More Information,[T]: Run Standard Test Vector or any other key to "
                     "continue \n")
                 description_control(
-                    Analysis_Name=AnalysisName,
+                    Analysis_Name=ANALYSISNAME,
                     Analysis_List=Menu,
-                    User_Input=UserInput,
+                    User_Input=USERINPUT,
                     Links_Dict=Description_Links,
                     Vectors_Dict=Vectors)
-                InputIndex = input(
+                INPUTINDEX = input(
                     "Press [R] to restart OPEM or any other key to exit.")
-                if InputIndex.upper() != "R":
-                    ExitFlag = True
+                if INPUTINDEX.upper() != "R":
+                    EXITFLAG = True
