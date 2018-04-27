@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+'''
+OPEM Init
+'''
 import opem.Static.Amphlett
 import opem.Static.Larminie_Dicks
 import opem.Static.Chamberline_Kim
