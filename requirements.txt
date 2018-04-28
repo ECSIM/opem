@@ -1,5 +1,5 @@
 codecov==2.0.15
 art>0.7
 requests==2.18.4
-pytest
-pytest-cov
+pytest==3.5.1
+pytest-cov==2.5.1
