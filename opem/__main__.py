@@ -73,7 +73,7 @@ if __name__ == "__main__":
         run_test(TESTPATH)
     else:
         EXITFLAG = False
-        check_update()
+        check_update(Version)
         while not EXITFLAG:
             tprint("OPEM")
             tprint("v" + str(Version))

@@ -101,7 +101,7 @@ def line(num=11, char="#"):
     print(char * num)
 
 
-def check_update():
+def check_update(Version):
     '''
     This function check for new opem version in  website
     :return: None
