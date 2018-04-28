@@ -105,7 +105,7 @@ def R_Calc(V, i):
     '''
     try:
         return V / i
-    except (TypeError,ZeroDivisionError):
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] R Total Calculation Failed (V:%s ,i:%s)" %
             (str(V), str(i)))
@@ -126,7 +126,7 @@ def Enernst_Calc(T, PH2, PO2):
         result = 1.229 - (8.5 * (10 ** -4)) * (T - 298.15) + (4.308 *
                                                               (10 ** -5)) * T * (math.log(PH2) + 0.5 * math.log(PO2))
         return result
-    except (TypeError,OverflowError,ValueError):
+    except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Enernst Calculation Failed (T:%s , PH2:%s, PO2:%s)" %
             (str(T), str(PH2), str(PO2)))
@@ -144,7 +144,7 @@ def CH2_Calc(PH2, T):
     try:
         result = PH2 / (1.09 * (10 ** 6) * math.exp(77 / T))
         return result
-    except (TypeError,ZeroDivisionError,OverflowError,ValueError):
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] CH2 Calculation Failed (PH2:%s, T:%s)" %
             (str(PH2), str(T)))
@@ -162,7 +162,7 @@ def CO2_Calc(PO2, T):
     try:
         result = PO2 / (5.08 * (10 ** 6) * math.exp(-498 / T))
         return result
-    except (TypeError,ZeroDivisionError,OverflowError,ValueError):
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] CO2 Calculation Failed (PO2:%s, T:%s)" %
             (str(PO2), str(T)))
@@ -185,7 +185,7 @@ def Rho_Calc(i, A, T, lambda_param):
         result = (181.6 * (1 + 0.03 * (i / A) + 0.062 * ((T / 303) ** 2) * ((i / A) ** 2.5))
                   ) / ((lambda_param - 0.634 - 3 * (i / A)) * math.exp(4.18 * ((T - 303) / T)))
         return result
-    except (TypeError,ZeroDivisionError,OverflowError,ValueError):
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] Rho Calculation Failed (i:%s, A:%s, T:%s, lambda:%s)" %
             (str(i), str(A), str(T), str(lambda_param)))
@@ -207,7 +207,7 @@ def Xi2_Calc(A, PH2, T):
         result = 0.00286 + 0.0002 * \
             math.log(A) + (4.3 * (10 ** -5)) * math.log(CH2)
         return result
-    except (TypeError,OverflowError,ValueError):
+    except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Xi2 Calculation Failed (A:%s, PH2:%s, T:%s)" %
             (str(A), str(PH2), str(T)))
@@ -229,7 +229,7 @@ def Eta_Conc_Calc(i, A, B, JMax):
             return result
         else:
             return 0
-    except (TypeError,ZeroDivisionError,OverflowError,ValueError):
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] Eta Concentration Calculation Failed (i:%s, A:%s, B:%s, JMax:%s)" %
             (str(i), str(A), str(B), str(JMax)))
@@ -263,7 +263,7 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
             return result
         else:
             return 0
-    except (TypeError,ZeroDivisionError):
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] Eta Ohmic Calculation Failed (i:%s, l:%s, A:%s, T:%s, lambda:%s, R_elec:%s)" %
             (str(i), str(l), str(A), str(T), str(lambda_param), str(R_elec)))
@@ -289,7 +289,7 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
             return result
         else:
             return 0
-    except (TypeError,OverflowError,ValueError):
+    except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Eta Activation Calculation Failed (T:%s, PO2:%s, PH2:%s, i:%s, A:%s)" %
             (str(T), str(PO2), str(PH2), str(i), str(A)))
@@ -305,7 +305,7 @@ def Efficiency_Calc(Vcell):
     try:
         result = (uF * Vcell) / HHV
         return result
-    except (TypeError,ZeroDivisionError):
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] PEM Efficiency Calculation Failed (Vcell:%s)" %
             str(Vcell))
@@ -343,7 +343,7 @@ def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
     try:
         result = Eta_Act + Eta_Ohmic + Eta_Conc
         return result
-    except TypeError :
+    except TypeError:
         print(
             "[Error] Loss Calculation Error (Eta_Act:%s, Eta_Ohmic:%s, Eta_Conc:%s)" %
             (str(Eta_Act), str(Eta_Ohmic), str(Eta_Conc)))
