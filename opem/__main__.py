@@ -2,10 +2,7 @@
 '''
 OPEM Main File
 '''
-import doctest
 import sys
-import coverage
-import os
 from opem.Static.Amphlett import Static_Analysis as Amphlett_Analysis
 from opem.Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from opem.Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
