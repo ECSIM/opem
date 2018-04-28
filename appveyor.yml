@@ -31,4 +31,4 @@ install:
   - "%PYTHON%/python.exe setup.py install"
 
 test_script:
-  - "%PYTHON%/python.exe -m pytest --cov=opem --cov-report=term
+  - "%PYTHON%/python.exe -m pytest --cov=opem --cov-report=term"
