@@ -27,30 +27,54 @@ def run_test(test_path):
     '''
     cov = coverage.Coverage()
     cov.start()
-    doctest.testfile(os.path.join(test_path, "Amphlett_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Chamberline_Kim_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Functions_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Larminie_Dicks_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Padulles_Amphlett_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Padulles_Hauer_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Padulles1_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
-    doctest.testfile(os.path.join(test_path, "Padulles2_test.py"),
-                     optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
-                     verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Amphlett_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Chamberline_Kim_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Functions_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Larminie_Dicks_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Padulles_Amphlett_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Padulles_Hauer_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Padulles1_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
+    doctest.testfile(
+        os.path.join(
+            test_path,
+            "Padulles2_test.py"),
+        optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        verbose=False)
     cov.stop()
     cov.report()
     cov.save()
