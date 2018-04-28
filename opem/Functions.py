@@ -30,7 +30,7 @@ def integrate(y_vals, h):
                 total += 4 * y
             i += 1
         return total * (h / 3.0)
-    except Exception:
+    except (TypeError,ZeroDivisionError):
         return None
 
 
@@ -85,7 +85,7 @@ def estimate_coef(clear_x, clear_y):
         B1 = SS_xy / SS_xx
         B0 = mean_y - B1 * mean_x
         return [B1, B0]
-    except Exception:
+    except (TypeError,ZeroDivisionError,OverflowError,ValueError):
         return [0, 0]
 
 
