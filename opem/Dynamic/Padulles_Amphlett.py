@@ -23,7 +23,7 @@ def Vcell_Calc(Enernst, Loss, N):
     try:
         result = Enernst - N * Loss
         return result
-    except Exception:
+    except TypeError:
         print(
             "[Error] Vcell Calculation Error (Enernst:%s, Loss:%s, N:%s)" %
             (str(Enernst), str(Loss), str(N)))

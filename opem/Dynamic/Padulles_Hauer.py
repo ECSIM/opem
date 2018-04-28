@@ -25,7 +25,7 @@ def qH2_Calc(qMethanol, CV, t1, t2):
     try:
         result = (qMethanol * CV) / (t1 + ((t2)**2) + (t1 + t2) + 1)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] qH2 Calculation Failed (qMethanol:%s, CV:%s, t1:%s, t2:%s)" %
             (str(qMethanol), str(CV), str(t1), str(t2)))

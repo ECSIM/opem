@@ -26,7 +26,7 @@ def Enernst_Calc(E0, N0, T, PH2, PO2):
     try:
         result = N0 * (E0 + (R * T / (2 * F)) * math.log(PH2 * ((PO2)**0.5)))
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s)" %
             (str(E0), str(N0), str(T), str(PH2), str(PO2)))
@@ -50,7 +50,7 @@ def PH2_Calc(KH2, tH2, Kr, I, qH2):
     try:
         result = ((1 / KH2) / (1 + tH2)) * (qH2 - 2 * Kr * I)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] PH2 Calculation Failed (KH2:%s, tH2:%s, Kr:%s, I:%s, qH2:%s)" %
             (str(KH2), str(tH2), str(Kr), str(I), str(qH2)))
@@ -74,7 +74,7 @@ def PO2_Calc(KO2, tO2, Kr, I, qO2):
     try:
         result = ((1 / KO2) / (1 + tO2)) * (qO2 - Kr * I)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] PO2 Calculation Failed (KO2:%s, tO2:%s, Kr:%s, I:%s, qO2:%s)" %
             (str(KO2), str(tO2), str(Kr), str(I), str(qO2)))
@@ -90,7 +90,7 @@ def Kr_Calc(N0):
     try:
         result = N0 / (4 * F)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print("[Error] Kr Calculation Failed (N0:%s)" % str(N0))
 
 
@@ -112,7 +112,7 @@ def Vcell_Calc(Enernst, B, C, I, Rint):
     try:
         result = Enernst - B * math.log(C * I) - Rint * I
         return result
-    except Exception:
+    except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Vcell Calculation Error (Enernst:%s, B:%s, C:%s, I:%s, Rint:%s)" %
             (str(Enernst), str(B), str(C), str(I), str(Rint)))
@@ -130,7 +130,7 @@ def qO2_Calc(qH2, rho):
     try:
         result = (qH2 / rho)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] qO2 Calculation Error (qH2:%s, rho:%s)" %
             (str(qH2), str(rho)))
@@ -148,7 +148,7 @@ def Efficiency_Calc(Vcell, N):
     try:
         result = (uF * Vcell) / (N * HHV)
         return result
-    except Exception:
+    except (TypeError, ZeroDivisionError):
         print(
             "[Error] PEM Efficiency Calculation Failed (Vcell:%s, N:%s)" %
             (str(Vcell), str(N)))
