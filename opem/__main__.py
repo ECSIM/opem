@@ -55,6 +55,7 @@ def run_test(test_path):
     cov.report()
     cov.save()
 
+
 if __name__ == "__main__":
     TESTPATH = "Test"
     ARGS = sys.argv

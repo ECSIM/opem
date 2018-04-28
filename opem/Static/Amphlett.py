@@ -522,7 +522,7 @@ def Static_Analysis(
                         OutputFile,
                         PrintMode)
                     opem.Functions.CSV_Save(
-    OutputParamsKeys, Output_Dict, i, CSVFile)
+                        OutputParamsKeys, Output_Dict, i, CSVFile)
                 i = opem.Functions.rounder(i + IStep, Precision)
             except Exception as e:
                 print(str(e))
@@ -536,7 +536,7 @@ def Static_Analysis(
                         OutputFile,
                         PrintMode)
                     opem.Functions.CSV_Save(
-    OutputParamsKeys, Output_Dict, i, CSVFile)
+                        OutputParamsKeys, Output_Dict, i, CSVFile)
         [Estimated_V, B0, B1] = opem.Functions.linear_plot(
             x=I_List, y=Vstack_List)
         Linear_Approx_Params = Linear_Aprox_Params_Calc(B0, B1)
@@ -554,7 +554,7 @@ def Static_Analysis(
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
             opem.Functions.HTML_Desc(
-    Simulation_Title, Amphlett_Description, HTMLFile)
+                Simulation_Title, Amphlett_Description, HTMLFile)
             opem.Functions.HTML_Input_Table(
                 Input_Dict=Input_Dict,
                 Input_Params=InputParams,
@@ -586,19 +586,19 @@ def Static_Analysis(
                 file=HTMLFile,
                 header=False)
             opem.Functions.HTML_Chart(x=str(I_List),
-                       y=[str(Eta_Active_List),
-                          str(Eta_Conc_List),
-                          str(Eta_Ohmic_List)],
-                       color=['rgba(255,99,132,1)',
-                              'rgba(99,100,255,1)',
-                              'rgb(238, 210, 141)'],
-                       x_label="I(A)",
-                       y_label="V(V)",
-                       chart_name=["Eta Active",
-                                   "Eta Conc",
-                                   "Eta Ohmic"],
-                       size="600px",
-                       file=HTMLFile)
+                                      y=[str(Eta_Active_List),
+                                         str(Eta_Conc_List),
+                                         str(Eta_Ohmic_List)],
+                                      color=['rgba(255,99,132,1)',
+                                             'rgba(99,100,255,1)',
+                                             'rgb(238, 210, 141)'],
+                                      x_label="I(A)",
+                                      y_label="V(V)",
+                                      chart_name=["Eta Active",
+                                                  "Eta Conc",
+                                                  "Eta Ohmic"],
+                                      size="600px",
+                                      file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Efficiency_List),
@@ -609,14 +609,14 @@ def Static_Analysis(
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(x=str(list(map(opem.Functions.rounder,
-                                      Power_List))),
-                       y=str(Efficiency_List),
-                       color='rgb(238, 210, 141)',
-                       x_label="P(W)",
-                       y_label="EFF",
-                       chart_name="Efficiency vs Power",
-                       size="600px",
-                       file=HTMLFile)
+                                                     Power_List))),
+                                      y=str(Efficiency_List),
+                                      color='rgb(238, 210, 141)',
+                                      x_label="P(W)",
+                                      y_label="EFF",
+                                      chart_name="Efficiency vs Power",
+                                      size="600px",
+                                      file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Power_Thermal_List),

@@ -266,10 +266,10 @@ def Output_Save(
                    spliter)
         if PrintMode:
             print(key +
-    " : " +
-    str(OutputDict[key]) +
-    " " +
-     OutputParams[key])
+                  " : " +
+                  str(OutputDict[key]) +
+                  " " +
+                  OutputParams[key])
     file.write("###########" + spliter)
     if PrintMode:
         print("###########")
@@ -292,7 +292,7 @@ def Output_Init(InputDict, Title, Name):
         os.mkdir(Title)
     file = open(os.path.join(Title, Name + ".opem"), "w")
     file.write(Art)
-    file.write("Simulation Date : " + \
+    file.write("Simulation Date : " +
                str(datetime.datetime.now()) + spliter)
     file.write("**********" + spliter)
     file.write(Title + " Model" + spliter * 2)
@@ -350,12 +350,12 @@ def HTML_Init(Title, Name):
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
     file = io.open(
-    os.path.join(
-        Title,
-        Name +
-        ".html"),
+        os.path.join(
+            Title,
+            Name +
+            ".html"),
         "w",
-         encoding="utf-8")
+        encoding="utf-8")
     file.write("<html>\n")
     file.write("<head>\n")
     file.write("<title>" + Name + "</title>\n")
@@ -527,10 +527,10 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
 
 
 def HTML_Overall_Params_Table(
-    Input_Dict,
-    Input_Params,
-    file,
-     header=False):
+        Input_Dict,
+        Input_Params,
+        file,
+        header=False):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
@@ -702,10 +702,10 @@ def description_print(Analysis_Name, Description_Dict, Width=100):
                     Width)))
     print("\n")
     print(
-    "\n".join(
-        justify(
-            Description_Dict[Analysis_Name].split(),
-             Width)))
+        "\n".join(
+            justify(
+                Description_Dict[Analysis_Name].split(),
+                Width)))
     print("\n")
     line()
 
@@ -728,7 +728,7 @@ def description_control(
         line()
         input_temp = input("Press any key to continue")
         Analysis_List[Analysis_Name](
-    InputMethod=Test_Vector, TestMode=True)
+            InputMethod=Test_Vector, TestMode=True)
     else:
         Analysis_List[Analysis_Name]()
 
@@ -796,11 +796,11 @@ def warning_check_2(Vcell, warning_flag):
 
 
 def warning_print(
-    warning_flag_1,
-    warning_flag_2,
-    I_Warning,
-    file,
-     PrintMode):
+        warning_flag_1,
+        warning_flag_2,
+        I_Warning,
+        file,
+        PrintMode):
     '''
     This function print warning message and write messages to HTML report
     :param warning_flag_1: First warning message (Vcell <0)
