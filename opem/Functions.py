@@ -115,7 +115,7 @@ def check_update():
             print("Website : " + Website)
             line()
     except Exception:
-        pass
+        print("Update Check Failed!")
 
 
 def filter_default(input_dict, params_default):
