@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.9] - 2018-07-13
+### Added
+- JOSS paper
+
+### Changed
+- Test System
+- setup File Modified
+
+### Removed
+- `PEM.md`
+
 ## [0.8] - 2018-04-10
 ### Added
 - Overall Parameters
@@ -102,7 +113,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSV Output Files
 - Documents And README
 
-[Unreleased]: https://github.com/ECSIM/opem/compare/v0.8...HEAD
+[Unreleased]: https://github.com/ECSIM/opem/compare/v0.9...HEAD
+[0.9]: https://github.com/ECSIM/opem/compare/v0.8...v0.9
 [0.8]: https://github.com/ECSIM/opem/compare/v0.7...v0.8
 [0.7]: https://github.com/ECSIM/opem/compare/v0.6...v0.7
 [0.6]: https://github.com/ECSIM/opem/compare/v0.5...v0.6
