@@ -10,8 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - JOSS paper
 
 ### Changed
-- Test System
+- Test System Updated
 - setup File Modified
+- Exceptions Modified
 
 ### Removed
 - `PEM.md`
