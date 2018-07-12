@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-Version = 0.8
+Version = 0.9
 Website = "http://www.ecsim.ir/opem"
 UpdateUrl = "http://www.ecsim.ir/opem/update"
 Overview = '''
