@@ -3,17 +3,12 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-from pathlib import Path
 import logging
 
 
 def get_requirements():
-    requirements_path = Path(__file__).parent / 'requirements.txt'
-    logging.info('Requirements path: {}'.format(requirements_path.resolve()))
-    with open(str(requirements_path)) as f:
-        requirements = f.read().splitlines()
-    return requirements
-
+    requirements = open("requirements.txt", "r").read()
+    return list(filter(lambda x: x != "", requirements.split()))
 
 setup(
     name='opem',
