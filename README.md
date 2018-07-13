@@ -1,5 +1,5 @@
 <div align="center">
-<img src="otherfile/logo.png" width=250px height=250px>
+<img src="https://github.com/ECSIM/opem/blob/master/otherfile/logo.png" width=250px height=250px>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=master"></a>
@@ -18,21 +18,21 @@
 
 ## Table of contents
    * [What is PEM?](http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm)					
-   * [Overview](#overview)
-   * [Installation](INSTALL.md)
-   * [Usage](#usage)
-   * [Issues & Bug Reports](#issues--bug-reports)
-   * [Contribution](CONTRIBUTING.md)
-   * [Todo](#todo)
-   * [Outputs](#outputs)
-   * [Dependencies](#dependencies)
-   * [Thanks](#thanks)
-   * [Reference](#reference)
-   * [Cite](#cite)
-   * [Authors](AUTHORS.md)
-   * [License](#license)
-   * [Donate](#donate-to-our-project)
-   * [Changelog](CHANGELOG.md)
+   * [Overview](https://github.com/ECSIM/opem#overview)
+   * [Installation](https://github.com/ECSIM/opem/blob/master/INSTALL.md)
+   * [Usage](https://github.com/ECSIM/opem#usage)
+   * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
+   * [Contribution](https://github.com/ECSIM/opem/blob/master/CONTRIBUTING.md)
+   * [Todo](https://github.com/ECSIM/opem#todo)
+   * [Outputs](https://github.com/ECSIM/opem#outputs)
+   * [Dependencies](https://github.com/ECSIM/opem#dependencies)
+   * [Thanks](https://github.com/ECSIM/opem#thanks)
+   * [Reference](https://github.com/ECSIM/opem#reference)
+   * [Cite](https://github.com/ECSIM/opem#cite)
+   * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
+   * [License](https://github.com/ECSIM/opem#license)
+   * [Donate](https://github.com/ECSIM/opem#donate-to-our-project)
+   * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
 
 ## Overview		
 
@@ -42,7 +42,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 </p>
 <div align="center">
 
-<img src="otherfile/OPEM_BLOCK_DIAGRAM.jpg">
+<img src="https://github.com/ECSIM/opem/blob/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
 <p>Fig1. OPEM Block Diagram</p>
 
 </div>
@@ -758,8 +758,8 @@ Gitter is another option :
 ## Outputs	
 
 1. [HTML](http://www.ecsim.ir/opem/outputs/test.html)
-2. [CSV](otherfile/test.csv)
-3. [OPEM](otherfile/test.opem)	
+2. [CSV](https://github.com/ECSIM/opem/blob/master/otherfile/test.csv)
+3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
 
 ## Dependencies
 <a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a>
