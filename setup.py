@@ -53,7 +53,7 @@ setup(
     },
     platforms=["any"],
     install_requires=get_requirements(),
-    python_requires='>=3.3',
+    python_requires='>=3.4',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: End Users/Desktop',
