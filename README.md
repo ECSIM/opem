@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/ECSIM/opem/blob/master/otherfile/logo.png" width=250px height=250px>
+<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=250px height=250px>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=master"></a>
@@ -42,7 +42,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 </p>
 <div align="center">
 
-<img src="https://github.com/ECSIM/opem/blob/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
+<img src="https://github.com/ECSIM/opem/raw/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
 <p>Fig1. OPEM Block Diagram</p>
 
 </div>
