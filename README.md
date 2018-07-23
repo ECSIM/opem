@@ -812,18 +812,22 @@ and Policy, University of California Davis.
 
 ## Cite
 
-If you use OPEM in your research , please cite this :
+If you use OPEM in your research , please cite this paper :
 
 <pre>
 
-@misc{https://doi.org/10.5281/zenodo.1133110,
-  doi = {10.5281/zenodo.1133110},
-  author = {{Sepand Haghighi} and {Kasra Askari} and {Sarmin Hamidi} and Rahimi,  Mohammad Mahdi},
-  keywords = {Cell,  PEM,  Fuel Cell,  electrochemistry},
-  title = {Opem : An Open Source Pem Cell Simulation Tool},
-  pages = {--},
-  publisher = {Zenodo},
-  year = {2017}
+@article{Haghighi2018,
+  doi = {10.21105/joss.00676},
+  url = {https://doi.org/10.21105/joss.00676},
+  year  = {2018},
+  month = {jul},
+  publisher = {The Open Journal},
+  volume = {3},
+  number = {27},
+  pages = {676},
+  author = {Sepand Haghighi and Kasra Askari and Sarmin Hamidi and Mohammad Mahdi Rahimi},
+  title = {{OPEM} : Open Source {PEM} Cell Simulation Tool},
+  journal = {Journal of Open Source Software}
 }
 
 
@@ -831,8 +835,12 @@ If you use OPEM in your research , please cite this :
 
 Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)									
 
+<a style="border-width:0" href="https://doi.org/10.21105/joss.00676">
+  <img src="http://joss.theoj.org/papers/10.21105/joss.00676/status.svg" alt="DOI badge" >
+</a>
 
 <a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a>
+
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
