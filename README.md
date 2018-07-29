@@ -11,6 +11,7 @@
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 <a href="https://www.openhub.net/p/opem"><img src="https://www.openhub.net/p/opem/widgets/project_thin_badge.gif"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=shield"/></a>
 
 </div>
 	
@@ -33,6 +34,9 @@
    * [License](https://github.com/ECSIM/opem#license)
    * [Donate](https://github.com/ECSIM/opem#donate-to-our-project)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
 
 ## Overview		
 
