@@ -17,6 +17,18 @@ matrix:
         - os: linux
           sudo: required
           python: 3.4
+        - os: osx
+          language: generic
+          env: TOXENV=py37
+        - os: osx
+          language: generic
+          env: TOXENV=py36
+        - os: osx
+          language: generic
+          env: TOXENV=py35
+        - os: osx
+          language: generic
+          env: TOXENV=py34
 
 install:
   - pip install -r dev-requirements.txt
