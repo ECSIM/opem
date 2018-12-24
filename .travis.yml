@@ -32,10 +32,13 @@ matrix:
 
 install:
   - bash .travis/install.sh
+  - which pip
   - pip install -r dev-requirements.txt
+  - which python
   - python setup.py install
 
 script:
+  - which python
   - python -m pytest opem/Test --cov=opem --cov-report=term
 after_success:
   - codecov
