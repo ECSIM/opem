@@ -5,7 +5,7 @@ PIP=`which pip || (python --version 2>&1 | grep -q 'Python 2' && which pip2) || 
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
 
     brew install pyenv >> /dev/null
-
+    brew update && brew upgrade pyenv
     case "${TOXENV}" in
         py34)
             pyenv install 3.4.9
