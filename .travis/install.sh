@@ -2,19 +2,19 @@
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
 	pip3 install tox
     case "${TOXENV}" in
-        py34)
+        py34-osx)
         pyenv install 3.4.8
 	    pyenv global 3.4.8
 	    ;;
-        py35)
+        py35-osx)
         pyenv install 3.5.5
 	    pyenv global 3.5.5
             ;;
-	py36)
+	    py36-osx)
         pyenv install 3.6.5
 	    pyenv global 3.6.5
 	    ;;
-	py37)
+	    py37-osx)
         pyenv install 3.7.0b3
 	    pyenv global 3.7.0b3
 	    ;;
