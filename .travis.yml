@@ -4,11 +4,11 @@ language: python
 
 matrix:
     include:
-        - os: linux
-          sudo: required
-          python: 3.7
-          env: TOXENV=py37-linux
-          dist: xenial
+        # - os: linux
+        #   sudo: required
+        #   python: 3.7
+        #   env: TOXENV=py37-linux
+        #   dist: xenial
 
         - os: linux
           sudo: required
@@ -25,9 +25,9 @@ matrix:
           python: 3.4
           env: TOXENV=py34-linux
         
-        - os: osx
-          language: generic
-          env: TOXENV=py37-osx
+        # - os: osx
+        #   language: generic
+        #   env: TOXENV=py37-osx
         
         - os: osx
           language: generic
