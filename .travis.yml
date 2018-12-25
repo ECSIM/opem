@@ -25,17 +25,17 @@ matrix:
           python: 3.4
           env: TOXENV=py34-linux
         
-        - os: osx
-          language: generic
-          env: TOXENV=py37-osx
+        # - os: osx
+        #   language: generic
+        #   env: TOXENV=py37-osx
         
         - os: osx
           language: generic
           env: TOXENV=py36-osx
 
-        - os: osx
-          language: generic
-          env: TOXENV=py35-osx
+        # - os: osx
+        #   language: generic
+        #   env: TOXENV=py35-osx
         
         # - os: osx
         #   language: generic
