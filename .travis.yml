@@ -32,9 +32,9 @@ matrix:
 
 install:
   - bash .travis/install.sh
-  - which pip
+  - which pip3
   - pip install -r dev-requirements.txt
-  - which python
+  - which python3
   - python setup.py install
 
 script:
