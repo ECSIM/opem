@@ -7,39 +7,43 @@ matrix:
         - os: linux
           sudo: required
           python: 3.7
+          env: TOXENV=py37-linux
           dist: xenial
+
         - os: linux
           sudo: required
           python: 3.6
+          env: TOXENV=py36-linux
+        
         - os: linux
           sudo: required
           python: 3.5
+          env: TOXENV=py35-linux
+        
         - os: linux
           sudo: required
           python: 3.4
+          env: TOXENV=py34-linux
+        
         - os: osx
           language: generic
-          env: TOXENV=py37
+          env: TOXENV=py37-osx
+        
         - os: osx
           language: generic
-          env: TOXENV=py36
+          env: TOXENV=py36-osx
+        
         - os: osx
           language: generic
-          env: TOXENV=py35
+          env: TOXENV=py35-osx
+        
         - os: osx
           language: generic
-          env: TOXENV=py34
+          env: TOXENV=py34-osx
 
-install:
-  - bash .travis/install.sh
-  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then pip install -r dev-requirements.txt ; fi
-  - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install -r dev-requirements.txt ; fi
-  - python3 --version
-  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then python setup.py install ; fi
-  - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then python3 setup.py install ; fi
+install: bash .travis/install.sh
 
-script:
-  - which python
-  - python -m pytest opem/Test --cov=opem --cov-report=term
+script: bash .travis/test.sh
+
 after_success:
   - codecov
