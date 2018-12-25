@@ -7,35 +7,35 @@ matrix:
         - os: linux
           sudo: required
           python: 3.7
-          env: TOXENV=py37-linux,codecov
+          env: TOXENV=py37-linux
           dist: xenial
 
         - os: linux
           sudo: required
           python: 3.6
-          env: TOXENV=py36-linux,codecov
+          env: TOXENV=py36-linux
         
         - os: linux
           sudo: required
           python: 3.5
-          env: TOXENV=py35-linux,codecov
+          env: TOXENV=py35-linux
         
         - os: linux
           sudo: required
           python: 3.4
-          env: TOXENV=py34-linux,codecov
-        
-        # - os: osx
-        #   language: generic
-        #   env: TOXENV=py37-osx
+          env: TOXENV=py34-linux
         
         - os: osx
           language: generic
-          env: TOXENV=py36-osx,codecov
+          env: TOXENV=py37-osx
+        
+        - os: osx
+          language: generic
+          env: TOXENV=py36-osx
 
-        # - os: osx
-        #   language: generic
-        #   env: TOXENV=py35-osx
+        - os: osx
+          language: generic
+          env: TOXENV=py35-osx
         
         # - os: osx
         #   language: generic
@@ -44,3 +44,6 @@ matrix:
 install: bash .travis/install.sh
 
 script: bash .travis/test.sh
+
+after_success:
+  - codecov
