@@ -32,10 +32,11 @@ matrix:
 
 install:
   - bash .travis/install.sh
-  - which pip3
-  - pip install -r dev-requirements.txt
-  - which python3
-  - python setup.py install
+  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then pip install -r dev-requirements.txt ; fi
+  - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install -r dev-requirements.txt ; fi
+  - python3 --version
+  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then python setup.py install ; fi
+  - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then python3 setup.py install ; fi
 
 script:
   - which python
