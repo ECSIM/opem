@@ -349,23 +349,23 @@ def HTML_Init(Title, Name):
     '''
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = io.open(
+    HTMLFile = io.open(
         os.path.join(
             Title,
             Name +
             ".html"),
         "w",
         encoding="utf-8")
-    file.write("<html>\n")
-    file.write("<head>\n")
-    file.write("<title>" + Name + "</title>\n")
-    file.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
-    file.write("</head>\n<body>\n")
-    file.write(
+    HTMLFile.write("<html>\n")
+    HTMLFile.write("<head>\n")
+    HTMLFile.write("<title>" + Name + "</title>\n")
+    HTMLFile.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
+    HTMLFile.write("</head>\n<body>\n")
+    HTMLFile.write(
         '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
         'OPEM</span>'
         ' Report (' + Title + " Model)" + '</h1>\n')
-    return file
+    return HTMLFile
 
 
 def HTML_Desc(Title, Description, HTMLFile):
