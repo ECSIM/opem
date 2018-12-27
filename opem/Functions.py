@@ -236,7 +236,7 @@ def Output_Save(
         OutputDict,
         OutputParams,
         i,
-        file,
+        InputFile,
         PrintMode):
     """
     This function write analysis result in Simulation-Result.opem file
@@ -248,17 +248,17 @@ def Output_Save(
     :type OutputParams : dict
     :param i: cell load current [A]
     :type i : float
-    :param file : file object
+    :param InputFile : file object
     :return: None
     """
     spliter = "\n"
     if 'win' not in sys.platform:
         spliter = "\r\n"
-    file.write("I :" + str(i) + " A " + spliter * 2)
+    InputFile.write("I :" + str(i) + " A " + spliter * 2)
     if PrintMode:
         print("I : " + str(i))
     for key in OutputParamsKeys:
-        file.write(key +
+        InputFile.write(key +
                    " : " +
                    str(OutputDict[key]) +
                    " " +
@@ -270,7 +270,7 @@ def Output_Save(
                   str(OutputDict[key]) +
                   " " +
                   OutputParams[key])
-    file.write("###########" + spliter)
+    InputFile.write("###########" + spliter)
     if PrintMode:
         print("###########")
 
