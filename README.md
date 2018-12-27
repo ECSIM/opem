@@ -10,7 +10,6 @@
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://www.openhub.net/p/opem"><img src="https://www.openhub.net/p/opem/widgets/project_thin_badge.gif"></a>
 
 </div>
 	
@@ -40,12 +39,47 @@
 <p align="justify">
 Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the Research & development of renewable energy sources. The Open-Source PEMFC Simulation Tool (OPEM) is a modeling tool for evaluating the performance of proton exchange membrane fuel cells. This package is a combination of models (static/dynamic) that predict the optimum operating parameters of PEMFC. OPEM contained generic models that will accept as input, not only values of the operating variables such as anode and cathode feed gas, pressure and compositions, cell temperature and current density, but also cell parameters including the active area and membrane thickness. In addition, some of the different models of PEMFC that have been proposed in the OPEM, just focus on one particular FC stack, and some others take into account a part or all auxiliaries such as reformers. OPEM is a platform for collaborative development of PEMFC models.
 </p>
+
 <div align="center">
 
 <img src="https://github.com/ECSIM/opem/raw/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
 <p>Fig1. OPEM Block Diagram</p>
 
+
 </div>
+
+<table>
+	<tr> 
+		<td align="center">Open Hub</td>
+		<td align="center"><a href="https://www.openhub.net/p/opem"><img src="https://www.openhub.net/p/opem/widgets/project_thin_badge.gif"></a></td>	
+	</tr>
+	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/count/opem"><img src="http://pepy.tech/badge/opem"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Github Stars</td>
+		<td align="center"><a href="https://github.com/sepandhaghighi/opem"><img src="https://img.shields.io/github/stars/ECSIM/opem.svg?style=social&label=Stars"></a></td>
+	</tr>
+</table>
+
+<table>
+	<tr> 
+		<td align="center">Branch</td>
+		<td align="center">master</td>	
+		<td align="center">develop</td>	
+	</tr>
+	<tr>
+		<td align="center">Travis</td>
+		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=master"></a></td>
+		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=develop"></a></td>
+	</tr>
+	<tr>
+		<td align="center">AppVeyor</td>
+		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/master?svg=true"></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/develop?svg=true"></a></td>
+	</tr>
+</table>
 
 
 ## Usage
