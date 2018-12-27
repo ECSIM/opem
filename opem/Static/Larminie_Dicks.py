@@ -259,8 +259,4 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        else:
-            print(
-                "[Error] " +
-                Simulation_Title +
-                " Simulation Failed!(Check Your Inputs)")
+        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
