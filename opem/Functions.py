@@ -541,7 +541,7 @@ def HTML_End(HTMLFile):
     HTMLFile.write("</html>")
 
 
-def CSV_Save(OutputParamsKeys, OutputDict, i, file):
+def CSV_Save(OutputParamsKeys, OutputDict, i, CSVFile):
     """
     This Function Save Parameters In CSV File
     :param OutputParamsKeys : OutputParams Key as  list
@@ -550,16 +550,16 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     :type OutputDict:dict
     :param i: cell load current [A]
     :type i : float
-    :param file : file object
+    :param CSVFile : file object
     :return: None
     :return: None
     """
-    file.write(str(i) + ",")
+    CSVFile.write(str(i) + ",")
     for key in OutputParamsKeys:
-        file.write(str(OutputDict[key]))
+        CSVFile.write(str(OutputDict[key]))
         if key != OutputParamsKeys[-1]:
-            file.write(",")
-    file.write("\n")
+            CSVFile.write(",")
+    CSVFile.write("\n")
 
 
 def filter_lambda(Input_Dict):
