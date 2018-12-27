@@ -316,14 +316,14 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     """
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title, Name + ".csv"), "w")
-    file.write("I (A),")
+    csv_file = open(os.path.join(Title, Name + ".csv"), "w")
+    csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
-        file.write(item + " (" + OutputParams[item] + ")")
+        csv_file.write(item + " (" + OutputParams[item] + ")")
         if index < len(OutputParamsKeys) - 1:
-            file.write(",")
-    file.write("\n")
-    return file
+            csv_file.write(",")
+    csv_file.write("\n")
+    return csv_file
 
 
 def None_Omit(Input_Str):
