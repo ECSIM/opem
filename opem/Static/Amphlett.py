@@ -227,8 +227,7 @@ def Eta_Conc_Calc(i, A, B, JMax):
             J = (i / A)
             result = -B * math.log(1 - (J / JMax))
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] Eta Concentration Calculation Failed (i:%s, A:%s, B:%s, JMax:%s)" %
@@ -261,8 +260,7 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
                 R_total += R_elec
             result = i * R_total
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, ZeroDivisionError):
         print(
             "[Error] Eta Ohmic Calculation Failed (i:%s, l:%s, A:%s, T:%s, lambda:%s, R_elec:%s)" %
@@ -287,8 +285,7 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
             result = -(xi1 + xi2 * T + xi3 * T *
                        math.log(CO2) + xi4 * T * math.log(i))
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Eta Activation Calculation Failed (T:%s, PO2:%s, PH2:%s, i:%s, A:%s)" %
@@ -662,8 +659,4 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        else:
-            print(
-                "[Error] " +
-                Simulation_Title +
-                " Simulation Failed!(Check Your Inputs)")
+        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")

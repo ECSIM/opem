@@ -144,8 +144,7 @@ def get_precision(input_number):
     if "." in input_string:
         splitted_input = input_string.split(".")
         return len(splitted_input[1])
-    else:
-        return 0
+    return 0
 
 
 def isfloat(value):
@@ -174,8 +173,7 @@ def rounder(input_number, digit=2):
     try:
         if isfloat(input_number):
             return round(input_number, digit)
-        else:
-            return input_number
+        return input_number
     except Exception:
         return None
 
@@ -716,8 +714,7 @@ def warning_check_1(Vcell, I_Warning, I, warning_flag):
         try:
             if Vcell < 0:
                 return [True, I]
-            else:
-                return [False, I]
+            return [False, I]
         except Exception:
             return [False, I]
     else:
@@ -736,10 +733,8 @@ def warning_check_2(Vcell, warning_flag):
     if not warning_flag:
         if Vcell is None:
             return True
-        else:
-            return False
-    else:
-        return True
+        return False
+    return True
 
 
 def warning_print(
