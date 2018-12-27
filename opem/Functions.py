@@ -386,7 +386,7 @@ def HTML_Desc(Title, Description, HTMLFile):
         "</p>\n")
 
 
-def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
+def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
     '''
     This function write chartjs chart in html file
     :param x: x data as a string list
@@ -400,8 +400,8 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     :param chart_name: chart name (or list of chart_name)
     :param size: chart size in pixel
     :type size : str
-    :param file: html file object
-    :type file : file object
+    :param HTMLFile: html file object
+    :type HTMLFile : file object
     :return: None
     '''
     chart_data = ""
@@ -418,7 +418,7 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
         y_data = None_Omit(y)
         chart_data = opem.Script.CHART_DATA.format(chart_name, y_data, color)
     x_data = None_Omit(x)
-    file.write(
+    HTMLFile.write(
         opem.Script.LINE_CHART.format(
             x_data,
             y_label,
