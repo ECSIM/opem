@@ -428,7 +428,7 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
             chart_data))
 
 
-def HTML_Input_Table(Input_Dict, Input_Params, file):
+def HTML_Input_Table(Input_Dict, Input_Params, HTMLFile):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
@@ -439,38 +439,38 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
     :type file : file object
     :return: None
     '''
-    file.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
-    file.write(
+    HTMLFile.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
+    HTMLFile.write(
         '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write(
+    HTMLFile.write(
         '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Input\n</td>")
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Description\n</td>")
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Value\n</td>\n</tr>\n")
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write(
+        HTMLFile.write(
             '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             key +
             "\n</td>\n")
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             Input_Params[key] +
             "\n</td>\n")
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             str(
                 Input_Dict[key]) +
             "\n</td>\n")
-    file.write("</table>\n")
+    HTMLFile.write("</table>\n")
 
 
 def HTML_Overall_Params_Table(
