@@ -43,7 +43,9 @@ matrix:
 
 install: bash .travis/install.sh
 
-script: bash .travis/test.sh
+script: 
+  - bash .travis/test.sh
+  - python -m cProfile -s cumtime opem/Profile.py
 
 after_success:
   - codecov
