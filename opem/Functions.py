@@ -290,19 +290,19 @@ def Output_Init(InputDict, Title, Name):
     Art = text2art("Opem")
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title, Name + ".opem"), "w")
-    file.write(Art)
-    file.write("Simulation Date : " +
+    opem_file = open(os.path.join(Title, Name + ".opem"), "w")
+    opem_file.write(Art)
+    opem_file.write("Simulation Date : " +
                str(datetime.datetime.now()) + spliter)
-    file.write("**********" + spliter)
-    file.write(Title + " Model" + spliter * 2)
-    file.write("**********" + spliter)
-    file.write("Simulation Inputs : " + spliter * 2)
+    opem_file.write("**********" + spliter)
+    opem_file.write(Title + " Model" + spliter * 2)
+    opem_file.write("**********" + spliter)
+    opem_file.write("Simulation Inputs : " + spliter * 2)
     Input_Keys = sorted(InputDict.keys())
     for key in Input_Keys:
-        file.write(key + " : " + str(InputDict[key]) + spliter)
-    file.write("**********" + spliter)
-    return file
+        opem_file.write(key + " : " + str(InputDict[key]) + spliter)
+    opem_file.write("**********" + spliter)
+    return opem_file
 
 
 def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
