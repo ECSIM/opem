@@ -368,19 +368,19 @@ def HTML_Init(Title, Name):
     return file
 
 
-def HTML_Desc(Title, Description, file):
+def HTML_Desc(Title, Description, HTMLFile):
     '''
     This function write model description in html file
     :param Title: Simulation title (analysis model)
     :type Title : str
     :param Description: Model description
     :type Description : str
-    :param file: html file object
-    :type file : file object
+    :param HTMLFile: html file object
+    :type HTMLFile : file object
     :return: None
     '''
-    file.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
-    file.write(
+    HTMLFile.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
+    HTMLFile.write(
         '<p style = "text-align:justify;margin:15px;">' +
         Description +
         "</p>\n")
