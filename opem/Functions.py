@@ -435,8 +435,8 @@ def HTML_Input_Table(Input_Dict, Input_Params, HTMLFile):
     :type Input_Dict : dict
     :param Input_Params: Input params dictionary
     :type Input_Params : dict
-    :param file: html file object
-    :type file : file object
+    :param HTMLFile: html file object
+    :type HTMLFile : file object
     :return: None
     '''
     HTMLFile.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
@@ -476,7 +476,7 @@ def HTML_Input_Table(Input_Dict, Input_Params, HTMLFile):
 def HTML_Overall_Params_Table(
         Input_Dict,
         Input_Params,
-        file,
+        HTMLFile,
         header=False):
     '''
     This function add table to html file
@@ -484,45 +484,45 @@ def HTML_Overall_Params_Table(
     :type Input_Dict : dict
     :param Input_Params: Input params dictionary
     :type Input_Params : dict
-    :param file: html file object
-    :type file : file object
+    :param HTMLFile: html file object
+    :type HTMLFile : file object
     :return: None
     '''
     if header:
-        file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
-    file.write(
+        HTMLFile.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
+    HTMLFile.write(
         '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write(
+    HTMLFile.write(
         '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Parameter\n</td>")
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Description\n</td>")
-    file.write(
+    HTMLFile.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Value\n</td>\n</tr>\n")
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write(
+        HTMLFile.write(
             '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             key +
             "\n</td>\n")
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             Input_Params[key] +
             "\n</td>\n")
-        file.write(
+        HTMLFile.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             str(
                 Input_Dict[key]) +
             "\n</td>\n")
-    file.write("</table>\n")
+    HTMLFile.write("</table>\n")
     if header:
-        file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
+        HTMLFile.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
 
 
 def HTML_End(file):
