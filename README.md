@@ -6,9 +6,9 @@
   <img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
 </a>
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
-<a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
-<a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a>
-<a href="https://codebeat.co/projects/github-com-sepandhaghighi-opem-develop"><img alt="codebeat badge" src="https://codebeat.co/badges/8e2cb7b5-9fd4-4ecc-ae53-a26164718ee7" /></a>
+
+
+
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 
 </div>
@@ -78,6 +78,15 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		<td align="center">AppVeyor</td>
 		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/master?svg=true"></a></td>
 		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/develop?svg=true"></a></td>
+	</tr>
+</table>
+
+<table>
+	<tr> 
+		<td align="center">Code Quality</td>
+		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a></td>	
+		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a></td>
+        <td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-opem-develop"><img alt="codebeat badge" src="https://codebeat.co/badges/8e2cb7b5-9fd4-4ecc-ae53-a26164718ee7" /></a></td>	
 	</tr>
 </table>
 
