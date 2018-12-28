@@ -8,6 +8,7 @@
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a>
 <a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a>
+<a href="https://codebeat.co/projects/github-com-sepandhaghighi-opem-develop"><img alt="codebeat badge" src="https://codebeat.co/badges/8e2cb7b5-9fd4-4ecc-ae53-a26164718ee7" /></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 
 </div>
