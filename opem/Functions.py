@@ -234,7 +234,7 @@ def Output_Save(
         OutputDict,
         OutputParams,
         i,
-        InputFile,
+        file,
         PrintMode):
     """
     This function write analysis result in Simulation-Result.opem file
@@ -246,17 +246,17 @@ def Output_Save(
     :type OutputParams : dict
     :param i: cell load current [A]
     :type i : float
-    :param InputFile : file object
+    :param file : file object
     :return: None
     """
     spliter = "\n"
     if 'win' not in sys.platform:
         spliter = "\r\n"
-    InputFile.write("I :" + str(i) + " A " + spliter * 2)
+    file.write("I :" + str(i) + " A " + spliter * 2)
     if PrintMode:
         print("I : " + str(i))
     for key in OutputParamsKeys:
-        InputFile.write(key +
+        file.write(key +
                    " : " +
                    str(OutputDict[key]) +
                    " " +
@@ -268,7 +268,7 @@ def Output_Save(
                   str(OutputDict[key]) +
                   " " +
                   OutputParams[key])
-    InputFile.write("###########" + spliter)
+    file.write("###########" + spliter)
     if PrintMode:
         print("###########")
 
@@ -366,25 +366,25 @@ def HTML_Init(Title, Name):
     return HTMLFile
 
 
-def HTML_Desc(Title, Description, HTMLFile):
+def HTML_Desc(Title, Description, file):
     '''
     This function write model description in html file
     :param Title: Simulation title (analysis model)
     :type Title : str
     :param Description: Model description
     :type Description : str
-    :param HTMLFile: html file object
-    :type HTMLFile : file object
+    :param file: html file object
+    :type file : file object
     :return: None
     '''
-    HTMLFile.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
-    HTMLFile.write(
+    file.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
+    file.write(
         '<p style = "text-align:justify;margin:15px;">' +
         Description +
         "</p>\n")
 
 
-def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
+def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     '''
     This function write chartjs chart in html file
     :param x: x data as a string list
@@ -398,8 +398,8 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
     :param chart_name: chart name (or list of chart_name)
     :param size: chart size in pixel
     :type size : str
-    :param HTMLFile: html file object
-    :type HTMLFile : file object
+    :param file: html file object
+    :type file : file object
     :return: None
     '''
     chart_data = ""
@@ -416,7 +416,7 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
         y_data = None_Omit(y)
         chart_data = opem.Script.CHART_DATA.format(chart_name, y_data, color)
     x_data = None_Omit(x)
-    HTMLFile.write(
+    file.write(
         opem.Script.LINE_CHART.format(
             x_data,
             y_label,
@@ -426,55 +426,55 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, HTMLFile):
             chart_data))
 
 
-def HTML_Input_Table(Input_Dict, Input_Params, HTMLFile):
+def HTML_Input_Table(Input_Dict, Input_Params, file):
     '''
     This function add table to html file
     :param Input_Dict: Input values dictionary
     :type Input_Dict : dict
     :param Input_Params: Input params dictionary
     :type Input_Params : dict
-    :param HTMLFile: html file object
-    :type HTMLFile : file object
+    :param file: html file object
+    :type file : file object
     :return: None
     '''
-    HTMLFile.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
-    HTMLFile.write(
+    file.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
+    file.write(
         '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    HTMLFile.write(
+    file.write(
         '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Input\n</td>")
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Description\n</td>")
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Value\n</td>\n</tr>\n")
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        HTMLFile.write(
+        file.write(
             '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             key +
             "\n</td>\n")
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             Input_Params[key] +
             "\n</td>\n")
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             str(
                 Input_Dict[key]) +
             "\n</td>\n")
-    HTMLFile.write("</table>\n")
+    file.write("</table>\n")
 
 
 def HTML_Overall_Params_Table(
         Input_Dict,
         Input_Params,
-        HTMLFile,
+        file,
         header=False):
     '''
     This function add table to html file
@@ -482,64 +482,64 @@ def HTML_Overall_Params_Table(
     :type Input_Dict : dict
     :param Input_Params: Input params dictionary
     :type Input_Params : dict
-    :param HTMLFile: html file object
-    :type HTMLFile : file object
+    :param file: html file object
+    :type file : file object
     :return: None
     '''
     if header:
-        HTMLFile.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
-    HTMLFile.write(
+        file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
+    file.write(
         '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    HTMLFile.write(
+    file.write(
         '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Parameter\n</td>")
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Description\n</td>")
-    HTMLFile.write(
+    file.write(
         '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
         "Value\n</td>\n</tr>\n")
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        HTMLFile.write(
+        file.write(
             '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             key +
             "\n</td>\n")
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             Input_Params[key] +
             "\n</td>\n")
-        HTMLFile.write(
+        file.write(
             '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
             str(
                 Input_Dict[key]) +
             "\n</td>\n")
-    HTMLFile.write("</table>\n")
+    file.write("</table>\n")
     if header:
-        HTMLFile.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
+        file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
 
 
-def HTML_End(HTMLFile):
+def HTML_End(file):
     '''
     This function add end part of html file
-    :param HTMLFile: html file object
-    :type HTMLFile : file object
+    :param file: html file object
+    :type file : file object
     :return: None
     '''
 
-    HTMLFile.write(
+    file.write(
         '<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By '
         '<a style="text-decoration:none;color:#ff7600;" '
         'href="http://opem.ecsim.ir">OPEM</a> Version ' + str(Version) + '</p>\n')
-    HTMLFile.write("</body>\n")
-    HTMLFile.write("</html>")
+    file.write("</body>\n")
+    file.write("</html>")
 
 
-def CSV_Save(OutputParamsKeys, OutputDict, i, CSVFile):
+def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
     This Function Save Parameters In CSV File
     :param OutputParamsKeys : OutputParams Key as  list
@@ -548,16 +548,15 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, CSVFile):
     :type OutputDict:dict
     :param i: cell load current [A]
     :type i : float
-    :param CSVFile : file object
-    :return: None
+    :param file : file object
     :return: None
     """
-    CSVFile.write(str(i) + ",")
+    file.write(str(i) + ",")
     for key in OutputParamsKeys:
-        CSVFile.write(str(OutputDict[key]))
+        file.write(str(OutputDict[key]))
         if key != OutputParamsKeys[-1]:
-            CSVFile.write(",")
-    CSVFile.write("\n")
+            file.write(",")
+    file.write("\n")
 
 
 def filter_lambda(Input_Dict):
