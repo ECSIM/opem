@@ -32,6 +32,7 @@
    * [License](https://github.com/ECSIM/opem#license)
    * [Donate](https://github.com/ECSIM/opem#donate-to-our-project)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
+   * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/CODE_OF_CONDUCT.md)
 
 ## Overview		
 
