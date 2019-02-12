@@ -13,7 +13,7 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version, Description_Menu, Description_Links, Vectors
+from opem.Params import Version, Description_Menu, Description_Links, Vectors, Test_List
 from opem.Functions import check_update, description_print, description_control
 
 
@@ -32,18 +32,17 @@ if __name__ == "__main__":
     EXITFLAG = False
     if "TEST" in ARGSUP:
         try:
-            FILE_LIST = os.listdir("Test")
+            EXIT_CODE = 0
+            for item in Test_List:
+                EXIT_CODE += doctest.testfile(os.path.join("Test",item), optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)[0]
+            if EXIT_CODE == 0 :
+                print("Tetst passed!")
+            else:
+                print("Test failed!")
+            sys.exit(EXIT_CODE)
         except Exception:
             print("Test folder not found!!")
             sys.exit(1)
-        EXIT_CODE = 0
-        for item in FILE_LIST:
-            EXIT_CODE += doctest.testfile(os.path.join("Test",item), optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)[0]
-        if EXIT_CODE == 0 :
-            print("Tetst passed!")
-        else:
-            print("Test failed!")
-        sys.exit(EXIT_CODE)
     check_update(Version)
     while not EXITFLAG:
         tprint("OPEM")

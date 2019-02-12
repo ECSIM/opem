@@ -453,3 +453,6 @@ Overall_Params_Linear_Description = {
     "Pmax(L-Approx)": "Maximum power obtained by linear approximation [W]",
     "VFC|Pmax(L-Approx)": "Cell voltage at maximum power obtained by linear approximation [V]",
 }
+
+
+Test_List = ['test_Amphlett.py', 'test_Chamberline_Kim.py', 'test_Functions.py', 'test_Larminie_Dicks.py', 'test_Padulles1.py', 'test_Padulles2.py', 'test_Padulles_Amphlett.py', 'test_Padulles_Hauer.py']
