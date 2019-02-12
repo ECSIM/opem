@@ -27,6 +27,7 @@ DOCUMENT_ITEMS = [
 HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ["Version = {0}"]
 RC_ITEMS =["filevers=({0}, {1}, {2}, {3})","prodvers=({0}, {1}, {2}, {3})","(u'FileVersion', u'{0}.{1}.{2}.{3}'),","(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
+TEST_ITEMS = ["New Version ({0}) Is Available!"]
 FILES = {
     "setup.py": SETUP_ITEMS, "INSTALL.md": INSTALL_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Documents", "Amphlett.ipynb"): DOCUMENT_ITEMS,os.path.join(
@@ -36,7 +37,8 @@ FILES = {
         "Documents", "Padulles_Hauer.ipynb"): DOCUMENT_ITEMS,os.path.join(
         "Documents", "Padulles1.ipynb"): DOCUMENT_ITEMS,os.path.join(
         "Documents", "Padulles2.ipynb"): DOCUMENT_ITEMS, os.path.join(
-        "otherfile", "test.html"): HTML_ITEMS,os.path.join("opem", "Params.py"): PARAMS_ITEMS}
+        "otherfile", "test.html"): HTML_ITEMS,os.path.join("opem", "Params.py"): PARAMS_ITEMS,
+        os.path.join("opem","Test","test_Functions.py"):TEST_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) +1
 
