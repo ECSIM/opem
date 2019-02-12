@@ -4,3 +4,4 @@ set
 
 python version_check.py
 tox -- --cov=opem --cov-report=term
+python -m cProfile -s cumtime opem/Profile.py"
