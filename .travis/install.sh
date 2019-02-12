@@ -1,2 +1,6 @@
 #!/bin/bash
-pip install -r dev-requirements.txt
+set -e
+set -x
+
+pip install -r requirements.txt
+python setup.py install

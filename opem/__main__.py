@@ -3,6 +3,8 @@
 OPEM Main File
 '''
 import sys
+import os
+import doctest
 from opem.Static.Amphlett import Static_Analysis as Amphlett_Analysis
 from opem.Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from opem.Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
@@ -28,6 +30,20 @@ if __name__ == "__main__":
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis}
     MENUKEYS = sorted(Menu.keys())
     EXITFLAG = False
+    if "TEST" in ARGSUP:
+        try:
+            FILE_LIST = os.listdir("Test")
+        except Exception:
+            print("Test folder not found!!")
+            sys.exit(1)
+        EXIT_CODE = 0
+        for item in FILE_LIST:
+            EXIT_CODE += doctest.testfile(os.path.join("Test",item), optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)[0]
+        if EXIT_CODE == 0 :
+            print("Tetst passed!")
+        else:
+            print("Test failed!")
+        sys.exit(EXIT_CODE)
     check_update(Version)
     while not EXITFLAG:
         tprint("OPEM")

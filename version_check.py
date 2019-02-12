@@ -38,7 +38,7 @@ FILES = {
         "Documents", "Padulles1.ipynb"): DOCUMENT_ITEMS,os.path.join(
         "Documents", "Padulles2.ipynb"): DOCUMENT_ITEMS, os.path.join(
         "otherfile", "test.html"): HTML_ITEMS,os.path.join("opem", "Params.py"): PARAMS_ITEMS,
-        os.path.join("opem","Test","test_Functions.py"):TEST_ITEMS}
+        os.path.join("Test","test_Functions.py"):TEST_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) +1
 

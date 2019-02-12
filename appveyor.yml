@@ -38,5 +38,5 @@ install:
   - "%PYTHON%/python.exe setup.py install"
 
 test_script:
-  - "%PYTHON%/python.exe -m pytest opem/Test --cov=opem --cov-report=term"
+  - "%PYTHON%/python.exe -m pytest Test --cov=opem --cov-report=term"
   - "%PYTHON%/python.exe -m cProfile -s cumtime opem/Profile.py"
