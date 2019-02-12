@@ -36,7 +36,7 @@ if __name__ == "__main__":
             for item in Test_List:
                 EXIT_CODE += doctest.testfile(os.path.join("Test",item), optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)[0]
             if EXIT_CODE == 0 :
-                print("Tetst passed!")
+                print("Test passed!")
             else:
                 print("Test failed!")
             sys.exit(EXIT_CODE)
