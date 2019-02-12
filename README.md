@@ -21,7 +21,7 @@
    * [Installation](https://github.com/ECSIM/opem/blob/master/INSTALL.md)
    * [Usage](https://github.com/ECSIM/opem#usage)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
-   * [Contribution](https://github.com/ECSIM/opem/blob/master/CONTRIBUTING.md)
+   * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem#todo)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
    * [Dependencies](https://github.com/ECSIM/opem#dependencies)
@@ -32,7 +32,7 @@
    * [License](https://github.com/ECSIM/opem#license)
    * [Donate](https://github.com/ECSIM/opem#donate-to-our-project)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/CODE_OF_CONDUCT.md)
+   * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
 
 ## Overview		
 
