@@ -272,7 +272,7 @@ Padulles2_Standard_Vector = {
     "i-start": 0.1,
     "i-stop": 100,
     "i-step": 0.1,
-    "Name": "Padulles2_Vector"}
+    "Name": "Padulles2_Test"}
 Padulles_Hauer_InputParams = {
     "N0": "Number of fuel cells in the stack",
     "E0": "Opencell voltage [V]",
