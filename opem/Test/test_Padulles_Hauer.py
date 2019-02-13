@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Dynamic.Padulles_Hauer import *
+>>> import shutil
 >>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -403,5 +404,6 @@ Done!
 False
 >>> qH2_Calc(qMethanol=None,CV=2,t1=2,t2=2)
 [Error] qH2 Calculation Failed (qMethanol:None, CV:2, t1:2, t2:2)
+>>> shutil.rmtree("Padulles-Hauer")
 
 '''

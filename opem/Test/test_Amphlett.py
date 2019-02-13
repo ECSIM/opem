@@ -2,6 +2,7 @@
 '''
 >>> from opem.Static.Amphlett import *
 >>> import random
+>>> import shutil
 >>> T=343.15
 >>> PH2=1
 >>> PO2=1
@@ -601,5 +602,6 @@ VStack : 0.8222862630668619 V
 Vcell : 0.8222862630668619 V
 ###########
 Done!
+>>> shutil.rmtree("Amphlett")
 
 '''

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Static.Chamberline_Kim import *
+>>> import shutil
 >>> E0=0.982
 >>> b=0.0689
 >>> R=0.328
@@ -262,5 +263,6 @@ VStack : 1.1319218672996567 V
 Vcell : 1.1319218672996567 V
 ###########
 Done!
+>>> shutil.rmtree("Chamberline-Kim")
 
 '''

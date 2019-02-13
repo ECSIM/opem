@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Dynamic.Padulles1 import *
+>>> import shutil
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -385,5 +386,6 @@ False
 [Error] Kr Calculation Failed (N0:None)
 >>> qO2_Calc(qH2=2,rho=0)
 [Error] qO2 Calculation Error (qH2:2, rho:0)
+>>> shutil.rmtree("Padulles-I")
 
 '''

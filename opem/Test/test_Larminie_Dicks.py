@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Static.Larminie_Dicks import *
+>>> import shutil
 >>> E0=1.178
 >>> A=0.0587
 >>> B=0.0517
@@ -335,5 +336,6 @@ VStack : 18.167291473272865 V
 Vcell : 0.7898822379683854 V
 ###########
 Done!
+>>> shutil.rmtree("Larminie-Dicks")
 
 '''
