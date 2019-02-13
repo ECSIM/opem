@@ -34,7 +34,7 @@
 - Message [OPEM BOT](https://t.me/opembot)
 
 
-## Try OPEM in your browser!
+### Try OPEM in your browser!
 OPEM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :	
 
 
