@@ -4,7 +4,7 @@
 | |_| || |_) ||  __/| | | | | |
  \___/ | .__/  \___||_| |_| |_|
        |_|                     
-Simulation Date : 2019-02-13 18:23:16.406509
+Simulation Date : 2019-02-13 22:09:32.441650
 **********
 Padulles-II Model
 
@@ -18,7 +18,7 @@ KH2 : 4.22e-05
 KH2O : 7.716e-06
 KO2 : 2.11e-05
 N0 : 5
-Name : Padulles2_Vector
+Name : Padulles2_Test
 Rint : 0.00303
 T : 343
 i-start : 0.1
