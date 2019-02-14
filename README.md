@@ -791,11 +791,11 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	```
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 
-#### Flags	
+	#### Flags	
 
-1. `TestMode` : Return data as `dict`
-2. `PrintMode` : Print result in console
-3.  `Reposrt` : Generate reports(`.csv`,`.opem`,`.html`)		
+		1. `TestMode` : Return data as `dict`
+		2. `PrintMode` : Print result in console
+		3.  `Reposrt` : Generate reports(`.csv`,`.opem`,`.html`)		
 
 <div align="center">
 
