@@ -798,9 +798,9 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 	#### Flags	
 
-	1. `TestMode` : Return data as `dict`
-	2. `PrintMode` : Print result in console
-	3.  `Reposrt` : Generate reports(`.csv`,`.opem`,`.html`)		
+	1. `TestMode` : Return data as `dict`, (Default : `False`)
+	2. `PrintMode` : Print result in console, (Default : `True`)
+	3.  `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`), (Default : `True`)
 
 		
 
