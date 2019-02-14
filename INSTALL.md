@@ -40,7 +40,7 @@ OPEM can be used online in interactive Jupyter Notebooks via the Binder service!
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECSIM/opem/master)
 
-* Check `Document` folder 
+* Check `Documents` folder 
 
 
 
