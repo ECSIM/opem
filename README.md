@@ -739,12 +739,12 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 ### Library				
 			
-	1. Amphlett Static Model
-		```pycon
-		from opem.Static.Amphlett import Static_Analysis
-		Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
-		data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
-	 	```
+1. Amphlett Static Model
+	```pycon
+	from opem.Static.Amphlett import Static_Analysis
+	Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
+	data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
+	 ```
 	2. Larminie-Dicks Static Model
 		```pycon
 		from opem.Static.Larminie_Dicks import Static_Analysis
