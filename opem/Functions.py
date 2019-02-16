@@ -55,7 +55,7 @@ def linear_plot(x, y):
             none_x.append(x[index])
     [B1, B0] = estimate_coef(clear_x, clear_y)
     for i in x:
-        if x not in none_x:
+        if i not in none_x:
             estimate_y.append(B0 + B1 * i)
         else:
             estimate_y.append(None)
