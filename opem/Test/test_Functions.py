@@ -8,6 +8,16 @@
 >>> integrate(data,1)
 >>> linear_plot([1,2,3],[2,4,6])
 [[2.0, 4.0, 6.0], 0.0, 2.0]
+>>> estimate_coef([0,0,0], [0,0,0])
+[0, 0]
+>>> get_precision(2)
+0
+>>> get_precision(2.55)
+2
+>>> rounder(22.2223, digit=2)
+22.22
+>>> rounder(22, digit=2)
+22
 >>> isfloat("2")
 True
 >>> isfloat("2.02")
