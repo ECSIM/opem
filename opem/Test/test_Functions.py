@@ -16,6 +16,10 @@
 0
 >>> get_precision(2.55)
 2
+>>> warning_check_1(-0.2, 10, 20, True)
+[True, 10]
+>>> warning_check_1(-0.2, 10, 20, False)
+[True, 20]
 >>> rounder(22.2223, digit=2)
 22.22
 >>> rounder(22, digit=2)
