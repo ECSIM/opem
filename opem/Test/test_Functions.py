@@ -8,6 +8,8 @@
 >>> integrate(data,1)
 >>> linear_plot([1,2,3],[2,4,6])
 [[2.0, 4.0, 6.0], 0.0, 2.0]
+>>> linear_plot([1,2,3],[2,4,None])
+[[2.0, 4.0, None], 0.0, 2.0]
 >>> estimate_coef([0,0,0], [0,0,0])
 [0, 0]
 >>> get_precision(2)
