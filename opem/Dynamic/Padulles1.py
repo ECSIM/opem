@@ -394,7 +394,8 @@ def Dynamic_Analysis(
                 "PH2": PH2_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
-                "K": B1}
+                "K": B1,
+                "VE": Estimated_V}
     except Exception:
         if TestMode:
             return {

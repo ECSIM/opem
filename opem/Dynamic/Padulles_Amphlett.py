@@ -334,7 +334,8 @@ def Dynamic_Analysis(
                 "K": B1,
                 "Eta_Active": Eta_Active_List,
                 "Eta_Conc": Eta_Conc_List,
-                "Eta_Ohmic": Eta_Ohmic_List}
+                "Eta_Ohmic": Eta_Ohmic_List,
+                "VE": Estimated_V}
     except Exception:
         if TestMode:
             return {
