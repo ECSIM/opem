@@ -651,7 +651,10 @@ def Static_Analysis(
                 "EFF": Efficiency_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
-                "K": B1}
+                "K": B1,
+                "Eta_Active": Eta_Active_List,
+                "Eta_Conc": Eta_Conc_List,
+                "Eta_Ohmic": Eta_Ohmic_List}
     except Exception:
         if TestMode:
             return {
