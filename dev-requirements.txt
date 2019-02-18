@@ -3,6 +3,6 @@ art==3.0
 requests==2.21.0
 pytest==4.3.0
 pytest-cov==2.6.1
-setuptools==40.6.3
+setuptools==40.8.0
 bandit==1.5.1
 vulture==1.0
