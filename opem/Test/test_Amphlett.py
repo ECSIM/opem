@@ -35,6 +35,10 @@
 [Error] Power Stack Calculation Error (Power:None, N:2)
 >>> Power_Total_Calc([None,None,None,None],2,20)
 [None, None]
+>>> Linear_Aprox_Params_Calc(22, 0)
+[None, 11.0]
+>>> Linear_Aprox_Params_Calc(None, 22)
+[None, None]
 >>> T='20000000000'
 >>> PH2='10000000'
 >>> PO2='1000000000'
