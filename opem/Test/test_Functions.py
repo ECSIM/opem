@@ -24,6 +24,8 @@
 22.22
 >>> rounder(22, digit=2)
 22
+>>> rounder("test")
+'test'
 >>> isfloat("2")
 True
 >>> isfloat("2.02")
