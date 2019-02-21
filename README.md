@@ -620,7 +620,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">T</td>
-				<td align="center">FuelCell temperature</td>
+				<td align="center">Fuel cell temperature</td>
 				<td align="center">K</td>
 			</tr>
 			<tr>
@@ -670,12 +670,12 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">l</td>
-				<td align="center">Membrane Thickness</td>
+				<td align="center">Membrane thickness</td>
 				<td align="center">cm</td>
 			</tr>
 			<tr>
 				<td align="center">lambda</td>
-				<td align="center">is an adjustable parameter with a min value of 14 and max value of 23</td>
+				<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
@@ -685,7 +685,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">B</td>
-				<td align="center"> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
 				<td align="center">V</td>
 			</tr>
 			<tr>
