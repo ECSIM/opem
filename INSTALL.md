@@ -30,20 +30,6 @@
 - Run `OPEM`
 
 
-### Telegram Bot
-- Message [OPEM BOT](https://t.me/opembot)
-
-
-### Try OPEM in your browser!
-OPEM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :	
-
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECSIM/opem/master)
-
-* Check `Documents` folder 
-
-
-
 ### Exe Version Note
 For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to include the Visual C++ run-time .dlls: Python 3.5 uses Visual Studio 2015 run-time, which has been renamed into “Universal CRT“ and has become part of Windows 10. For Windows Vista through Windows 8.1 there are Windows Update packages, which may or may not be installed in the target-system. So you have the following options:
 

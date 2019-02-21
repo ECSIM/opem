@@ -19,6 +19,8 @@
    * [Usage](https://github.com/ECSIM/opem#usage)
    		* [Executable](https://github.com/ECSIM/opem#executable)
    		* [Library](https://github.com/ECSIM/opem#library)	
+   		* [Telegram Bot](https://github.com/ECSIM/opem#telegram-bot)
+   		* [Try OPEM in Your Browser!](https://github.com/ECSIM/opem#try-opem-in-your-browser!)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem#todo)
@@ -798,6 +800,19 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	1. `TestMode` : Return data as `dict`, (Default : `False`)
 	2. `PrintMode` : Print result in console, (Default : `True`)
 	3.  `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`), (Default : `True`)
+
+
+### Telegram Bot
+- Message [OPEM BOT](https://t.me/opembot)
+
+
+### Try OPEM in your browser!
+OPEM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :	
+
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECSIM/opem/master)
+
+* Check `Documents` folder 
 
 		
 
