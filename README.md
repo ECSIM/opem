@@ -787,7 +787,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -863,7 +863,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -924,7 +924,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -985,17 +985,17 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >PO2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -1056,22 +1056,22 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >PO2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2O</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -1132,22 +1132,22 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >PO2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2O</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -1208,22 +1208,22 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center" >PO2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >PH2O</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >Ph</td>
-				<td align="center">Power thermal</td>
+				<td align="center">Thermal power</td>
 				<td  align="center">List</td>
 			</tr>
 			<tr>
@@ -1311,9 +1311,9 @@ Gitter is another option :
     - [x] Simulation Result
     - [X] CSV File
     - [x] HTML
-- [ ] GUI
-  - [ ] Plot Graphs
-  - [ ] Input/Output
+- [x] GUI
+  - [x] Plot Graphs
+  - [x] Input/Output
 - [x] Dynamic Analysis
   - [x] Padulles Dynamic Model I
     - [x] Nernst Voltage
