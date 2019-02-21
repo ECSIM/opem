@@ -39,7 +39,7 @@
 
 
 <p align="justify">
-Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the Research & development of renewable energy sources. The Open-Source PEMFC Simulation Tool (OPEM) is a modeling tool for evaluating the performance of proton exchange membrane fuel cells. This package is a combination of models (static/dynamic) that predict the optimum operating parameters of PEMFC. OPEM contained generic models that will accept as input, not only values of the operating variables such as anode and cathode feed gas, pressure and compositions, cell temperature and current density, but also cell parameters including the active area and membrane thickness. In addition, some of the different models of PEMFC that have been proposed in the OPEM, just focus on one particular FC stack, and some others take into account a part or all auxiliaries such as reformers. OPEM is a platform for collaborative development of PEMFC models.
+Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the research & development of renewable energy sources. The Open-Source PEMFC Simulation Tool (OPEM) is a modeling tool for evaluating the performance of proton exchange membrane fuel cells. This package is a combination of models (static/dynamic) that predict the optimum operating parameters of PEMFC. OPEM contained generic models that will accept as input, not only values of the operating variables such as anode and cathode feed gas, pressure and compositions, cell temperature and current density, but also cell parameters including the active area and membrane thickness. In addition, some of the different models of PEMFC that have been proposed in the OPEM, just focus on one particular FC stack, and some others take into account a part or all auxiliaries such as reformers. OPEM is a platform for collaborative development of PEMFC models.
 </p>
 
 <div align="center">
@@ -109,17 +109,17 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">T</td>
-				<td align="center">Cell Operation Temperature</td>
+				<td align="center">Cell operation temperature</td>
 				<td align="center">K</td>
 			</tr>
 			<tr>
 				<td align="center">PH2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td align="center">atm</td>
 			</tr>
 			<tr>
 				<td align="center">PO2</td>
-				<td align="center">Partial Pressure</td>
+				<td align="center">Partial pressure</td>
 				<td align="center">atm</td>
 			</tr>
 			<tr>
@@ -144,12 +144,12 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">l</td>
-				<td align="center">Membrane Thickness</td>
+				<td align="center">Membrane thickness</td>
 				<td align="center">cm</td>
 			</tr>
 			<tr>
 				<td align="center">lambda</td>
-				<td align="center">is an adjustable parameter with a min value of 14 and max value of 23</td>
+				<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
@@ -159,7 +159,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">B</td>
-				<td align="center"> An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td align="center">An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
 				<td align="center">V</td>
 			</tr>
 			<tr>
@@ -169,7 +169,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">N</td>
-				<td align="center">Number Of Single Cells</td>
+				<td align="center">Number of single cells</td>
 				<td align="center">--</td>
 			</tr>
 				
