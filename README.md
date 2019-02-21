@@ -751,6 +751,71 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	 ```
+	* Return type : `dict`
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Active</td>
+				<td align="center">Eta activation</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Conc</td>
+				<td align="center">Eta concentration</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Ohmic</td>
+				<td align="center">Eta ohmic</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Amphlett.ipynb">here</a>
 2. Larminie-Dicks Static Model
 	```pycon
