@@ -159,7 +159,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">B</td>
-				<td align="center">An empirical constant depending on the cell and its operation state (Tafel Slope)</td>
+				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
 				<td align="center">V</td>
 			</tr>
 			<tr>
@@ -298,7 +298,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">N</td>
-				<td align="center">Number Of Single Cells</td>
+				<td align="center">Number of single cells</td>
 				<td align="center">--</td>
 			</tr>
 				
