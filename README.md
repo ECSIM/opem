@@ -320,7 +320,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">T</td>
-				<td align="center">FuelCell temperature</td>
+				<td align="center">Fuel cell temperature</td>
 				<td align="center">K</td>
 			</tr>
 			<tr>
@@ -355,7 +355,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">Rint</td>
-				<td align="center">FuelCell internal resistance</td>
+				<td align="center">Fuel cell internal resistance</td>
 				<td align="center">ohm</td>
 			</tr>
 			<tr>
