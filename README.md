@@ -744,20 +744,26 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</div>
 
 ### Library				
-			
+
+* Return type : `dict`	
+
 1. Amphlett Static Model
 	```pycon
 	>>> from opem.Static.Amphlett import Static_Analysis
 	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	 ```
-	* Return type : `dict`
 	<html>
 		<table>
 			<tr>
 				<td align="center" >Key</td>
 				<td align="center">Description</td>
 				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
 			</tr>
 			<tr>
 				<td align="center" >P</td>
@@ -767,7 +773,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			<tr>
 				<td align="center" >I</td>
 				<td align="center">Cell operating current</td>
-				<td  align="center">Type</td>
+				<td  align="center">List</td>
 			</tr>
 			<tr>
 				<td align="center" >V</td>
@@ -823,6 +829,60 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"A": 0.0587,"E0": 1.178,"B": 0.0517,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	 ```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>	
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Larminie_Dicks.ipynb">here</a>
 3. Chamberline-Kim Static Model
 	```pycon
@@ -830,6 +890,60 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"A": 50.0,"E0": 0.982,"b": 0.0689,"R": 0.328,"m": 0.000125,"n": 9.45,"N": 1,"i-start": 1,"i-stop": 42.5,"i-step": 0.1,"Name": "Chamberline_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chamberline_Kim.ipynb">here</a>
 4. Padulles Dynamic Model I
 	```pycon
@@ -837,6 +951,70 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 88,"KO2": 0.0000211,"KH2": 0.0000422,"tH2": 3.37,"tO2": 6.74,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0,"i-stop": 100,"i-step": 0.1,"Name": "PadullesI_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles1.ipynb">here</a>
 5. Padulles Dynamic Model II
 	```pycon
@@ -844,6 +1022,75 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles2_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles2.ipynb">here</a>
 6. Padulles-Hauer Dynamic Model
 	```pycon
@@ -851,6 +1098,75 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles_Hauer_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Hauer.ipynb">here</a>
 7. Padulles-Amphlett Dynamic Model
 	```pycon
@@ -858,6 +1174,90 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.016,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=True,ReportMode=True)
 	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial Pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Power thermal</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Active</td>
+				<td align="center">Eta activation</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Conc</td>
+				<td align="center">Eta concentration</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Ohmic</td>
+				<td align="center">Eta ohmic</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 
 	#### Flags	
