@@ -735,7 +735,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 		
 		
-	- Find Your Reports In `Model_Name` Folder			
+	- Find your reports in `Model_Name` folder			
 	
 	#### Screen Record
 	<div align="center">
