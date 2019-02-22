@@ -1290,7 +1290,9 @@ OPEM can be used online in interactive Jupyter Notebooks via the Binder service!
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ECSIM/opem/master)
 
-* Check `Documents` folder 
+- Check `.ipynb` files in `Documents` folder
+- Edit and execute each part of the notes, step by step from the top panel by run button
+- For executing a complete simulation, you can edit `Test_Vector` in `Full Run` section
 
 		
 
