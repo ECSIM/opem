@@ -264,6 +264,24 @@ Vcell : 1.1319218672996567 V
 ###########
 Report is generating ...
 Done!
+>>> Chamberline_Kim_Data["P"][5]
+1.820393802022961
+>>> Chamberline_Kim_Data["Status"]
+True
+>>> Chamberline_Kim_Data["I"][5]
+1.5
+>>> Chamberline_Kim_Data["V"][5]
+1.2135958680153074
+>>> Chamberline_Kim_Data["EFF"][5]
+0.7779460692405816
+>>> Chamberline_Kim_Data["Ph"][5]
+0.02460619797703889
+>>> Chamberline_Kim_Data["V0"]
+1.2696835857181188
+>>> Chamberline_Kim_Data["K"]
+-0.0372516118425709
+>>> Chamberline_Kim_Data["VE"][5]
+1.2138061679542624
 >>> shutil.rmtree("Chamberline-Kim")
 
 '''
