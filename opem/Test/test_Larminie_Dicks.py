@@ -337,6 +337,24 @@ Vcell : 0.7898822379683854 V
 ###########
 Report is generating ...
 Done!
+>>> Larminie_Dicks_Data["Status"]
+True
+>>> Larminie_Dicks_Data["P"][5]
+12.3063200471132
+>>> Larminie_Dicks_Data["I"][5]
+0.6
+>>> Larminie_Dicks_Data["V"][5]
+20.510533411855334
+>>> Larminie_Dicks_Data["EFF"][5]
+0.5716425142657562
+>>> Larminie_Dicks_Data["Ph"][5]
+4.6676799528867985
+>>> Larminie_Dicks_Data["V0"]
+20.957577180240715
+>>> Larminie_Dicks_Data["K"]
+-0.8085109813421083
+>>> Larminie_Dicks_Data["VE"][5]
+20.47247059143545
 >>> shutil.rmtree("Larminie-Dicks")
 
 '''
