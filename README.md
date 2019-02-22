@@ -360,7 +360,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">rho</td>
-				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
@@ -459,7 +459,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">rho</td>
-				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
@@ -572,7 +572,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">rho</td>
-				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
@@ -700,7 +700,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">rho</td>
-				<td align="center">Hydrogen-oxygen flow ratio</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
