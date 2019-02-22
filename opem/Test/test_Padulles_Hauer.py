@@ -400,6 +400,30 @@ Power-Thermal : 12.082876212203196 W
 ###########
 Report is generating ...
 Done!
+>>> Padulles_Hauer_Data["Status"]
+True
+>>> Padulles_Hauer_Data["P"][5]
+1.8907754319000147
+>>> Padulles_Hauer_Data["I"][5]
+0.6
+>>> Padulles_Hauer_Data["V"][5]
+3.1512923865000246
+>>> Padulles_Hauer_Data["EFF"][5]
+0.4040118444230801
+>>> Padulles_Hauer_Data["PO2"][5]
+0.1905867044473064
+>>> Padulles_Hauer_Data["PH2"][5]
+0.19710049042472996
+>>> Padulles_Hauer_Data["PH2O"][5]
+0.2425966933860498
+>>> Padulles_Hauer_Data["Ph"][5]
+1.7992245680999854
+>>> Padulles_Hauer_Data["V0"]
+3.1748727715256186
+>>> Padulles_Hauer_Data["K"]
+-0.03643090556526363
+>>> Padulles_Hauer_Data["VE"][5]
+3.1530142281864606
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_Hauer_Data["Status"]
 False
