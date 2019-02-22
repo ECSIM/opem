@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Overall parameters
 - Linear approximation
-- Power-Thermal parameter
+- Thermal power parameter
 - Efficiency vs I plot
 - PH2 vs I plot
 - PO2 vs I plot
