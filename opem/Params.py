@@ -4,7 +4,7 @@ Website = "http://www.ecsim.ir/opem"
 UpdateUrl = "http://www.ecsim.ir/opem/update"
 Overview = '''
 Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a
-powerful tool in the Research & development of renewable energy sources. The Open-Source
+powerful tool in the research & development of renewable energy sources. The Open-Source
 PEMFC Simulation Tool (OPEM) is a modeling tool for evaluating the performance of proton
 exchange membrane fuel cells. This package is a combination of models (static/dynamic)
 that predict the optimum operating parameters of PEMFC. OPEM contained generic models that
@@ -31,18 +31,18 @@ R = 8314.47
 F = 96484600
 Eth = 1.23
 Amphlett_InputParams = {
-    "T": "Cell Operation Temperature [K]",
-    "PH2": "Partial Pressure [atm]",
-    "PO2": "Partial Pressure [atm]",
+    "T": "Cell operation temperature [K]",
+    "PH2": "Partial pressure [atm]",
+    "PO2": "Partial pressure [atm]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
-    "A": "active area [cm^2]",
-    "l": "Membrane Thickness [cm]",
-    "lambda": "is an adjustable parameter with a min value of 14 and max value of 23",
-    "N": "Number Of Single Cells",
+    "A": "Active area [cm^2]",
+    "l": "Membrane thickness [cm]",
+    "lambda": "An adjustable parameter with a min value of 14 and max value of 23",
+    "N": "Number of single cells",
     "R": "R-Electronic [ohm] (*Optional)",
-    "B": "An empirical constant depending on the cell and its operation state (Tafel Slope) [V]",
+    "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
     "JMax": "maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {
     "Enernst": "V",
@@ -84,7 +84,7 @@ Amphlett_Standard_Vector = {
     "B": 0.016,
     "Name": "Amphlett_Test"}
 Larminiee_InputParams = {
-    "E0": "Fuel Cell reversible no loss voltage [V]",
+    "E0": "Fuel cell reversible no loss voltage [V]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
@@ -92,9 +92,9 @@ Larminiee_InputParams = {
     "B": "Constant in the mass transfer term [V]",
     "i_n": "Internal current [A]",
     "i_0": "Exchange current at which the overvoltage begins to move from zero [A]",
-    "i_L": "limiting current [A]",
+    "i_L": "Limiting current [A]",
     "A": "The slope of the Tafel line [V]",
-    "N": "Number Of Single Cells"}
+    "N": "Number of single cells"}
 Larminiee_OutputParams = {
     "Vcell": "V",
     "PEM Efficiency": "",
@@ -136,7 +136,7 @@ Chamberline_InputParams = {
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
     "A": "Active area [cm^2]",
-    "N": "Number Of Single Cells"}
+    "N": "Number of single cells"}
 Chamberline_OutputParams = {
     "Vcell": "V",
     "PEM Efficiency": "",
@@ -174,10 +174,10 @@ Chamberline_Standard_Vector = {
 
 Padulles_InputParams = {
     "N0": "Number of fuel cells in the stack",
-    "E0": "Opencell voltage [V]",
-    "T": "Cell Operation Temperature [K]",
-    "KH2": "Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
-    "KO2": "Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "E0": "Open cell voltage [V]",
+    "T": "Cell operation temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2": "Hydrogen time constant [s]",
     "tO2": "Oxygen time constant [s]",
     "qH2": "Molar flow of hydrogen [kmol.s^(-1)]",
