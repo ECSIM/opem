@@ -821,7 +821,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`							
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Amphlett.ipynb">here</a>
 2. Larminie-Dicks Static Model
 	```pycon
@@ -883,7 +883,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>	
-	* Return type : `dict`	
+	* Return type : `dict`							
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Larminie_Dicks.ipynb">here</a>
 3. Chamberline-Kim Static Model
 	```pycon
@@ -945,7 +945,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`						
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chamberline_Kim.ipynb">here</a>
 4. Padulles Dynamic Model I
 	```pycon
@@ -1017,7 +1017,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`					
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles1.ipynb">here</a>
 5. Padulles Dynamic Model II
 	```pycon
@@ -1094,7 +1094,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`							
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles2.ipynb">here</a>
 6. Padulles-Hauer Dynamic Model
 	```pycon
@@ -1171,7 +1171,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`						
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Hauer.ipynb">here</a>
 7. Padulles-Amphlett Dynamic Model
 	```pycon
@@ -1263,7 +1263,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		</html>
-	* Return type : `dict`	
+	* Return type : `dict`								
 	* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 
 	#### Flags	
