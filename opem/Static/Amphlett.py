@@ -4,7 +4,7 @@ from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
 from opem.Params import Amphlett_Params_Default as Defaults
 from opem.Params import xi1, xi3, xi4, HHV, uF, Amphlett_Description, Overall_Params_Max_Description,\
-    Overall_Params_Linear_Description, Eth
+    Overall_Params_Linear_Description, Eth, Report_Message
 import opem.Functions
 import os
 
@@ -550,6 +550,10 @@ def Static_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
+            OutputFile.close()
+            CSVFile.close()
+            if PrintMode:
+                print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title, Amphlett_Description, HTMLFile)
             opem.Functions.HTML_Input_Table(
@@ -630,8 +634,6 @@ def Static_Analysis(
                 file=HTMLFile,
                 PrintMode=PrintMode)
             opem.Functions.HTML_End(HTMLFile)
-            OutputFile.close()
-            CSVFile.close()
             HTMLFile.close()
         if PrintMode:
             print("Done!")

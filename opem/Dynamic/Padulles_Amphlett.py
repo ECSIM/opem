@@ -7,7 +7,7 @@ from opem.Dynamic.Padulles1 import PH2_Calc, PO2_Calc, Kr_Calc, qO2_Calc, Effici
 from opem.Dynamic.Padulles2 import Enernst_Calc, PH2O_Calc
 from opem.Dynamic.Padulles_Hauer import qH2_Calc
 import opem.Functions
-from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description
+from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description,Report_Message
 import os
 
 
@@ -200,6 +200,10 @@ def Dynamic_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
+            OutputFile.close()
+            CSVFile.close()
+            if PrintMode:
+                print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title,
                 Padulles_Amphlett_Description,
@@ -307,8 +311,6 @@ def Dynamic_Analysis(
                 file=HTMLFile,
                 PrintMode=PrintMode)
             opem.Functions.HTML_End(HTMLFile)
-            OutputFile.close()
-            CSVFile.close()
             HTMLFile.close()
         if PrintMode:
             print("Done!")

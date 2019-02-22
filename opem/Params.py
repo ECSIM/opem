@@ -18,6 +18,7 @@ a platform for collaborative development of PEMFC models.'''
 Warning_Message_1 = "Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
 Warning_Message_2 = "Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file" \
     " for review. If you are confident about this parameters, ignore this error."
+Report_Message = "Report is generating ..."
 HHV = 1.482
 uF = 0.95
 n = 8 * (10 ** -3)
