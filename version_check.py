@@ -3,7 +3,7 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "0.9"
+VERSION = "1.0"
 
 VERSION_1 = VERSION.split(".")[0]
 VERSION_2 = str(int(float(VERSION)*10 - int(VERSION_1)*10))

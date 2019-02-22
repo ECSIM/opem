@@ -2,7 +2,7 @@
 
 ### Source Code
 - Download [Python3.x](https://www.python.org/downloads/) (>=3.4)
-- Download [Version 0.9](https://github.com/ecsim/opem/archive/v0.9.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 1.0](https://github.com/ecsim/opem/archive/v1.0.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -18,13 +18,13 @@
 
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 0.9](https://www.dropbox.com/s/if22p5mofl7s2oh/OPEM%28v0.9%29.zip?dl=00)
+- Download [Exe-Version 1.0](https://www.dropbox.com/s/if22p5mofl7s2oh/OPEM%28v0.9%29.zip?dl=00)
 - Extract Zip File
 - Run `OPEM.exe`
 
 
 ### DMG Version (MacOS)
-- Download [DMG-Version 0.9](https://www.dropbox.com/s/86f25jvciq2g7qf/OPEM%28v0.9%29.dmg?dl=0)
+- Download [DMG-Version 1.0](https://www.dropbox.com/s/86f25jvciq2g7qf/OPEM%28v0.9%29.dmg?dl=0)
 - Open DMG File
 - Copy `OPEM` into your system
 - Run `OPEM`
