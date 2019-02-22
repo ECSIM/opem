@@ -173,9 +173,9 @@ Chamberline_Standard_Vector = {
     "Name": "Chamberline_Test"}
 
 Padulles_InputParams = {
-    "N0": "Number of fuel cells in the stack",
-    "E0": "Open cell voltage [V]",
-    "T": "Cell operation temperature [K]",
+    "N0": "Number of cells",
+    "E0": "No load voltage [V]",
+    "T": "Fuel cell temperature [K]",
     "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
     "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2": "Hydrogen time constant [s]",
@@ -184,10 +184,11 @@ Padulles_InputParams = {
     "rho": "Hydrogen-Oxygen flow rate",
     "Rint": "Fuel cell internal resistance [ohm]",
     "B": "Activation voltage constant [V]",
-    "C": "Constant [A^(-1)]",
+    "C": "Activation constant parameter [A^(-1)]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]"}
+
 Padulles_Outparams = {
     "FC Voltage": "V",
     "FC Power": "W",
@@ -222,18 +223,18 @@ Padulles_Standard_Vector = {
     "i-step": 0.1,
     "Name": "PadullesI_Test"}
 Padulles2_InputParams = {
-    "N0": "Number of fuel cells in the stack",
-    "E0": "Opencell voltage [V]",
-    "T": "Cell Operation Temperature [K]",
-    "KH2": "Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
-    "KO2": "Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "N0": "Number of cells",
+    "E0": "No load voltage [V]",
+    "T": "Fuel cell temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2": "Hydrogen time constant [s]",
     "tO2": "Oxygen time constant [s]",
     "qH2": "Molar flow of hydrogen [kmol.s^(-1)]",
     "rho": "Hydrogen-Oxygen flow rate",
     "Rint": "Fuel cell internal resistance [ohm]",
     "B": "Activation voltage constant [V]",
-    "C": "Constant [A^(-1)]",
+    "C": "Activation constant parameter [A^(-1)]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
@@ -274,11 +275,11 @@ Padulles2_Standard_Vector = {
     "i-step": 0.1,
     "Name": "Padulles2_Test"}
 Padulles_Hauer_InputParams = {
-    "N0": "Number of fuel cells in the stack",
-    "E0": "Opencell voltage [V]",
-    "T": "Cell Operation Temperature [K]",
-    "KH2": "Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
-    "KO2": "Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "N0": "Number of cells",
+    "E0": "No load voltage [V]",
+    "T": "Fuel cell temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2": "Hydrogen time constant [s]",
     "tO2": "Oxygen time constant [s]",
     "t1": "Reformer time constant [s]",
@@ -286,13 +287,13 @@ Padulles_Hauer_InputParams = {
     "rho": "Hydrogen-Oxygen flow rate",
     "Rint": "Fuel cell internal resistance [ohm]",
     "B": "Activation voltage constant [V]",
-    "C": "Constant [A^(-1)]",
+    "C": "Activation constant parameter [A^(-1)]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
-    "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "KH2O": "Water valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2O": "Water time constant [s]",
-    "qMethanol": "Methanol flow rate [kmol.s^(-1)]",
+    "qMethanol": "Molar flow of methanol [kmol.s^(-1)]",
     "CV": "Conversion factor"}
 Padulles_Hauer_Outparams = {
     "FC Voltage": "V",
@@ -335,12 +336,12 @@ Padulles_Hauer_Standard_Vector = {
 Padulles_Amphlett_Params_Default = {"R": 0, "E0": 1.229}
 
 Padulles_Amphlett_InputParams = {
-    "N0": "Number of fuel cells in the stack",
-    "E0": "Opencell voltage [V], Default Value:" + str(
+    "N0": "Number of cells",
+    "E0": "No load voltage [V], Default Value:" + str(
         Padulles_Amphlett_Params_Default["E0"]),
-    "T": "Cell Operation Temperature [K]",
-    "KH2": "Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]",
-    "KO2": "Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "T": "Fuel cell temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2": "Hydrogen time constant [s]",
     "tO2": "Oxygen time constant [s]",
     "t1": "Reformer time constant [s]",
@@ -350,15 +351,15 @@ Padulles_Amphlett_InputParams = {
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
-    "KH2O": "Water Valve Constant [kmol.s^(-1).atm^(-1)]",
+    "KH2O": "Water valve constant [kmol.s^(-1).atm^(-1)]",
     "tH2O": "Water time constant [s]",
-    "qMethanol": "Methanol flow rate [kmol.s^(-1)]",
+    "qMethanol": "Molar flow of methanol [kmol.s^(-1)]",
     "CV": "Conversion factor",
-    "A": "active area [cm^2]",
-    "l": "Membrane Thickness [cm]",
-    "lambda": "is an adjustable parameter with a min value of 14 and max value of 23",
-    "B": "An empirical constant depending on the cell and its operation state (Tafel Slope) [V]",
-    "JMax": "maximum current density [A/(cm^2)]"}
+    "A": "Active area [cm^2]",
+    "l": "Membrane thickness [cm]",
+    "lambda": "An adjustable parameter with a min value of 14 and max value of 23",
+    "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
+    "JMax": "Maximum current density [A/(cm^2)]"}
 
 Padulles_Amphlett_Outparams = {
     "FC Voltage": "V",
