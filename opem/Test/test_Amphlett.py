@@ -609,6 +609,30 @@ Vcell : 0.8222862630668619 V
 ###########
 Report is generating ...
 Done!
+>>> Amphlett_Data["Status"]
+True
+>>> Amphlett_Data["P"][5]
+0.4825532947945601
+>>> Amphlett_Data["I"][5]
+0.5
+>>> Amphlett_Data["V"][5]
+0.9651065895891202
+>>> Amphlett_Data["EFF"][5]
+0.618658070249436
+>>> Amphlett_Data["Ph"][5]
+0.13244670520543989
+>>> Amphlett_Data["V0"]
+1.0040929839792478
+>>> Amphlett_Data["K"]
+-0.05583350147954085
+>>> Amphlett_Data["Eta_Active"][5]
+0.22466052101362555
+>>> Amphlett_Data["Eta_Conc"][5]
+0.00010575055020278165
+>>> Amphlett_Data["Eta_Ohmic"][5]
+0.0008771388470514419
+>>> Amphlett_Data["VE"][5]
+0.9761762332394774
 >>> shutil.rmtree("Amphlett")
 
 '''
