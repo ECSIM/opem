@@ -398,6 +398,7 @@ PH2O : 0.24202600474020786 atm
 PO2 : 0.19032492078676233 atm
 Power-Thermal : 12.082876212203196 W
 ###########
+Report is generating ...
 Done!
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_Hauer_Data["Status"]

@@ -335,6 +335,7 @@ Power-Thermal : 39.47856325423582 W
 VStack : 18.167291473272865 V
 Vcell : 0.7898822379683854 V
 ###########
+Report is generating ...
 Done!
 >>> shutil.rmtree("Larminie-Dicks")
 

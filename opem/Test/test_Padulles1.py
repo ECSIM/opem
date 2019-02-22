@@ -371,6 +371,7 @@ PH2 : 2.159388537918463 atm
 PO2 : 2.0915322161021423 atm
 Power-Thermal : 209.9389930587172 W
 ###########
+Report is generating ...
 Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
 Done!
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)

@@ -398,6 +398,7 @@ PH2O : 2.6690305543204187 atm
 PO2 : 2.0966679355517246 atm
 Power-Thermal : 11.737141578735665 W
 ###########
+Report is generating ...
 Done!
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1,PH2O=2.1)
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1, PH2O:2.1)

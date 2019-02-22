@@ -607,6 +607,7 @@ Power-Thermal : 1.5900835740392385 W
 VStack : 0.8222862630668619 V
 Vcell : 0.8222862630668619 V
 ###########
+Report is generating ...
 Done!
 >>> shutil.rmtree("Amphlett")
 

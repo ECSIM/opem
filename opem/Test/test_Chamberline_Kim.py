@@ -262,6 +262,7 @@ Power-Thermal : 0.38250471753133874 W
 VStack : 1.1319218672996567 V
 Vcell : 1.1319218672996567 V
 ###########
+Report is generating ...
 Done!
 >>> shutil.rmtree("Chamberline-Kim")
 
