@@ -374,6 +374,28 @@ Power-Thermal : 209.9389930587172 W
 Report is generating ...
 Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
 Done!
+>>> Padulles_I_Data["Status"]
+True
+>>> Padulles_I_Data["P"][5]
+27.262222284249443
+>>> Padulles_I_Data["I"][5]
+0.5
+>>> Padulles_I_Data["V"][5]
+54.524444568498886
+>>> Padulles_I_Data["EFF"][5]
+0.3971768980805572
+>>> Padulles_I_Data["PO2"][5]
+2.0962792264800076
+>>> Padulles_I_Data["PH2"][5]
+2.1677962862765128
+>>> Padulles_I_Data["Ph"][5]
+26.857777715750554
+>>> Padulles_I_Data["V0"]
+54.539964013494824
+>>> Padulles_I_Data["K"]
+-0.03833515487668971
+>>> Padulles_I_Data["VE"][5]
+54.52079643605648
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_I_Data["Status"]
 False
