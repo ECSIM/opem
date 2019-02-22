@@ -1278,7 +1278,10 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 
 ### Telegram Bot
-- Message [OPEM BOT](https://t.me/opembot)
+- Send `/start` command to [OPEM BOT](https://t.me/opembot)
+- Choose models from menu
+- Send your test vector according to the template
+- Download your results
 
 
 ### Try OPEM in Your Browser!
