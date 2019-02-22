@@ -19,7 +19,7 @@ INSTALL_ITEMS = [
     "[DMG-Version {0}]"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
-    "https://github.com/ECSIM/opem/compare/v{0}...HEAD",
+    "https://github.com/ECSIM/opem/compare/v{0}...develop",
     "[{0}]:"]
 DOCUMENT_ITEMS = [
     "### Version {0}"]
