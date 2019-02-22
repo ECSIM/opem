@@ -68,7 +68,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Webpage document section
 
 ### Changed
-- Get_Input function default params
+- `Get_Input` function default params
 - Exe-File incompatibility fixed
 
 
@@ -85,7 +85,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.4] - 2018-02-06
 ### Added
-- Test case of Padullas model 2
+- Test case of Padulles model 2
 - Padulles dynamic model 2
 
 
@@ -111,7 +111,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Test case and CI
 - Jupyter notebook and documentation
-- exe-version
+- Exe-Version
 - Badges
 - Larminie-Dicks static model
 - Chamberline-Kim static model
