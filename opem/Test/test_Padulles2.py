@@ -400,6 +400,28 @@ Power-Thermal : 11.737141578735665 W
 ###########
 Report is generating ...
 Done!
+>>> Padulles_II_Data["Status"]
+True
+>>> Padulles_II_Data["P"][5]
+1.943937672649885
+>>> Padulles_II_Data["I"][5]
+0.6
+>>> Padulles_II_Data["V"][5]
+3.2398961210831416
+>>> Padulles_II_Data["EFF"][5]
+0.4153712975747617
+>>> Padulles_II_Data["PO2"][5]
+2.0969297192122687
+>>> Padulles_II_Data["PH2"][5]
+2.1689484175688927
+>>> Padulles_II_Data["Ph"][5]
+1.7460623273501152
+>>> Padulles_II_Data["V0"]
+3.263468110052509
+>>> Padulles_II_Data["K"]
+-0.03641691581104169
+>>> Padulles_II_Data["VE"][5]
+3.241617960565884
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1,PH2O=2.1)
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1, PH2O:2.1)
 >>> PH2O_Calc(KH2O=None,tH2O=1,Kr=0.3,I=3,qH2O=0.3)
