@@ -556,6 +556,30 @@ Power-Thermal : 8.819465079445965 W
 ###########
 Report is generating ...
 Done!
+>>> Padulles_Amphlett_Data["Status"]
+True
+>>> Padulles_Amphlett_Data["P"][5]
+2.72491286817189
+>>> Padulles_Amphlett_Data["I"][5]
+0.6
+>>> Padulles_Amphlett_Data["V"][5]
+4.54152144695315
+>>> Padulles_Amphlett_Data["EFF"][5]
+0.582246339352968
+>>> Padulles_Amphlett_Data["PO2"][5]
+0.1905867044473064
+>>> Padulles_Amphlett_Data["PH2"][5]
+0.19710049042472996
+>>> Padulles_Amphlett_Data["PH2O"][5]
+0.2425966933860498
+>>> Padulles_Amphlett_Data["Ph"][5]
+0.9650871318281099
+>>> Padulles_Amphlett_Data["VE"][5]
+4.553477553120023
+>>> Padulles_Amphlett_Data["V0"]
+4.698328442367755
+>>> Padulles_Amphlett_Data["K"]
+-0.24141814874622033
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod={}, TestMode=True, PrintMode=False)
 >>> Padulles_Amphlett_Data["Status"]
 False
