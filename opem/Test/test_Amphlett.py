@@ -609,8 +609,32 @@ Vcell : 0.8222862630668619 V
 ###########
 Report is generating ...
 Done!
+>>> Amphlett_Data["Status"]
+True
+>>> Amphlett_Data["P"][5]
+0.4825532947945601
+>>> Amphlett_Data["I"][5]
+0.5
+>>> Amphlett_Data["V"][5]
+0.9651065895891202
+>>> Amphlett_Data["EFF"][5]
+0.618658070249436
+>>> Amphlett_Data["Ph"][5]
+0.13244670520543989
+>>> Amphlett_Data["V0"]
+1.0040929839792478
+>>> Amphlett_Data["K"]
+-0.05583350147954085
+>>> Amphlett_Data["Eta_Active"][5]
+0.22466052101362555
+>>> Amphlett_Data["Eta_Conc"][5]
+0.00010575055020278165
+>>> Amphlett_Data["Eta_Ohmic"][5]
+0.0008771388470514419
+>>> Amphlett_Data["VE"][5]
+0.9761762332394774
 >>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":5,"i-step":2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"test1"}
->>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,ReportMode=False)
+>>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 ###########
 Amphlett-Model Simulation
 ###########
@@ -657,30 +681,6 @@ Vcell : 2592.721953655035 V
 Report is generating ...
 Warning : The value of I(>{}) leads to minus amount of V, please check your inputs
 Done!
->>> Amphlett_Data["Status"]
-True
->>> Amphlett_Data["P"][5]
-0.4825532947945601
->>> Amphlett_Data["I"][5]
-0.5
->>> Amphlett_Data["V"][5]
-0.9651065895891202
->>> Amphlett_Data["EFF"][5]
-0.618658070249436
->>> Amphlett_Data["Ph"][5]
-0.13244670520543989
->>> Amphlett_Data["V0"]
-1.0040929839792478
->>> Amphlett_Data["K"]
--0.05583350147954085
->>> Amphlett_Data["Eta_Active"][5]
-0.22466052101362555
->>> Amphlett_Data["Eta_Conc"][5]
-0.00010575055020278165
->>> Amphlett_Data["Eta_Ohmic"][5]
-0.0008771388470514419
->>> Amphlett_Data["VE"][5]
-0.9761762332394774
 >>> shutil.rmtree("Amphlett")
 
 '''
