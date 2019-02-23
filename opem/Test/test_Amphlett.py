@@ -679,7 +679,7 @@ VStack : 2592.721953655035 V
 Vcell : 2592.721953655035 V
 ###########
 Report is generating ...
-Warning : The value of I(>{}) leads to minus amount of V, please check your inputs
+Warning : The value of I(>0) leads to minus amount of V, please check your inputs
 Done!
 >>> shutil.rmtree("Amphlett")
 
