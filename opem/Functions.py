@@ -763,7 +763,7 @@ def warning_print(
                 str(I_Warning)) +
             '</p>\n')
         if PrintMode:
-            print(Warning_Message_1)
+            print(Warning_Message_1.format(str(I_Warning)))
     if warning_flag_2:
         file.write(
             '<p style="color:red;font-size:20px;text-align:center;">' +
