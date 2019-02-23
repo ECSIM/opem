@@ -609,6 +609,54 @@ Vcell : 0.8222862630668619 V
 ###########
 Report is generating ...
 Done!
+>>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":5,"i-step":2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"test1"}
+>>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,ReportMode=False)
+###########
+Amphlett-Model Simulation
+###########
+Analyzing . . .
+I : 0
+Enernst : -2915.9064000000003 V
+Eta Activation : 0 V
+Eta Concentration : 0 V
+Eta Ohmic : 0 V
+Loss : 0 V
+PEM Efficiency : -1869.1707692307693
+Power : -0.0 W
+Power-Stack : -0.0 W
+Power-Thermal : 0.0 W
+VStack : -2915.9064000000003 V
+Vcell : -2915.9064000000003 V
+###########
+I : 2
+Enernst : -2915.9064000000003 V
+Eta Activation : -5970.253342221295 V
+Eta Concentration : 0.0004272617031588504 V
+Eta Ohmic : 0.21725850475910816 V
+Loss : -5970.035656454832 V
+PEM Efficiency : 1957.7751643941228
+Power : 6108.258512909663 W
+Power-Stack : 6108.258512909663 W
+Power-Thermal : -6105.798512909663 W
+VStack : 3054.1292564548316 V
+Vcell : 3054.1292564548316 V
+###########
+I : 4
+Enernst : -2915.9064000000003 V
+Eta Activation : -5511.099566700011 V
+Eta Concentration : 0.0008662467147933317 V
+Eta Ohmic : 2.4703467982605276 V
+Loss : -5508.628353655035 V
+PEM Efficiency : 1662.0012523429712
+Power : 10370.88781462014 W
+Power-Stack : 10370.88781462014 W
+Power-Thermal : -10365.96781462014 W
+VStack : 2592.721953655035 V
+Vcell : 2592.721953655035 V
+###########
+Report is generating ...
+Warning : The value of I(>{}) leads to minus amount of V, please check your inputs
+Done!
 >>> Amphlett_Data["Status"]
 True
 >>> Amphlett_Data["P"][5]
