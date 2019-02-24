@@ -429,6 +429,35 @@ True
 >>> Padulles_II_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_II_Data["Status"]
 False
+>>> Test_Vector={"T":343,"E0":-0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0.1,"i-stop":4,"i-step":2,"Name":"test3"}
+>>> Padulles_II_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Padulles-II-Model Simulation
+###########
+Analyzing . . .
+I : 0.1
+E : -2.9879877557800203 V
+FC Efficiency : -0.3426917731038466
+FC Power : -0.2672995830210004 W
+FC Voltage : -2.6729958302100036 V
+PH2 : 2.169018669476965 atm
+PH2O : 2.669687710942903 atm
+PO2 : 2.09696938340326 atm
+Power-Thermal : 0.8822995830210005 W
+###########
+I : 2.0
+E : -2.987990411525305 V
+FC Efficiency : -0.36177713034140546
+FC Power : -5.643723233325925 W
+FC Voltage : -2.8218616166629626 V
+PH2 : 2.168751712226291 atm
+PH2O : 2.669359132631661 atm
+PO2 : 2.0968186594774925 atm
+Power-Thermal : 17.943723233325926 W
+###########
+Report is generating ...
+Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
+Done!
 >>> shutil.rmtree("Padulles-II")
 
 '''
