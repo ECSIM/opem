@@ -355,6 +355,39 @@ True
 -0.8085109813421083
 >>> Larminie_Dicks_Data["VE"][5]
 20.47247059143545
+>>> Test_Vector={"A":0.0587,"E0":-1.178,"B":0.0517,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":5,"i-step":2,"Name":"test3"}
+>>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Larminie-Dicks-Model Simulation
+###########
+Analyzing . . .
+I : 0.1
+PEM Efficiency : -0.9031645636738124
+Power : -0.14089367193311472 W
+Power-Stack : -3.2405544544616385 W
+Power-Thermal : 6.069554454461639 W
+VStack : -32.40554454461639 V
+Vcell : -1.4089367193311473 V
+###########
+I : 2.0
+PEM Efficiency : -0.9778895997702232
+Power : -3.0510155512830965 W
+Power-Stack : -70.17335767951123 W
+Power-Thermal : 126.75335767951123 W
+VStack : -35.08667883975561 V
+Vcell : -1.5255077756415483 V
+###########
+I : 4.0
+PEM Efficiency : -1.0049718529311737
+Power : -6.271024362290525 W
+Power-Stack : -144.2335603326821 W
+Power-Thermal : 257.3935603326821 W
+VStack : -36.05839008317052 V
+Vcell : -1.5677560905726313 V
+###########
+Report is generating ...
+Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
+Done!
 >>> shutil.rmtree("Larminie-Dicks")
 
 '''
