@@ -1269,8 +1269,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	#### Modes	
 
 	1. `TestMode` : Active test mode and get/return data as `dict`, (Default : `False`)
-	2. `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`) and iterative result in console, (Default : `True`)
-	3. `PrintMode` : Print result in console, (Default : `True`)
+	2. `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`) and print result in console, (Default : `True`)
+	3. `PrintMode` : Control printing in console, (Default : `True`)
 	
 	#### Note
 	
