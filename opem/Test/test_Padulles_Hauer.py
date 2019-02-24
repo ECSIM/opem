@@ -429,6 +429,35 @@ True
 False
 >>> qH2_Calc(qMethanol=None,CV=2,t1=2,t2=2)
 [Error] qH2 Calculation Failed (qMethanol:None, CV:2, t1:2, t2:2)
+>>> Test_Vector={"T":2,"E0":-0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":2,"Name":"test3"}
+>>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Padulles-Hauer-Model Simulation
+###########
+Analyzing . . .
+I : 0.1
+E : -3.00044655685555 V
+FC Efficiency : -0.3442890552930171
+FC Power : -0.2685454631285534 W
+FC Voltage : -2.6854546312855336 V
+PH2 : 0.19717074233280188 atm
+PH2O : 0.2426831613626925 atm
+PO2 : 0.1906263686382979 atm
+Power-Thermal : 0.8835454631285535 W
+###########
+I : 2.0
+E : -3.000446727262597 V
+FC Efficiency : -0.3633740938974685
+FC Power : -5.6686358648005095 W
+FC Voltage : -2.8343179324002548 V
+PH2 : 0.19690378508212852 atm
+PH2O : 0.2423545830514502 atm
+PO2 : 0.19047564471253012 atm
+Power-Thermal : 17.96863586480051 W
+###########
+Report is generating ...
+Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
+Done!
 >>> shutil.rmtree("Padulles-Hauer")
 
 '''
