@@ -22,7 +22,7 @@ def read_description():
         return description
     except Exception:
         return '''
-  Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the Research &
+  Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the research &
   development of renewable energy sources. The Open-Source PEMFC Simulation Tool (OPEM) is a modeling tool for
   evaluating the performance of proton exchange membrane fuel cells. This package is a combination of models
   (static/dynamic) that predict the optimum operating parameters of PEMFC. OPEM contained generic models that
