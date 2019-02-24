@@ -35,3 +35,12 @@ For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to i
 
 1. Download OPEM >= 0.6 (Recommended)
 2. Download and install [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
+
+
+### System Requirements
+OPEM will likely run on a modern dual core PC. Typical configuration is:
+
+- Dual Core CPU (2.0 Ghz+)
+- 2GB of RAM
+
+Note that it may run on lower end equipment though good performance is not guaranteed.
