@@ -587,6 +587,57 @@ False
 2.9
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)
 [Error] Vcell Calculation Error (Enernst:4.5, Loss:0.4, N:None)
+>>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":234,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":5,"i-step":2,"Name":"Test"}
+>>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Padulles-Amphlett-Model Simulation
+###########
+Analyzing . . .
+I : 0.1
+E : 6.14455344314445 V
+Eta Activation : 0.9092187394310518 V
+Eta Concentration : 0.3085036702624245 V
+Eta Ohmic : 4.63717533307516e+269 V
+FC Efficiency : -2.9725482904327946e+269
+FC Power : -2.3185876665375803e+269 W
+FC Voltage : -2.3185876665375803e+270 V
+Loss : 4.63717533307516e+269 V
+PH2 : 0.19717074233280188 atm
+PH2O : 0.2426831613626925 atm
+PO2 : 0.1906263686382979 atm
+Power-Thermal : 2.3185876665375803e+269 W
+###########
+I : 2.0
+E : 6.144553272737403 V
+Eta Activation : 0.9103753288368093 V
+Eta Concentration : 6.248702408698187 V
+Eta Ohmic : 9.331810347802308e+270 V
+FC Efficiency : -5.981929710129684e+270
+FC Power : -9.331810347802308e+271 W
+FC Voltage : -4.665905173901154e+271 V
+Loss : 9.331810347802308e+270 V
+PH2 : 0.19690378508212852 atm
+PH2O : 0.2423545830514502 atm
+PO2 : 0.19047564471253012 atm
+Power-Thermal : 9.331810347802308e+271 W
+###########
+I : 4.0
+E : 6.144553093215826 V
+Eta Activation : 0.9106431331307118 V
+Eta Concentration : 12.668858203852476 V
+Eta Ohmic : 1.8785852500552963e+271 V
+FC Efficiency : -1.2042213141380103e+271
+FC Power : -3.757170500110593e+272 W
+FC Voltage : -9.392926250276482e+271 V
+Loss : 1.8785852500552963e+271 V
+PH2 : 0.19662277744984075 atm
+PH2O : 0.24200871114487932 atm
+PO2 : 0.19031698794856405 atm
+Power-Thermal : 3.757170500110593e+272 W
+###########
+Report is generating ...
+Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
+Done!
 >>> shutil.rmtree("Padulles-Amphlett")
 
 '''
