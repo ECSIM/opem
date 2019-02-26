@@ -15,8 +15,8 @@ SETUP_ITEMS = [
     'https://github.com/ecsim/opem/tarball/v{0}']
 INSTALL_ITEMS = [
     "[Version {0}](https://github.com/ecsim/opem/archive/v{0}.zip)",
-    "[Exe-Version {0}]",
-    "[DMG-Version {0}]"]
+    "[Exe-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.exe)",
+    "[DMG-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.dmg)"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
     "https://github.com/ECSIM/opem/compare/v{0}...develop",
