@@ -18,13 +18,13 @@
 
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 1.0](https://www.dropbox.com/s/if22p5mofl7s2oh/OPEM%28v0.9%29.zip?dl=00)
+- Download [Exe-Version 1.0](https://github.com/ECSIM/opem/releases/download/v1.0/OPEM-1.0.exe)
 - Extract Zip file
 - Run `OPEM.exe`
 
 
 ### DMG Version (MacOS)
-- Download [DMG-Version 1.0](https://www.dropbox.com/s/86f25jvciq2g7qf/OPEM%28v0.9%29.dmg?dl=0)
+- Download [DMG-Version 1.0](https://github.com/ECSIM/opem/releases/download/v1.0/OPEM-1.0.dmg)
 - Open DMG file
 - Copy `OPEM` into your system
 - Run `OPEM`
