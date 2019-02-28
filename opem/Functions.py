@@ -55,7 +55,7 @@ def linear_plot(x, y):
             none_x.append(x[index])
     [B1, B0] = estimate_coef(clear_x, clear_y)
     for i in x:
-        if x not in none_x:
+        if i not in none_x:
             estimate_y.append(B0 + B1 * i)
         else:
             estimate_y.append(None)
@@ -144,8 +144,7 @@ def get_precision(input_number):
     if "." in input_string:
         splitted_input = input_string.split(".")
         return len(splitted_input[1])
-    else:
-        return 0
+    return 0
 
 
 def isfloat(value):
@@ -174,8 +173,7 @@ def rounder(input_number, digit=2):
     try:
         if isfloat(input_number):
             return round(input_number, digit)
-        else:
-            return input_number
+        return input_number
     except Exception:
         return None
 
@@ -290,19 +288,19 @@ def Output_Init(InputDict, Title, Name):
     Art = text2art("Opem")
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title, Name + ".opem"), "w")
-    file.write(Art)
-    file.write("Simulation Date : " +
+    opem_file = open(os.path.join(Title, Name + ".opem"), "w")
+    opem_file.write(Art)
+    opem_file.write("Simulation Date : " +
                str(datetime.datetime.now()) + spliter)
-    file.write("**********" + spliter)
-    file.write(Title + " Model" + spliter * 2)
-    file.write("**********" + spliter)
-    file.write("Simulation Inputs : " + spliter * 2)
+    opem_file.write("**********" + spliter)
+    opem_file.write(Title + " Model" + spliter * 2)
+    opem_file.write("**********" + spliter)
+    opem_file.write("Simulation Inputs : " + spliter * 2)
     Input_Keys = sorted(InputDict.keys())
     for key in Input_Keys:
-        file.write(key + " : " + str(InputDict[key]) + spliter)
-    file.write("**********" + spliter)
-    return file
+        opem_file.write(key + " : " + str(InputDict[key]) + spliter)
+    opem_file.write("**********" + spliter)
+    return opem_file
 
 
 def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
@@ -316,14 +314,14 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     """
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = open(os.path.join(Title, Name + ".csv"), "w")
-    file.write("I (A),")
+    csv_file = open(os.path.join(Title, Name + ".csv"), "w")
+    csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
-        file.write(item + " (" + OutputParams[item] + ")")
+        csv_file.write(item + " (" + OutputParams[item] + ")")
         if index < len(OutputParamsKeys) - 1:
-            file.write(",")
-    file.write("\n")
-    return file
+            csv_file.write(",")
+    csv_file.write("\n")
+    return csv_file
 
 
 def None_Omit(Input_Str):
@@ -349,23 +347,23 @@ def HTML_Init(Title, Name):
     '''
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
-    file = io.open(
+    HTMLFile = io.open(
         os.path.join(
             Title,
             Name +
             ".html"),
         "w",
         encoding="utf-8")
-    file.write("<html>\n")
-    file.write("<head>\n")
-    file.write("<title>" + Name + "</title>\n")
-    file.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
-    file.write("</head>\n<body>\n")
-    file.write(
+    HTMLFile.write("<html>\n")
+    HTMLFile.write("<head>\n")
+    HTMLFile.write("<title>" + Name + "</title>\n")
+    HTMLFile.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
+    HTMLFile.write("</head>\n<body>\n")
+    HTMLFile.write(
         '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
         'OPEM</span>'
         ' Report (' + Title + " Model)" + '</h1>\n')
-    return file
+    return HTMLFile
 
 
 def HTML_Desc(Title, Description, file):
@@ -552,7 +550,6 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     :type i : float
     :param file : file object
     :return: None
-    :return: None
     """
     file.write(str(i) + ",")
     for key in OutputParamsKeys:
@@ -716,8 +713,7 @@ def warning_check_1(Vcell, I_Warning, I, warning_flag):
         try:
             if Vcell < 0:
                 return [True, I]
-            else:
-                return [False, I]
+            return [False, I]
         except Exception:
             return [False, I]
     else:
@@ -736,10 +732,8 @@ def warning_check_2(Vcell, warning_flag):
     if not warning_flag:
         if Vcell is None:
             return True
-        else:
-            return False
-    else:
-        return True
+        return False
+    return True
 
 
 def warning_print(
@@ -769,7 +763,7 @@ def warning_print(
                 str(I_Warning)) +
             '</p>\n')
         if PrintMode:
-            print(Warning_Message_1)
+            print(Warning_Message_1.format(str(I_Warning)))
     if warning_flag_2:
         file.write(
             '<p style="color:red;font-size:20px;text-align:center;">' +

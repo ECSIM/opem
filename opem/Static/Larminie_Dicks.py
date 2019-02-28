@@ -4,7 +4,7 @@ from opem.Static.Amphlett import Power_Calc, Efficiency_Calc, VStack_Calc, Power
 from opem.Params import Larminiee_InputParams as InputParams
 from opem.Params import Larminiee_OutputParams as OutputParams
 import opem.Functions
-from opem.Params import Larminiee_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description
+from opem.Params import Larminiee_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description,Report_Message
 import os
 
 
@@ -166,6 +166,10 @@ def Static_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
+            OutputFile.close()
+            CSVFile.close()
+            if PrintMode:
+                print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title, Larminiee_Description, HTMLFile)
             opem.Functions.HTML_Input_Table(
@@ -230,8 +234,6 @@ def Static_Analysis(
                 file=HTMLFile,
                 PrintMode=PrintMode)
             opem.Functions.HTML_End(HTMLFile)
-            OutputFile.close()
-            CSVFile.close()
             HTMLFile.close()
         if PrintMode:
             print("Done!")
@@ -251,7 +253,8 @@ def Static_Analysis(
                 "EFF": Efficiency_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
-                "K": B1}
+                "K": B1,
+                "VE": Estimated_V}
     except Exception:
         if TestMode:
             return {
@@ -259,8 +262,4 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        else:
-            print(
-                "[Error] " +
-                Simulation_Title +
-                " Simulation Failed!(Check Your Inputs)")
+        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")

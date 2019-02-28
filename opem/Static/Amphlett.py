@@ -4,7 +4,7 @@ from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
 from opem.Params import Amphlett_Params_Default as Defaults
 from opem.Params import xi1, xi3, xi4, HHV, uF, Amphlett_Description, Overall_Params_Max_Description,\
-    Overall_Params_Linear_Description, Eth
+    Overall_Params_Linear_Description, Eth, Report_Message
 import opem.Functions
 import os
 
@@ -227,8 +227,7 @@ def Eta_Conc_Calc(i, A, B, JMax):
             J = (i / A)
             result = -B * math.log(1 - (J / JMax))
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
             "[Error] Eta Concentration Calculation Failed (i:%s, A:%s, B:%s, JMax:%s)" %
@@ -261,8 +260,7 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
                 R_total += R_elec
             result = i * R_total
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, ZeroDivisionError):
         print(
             "[Error] Eta Ohmic Calculation Failed (i:%s, l:%s, A:%s, T:%s, lambda:%s, R_elec:%s)" %
@@ -287,8 +285,7 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
             result = -(xi1 + xi2 * T + xi3 * T *
                        math.log(CO2) + xi4 * T * math.log(i))
             return result
-        else:
-            return 0
+        return 0
     except (TypeError, OverflowError, ValueError):
         print(
             "[Error] Eta Activation Calculation Failed (T:%s, PO2:%s, PH2:%s, i:%s, A:%s)" %
@@ -553,6 +550,10 @@ def Static_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
+            OutputFile.close()
+            CSVFile.close()
+            if PrintMode:
+                print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title, Amphlett_Description, HTMLFile)
             opem.Functions.HTML_Input_Table(
@@ -633,8 +634,6 @@ def Static_Analysis(
                 file=HTMLFile,
                 PrintMode=PrintMode)
             opem.Functions.HTML_End(HTMLFile)
-            OutputFile.close()
-            CSVFile.close()
             HTMLFile.close()
         if PrintMode:
             print("Done!")
@@ -654,7 +653,11 @@ def Static_Analysis(
                 "EFF": Efficiency_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
-                "K": B1}
+                "K": B1,
+                "Eta_Active": Eta_Active_List,
+                "Eta_Conc": Eta_Conc_List,
+                "Eta_Ohmic": Eta_Ohmic_List,
+                "VE": Estimated_V}
     except Exception:
         if TestMode:
             return {
@@ -662,8 +665,4 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        else:
-            print(
-                "[Error] " +
-                Simulation_Title +
-                " Simulation Failed!(Check Your Inputs)")
+        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")

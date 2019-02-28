@@ -2,6 +2,7 @@
 '''
 >>> from opem.Static.Amphlett import *
 >>> import random
+>>> import shutil
 >>> T=343.15
 >>> PH2=1
 >>> PO2=1
@@ -32,6 +33,12 @@
 4
 >>> PowerStack_Calc(None,2)
 [Error] Power Stack Calculation Error (Power:None, N:2)
+>>> Power_Total_Calc([None,None,None,None],2,20)
+[None, None]
+>>> Linear_Aprox_Params_Calc(22, 0)
+[None, 11.0]
+>>> Linear_Aprox_Params_Calc(None, 22)
+[None, None]
 >>> T='20000000000'
 >>> PH2='10000000'
 >>> PO2='1000000000'
@@ -600,6 +607,80 @@ Power-Thermal : 1.5900835740392385 W
 VStack : 0.8222862630668619 V
 Vcell : 0.8222862630668619 V
 ###########
+Report is generating ...
 Done!
+>>> Amphlett_Data["Status"]
+True
+>>> Amphlett_Data["P"][5]
+0.4825532947945601
+>>> Amphlett_Data["I"][5]
+0.5
+>>> Amphlett_Data["V"][5]
+0.9651065895891202
+>>> Amphlett_Data["EFF"][5]
+0.618658070249436
+>>> Amphlett_Data["Ph"][5]
+0.13244670520543989
+>>> Amphlett_Data["V0"]
+1.0040929839792478
+>>> Amphlett_Data["K"]
+-0.05583350147954085
+>>> Amphlett_Data["Eta_Active"][5]
+0.22466052101362555
+>>> Amphlett_Data["Eta_Conc"][5]
+0.00010575055020278165
+>>> Amphlett_Data["Eta_Ohmic"][5]
+0.0008771388470514419
+>>> Amphlett_Data["VE"][5]
+0.9761762332394774
+>>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":5,"i-step":2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"test1"}
+>>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True)
+###########
+Amphlett-Model Simulation
+###########
+Analyzing . . .
+I : 0
+Enernst : -2915.9064000000003 V
+Eta Activation : 0 V
+Eta Concentration : 0 V
+Eta Ohmic : 0 V
+Loss : 0 V
+PEM Efficiency : -1869.1707692307693
+Power : -0.0 W
+Power-Stack : -0.0 W
+Power-Thermal : 0.0 W
+VStack : -2915.9064000000003 V
+Vcell : -2915.9064000000003 V
+###########
+I : 2
+Enernst : -2915.9064000000003 V
+Eta Activation : -5970.253342221295 V
+Eta Concentration : 0.0004272617031588504 V
+Eta Ohmic : 0.21725850475910816 V
+Loss : -5970.035656454832 V
+PEM Efficiency : 1957.7751643941228
+Power : 6108.258512909663 W
+Power-Stack : 6108.258512909663 W
+Power-Thermal : -6105.798512909663 W
+VStack : 3054.1292564548316 V
+Vcell : 3054.1292564548316 V
+###########
+I : 4
+Enernst : -2915.9064000000003 V
+Eta Activation : -5511.099566700011 V
+Eta Concentration : 0.0008662467147933317 V
+Eta Ohmic : 2.4703467982605276 V
+Loss : -5508.628353655035 V
+PEM Efficiency : 1662.0012523429712
+Power : 10370.88781462014 W
+Power-Stack : 10370.88781462014 W
+Power-Thermal : -10365.96781462014 W
+VStack : 2592.721953655035 V
+Vcell : 2592.721953655035 V
+###########
+Report is generating ...
+Warning : The value of I(>0) leads to minus amount of V, please check your inputs
+Done!
+>>> shutil.rmtree("Amphlett")
 
 '''

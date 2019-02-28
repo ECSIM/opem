@@ -22,7 +22,7 @@ def read_description():
         return description
     except Exception:
         return '''
-  Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the Research &
+  Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work as a powerful tool in the research &
   development of renewable energy sources. The Open-Source PEMFC Simulation Tool (OPEM) is a modeling tool for
   evaluating the performance of proton exchange membrane fuel cells. This package is a combination of models
   (static/dynamic) that predict the optimum operating parameters of PEMFC. OPEM contained generic models that
@@ -36,15 +36,15 @@ def read_description():
 
 setup(
     name='opem',
-    packages=['opem', 'opem.Static', 'opem.Dynamic', 'opem.Test'],
-    version='0.9',
+    packages=['opem', 'opem.Static', 'opem.Dynamic','opem.Test'],
+    version='1.0',
     description='Open Source PEM Cell Simulation Tool',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
     author_email='opem@ecsim.ir',
     url='https://github.com/ecsim/opem',
-    download_url='https://github.com/ecsim/opem/tarball/v0.9',
+    download_url='https://github.com/ecsim/opem/tarball/v1.0',
     keywords="OPEM PEM FC CELL Fuel-Cell Chemistry",
     project_urls={
         'Webpage': 'http://opem.ecsim.ir',
@@ -55,14 +55,17 @@ setup(
     install_requires=get_requirements(),
     python_requires='>=3.4',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: End Users/Desktop',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Scientific/Engineering :: Chemistry',
+        'Topic :: Scientific/Engineering :: Physics',
     ],
     license='MIT',
 )

@@ -4,7 +4,7 @@ from opem.Params import Chamberline_InputParams as InputParams
 from opem.Params import Chamberline_OutputParams as OutputParams
 from opem.Static.Amphlett import Efficiency_Calc, Power_Calc, VStack_Calc, PowerStack_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 import opem.Functions
-from opem.Params import Chamberline_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description
+from opem.Params import Chamberline_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 import os
 
 
@@ -164,6 +164,10 @@ def Static_Analysis(
         Overall_Params_Max["Ptotal(Elec)"] = Power_Total[0]
         Overall_Params_Max["Ptotal(Thermal)"] = Power_Total[1]
         if ReportMode:
+            OutputFile.close()
+            CSVFile.close()
+            if PrintMode:
+                print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title, Chamberline_Description, HTMLFile)
             opem.Functions.HTML_Input_Table(
@@ -228,8 +232,6 @@ def Static_Analysis(
                 file=HTMLFile,
                 PrintMode=PrintMode)
             opem.Functions.HTML_End(HTMLFile)
-            OutputFile.close()
-            CSVFile.close()
             HTMLFile.close()
         if PrintMode:
             print("Done!")
@@ -249,7 +251,8 @@ def Static_Analysis(
                 "EFF": Efficiency_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
-                "K": B1}
+                "K": B1,
+                "VE": Estimated_V}
     except Exception:
         if TestMode:
             return {
@@ -257,8 +260,4 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        else:
-            print(
-                "[Error] " +
-                Simulation_Title +
-                " Simulation Failed!(Check Your Inputs)")
+        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")

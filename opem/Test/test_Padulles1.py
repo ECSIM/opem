@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Dynamic.Padulles1 import *
+>>> import shutil
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test3"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -370,8 +371,31 @@ PH2 : 2.159388537918463 atm
 PO2 : 2.0915322161021423 atm
 Power-Thermal : 209.9389930587172 W
 ###########
+Report is generating ...
 Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
 Done!
+>>> Padulles_I_Data["Status"]
+True
+>>> Padulles_I_Data["P"][5]
+27.262222284249443
+>>> Padulles_I_Data["I"][5]
+0.5
+>>> Padulles_I_Data["V"][5]
+54.524444568498886
+>>> Padulles_I_Data["EFF"][5]
+0.3971768980805572
+>>> Padulles_I_Data["PO2"][5]
+2.0962792264800076
+>>> Padulles_I_Data["PH2"][5]
+2.1677962862765128
+>>> Padulles_I_Data["Ph"][5]
+26.857777715750554
+>>> Padulles_I_Data["V0"]
+54.539964013494824
+>>> Padulles_I_Data["K"]
+-0.03833515487668971
+>>> Padulles_I_Data["VE"][5]
+54.52079643605648
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_I_Data["Status"]
 False
@@ -385,5 +409,37 @@ False
 [Error] Kr Calculation Failed (N0:None)
 >>> qO2_Calc(qH2=2,rho=0)
 [Error] qO2 Calculation Error (qH2:2, rho:0)
+>>> Test_Vector={"T":343,"E0":-0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":2,"Name":"test3"}
+>>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Padulles-I-Model Simulation
+###########
+Analyzing . . .
+[Error] Vcell Calculation Error (Enernst:-51.31149442586593, B:0.04777, C:0.0136, I:0, Rint:0.00303)
+[Error] PEM Efficiency Calculation Failed (Vcell:None, N:88)
+[Error] Power Calculation Error (Vcell:None, i:0)
+I : 0
+E : -51.31149442586593 V
+FC Efficiency : None
+FC Power : None W
+FC Voltage : None V
+PH2 : 2.169032719858579 atm
+PO2 : 2.0969773162414582 atm
+Power-Thermal : None W
+###########
+I : 2
+E : -51.31532972769885 V
+FC Efficiency : -0.372590333135464
+FC Power : -102.29840186567301 W
+FC Voltage : -51.14920093283651 V
+PH2 : 2.1640869855303144 atm
+PO2 : 2.0941849571956554 atm
+Power-Thermal : 318.778401865673 W
+###########
+Report is generating ...
+Warning : The value of I(>2) leads to minus amount of V, please check your inputs
+Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
+Done!
+>>> shutil.rmtree("Padulles-I")
 
 '''

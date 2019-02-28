@@ -8,6 +8,24 @@
 >>> integrate(data,1)
 >>> linear_plot([1,2,3],[2,4,6])
 [[2.0, 4.0, 6.0], 0.0, 2.0]
+>>> linear_plot([1,2,3],[2,4,None])
+[[2.0, 4.0, None], 0.0, 2.0]
+>>> estimate_coef([0,0,0], [0,0,0])
+[0, 0]
+>>> get_precision(2)
+0
+>>> get_precision(2.55)
+2
+>>> warning_check_1(-0.2, 10, 20, True)
+[True, 10]
+>>> warning_check_1(-0.2, 10, 20, False)
+[True, 20]
+>>> rounder(22.2223, digit=2)
+22.22
+>>> rounder(22, digit=2)
+22
+>>> rounder("test")
+'test'
 >>> isfloat("2")
 True
 >>> isfloat("2.02")
@@ -42,7 +60,7 @@ Test
 >>> check_update(1)
 >>> check_update(0.1)
 ###########
-New Version (0.9) Is Available!
+New Version (1.0) Is Available!
 Website : http://www.ecsim.ir/opem
 ###########
 

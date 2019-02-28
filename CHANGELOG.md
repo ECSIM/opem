@@ -5,116 +5,139 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.0] - 2019-03-01
+### Added
+- Interactive notebooks section
+- `version_check.py`
+- `CODE_OF_CONDUCT.md`
+- `ISSUE_TEMPLATE.md`
+- `PULL_REQUEST_TEMPLATE.md`
+- `build_exe.bat`
+- `build_unix.sh`
+- Anaconda cloud package
+
+### Changed
+- Document modified
+- Test system modified
+- `README.md` modified
+- `dev-requirements.txt` modified
+- `requirements.txt` modified
+- `CONTRIBUTING.md` modified
+- `linear_plot` function bug fixed
+- `INSTALL.md` modified
+
+
 ## [0.9] - 2018-07-14
 ### Added
 - JOSS paper
 
 ### Changed
-- Test System Updated
-- setup File Modified
-- Exceptions Modified
+- Test system updated
+- `setup.py` file modified
+- Exceptions modified
 
 ### Removed
 - `PEM.md`
 
 ## [0.8] - 2018-04-10
 ### Added
-- Overall Parameters
-- Linear Approximation
-- Power(Thermal) Parameter
-- Efficiency vs I Plot
-- PH2 vs I Plot
-- PO2 vs I Plot
-- Power vs Efficiency Plot
-- Loss vs I Plot
-- Power(Thermal) vs I Plot
-- macOS Version
+- Overall parameters
+- Linear approximation
+- Thermal power parameter
+- Efficiency vs I plot
+- PH2 vs I plot
+- PO2 vs I plot
+- Power vs Efficiency plot
+- Loss vs I plot
+- Power-Thermal vs I plot
+- macOS version
 
 ### Changed
-- Simulation Error Response
+- Simulation error response
 
 ## [0.7] - 2018-03-17
 ### Added
-- Standard Test Vectors
-- Model Description
-- Help Page
-- Warning System
-- System Block Diagram
+- Standard test vectors
+- Model description
+- Help page
+- Warning system
+- System block diagram
 
 ### Changed
-- HTML Report Layout
+- HTML report layout
 
 ## [0.6] - 2018-03-1
 ### Added
-- Padulles-Amphlett Dynamic Model
-- Check Update Function
-- Webpage Document Section
+- Padulles-Amphlett dynamic model
+- `check_update` function
+- Webpage document section
 
 ### Changed
-- Get_Input Function Default Params
-- Exe-File Incompatibility Fixed
+- `Get_Input` function default params
+- Exe-File incompatibility fixed
 
 
 ## [0.5] - 2018-02-16
 ### Added
-- Padulles-Hauer Dynamic Model
-- Simulation Name
-- Interactive HTML Report
+- Padulles-Hauer dynamic model
+- Simulation name
+- Interactive HTML report
 ### Changed
-- qH2O And qH2 In Padulles Dynamic Model 2 Merged
-- Static Analysis Function Output
-- Dynamic Analysis Function Output
-- ReportMode & PrintMode Flags
+- qH2O and qH2 in Padulles dynamic model 2 merged
+- `Static_Analysis` function output
+- `Dynamic_Analysis` function output
+- `ReportMode` & `PrintMode` flags
 
 ## [0.4] - 2018-02-06
 ### Added
-- Test Case Of Padullas Model 2
-- Padulles Dynamic Model 2
+- Test case of Padulles model 2
+- Padulles dynamic model 2
 
 
 ### Changed
-- Travis And Appveyor Configs
-- Jupyter Notebook Documentation
+- Travis and Appveyor configs
+- Jupyter notebook documentation
 
 ### Removed
-- RHO In Larmninee Model
+- RHO in Larmninee model
 
 ## [0.3] - 2018-01-31
 ### Added
-- Padulles Dynamic Model 1
-- GUI Folder
+- Padulles dynamic model 1
+- GUI folder
 
 
 ### Changed
-- Test Cases For Static Models
-- Padullas Refactored
-- Jupyter Notebook Padullas
+- Test cases for static models
+- Padulles refactored
+- Jupyter notebook Padulles
 
 ## [0.2] - 2018-01-05
 ### Added
-- Test Case And CI
-- Jupyter Notebook And Documentation
-- exe-version
+- Test case and CI
+- Jupyter notebook and documentation
+- Exe-Version
 - Badges
-- Larminie-Dicks Static Model
-- Chamberline-Kim Static Model
-- pyqt5 To Requirments
+- Larminie-Dicks static model
+- Chamberline-Kim static model
+- pyqt5 to requirments
 
 ### Removed
-- python2.7 Setup For pyQt
+- python2.7 setup for pyqt
 
 ### Changed
- - Style To PEP8
- - Power Stack
+ - Style to PEP8
+ - Stack power
 
 ## [0.1] - 2017-12-25
 ### Added
-- Static Analyze Prototype
-- Amphlett Analyze
-- CSV Output Files
-- Documents And README
+- `Static_Analyze` prototype
+- Amphlett analyze
+- CSV output files
+- Documents and `README.md`
 
-[Unreleased]: https://github.com/ECSIM/opem/compare/v0.9...HEAD
+[Unreleased]: https://github.com/ECSIM/opem/compare/v1.0...develop
+[1.0]: https://github.com/ECSIM/opem/compare/v0.9...v1.0
 [0.9]: https://github.com/ECSIM/opem/compare/v0.8...v0.9
 [0.8]: https://github.com/ECSIM/opem/compare/v0.7...v0.8
 [0.7]: https://github.com/ECSIM/opem/compare/v0.6...v0.7

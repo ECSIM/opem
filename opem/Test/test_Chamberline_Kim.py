@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> from opem.Static.Chamberline_Kim import *
+>>> import shutil
 >>> E0=0.982
 >>> b=0.0689
 >>> R=0.328
@@ -261,6 +262,67 @@ Power-Thermal : 0.38250471753133874 W
 VStack : 1.1319218672996567 V
 Vcell : 1.1319218672996567 V
 ###########
+Report is generating ...
 Done!
+>>> Chamberline_Kim_Data["P"][5]
+1.820393802022961
+>>> Chamberline_Kim_Data["Status"]
+True
+>>> Chamberline_Kim_Data["I"][5]
+1.5
+>>> Chamberline_Kim_Data["V"][5]
+1.2135958680153074
+>>> Chamberline_Kim_Data["EFF"][5]
+0.7779460692405816
+>>> Chamberline_Kim_Data["Ph"][5]
+0.02460619797703889
+>>> Chamberline_Kim_Data["V0"]
+1.2696835857181188
+>>> Chamberline_Kim_Data["K"]
+-0.0372516118425709
+>>> Chamberline_Kim_Data["VE"][5]
+1.2138061679542624
+>>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":5,"i-step":1,"Name":"test2"}
+>>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
+###########
+Chamberline-Kim-Model Simulation
+###########
+Analyzing . . .
+I : 1
+PEM Efficiency : -3.036649115413501
+Power : -4.737172620045062 W
+Power-Stack : -4.737172620045062 W
+Power-Thermal : 5.967172620045062 W
+VStack : -4.737172620045062 V
+Vcell : -4.737172620045062 V
+###########
+I : 2
+PEM Efficiency : -3.0714883820733587
+Power : -9.58304375206888 W
+Power-Stack : -9.58304375206888 W
+Power-Thermal : 12.04304375206888 W
+VStack : -4.79152187603444 V
+Vcell : -4.79152187603444 V
+###########
+I : 3
+PEM Efficiency : -3.0936258800578047
+Power : -14.478169118670525 W
+Power-Stack : -14.478169118670525 W
+Power-Thermal : 18.168169118670527 W
+VStack : -4.826056372890175 V
+Vcell : -4.826056372890175 V
+###########
+I : 4
+PEM Efficiency : -3.110566355084641
+Power : -19.40993405572816 W
+Power-Stack : -19.40993405572816 W
+Power-Thermal : 24.32993405572816 W
+VStack : -4.85248351393204 V
+Vcell : -4.85248351393204 V
+###########
+Report is generating ...
+Warning : The value of I(>1) leads to minus amount of V, please check your inputs
+Done!
+>>> shutil.rmtree("Chamberline-Kim")
 
 '''

@@ -3,6 +3,8 @@
 OPEM Main File
 '''
 import sys
+import os
+import doctest
 from opem.Static.Amphlett import Static_Analysis as Amphlett_Analysis
 from opem.Static.Larminie_Dicks import Static_Analysis as Larminiee_Analysis
 from opem.Static.Chamberline_Kim import Static_Analysis as Chamberline_Kim_Analysis
@@ -11,7 +13,7 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version, Description_Menu, Description_Links, Vectors
+from opem.Params import Version, Description_Menu, Description_Links, Vectors, Test_List
 from opem.Functions import check_update, description_print, description_control
 
 
@@ -28,6 +30,19 @@ if __name__ == "__main__":
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis}
     MENUKEYS = sorted(Menu.keys())
     EXITFLAG = False
+    if "TEST" in ARGSUP:
+        try:
+            EXIT_CODE = 0
+            for item in Test_List:
+                EXIT_CODE += doctest.testfile(os.path.join("Test",item), optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)[0]
+            if EXIT_CODE == 0 :
+                print("Test passed!")
+            else:
+                print("Test failed!")
+            sys.exit(EXIT_CODE)
+        except Exception:
+            print("Test folder not found!!")
+            sys.exit(1)
     check_update(Version)
     while not EXITFLAG:
         tprint("OPEM")

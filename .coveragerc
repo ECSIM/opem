@@ -1,0 +1,5 @@
+[run]
+omit =
+    */opem/__main__.py
+    */opem/__init__.py
+	*/opem/Profile.py

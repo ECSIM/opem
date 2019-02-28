@@ -1,5 +1,2 @@
-codecov==2.0.15
 art>0.7
 requests>=2.20.0
-pytest==4.3.0
-pytest-cov==2.6.1
