@@ -16,6 +16,10 @@
 
 - Run `easy_install --upgrade opem` (Need root access)
 
+### Conda
+
+- Check [Conda Managing Package](https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org)
+- `conda install -c ECSIM opem` (Need root access)
 
 ### Exe Version (Only Windows)
 - Download [Exe-Version 1.0](https://github.com/ECSIM/opem/releases/download/v1.0/OPEM-1.0.exe)
