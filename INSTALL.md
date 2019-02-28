@@ -23,7 +23,6 @@
 
 ### Exe Version (Only Windows)
 - Download [Exe-Version 1.0](https://github.com/ECSIM/opem/releases/download/v1.0/OPEM-1.0.exe)
-- Extract Zip file
 - Run `OPEM.exe`
 
 
