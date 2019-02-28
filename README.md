@@ -6,6 +6,7 @@
   <img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
 </a>
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
+<a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 
 </div>
