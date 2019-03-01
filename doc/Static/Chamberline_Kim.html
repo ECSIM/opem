@@ -11779,7 +11779,37 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-0.9">Version 0.9<a class="anchor-link" href="#Version-0.9">&#182;</a></h3>
+<h3 id="Version-1.0">Version 1.0<a class="anchor-link" href="#Version-1.0">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><a href="#Overview">Overview</a></li>
+    <li><a href="#VCell">VCell</a></li>
+    <ul>
+        <li><a href="#VStack">VStack</a></li>
+    </ul>
+    <li><a href="#Power-of-PEMFC">Power of PEMFC</a></li>
+    <li><a href="#Efficiency-of-PEMFC">Efficiency of PEMFC</a></li>
+    <li><a href="#Linear-Approximation">Linear Approximation</a></li>
+    <li><a href="#Overall-Parameters">Overall Parameters</a></li>
+    <li><a href="#Full-Run">Full Run</a></li>
+    <li><a href="#Plot">Plot</a></li>
+    <li><a href="#Parameters">Parameters</a></li>
+    <li><a href="#Reference">Reference</a></li>   
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11809,7 +11839,7 @@ Chamberlin-Kim static model is an empirical equation which was developed to fit 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vcell">Vcell<a class="anchor-link" href="#Vcell">&#182;</a></h2><p>$$V_{cell}=E_0-b\times ln(J)-(R\times J)-m\times exp(nJ)$$</p>
+<h2 id="VCell">VCell<a class="anchor-link" href="#VCell">&#182;</a></h2><p>$$V_{cell}=E_0-b\times ln(J)-(R\times J)-m\times exp(nJ)$$</p>
 
 </div>
 </div>
@@ -11925,7 +11955,7 @@ Chamberlin-Kim static model is an empirical equation which was developed to fit 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Power-Of-PEMFC">Power Of PEMFC<a class="anchor-link" href="#Power-Of-PEMFC">&#182;</a></h2>
+<h2 id="Power-of-PEMFC">Power of PEMFC<a class="anchor-link" href="#Power-of-PEMFC">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12268,7 +12298,7 @@ where V0 is the intercept (actual open circuit voltage is always higher) and k i
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Run from <code>i</code>=0 to <code>i</code>=4 with <code>step</code>=0.1</li>
+<li>Run from <code>i</code>=1 to <code>i</code>=42.5 with <code>step</code>=0.1</li>
 </ul>
 
 </div>
@@ -12279,7 +12309,18 @@ where V0 is the intercept (actual open circuit voltage is always higher) and k i
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Test_Vector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span><span class="mf">50.0</span><span class="p">,</span><span class="s2">&quot;E0&quot;</span><span class="p">:</span><span class="mf">0.982</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mf">0.0689</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">:</span><span class="mf">0.328</span><span class="p">,</span><span class="s2">&quot;m&quot;</span><span class="p">:</span><span class="mf">0.000125</span><span class="p">,</span><span class="s2">&quot;n&quot;</span><span class="p">:</span><span class="mf">9.45</span><span class="p">,</span><span class="s2">&quot;N&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;i-start&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;i-stop&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;i-step&quot;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Test_Vector</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="s2">&quot;E0&quot;</span><span class="p">:</span> <span class="mf">0.982</span><span class="p">,</span>
+    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.0689</span><span class="p">,</span>
+    <span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="mf">0.328</span><span class="p">,</span>
+    <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="mf">0.000125</span><span class="p">,</span>
+    <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="mf">9.45</span><span class="p">,</span>
+    <span class="s2">&quot;N&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;i-start&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;i-stop&quot;</span><span class="p">:</span> <span class="mf">42.5</span><span class="p">,</span>
+    <span class="s2">&quot;i-step&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chamberline_Test&quot;</span><span class="p">}</span>
 </pre></div>
 
 </div>
@@ -12304,203 +12345,7 @@ where V0 is the intercept (actual open circuit voltage is always higher) and k i
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">opem.Static.Chamberline_Kim</span> <span class="k">import</span> <span class="n">Static_Analysis</span>
-<span class="n">Static_Analysis</span><span class="p">(</span><span class="n">InputMethod</span><span class="o">=</span><span class="n">Test_Vector</span><span class="p">,</span><span class="n">TestMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">PrintMode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ReportMode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;EFF&#39;: [0.797966269201884,
-  0.7933343765568479,
-  0.7890689791314186,
-  0.7851113286904084,
-  0.7814157591393215,
-  0.7779460692405816,
-  0.7746730751436158,
-  0.771572906202878,
-  0.7686257886450131,
-  0.7658151585364871,
-  0.7631270025420254,
-  0.7605493596935309,
-  0.7580719391696471,
-  0.7556858231082223,
-  0.753383232714607,
-  0.7511573421474446,
-  0.7490021289286691,
-  0.7469122526002784,
-  0.7448829554595718,
-  0.7429099807210011,
-  0.7409895045575802,
-  0.7391180792895339,
-  0.7372925855955158,
-  0.7355101920796727,
-  0.7337683208763324,
-  0.7320646182417239,
-  0.7303969292894269,
-  0.7287632761880597,
-  0.7271618392669932,
-  0.7255909405767029],
- &#39;I&#39;: [1,
-  1.1,
-  1.2,
-  1.3,
-  1.4,
-  1.5,
-  1.6,
-  1.7,
-  1.8,
-  1.9,
-  2.0,
-  2.1,
-  2.2,
-  2.3,
-  2.4,
-  2.5,
-  2.6,
-  2.7,
-  2.8,
-  2.9,
-  3.0,
-  3.1,
-  3.2,
-  3.3,
-  3.4,
-  3.5,
-  3.6,
-  3.7,
-  3.8,
-  3.9],
- &#39;K&#39;: -0.0372516118425709,
- &#39;P&#39;: [1.244827379954939,
-  1.3613617901715511,
-  1.4771371289340156,
-  1.5922057745841485,
-  1.706612017960278,
-  1.820393802022961,
-  1.933583995558465,
-  2.0462113472500323,
-  2.158301214515197,
-  2.2698761299021477,
-  2.380956247931119,
-  2.491559702356007,
-  2.601702895230229,
-  2.7114007333123014,
-  2.820666823283489,
-  2.929513634375034,
-  3.0379526349346824,
-  3.145994407952373,
-  3.2536487494474096,
-  3.360924752781809,
-  3.4678308813294754,
-  3.5743750314441862,
-  3.6805645872928157,
-  3.786406468826155,
-  3.891907173928067,
-  3.9970728155998123,
-  4.101909154889422,
-  4.206421630157481,
-  4.310615383174736,
-  4.414495282468661],
- &#39;Ph&#39;: [-0.01482737995493899,
-  -0.008361790171551031,
-  -0.0011371289340155854,
-  0.006794225415851485,
-  0.015387982039721892,
-  0.02460619797703889,
-  0.03441600444153501,
-  0.04478865274996757,
-  0.055698785484803184,
-  0.06712387009785219,
-  0.07904375206888092,
-  0.09144029764399271,
-  0.10429710476977118,
-  0.11759926668769842,
-  0.13133317671651062,
-  0.14548636562496609,
-  0.16004736506531766,
-  0.17500559204762714,
-  0.1903512505525901,
-  0.20607524721819082,
-  0.22216911867052458,
-  0.23862496855581392,
-  0.2554354127071847,
-  0.2725935311738447,
-  0.29009282607193304,
-  0.30792718440018774,
-  0.3260908451105779,
-  0.3445783698425195,
-  0.36338461682526346,
-  0.38250471753133874],
- &#39;Status&#39;: True,
- &#39;V&#39;: [1.244827379954939,
-  1.2376016274286827,
-  1.230947607445013,
-  1.2247736727570373,
-  1.2190085842573415,
-  1.2135958680153074,
-  1.2084899972240406,
-  1.2036537336764896,
-  1.1990562302862204,
-  1.1946716473169199,
-  1.1904781239655595,
-  1.1864570011219082,
-  1.1825922251046495,
-  1.1788698840488268,
-  1.1752778430347872,
-  1.1718054537500135,
-  1.168443321128724,
-  1.1651831140564344,
-  1.162017410516932,
-  1.1589395699247618,
-  1.1559436271098251,
-  1.153024203691673,
-  1.1501764335290048,
-  1.1473958996442895,
-  1.1446785805670785,
-  1.1420208044570892,
-  1.1394192096915061,
-  1.136870710853373,
-  1.1343724692565096,
-  1.1319218672996567],
- &#39;V0&#39;: 1.2696835857181188}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Notice : "Status", "V0", "K" and "EFF" , new in version 0.8</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Data</span><span class="o">=</span><span class="n">Static_Analysis</span><span class="p">(</span><span class="n">InputMethod</span><span class="o">=</span><span class="n">Test_Vector</span><span class="p">,</span><span class="n">TestMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">PrintMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ReportMode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span><span class="o">=</span><span class="n">Static_Analysis</span><span class="p">(</span><span class="n">InputMethod</span><span class="o">=</span><span class="n">Test_Vector</span><span class="p">,</span><span class="n">TestMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">PrintMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ReportMode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12761,6 +12606,3133 @@ Power-Thermal : 0.38250471753133874 W
 VStack : 1.1319218672996567 V
 Vcell : 1.1319218672996567 V
 ###########
+I : 4.0
+PEM Efficiency : 0.7240490295307427 
+Power : 4.518065944271835 W
+Power-Stack : 4.518065944271835 W
+Power-Thermal : 0.401934055728165 W
+VStack : 1.1295164860679587 V
+Vcell : 1.1295164860679587 V
+###########
+I : 4.1
+PEM Efficiency : 0.7225346703208392 
+Power : 4.621331751372088 W
+Power-Stack : 4.621331751372088 W
+Power-Thermal : 0.4216682486279116 W
+VStack : 1.1271540857005093 V
+Vcell : 1.1271540857005093 V
+###########
+I : 4.2
+PEM Efficiency : 0.7210465308486499 
+Power : 4.724296870120354 W
+Power-Stack : 4.724296870120354 W
+Power-Thermal : 0.4417031298796457 W
+VStack : 1.1248325881238939 V
+Vcell : 1.1248325881238939 V
+###########
+I : 4.3
+PEM Efficiency : 0.7195833729599981 
+Power : 4.826965265815667 W
+Power-Stack : 4.826965265815667 W
+Power-Thermal : 0.4620347341843329 W
+VStack : 1.122550061817597 V
+Vcell : 1.122550061817597 V
+###########
+I : 4.4
+PEM Efficiency : 0.7181440438018671 
+Power : 4.929340716656017 W
+Power-Stack : 4.929340716656017 W
+Power-Thermal : 0.4826592833439837 W
+VStack : 1.1203047083309128 V
+Vcell : 1.1203047083309128 V
+###########
+I : 4.5
+PEM Efficiency : 0.7167274681507255 
+Power : 5.031426826418093 W
+Power-Stack : 5.031426826418093 W
+Power-Thermal : 0.5035731735819069 W
+VStack : 1.1180948503151318 V
+Vcell : 1.1180948503151318 V
+###########
+I : 4.6
+PEM Efficiency : 0.7153326415840507 
+Power : 5.133227036007147 W
+Power-Stack : 5.133227036007147 W
+Power-Thermal : 0.524772963992852 W
+VStack : 1.115918920871119 V
+Vcell : 1.115918920871119 V
+###########
+I : 4.7
+PEM Efficiency : 0.713958624386224 
+Power : 5.234744633999795 W
+Power-Stack : 5.234744633999795 W
+Power-Thermal : 0.5462553660002051 W
+VStack : 1.1137754540425095 V
+Vcell : 1.1137754540425095 V
+###########
+I : 4.8
+PEM Efficiency : 0.7126045360960039 
+Power : 5.335982766286877 W
+Power-Stack : 5.335982766286877 W
+Power-Thermal : 0.5680172337131225 W
+VStack : 1.1116630763097661 V
+Vcell : 1.1116630763097661 V
+###########
+I : 4.9
+PEM Efficiency : 0.7112695506161859 
+Power : 5.436944444910126 W
+Power-Stack : 5.436944444910126 W
+Power-Thermal : 0.5900555550898744 W
+VStack : 1.10958049896125 V
+Vcell : 1.10958049896125 V
+###########
+I : 5.0
+PEM Efficiency : 0.7099528918172862 
+Power : 5.537632556174832 W
+Power-Stack : 5.537632556174832 W
+Power-Thermal : 0.6123674438251681 W
+VStack : 1.1075265112349664 V
+Vcell : 1.1075265112349664 V
+###########
+I : 5.1
+PEM Efficiency : 0.7086538295765383 
+Power : 5.638049868110938 W
+Power-Stack : 5.638049868110938 W
+Power-Thermal : 0.6349501318890608 W
+VStack : 1.1054999741393998 V
+Vcell : 1.1054999741393998 V
+###########
+I : 5.2
+PEM Efficiency : 0.7073716762014743 
+Power : 5.7381990373463605 W
+Power-Stack : 5.7381990373463605 W
+Power-Thermal : 0.6578009626536397 W
+VStack : 1.1034998148743 V
+Vcell : 1.1034998148743 V
+###########
+I : 5.3
+PEM Efficiency : 0.7061057831941243 
+Power : 5.838082615449021 W
+Power-Stack : 5.838082615449021 W
+Power-Thermal : 0.6809173845509793 W
+VStack : 1.101525021782834 V
+Vcell : 1.101525021782834 V
+###########
+I : 5.4
+PEM Efficiency : 0.7048555383176273 
+Power : 5.937703054787692 W
+Power-Stack : 5.937703054787692 W
+Power-Thermal : 0.7042969452123086 W
+VStack : 1.0995746397754984 V
+Vcell : 1.0995746397754984 V
+###########
+I : 5.5
+PEM Efficiency : 0.70362036293195 
+Power : 6.03706271395613 W
+Power-Stack : 6.03706271395613 W
+Power-Thermal : 0.7279372860438691 W
+VStack : 1.097647766173842 V
+Vcell : 1.097647766173842 V
+###########
+I : 5.6
+PEM Efficiency : 0.7023997095696176 
+Power : 6.136163862800179 W
+Power-Stack : 6.136163862800179 W
+Power-Thermal : 0.7518361371998207 W
+VStack : 1.0957435469286034 V
+Vcell : 1.0957435469286034 V
+###########
+I : 5.7
+PEM Efficiency : 0.7011930597259557 
+Power : 6.235008687083197 W
+Power-Stack : 6.235008687083197 W
+Power-Thermal : 0.7759913129168026 W
+VStack : 1.0938611731724908 V
+Vcell : 1.0938611731724908 V
+###########
+I : 5.8
+PEM Efficiency : 0.6999999218414613 
+Power : 6.3335992928215425 W
+Power-Stack : 6.3335992928215425 W
+Power-Thermal : 0.8004007071784568 W
+VStack : 1.0919998780726798 V
+Vcell : 1.0919998780726798 V
+###########
+I : 5.9
+PEM Efficiency : 0.6988198294565888 
+Power : 6.431937710318444 W
+Power-Stack : 6.431937710318444 W
+Power-Thermal : 0.8250622896815563 W
+VStack : 1.0901589339522786 V
+Vcell : 1.0901589339522786 V
+###########
+I : 6.0
+PEM Efficiency : 0.6976523395215593 
+Power : 6.530025897921794 W
+Power-Stack : 6.530025897921794 W
+Power-Thermal : 0.8499741020782059 W
+VStack : 1.0883376496536323 V
+Vcell : 1.0883376496536323 V
+###########
+I : 6.1
+PEM Efficiency : 0.6964970308458178 
+Power : 6.627865745528802 W
+Power-Stack : 6.627865745528802 W
+Power-Thermal : 0.8751342544711973 W
+VStack : 1.0865353681194758 V
+Vcell : 1.0865353681194758 V
+###########
+I : 6.2
+PEM Efficiency : 0.695353502673511 
+Power : 6.725459077858199 W
+Power-Stack : 6.725459077858199 W
+Power-Thermal : 0.9005409221418009 W
+VStack : 1.0847514641706772 V
+Vcell : 1.0847514641706772 V
+###########
+I : 6.3
+PEM Efficiency : 0.6942213733728804 
+Power : 6.822807657508669 W
+Power-Stack : 6.822807657508669 W
+Power-Thermal : 0.9261923424913306 W
+VStack : 1.0829853424616935 V
+Vcell : 1.0829853424616935 V
+###########
+I : 6.4
+PEM Efficiency : 0.6931002792288085 
+Power : 6.919913187820424 W
+Power-Stack : 6.919913187820424 W
+Power-Thermal : 0.9520868121795758 W
+VStack : 1.0812364355969413 V
+Vcell : 1.0812364355969413 V
+###########
+I : 6.5
+PEM Efficiency : 0.6919898733289177 
+Power : 7.016777315555226 W
+Power-Stack : 7.016777315555226 W
+Power-Thermal : 0.9782226844447743 W
+VStack : 1.0795042023931116 V
+Vcell : 1.0795042023931116 V
+###########
+I : 6.6
+PEM Efficiency : 0.69088982453465 
+Power : 7.113401633408756 W
+Power-Stack : 7.113401633408756 W
+Power-Thermal : 1.004598366591243 W
+VStack : 1.077788126274054 V
+Vcell : 1.077788126274054 V
+###########
+I : 6.7
+PEM Efficiency : 0.6897998165296582 
+Power : 7.209787682367987 W
+Power-Stack : 7.209787682367987 W
+Power-Thermal : 1.0312123176320125 W
+VStack : 1.0760877137862668 V
+Vcell : 1.0760877137862668 V
+###########
+I : 6.8
+PEM Efficiency : 0.6887195469386326 
+Power : 7.3059369539250145 W
+Power-Stack : 7.3059369539250145 W
+Power-Thermal : 1.0580630460749854 W
+VStack : 1.0744024932242668 V
+Vcell : 1.0744024932242668 V
+###########
+I : 6.9
+PEM Efficiency : 0.6876487265103938 
+Power : 7.40185089215788 W
+Power-Stack : 7.40185089215788 W
+Power-Thermal : 1.0851491078421207 W
+VStack : 1.0727320133562144 V
+Vcell : 1.0727320133562144 V
+###########
+I : 7.0
+PEM Efficiency : 0.6865870783597003 
+Power : 7.497530895687927 W
+Power-Stack : 7.497530895687927 W
+Power-Thermal : 1.1124691043120731 W
+VStack : 1.0710758422411324 V
+Vcell : 1.0710758422411324 V
+###########
+I : 7.1
+PEM Efficiency : 0.6855343372627701 
+Power : 7.592978319522442 W
+Power-Stack : 7.592978319522442 W
+Power-Thermal : 1.1400216804775574 W
+VStack : 1.0694335661299215 V
+Vcell : 1.0694335661299215 V
+###########
+I : 7.2
+PEM Efficiency : 0.6844902490020122 
+Power : 7.688194476790601 W
+Power-Stack : 7.688194476790601 W
+Power-Thermal : 1.1678055232093993 W
+VStack : 1.067804788443139 V
+Vcell : 1.067804788443139 V
+###########
+I : 7.3
+PEM Efficiency : 0.6834545697558863 
+Power : 7.783180640380032 W
+Power-Stack : 7.783180640380032 W
+Power-Thermal : 1.1958193596199678 W
+VStack : 1.0661891288191825 V
+Vcell : 1.0661891288191825 V
+###########
+I : 7.4
+PEM Efficiency : 0.6824270655302116 
+Power : 7.877938044480764 W
+Power-Stack : 7.877938044480764 W
+Power-Thermal : 1.2240619555192358 W
+VStack : 1.0645862222271303 V
+Vcell : 1.0645862222271303 V
+###########
+I : 7.5
+PEM Efficiency : 0.6814075116275811 
+Power : 7.9724678860427 W
+Power-Stack : 7.9724678860427 W
+Power-Thermal : 1.2525321139573005 W
+VStack : 1.0629957181390266 V
+Vcell : 1.0629957181390266 V
+###########
+I : 7.6
+PEM Efficiency : 0.6803956921518519 
+Power : 8.066771326152356 W
+Power-Stack : 8.066771326152356 W
+Power-Thermal : 1.281228673847643 W
+VStack : 1.061417279756889 V
+Vcell : 1.061417279756889 V
+###########
+I : 7.7
+PEM Efficiency : 0.6793913995449599 
+Power : 8.160849491334059 W
+Power-Stack : 8.160849491334059 W
+Power-Thermal : 1.3101505086659413 W
+VStack : 1.0598505832901375 V
+Vcell : 1.0598505832901375 V
+###########
+I : 7.8
+PEM Efficiency : 0.6783944341535526 
+Power : 8.25470347478043 W
+Power-Stack : 8.25470347478043 W
+Power-Thermal : 1.3392965252195708 W
+VStack : 1.0582953172795422 V
+Vcell : 1.0582953172795422 V
+###########
+I : 7.9
+PEM Efficiency : 0.6774046038231637 
+Power : 8.348334337516672 W
+Power-Stack : 8.348334337516672 W
+Power-Thermal : 1.368665662483329 W
+VStack : 1.0567511819641355 V
+Vcell : 1.0567511819641355 V
+###########
+I : 8.0
+PEM Efficiency : 0.6764217235178417 
+Power : 8.441743109502665 W
+Power-Stack : 8.441743109502665 W
+Power-Thermal : 1.3982568904973345 W
+VStack : 1.0552178886878332 V
+Vcell : 1.0552178886878332 V
+###########
+I : 8.1
+PEM Efficiency : 0.6754456149633413 
+Power : 8.534930790676782 W
+Power-Stack : 8.534930790676782 W
+Power-Thermal : 1.4280692093232181 W
+VStack : 1.0536951593428125 V
+Vcell : 1.0536951593428125 V
+###########
+I : 8.2
+PEM Efficiency : 0.6744761063121376 
+Power : 8.627898351944864 W
+Power-Stack : 8.627898351944864 W
+Power-Thermal : 1.458101648055135 W
+VStack : 1.0521827258469347 V
+Vcell : 1.0521827258469347 V
+###########
+I : 8.3
+PEM Efficiency : 0.6735130318286734 
+Power : 8.720646736117663 W
+Power-Stack : 8.720646736117663 W
+Power-Thermal : 1.4883532638823367 W
+VStack : 1.0506803296527305 V
+Vcell : 1.0506803296527305 V
+###########
+I : 8.4
+PEM Efficiency : 0.6725562315933873 
+Power : 8.813176858799748 W
+Power-Stack : 8.813176858799748 W
+Power-Thermal : 1.5188231412002529 W
+VStack : 1.0491877212856842 V
+Vcell : 1.0491877212856842 V
+###########
+I : 8.5
+PEM Efficiency : 0.6716055512241837 
+Power : 8.905489609232676 W
+Power-Stack : 8.905489609232676 W
+Power-Thermal : 1.5495103907673236 W
+VStack : 1.0477046599097266 V
+Vcell : 1.0477046599097266 V
+###########
+I : 8.6
+PEM Efficiency : 0.6706608416141229 
+Power : 8.997585851095073 W
+Power-Stack : 8.997585851095073 W
+Power-Thermal : 1.5804141489049262 W
+VStack : 1.0462309129180318 V
+Vcell : 1.0462309129180318 V
+###########
+I : 8.7
+PEM Efficiency : 0.669721958684202 
+Power : 9.089466423261989 W
+Power-Stack : 9.089466423261989 W
+Power-Thermal : 1.6115335767380101 W
+VStack : 1.0447662555473551 V
+Vcell : 1.0447662555473551 V
+###########
+I : 8.8
+PEM Efficiency : 0.668788763150189 
+Power : 9.181132140525795 W
+Power-Stack : 9.181132140525795 W
+Power-Thermal : 1.6428678594742057 W
+VStack : 1.0433104705142948 V
+Vcell : 1.0433104705142948 V
+###########
+I : 8.9
+PEM Efficiency : 0.6678611203025607 
+Power : 9.272583794280754 W
+Power-Stack : 9.272583794280754 W
+Power-Thermal : 1.6744162057192469 W
+VStack : 1.0418633476719947 V
+Vcell : 1.0418633476719947 V
+###########
+I : 9.0
+PEM Efficiency : 0.666938899798659 
+Power : 9.363822153173173 W
+Power-Stack : 9.363822153173173 W
+Power-Thermal : 1.7061778468268267 W
+VStack : 1.0404246836859081 V
+Vcell : 1.0404246836859081 V
+###########
+I : 9.1
+PEM Efficiency : 0.6660219754662559 
+Power : 9.454847963718969 W
+Power-Stack : 9.454847963718969 W
+Power-Thermal : 1.7381520362810312 W
+VStack : 1.0389942817273592 V
+Vcell : 1.0389942817273592 V
+###########
+I : 9.2
+PEM Efficiency : 0.6651102251177778 
+Power : 9.545661950890349 W
+Power-Stack : 9.545661950890349 W
+Power-Thermal : 1.7703380491096508 W
+VStack : 1.0375719511837336 V
+Vcell : 1.0375719511837336 V
+###########
+I : 9.3
+PEM Efficiency : 0.6642035303744972 
+Power : 9.636264818673208 W
+Power-Stack : 9.636264818673208 W
+Power-Thermal : 1.8027351813267936 W
+VStack : 1.0361575073842157 V
+Vcell : 1.0361575073842157 V
+###########
+I : 9.4
+PEM Efficiency : 0.6633017765000447 
+Power : 9.726657250596658 W
+Power-Stack : 9.726657250596658 W
+Power-Thermal : 1.8353427494033432 W
+VStack : 1.0347507713400699 V
+Vcell : 1.0347507713400699 V
+###########
+I : 9.5
+PEM Efficiency : 0.6624048522426575 
+Power : 9.816839910236185 W
+Power-Stack : 9.816839910236185 W
+Power-Thermal : 1.8681600897638149 W
+VStack : 1.0333515694985458 V
+Vcell : 1.0333515694985458 V
+###########
+I : 9.6
+PEM Efficiency : 0.6615126496856034 
+Power : 9.906813441691597 W
+Power-Stack : 9.906813441691597 W
+Power-Thermal : 1.9011865583084022 W
+VStack : 1.0319597335095414 V
+Vcell : 1.0319597335095414 V
+###########
+I : 9.7
+PEM Efficiency : 0.6606250641052779 
+Power : 9.996578470041065 W
+Power-Stack : 9.996578470041065 W
+Power-Thermal : 1.934421529958934 W
+VStack : 1.0305751000042336 V
+Vcell : 1.0305751000042336 V
+###########
+I : 9.8
+PEM Efficiency : 0.6597419938364971 
+Power : 10.08613560177237 W
+Power-Stack : 10.08613560177237 W
+Power-Thermal : 1.9678643982276314 W
+VStack : 1.0291975103849356 V
+Vcell : 1.0291975103849356 V
+###########
+I : 9.9
+PEM Efficiency : 0.6588633401445464 
+Power : 10.175485425192376 W
+Power-Stack : 10.175485425192376 W
+Power-Thermal : 2.001514574807625 W
+VStack : 1.0278268106254924 V
+Vcell : 1.0278268106254924 V
+###########
+I : 10.0
+PEM Efficiency : 0.6579890071035762 
+Power : 10.26462851081579 W
+Power-Stack : 10.26462851081579 W
+Power-Thermal : 2.03537148918421 W
+VStack : 1.026462851081579 V
+Vcell : 1.026462851081579 V
+###########
+I : 10.1
+PEM Efficiency : 0.6571189014809643 
+Power : 10.353565411734074 W
+Power-Stack : 10.353565411734074 W
+Power-Thermal : 2.069434588265925 W
+VStack : 1.0251054863103044 V
+Vcell : 1.0251054863103044 V
+###########
+I : 10.2
+PEM Efficiency : 0.6562529326272898 
+Power : 10.442296663965434 W
+Power-Stack : 10.442296663965434 W
+Power-Thermal : 2.103703336034564 W
+VStack : 1.0237545748985721 V
+Vcell : 1.0237545748985721 V
+###########
+I : 10.3
+PEM Efficiency : 0.6553910123715884 
+Power : 10.530822786786683 W
+Power-Stack : 10.530822786786683 W
+Power-Thermal : 2.1381772132133174 W
+VStack : 1.022409979299678 V
+Vcell : 1.022409979299678 V
+###########
+I : 10.4
+PEM Efficiency : 0.6545330549215813 
+Power : 10.619144283047735 W
+Power-Stack : 10.619144283047735 W
+Power-Thermal : 2.1728557169522653 W
+VStack : 1.0210715656776668 V
+Vcell : 1.0210715656776668 V
+###########
+I : 10.5
+PEM Efficiency : 0.6536789767685893 
+Power : 10.707261639469493 W
+Power-Stack : 10.707261639469493 W
+Power-Thermal : 2.207738360530506 W
+VStack : 1.0197392037589994 V
+Vcell : 1.0197392037589994 V
+###########
+I : 10.6
+PEM Efficiency : 0.6528286965968656 
+Power : 10.79517532692577 W
+Power-Stack : 10.79517532692577 W
+Power-Thermal : 2.242824673074229 W
+VStack : 1.0184127666911105 V
+Vcell : 1.0184127666911105 V
+###########
+I : 10.7
+PEM Efficiency : 0.6519821351970941 
+Power : 10.882885800709897 W
+Power-Stack : 10.882885800709897 W
+Power-Thermal : 2.278114199290103 W
+VStack : 1.017092130907467 V
+Vcell : 1.017092130907467 V
+###########
+I : 10.8
+PEM Efficiency : 0.6511392153838197 
+Power : 10.970393500786596 W
+Power-Stack : 10.970393500786596 W
+Power-Thermal : 2.3136064992134044 W
+VStack : 1.0157771759987588 V
+Vcell : 1.0157771759987588 V
+###########
+I : 10.9
+PEM Efficiency : 0.6502998619165927 
+Power : 11.057698852029743 W
+Power-Stack : 11.057698852029743 W
+Power-Thermal : 2.3493011479702575 W
+VStack : 1.0144677845898846 V
+Vcell : 1.0144677845898846 V
+###########
+I : 11.0
+PEM Efficiency : 0.6494640014246192 
+Power : 11.144802264446467 W
+Power-Stack : 11.144802264446467 W
+Power-Thermal : 2.385197735553533 W
+VStack : 1.013163842222406 V
+Vcell : 1.013163842222406 V
+###########
+I : 11.1
+PEM Efficiency : 0.6486315623347271 
+Power : 11.231704133388135 W
+Power-Stack : 11.231704133388135 W
+Power-Thermal : 2.4212958666118642 W
+VStack : 1.0118652372421744 V
+Vcell : 1.0118652372421744 V
+###########
+I : 11.2
+PEM Efficiency : 0.6478024748024653 
+Power : 11.318404839748673 W
+Power-Stack : 11.318404839748673 W
+Power-Thermal : 2.4575951602513255 W
+VStack : 1.010571860691846 V
+Vcell : 1.010571860691846 V
+###########
+I : 11.3
+PEM Efficiency : 0.6469766706461694 
+Power : 11.404904750150674 W
+Power-Stack : 11.404904750150674 W
+Power-Thermal : 2.494095249849327 W
+VStack : 1.0092836062080242 V
+Vcell : 1.0092836062080242 V
+###########
+I : 11.4
+PEM Efficiency : 0.6461540832838325 
+Power : 11.491204217119677 W
+Power-Stack : 11.491204217119677 W
+Power-Thermal : 2.5307957828803236 W
+VStack : 1.0080003699227786 V
+Vcell : 1.0080003699227786 V
+###########
+I : 11.5
+PEM Efficiency : 0.6453346476726342 
+Power : 11.577303579247056 W
+Power-Stack : 11.577303579247056 W
+Power-Thermal : 2.567696420752943 W
+VStack : 1.0067220503693093 V
+Vcell : 1.0067220503693093 V
+###########
+I : 11.6
+PEM Efficiency : 0.6445183002509853 
+Power : 11.663203161341832 W
+Power-Stack : 11.663203161341832 W
+Power-Thermal : 2.604796838658168 W
+VStack : 1.0054485483915372 V
+Vcell : 1.0054485483915372 V
+###########
+I : 11.7
+PEM Efficiency : 0.6437049788829582 
+Power : 11.748903274571752 W
+Power-Stack : 11.748903274571752 W
+Power-Thermal : 2.642096725428246 W
+VStack : 1.0041797670574149 V
+Vcell : 1.0041797670574149 V
+###########
+I : 11.8
+PEM Efficiency : 0.6428946228049783 
+Power : 11.834404216594043 W
+Power-Stack : 11.834404216594043 W
+Power-Thermal : 2.6795957834059583 W
+VStack : 1.0029156115757663 V
+Vcell : 1.0029156115757663 V
+###########
+I : 11.9
+PEM Efficiency : 0.6420871725746595 
+Power : 11.919706271675981 W
+Power-Stack : 11.919706271675981 W
+Power-Thermal : 2.7172937283240195 W
+VStack : 1.001655989216469 V
+Vcell : 1.001655989216469 V
+###########
+I : 12.0
+PEM Efficiency : 0.6412825700216748 
+Power : 12.004809710805754 W
+Power-Stack : 12.004809710805754 W
+Power-Thermal : 2.755190289194246 W
+VStack : 1.0004008092338128 V
+Vcell : 1.0004008092338128 V
+###########
+I : 12.1
+PEM Efficiency : 0.6404807582005565 
+Power : 12.089714791793705 W
+Power-Stack : 12.089714791793705 W
+Power-Thermal : 2.793285208206295 W
+VStack : 0.9991499827928682 V
+Vcell : 0.9991499827928682 V
+###########
+I : 12.2
+PEM Efficiency : 0.6396816813453303 
+Power : 12.174421759364325 W
+Power-Stack : 12.174421759364325 W
+Power-Thermal : 2.8315782406356735 W
+VStack : 0.9979034228987153 V
+Vcell : 0.9979034228987153 V
+###########
+I : 12.3
+PEM Efficiency : 0.6388852848258906 
+Power : 12.25893084523919 W
+Power-Stack : 12.25893084523919 W
+Power-Thermal : 2.87006915476081 W
+VStack : 0.9966610443283894 V
+Vcell : 0.9966610443283894 V
+###########
+I : 12.4
+PEM Efficiency : 0.6380915151060293 
+Power : 12.343242268211034 W
+Power-Stack : 12.343242268211034 W
+Power-Thermal : 2.9087577317889663 W
+VStack : 0.9954227635654059 V
+Vcell : 0.9954227635654059 V
+###########
+I : 12.5
+PEM Efficiency : 0.6373003197030366 
+Power : 12.427356234209215 W
+Power-Stack : 12.427356234209215 W
+Power-Thermal : 2.947643765790785 W
+VStack : 0.9941884987367372 V
+Vcell : 0.9941884987367372 V
+###########
+I : 12.6
+PEM Efficiency : 0.6365116471487954 
+Power : 12.511272936356724 W
+Power-Stack : 12.511272936356724 W
+Power-Thermal : 2.986727063643276 W
+VStack : 0.9929581695521209 V
+Vcell : 0.9929581695521209 V
+###########
+I : 12.7
+PEM Efficiency : 0.6357254469522987 
+Power : 12.59499255501894 W
+Power-Stack : 12.59499255501894 W
+Power-Thermal : 3.0260074449810577 W
+VStack : 0.991731697245586 V
+Vcell : 0.991731697245586 V
+###########
+I : 12.8
+PEM Efficiency : 0.6349416695635154 
+Power : 12.678515257844277 W
+Power-Stack : 12.678515257844277 W
+Power-Thermal : 3.0654847421557236 W
+VStack : 0.9905090045190841 V
+Vcell : 0.9905090045190841 V
+###########
+I : 12.9
+PEM Efficiency : 0.6341602663385453 
+Power : 12.761841199796885 W
+Power-Stack : 12.761841199796885 W
+Power-Thermal : 3.1051588002031143 W
+VStack : 0.9892900154881307 V
+Vcell : 0.9892900154881307 V
+###########
+I : 13.0
+PEM Efficiency : 0.6333811895059946 
+Power : 12.844970523181573 W
+Power-Stack : 12.844970523181573 W
+Power-Thermal : 3.1450294768184275 W
+VStack : 0.9880746556293517 V
+Vcell : 0.9880746556293517 V
+###########
+I : 13.1
+PEM Efficiency : 0.6326043921345192 
+Power : 12.927903357661036 W
+Power-Stack : 12.927903357661036 W
+Power-Thermal : 3.185096642338963 W
+VStack : 0.9868628517298501 V
+Vcell : 0.9868628517298501 V
+###########
+I : 13.2
+PEM Efficiency : 0.6318298281014744 
+Power : 13.01063982026556 W
+Power-Stack : 13.01063982026556 W
+Power-Thermal : 3.2253601797344382 W
+VStack : 0.9856545318383001 V
+Vcell : 0.9856545318383001 V
+###########
+I : 13.3
+PEM Efficiency : 0.6310574520626222 
+Power : 13.093180015395285 W
+Power-Stack : 13.093180015395285 W
+Power-Thermal : 3.2658199846047142 W
+VStack : 0.9844496252176906 V
+Vcell : 0.9844496252176906 V
+###########
+I : 13.4
+PEM Efficiency : 0.6302872194228443 
+Power : 13.175524034815139 W
+Power-Stack : 13.175524034815139 W
+Power-Thermal : 3.3064759651848625 W
+VStack : 0.9832480622996371 V
+Vcell : 0.9832480622996371 V
+###########
+I : 13.5
+PEM Efficiency : 0.6295190863078136 
+Power : 13.257671957642556 W
+Power-Stack : 13.257671957642556 W
+Power-Thermal : 3.3473280423574447 W
+VStack : 0.9820497746401893 V
+Vcell : 0.9820497746401893 V
+###########
+I : 13.6
+PEM Efficiency : 0.6287530095365773 
+Power : 13.339623850328024 W
+Power-Stack : 13.339623850328024 W
+Power-Thermal : 3.3883761496719744 W
+VStack : 0.9808546948770607 V
+Vcell : 0.9808546948770607 V
+###########
+I : 13.7
+PEM Efficiency : 0.6279889465950115 
+Power : 13.421379766628586 W
+Power-Stack : 13.421379766628586 W
+Power-Thermal : 3.4296202333714128 W
+VStack : 0.979662756688218 V
+Vcell : 0.979662756688218 V
+###########
+I : 13.8
+PEM Efficiency : 0.6272268556101052 
+Power : 13.502939747574347 W
+Power-Stack : 13.502939747574347 W
+Power-Thermal : 3.4710602524256546 W
+VStack : 0.9784738947517642 V
+Vcell : 0.9784738947517642 V
+###########
+I : 13.9
+PEM Efficiency : 0.6264666953250331 
+Power : 13.584303821428017 W
+Power-Stack : 13.584303821428017 W
+Power-Thermal : 3.5126961785719835 W
+VStack : 0.9772880447070516 V
+Vcell : 0.9772880447070516 V
+###########
+I : 14.0
+PEM Efficiency : 0.6257084250749828 
+Power : 13.665472003637626 W
+Power-Stack : 13.665472003637626 W
+Power-Thermal : 3.554527996362374 W
+VStack : 0.9761051431169733 V
+Vcell : 0.9761051431169733 V
+###########
+I : 14.1
+PEM Efficiency : 0.6249520047637008 
+Power : 13.746444296782363 W
+Power-Stack : 13.746444296782363 W
+Power-Thermal : 3.5965557032176365 W
+VStack : 0.9749251274313733 V
+Vcell : 0.9749251274313733 V
+###########
+I : 14.2
+PEM Efficiency : 0.6241973948407217 
+Power : 13.827220690511664 W
+Power-Stack : 13.827220690511664 W
+Power-Thermal : 3.6387793094883336 W
+VStack : 0.9737479359515258 V
+Vcell : 0.9737479359515258 V
+###########
+I : 14.3
+PEM Efficiency : 0.623444556279251 
+Power : 13.907801161477535 W
+Power-Stack : 13.907801161477535 W
+Power-Thermal : 3.6811988385224668 W
+VStack : 0.9725735077956317 V
+Vcell : 0.9725735077956317 V
+###########
+I : 14.4
+PEM Efficiency : 0.6226934505546711 
+Power : 13.988185673260134 W
+Power-Stack : 13.988185673260134 W
+Power-Thermal : 3.723814326739867 W
+VStack : 0.971401782865287 V
+Vcell : 0.971401782865287 V
+###########
+I : 14.5
+PEM Efficiency : 0.6219440396236384 
+Power : 14.068374176286701 W
+Power-Stack : 14.068374176286701 W
+Power-Thermal : 3.7666258237132992 W
+VStack : 0.9702327018128759 V
+Vcell : 0.9702327018128759 V
+###########
+I : 14.6
+PEM Efficiency : 0.6211962859037485 
+Power : 14.148366607743776 W
+Power-Stack : 14.148366607743776 W
+Power-Thermal : 3.809633392256223 W
+VStack : 0.9690662060098477 V
+Vcell : 0.9690662060098477 V
+###########
+I : 14.7
+PEM Efficiency : 0.6204501522537392 
+Power : 14.228162891482746 W
+Power-Stack : 14.228162891482746 W
+Power-Thermal : 3.852837108517252 W
+VStack : 0.9679022375158332 V
+Vcell : 0.9679022375158332 V
+###########
+I : 14.8
+PEM Efficiency : 0.6197056019542068 
+Power : 14.307762937918728 W
+Power-Stack : 14.307762937918728 W
+Power-Thermal : 3.896237062081273 W
+VStack : 0.9667407390485626 V
+Vcell : 0.9667407390485626 V
+###########
+I : 14.9
+PEM Efficiency : 0.6189625986888149 
+Power : 14.387166643922813 W
+Power-Stack : 14.387166643922813 W
+Power-Thermal : 3.939833356077187 W
+VStack : 0.9655816539545512 V
+Vcell : 0.9655816539545512 V
+###########
+I : 15.0
+PEM Efficiency : 0.6182211065259663 
+Power : 14.466373892707612 W
+Power-Stack : 14.466373892707612 W
+Power-Thermal : 3.983626107292388 W
+VStack : 0.9644249261805075 V
+Vcell : 0.9644249261805075 V
+###########
+I : 15.1
+PEM Efficiency : 0.6174810899009228 
+Power : 14.545384553706137 W
+Power-Stack : 14.545384553706137 W
+Power-Thermal : 4.027615446293862 W
+VStack : 0.9632705002454396 V
+Vcell : 0.9632705002454396 V
+###########
+I : 15.2
+PEM Efficiency : 0.6167425135983463 
+Power : 14.624198482443989 W
+Power-Stack : 14.624198482443989 W
+Power-Thermal : 4.07180151755601 W
+VStack : 0.9621183212134203 V
+Vcell : 0.9621183212134203 V
+###########
+I : 15.3
+PEM Efficiency : 0.616005342735245 
+Power : 14.702815520404828 W
+Power-Stack : 14.702815520404828 W
+Power-Thermal : 4.116184479595173 W
+VStack : 0.9609683346669822 V
+Vcell : 0.9609683346669822 V
+###########
+I : 15.4
+PEM Efficiency : 0.6152695427443009 
+Power : 14.781235494889087 W
+Power-Stack : 14.781235494889087 W
+Power-Thermal : 4.1607645051109134 W
+VStack : 0.9598204866811095 V
+Vcell : 0.9598204866811095 V
+###########
+I : 15.5
+PEM Efficiency : 0.6145350793575669 
+Power : 14.859458218865967 W
+Power-Stack : 14.859458218865967 W
+Power-Thermal : 4.205541781134031 W
+VStack : 0.9586747237978044 V
+Vcell : 0.9586747237978044 V
+###########
+I : 15.6
+PEM Efficiency : 0.6138019185905063 
+Power : 14.937483490818561 W
+Power-Stack : 14.937483490818561 W
+Power-Thermal : 4.2505165091814385 W
+VStack : 0.9575309930011898 V
+Vcell : 0.9575309930011898 V
+###########
+I : 15.7
+PEM Efficiency : 0.6130700267263667 
+Power : 15.015311094582172 W
+Power-Stack : 15.015311094582172 W
+Power-Thermal : 4.295688905417827 W
+VStack : 0.956389241693132 V
+Vcell : 0.956389241693132 V
+###########
+I : 15.8
+PEM Efficiency : 0.6123393703008664 
+Power : 15.092940799175757 W
+Power-Stack : 15.092940799175757 W
+Power-Thermal : 4.341059200824243 W
+VStack : 0.9552494176693517 V
+Vcell : 0.9552494176693517 V
+###########
+I : 15.9
+PEM Efficiency : 0.6116099160871786 
+Power : 15.170372358626379 W
+Power-Stack : 15.170372358626379 W
+Power-Thermal : 4.386627641373622 W
+VStack : 0.9541114690959986 V
+Vcell : 0.9541114690959986 V
+###########
+I : 16.0
+PEM Efficiency : 0.6108816310811995 
+Power : 15.247605511786741 W
+Power-Stack : 15.247605511786741 W
+Power-Thermal : 4.432394488213259 W
+VStack : 0.9529753444866713 V
+Vcell : 0.9529753444866713 V
+###########
+I : 16.1
+PEM Efficiency : 0.6101544824870845 
+Power : 15.324639982145618 W
+Power-Stack : 15.324639982145618 W
+Power-Thermal : 4.478360017854385 W
+VStack : 0.9518409926798519 V
+Vcell : 0.9518409926798519 V
+###########
+I : 16.2
+PEM Efficiency : 0.6094284377030386 
+Power : 15.401475477631191 W
+Power-Stack : 15.401475477631191 W
+Power-Thermal : 4.524524522368808 W
+VStack : 0.9507083628167402 V
+Vcell : 0.9507083628167402 V
+###########
+I : 16.3
+PEM Efficiency : 0.6087034643073475 
+Power : 15.478111690407234 W
+Power-Stack : 15.478111690407234 W
+Power-Thermal : 4.5708883095927675 W
+VStack : 0.9495774043194621 V
+Vcell : 0.9495774043194621 V
+###########
+I : 16.4
+PEM Efficiency : 0.6079795300446383 
+Power : 15.554548296662025 W
+Power-Stack : 15.554548296662025 W
+Power-Thermal : 4.617451703337973 W
+VStack : 0.9484480668696358 V
+Vcell : 0.9484480668696358 V
+###########
+I : 16.5
+PEM Efficiency : 0.6072566028123524 
+Power : 15.63078495638995 W
+Power-Stack : 15.63078495638995 W
+Power-Thermal : 4.6642150436100485 W
+VStack : 0.9473203003872698 V
+Vcell : 0.9473203003872698 V
+###########
+I : 16.6
+PEM Efficiency : 0.6065346506474247 
+Power : 15.706821313165714 W
+Power-Stack : 15.706821313165714 W
+Power-Thermal : 4.7111786868342875 W
+VStack : 0.9461940550099827 V
+Vcell : 0.9461940550099827 V
+###########
+I : 16.7
+PEM Efficiency : 0.6058136417131522 
+Power : 15.782656993911042 W
+Power-Stack : 15.782656993911042 W
+Power-Thermal : 4.758343006088957 W
+VStack : 0.9450692810725175 V
+Vcell : 0.9450692810725175 V
+###########
+I : 16.8
+PEM Efficiency : 0.6050935442862435 
+Power : 15.85829160865387 W
+Power-Stack : 15.85829160865387 W
+Power-Thermal : 4.805708391346131 W
+VStack : 0.9439459290865398 V
+Vcell : 0.9439459290865398 V
+###########
+I : 16.9
+PEM Efficiency : 0.6043743267440375 
+Power : 15.933724750279803 W
+Power-Stack : 15.933724750279803 W
+Power-Thermal : 4.853275249720195 W
+VStack : 0.9428239497206985 V
+Vcell : 0.9428239497206985 V
+###########
+I : 17.0
+PEM Efficiency : 0.6036559575518805 
+Power : 16.00895599427587 W
+Power-Stack : 16.00895599427587 W
+Power-Thermal : 4.901044005724129 W
+VStack : 0.9417032937809335 V
+Vcell : 0.9417032937809335 V
+###########
+I : 17.1
+PEM Efficiency : 0.6029384052506526 
+Power : 16.083984898466408 W
+Power-Stack : 16.083984898466408 W
+Power-Thermal : 4.949015101533592 W
+VStack : 0.940583912191018 V
+Vcell : 0.940583912191018 V
+###########
+I : 17.2
+PEM Efficiency : 0.602221638444431 
+Power : 16.158811002740975 W
+Power-Stack : 16.158811002740975 W
+Power-Thermal : 4.997188997259024 W
+VStack : 0.9394657559733125 V
+Vcell : 0.9394657559733125 V
+###########
+I : 17.3
+PEM Efficiency : 0.6015056257882837 
+Power : 16.233433828774203 W
+Power-Stack : 16.233433828774203 W
+Power-Thermal : 5.0455661712258 W
+VStack : 0.9383487762297226 V
+Vcell : 0.9383487762297226 V
+###########
+I : 17.4
+PEM Efficiency : 0.6007903359761817 
+Power : 16.307852879737474 W
+Power-Stack : 16.307852879737474 W
+Power-Thermal : 5.094147120262522 W
+VStack : 0.9372329241228435 V
+Vcell : 0.9372329241228435 V
+###########
+I : 17.5
+PEM Efficiency : 0.6000757377290225 
+Power : 16.382067640002315 W
+Power-Stack : 16.382067640002315 W
+Power-Thermal : 5.142932359997685 W
+VStack : 0.9361181508572751 V
+Vcell : 0.9361181508572751 V
+###########
+I : 17.6
+PEM Efficiency : 0.5993617997827545 
+Power : 16.45607757483531 W
+Power-Stack : 16.45607757483531 W
+Power-Thermal : 5.191922425164692 W
+VStack : 0.935004407661097 V
+Vcell : 0.935004407661097 V
+###########
+I : 17.7
+PEM Efficiency : 0.5986484908765953 
+Power : 16.529882130084548 W
+Power-Stack : 16.529882130084548 W
+Power-Thermal : 5.241117869915449 W
+VStack : 0.9338916457674887 V
+Vcell : 0.9338916457674887 V
+###########
+I : 17.8
+PEM Efficiency : 0.5979357797413344 
+Power : 16.603480731857374 W
+Power-Stack : 16.603480731857374 W
+Power-Thermal : 5.290519268142626 W
+VStack : 0.9327798163964817 V
+Vcell : 0.9327798163964817 V
+###########
+I : 17.9
+PEM Efficiency : 0.5972236350877123 
+Power : 16.676872786189275 W
+Power-Stack : 16.676872786189275 W
+Power-Thermal : 5.340127213810722 W
+VStack : 0.9316688707368311 V
+Vcell : 0.9316688707368311 V
+###########
+I : 18.0
+PEM Efficiency : 0.5965120255948688 
+Power : 16.750057678703918 W
+Power-Stack : 16.750057678703918 W
+Power-Thermal : 5.38994232129608 W
+VStack : 0.9305587599279955 V
+Vcell : 0.9305587599279955 V
+###########
+I : 18.1
+PEM Efficiency : 0.5958009198988534 
+Power : 16.823034774264027 W
+Power-Stack : 16.823034774264027 W
+Power-Thermal : 5.439965225735973 W
+VStack : 0.9294494350422114 V
+Vcell : 0.9294494350422114 V
+###########
+I : 18.2
+PEM Efficiency : 0.5950902865811867 
+Power : 16.895803416613052 W
+Power-Stack : 16.895803416613052 W
+Power-Thermal : 5.490196583386948 W
+VStack : 0.9283408470666512 V
+Vcell : 0.9283408470666512 V
+###########
+I : 18.3
+PEM Efficiency : 0.5943800941574697 
+Power : 16.968362928007448 W
+Power-Stack : 16.968362928007448 W
+Power-Thermal : 5.5406370719925535 W
+VStack : 0.9272329468856528 V
+Vcell : 0.9272329468856528 V
+###########
+I : 18.4
+PEM Efficiency : 0.5936703110660336 
+Power : 17.040712608839428 W
+Power-Stack : 17.040712608839428 W
+Power-Thermal : 5.591287391160571 W
+VStack : 0.9261256852630124 V
+Vcell : 0.9261256852630124 V
+###########
+I : 18.5
+PEM Efficiency : 0.5929609056566177 
+Power : 17.112851737249986 W
+Power-Stack : 17.112851737249986 W
+Power-Thermal : 5.642148262750013 W
+VStack : 0.9250190128243236 V
+Vcell : 0.9250190128243236 V
+###########
+I : 18.6
+PEM Efficiency : 0.5922518461790761 
+Power : 17.184779568732072 W
+Power-Stack : 17.184779568732072 W
+Power-Thermal : 5.693220431267929 W
+VStack : 0.9239128800393587 V
+Vcell : 0.9239128800393587 V
+###########
+I : 18.7
+PEM Efficiency : 0.5915431007721006 
+Power : 17.25649533572372 W
+Power-Stack : 17.25649533572372 W
+Power-Thermal : 5.744504664276279 W
+VStack : 0.922807237204477 V
+Vcell : 0.922807237204477 V
+###########
+I : 18.8
+PEM Efficiency : 0.5908346374519565 
+Power : 17.32799824719098 W
+Power-Stack : 17.32799824719098 W
+Power-Thermal : 5.796001752809019 W
+VStack : 0.9217020344250522 V
+Vcell : 0.9217020344250522 V
+###########
+I : 18.9
+PEM Efficiency : 0.5901264241012222 
+Power : 17.399287488200436 W
+Power-Stack : 17.399287488200436 W
+Power-Thermal : 5.847712511799563 W
+VStack : 0.9205972215979067 V
+Vcell : 0.9205972215979067 V
+###########
+I : 19.0
+PEM Efficiency : 0.5894184284575297 
+Power : 17.470362219481178 W
+Power-Stack : 17.470362219481178 W
+Power-Thermal : 5.8996377805188205 W
+VStack : 0.9194927483937463 V
+Vcell : 0.9194927483937463 V
+###########
+I : 19.1
+PEM Efficiency : 0.5887106181022951 
+Power : 17.541221576975985 W
+Power-Stack : 17.541221576975985 W
+Power-Thermal : 5.951778423024015 W
+VStack : 0.9183885642395804 V
+Vcell : 0.9183885642395804 V
+###########
+I : 19.2
+PEM Efficiency : 0.588002960449438 
+Power : 17.611864671381568 W
+Power-Stack : 17.611864671381568 W
+Power-Thermal : 6.00413532861843 W
+VStack : 0.9172846183011234 V
+Vcell : 0.9172846183011234 V
+###########
+I : 19.3
+PEM Efficiency : 0.5872954227340788 
+Power : 17.682290587677645 W
+Power-Stack : 17.682290587677645 W
+Power-Thermal : 6.0567094123223555 W
+VStack : 0.9161808594651629 V
+Vcell : 0.9161808594651629 V
+###########
+I : 19.4
+PEM Efficiency : 0.5865879720012114 
+Power : 17.75249838464466 W
+Power-Stack : 17.75249838464466 W
+Power-Thermal : 6.109501615355338 W
+VStack : 0.9150772363218898 V
+Vcell : 0.9150772363218898 V
+###########
+I : 19.5
+PEM Efficiency : 0.5858805750943443 
+Power : 17.822487094369958 W
+Power-Stack : 17.822487094369958 W
+Power-Thermal : 6.162512905630043 W
+VStack : 0.9139736971471772 V
+Vcell : 0.9139736971471772 V
+###########
+I : 19.6
+PEM Efficiency : 0.5851731986441038 
+Power : 17.89225572174212 W
+Power-Stack : 17.89225572174212 W
+Power-Thermal : 6.215744278257882 W
+VStack : 0.912870189884802 V
+Vcell : 0.912870189884802 V
+###########
+I : 19.7
+PEM Efficiency : 0.5844658090567932 
+Power : 17.96180324393337 W
+Power-Stack : 17.96180324393337 W
+Power-Thermal : 6.269196756066627 W
+VStack : 0.9117666621285976 V
+Vcell : 0.9117666621285976 V
+###########
+I : 19.8
+PEM Efficiency : 0.5837583725029035 
+Power : 18.031128609869686 W
+Power-Stack : 18.031128609869686 W
+Power-Thermal : 6.322871390130315 W
+VStack : 0.9106630611045295 V
+Vcell : 0.9106630611045295 V
+###########
+I : 19.9
+PEM Efficiency : 0.5830508549055692 
+Power : 18.10023073968849 W
+Power-Stack : 18.10023073968849 W
+Power-Thermal : 6.376769260311507 W
+VStack : 0.909559333652688 V
+Vcell : 0.909559333652688 V
+###########
+I : 20.0
+PEM Efficiency : 0.5823432219289632 
+Power : 18.16910852418365 W
+Power-Stack : 18.16910852418365 W
+Power-Thermal : 6.430891475816349 W
+VStack : 0.9084554262091825 V
+Vcell : 0.9084554262091825 V
+###########
+I : 20.1
+PEM Efficiency : 0.5816354389666256 
+Power : 18.237760824237515 W
+Power-Stack : 18.237760824237515 W
+Power-Thermal : 6.485239175762486 W
+VStack : 0.907351284787936 V
+Vcell : 0.907351284787936 V
+###########
+I : 20.2
+PEM Efficiency : 0.5809274711297219 
+Power : 18.306186470239794 W
+Power-Stack : 18.306186470239794 W
+Power-Thermal : 6.539813529760203 W
+VStack : 0.9062468549623661 V
+Vcell : 0.9062468549623661 V
+###########
+I : 20.3
+PEM Efficiency : 0.5802192832352218 
+Power : 18.374384261493006 W
+Power-Stack : 18.374384261493006 W
+Power-Thermal : 6.594615738506996 W
+VStack : 0.905142081846946 V
+Vcell : 0.905142081846946 V
+###########
+I : 20.4
+PEM Efficiency : 0.5795108397939975 
+Power : 18.442352965604176 W
+Power-Stack : 18.442352965604176 W
+Power-Thermal : 6.649647034395823 W
+VStack : 0.9040369100786361 V
+Vcell : 0.9040369100786361 V
+###########
+I : 20.5
+PEM Efficiency : 0.5788021049988329 
+Power : 18.510091317862678 W
+Power-Stack : 18.510091317862678 W
+Power-Thermal : 6.704908682137323 W
+VStack : 0.9029312837981793 V
+Vcell : 0.9029312837981793 V
+###########
+I : 20.6
+PEM Efficiency : 0.5780930427123385 
+Power : 18.577598020603716 W
+Power-Stack : 18.577598020603716 W
+Power-Thermal : 6.760401979396287 W
+VStack : 0.9018251466312482 V
+Vcell : 0.9018251466312482 V
+###########
+I : 20.7
+PEM Efficiency : 0.5773836164547693 
+Power : 18.64487174255741 W
+Power-Stack : 18.64487174255741 W
+Power-Thermal : 6.816128257442588 W
+VStack : 0.9007184416694402 V
+Vcell : 0.9007184416694402 V
+###########
+I : 20.8
+PEM Efficiency : 0.5766737893917349 
+Power : 18.711911118183014 W
+Power-Stack : 18.711911118183014 W
+Power-Thermal : 6.872088881816987 W
+VStack : 0.8996111114511064 V
+Vcell : 0.8996111114511064 V
+###########
+I : 20.9
+PEM Efficiency : 0.5759635243218035 
+Power : 18.778714746988083 W
+Power-Stack : 18.778714746988083 W
+Power-Thermal : 6.928285253011916 W
+VStack : 0.8985030979420136 V
+Vcell : 0.8985030979420136 V
+###########
+I : 21.0
+PEM Efficiency : 0.5752527836639879 
+Power : 18.845281192832246 W
+Power-Stack : 18.845281192832246 W
+Power-Thermal : 6.984718807167755 W
+VStack : 0.8973943425158212 V
+Vcell : 0.8973943425158212 V
+###########
+I : 21.1
+PEM Efficiency : 0.5745415294451122 
+Power : 18.911608983215313 W
+Power-Stack : 18.911608983215313 W
+Power-Thermal : 7.041391016784687 W
+VStack : 0.896284785934375 V
+Vcell : 0.896284785934375 V
+###########
+I : 21.2
+PEM Efficiency : 0.5738297232870508 
+Power : 18.977696608549344 W
+Power-Stack : 18.977696608549344 W
+Power-Thermal : 7.098303391450655 W
+VStack : 0.8951743683277993 V
+Vcell : 0.8951743683277993 V
+###########
+I : 21.3
+PEM Efficiency : 0.5731173263938389 
+Power : 19.04354252141448 W
+Power-Stack : 19.04354252141448 W
+Power-Thermal : 7.15545747858552 W
+VStack : 0.8940630291743887 V
+Vcell : 0.8940630291743887 V
+###########
+I : 21.4
+PEM Efficiency : 0.5724042995386417 
+Power : 19.109145135798016 W
+Power-Stack : 19.109145135798016 W
+Power-Thermal : 7.212854864201983 W
+VStack : 0.8929507072802811 V
+Vcell : 0.8929507072802811 V
+###########
+I : 21.5
+PEM Efficiency : 0.5716906030505862 
+Power : 19.174502826316658 W
+Power-Stack : 19.174502826316658 W
+Power-Thermal : 7.2704971736833395 W
+VStack : 0.8918373407589144 V
+Vcell : 0.8918373407589144 V
+###########
+I : 21.6
+PEM Efficiency : 0.57097619680144 
+Power : 19.239613927421324 W
+Power-Stack : 19.239613927421324 W
+Power-Thermal : 7.328386072578678 W
+VStack : 0.8907228670102464 V
+Vcell : 0.8907228670102464 V
+###########
+I : 21.7
+PEM Efficiency : 0.5702610401921416 
+Power : 19.30447673258438 W
+Power-Stack : 19.30447673258438 W
+Power-Thermal : 7.386523267415619 W
+VStack : 0.889607222699741 V
+Vcell : 0.889607222699741 V
+###########
+I : 21.8
+PEM Efficiency : 0.569545092139168 
+Power : 19.369089493468827 W
+Power-Stack : 19.369089493468827 W
+Power-Thermal : 7.444910506531174 W
+VStack : 0.8884903437371021 V
+Vcell : 0.8884903437371021 V
+###########
+I : 21.9
+PEM Efficiency : 0.5688283110607408 
+Power : 19.433450419079147 W
+Power-Stack : 19.433450419079147 W
+Power-Thermal : 7.503549580920849 W
+VStack : 0.8873721652547557 V
+Vcell : 0.8873721652547557 V
+###########
+I : 22.0
+PEM Efficiency : 0.5681106548628602 
+Power : 19.49755767489336 W
+Power-Stack : 19.49755767489336 W
+Power-Thermal : 7.562442325106638 W
+VStack : 0.8862526215860619 V
+Vcell : 0.8862526215860619 V
+###########
+I : 22.1
+PEM Efficiency : 0.5673920809251647 
+Power : 19.56140938197598 W
+Power-Stack : 19.56140938197598 W
+Power-Thermal : 7.62159061802402 W
+VStack : 0.885131646243257 V
+Vcell : 0.885131646243257 V
+###########
+I : 22.2
+PEM Efficiency : 0.5666725460866103 
+Power : 19.62500361607149 W
+Power-Stack : 19.62500361607149 W
+Power-Thermal : 7.680996383928509 W
+VStack : 0.8840091718951122 V
+Vcell : 0.8840091718951122 V
+###########
+I : 22.3
+PEM Efficiency : 0.5659520066309609 
+Power : 19.688338406677868 W
+Power-Stack : 19.688338406677868 W
+Power-Thermal : 7.740661593322131 W
+VStack : 0.882885130344299 V
+Vcell : 0.882885130344299 V
+###########
+I : 22.4
+PEM Efficiency : 0.5652304182720874 
+Power : 19.751411736099822 W
+Power-Stack : 19.751411736099822 W
+Power-Thermal : 7.800588263900175 W
+VStack : 0.8817594525044564 V
+Vcell : 0.8817594525044564 V
+###########
+I : 22.5
+PEM Efficiency : 0.5645077361390695 
+Power : 19.814221538481338 W
+Power-Stack : 19.814221538481338 W
+Power-Thermal : 7.86077846151866 W
+VStack : 0.8806320683769484 V
+Vcell : 0.8806320683769484 V
+###########
+I : 22.6
+PEM Efficiency : 0.5637839147610911 
+Power : 19.87676569881703 W
+Power-Stack : 19.87676569881703 W
+Power-Thermal : 7.9212343011829685 W
+VStack : 0.8795029070273023 V
+Vcell : 0.8795029070273023 V
+###########
+I : 22.7
+PEM Efficiency : 0.5630589080521282 
+Power : 19.939042051941964 W
+Power-Stack : 19.939042051941964 W
+Power-Thermal : 7.981957948058033 W
+VStack : 0.8783718965613201 V
+Vcell : 0.8783718965613201 V
+###########
+I : 22.8
+PEM Efficiency : 0.5623326692954187 
+Power : 20.001048381499455 W
+Power-Stack : 20.001048381499455 W
+Power-Thermal : 8.042951618500547 W
+VStack : 0.8772389641008532 V
+Vcell : 0.8772389641008532 V
+###########
+I : 22.9
+PEM Efficiency : 0.5616051511277121 
+Power : 20.062782418886385 W
+Power-Stack : 20.062782418886385 W
+Power-Thermal : 8.10421758111361 W
+VStack : 0.8761040357592309 V
+Vcell : 0.8761040357592309 V
+###########
+I : 23.0
+PEM Efficiency : 0.5608763055232909 
+Power : 20.124241842175678 W
+Power-Stack : 20.124241842175678 W
+Power-Thermal : 8.165758157824323 W
+VStack : 0.8749670366163338 V
+Vcell : 0.8749670366163338 V
+###########
+I : 23.1
+PEM Efficiency : 0.5601460837777572 
+Power : 20.18542427501526 W
+Power-Stack : 20.18542427501526 W
+Power-Thermal : 8.22757572498474 W
+VStack : 0.8738278906933012 V
+Vcell : 0.8738278906933012 V
+###########
+I : 23.2
+PEM Efficiency : 0.5594144364915806 
+Power : 20.246327285503284 W
+Power-Stack : 20.246327285503284 W
+Power-Thermal : 8.289672714496715 W
+VStack : 0.8726865209268657 V
+Vcell : 0.8726865209268657 V
+###########
+I : 23.3
+PEM Efficiency : 0.5586813135533986 
+Power : 20.306948385038933 W
+Power-Stack : 20.306948385038933 W
+Power-Thermal : 8.352051614961068 W
+VStack : 0.8715428491433018 V
+Vcell : 0.8715428491433018 V
+###########
+I : 23.4
+PEM Efficiency : 0.557946664123065 
+Power : 20.367285027148366 W
+Power-Stack : 20.367285027148366 W
+Power-Thermal : 8.414714972851632 W
+VStack : 0.8703967960319815 V
+Vcell : 0.8703967960319815 V
+###########
+I : 23.5
+PEM Efficiency : 0.557210436614439 
+Power : 20.427334606285335 W
+Power-Stack : 20.427334606285335 W
+Power-Thermal : 8.477665393714664 W
+VStack : 0.8692482811185249 V
+Vcell : 0.8692482811185249 V
+###########
+I : 23.6
+PEM Efficiency : 0.556472578677909 
+Power : 20.4870944566059 W
+Power-Stack : 20.4870944566059 W
+Power-Thermal : 8.540905543394103 W
+VStack : 0.868097222737538 V
+Vcell : 0.868097222737538 V
+###########
+I : 23.7
+PEM Efficiency : 0.5557330371826439 
+Power : 20.54656185071671 W
+Power-Stack : 20.54656185071671 W
+Power-Thermal : 8.604438149283288 W
+VStack : 0.8669435380049245 V
+Vcell : 0.8669435380049245 V
+###########
+I : 23.8
+PEM Efficiency : 0.5549917581985673 
+Power : 20.605733998396406 W
+Power-Stack : 20.605733998396406 W
+Power-Thermal : 8.668266001603596 W
+VStack : 0.8657871427897649 V
+Vcell : 0.8657871427897649 V
+###########
+I : 23.9
+PEM Efficiency : 0.5542486869780432 
+Power : 20.664608045289363 W
+Power-Stack : 20.664608045289363 W
+Power-Thermal : 8.732391954710634 W
+VStack : 0.8646279516857475 V
+Vcell : 0.8646279516857475 V
+###########
+I : 24.0
+PEM Efficiency : 0.553503767937274 
+Power : 20.72318107157154 W
+Power-Stack : 20.72318107157154 W
+Power-Thermal : 8.796818928428461 W
+VStack : 0.8634658779821475 V
+Vcell : 0.8634658779821475 V
+###########
+I : 24.1
+PEM Efficiency : 0.5527569446373951 
+Power : 20.78145009058751 W
+Power-Stack : 20.78145009058751 W
+Power-Thermal : 8.861549909412492 W
+VStack : 0.8623008336343364 V
+Vcell : 0.8623008336343364 V
+###########
+I : 24.2
+PEM Efficiency : 0.5520081597652664 
+Power : 20.839412047458335 W
+Power-Stack : 20.839412047458335 W
+Power-Thermal : 8.926587952541663 W
+VStack : 0.8611327292338156 V
+Vcell : 0.8611327292338156 V
+###########
+I : 24.3
+PEM Efficiency : 0.5512573551139495 
+Power : 20.8970638176596 W
+Power-Stack : 20.8970638176596 W
+Power-Thermal : 8.991936182340401 W
+VStack : 0.8599614739777612 V
+Vcell : 0.8599614739777612 V
+###########
+I : 24.4
+PEM Efficiency : 0.5505044715628651 
+Power : 20.954402205568893 W
+Power-Stack : 20.954402205568893 W
+Power-Thermal : 9.057597794431103 W
+VStack : 0.8587869756380695 V
+Vcell : 0.8587869756380695 V
+###########
+I : 24.5
+PEM Efficiency : 0.5497494490576215 
+Power : 21.011423942982294 W
+Power-Stack : 21.011423942982294 W
+Power-Thermal : 9.123576057017704 W
+VStack : 0.8576091405298896 V
+Vcell : 0.8576091405298896 V
+###########
+I : 24.6
+PEM Efficiency : 0.5489922265895106 
+Power : 21.06812568759906 W
+Power-Stack : 21.06812568759906 W
+Power-Thermal : 9.18987431240094 W
+VStack : 0.8564278734796366 V
+Vcell : 0.8564278734796366 V
+###########
+I : 24.7
+PEM Efficiency : 0.5482327421746593 
+Power : 21.124504021473975 W
+Power-Stack : 21.124504021473975 W
+Power-Thermal : 9.256495978526024 W
+VStack : 0.8552430777924687 V
+Vcell : 0.8552430777924687 V
+###########
+I : 24.8
+PEM Efficiency : 0.5474709328328312 
+Power : 21.18055544943657 W
+Power-Stack : 21.18055544943657 W
+Power-Thermal : 9.323444550563428 W
+VStack : 0.8540546552192166 V
+Vcell : 0.8540546552192166 V
+###########
+I : 24.9
+PEM Efficiency : 0.5467067345658708 
+Power : 21.236276397476686 W
+Power-Stack : 21.236276397476686 W
+Power-Thermal : 9.39072360252331 W
+VStack : 0.8528625059227586 V
+Vcell : 0.8528625059227586 V
+###########
+I : 25.0
+PEM Efficiency : 0.5459400823357831 
+Power : 21.29166321109554 W
+Power-Stack : 21.29166321109554 W
+Power-Thermal : 9.45833678890446 W
+VStack : 0.8516665284438216 V
+Vcell : 0.8516665284438216 V
+###########
+I : 25.1
+PEM Efficiency : 0.5451709100424359 
+Power : 21.346712153621624 W
+Power-Stack : 21.346712153621624 W
+Power-Thermal : 9.526287846378379 W
+VStack : 0.8504666196662001 V
+Vcell : 0.8504666196662001 V
+###########
+I : 25.2
+PEM Efficiency : 0.544399150500885 
+Power : 21.401419404490795 W
+Power-Stack : 21.401419404490795 W
+Power-Thermal : 9.594580595509205 W
+VStack : 0.8492626747813807 V
+Vcell : 0.8492626747813807 V
+###########
+I : 25.3
+PEM Efficiency : 0.5436247354183059 
+Power : 21.455781057489702 W
+Power-Stack : 21.455781057489702 W
+Power-Thermal : 9.6632189425103 W
+VStack : 0.8480545872525573 V
+Vcell : 0.8480545872525573 V
+###########
+I : 25.4
+PEM Efficiency : 0.5428475953705286 
+Power : 21.509793118961827 W
+Power-Stack : 21.509793118961827 W
+Power-Thermal : 9.732206881038172 W
+VStack : 0.8468422487780247 V
+Vcell : 0.8468422487780247 V
+###########
+I : 25.5
+PEM Efficiency : 0.5420676597781651 
+Power : 21.563451505975408 W
+Power-Stack : 21.563451505975408 W
+Power-Thermal : 9.801548494024592 W
+VStack : 0.8456255492539375 V
+Vcell : 0.8456255492539375 V
+###########
+I : 25.6
+PEM Efficiency : 0.5412848568823208 
+Power : 21.61675204445236 W
+Power-Stack : 21.61675204445236 W
+Power-Thermal : 9.87124795554764 W
+VStack : 0.8444043767364203 V
+Vcell : 0.8444043767364203 V
+###########
+I : 25.7
+PEM Efficiency : 0.540499113719883 
+Power : 21.66969046725755 W
+Power-Stack : 21.66969046725755 W
+Power-Thermal : 9.94130953274245 W
+VStack : 0.8431786174030175 V
+Vcell : 0.8431786174030175 V
+###########
+I : 25.8
+PEM Efficiency : 0.539710356098375 
+Power : 21.7222624122474 W
+Power-Stack : 21.7222624122474 W
+Power-Thermal : 10.011737587752599 W
+VStack : 0.8419481555134651 V
+Vcell : 0.8419481555134651 V
+###########
+I : 25.9
+PEM Efficiency : 0.5389185085703682 
+Power : 21.774463420277154 W
+Power-Stack : 21.774463420277154 W
+Power-Thermal : 10.082536579722841 W
+VStack : 0.8407128733697744 V
+Vcell : 0.8407128733697744 V
+###########
+I : 26.0
+PEM Efficiency : 0.5381234944074416 
+Power : 21.82628893316583 W
+Power-Stack : 21.82628893316583 W
+Power-Thermal : 10.153711066834168 W
+VStack : 0.8394726512756089 V
+Vcell : 0.8394726512756089 V
+###########
+I : 26.1
+PEM Efficiency : 0.5373252355736818 
+Power : 21.87773429161803 W
+Power-Stack : 21.87773429161803 W
+Power-Thermal : 10.22526570838197 W
+VStack : 0.8382273674949436 V
+Vcell : 0.8382273674949436 V
+###########
+I : 26.2
+PEM Efficiency : 0.5365236526987126 
+Power : 21.928794733101785 W
+Power-Stack : 21.928794733101785 W
+Power-Thermal : 10.297205266898215 W
+VStack : 0.8369768982099918 V
+Vcell : 0.8369768982099918 V
+###########
+I : 26.3
+PEM Efficiency : 0.5357186650502425 
+Power : 21.97946538968135 W
+Power-Stack : 21.97946538968135 W
+Power-Thermal : 10.36953461031865 W
+VStack : 0.8357211174783783 V
+Vcell : 0.8357211174783783 V
+###########
+I : 26.4
+PEM Efficiency : 0.5349101905061233 
+Power : 22.02974128580418 W
+Power-Stack : 22.02974128580418 W
+Power-Thermal : 10.442258714195816 W
+VStack : 0.8344598971895524 V
+Vcell : 0.8344598971895524 V
+###########
+I : 26.5
+PEM Efficiency : 0.5340981455259091 
+Power : 22.079617336041082 W
+Power-Stack : 22.079617336041082 W
+Power-Thermal : 10.515382663958919 W
+VStack : 0.8331931070204182 V
+Vcell : 0.8331931070204182 V
+###########
+I : 26.6
+PEM Efficiency : 0.5332824451219031 
+Power : 22.129088342778495 W
+Power-Stack : 22.129088342778495 W
+Power-Thermal : 10.588911657221505 W
+VStack : 0.831920614390169 V
+Vcell : 0.831920614390169 V
+###########
+I : 26.7
+PEM Efficiency : 0.5324630028296857 
+Power : 22.178148993862074 W
+Power-Stack : 22.178148993862074 W
+Power-Thermal : 10.662851006137926 W
+VStack : 0.8306422844143099 V
+Vcell : 0.8306422844143099 V
+###########
+I : 26.8
+PEM Efficiency : 0.53163973067811 
+Power : 22.226793860190423 W
+Power-Stack : 22.226793860190423 W
+Power-Thermal : 10.73720613980958 W
+VStack : 0.8293579798578515 V
+Vcell : 0.8293579798578515 V
+###########
+I : 26.9
+PEM Efficiency : 0.5308125391587536 
+Power : 22.275017393257933 W
+Power-Stack : 22.275017393257933 W
+Power-Thermal : 10.811982606742065 W
+VStack : 0.8280675610876556 V
+Vcell : 0.8280675610876556 V
+###########
+I : 27.0
+PEM Efficiency : 0.5299813371948213 
+Power : 22.322813922645878 W
+Power-Stack : 22.322813922645878 W
+Power-Thermal : 10.887186077354123 W
+VStack : 0.8267708860239213 V
+Vcell : 0.8267708860239213 V
+###########
+I : 27.1
+PEM Efficiency : 0.52914603210948 
+Power : 22.370177653460377 W
+Power-Stack : 22.370177653460377 W
+Power-Thermal : 10.962822346539623 W
+VStack : 0.8254678100907888 V
+Vcell : 0.8254678100907888 V
+###########
+I : 27.2
+PEM Efficiency : 0.5283065295936187 
+Power : 22.417102663716427 W
+Power-Stack : 22.417102663716427 W
+Power-Thermal : 11.03889733628357 W
+VStack : 0.8241581861660452 V
+Vcell : 0.8241581861660452 V
+###########
+I : 27.3
+PEM Efficiency : 0.5274627336730222 
+Power : 22.46358290166667 W
+Power-Stack : 22.46358290166667 W
+Power-Thermal : 11.115417098333332 W
+VStack : 0.8228418645299146 V
+Vcell : 0.8228418645299146 V
+###########
+I : 27.4
+PEM Efficiency : 0.5266145466749447 
+Power : 22.509612183073838 W
+Power-Stack : 22.509612183073838 W
+Power-Thermal : 11.19238781692616 W
+VStack : 0.8215186928129138 V
+Vcell : 0.8215186928129138 V
+###########
+I : 27.5
+PEM Efficiency : 0.5257618691940743 
+Power : 22.555184188425788 W
+Power-Stack : 22.555184188425788 W
+Power-Thermal : 11.269815811574214 W
+VStack : 0.8201885159427559 V
+Vcell : 0.8201885159427559 V
+###########
+I : 27.6
+PEM Efficiency : 0.5249046000578711 
+Power : 22.6002924600917 W
+Power-Stack : 22.6002924600917 W
+Power-Thermal : 11.3477075399083 W
+VStack : 0.818851176090279 V
+Vcell : 0.818851176090279 V
+###########
+I : 27.7
+PEM Efficiency : 0.5240426362912736 
+Power : 22.644930399418513 W
+Power-Stack : 22.644930399418513 W
+Power-Thermal : 11.426069600581485 W
+VStack : 0.8175065126143868 V
+Vcell : 0.8175065126143868 V
+###########
+I : 27.8
+PEM Efficiency : 0.5231758730807534 
+Power : 22.689091263766116 W
+Power-Stack : 22.689091263766116 W
+Power-Thermal : 11.504908736233885 W
+VStack : 0.8161543620059754 V
+Vcell : 0.8161543620059754 V
+###########
+I : 27.9
+PEM Efficiency : 0.522304203737712 
+Power : 22.732768163480177 W
+Power-Stack : 22.732768163480177 W
+Power-Thermal : 11.584231836519821 W
+VStack : 0.8147945578308308 V
+Vcell : 0.8147945578308308 V
+###########
+I : 28.0
+PEM Efficiency : 0.5214275196612004 
+Power : 22.775954058801233 W
+Power-Stack : 22.775954058801233 W
+Power-Thermal : 11.664045941198768 W
+VStack : 0.8134269306714725 V
+Vcell : 0.8134269306714725 V
+###########
+I : 28.1
+PEM Efficiency : 0.5205457102999536 
+Power : 22.818641756708764 W
+Power-Stack : 22.818641756708764 W
+Power-Thermal : 11.744358243291234 W
+VStack : 0.8120513080679276 V
+Vcell : 0.8120513080679276 V
+###########
+I : 28.2
+PEM Efficiency : 0.5196586631137229 
+Power : 22.860823907698897 W
+Power-Stack : 22.860823907698897 W
+Power-Thermal : 11.825176092301103 W
+VStack : 0.8106675144574077 V
+Vcell : 0.8106675144574077 V
+###########
+I : 28.3
+PEM Efficiency : 0.5187662635338937 
+Power : 22.902493002494335 W
+Power-Stack : 22.902493002494335 W
+Power-Thermal : 11.906506997505664 W
+VStack : 0.8092753711128741 V
+Vcell : 0.8092753711128741 V
+###########
+I : 28.4
+PEM Efficiency : 0.5178683949233732 
+Power : 22.943641368685128 W
+Power-Stack : 22.943641368685128 W
+Power-Thermal : 11.98835863131487 W
+VStack : 0.8078746960804623 V
+Vcell : 0.8078746960804623 V
+###########
+I : 28.5
+PEM Efficiency : 0.5169649385357372 
+Power : 22.98426116729888 W
+Power-Stack : 22.98426116729888 W
+Power-Thermal : 12.070738832701121 W
+VStack : 0.8064653041157501 V
+Vcell : 0.8064653041157501 V
+###########
+I : 28.6
+PEM Efficiency : 0.5160557734736161 
+Power : 23.024344389298857 W
+Power-Stack : 23.024344389298857 W
+Power-Thermal : 12.153655610701145 W
+VStack : 0.8050470066188411 V
+Vcell : 0.8050470066188411 V
+###########
+I : 28.7
+PEM Efficiency : 0.5151407766463099 
+Power : 23.063882852008586 W
+Power-Stack : 23.063882852008586 W
+Power-Thermal : 12.237117147991412 W
+VStack : 0.8036196115682435 V
+Vcell : 0.8036196115682435 V
+###########
+I : 28.8
+PEM Efficiency : 0.5142198227266149 
+Power : 23.102868195461355 W
+Power-Stack : 23.102868195461355 W
+Power-Thermal : 12.321131804538645 W
+VStack : 0.8021829234535193 V
+Vcell : 0.8021829234535193 V
+###########
+I : 28.9
+PEM Efficiency : 0.5132927841068469 
+Power : 23.141291878673087 W
+Power-Stack : 23.141291878673087 W
+Power-Thermal : 12.405708121326912 W
+VStack : 0.8007367432066812 V
+Vcell : 0.8007367432066812 V
+###########
+I : 29.0
+PEM Efficiency : 0.5123595308540451 
+Power : 23.179145175836997 W
+Power-Stack : 23.179145175836997 W
+Power-Thermal : 12.490854824163002 W
+VStack : 0.7992808681323103 V
+Vcell : 0.7992808681323103 V
+###########
+I : 29.1
+PEM Efficiency : 0.5114199306643407 
+Power : 23.216419172438407 W
+Power-Stack : 23.216419172438407 W
+Power-Thermal : 12.576580827561594 W
+VStack : 0.7978150918363713 V
+Vcell : 0.7978150918363713 V
+###########
+I : 29.2
+PEM Efficiency : 0.5104738488164757 
+Power : 23.2531047612881 W
+Power-Stack : 23.2531047612881 W
+Power-Thermal : 12.662895238711899 W
+VStack : 0.7963392041537021 V
+Vcell : 0.7963392041537021 V
+###########
+I : 29.3
+PEM Efficiency : 0.5095211481244507 
+Power : 23.289192638472393 W
+Power-Stack : 23.289192638472393 W
+Power-Thermal : 12.749807361527607 W
+VStack : 0.7948529910741431 V
+Vcell : 0.7948529910741431 V
+###########
+I : 29.4
+PEM Efficiency : 0.5085616888892909 
+Power : 23.324673299218436 W
+Power-Stack : 23.324673299218436 W
+Power-Thermal : 12.837326700781562 W
+VStack : 0.7933562346672938 V
+Vcell : 0.7933562346672938 V
+###########
+I : 29.5
+PEM Efficiency : 0.5075953288499082 
+Power : 23.35953703367278 W
+Power-Stack : 23.35953703367278 W
+Power-Thermal : 12.92546296632722 W
+VStack : 0.7918487130058569 V
+Vcell : 0.7918487130058569 V
+###########
+I : 29.6
+PEM Efficiency : 0.5066219231330438 
+Power : 23.393773922591432 W
+Power-Stack : 23.393773922591432 W
+Power-Thermal : 13.014226077408571 W
+VStack : 0.7903302000875483 V
+Vcell : 0.7903302000875483 V
+###########
+I : 29.7
+PEM Efficiency : 0.505641324202273 
+Power : 23.427373832939715 W
+Power-Stack : 23.427373832939715 W
+Power-Thermal : 13.103626167060284 W
+VStack : 0.788800465755546 V
+Vcell : 0.788800465755546 V
+###########
+I : 29.8
+PEM Efficiency : 0.5046533818060553 
+Power : 23.4603264133999 W
+Power-Stack : 23.4603264133999 W
+Power-Thermal : 13.193673586600099 W
+VStack : 0.7872592756174464 V
+Vcell : 0.7872592756174464 V
+###########
+I : 29.9
+PEM Efficiency : 0.5036579429248091 
+Power : 23.492621089784798 W
+Power-Stack : 23.492621089784798 W
+Power-Thermal : 13.2843789102152 W
+VStack : 0.7857063909627023 V
+Vcell : 0.7857063909627023 V
+###########
+I : 30.0
+PEM Efficiency : 0.5026548517169935 
+Power : 23.524247060355297 W
+Power-Stack : 23.524247060355297 W
+Power-Thermal : 13.375752939644702 W
+VStack : 0.7841415686785099 V
+Vcell : 0.7841415686785099 V
+###########
+I : 30.1
+PEM Efficiency : 0.5016439494641773 
+Power : 23.555193291039913 W
+Power-Stack : 23.555193291039913 W
+Power-Thermal : 13.467806708960088 W
+VStack : 0.7825645611641167 V
+Vcell : 0.7825645611641167 V
+###########
+I : 30.2
+PEM Efficiency : 0.5006250745150765 
+Power : 23.585448510554286 W
+Power-Stack : 23.585448510554286 W
+Power-Thermal : 13.56055148944571 W
+VStack : 0.7809751162435195 V
+Vcell : 0.7809751162435195 V
+###########
+I : 30.3
+PEM Efficiency : 0.4995980622285398 
+Power : 23.61500120541862 W
+Power-Stack : 23.61500120541862 W
+Power-Thermal : 13.65399879458138 W
+VStack : 0.7793729770765221 V
+Vcell : 0.7793729770765221 V
+###########
+I : 30.4
+PEM Efficiency : 0.49856274491546 
+Power : 23.643839614870775 W
+Power-Stack : 23.643839614870775 W
+Power-Thermal : 13.748160385129225 W
+VStack : 0.7777578820681176 V
+Vcell : 0.7777578820681176 V
+###########
+I : 30.5
+PEM Efficiency : 0.49751895177959454 
+Power : 23.67195172567311 W
+Power-Stack : 23.67195172567311 W
+Power-Thermal : 13.843048274326888 W
+VStack : 0.7761295647761676 V
+Vcell : 0.7761295647761676 V
+###########
+I : 30.6
+PEM Efficiency : 0.4964665088572704 
+Power : 23.699325266810664 W
+Power-Stack : 23.699325266810664 W
+Power-Thermal : 13.938674733189337 W
+VStack : 0.7744877538173419 V
+Vcell : 0.7744877538173419 V
+###########
+I : 30.7
+PEM Efficiency : 0.4954052389559531 
+Power : 23.725947704078507 W
+Power-Stack : 23.725947704078507 W
+Power-Thermal : 14.03505229592149 W
+VStack : 0.7728321727712869 V
+Vcell : 0.7728321727712869 V
+###########
+I : 30.8
+PEM Efficiency : 0.4943349615916582 
+Power : 23.751806234555993 W
+Power-Stack : 23.751806234555993 W
+Power-Thermal : 14.132193765444006 W
+VStack : 0.7711625400829868 V
+Vcell : 0.7711625400829868 V
+###########
+I : 30.9
+PEM Efficiency : 0.49325549292518334 
+Power : 23.776887780965538 W
+Power-Stack : 23.776887780965538 W
+Power-Thermal : 14.23011221903446 W
+VStack : 0.769478568963286 V
+Vcell : 0.769478568963286 V
+###########
+I : 31.0
+PEM Efficiency : 0.49216664569713586 
+Power : 23.80117898591349 W
+Power-Stack : 23.80117898591349 W
+Power-Thermal : 14.32882101408651 W
+VStack : 0.767779967287532 V
+Vcell : 0.767779967287532 V
+###########
+I : 31.1
+PEM Efficiency : 0.49106822916173604 
+Power : 23.82466620601079 W
+Power-Stack : 23.82466620601079 W
+Power-Thermal : 14.428333793989212 W
+VStack : 0.7660664374923083 V
+Vcell : 0.7660664374923083 V
+###########
+I : 31.2
+PEM Efficiency : 0.4899600490193692 
+Power : 23.84733550587074 W
+Power-Stack : 23.84733550587074 W
+Power-Thermal : 14.52866449412926 W
+VStack : 0.764337676470216 V
+Vcell : 0.764337676470216 V
+###########
+I : 31.3
+PEM Efficiency : 0.4888419073478655 
+Power : 23.869172651981575 W
+Power-Stack : 23.869172651981575 W
+Power-Thermal : 14.629827348018424 W
+VStack : 0.7625933754626701 V
+Vcell : 0.7625933754626701 V
+###########
+I : 31.4
+PEM Efficiency : 0.4877136025324792 
+Power : 23.89016310645096 W
+Power-Stack : 23.89016310645096 W
+Power-Thermal : 14.731836893549037 W
+VStack : 0.7608332199506675 V
+Vcell : 0.7608332199506675 V
+###########
+I : 31.5
+PEM Efficiency : 0.4865749291945478 
+Power : 23.91029202062008 W
+Power-Stack : 23.91029202062008 W
+Power-Thermal : 14.83470797937992 W
+VStack : 0.7590568895434946 V
+Vcell : 0.7590568895434946 V
+###########
+I : 31.6
+PEM Efficiency : 0.4854256781187993 
+Power : 23.92954422854433 W
+Power-Stack : 23.92954422854433 W
+Power-Thermal : 14.93845577145567 W
+VStack : 0.7572640578653269 V
+Vcell : 0.7572640578653269 V
+###########
+I : 31.7
+PEM Efficiency : 0.4842656361792864 
+Power : 23.947904240338072 W
+Power-Stack : 23.947904240338072 W
+Power-Thermal : 15.043095759661927 W
+VStack : 0.7554543924396868 V
+Vcell : 0.7554543924396868 V
+###########
+I : 31.8
+PEM Efficiency : 0.48309458626391927 
+Power : 23.965356235380508 W
+Power-Stack : 23.965356235380508 W
+Power-Thermal : 15.148643764619493 W
+VStack : 0.753627554571714 V
+Vcell : 0.753627554571714 V
+###########
+I : 31.9
+PEM Efficiency : 0.48191230719757006 
+Power : 23.981884055379876 W
+Power-Stack : 23.981884055379876 W
+Power-Thermal : 15.25511594462012 W
+VStack : 0.7517831992282094 V
+Vcell : 0.7517831992282094 V
+###########
+I : 32.0
+PEM Efficiency : 0.48071857366372195 
+Power : 23.997471197293002 W
+Power-Stack : 23.997471197293002 W
+Power-Thermal : 15.362528802706997 W
+VStack : 0.7499209749154063 V
+Vcell : 0.7499209749154063 V
+###########
+I : 32.1
+PEM Efficiency : 0.47951315612463496 
+Power : 24.012100806097223 W
+Power-Stack : 24.012100806097223 W
+Power-Thermal : 15.470899193902778 W
+VStack : 0.7480405235544306 V
+Vcell : 0.7480405235544306 V
+###########
+I : 32.2
+PEM Efficiency : 0.47829582073999877 
+Power : 24.02575566741162 W
+Power-Stack : 24.02575566741162 W
+Power-Thermal : 15.580244332588382 W
+VStack : 0.7461414803543981 V
+Vcell : 0.7461414803543981 V
+###########
+I : 32.3
+PEM Efficiency : 0.47706632928404535 
+Power : 24.03841819996448 W
+Power-Stack : 24.03841819996448 W
+Power-Thermal : 15.690581800035519 W
+VStack : 0.7442234736831108 V
+Vcell : 0.7442234736831108 V
+###########
+I : 32.4
+PEM Efficiency : 0.4758244390610915 
+Power : 24.05007044790381 W
+Power-Stack : 24.05007044790381 W
+Power-Thermal : 15.801929552096189 W
+VStack : 0.7422861249353028 V
+Vcell : 0.7422861249353028 V
+###########
+I : 32.5
+PEM Efficiency : 0.4745699028194791 
+Power : 24.060694072947587 W
+Power-Stack : 24.060694072947587 W
+Power-Thermal : 15.914305927052412 W
+VStack : 0.7403290483983873 V
+Vcell : 0.7403290483983873 V
+###########
+I : 32.6
+PEM Efficiency : 0.4733024686638842 
+Power : 24.070270346370496 W
+Power-Stack : 24.070270346370496 W
+Power-Thermal : 16.027729653629503 W
+VStack : 0.7383518511156594 V
+Vcell : 0.7383518511156594 V
+###########
+I : 32.7
+PEM Efficiency : 0.47202187996596495 
+Power : 24.078780140823806 W
+Power-Stack : 24.078780140823806 W
+Power-Thermal : 16.142219859176198 W
+VStack : 0.7363541327469053 V
+Vcell : 0.7363541327469053 V
+###########
+I : 32.8
+PEM Efficiency : 0.4707278752733123 
+Power : 24.08620392198484 W
+Power-Stack : 24.08620392198484 W
+Power-Thermal : 16.257796078015154 W
+VStack : 0.7343354854263672 V
+Vcell : 0.7343354854263672 V
+###########
+I : 32.9
+PEM Efficiency : 0.46942018821667514 
+Power : 24.092521740032634 W
+Power-Stack : 24.092521740032634 W
+Power-Thermal : 16.37447825996736 W
+VStack : 0.7322954936180133 V
+Vcell : 0.7322954936180133 V
+###########
+I : 33.0
+PEM Efficiency : 0.4680985474154249 
+Power : 24.097713220946076 W
+Power-Stack : 24.097713220946076 W
+Power-Thermal : 16.492286779053924 W
+VStack : 0.7302337339680629 V
+Vcell : 0.7302337339680629 V
+###########
+I : 33.1
+PEM Efficiency : 0.4667626763812258 
+Power : 24.10175755762098 W
+Power-Stack : 24.10175755762098 W
+Power-Thermal : 16.61124244237902 W
+VStack : 0.7281497751547124 V
+Vcell : 0.7281497751547124 V
+###########
+I : 33.2
+PEM Efficiency : 0.46541229341987617 
+Power : 24.10463350080223 W
+Power-Stack : 24.10463350080223 W
+Power-Thermal : 16.731366499197776 W
+VStack : 0.7260431777350068 V
+Vcell : 0.7260431777350068 V
+###########
+I : 33.3
+PEM Efficiency : 0.4640471115312872 
+Power : 24.106319349827306 W
+Power-Stack : 24.106319349827306 W
+Power-Thermal : 16.85268065017269 W
+VStack : 0.723913493988808 V
+Vcell : 0.723913493988808 V
+###########
+I : 33.4
+PEM Efficiency : 0.4626668383075613 
+Power : 24.106792943177172 W
+Power-Stack : 24.106792943177172 W
+Power-Thermal : 16.975207056822825 W
+VStack : 0.7217602677597956 V
+Vcell : 0.7217602677597956 V
+###########
+I : 33.5
+PEM Efficiency : 0.46127117582913685 
+Power : 24.106031648830694 W
+Power-Stack : 24.106031648830694 W
+Power-Thermal : 17.098968351169308 W
+VStack : 0.7195830342934535 V
+Vcell : 0.7195830342934535 V
+###########
+I : 33.6
+PEM Efficiency : 0.45985982055895774 
+Power : 24.10401235441833 W
+Power-Stack : 24.10401235441833 W
+Power-Thermal : 17.223987645581673 W
+VStack : 0.7173813200719741 V
+Vcell : 0.7173813200719741 V
+###########
+I : 33.7
+PEM Efficiency : 0.45843246323463405 
+Power : 24.100711457171183 W
+Power-Stack : 24.100711457171183 W
+Power-Thermal : 17.35028854282882 W
+VStack : 0.7151546426460291 V
+Vcell : 0.7151546426460291 V
+###########
+I : 33.8
+PEM Efficiency : 0.45698878875855353 
+Power : 24.096104853661007 W
+Power-Stack : 24.096104853661007 W
+Power-Thermal : 17.477895146338987 W
+VStack : 0.7129025104633435 V
+Vcell : 0.7129025104633435 V
+###########
+I : 33.9
+PEM Efficiency : 0.4555284760859038 
+Power : 24.090167929326935 W
+Power-Stack : 24.090167929326935 W
+Power-Thermal : 17.60683207067306 W
+VStack : 0.7106244226940099 V
+Vcell : 0.7106244226940099 V
+###########
+I : 34.0
+PEM Efficiency : 0.45405119811056877 
+Power : 24.082875547784568 W
+Power-Stack : 24.082875547784568 W
+Power-Thermal : 17.737124452215433 W
+VStack : 0.7083198690524872 V
+Vcell : 0.7083198690524872 V
+###########
+I : 34.1
+PEM Efficiency : 0.45255662154885345 
+Power : 24.07420203991281 W
+Power-Stack : 24.07420203991281 W
+Power-Thermal : 17.868797960087193 W
+VStack : 0.7059883296162114 V
+Vcell : 0.7059883296162114 V
+###########
+I : 34.2
+PEM Efficiency : 0.4510444068209996 
+Power : 24.064121192713973 W
+Power-Stack : 24.064121192713973 W
+Power-Thermal : 18.00187880728603 W
+VStack : 0.7036292746407594 V
+Vcell : 0.7036292746407594 V
+###########
+I : 34.3
+PEM Efficiency : 0.4495142079304494 
+Power : 24.052606237942484 W
+Power-Stack : 24.052606237942484 W
+Power-Thermal : 18.13639376205751 W
+VStack : 0.7012421643715011 V
+Vcell : 0.7012421643715011 V
+###########
+I : 34.4
+PEM Efficiency : 0.44796567234081097 
+Power : 24.03962984049728 W
+Power-Stack : 24.03962984049728 W
+Power-Thermal : 18.272370159502717 W
+VStack : 0.6988264488516651 V
+Vcell : 0.6988264488516651 V
+###########
+I : 34.5
+PEM Efficiency : 0.4463984408504871 
+Power : 24.025164086573216 W
+Power-Stack : 24.025164086573216 W
+Power-Thermal : 18.409835913426786 W
+VStack : 0.6963815677267599 V
+Vcell : 0.6963815677267599 V
+###########
+I : 34.6
+PEM Efficiency : 0.4448121474649166 
+Power : 24.00918047156634 W
+Power-Stack : 24.00918047156634 W
+Power-Thermal : 18.54881952843366 W
+VStack : 0.6939069500452699 V
+Vcell : 0.6939069500452699 V
+###########
+I : 34.7
+PEM Efficiency : 0.443206419266388 
+Power : 23.99164988772812 W
+Power-Stack : 23.99164988772812 W
+Power-Thermal : 18.689350112271885 W
+VStack : 0.6914020140555653 V
+Vcell : 0.6914020140555653 V
+###########
+I : 34.8
+PEM Efficiency : 0.4415808762813748 
+Power : 23.972542611563277 W
+Power-Stack : 23.972542611563277 W
+Power-Thermal : 18.83145738843672 W
+VStack : 0.6888661669989448 V
+Vcell : 0.6888661669989448 V
+###########
+I : 34.9
+PEM Efficiency : 0.43993513134534695 
+Power : 23.95182829096607 W
+Power-Stack : 23.95182829096607 W
+Power-Thermal : 18.975171709033926 W
+VStack : 0.6862988048987413 V
+Vcell : 0.6862988048987413 V
+###########
+I : 35.0
+PEM Efficiency : 0.438268789965011 
+Power : 23.929475932089606 W
+Power-Stack : 23.929475932089606 W
+Power-Thermal : 19.120524067910395 W
+VStack : 0.6836993123454173 V
+Vcell : 0.6836993123454173 V
+###########
+I : 35.1
+PEM Efficiency : 0.43658145017792876 
+Power : 23.905453885942666 W
+Power-Stack : 23.905453885942666 W
+Power-Thermal : 19.267546114057332 W
+VStack : 0.6810670622775689 V
+Vcell : 0.6810670622775689 V
+###########
+I : 35.2
+PEM Efficiency : 0.4348727024094629 
+Power : 23.879729834708428 W
+Power-Stack : 23.879729834708428 W
+Power-Thermal : 19.416270165291575 W
+VStack : 0.6784014157587621 V
+Vcell : 0.6784014157587621 V
+###########
+I : 35.3
+PEM Efficiency : 0.433142129327001 
+Power : 23.85227077777929 W
+Power-Stack : 23.85227077777929 W
+Power-Thermal : 19.566729222220708 W
+VStack : 0.6757017217501216 V
+Vcell : 0.6757017217501216 V
+###########
+I : 35.4
+PEM Efficiency : 0.43138930569140566 
+Power : 23.823043017502187 W
+Power-Stack : 23.823043017502187 W
+Power-Thermal : 19.71895698249781 W
+VStack : 0.6729673168785929 V
+Vcell : 0.6729673168785929 V
+###########
+I : 35.5
+PEM Efficiency : 0.429613798205635 
+Power : 23.792012144628064 W
+Power-Stack : 23.792012144628064 W
+Power-Thermal : 19.872987855371935 W
+VStack : 0.6701975252007906 V
+Vcell : 0.6701975252007906 V
+###########
+I : 35.6
+PEM Efficiency : 0.4278151653604823 
+Power : 23.75914302345975 W
+Power-Stack : 23.75914302345975 W
+Power-Thermal : 20.028856976540254 W
+VStack : 0.6673916579623524 V
+Vcell : 0.6673916579623524 V
+###########
+I : 35.7
+PEM Efficiency : 0.42599295727738007 
+Power : 23.72439977669185 W
+Power-Stack : 23.72439977669185 W
+Power-Thermal : 20.18660022330815 W
+VStack : 0.6645490133527129 V
+Vcell : 0.6645490133527129 V
+###########
+I : 35.8
+PEM Efficiency : 0.42414671554820815 
+Power : 23.687745769936328 W
+Power-Stack : 23.687745769936328 W
+Power-Thermal : 20.346254230063668 W
+VStack : 0.6616688762552048 V
+Vcell : 0.6616688762552048 V
+###########
+I : 35.9
+PEM Efficiency : 0.4222759730720539 
+Power : 23.649143595927303 W
+Power-Stack : 23.649143595927303 W
+Power-Thermal : 20.507856404072694 W
+VStack : 0.658750517992404 V
+Vcell : 0.658750517992404 V
+###########
+I : 36.0
+PEM Efficiency : 0.420380253888863 
+Power : 23.608555058398547 W
+Power-Stack : 23.608555058398547 W
+Power-Thermal : 20.67144494160145 W
+VStack : 0.6557931960666263 V
+Vcell : 0.6557931960666263 V
+###########
+I : 36.1
+PEM Efficiency : 0.41845907300992385 
+Power : 23.56594115562687 W
+Power-Stack : 23.56594115562687 W
+Power-Thermal : 20.83705884437313 W
+VStack : 0.6527961538954812 V
+Vcell : 0.6527961538954812 V
+###########
+I : 36.2
+PEM Efficiency : 0.4165119362451197 
+Power : 23.5212620636344 W
+Power-Stack : 23.5212620636344 W
+Power-Thermal : 21.004737936365604 W
+VStack : 0.6497586205423866 V
+Vcell : 0.6497586205423866 V
+###########
+I : 36.3
+PEM Efficiency : 0.4145383400268956 
+Power : 23.47447711904304 W
+Power-Stack : 23.47447711904304 W
+Power-Thermal : 21.174522880956953 W
+VStack : 0.6466798104419571 V
+Vcell : 0.6466798104419571 V
+###########
+I : 36.4
+PEM Efficiency : 0.4125377712308684 
+Power : 23.425544801573633 W
+Power-Stack : 23.425544801573633 W
+Power-Thermal : 21.346455198426366 W
+VStack : 0.6435589231201547 V
+Vcell : 0.6435589231201547 V
+###########
+I : 36.5
+PEM Efficiency : 0.41050970699302197 
+Power : 23.374422716182675 W
+Power-Stack : 23.374422716182675 W
+Power-Thermal : 21.520577283817325 W
+VStack : 0.6403951429091144 V
+Vcell : 0.6403951429091144 V
+###########
+I : 36.6
+PEM Efficiency : 0.40845361452341905 
+Power : 23.321067574829137 W
+Power-Stack : 23.321067574829137 W
+Power-Thermal : 21.696932425170868 W
+VStack : 0.6371876386565337 V
+Vcell : 0.6371876386565337 V
+###########
+I : 36.7
+PEM Efficiency : 0.4063689509163642 
+Power : 23.265435177863687 W
+Power-Stack : 23.265435177863687 W
+Power-Thermal : 21.87556482213632 W
+VStack : 0.6339355634295282 V
+Vcell : 0.6339355634295282 V
+###########
+I : 36.8
+PEM Efficiency : 0.40425516295695135 
+Power : 23.20748039503266 W
+Power-Stack : 23.20748039503266 W
+Power-Thermal : 22.056519604967335 W
+VStack : 0.6306380542128441 V
+Vcell : 0.6306380542128441 V
+###########
+I : 36.9
+PEM Efficiency : 0.40211168692392374 
+Power : 23.147157146088745 W
+Power-Stack : 23.147157146088745 W
+Power-Thermal : 22.239842853911252 W
+VStack : 0.627294231601321 V
+Vcell : 0.627294231601321 V
+###########
+I : 37.0
+PEM Efficiency : 0.3999379483887791 
+Power : 23.08441838100033 W
+Power-Stack : 23.08441838100033 W
+Power-Thermal : 22.42558161899967 W
+VStack : 0.6239031994864954 V
+Vcell : 0.6239031994864954 V
+###########
+I : 37.1
+PEM Efficiency : 0.3977333620110467 
+Power : 23.01921605975134 W
+Power-Stack : 23.01921605975134 W
+Power-Thermal : 22.613783940248663 W
+VStack : 0.6204640447372328 V
+Vcell : 0.6204640447372328 V
+###########
+I : 37.2
+PEM Efficiency : 0.3954973313296627 
+Power : 22.95150113172299 W
+Power-Stack : 22.95150113172299 W
+Power-Thermal : 22.804498868277015 W
+VStack : 0.6169758368742738 V
+Vcell : 0.6169758368742738 V
+###########
+I : 37.3
+PEM Efficiency : 0.3932292485503711 
+Power : 22.881223514648994 W
+Power-Stack : 22.881223514648994 W
+Power-Thermal : 22.997776485351 W
+VStack : 0.613437627738579 V
+Vcell : 0.613437627738579 V
+###########
+I : 37.4
+PEM Efficiency : 0.39092849432907284 
+Power : 22.808332073135425 W
+Power-Stack : 22.808332073135425 W
+Power-Thermal : 23.193667926864574 W
+VStack : 0.6098484511533536 V
+Vcell : 0.6098484511533536 V
+###########
+I : 37.5
+PEM Efficiency : 0.3885944375510447 
+Power : 22.732774596736117 W
+Power-Stack : 22.732774596736117 W
+Power-Thermal : 23.39222540326388 W
+VStack : 0.6062073225796298 V
+Vcell : 0.6062073225796298 V
+###########
+I : 37.6
+PEM Efficiency : 0.386226435105954 
+Power : 22.65449777757484 W
+Power-Stack : 22.65449777757484 W
+Power-Thermal : 23.593502222425162 W
+VStack : 0.6025132387652883 V
+Vcell : 0.6025132387652883 V
+###########
+I : 37.7
+PEM Efficiency : 0.3838238316585815 
+Power : 22.5734471875045 W
+Power-Stack : 22.5734471875045 W
+Power-Thermal : 23.797552812495503 W
+VStack : 0.5987651773873872 V
+Vcell : 0.5987651773873872 V
+###########
+I : 37.8
+PEM Efficiency : 0.38138595941517656 
+Power : 22.48956725479413 W
+Power-Stack : 22.48956725479413 W
+Power-Thermal : 24.00443274520586 W
+VStack : 0.5949620966876755 V
+Vcell : 0.5949620966876755 V
+###########
+I : 37.9
+PEM Efficiency : 0.3789121378853587 
+Power : 22.40280124033395 W
+Power-Stack : 22.40280124033395 W
+Power-Thermal : 24.214198759666047 W
+VStack : 0.5911029351011596 V
+Vcell : 0.5911029351011596 V
+###########
+I : 38.0
+PEM Efficiency : 0.37640167363948096 
+Power : 22.31309121334843 W
+Power-Stack : 22.31309121334843 W
+Power-Thermal : 24.42690878665157 W
+VStack : 0.5871866108775903 V
+Vcell : 0.5871866108775903 V
+###########
+I : 38.1
+PEM Efficiency : 0.37385386006136734 
+Power : 22.22037802660743 W
+Power-Stack : 22.22037802660743 W
+Power-Thermal : 24.642621973392572 W
+VStack : 0.583212021695733 V
+Vcell : 0.583212021695733 V
+###########
+I : 38.2
+PEM Efficiency : 0.3712679770963385 
+Power : 22.124601291125007 W
+Power-Stack : 22.124601291125007 W
+Power-Thermal : 24.861398708874997 W
+VStack : 0.5791780442702881 V
+Vcell : 0.5791780442702881 V
+###########
+I : 38.3
+PEM Efficiency : 0.36864329099443194 
+Power : 22.02569935033532 W
+Power-Stack : 22.02569935033532 W
+Power-Thermal : 25.08330064966468 W
+VStack : 0.5750835339513138 V
+Vcell : 0.5750835339513138 V
+###########
+I : 38.4
+PEM Efficiency : 0.3659790540487298 
+Power : 21.923609253735112 W
+Power-Stack : 21.923609253735112 W
+Power-Thermal : 25.308390746264887 W
+VStack : 0.5709273243160186 V
+Vcell : 0.5709273243160186 V
+###########
+I : 38.5
+PEM Efficiency : 0.36327450432869623 
+Power : 21.818266729981495 W
+Power-Stack : 21.818266729981495 W
+Power-Thermal : 25.536733270018505 W
+VStack : 0.5667082267527661 V
+Vcell : 0.5667082267527661 V
+###########
+I : 38.6
+PEM Efficiency : 0.36052886540843176 
+Power : 21.70960615943413 W
+Power-Stack : 21.70960615943413 W
+Power-Thermal : 25.76839384056587 W
+VStack : 0.5624250300371536 V
+Vcell : 0.5624250300371536 V
+###########
+I : 38.7
+PEM Efficiency : 0.3577413460897474 
+Power : 21.597560546130232 W
+Power-Stack : 21.597560546130232 W
+Power-Thermal : 26.00343945386977 W
+VStack : 0.558076499900006 V
+Vcell : 0.558076499900006 V
+###########
+I : 38.8
+PEM Efficiency : 0.35491114011995817 
+Power : 21.48206148918083 W
+Power-Stack : 21.48206148918083 W
+Power-Thermal : 26.241938510819168 W
+VStack : 0.5536613785871348 V
+Vcell : 0.5536613785871348 V
+###########
+I : 38.9
+PEM Efficiency : 0.3520374259042962 
+Power : 21.36303915357631 W
+Power-Stack : 21.36303915357631 W
+Power-Thermal : 26.483960846423688 W
+VStack : 0.5491783844107021 V
+Vcell : 0.5491783844107021 V
+###########
+I : 39.0
+PEM Efficiency : 0.3491193662128428 
+Power : 21.240422240389353 W
+Power-Stack : 21.240422240389353 W
+Power-Thermal : 26.729577759610645 W
+VStack : 0.5446262112920347 V
+Vcell : 0.5446262112920347 V
+###########
+I : 39.1
+PEM Efficiency : 0.34615610788186824 
+Power : 21.114137956362438 W
+Power-Stack : 21.114137956362438 W
+Power-Thermal : 26.978862043637562 W
+VStack : 0.5400035282957145 V
+Vcell : 0.5400035282957145 V
+###########
+I : 39.2
+PEM Efficiency : 0.3431467815094832 
+Power : 20.98411198286792 W
+Power-Stack : 20.98411198286792 W
+Power-Thermal : 27.231888017132086 W
+VStack : 0.5353089791547938 V
+Vcell : 0.5353089791547938 V
+###########
+I : 39.3
+PEM Efficiency : 0.3400905011454807 
+Power : 20.85026844422713 W
+Power-Stack : 20.85026844422713 W
+Power-Thermal : 27.48873155577287 W
+VStack : 0.5305411817869499 V
+Vcell : 0.5305411817869499 V
+###########
+I : 39.4
+PEM Efficiency : 0.33698636397526843 
+Power : 20.7125298753759 W
+Power-Stack : 20.7125298753759 W
+Power-Thermal : 27.749470124624096 W
+VStack : 0.5256987278014188 V
+Vcell : 0.5256987278014188 V
+###########
+I : 39.5
+PEM Efficiency : 0.3338334499977725 
+Power : 20.57081718886274 W
+Power-Stack : 20.57081718886274 W
+Power-Thermal : 28.014182811137257 W
+VStack : 0.5207801819965251 V
+Vcell : 0.5207801819965251 V
+###########
+I : 39.6
+PEM Efficiency : 0.33063082169720026 
+Power : 20.425049641166247 W
+Power-Stack : 20.425049641166247 W
+Power-Thermal : 28.282950358833755 W
+VStack : 0.5157840818476325 V
+Vcell : 0.5157840818476325 V
+###########
+I : 39.7
+PEM Efficiency : 0.32737752370854234 
+Power : 20.275144798317445 W
+Power-Stack : 20.275144798317445 W
+Power-Thermal : 28.555855201682558 W
+VStack : 0.510708936985326 V
+Vcell : 0.510708936985326 V
+###########
+I : 39.8
+PEM Efficiency : 0.32407258247669735 
+Power : 20.121018500813186 W
+Power-Stack : 20.121018500813186 W
+Power-Thermal : 28.832981499186808 W
+VStack : 0.5055532286636479 V
+Vcell : 0.5055532286636479 V
+###########
+I : 39.9
+PEM Efficiency : 0.32071500590909624 
+Power : 19.962584827805788 W
+Power-Stack : 19.962584827805788 W
+Power-Thermal : 29.11441517219421 W
+VStack : 0.5003154092181902 V
+Vcell : 0.5003154092181902 V
+###########
+I : 40.0
+PEM Efficiency : 0.31730378302170126 
+Power : 19.79975606055416 W
+Power-Stack : 19.79975606055416 W
+Power-Thermal : 29.400243939445836 W
+VStack : 0.49499390151385403 V
+Vcell : 0.49499390151385403 V
+###########
+I : 40.1
+PEM Efficiency : 0.3138378835782566 
+Power : 19.63244264512142 W
+Power-Stack : 19.63244264512142 W
+Power-Thermal : 29.69055735487858 W
+VStack : 0.48958709838208025 V
+Vcell : 0.48958709838208025 V
+###########
+I : 40.2
+PEM Efficiency : 0.31031625772265503 
+Power : 19.460553154303145 W
+Power-Stack : 19.460553154303145 W
+Power-Thermal : 29.985446845696856 W
+VStack : 0.4840933620473419 V
+Vcell : 0.4840933620473419 V
+###########
+I : 40.3
+PEM Efficiency : 0.3067378356042974 
+Power : 19.28399424877097 W
+Power-Stack : 19.28399424877097 W
+Power-Thermal : 30.285005751229026 W
+VStack : 0.47851102354270403 V
+Vcell : 0.47851102354270403 V
+###########
+I : 40.4
+PEM Efficiency : 0.3031015269963055 
+Power : 19.102670637415155 W
+Power-Stack : 19.102670637415155 W
+Power-Thermal : 30.58932936258484 W
+VStack : 0.47283838211423657 V
+Vcell : 0.47283838211423657 V
+###########
+I : 40.5
+PEM Efficiency : 0.2994062209064542 
+Power : 18.91648503686978 W
+Power-Stack : 18.91648503686978 W
+Power-Thermal : 30.89851496313022 W
+VStack : 0.4670737046140686 V
+Vcell : 0.4670737046140686 V
+###########
+I : 40.6
+PEM Efficiency : 0.29565078518068333 
+Power : 18.725338130203763 W
+Power-Stack : 18.725338130203763 W
+Power-Thermal : 31.21266186979624 W
+VStack : 0.46121522488186606 V
+Vcell : 0.46121522488186606 V
+###########
+I : 40.7
+PEM Efficiency : 0.29183406609904783 
+Power : 18.529128524760747 W
+Power-Stack : 18.529128524760747 W
+Power-Thermal : 31.531871475239257 W
+VStack : 0.4552611431145146 V
+Vcell : 0.4552611431145146 V
+###########
+I : 40.8
+PEM Efficiency : 0.28795488796396157 
+Power : 18.327752709130223 W
+Power-Stack : 18.327752709130223 W
+Power-Thermal : 31.85624729086977 W
+VStack : 0.44920962522378005 V
+Vcell : 0.44920962522378005 V
+###########
+I : 40.9
+PEM Efficiency : 0.28401205268058766 
+Power : 18.121105009232213 W
+Power-Stack : 18.121105009232213 W
+Power-Thermal : 32.18589499076778 W
+VStack : 0.4430588021817167 V
+Vcell : 0.4430588021817167 V
+###########
+I : 41.0
+PEM Efficiency : 0.2800043393292277 
+Power : 17.909077543497403 W
+Power-Stack : 17.909077543497403 W
+Power-Thermal : 32.520922456502596 W
+VStack : 0.4368067693535952 V
+Vcell : 0.4368067693535952 V
+###########
+I : 41.1
+PEM Efficiency : 0.27593050372955186 
+Power : 17.69156017712395 W
+Power-Stack : 17.69156017712395 W
+Power-Thermal : 32.86143982287605 W
+VStack : 0.43045158581810095 V
+Vcell : 0.43045158581810095 V
+###########
+I : 41.2
+PEM Efficiency : 0.271789277996522 
+Power : 17.468440475392466 W
+Power-Stack : 17.468440475392466 W
+Power-Thermal : 33.20755952460754 W
+VStack : 0.4239912736745744 V
+Vcell : 0.4239912736745744 V
+###########
+I : 41.3
+PEM Efficiency : 0.2675793700878396 
+Power : 17.23960365601933 W
+Power-Stack : 17.23960365601933 W
+Power-Thermal : 33.559396343980666 W
+VStack : 0.4174238173370298 V
+Vcell : 0.4174238173370298 V
+###########
+I : 41.4
+PEM Efficiency : 0.26329946334276555 
+Power : 17.00493254052917 W
+Power-Stack : 17.00493254052917 W
+Power-Thermal : 33.91706745947083 W
+VStack : 0.41074716281471424 V
+Vcell : 0.41074716281471424 V
+###########
+I : 41.5
+PEM Efficiency : 0.25894821601214346 
+Power : 16.764307504626167 W
+Power-Stack : 16.764307504626167 W
+Power-Thermal : 34.28069249537383 W
+VStack : 0.4039592169789438 V
+Vcell : 0.4039592169789438 V
+###########
+I : 41.6
+PEM Efficiency : 0.25452426077945606 
+Power : 16.51760642754358 W
+Power-Stack : 16.51760642754358 W
+Power-Thermal : 34.65039357245642 W
+VStack : 0.3970578468159514 V
+Vcell : 0.3970578468159514 V
+###########
+I : 41.7
+PEM Efficiency : 0.25002620427275035 
+Power : 16.264704640350956 W
+Power-Stack : 16.264704640350956 W
+Power-Thermal : 35.02629535964905 W
+VStack : 0.39004087866549053 V
+Vcell : 0.39004087866549053 V
+###########
+I : 41.8
+PEM Efficiency : 0.24545262656724864 
+Power : 16.005474873197148 W
+Power-Stack : 16.005474873197148 W
+Power-Thermal : 35.40852512680285 W
+VStack : 0.3829060974449079 V
+Vcell : 0.3829060974449079 V
+###########
+I : 41.9
+PEM Efficiency : 0.24080208067847425 
+Power : 15.739787201467792 W
+Power-Stack : 15.739787201467792 W
+Power-Thermal : 35.79721279853221 W
+VStack : 0.37565124585841986 V
+Vcell : 0.37565124585841986 V
+###########
+I : 42.0
+PEM Efficiency : 0.2360730920457109 
+Power : 15.467508990834979 W
+Power-Stack : 15.467508990834979 W
+Power-Thermal : 36.19249100916502 W
+VStack : 0.368274023591309 V
+Vcell : 0.368274023591309 V
+###########
+I : 42.1
+PEM Efficiency : 0.23126415800560418 
+Power : 15.188504841176062 W
+Power-Stack : 15.188504841176062 W
+Power-Thermal : 36.59449515882394 W
+VStack : 0.36077208648874254 V
+Vcell : 0.36077208648874254 V
+###########
+I : 42.2
+PEM Efficiency : 0.22637374725572856 
+Power : 14.902636529339125 W
+Power-Stack : 14.902636529339125 W
+Power-Thermal : 37.00336347066088 W
+VStack : 0.35314304571893657 V
+Vcell : 0.35314304571893657 V
+###########
+I : 42.3
+PEM Efficiency : 0.22140029930791538 
+Power : 14.60976295073072 W
+Power-Stack : 14.60976295073072 W
+Power-Thermal : 37.41923704926927 W
+VStack : 0.345384466920348 V
+Vcell : 0.345384466920348 V
+###########
+I : 42.4
+PEM Efficiency : 0.21634222393115646 
+Power : 14.309740059702413 W
+Power-Stack : 14.309740059702413 W
+Power-Thermal : 37.84225994029758 W
+VStack : 0.3374938693326041 V
+Vcell : 0.3374938693326041 V
+###########
+Report is generating ...
+Done!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice : "Status", "V0", "K" and "EFF" , new in version 0.8</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_2</span><span class="o">=</span><span class="n">Static_Analysis</span><span class="p">(</span><span class="n">InputMethod</span><span class="o">=</span><span class="n">Test_Vector</span><span class="p">,</span><span class="n">TestMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">PrintMode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ReportMode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>###########
+Chamberline-Kim-Model Simulation
+###########
+Analyzing . . .
 Done!
 </pre>
 </div>
@@ -12819,6 +15791,283 @@ Done!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><code>TestMode</code> : Active test mode and get/return data as <code>dict</code>, (Default : <code>False</code>)</li>
+<li><code>ReportMode</code> : Generate reports(<code>.csv</code>,<code>.opem</code>,<code>.html</code>) and print result in console, (Default : <code>True</code>)</li>
+<li><code>PrintMode</code> : Control printing in console, (Default : <code>True</code>)</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot">Plot<a class="anchor-link" href="#Plot">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install matplotlib<span class="p">;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: matplotlib in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (2.2.2)
+Requirement already satisfied: six&gt;=1.10 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (1.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (2.6.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (1.0.1)
+Requirement already satisfied: numpy&gt;=1.7.1 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (1.15.2)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: pytz in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (2018.3)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from matplotlib) (2.2.0)
+Requirement already satisfied: setuptools in c:\users\sepkjaer\appdata\local\programs\python\python35-32\lib\site-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib) (39.2.0)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>You are using pip version 19.0.2, however version 19.0.3 is available.
+You should consider upgrading via the &#39;python -m pip install --upgrade pip&#39; command.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_label</span><span class="p">,</span><span class="n">y_label</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="p">[],</span><span class="n">multi</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">multi</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">y_item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y_item</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x_label</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_func</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;P&quot;</span><span class="p">],</span><span class="s2">&quot;I(A)&quot;</span><span class="p">,</span><span class="s2">&quot;Power(W)&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_func</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">],[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;V&quot;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;VE&quot;</span><span class="p">]],</span><span class="s2">&quot;I(A)&quot;</span><span class="p">,</span><span class="s2">&quot;V(V)&quot;</span><span class="p">,[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">],</span><span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Voltage-Stack&quot;</span><span class="p">,</span><span class="s2">&quot;Linear-Apx&quot;</span><span class="p">],</span><span class="n">multi</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_func</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Ph&quot;</span><span class="p">],</span><span class="s2">&quot;I(A)&quot;</span><span class="p">,</span><span class="s2">&quot;Power-Thermal(W)&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_func</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;EFF&quot;</span><span class="p">],</span><span class="s2">&quot;I(A)&quot;</span><span class="p">,</span><span class="s2">&quot;Efficiency&quot;</span><span class="p">,</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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FBn1qWPdpUfnz5+npqaGmJgYcnNz6d2793V9/2joU0lJyQ7nXIeH6L28JLW1WVSbE8jMAsA/At/u6I2cc08ATwAUFBS44uLiNseWl5fT3nZRjyKlPnWsO/WooKCA5cuXc+DAAe677z5uuOGG6/beXalPXh4+Ogakhi2nACfClvsB2UC5mb0LTALW6GSziPhhyJAh3HvvvZw7d47nnnuux16u6mUoVAKZZjbczGJpfGDPmqaNzrlzzrmBzrl051w68BYwv7XDRyIinWHYsGHcfffd1NfXs2LFCi5evOh3SZ3Os1Bwzl0CHgJeBvYCq5xztWb2iJnN9+pzRUSuRUZGBnfddRcnTpxg1apVXL582e+SOpWn9yk459Y750Y55zKcc38fWvcT59yaVsYWay9BRKLB6NGjmT9/PocOHeIPf/hDj5pET3MfiYi0Ijc3l3PnzlFeXk6/fv2YNWuW3yV1CoWCiEgbbr31Vs6fP8+WLVtISEigoKD7XwejUBARaYOZcfvtt9PQ0MD69etJTExk5MiRfpflKU2IJyLSjkAgwOLFi7npppt44YUXqK+v97skTykUREQ6EBsby913300wGGTlypXd+h4GhYKISAQSExP5+te/ztmzZ3nhhRe67dPbFAoiIhEaNmwYd9xxB4cOHeKVV17xuxxP6ESziMgVyMvL4/3332fr1q2kpqYybtw4v0u6rrSnICJyhebMmUNKSgpr1qzh9OnTfpdzXSkURESuUDAY5M477yQYDLJq1So+//xzv0u6bhQKIiJXISEhga997Wt8+OGHrF+/3u9yrhuFgojIVRo5ciS33noru3btYteuXX6Xc10oFERErsGMGTNIS0vjxRdf5KOPPvK7nGumUBARuQaBQIBFixZhZqxevbrL37+gUBARuUYJCQnccccdHDt2jNdff93vcq6JQkFE5DrIzs4mJyeH119/naNHj/pdzlVTKIiIXCelpaX079+f1atX89lnn/ldzlVRKIiIXCdxcXEsWrSIM2fOsHHjRr/LuSoKBRGR6ygtLY3CwkK2bdvGkSNH/C7niikURESus1mzZpGYmMiaNWu63N3OCgURkessNjaWr371q5w+fZqKigq/y7kiCgUREQ+MGDGCvLw83nzzTS5cuOB3ORFTKIiIeGTOnDnEx8ezf//+LnNTm0JBRMQjcXFxzJs3j48//pjK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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Chamberline-Kim/Chamberline_Test.html">HTML File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Chamberline-Kim/Chamberline_Test.opem">OPEM File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Chamberline-Kim/Chamberline_Test.csv">CSV File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2>
 </div>
 </div>
@@ -12829,8 +16078,8 @@ Done!
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Inputs, Constants &amp; Middle Values</p>
 <ol>
-<li>User : User Input</li>
-<li>System : Simulator Calculation (Middle Value)</li>
+<li>User : User input</li>
+<li>System : Simulator calculation (middle value)</li>
 </ol>
 
 </div>
@@ -12883,36 +16132,30 @@ Done!
         <td>$$cm^2$$</td>
         <td>$$User$$</td>
     </tr>
-
-
     <tr>
         <td>$$N$$</td>
         <td style="text-align:center;">Number of single cells</td>
         <td>$$--$$</td>
         <td>$$User$$</td>
     </tr>
-
          <tr>
         <td>$$i_{start}$$</td>
         <td style="text-align:center;">Cell operating current start point</td>
         <td>$$A$$</td>
         <td>$$User$$</td>
-    </tr>
-
+    </tr>  
     <tr>
         <td>$$i_{step}$$</td>
         <td style="text-align:center;">Cell operating current step</td>
         <td>$$A$$</td>
         <td>$$User$$</td>
     </tr>
-
     <tr>
         <td>$$i_{stop}$$</td>
         <td style="text-align:center;">Cell operating current end point</td>
         <td>$$A$$</td>
         <td>$$User$$</td>
     </tr>
-
      <tr>
         <td>$$J$$</td>
         <td style="text-align:center;">Actual current density of the cell </td>
@@ -12927,13 +16170,13 @@ Done!
     </tr>
           <tr>
     <td>$$HHV$$</td>
-        <td style="text-align:center;">Higher Heating Value Potential</td>
+        <td style="text-align:center;">Higher heating value potential</td>
         <td>$$V$$</td>
         <td>$$1.482$$</td>
     </tr>
               <tr>
     <td>$$E_{th}$$</td>
-        <td style="text-align:center;">Theoretical Potential</td>
+        <td style="text-align:center;">Theoretical potential</td>
         <td>$$V$$</td>
         <td>$$1.23$$</td>
     </tr>
