@@ -62,7 +62,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
-		<td align="center"><a href="https://github.com/sepandhaghighi/opem"><img src="https://img.shields.io/github/stars/ECSIM/opem.svg?style=social&label=Stars"></a></td>
+		<td align="center"><a href="https://github.com/ecsim/opem"><img src="https://img.shields.io/github/stars/ECSIM/opem.svg?style=social&label=Stars"></a></td>
 	</tr>
 </table>
 
