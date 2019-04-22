@@ -1,7 +1,7 @@
 codecov==2.0.15
-art==3.3
+art==3.4
 requests==2.21.0
-pytest==4.4.0
+pytest==4.4.1
 pytest-cov==2.6.1
 setuptools==41.0.0
 bandit==1.5.1
