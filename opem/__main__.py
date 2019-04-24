@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-OPEM Main File
-'''
+"""OPEM main."""
 import sys
 import os
 import doctest
