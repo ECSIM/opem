@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Chart.js script."""
 JS_SCRIPT = r'''
 /*!
  * Chart.js
