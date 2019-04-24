@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Chamberline-Kim model functions."""
 import math
 from opem.Params import Chamberline_InputParams as InputParams
 from opem.Params import Chamberline_OutputParams as OutputParams
@@ -10,22 +11,23 @@ import os
 
 def Vcell_Calc(E0, b, R, m, n, i, A):
     """
-    This function calculate cell voltage
-    :param E0: Open circuit voltage [V]
+    Calculate cell voltage.
+
+    :param E0: open circuit voltage [V]
     :type E0 : float
     :param b: Tafel's parameter for the oxygen reduction [V]
     :type b : float
-    :param R: Resistance [ohm.cm2]
+    :param R: resistance [ohm.cm2]
     :type R : float
-    :param m: Diffusion's parameters [V]
+    :param m: diffusion's parameters [V]
     :type m : float
-    :param n: Diffusion's parameters [V]
+    :param n: diffusion's parameters [V]
     :type n : float
-    :param i: Cell operating current [A]
+    :param i: cell operating current [A]
     :type i : float
-    :param A: Active area [cm2]
+    :param A: active area [cm2]
     :type A : float
-    :return:  Cell voltage [V]
+    :return:  cell voltage [V]
     """
     try:
         J = i / A
@@ -43,16 +45,17 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Chamberline-Kim static analysis with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Chamberline-Kim static analysis with calling other functions.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :type TestMode: bool
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None
