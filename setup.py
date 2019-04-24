@@ -3,7 +3,6 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-import logging
 
 
 def get_requirements():
