@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Amphlett model functions."""
 import math
 from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
@@ -10,16 +11,17 @@ import os
 
 
 def Power_Thermal_Calc(VStack, N, i):
-    '''
-    This function calculate thermal power
+    """
+    Calculate thermal power.
+
     :param VStack: VStack [V]
     :type VStack : float
     :param N: number of single cells
     :type N : int
-    :param i: Cell load current [A]
+    :param i: cell load current [A]
     :type i : float
-    :return: Thermal power [W]
-    '''
+    :return: thermal power [W]
+    """
     try:
         return i * ((N * Eth) - VStack)
     except TypeError:
@@ -27,16 +29,17 @@ def Power_Thermal_Calc(VStack, N, i):
 
 
 def Power_Total_Calc(VStack_List, i_step, N):
-    '''
-    This function calculate total elec power and total thermal power by calling integrate function
+    """
+    Calculate total elec power and total thermal power by calling integrate function.
+
     :param VStack_List: Vstack list
     :type VStack_List : list
-    :param i_step: Cell load current step
+    :param i_step: cell load current step
     :type i_step : float
     :param N: number of single cells
     :type N : int
-    :return: [Total elec power,Total thermal power] as list
-    '''
+    :return: [total elec power,total thermal power] as list
+    """
     try:
         Filtered_List = list(filter(lambda x: x is not None, VStack_List))
         Filtered_List_Not = list(map(lambda x: (N * Eth) - x, Filtered_List))
@@ -49,14 +52,15 @@ def Power_Total_Calc(VStack_List, i_step, N):
 
 
 def Linear_Aprox_Params_Calc(B0, B1):
-    '''
-    This function calculate linear approximation overall parameters
+    """
+    Calculate linear approximation overall parameters.
+
     :param B0: intercept
     :type B0 : float
     :param B1: slope
     :type B1 : float
     :return: [Wmax,Vcell_Wmax] as list
-    '''
+    """
     Wmax = 0
     Vcell_Wmax = 0
     try:
@@ -75,16 +79,17 @@ def Linear_Aprox_Params_Calc(B0, B1):
 
 
 def Max_Params_Calc(Power_List, EFF_List, VStack_List):
-    '''
-    This function calculate maximum overall parameters
-    :param Power_List: Power list
+    """
+    Calculate maximum overall parameters.
+
+    :param Power_List: power list
     :type Power_List : list
-    :param EFF_List: Efficiency list
+    :param EFF_List: efficiency list
     :type EFF_List : list
     :param VStack_List: Vstack list
     :type VStack_List : list
-    :return: {Max Power,Max Efficiency,Max VStack] as list
-    '''
+    :return: {max power,max efficiency,max VStack] as list
+    """
     Max_Power = max(list(filter(lambda x: x is not None, Power_List)))
     Max_EFF = EFF_List[Power_List.index(Max_Power)]
     Max_VStack = VStack_List[Power_List.index(Max_Power)]
@@ -95,14 +100,15 @@ def Max_Params_Calc(Power_List, EFF_List, VStack_List):
 
 
 def R_Calc(V, i):
-    '''
-    This function calculate cell total resistance
+    """
+    Calculate cell total resistance.
+
     :param V: cell voltage [V]
     :type V : float
-    :param i: Cell load current [A]
+    :param i: cell load current [A]
     :type i : float
-    :return: Resistance as float [ohm]
-    '''
+    :return: resistance as float [ohm]
+    """
     try:
         return V / i
     except (TypeError, ZeroDivisionError):
@@ -113,10 +119,11 @@ def R_Calc(V, i):
 
 def Enernst_Calc(T, PH2, PO2):
     """
-    This function calculate Enernst
-    :param T: Cell Operation Temperature [K]
+    Calculate Enernst.
+
+    :param T: cell operation temperature [K]
     :type T : float
-    :param PH2: Partial Pressure [atm]
+    :param PH2: partial pressure [atm]
     :type PH2 : float
     :param PO2: partial Pressure [atm]
     :type PO2: float
@@ -134,10 +141,11 @@ def Enernst_Calc(T, PH2, PO2):
 
 def CH2_Calc(PH2, T):
     """
-    This function calculate CH2
-    :param PH2: Partial Pressure [atm]
+    Calculate CH2.
+
+    :param PH2: partial pressure [atm]
     :type PH2 : float
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T:float
     :return: CH2 [mol/cm^3] as float
     """
@@ -152,10 +160,11 @@ def CH2_Calc(PH2, T):
 
 def CO2_Calc(PO2, T):
     """
-    This function calculate CO2
-    :param PO2: Partial Pressure [atm]
+    Calculate CO2.
+
+    :param PO2: partial pressure [atm]
     :type PO2 : float
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T : float
     :return: CO2 [mol/cm^3] as float
     """
@@ -170,16 +179,17 @@ def CO2_Calc(PO2, T):
 
 def Rho_Calc(i, A, T, lambda_param):
     """
-    This function calculate Rho
-    :param i: Cell load current [A]
+    Calculate Rho.
+
+    :param i: cell load current [A]
     :type i : float
     :param A: active area [cm^2]
     :type A:float
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T:float
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
     :type lambda_param : float
-    :return: Rho -- > Membrane Specific Resistivity [ohm.cm] as float
+    :return: Rho -- > membrane specific resistivity [ohm.cm] as float
     """
     try:
         result = (181.6 * (1 + 0.03 * (i / A) + 0.062 * ((T / 303) ** 2) * ((i / A) ** 2.5))
@@ -193,12 +203,13 @@ def Rho_Calc(i, A, T, lambda_param):
 
 def Xi2_Calc(A, PH2, T):
     """
-    This function calculate Xi2
+    Calculate Xi2.
+
     :param A: active area [cm^2]
     :type A : float
-    :param PH2: Partial Pressure [atm]
+    :param PH2: partial pressure [atm]
     :type PH2:float
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T:float
     :return: Xi2 as float
     """
@@ -215,12 +226,13 @@ def Xi2_Calc(A, PH2, T):
 
 def Eta_Conc_Calc(i, A, B, JMax):
     """
-    This function calculate Eta Concentration
-    :param i: Cell load current [A]
+    Calculate Eta concentration.
+
+    :param i: cell load current [A]
     :type i :float
     :param A: active area [cm^2]
     :type A : float
-    :return: Eta Concentration [V] as float
+    :return: Eta concentration [V] as float
     """
     try:
         if i != 0:
@@ -236,20 +248,21 @@ def Eta_Conc_Calc(i, A, B, JMax):
 
 def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
     """
-    This function calculate Eta Ohmic
-    :param R_elec: R-Electronic [ohm]
+    Calculate Eta ohmic.
+
+    :param R_elec: R electronic [ohm]
     :type R_elec:float
     :param i: cell load current [A]
     :type i:float
-    :param l: Membrane Thickness [cm]
+    :param l: membrane thickness [cm]
     :type l:float
     :param A: active area [cm^2]
     :type A:float
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T:float
     :param lambda_param: is an adjustable parameter with a possible maximum value of 23
     :type lambda_param:float
-    :return: Eta Ohmic [V] as float
+    :return: Eta ohmic [V] as float
     """
     try:
         if i != 0:
@@ -269,14 +282,15 @@ def Eta_Ohmic_Calc(i, l, A, T, lambda_param, R_elec=None):
 
 def Eta_Act_Calc(T, PO2, PH2, i, A):
     """
-    This function calculate Eta Activation
-    :param T: Cell Operation Temperature [K]
+    Calculate Eta activation.
+
+    :param T: cell operation temperature [K]
     :type T:float
-    :param PO2: Partial Pressure [atm]
+    :param PO2: partial pressure [atm]
     :type PO2:float
     :param i: cell load current [A]
     :type i:float
-    :return:  Eta Activation [V] as float
+    :return:  Eta activation [V] as float
     """
     try:
         if i != 0:
@@ -294,10 +308,11 @@ def Eta_Act_Calc(T, PO2, PH2, i, A):
 
 def Efficiency_Calc(Vcell):
     """
-    This function calculate PEM Cell Efficiency
-    :param Vcell: Cell Voltage [V]
+    Calculate PEM cell efficiency.
+
+    :param Vcell: cell voltage [V]
     :type Vcell:float
-    :return: Efficiency as float
+    :return: efficiency as float
     """
     try:
         result = (uF * Vcell) / HHV
@@ -310,10 +325,11 @@ def Efficiency_Calc(Vcell):
 
 def VStack_Calc(N, Vcell):
     """
-    This function calculate VStack
+    Calculate VStack.
+
     :param N: number of single cells
     :type N  :int
-    :param Vcell: Cell Voltage [V}
+    :param Vcell: cell voltage [V}
     :type Vcell:float
     :return: VStack [V] as float
     """
@@ -328,14 +344,15 @@ def VStack_Calc(N, Vcell):
 
 def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
     """
-    This function calculate loss
-    :param Eta_Act: Eta Activation [V]
+    Calculate loss.
+
+    :param Eta_Act: Eta activation [V]
     :type Eta_Act : float
-    :param Eta_Ohmic: Eta Ohmic [V]
+    :param Eta_Ohmic: Eta ohmic [V]
     :type Eta_Ohmic : float
-    :param Eta_Conc: Eta Concentration [V]
+    :param Eta_Conc: Eta concentration [V]
     :type Eta_Conc : float
-    :return: Loss [V] as float
+    :return: loss [V] as float
     """
     try:
         result = Eta_Act + Eta_Ohmic + Eta_Conc
@@ -348,12 +365,13 @@ def Loss_Calc(Eta_Act, Eta_Ohmic, Eta_Conc):
 
 def Vcell_Calc(Enernst, Loss):
     """
-    This function calculate cell voltage
+    Calculate cell voltage.
+
     :param Enernst:  Enernst [V}
     :type Enernst : float
-    :param Loss:  Loss [V]
+    :param Loss:  loss [V]
     :type Loss : float
-    :return:  Cell voltage [V] as float
+    :return:  cell voltage [V] as float
     """
     try:
         result = Enernst - Loss
@@ -366,12 +384,13 @@ def Vcell_Calc(Enernst, Loss):
 
 def Power_Calc(Vcell, i):
     """
-    This function calculate power
+    Calculate power.
+
     :param Vcell: Vcell Voltage [V]
     :type Vcell : float
     :param i: cell load current [A]
     :type i : float
-    :return: Cell power [W] as float
+    :return: cell power [W] as float
     """
     try:
         result = Vcell * i
@@ -383,14 +402,15 @@ def Power_Calc(Vcell, i):
 
 
 def PowerStack_Calc(Power, N):
-    '''
-    This function calculate power_stack
-    :param Power: Single Cell power [W]
+    """
+    Calculate power_stack.
+
+    :param Power: single cell power [W]
     :type Power : float
     :param N: number of single cells
     :type N : int
-    :return: Power Stack [W] as float
-    '''
+    :return: power stack [W] as float
+    """
     try:
         result = N * Power
         return result
@@ -406,16 +426,17 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Amphlett static analysis with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Amphlett static analysis with calling other functions.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None
