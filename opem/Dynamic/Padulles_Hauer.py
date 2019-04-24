@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Padulles-Hauer model functions."""
 from opem.Params import Padulles_Hauer_InputParams as InputParams
 from opem.Params import Padulles_Hauer_Outparams as OutputParams
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
@@ -10,18 +11,19 @@ import os
 
 
 def qH2_Calc(qMethanol, CV, t1, t2):
-    '''
-    This function calculate qH2
-    :param qMethanol: Molar flow of Methanol [kmol.s^(-1)
+    """
+    Calculate qH2.
+
+    :param qMethanol: molar flow of methanol [kmol.s^(-1)
     :type qMethanol : float
-    :param CV: Conversion factor
+    :param CV: conversion factor
     :type CV : float
-    :param t1: Reformer time constant
+    :param t1: reformer time constant
     :type t1 : float
-    :param t2 : Reformer time constant
+    :param t2 : reformer time constant
     :type t2 : float
     :return: qH2 as float
-    '''
+    """
     try:
         result = (qMethanol * CV) / (t1 + ((t2)**2) + (t1 + t2) + 1)
         return result
@@ -37,16 +39,17 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Padulles I analysis  with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Padulles Hauer analysis with calling other functions.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None
