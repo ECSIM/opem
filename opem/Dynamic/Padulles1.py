@@ -168,7 +168,7 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Padulles I analysis  with calling other functions.
+    Run Padulles I analysis
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag

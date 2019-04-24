@@ -47,7 +47,7 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Larminie-Dicks static analysis with calling other functions.
+    Run Larminie-Dicks static analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag

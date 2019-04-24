@@ -426,7 +426,7 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Amphlett static analysis with calling other functions.
+    Run Amphlett static analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag

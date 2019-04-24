@@ -39,7 +39,7 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Padulles Hauer analysis with calling other functions.
+    Run Padulles Hauer analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag

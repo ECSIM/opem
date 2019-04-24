@@ -45,7 +45,7 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Chamberline-Kim static analysis with calling other functions.
+    Run Chamberline-Kim static analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag

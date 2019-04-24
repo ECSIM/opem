@@ -37,7 +37,7 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Padulles-Amphlett analysis  with calling other functions.
+    Run Padulles-Amphlett analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag
