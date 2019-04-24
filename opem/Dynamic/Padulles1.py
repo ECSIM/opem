@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Padulles 1 model functions."""
 import math
 from opem.Params import Padulles_InputParams as InputParams
 from opem.Params import Padulles_Outparams as OutputParams
@@ -10,16 +11,17 @@ import os
 
 def Enernst_Calc(E0, N0, T, PH2, PO2):
     """
-    This function calculate Enernst
-    :param E0: Opencell voltage [V]
+    Calculate Enernst.
+
+    :param E0: open cell voltage [V]
     :type E0 : float
-    :param N0: Number of fuel cells in the stack
+    :param N0: number of fuel cells in the stack
     :type N0 : int
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T : float
-    :param PH2:  Partial Pressure [atm]
+    :param PH2:  partial pressure [atm]
     :type PH2 : float
-    :param PO2: Partial Pressure [atm]
+    :param PO2: partial pressure [atm]
     :type PO2 : float
     :return: Enernest [V] as float
     """
@@ -34,16 +36,17 @@ def Enernst_Calc(E0, N0, T, PH2, PO2):
 
 def PH2_Calc(KH2, tH2, Kr, I, qH2):
     """
-    This function calculate PH2
-    :param KH2: Hydrogen Valve Constant [kmol.s^(-1).atm^(-1)]
+    Calculate PH2.
+
+    :param KH2: hydrogen valve constant [kmol.s^(-1).atm^(-1)]
     :type KH2 : float
-    :param tH2: Hydrogen time constant [s]
+    :param tH2: hydrogen time constant [s]
     :type tH2 : float
-    :param Kr: Modeling constant [kmol.s^(-1).A^(-1)]
+    :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
     :type Kr : float
-    :param I: Cell load current [A]
+    :param I: cell load current [A]
     :type I : float
-    :param qH2: Molar flow of hydrogen [kmol.s^(-1)]
+    :param qH2: molar flow of hydrogen [kmol.s^(-1)]
     :type qH2 : float
     :return: PH2 [atm] as float
     """
@@ -58,16 +61,17 @@ def PH2_Calc(KH2, tH2, Kr, I, qH2):
 
 def PO2_Calc(KO2, tO2, Kr, I, qO2):
     """
-    This function calculate PO2
-    :param KO2: Oxygen Valve Constant [kmol.s^(-1).atm^(-1)]
+    Calculate PO2.
+
+    :param KO2: oxygen valve constant [kmol.s^(-1).atm^(-1)]
     :type KO2 : float
-    :param tO2: Oxygen time constant [s]
+    :param tO2: oxygen time constant [s]
     :type tO2 : float
-    :param Kr: Modeling constant [kmol.s^(-1).A^(-1)]
+    :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
     :type Kr : float
-    :param I: Cell load current [A]
+    :param I: cell load current [A]
     :type I : float
-    :param qO2: Molar flow of oxygen [kmol.s^(-1)
+    :param qO2: molar flow of oxygen [kmol.s^(-1)
     :type qO2 : float
     :return: PO2 [atm] as float
     """
@@ -82,8 +86,9 @@ def PO2_Calc(KO2, tO2, Kr, I, qO2):
 
 def Kr_Calc(N0):
     """
-    This function calculate Kr
-    :param N0: Number of fuel cells in the stack
+    Calculate Kr.
+
+    :param N0: number of fuel cells in the stack
     :type N0 : int
     :return: Kr [kmol.s^(-1).A^(-1)] as float
     """
@@ -96,16 +101,17 @@ def Kr_Calc(N0):
 
 def Vcell_Calc(Enernst, B, C, I, Rint):
     """
-    This function calculate Vcell
+    Calculate Vcell.
+
     :param Enernst: Enernst [V]
     :type Enernst : float
-    :param B: Activation voltage constant [V]
+    :param B: activation voltage constant [V]
     :type B: float
-    :param C: Constant [A^(-1)
+    :param C: constant [A^(-1)
     :type C : float
-    :param I: Cell load current [A]
+    :param I: cell load current [A]
     :type I: float
-    :param Rint: Fuel cell internal resistance [ohm]
+    :param Rint: fuel cell internal resistance [ohm]
     :type Rint : float
     :return: Vcell [V] as float
     """
@@ -120,10 +126,11 @@ def Vcell_Calc(Enernst, B, C, I, Rint):
 
 def qO2_Calc(qH2, rho):
     """
-    This function calculate qO2
-    :param qH2: Molar flow of hydrogen [kmol.s^(-1)]
+    Calculate qO2.
+
+    :param qH2: molar flow of hydrogen [kmol.s^(-1)]
     :type qH2 : float
-    :param rho: Hydrogen-Oxygen flow rate
+    :param rho: hydrogen-oxygen flow rate
     :type rho : float
     :return: qO2 [kmol.s^(-1)] as float
     """
@@ -138,12 +145,13 @@ def qO2_Calc(qH2, rho):
 
 def Efficiency_Calc(Vcell, N):
     """
-    This function calculate PEM Cell Efficiency
-    :param Vcell: Cell Voltage [V]
+    Calculate PEM cell efficiency.
+
+    :param Vcell: cell voltage [V]
     :type Vcell:float
-    :param N0: Number of fuel cells in the stack
+    :param N0: number of fuel cells in the stack
     :type N0 : int
-    :return: Efficiency as float
+    :return: efficiency as float
     """
     try:
         result = (uF * Vcell) / (N * HHV)
@@ -160,16 +168,17 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Padulles I analysis  with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Padulles I analysis  with calling other functions.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None
