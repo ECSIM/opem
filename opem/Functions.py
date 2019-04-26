@@ -711,6 +711,7 @@ def description_control(
         print("\n")
         line()
         input_temp = input("Press any key to continue")
+        del input_temp
         Analysis_List[Analysis_Name](
             InputMethod=Test_Vector, TestMode=True)
     else:
