@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         pyinstaller -y --clean --windowed OPEM.spec
