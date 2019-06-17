@@ -4,6 +4,6 @@ requests==2.22.0
 pytest==4.6.3
 pytest-cov==2.7.1
 setuptools==41.0.1
-bandit==1.5.1
+bandit==1.6.1
 vulture==1.0
 pydocstyle==3.0.0
