@@ -1440,13 +1440,27 @@ If you use OPEM in your research , please cite this paper :
 
 </pre>
 
-Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)									
+Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 
-<a style="border-width:0" href="https://doi.org/10.21105/joss.00676">
-  <img src="http://joss.theoj.org/papers/10.21105/joss.00676/status.svg" alt="DOI badge" >
-</a>
 
-<a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a>
+<table>
+	<tr> 
+		<td align="center">JOSS</td>
+		<td align="center"><a style="border-width:0" href="https://doi.org/10.21105/joss.00676"><img src="http://joss.theoj.org/papers/10.21105/joss.00676/status.svg" alt="DOI badge" ></a></td>	
+	</tr>
+	<tr>
+		<td align="center">Zenodo</td>
+		<td align="center"><a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Researchgate</td>
+		<td align="center"><a href="https://www.researchgate.net/project/Open-Source-Electrochemistry-Simulation-Toolbox"><img src="https://img.shields.io/badge/Researchgate-OPEM-yellow.svg"></a></td>
+	</tr>
+</table>									
+
+
+
+
 
 
 ## License
