@@ -47,10 +47,11 @@ if __name__ == "__main__":
         tprint("v" + str(Version))
         print(Description_Menu["Links"])
         description_print("Overview", Description_Menu)
+        tprint("Models",font="bulbhead")
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
-            ANALYSISINDEX = int(input(("\nPlease Choose Analysis : ")))
+            ANALYSISINDEX = int(input(("\nPlease Choose Model : ")))
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):

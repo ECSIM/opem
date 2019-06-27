@@ -18,10 +18,11 @@ a platform for collaborative development of PEMFC models.'''
 
 Links = '''
 Website : http://www.ecsim.ir/opem
+Repository : https://github.com/ECSIM/opem
 Document : http://www.ecsim.ir/opem/doc/
 Paper : https://doi.org/10.21105/joss.00676
-
 * If you use OPEM in your research, please cite our paper.
+* OPEM GUI is available here : https://github.com/ECSIM/gopem
 '''
 Warning_Message_1 = "Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
 Warning_Message_2 = "Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file" \
