@@ -57,10 +57,10 @@ Test
 <BLANKLINE>
 <BLANKLINE>
 ###########
->>> check_update(1)
+>>> check_update(1.1)
 >>> check_update(0.1)
 ###########
-New Version (1.0) Is Available!
+New Version (1.1) Is Available!
 Website : http://www.ecsim.ir/opem
 ###########
 
