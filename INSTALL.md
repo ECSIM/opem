@@ -21,6 +21,10 @@
 - Check [Conda Managing Package](https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org)
 - `conda install -c ecsim opem` (Need root access)
 
+### GUI
+
+- OPEM GUI is available [here](https://github.com/ECSIM/gopem)			
+
 ### Exe Version (Only Windows)
 - Download [Exe-Version 1.1](https://github.com/ECSIM/opem/releases/download/v1.1/OPEM-1.1.exe)
 - Run `OPEM.exe`
