@@ -1358,7 +1358,18 @@ Gitter is another option :
 3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
 
 ## Dependencies
-<a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a>
+
+<table>
+	<tr> 
+		<td align="center">master</td>	
+		<td align="center">develop</td>	
+	</tr>
+	<tr>
+		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=master"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
+		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a></td>
+	</tr>
+</table>
+
 
 ## Thanks
 
