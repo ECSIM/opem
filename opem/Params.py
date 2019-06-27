@@ -16,6 +16,13 @@ models of PEMFC that have been proposed in the OPEM, just focus on one particula
 and some others take into account a part or all auxiliaries such as reformers. OPEM is
 a platform for collaborative development of PEMFC models.'''
 
+Links = '''
+Website : http://www.ecsim.ir/opem
+Document : http://www.ecsim.ir/opem/doc/
+Paper : https://doi.org/10.21105/joss.00676
+
+* If you use OPEM in your research, please cite our paper.
+'''
 Warning_Message_1 = "Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
 Warning_Message_2 = "Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file" \
     " for review. If you are confident about this parameters, ignore this error."
@@ -425,7 +432,8 @@ Description_Menu = {
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Description,
     "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Description,
     "General Padulles": General_Padulles_Description,
-    "Overview": Overview}
+    "Overview": Overview,
+    "Links": Links}
 
 Description_Links = {
     "Amphlett_Analysis (Static)": "http://www.ecsim.ir/opem/doc/Static/Amphlett.html",

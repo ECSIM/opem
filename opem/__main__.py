@@ -45,11 +45,12 @@ if __name__ == "__main__":
     while not EXITFLAG:
         tprint("OPEM")
         tprint("v" + str(Version))
+        print(Description_Menu["Links"])
         description_print("Overview", Description_Menu)
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
-            ANALYSISINDEX = int(input(("Please Choose Analysis : ")))
+            ANALYSISINDEX = int(input(("\nPlease Choose Analysis : ")))
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
