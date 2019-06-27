@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Menu updated
 - Test system modified
+- Docstrings modified
 - Drop Python 3.4 support
 - `description_control` function modified
 - `version_check.py` modified
