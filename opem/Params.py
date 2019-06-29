@@ -21,7 +21,7 @@ Website : http://www.ecsim.ir/opem
 Repository : https://github.com/ECSIM/opem
 Document : http://www.ecsim.ir/opem/doc/
 Paper : https://doi.org/10.21105/joss.00676
-* If you use OPEM in your research, please cite our paper.
+* If you use OPEM in your research, please cite our paper
 * OPEM GUI is available here : https://github.com/ECSIM/gopem
 '''
 Warning_Message_1 = "Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
