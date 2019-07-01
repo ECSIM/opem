@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `description_control` function modified
 - `version_check.py` modified
 - `README.md` modified
+- Padulles-Amphlett model import bug fixed
 ## [1.0] - 2019-03-01
 ### Added
 - Interactive notebooks section
