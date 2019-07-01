@@ -10,3 +10,4 @@ import opem.Script
 import opem.Dynamic.Padulles1
 import opem.Dynamic.Padulles2
 import opem.Dynamic.Padulles_Hauer
+import opem.Dynamic.Padulles_Amphlett
