@@ -18,7 +18,7 @@
 
 ### Conda
 
-- Check [Conda Managing Package](https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org)
+- Check [Conda Managing Package](https://conda.io)
 - `conda install -c ecsim opem` (Need root access)
 
 ### GUI
