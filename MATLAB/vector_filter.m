@@ -1,6 +1,5 @@
 function [ result ] = vector_filter( inp )
-%vector_filter Summary of this function goes here
-%   Detailed explanation goes here
+% Replace py.NoneType items with NaN
 if isa(inp,'py.NoneType') == 1 
     result = NaN;
 else

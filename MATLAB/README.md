@@ -10,6 +10,6 @@
 
 - For more information about models visit [Documents](https://github.com/ECSIM/opem/tree/master/Documents)
 
-- Note : If you want to generate report (`report_mode = true`) :
+- If you want to generate report (`report_mode = true`) :
 	1. Run MATLAB as administrator
 	2. Change the MATLAB current folder
