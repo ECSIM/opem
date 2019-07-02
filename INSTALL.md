@@ -1,7 +1,7 @@
 ## Installation		
 
 ### Source Code
-- Download [Python3.x](https://www.python.org/downloads/) (>=3.5)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 - Download [Version 1.1](https://github.com/ecsim/opem/archive/v1.1.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
@@ -36,6 +36,15 @@
 - Copy `OPEM` into your system
 - Run `OPEM`
 
+### MATLAB
+- Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5) 
+- Run `pip install opem` or `pip3 install opem` (Need root access)
+- Configure Python interpreter
+```MATLAB
+>> pyversion PYTHON_EXECUTABLE_FULL_PATH
+```
+- Visit [MATLAB Examples](https://github.com/ECSIM/opem/tree/master/MATLAB)			
 
 ### Exe Version Note
 For OPEM <= 0.5 targeting Windows < 10, the user needs to take special care to include the Visual C++ run-time .dlls: Python 3.5 uses Visual Studio 2015 run-time, which has been renamed into “Universal CRT“ and has become part of Windows 10. For Windows Vista through Windows 8.1 there are Windows update packages, which may or may not be installed in the target-system. So you have the following options:
