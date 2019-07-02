@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md` modified
 - Padulles-Amphlett model import bug fixed
 - `dev-requirements.txt` modified
+- Website switched to HTTPS
 ## [1.0] - 2019-03-01
 ### Added
 - Interactive notebooks section
