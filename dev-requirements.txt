@@ -1,9 +1,9 @@
-codecov==2.0.15
 art==3.7
 requests==2.22.0
-pytest==5.0.0
-pytest-cov==2.7.1
-setuptools==41.0.1
-bandit==1.6.1
-vulture==1.0
-pydocstyle==3.0.0
+codecov>=2.0.15
+pytest>=4.3.0
+pytest-cov>=2.6.1
+setuptools>=40.8.3
+bandit>=1.5.1
+vulture>=1.0
+pydocstyle>=3.0.0
