@@ -22,7 +22,7 @@
    		* [Library](https://github.com/ECSIM/opem#library)	
    		* [Telegram Bot](https://github.com/ECSIM/opem#telegram-bot)
    		* [Try OPEM in Your Browser!](https://github.com/ECSIM/opem#try-opem-in-your-browser)
-   		* [MATLAB](https://github.com/ECSIM/opem#matlab)
+   		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem#todo)
@@ -1294,10 +1294,7 @@ OPEM can be used online in interactive Jupyter Notebooks via the Binder service!
 - Check `.ipynb` files in `Documents` folder
 - Edit and execute each part of the notes, step by step from the top panel by run button
 - For executing a complete simulation, you can edit `Test_Vector` in `Full Run` section
-
-### MATLAB
-
-Visit [MATLAB Examples](https://github.com/ECSIM/opem/tree/master/MATLAB)		
+		
 
 ## Issues & Bug Reports			
 

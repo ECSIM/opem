@@ -37,8 +37,8 @@
 - Run `OPEM`
 
 ### MATLAB
-- Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5)
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5) 
+- Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 - Configure Python interpreter
 ```MATLAB
