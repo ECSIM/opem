@@ -47,7 +47,7 @@ if __name__ == "__main__":
         tprint("v" + str(Version))
         print(Description_Menu["Links"])
         description_print("Overview", Description_Menu)
-        tprint("Models",font="varsity")
+        tprint("Models",font="larry3d")
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
