@@ -53,7 +53,7 @@ Amphlett_InputParams = {
     "N": "Number of single cells",
     "R": "R-Electronic [ohm] (*Optional)",
     "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
-    "JMax": "maximum current density [A/(cm^2)]"}
+    "JMax": "Maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {
     "Enernst": "V",
     "Eta Activation": "V",
