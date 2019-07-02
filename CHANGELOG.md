@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ## [1.1] - 2019-06-28
+### Added
+- MATLAB examples
 ### Changed
 - Menu updated
 - Test system modified
@@ -15,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `version_check.py` modified
 - `README.md` modified
 - Padulles-Amphlett model import bug fixed
+- `dev-requirements.txt` modified
 ## [1.0] - 2019-03-01
 ### Added
 - Interactive notebooks section
