@@ -24,7 +24,7 @@ test_vector{'l'} = 0.0178; % Membrane thickness [cm]
 test_vector{'lambda'} = 23; % An adjustable parameter with a min value of 14 and max value of 23
 test_vector{'N'} = 1; % Number of single cells
 test_vector{'R'} = 0; % R-Electronic [ohm] (*Optional)
-test_vector{'JMax'} = 1.5; % maximum current density [A/(cm^2)]
+test_vector{'JMax'} = 1.5; % Maximum current density [A/(cm^2)]
 test_vector{'B'} = 0.016; % An empirical constant depending on the cell and its operation state (Tafel slope) [V]
 test_vector{'Name'} = 'Amphlett_Test';
 
