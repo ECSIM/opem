@@ -1,4 +1,4 @@
-## Installation		
+mat## Installation		
 
 ### Source Code
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
@@ -45,7 +45,7 @@
 	- [x] Select `Install pip` option
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 - Configure Python interpreter
-```MATLAB
+```matlab
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH
 ```
 - Visit [MATLAB Examples](https://github.com/ECSIM/opem/tree/master/MATLAB)			
