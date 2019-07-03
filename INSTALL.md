@@ -1,4 +1,4 @@
-mat## Installation		
+## Installation		
 
 ### Source Code
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
