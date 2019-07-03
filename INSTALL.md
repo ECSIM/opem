@@ -2,6 +2,8 @@
 
 ### Source Code
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
+	- [x] Select `Add to PATH` option
+	- [x] Select `Install pip` option
 - Download [Version 1.1](https://github.com/ecsim/opem/archive/v1.1.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
@@ -39,6 +41,8 @@
 ### MATLAB
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
+	- [x] Select `Add to PATH` option
+	- [x] Select `Install pip` option
 - Run `pip install opem` or `pip3 install opem` (Need root access)
 - Configure Python interpreter
 ```MATLAB
