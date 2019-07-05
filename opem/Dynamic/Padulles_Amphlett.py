@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Padulles-Amphlett model functions."""
 from opem.Params import Padulles_Amphlett_InputParams as InputParams
 from opem.Params import Padulles_Amphlett_Outparams as OutputParams
 from opem.Params import Padulles_Amphlett_Params_Default as Defaults
@@ -13,12 +14,13 @@ import os
 
 def Vcell_Calc(Enernst, Loss, N):
     """
-    This function calculate cell voltage
+    Calculate cell voltage.
+
     :param Enernst:  Enernst [V}
     :type Enernst : float
-    :param Loss:  Loss [V]
+    :param Loss:  loss [V]
     :type Loss : float
-    :return:  Cell voltage [V] as float
+    :return:  cell voltage [V] as float
     """
     try:
         result = Enernst - N * Loss
@@ -35,16 +37,17 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Padulles-Amphlett analysis  with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Padulles-Amphlett analysis.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None

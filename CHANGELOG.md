@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.1] - 2019-07-05
+### Added
+- MATLAB examples
+### Changed
+- Menu updated
+- Test system modified
+- Docstrings modified
+- Drop Python 3.4 support
+- `description_control` function modified
+- `version_check.py` modified
+- `README.md` modified
+- Padulles-Amphlett model import bug fixed
+- `dev-requirements.txt` modified
+- Website switched to HTTPS
 ## [1.0] - 2019-03-01
 ### Added
 - Interactive notebooks section
@@ -136,7 +150,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSV output files
 - Documents and `README.md`
 
-[Unreleased]: https://github.com/ECSIM/opem/compare/v1.0...develop
+[Unreleased]: https://github.com/ECSIM/opem/compare/v1.1...develop
+[1.1]: https://github.com/ECSIM/opem/compare/v1.0...v1.1
 [1.0]: https://github.com/ECSIM/opem/compare/v0.9...v1.0
 [0.9]: https://github.com/ECSIM/opem/compare/v0.8...v0.9
 [0.8]: https://github.com/ECSIM/opem/compare/v0.7...v0.8

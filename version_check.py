@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+"""Version-check script."""
 import os
 import sys
 import codecs
 Failed = 0
-VERSION = "1.0"
+VERSION = "1.1"
 
 VERSION_1 = VERSION.split(".")[0]
 VERSION_2 = str(int(float(VERSION)*10 - int(VERSION_1)*10))
@@ -44,6 +45,13 @@ TEST_NUMBER = len(FILES.keys()) +1
 
 
 def print_result(failed=False):
+    """
+    Print final result.
+
+    :param failed: failed flag
+    :type failed: bool
+    :return: None
+    """
     message = "Version tag tests "
     if not failed:
         print("\n" + message + "passed!")
@@ -74,7 +82,7 @@ if __name__ == "__main__":
                 break
     except Exception as e:
         Failed += 1
-        print("Error in " + file_name + "\n" + "Message : " + str(e))
+        print("Error in Version.rc" + "\n" + "Message : " + str(e))
     if Failed == 0:
         print_result(False)
         sys.exit(0)

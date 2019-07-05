@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Larminie-Dicks model functions."""
 import math
 from opem.Static.Amphlett import Power_Calc, Efficiency_Calc, VStack_Calc, PowerStack_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 from opem.Params import Larminiee_InputParams as InputParams
@@ -10,24 +11,25 @@ import os
 
 def Vcell_Calc(E0, i, i_0, i_n, i_L, R_M, A, B):
     """
-    This function calculate cell voltage
-    :param E0:  Fuel Cell reversible no loss voltage [V]
+    Calculate cell voltage.
+
+    :param E0:  fuel Cell reversible no loss voltage [V]
     :type E0 : float
-    :param i : Cell operating current [A]
+    :param i : cell operating current [A]
     :type i : float
-    :param i_0: Exchange current at which the overvoltage begins to move from zero [A]
+    :param i_0: exchange current at which the overvoltage begins to move from zero [A]
     :type i_0 : float
-    :param i_n : Internal current [A]
+    :param i_n : internal current [A]
     :type i_n : float
-    :param i_L : Limiting current [A]
+    :param i_L : limiting current [A]
     :type i_L : float
-    :param R_M : The membrane and contact resistances [ohm]
+    :param R_M : the membrane and contact resistances [ohm]
     :type R_M : float
-    :param A : The slope of the Tafel line [V]
+    :param A : the slope of the Tafel line [V]
     :type A : float
-    :param B : Constant in the mass transfer term [V}
+    :param B : constant in the mass transfer term [V}
     :type B : float
-    :return:  Cell voltage [V]
+    :return:  cell voltage [V]
     """
     try:
         result = E0 - A * (math.log((i + i_n) / i_0)) - R_M * \
@@ -45,14 +47,15 @@ def Static_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Larminie-Dicks static analysis with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Larminie-Dicks static analysis.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
     :return: Result as dict
     """

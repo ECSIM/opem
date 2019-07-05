@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Padulles 2 model functions."""
 import math
 from opem.Params import Padulles2_InputParams as InputParams
 from opem.Params import Padulles2_Outparams as OutputParams
@@ -11,18 +12,19 @@ import os
 
 def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
     """
-    This function calculate Enernst
-    :param E0: Opencell voltage [V]
+    Calculate Enernst.
+
+    :param E0: open cell voltage [V]
     :type E0 : float
-    :param N0: Number of fuel cells in the stack
+    :param N0: number of fuel cells in the stack
     :type N0 : int
-    :param T: Cell Operation Temperature [K]
+    :param T: cell operation temperature [K]
     :type T : float
-    :param PH2:  Partial Pressure [atm]
+    :param PH2:  partial pressure [atm]
     :type PH2 : float
-    :param PO2: Partial Pressure [atm]
+    :param PO2: partial pressure [atm]
     :type PO2 : float
-    :param PH2O:  Partial Pressure [atm]
+    :param PH2O:  partial pressure [atm]
     :type PH2O : float
     :return: Enernest [V] as float
     """
@@ -38,16 +40,17 @@ def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
 
 def PH2O_Calc(KH2O, tH2O, Kr, I, qH2O):
     """
-    This function calculate PH2O
-    :param KH2O: Water Valve Constant [kmol.s^(-1).atm^(-1)]
+    Calculate PH2O.
+
+    :param KH2O: water valve constant [kmol.s^(-1).atm^(-1)]
     :type KH2O : float
-    :param tH2O: Water time constant [s]
+    :param tH2O: water time constant [s]
     :type tH2O : float
-    :param Kr: Modeling constant [kmol.s^(-1).A^(-1)]
+    :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
     :type Kr : float
-    :param I: Cell load current [A]
+    :param I: cell load current [A]
     :type I : float
-    :param qH2O: Molar flow of water [kmol.s^(-1)]
+    :param qH2O: molar flow of water [kmol.s^(-1)]
     :type qH2O : float
     :return: PH2O [atm] as float
     """
@@ -66,16 +69,17 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    This function run Padulles I analysis  with calling other functions
-    :param InputMethod : Input Function Or Input Test Vector
-    :param TestMode : Test Mode Flag
+    Run Padulles II analysis.
+
+    :param InputMethod : input function or input test vector
+    :param TestMode : test mode flag
     :type InputMethod : dict or Get_Input function object
     :type TestMode:bool
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
+    :param PrintMode : print mode control flag (True : print outputs)
     :type PrintMode:bool
-    :param ReportMode : Report Mode Control Flag (True : Generate Report)
+    :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
-    :return: Result as dict
+    :return: result as dict
     """
     OutputFile = None
     CSVFile = None

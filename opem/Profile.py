@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""OPEM profile."""
 from opem.Static.Amphlett import Static_Analysis as Amphlett_Static_Analysis
 Test_Vector={"T":343.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":100,"i-step":0.005,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"B":0.016,"Name":"Test"}
 Result = Amphlett_Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=True)

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-OPEM Main File
-'''
+"""OPEM main."""
 import sys
 import os
 import doctest
@@ -47,11 +45,13 @@ if __name__ == "__main__":
     while not EXITFLAG:
         tprint("OPEM")
         tprint("v" + str(Version))
+        print(Description_Menu["Links"])
         description_print("Overview", Description_Menu)
+        tprint("Models",font="larry3d")
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
-            ANALYSISINDEX = int(input(("Please Choose Analysis : ")))
+            ANALYSISINDEX = int(input(("\nPlease Choose Model : ")))
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):

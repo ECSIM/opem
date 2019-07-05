@@ -372,7 +372,7 @@ PO2 : 2.0915322161021423 atm
 Power-Thermal : 209.9389930587172 W
 ###########
 Report is generating ...
-Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
+Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this warning.
 Done!
 >>> Padulles_I_Data["Status"]
 True
@@ -438,7 +438,7 @@ Power-Thermal : 318.778401865673 W
 ###########
 Report is generating ...
 Warning : The value of I(>2) leads to minus amount of V, please check your inputs
-Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this error.
+Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this warning.
 Done!
 >>> shutil.rmtree("Padulles-I")
 

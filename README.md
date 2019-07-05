@@ -22,6 +22,7 @@
    		* [Library](https://github.com/ECSIM/opem#library)	
    		* [Telegram Bot](https://github.com/ECSIM/opem#telegram-bot)
    		* [Try OPEM in Your Browser!](https://github.com/ECSIM/opem#try-opem-in-your-browser)
+   		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem#todo)
@@ -89,7 +90,6 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		<td align="center">Code Quality</td>
 		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a></td>	
 		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a></td>
-        <td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-opem-develop"><img alt="codebeat badge" src="https://codebeat.co/badges/8e2cb7b5-9fd4-4ecc-ae53-a26164718ee7" /></a></td>	
 	</tr>
 </table>
 
@@ -1294,7 +1294,6 @@ OPEM can be used online in interactive Jupyter Notebooks via the Binder service!
 - Check `.ipynb` files in `Documents` folder
 - Edit and execute each part of the notes, step by step from the top panel by run button
 - For executing a complete simulation, you can edit `Test_Vector` in `Full Run` section
-
 		
 
 ## Issues & Bug Reports			
@@ -1351,6 +1350,7 @@ Gitter is another option :
   	- [x] Voltage of PEMFC
   	- [x] Power of PEMFC
   	- [x] Efficiency of PEMFC
+- [x] MATLAB
 
 ## Outputs	
 
@@ -1359,7 +1359,18 @@ Gitter is another option :
 3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
 
 ## Dependencies
-<a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a>
+
+<table>
+	<tr> 
+		<td align="center">master</td>	
+		<td align="center">develop</td>	
+	</tr>
+	<tr>
+		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=master"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
+		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a></td>
+	</tr>
+</table>
+
 
 ## Thanks
 
@@ -1430,13 +1441,27 @@ If you use OPEM in your research , please cite this paper :
 
 </pre>
 
-Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)									
+Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 
-<a style="border-width:0" href="https://doi.org/10.21105/joss.00676">
-  <img src="http://joss.theoj.org/papers/10.21105/joss.00676/status.svg" alt="DOI badge" >
-</a>
 
-<a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a>
+<table>
+	<tr> 
+		<td align="center">JOSS</td>
+		<td align="center"><a style="border-width:0" href="https://doi.org/10.21105/joss.00676"><img src="http://joss.theoj.org/papers/10.21105/joss.00676/status.svg" alt="DOI badge" ></a></td>	
+	</tr>
+	<tr>
+		<td align="center">Zenodo</td>
+		<td align="center"><a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Researchgate</td>
+		<td align="center"><a href="https://www.researchgate.net/project/Open-Source-Electrochemistry-Simulation-Toolbox"><img src="https://img.shields.io/badge/Researchgate-OPEM-yellow.svg"></a></td>
+	</tr>
+</table>									
+
+
+
+
 
 
 ## License

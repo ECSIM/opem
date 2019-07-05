@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-Version = 1.0
+"""OPEM parameters."""
+Version = 1.1
 Website = "http://www.ecsim.ir/opem"
 UpdateUrl = "http://www.ecsim.ir/opem/update"
 Overview = '''
@@ -15,9 +16,17 @@ models of PEMFC that have been proposed in the OPEM, just focus on one particula
 and some others take into account a part or all auxiliaries such as reformers. OPEM is
 a platform for collaborative development of PEMFC models.'''
 
+Links = '''
+Website : http://www.ecsim.ir/opem
+Repository : https://github.com/ECSIM/opem
+Document : http://www.ecsim.ir/opem/doc/
+Paper : https://doi.org/10.21105/joss.00676
+* If you use OPEM in your research, please cite our paper
+* OPEM GUI is available here : https://github.com/ECSIM/gopem
+'''
 Warning_Message_1 = "Warning : The value of I(>{}) leads to minus amount of V, please check your inputs"
 Warning_Message_2 = "Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file" \
-    " for review. If you are confident about this parameters, ignore this error."
+    " for review. If you are confident about this parameters, ignore this warning."
 Report_Message = "Report is generating ..."
 HHV = 1.482
 uF = 0.95
@@ -44,7 +53,7 @@ Amphlett_InputParams = {
     "N": "Number of single cells",
     "R": "R-Electronic [ohm] (*Optional)",
     "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
-    "JMax": "maximum current density [A/(cm^2)]"}
+    "JMax": "Maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {
     "Enernst": "V",
     "Eta Activation": "V",
@@ -424,7 +433,8 @@ Description_Menu = {
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Description,
     "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Description,
     "General Padulles": General_Padulles_Description,
-    "Overview": Overview}
+    "Overview": Overview,
+    "Links": Links}
 
 Description_Links = {
     "Amphlett_Analysis (Static)": "http://www.ecsim.ir/opem/doc/Static/Amphlett.html",

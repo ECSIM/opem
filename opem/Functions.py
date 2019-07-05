@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
+"""OPEM functions."""
 import datetime
 from art import text2art
 import opem.Script
@@ -12,14 +12,15 @@ import sys
 
 
 def integrate(y_vals, h):
-    '''
-    This function calculate integral with Simpson's Rule
+    """
+    Calculate integral with Simpson's Rule.
+
     :param y_vals: output values
     :type y_valS : list
     :param h: interval
     :type h : float
     :return: integrate output as float
-    '''
+    """
     try:
         i = 1
         total = y_vals[0] + y_vals[-1]
@@ -35,14 +36,15 @@ def integrate(y_vals, h):
 
 
 def linear_plot(x, y):
-    '''
-    This function clear input data and call estimate_coef
+    """
+    Clear input data and call estimate_coef.
+
     :param x:  x data
     :type x : list
     :param y: y data
     :type y : list
     :return: [estimated_y,intercept,slope] as list
-    '''
+    """
     clear_x = []
     clear_y = []
     estimate_y = []
@@ -63,14 +65,15 @@ def linear_plot(x, y):
 
 
 def estimate_coef(clear_x, clear_y):
-    '''
-    This function use simple linear regression for linear approxiamtion
+    """
+    Linear regression function.
+
     :param clear_x: cleared_x
     :type clear_x : list
     :param clear_y: cleared_y
     :type clear_y : list
     :return: [slope,intercept]
-    '''
+    """
     try:
         n = len(clear_x)
         mean_x = sum(clear_x) / n
@@ -90,22 +93,24 @@ def estimate_coef(clear_x, clear_y):
 
 
 def line(num=11, char="#"):
-    '''
-    This function print line of char
+    """
+    Print line of char.
+
     :param num: number of character in this line
     :type num : int
     :param char: character
     :type char : str
     :return: None
-    '''
+    """
     print(char * num)
 
 
 def check_update(Version):
-    '''
-    This function check for new opem version in  website
+    """
+    Check for new opem version in website.
+
     :return: None
-    '''
+    """
     try:
         update_obj = requests.get(UpdateUrl)
         update_data = update_obj.text
@@ -119,14 +124,15 @@ def check_update(Version):
 
 
 def filter_default(input_dict, params_default):
-    '''
-    This function filter input parameters with default params
+    """
+    Filter input parameters with default params.
+
     :param input_dict: input parameters
     :type input_dict : dict
     :param params_default: default parameters
     :type params_default : dict
     :return: modified input_dict as dict
-    '''
+    """
     for i in params_default.keys():
         if i not in input_dict.keys():
             input_dict[i] = params_default[i]
@@ -134,12 +140,13 @@ def filter_default(input_dict, params_default):
 
 
 def get_precision(input_number):
-    '''
-    This function return precision of input number
+    """
+    Return precision of input number.
+
     :param input_number: input number
     :type input_number : float
     :return: precision as int
-    '''
+    """
     input_string = str(input_number)
     if "." in input_string:
         splitted_input = input_string.split(".")
@@ -148,12 +155,13 @@ def get_precision(input_number):
 
 
 def isfloat(value):
-    '''
-    This function check input for float conversion
+    """
+    Check input for float conversion.
+
     :param value: input value
     :type value:str
     :return: True if input_value is a number and False otherwise
-    '''
+    """
     try:
         float(value)
         return True
@@ -162,14 +170,15 @@ def isfloat(value):
 
 
 def rounder(input_number, digit=2):
-    '''
-    This function round input number
+    """
+    Round input number.
+
     :param input_number: input number
     :type input_number : anything
     :param digit: precision
     :type digit : int
     :return: round number as float
-    '''
+    """
     try:
         if isfloat(input_number):
             return round(input_number, digit)
@@ -179,21 +188,23 @@ def rounder(input_number, digit=2):
 
 
 def input_test(a):
-    '''
-    This function is for test Get_Input
+    """
+    Injected function for Get_Input testing.
+
     :param a: input
     :return: "1"
-    '''
+    """
     return "1"
 
 
 def Get_Input(InputParams, input_item=input, params_default={}):
     """
-    This function get inputs from users
-    :param InputParams : InputParams  for each  model
+    Get inputs from users.
+
+    :param InputParams : input parameters  for each  model
     :type InputParams :dict
     :param input_item : input function (this parameter added for Get_Input doctest)
-    :return: Input Dictionary
+    :return: input dictionary
     """
     try:
         Input_Keys = sorted(InputParams.keys())
@@ -237,12 +248,13 @@ def Output_Save(
         file,
         PrintMode):
     """
-    This function write analysis result in Simulation-Result.opem file
-    :param OutputParamsKeys : OutputParams Key as  list
+    Write analysis result in Simulation-Result.opem file.
+
+    :param OutputParamsKeys : output parameters keys
     :type OutputParamsKeys : list
-    :param OutputDict: Analysis Result Dictionary
-    :type OutputDict:dict
-    :param OutputParams : Output Params as dict
+    :param OutputDict: analysis result dictionary
+    :type OutputDict: dict
+    :param OutputParams : output parameters
     :type OutputParams : dict
     :param i: cell load current [A]
     :type i : float
@@ -275,10 +287,11 @@ def Output_Save(
 
 def Output_Init(InputDict, Title, Name):
     """
-    This function initialize output file
-    :param InputDict: Input Test Vector
+    Initialize output file.
+
+    :param InputDict: input test vector
     :type InputDict:dict
-    :param Title : Simulation Title
+    :param Title : simulation title
     :type Title :str
     :return: file object
     """
@@ -305,10 +318,11 @@ def Output_Init(InputDict, Title, Name):
 
 def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     """
-    This function initialize csv file
-    :param OutputParamsKeys: OutputParams Key as list
+    Initialize csv file.
+
+    :param OutputParamsKeys: output parameters Keys
     :type OutputParamsKeys : list
-    :param OutputParams : Output Params as dict
+    :param OutputParams : output parameters
     :type OutputParams : dict
     :return: file object
     """
@@ -325,26 +339,28 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
 
 
 def None_Omit(Input_Str):
-    '''
-    This function replace None object with "None" string
-    :param Input_Str: Input String
+    """
+    Replace None object with "None" string.
+
+    :param Input_Str: input string
     :type Input_Str : str
     :return: modified string as str
-    '''
+    """
     result = Input_Str
     result = result.replace("None", '\"None\"')
     return result
 
 
 def HTML_Init(Title, Name):
-    '''
-    This function initialize html file
-    :param Title: Simulation title (analysis model)
+    """
+    Initialize html file.
+
+    :param Title: simulation title (analysis model)
     :type Title : str
     :param Name: file name
     :type Name : str
     :return: HTML file as file obj
-    '''
+    """
     if Title not in os.listdir(os.getcwd()):
         os.mkdir(Title)
     HTMLFile = io.open(
@@ -367,16 +383,17 @@ def HTML_Init(Title, Name):
 
 
 def HTML_Desc(Title, Description, file):
-    '''
-    This function write model description in html file
-    :param Title: Simulation title (analysis model)
+    """
+    Write model description in html file.
+
+    :param Title: simulation title (analysis model)
     :type Title : str
-    :param Description: Model description
+    :param Description: model description
     :type Description : str
     :param file: html file object
     :type file : file object
     :return: None
-    '''
+    """
     file.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
     file.write(
         '<p style = "text-align:justify;margin:15px;">' +
@@ -385,8 +402,9 @@ def HTML_Desc(Title, Description, file):
 
 
 def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
-    '''
-    This function write chartjs chart in html file
+    """
+    Write chartjs chart in html file.
+
     :param x: x data as a string list
     :type x : str
     :param y: y data as string list (or list of y)
@@ -401,7 +419,7 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     :param file: html file object
     :type file : file object
     :return: None
-    '''
+    """
     chart_data = ""
     chart_title = str(chart_name)
     if isinstance(y, list):
@@ -427,16 +445,17 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
 
 
 def HTML_Input_Table(Input_Dict, Input_Params, file):
-    '''
-    This function add table to html file
-    :param Input_Dict: Input values dictionary
+    """
+    Add table to html file.
+
+    :param Input_Dict: input values dictionary
     :type Input_Dict : dict
-    :param Input_Params: Input params dictionary
+    :param Input_Params: input parameters dictionary
     :type Input_Params : dict
     :param file: html file object
     :type file : file object
     :return: None
-    '''
+    """
     file.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
     file.write(
         '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
@@ -476,16 +495,17 @@ def HTML_Overall_Params_Table(
         Input_Params,
         file,
         header=False):
-    '''
-    This function add table to html file
-    :param Input_Dict: Input values dictionary
+    """
+    Add table to html file.
+
+    :param Input_Dict: input values dictionary
     :type Input_Dict : dict
-    :param Input_Params: Input params dictionary
+    :param Input_Params: input parameters dictionary
     :type Input_Params : dict
     :param file: html file object
     :type file : file object
     :return: None
-    '''
+    """
     if header:
         file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
     file.write(
@@ -524,13 +544,13 @@ def HTML_Overall_Params_Table(
 
 
 def HTML_End(file):
-    '''
-    This function add end part of html file
+    """
+    Add end part of html file.
+
     :param file: html file object
     :type file : file object
     :return: None
-    '''
-
+    """
     file.write(
         '<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By '
         '<a style="text-decoration:none;color:#ff7600;" '
@@ -541,10 +561,11 @@ def HTML_End(file):
 
 def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
-    This Function Save Parameters In CSV File
-    :param OutputParamsKeys : OutputParams Key as  list
+    Save parameters in CSV file.
+
+    :param OutputParamsKeys : output parameters keys
     :type OutputParamsKeys : list
-    :param OutputDict: Analysis Result Dictionary
+    :param OutputDict: analysis result dictionary
     :type OutputDict:dict
     :param i: cell load current [A]
     :type i : float
@@ -560,12 +581,13 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
 
 
 def filter_lambda(Input_Dict):
-    '''
-    This function filter lambda parameter
-    :param Input_Dict: Input Parameters Dictionary
+    """
+    Filter lambda parameter.
+
+    :param Input_Dict: input parameters dictionary
     :type Input_Dict : dict
-    :return: Modified Dictionary
-    '''
+    :return: modified dictionary
+    """
     try:
         if Input_Dict["lambda"] > 23:
             Input_Dict["lambda"] = 23
@@ -581,26 +603,28 @@ def filter_lambda(Input_Dict):
 
 
 def left_justify(words, width):
-    '''
-    This function left justify words
+    """
+    Left justify words.
+
     :param words: list of words
     :type words : list
     :param width: width of each line
     :type width: int
     :return: left justified words as list
-    '''
+    """
     return ' '.join(words).ljust(width)
 
 
 def justify(words, width):
-    '''
-    This function justify input words
+    """
+    Justify input words.
+
     :param words: list of words
     :type words : list
     :param width: width of each line
     :type width : int
     :return: list of justified words as list
-    '''
+    """
     line = []
     col = 0
     for word in words:
@@ -626,16 +650,17 @@ def justify(words, width):
 
 
 def description_print(Analysis_Name, Description_Dict, Width=100):
-    '''
-    This function print justified text for overview and each model description in console
-    :param Analysis_Name: Analysis model name
+    """
+    Print justified text for overview and each model description in console.
+
+    :param Analysis_Name: analysis model name
     :type Analysis_Name : str
-    :param Description_Dict: Description dict ( in Params)
+    :param Description_Dict: description dict (in params)
     :type Description_Dict : dict
-    :param Width: Width of each line (for justify)
+    :param Width: width of each line (for justify)
     :type Width : int
     :return: None
-    '''
+    """
     line()
     if Analysis_Name.find("Padulles") != -1:
         print("\n")
@@ -660,6 +685,21 @@ def description_control(
         User_Input,
         Links_Dict,
         Vectors_Dict):
+    """
+    Control each analysis description.
+
+    :param Analysis_Name: analysis name
+    :type Analysis_Name: str
+    :param Analysis_List: analysis list
+    :type Analysis_List: list
+    :param User_Input: user input
+    :type User_Input: str
+    :param Links_Dict: documents links
+    :type Links_Dict: dict
+    :param Vectors_Dict: test vectors
+    :type Vectors_Dict: dict
+    :return: None
+    """
     if User_Input.upper() == "M":
         webbrowser.open_new(Links_Dict[Analysis_Name])
     elif User_Input.upper() == "T":
@@ -671,6 +711,7 @@ def description_control(
         print("\n")
         line()
         input_temp = input("Press any key to continue")
+        del input_temp
         Analysis_List[Analysis_Name](
             InputMethod=Test_Vector, TestMode=True)
     else:
@@ -678,12 +719,13 @@ def description_control(
 
 
 def filter_alpha(Input_Dict):
-    '''
-    This function filter alpha parameter
-    :param Input_Dict: Input Parameters Dictionary
+    """
+    Filter alpha parameter.
+
+    :param Input_Dict: input parameters dictionary
     :type Input_Dict : dict
-    :return: Modified Dictionary
-    '''
+    :return: modified dictionary
+    """
     try:
         if Input_Dict["alpha"] > 1:
             Input_Dict["alpha"] = 1
@@ -697,18 +739,19 @@ def filter_alpha(Input_Dict):
 
 
 def warning_check_1(Vcell, I_Warning, I, warning_flag):
-    '''
-    This function check Vcell is negative or not
-    :param Vcell: Vcell of FC Voltage
+    """
+    Check Vcell is negative or not.
+
+    :param Vcell: Vcell of FC voltage
     :type Vcell : float
-    :param I_Warning: First I of negative range
+    :param I_Warning: first I of negative range
     :type I_Warning : float
-    :param I: Test current
+    :param I: test current
     :type I : float
-    :param warning_flag: Input warning flag
+    :param warning_flag: input warning flag
     :type warning_flag : bool
     :return:  update warning_flag and I_Warning [bool,float]
-    '''
+    """
     if not warning_flag:
         try:
             if Vcell < 0:
@@ -721,14 +764,15 @@ def warning_check_1(Vcell, I_Warning, I, warning_flag):
 
 
 def warning_check_2(Vcell, warning_flag):
-    '''
-    This function check Vcell is None or not
+    """
+    Check Vcell is None or not.
+
     :param Vcell: Vcell of FC Voltage
     :type Vcell : float
-    :param warning_flag: Input warning flag
+    :param warning_flag: input warning flag
     :type warning_flag : bool
     :return:  update warning_flag as bool
-    '''
+    """
     if not warning_flag:
         if Vcell is None:
             return True
@@ -742,20 +786,21 @@ def warning_print(
         I_Warning,
         file,
         PrintMode):
-    '''
-    This function print warning message and write messages to HTML report
-    :param warning_flag_1: First warning message (Vcell <0)
+    """
+    Print warning message and write messages to HTML report.
+
+    :param warning_flag_1: first warning message (Vcell <0)
     :type warning_flag_1 : bool
-    :param warning_flag_2: Second warning message (Vcell==None)
+    :param warning_flag_2: second warning message (Vcell==None)
     :type warning_flag_2 : bool
-    :param I_Warning: First I of negative range
+    :param I_Warning: first I of negative range
     :type I_Warning : float
     :param file: html file object
     :type file : file object
-    :param PrintMode : Print Mode Control Flag (True : Print Outputs)
-    :type PrintMode:bool
-    :return:
-    '''
+    :param PrintMode : print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :return: None
+    """
     if warning_flag_1:
         file.write(
             '<p style="color:red;font-size:20px;text-align:center;">' +
