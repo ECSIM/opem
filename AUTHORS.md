@@ -5,3 +5,8 @@
 - Sarmin Hamidi - University Of Tehran - ([https://github.com/sarminh](https://github.com/sarminh)) ([sarmin@ecsim.ir](mailto:sarmin@ecsim.ir))
 - Kasra Askari - Isfahan University Of Technology - ([https://github.com/kasraaskari](https://github.com/kasraaskari)) ([kasra@ecsim.ir](mailto:kasra@ecsim.ir))
 - Mohammad Mahdi Rahimi - Amirkabir University Of Technology - ([https://github.com/mahi97](https://github.com/mahi97)) ([mahi@ecsim.ir](mailto:mahi@ecsim.ir))
+
+
+# Other Contributors #
+
+----------
