@@ -7,6 +7,7 @@
 </a>
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
+<a href = "https://hub.docker.com/r/ecsim/opem"><img alt="Docker Cloud Build Status" src="https://img.shields.io/docker/cloud/build/ecsim/opem"></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 
 </div>
