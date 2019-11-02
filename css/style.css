@@ -341,6 +341,10 @@ button {
         font-size: 20px;
         hyphens: auto;
     }
+    .note{
+        display: table;
+        padding-left: 0px;
+    }
     .functions{
             width: 95%;
         font-size: 28px;
