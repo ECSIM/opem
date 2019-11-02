@@ -154,6 +154,10 @@ hr{
     text-align: left;
     display: inline-block;
 }
+.note-index{
+    display: inline-block;
+    text-align: left;
+}
 .functions{
     width: 80%;
     margin: auto;
