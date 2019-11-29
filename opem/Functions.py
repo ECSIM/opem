@@ -194,6 +194,7 @@ def input_test(a):
     :param a: input
     :return: "1"
     """
+    _ = a
     return "1"
 
 
