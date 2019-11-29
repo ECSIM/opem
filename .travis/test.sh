@@ -15,7 +15,7 @@ then
      IS_IN_TRAVIS=true
 fi
 
-if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
+if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.7' ]
 then
 	$PYTHON_COMMAND version_check.py
 	$PYTHON_COMMAND -m bandit -r opem -s B322
