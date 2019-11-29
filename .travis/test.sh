@@ -2,15 +2,26 @@
 # Dump Environment (so that we can check PATH, UT_FLAGS, etc.)
 set -e
 set -x
-
-python -m opem test
-pip install -r dev-requirements.txt
-python version_check.py
-if [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
+IS_IN_TRAVIS=false
+PYTHON_COMMAND=python
+  
+if [ "$TRAVIS_OS_NAME" == "osx" ]
 then
-	python -m bandit -r opem -s B322
-	python -m vulture --min-confidence 80 --exclude=opem,build,.eggs --sort-by-size .
-	python -m pydocstyle
+	PYTHON_COMMAND=python3
 fi
-python -m pytest opem/Test --cov=opem --cov-report=term
-python -m cProfile -s cumtime opem/Profile.py
+ 
+if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
+then
+     IS_IN_TRAVIS=true
+fi
+
+if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
+then
+	$PYTHON_COMMAND version_check.py
+	$PYTHON_COMMAND -m bandit -r opem -s B322
+	$PYTHON_COMMAND -m vulture --min-confidence 80 --exclude=opem,build,.eggs --sort-by-size .
+	$PYTHON_COMMAND -m pydocstyle
+fi
+
+$PYTHON_COMMAND -m pytest opem/Test --cov=opem --cov-report=term
+$PYTHON_COMMAND -m cProfile -s cumtime opem/Profile.py
