@@ -19,7 +19,7 @@ if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.7' ]
 then
 	$PYTHON_COMMAND version_check.py
 	$PYTHON_COMMAND -m bandit -r opem -s B322
-	$PYTHON_COMMAND -m vulture --min-confidence 65 --exclude=build,.eggs --sort-by-size opem setup.py version_check.py
+	vulture --min-confidence 65 --exclude=build,.eggs --sort-by-size opem setup.py version_check.py
 	$PYTHON_COMMAND -m pydocstyle
 fi
 
