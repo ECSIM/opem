@@ -36,7 +36,7 @@
 
 ### Exe Version (Only Windows)
 - Download [Exe-Version 1.1](https://github.com/ECSIM/opem/releases/download/v1.1/OPEM-1.1.exe)
-- Run `OPEM.exe`
+- Run `OPEM-1.1.exe`
 
 
 ### DMG Version (MacOS)
