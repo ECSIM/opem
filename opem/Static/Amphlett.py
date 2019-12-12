@@ -4,11 +4,25 @@ import math
 from opem.Params import Amphlett_InputParams as InputParams
 from opem.Params import Amphlett_OutputParams as OutputParams
 from opem.Params import Amphlett_Params_Default as Defaults
-from opem.Params import xi1, xi3, xi4, HHV, uF, Amphlett_Description, Overall_Params_Max_Description,\
+from opem.Params import xi1, xi3, xi4, HHV, uF, R, F, Amphlett_Description, Overall_Params_Max_Description,\
     Overall_Params_Linear_Description, Eth, Report_Message
 import opem.Functions
 import os
 
+def B_Calc(T,n=2):
+    """
+    Calculate B (Constant in the mass transfer term).
+
+    :param T: cell operation temperature [K]
+    :type T : float
+    :param n: number of moles of electrons transferred in the balanced equation occurring in the fuel cell
+    :type n: int
+    :return: B as float
+    """
+    try:
+        return (R*T)/(n*F)
+    except (TypeError,ZeroDivisionError):
+        return None
 
 def Power_Thermal_Calc(VStack, N, i):
     """
@@ -488,6 +502,7 @@ def Static_Analysis(
         Eta_Conc_List = []
         Eta_Active_List = []
         Power_Thermal_List = []
+        B = B_Calc(Input_Dict["T"])
         # R_List=[]
         while i < IEnd:
             try:
@@ -504,7 +519,7 @@ def Static_Analysis(
                     R_elec=Input_Dict["R"])
                 Eta_Ohmic_List.append(Output_Dict["Eta Ohmic"])
                 Output_Dict["Eta Concentration"] = Eta_Conc_Calc(
-                    i, Input_Dict["A"], Input_Dict["B"], Input_Dict["JMax"])
+                    i, Input_Dict["A"], B, Input_Dict["JMax"])
                 Eta_Conc_List.append(Output_Dict["Eta Concentration"])
                 Output_Dict["Loss"] = Loss_Calc(
                     Output_Dict["Eta Activation"],
