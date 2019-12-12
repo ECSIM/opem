@@ -52,7 +52,6 @@ Amphlett_InputParams = {
     "lambda": "An adjustable parameter with a min value of 14 and max value of 23",
     "N": "Number of single cells",
     "R": "R-Electronic [ohm] (*Optional)",
-    "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
     "JMax": "Maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {
     "Enernst": "V",
@@ -91,7 +90,6 @@ Amphlett_Standard_Vector = {
     "N": 1,
     "R": 0,
     "JMax": 1.5,
-    "B": 0.016,
     "Name": "Amphlett_Test"}
 Larminiee_InputParams = {
     "E0": "Fuel cell reversible no loss voltage [V]",
