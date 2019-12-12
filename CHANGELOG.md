@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CONTRIBUTING.md` updated
 - Test system modified
 - `INSTALL.md` modified
+- Amphlett static model modified
 ## [1.1] - 2019-07-05
 ### Added
 - MATLAB examples
