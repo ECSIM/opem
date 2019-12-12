@@ -160,11 +160,6 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
 				<td align="center">JMax</td>
 				<td align="center">Maximum current density</td>
 				<td align="center">A/(cm^2)</td>
