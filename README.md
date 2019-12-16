@@ -1418,6 +1418,10 @@ and Policy, University of California Davis.
 11- Larminie, J., Dicks, A., & McDonald, M. S. 2003. Fuel cell systems explained (Vol. 2, pp. 207-225). Chichester, UK: J. Wiley. doi: 10.1002/9781118706992.
 </blockquote>
 
+<blockquote>
+12- Rho, Y. W., Srinivasan, S., & Kho, Y. T. 1994. ''Mass transport phenomena in proton exchange membrane fuel cells using o 2/he, o 2/ar, and o 2/n 2 mixtures ii. Theoretical analysis.'' Journal of the Electrochemical Society, 141(8), 2089-2096. doi: 10.1149/1.2055066.
+</blockquote>
+
 
 
 ## Cite
