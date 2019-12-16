@@ -92,12 +92,12 @@ Amphlett_Standard_Vector = {
     "JMax": 1.5,
     "Name": "Amphlett_Test"}
 Larminiee_InputParams = {
+    "T": "Cell operation temperature [K]",
     "E0": "Fuel cell reversible no loss voltage [V]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
     "RM": "The membrane and contact resistances [ohm]",
-    "B": "Constant in the mass transfer term [V]",
     "i_n": "Internal current [A]",
     "i_0": "Exchange current at which the overvoltage begins to move from zero [A]",
     "i_L": "Limiting current [A]",
