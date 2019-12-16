@@ -192,9 +192,9 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">Constant in the mass transfer term</td>
-				<td align="center">V</td>
+				<td align="center">T</td>
+				<td align="center">Cell operation temperature</td>
+				<td align="center">K</td>
 			</tr>
 			<tr>
 				<td align="center">i-start</td>
