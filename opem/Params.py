@@ -122,9 +122,9 @@ last zone is characterized by a rapid voltage fall.
 '''
 
 Larminiee_Standard_Vector = {
-    "A": 0.0587,
+    "A": 0.06,
     "E0": 1.178,
-    "B": 0.0517,
+    "T": 328.15,
     "RM": 0.0018,
     "i_0": 0.00654,
     "i_L": 100.0,
