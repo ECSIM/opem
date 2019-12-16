@@ -1414,6 +1414,12 @@ and Policy, University of California Davis.
  "Static and dynamic proton exchange membrane fuel cell models." Journal of Hydrocarbons Mines and Environmental Research 2 (1)
 </blockquote>
 
+<blockquote>
+11- Larminie, J., Dicks, A., & McDonald, M. S. 2003. Fuel cell systems explained (Vol. 2, pp. 207-225). Chichester, UK: J. Wiley. doi: 10.1002/9781118706992.
+</blockquote>
+
+
+
 ## Cite
 
 If you use OPEM in your research , please cite this paper :
