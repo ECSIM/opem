@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Larminie-Dicks model functions."""
 import math
-from opem.Static.Amphlett import Power_Calc, Efficiency_Calc, VStack_Calc, PowerStack_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
+from opem.Static.Amphlett import Power_Calc, Efficiency_Calc, VStack_Calc, PowerStack_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc, B_Calc
 from opem.Params import Larminiee_InputParams as InputParams
 from opem.Params import Larminiee_OutputParams as OutputParams
 import opem.Functions
@@ -102,6 +102,7 @@ def Static_Analysis(
         Power_List = []
         Vstack_List = []
         Power_Thermal_List = []
+        B = B_Calc(Input_Dict["T"])
         while i < IEnd:
             try:
                 I_List.append(i)
@@ -112,7 +113,7 @@ def Static_Analysis(
                     i_n=Input_Dict["i_n"],
                     i_L=Input_Dict["i_L"],
                     R_M=Input_Dict["RM"],
-                    B=Input_Dict["B"],
+                    B=B,
                     A=Input_Dict["A"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["Vcell"], I_Warning, i, Warning1)
