@@ -138,8 +138,8 @@ Chamberline_InputParams = {
     "E0": "Open circuit voltage [V]",
     "b": "Tafel's parameter for the oxygen reduction [V]",
     "R": "Resistance [ohm.cm^2]",
-    "m": "Diffusion's parameters [V]",
-    "n": "Diffusion's parameters [(A^-1)(cm^2)]",
+    "m": "Diffusion's parameters [V] (*Optional)",
+    "n": "Diffusion's parameters [(A^-1)(cm^2)] (*Optional)",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
@@ -152,6 +152,8 @@ Chamberline_OutputParams = {
     "VStack": "V",
     "Power-Stack": "W",
     "Power-Thermal": "W"}
+
+Chamberline_Params_Default = {"m": 3 * (10 ** -8),"n":8}
 
 Chamberline_Description = '''
 Chamberlin-Kim static model is an empirical equation which was developed to fit the experimental cell potential (E) vs.
