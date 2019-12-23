@@ -11,3 +11,5 @@ import opem.Dynamic.Padulles1
 import opem.Dynamic.Padulles2
 import opem.Dynamic.Padulles_Hauer
 import opem.Dynamic.Padulles_Amphlett
+
+__version__ = str(opem.Params.Version)
