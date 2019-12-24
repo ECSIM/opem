@@ -51,15 +51,14 @@ if __name__ == "__main__":
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
-            ANALYSISINDEX = int(input(("\nPlease Choose Model : ")))
+            ANALYSISINDEX = int(input(("\nPlease select a model : ")))
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
             ANALYSISNAME = MENUKEYS[ANALYSISINDEX - 1]
             description_print(ANALYSISNAME, Description_Menu)
             USERINPUT = input(
-                "\nEnter [M]: More Information,[T]: Run Standard Test Vector or any other key to "
-                "continue \n")
+                "\n\n[M]: More information\n\n[T]: Run standard test vector\n\n[P]: Enter your parameters (*default)\n\nPlease select a mode : ")
             description_control(
                 Analysis_Name=ANALYSISNAME,
                 Analysis_List=Menu,
