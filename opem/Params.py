@@ -436,6 +436,8 @@ Description_Menu = {
     "Overview": Overview,
     "Links": Links}
 
+Mode_Menu = "\n\n[M]: More information\n\n[T]: Run standard test vector\n\n[P]: Enter your parameters (*default)\n\nPlease select a mode : "
+
 Description_Links = {
     "Amphlett_Analysis (Static)": "http://www.ecsim.ir/opem/doc/Static/Amphlett.html",
     "Larminiee_Analysis (Static)": "http://www.ecsim.ir/opem/doc/Static/Larminie_Dicks.html",
