@@ -5,7 +5,6 @@ from art import text2art
 import opem.Script
 from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
 import io
-import math
 import os
 import requests
 import webbrowser
@@ -754,7 +753,7 @@ def filter_range(IStart,IEnd,IStep):
     temp = None
     IStartO = IStart
     IEndO = IEnd
-    IStepO = math.abs(IStep)
+    IStepO = abs(IStep)
     if IStartO > IEndO:
         temp = IStartO
         IStartO = IEndO
