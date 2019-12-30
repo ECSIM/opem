@@ -5,6 +5,7 @@ from art import text2art
 import opem.Script
 from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
 import io
+import math
 import os
 import requests
 import webbrowser
@@ -737,6 +738,28 @@ def filter_alpha(Input_Dict):
         return Input_Dict
     except Exception:
         return Input_Dict
+
+def filter_range(IStart,IEnd,IStep):
+    """
+    Filter current range.
+
+    :param IStart: current start point
+    :type IStart: float
+    :param IEnd: current end point
+    :type IEnd: float
+    :param IStep: current step
+    :type IStep: float
+    :return: filtered range as list
+    """
+    temp = None
+    IStartO = IStart
+    IEndO = IEnd
+    IStepO = math.abs(IStep)
+    if IStartO > IEndO:
+        temp = IStartO
+        IStartO = IEndO
+        IEndO = temp
+    return [IStartO,IEndO,IStepO]
 
 
 def warning_check_1(Vcell, I_Warning, I, warning_flag):
