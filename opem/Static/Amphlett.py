@@ -493,7 +493,7 @@ def Static_Analysis(
         Precision = opem.Functions.get_precision(IStep)
         Output_Dict["Enernst"] = Enernst_Calc(
             Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
-        i = Input_Dict["i-start"]
+        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"],IEnd,IStep)
         I_List = []
         Efficiency_List = []
         Power_List = []
