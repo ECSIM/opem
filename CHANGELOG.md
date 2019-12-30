@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `INSTALL.md` modified
 - CLI menu modified
 - Amphlett static model modified
+- Chamberline-Kim static model modified
+- Larminie-Dicks static model modified
+- Current range bug fixed
 ## [1.1] - 2019-07-05
 ### Added
 - MATLAB examples
