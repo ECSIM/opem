@@ -634,7 +634,7 @@ True
 0.0008771388470514419
 >>> Amphlett_Data["VE"][5]
 0.9761841756350329
->>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":0,"i-stop":5,"i-step":2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"Name":"test1"}
+>>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":5,"i-stop":0,"i-step":-2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"Name":"test1"}
 >>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 ###########
 Amphlett-Model Simulation

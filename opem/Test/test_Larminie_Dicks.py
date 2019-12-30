@@ -355,7 +355,7 @@ True
 -0.8163936642494803
 >>> Larminie_Dicks_Data["VE"][5]
 20.333975212428435
->>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":5,"i-step":2,"Name":"test3"}
+>>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test3"}
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Larminie-Dicks-Model Simulation
