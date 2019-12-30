@@ -90,7 +90,7 @@ def Dynamic_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        i = Input_Dict["i-start"]
+        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Power_List = []
         Vstack_List = []
