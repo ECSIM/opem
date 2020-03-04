@@ -4,7 +4,7 @@
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 1.1](https://github.com/ecsim/opem/archive/v1.1.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 1.2](https://github.com/ecsim/opem/archive/v1.2.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -35,12 +35,12 @@
 - OPEM GUI is available [here](https://github.com/ECSIM/gopem)			
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 1.1](https://github.com/ECSIM/opem/releases/download/v1.1/OPEM-1.1.exe)
-- Run `OPEM-1.1.exe`
+- Download [Exe-Version 1.2](https://github.com/ECSIM/opem/releases/download/v1.2/OPEM-1.2.exe)
+- Run `OPEM-1.2.exe`
 
 
 ### DMG Version (MacOS)
-- Download [DMG-Version 1.1](https://github.com/ECSIM/opem/releases/download/v1.1/OPEM-1.1.dmg)
+- Download [DMG-Version 1.2](https://github.com/ECSIM/opem/releases/download/v1.2/OPEM-1.2.dmg)
 - Open DMG file
 - Copy `OPEM` into your system
 - Run `OPEM`

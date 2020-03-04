@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.2] - 2020-03-11
 ### Added
 - `__version__` variable
 - `codecov.yml` file
@@ -163,7 +164,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSV output files
 - Documents and `README.md`
 
-[Unreleased]: https://github.com/ECSIM/opem/compare/v1.1...develop
+[Unreleased]: https://github.com/ECSIM/opem/compare/v1.2...develop
+[1.2]: https://github.com/ECSIM/opem/compare/v1.1...v1.2
 [1.1]: https://github.com/ECSIM/opem/compare/v1.0...v1.1
 [1.0]: https://github.com/ECSIM/opem/compare/v0.9...v1.0
 [0.9]: https://github.com/ECSIM/opem/compare/v0.8...v0.9

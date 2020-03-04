@@ -39,14 +39,14 @@ def read_description():
 setup(
     name='opem',
     packages=['opem', 'opem.Static', 'opem.Dynamic','opem.Test'],
-    version='1.1',
+    version='1.2',
     description='Open Source PEM Cell Simulation Tool',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
     author_email='opem@ecsim.ir',
     url='https://github.com/ecsim/opem',
-    download_url='https://github.com/ecsim/opem/tarball/v1.1',
+    download_url='https://github.com/ecsim/opem/tarball/v1.2',
     keywords="OPEM PEM FC CELL Fuel-Cell Chemistry",
     project_urls={
         'Webpage': 'http://opem.ecsim.ir',
