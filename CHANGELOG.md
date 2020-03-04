@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `__version__` variable
+- `codecov.yml` file
 ### Changed
 - `AUTHORS.md` updated
 - `CONTRIBUTING.md` updated
