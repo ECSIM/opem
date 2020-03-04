@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `__version__` variable
 - `codecov.yml` file
 ### Changed
+- Icon updated
 - `AUTHORS.md` updated
 - `CONTRIBUTING.md` updated
 - Test system modified
