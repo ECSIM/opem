@@ -50,7 +50,6 @@ setup(
     keywords="OPEM PEM FC CELL Fuel-Cell Chemistry",
     project_urls={
         'Webpage': 'http://opem.ecsim.ir',
-        'Say Thanks!': 'https://saythanks.io/to/ecsim',
         'Source': 'https://github.com/ecsim/opem',
     },
     platforms=["any"],
