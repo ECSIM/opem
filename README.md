@@ -1476,17 +1476,7 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 
 ## Donate to our project
 								
-<h3>Bitcoin :</h3>					
+If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
-```12Xm1qL4MXYWiY9sRMoa3VpfTfw6su3vNq```			
+<a href="https://www.ecsim.ir/opem/donate.html" target="_blank"><img src="http://www.ecsim.ir/images/Donate-Button.png" height="90px" width="270px" alt="OPEM Donation"></a>
 
-
-
-<h3>Payping (For Iranian citizens) :</h3>
-
-<a href="http://www.payping.net/sepandhaghighi" target="__blank"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>	
-
-
-<h3>Say Thanks! </h3>
-
-<a href="https://saythanks.io/to/ecsim"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"></a>
