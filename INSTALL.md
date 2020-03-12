@@ -28,7 +28,7 @@
 - Run `docker pull ecsim/opem` (Need root access)
 - Configuration :
 	- Ubuntu 16.04
-	- Python 3.6
+	- Python 3.5
 
 ### GUI
 
