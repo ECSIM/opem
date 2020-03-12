@@ -746,7 +746,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 1. Amphlett Static Model
 	```pycon
 	>>> from opem.Static.Amphlett import Static_Analysis
-	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
+	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	 ```
 	<html>
@@ -823,7 +823,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 2. Larminie-Dicks Static Model
 	```pycon
 	>>> from opem.Static.Larminie_Dicks import Static_Analysis
-	>>> Test_Vector = {"A": 0.0587,"E0": 1.178,"B": 0.0517,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
+	>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	 ```
 	<html>
