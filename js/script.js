@@ -2,7 +2,7 @@
 function redirect(flag){
     switch(flag){
         case 1:
-            window.open("https://saythanks.io/to/ecsim");
+            window.open("https://hamibash.com/ecsim");
             break;
         case 2:
             swal("Bitocin Wallet","1XGr9qbZjBpUQJJSB6WtgBQbDTgrhPLPA");
