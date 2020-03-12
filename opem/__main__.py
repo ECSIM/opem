@@ -11,7 +11,7 @@ from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from art import tprint
-from opem.Params import Version, Description_Menu, Description_Links, Vectors, Test_List
+from opem.Params import Version, Description_Menu, Description_Links, Vectors, Test_List, Mode_Menu
 from opem.Functions import check_update, description_print, description_control
 
 
@@ -51,15 +51,13 @@ if __name__ == "__main__":
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
-            ANALYSISINDEX = int(input(("\nPlease Choose Model : ")))
+            ANALYSISINDEX = int(input(("\nPlease select a model : ")))
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
             ANALYSISNAME = MENUKEYS[ANALYSISINDEX - 1]
             description_print(ANALYSISNAME, Description_Menu)
-            USERINPUT = input(
-                "\nEnter [M]: More Information,[T]: Run Standard Test Vector or any other key to "
-                "continue \n")
+            USERINPUT = input(Mode_Menu)
             description_control(
                 Analysis_Name=ANALYSISNAME,
                 Analysis_List=Menu,

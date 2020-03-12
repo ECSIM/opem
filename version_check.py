@@ -4,7 +4,7 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "1.1"
+VERSION = "1.2"
 
 VERSION_1 = VERSION.split(".")[0]
 VERSION_2 = str(int(float(VERSION)*10 - int(VERSION_1)*10))
@@ -16,6 +16,7 @@ SETUP_ITEMS = [
     'https://github.com/ecsim/opem/tarball/v{0}']
 INSTALL_ITEMS = [
     "[Version {0}](https://github.com/ecsim/opem/archive/v{0}.zip)",
+    "Run `OPEM-{0}.exe`",
     "[Exe-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.exe)",
     "[DMG-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.dmg)"]
 CHANGELOG_ITEMS = [

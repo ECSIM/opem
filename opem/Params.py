@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """OPEM parameters."""
-Version = 1.1
+Version = 1.2
 Website = "http://www.ecsim.ir/opem"
 UpdateUrl = "http://www.ecsim.ir/opem/update"
 Overview = '''
@@ -52,7 +52,6 @@ Amphlett_InputParams = {
     "lambda": "An adjustable parameter with a min value of 14 and max value of 23",
     "N": "Number of single cells",
     "R": "R-Electronic [ohm] (*Optional)",
-    "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
     "JMax": "Maximum current density [A/(cm^2)]"}
 Amphlett_OutputParams = {
     "Enernst": "V",
@@ -91,15 +90,14 @@ Amphlett_Standard_Vector = {
     "N": 1,
     "R": 0,
     "JMax": 1.5,
-    "B": 0.016,
     "Name": "Amphlett_Test"}
 Larminiee_InputParams = {
+    "T": "Cell operation temperature [K]",
     "E0": "Fuel cell reversible no loss voltage [V]",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
     "RM": "The membrane and contact resistances [ohm]",
-    "B": "Constant in the mass transfer term [V]",
     "i_n": "Internal current [A]",
     "i_0": "Exchange current at which the overvoltage begins to move from zero [A]",
     "i_L": "Limiting current [A]",
@@ -124,9 +122,9 @@ last zone is characterized by a rapid voltage fall.
 '''
 
 Larminiee_Standard_Vector = {
-    "A": 0.0587,
+    "A": 0.06,
     "E0": 1.178,
-    "B": 0.0517,
+    "T": 328.15,
     "RM": 0.0018,
     "i_0": 0.00654,
     "i_L": 100.0,
@@ -140,8 +138,8 @@ Chamberline_InputParams = {
     "E0": "Open circuit voltage [V]",
     "b": "Tafel's parameter for the oxygen reduction [V]",
     "R": "Resistance [ohm.cm^2]",
-    "m": "Diffusion's parameters [V]",
-    "n": "Diffusion's parameters [(A^-1)(cm^2)]",
+    "m": "Diffusion's parameters [V] (*Optional)",
+    "n": "Diffusion's parameters [(A^-1)(cm^2)] (*Optional)",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
@@ -154,6 +152,8 @@ Chamberline_OutputParams = {
     "VStack": "V",
     "Power-Stack": "W",
     "Power-Thermal": "W"}
+
+Chamberline_Params_Default = {"m": 3 * (10 ** -8),"n":8}
 
 Chamberline_Description = '''
 Chamberlin-Kim static model is an empirical equation which was developed to fit the experimental cell potential (E) vs.
@@ -435,6 +435,8 @@ Description_Menu = {
     "General Padulles": General_Padulles_Description,
     "Overview": Overview,
     "Links": Links}
+
+Mode_Menu = "\n\n[M]: More information\n\n[T]: Run standard test vector\n\n[P]: Enter your parameters (*default)\n\nPlease select a mode : "
 
 Description_Links = {
     "Amphlett_Analysis (Static)": "http://www.ecsim.ir/opem/doc/Static/Amphlett.html",

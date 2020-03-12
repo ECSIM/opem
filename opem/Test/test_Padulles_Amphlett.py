@@ -587,7 +587,7 @@ False
 2.9
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)
 [Error] Vcell Calculation Error (Enernst:4.5, Loss:0.4, N:None)
->>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":234,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":5,"i-step":2,"Name":"Test"}
+>>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":234,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"Test"}
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Amphlett-Model Simulation

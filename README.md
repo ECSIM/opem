@@ -160,11 +160,6 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
 				<td align="center">JMax</td>
 				<td align="center">Maximum current density</td>
 				<td align="center">A/(cm^2)</td>
@@ -197,9 +192,9 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">V</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">Constant in the mass transfer term</td>
-				<td align="center">V</td>
+				<td align="center">T</td>
+				<td align="center">Cell operation temperature</td>
+				<td align="center">K</td>
 			</tr>
 			<tr>
 				<td align="center">i-start</td>
@@ -751,7 +746,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 1. Amphlett Static Model
 	```pycon
 	>>> from opem.Static.Amphlett import Static_Analysis
-	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"B": 0.016,"Name": "Amphlett_Test"}
+	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	 ```
 	<html>
@@ -828,7 +823,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 2. Larminie-Dicks Static Model
 	```pycon
 	>>> from opem.Static.Larminie_Dicks import Static_Analysis
-	>>> Test_Vector = {"A": 0.0587,"E0": 1.178,"B": 0.0517,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
+	>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
 	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	 ```
 	<html>
@@ -1419,6 +1414,16 @@ and Policy, University of California Davis.
  "Static and dynamic proton exchange membrane fuel cell models." Journal of Hydrocarbons Mines and Environmental Research 2 (1)
 </blockquote>
 
+<blockquote>
+11- Larminie, J., Dicks, A., & McDonald, M. S. 2003. Fuel cell systems explained (Vol. 2, pp. 207-225). Chichester, UK: J. Wiley. doi: 10.1002/9781118706992.
+</blockquote>
+
+<blockquote>
+12- Rho, Y. W., Srinivasan, S., & Kho, Y. T. 1994. ''Mass transport phenomena in proton exchange membrane fuel cells using o 2/he, o 2/ar, and o 2/n 2 mixtures ii. Theoretical analysis.'' Journal of the Electrochemical Society, 141(8), 2089-2096. doi: 10.1149/1.2055066.
+</blockquote>
+
+
+
 ## Cite
 
 If you use OPEM in your research , please cite this paper :
@@ -1471,17 +1476,7 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 
 ## Donate to our project
 								
-<h3>Bitcoin :</h3>					
+If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
-```12Xm1qL4MXYWiY9sRMoa3VpfTfw6su3vNq```			
+<a href="https://www.ecsim.ir/opem/donate.html" target="_blank"><img src="http://www.ecsim.ir/images/Donate-Button.png" height="90px" width="270px" alt="OPEM Donation"></a>
 
-
-
-<h3>Payping (For Iranian citizens) :</h3>
-
-<a href="http://www.payping.net/sepandhaghighi" target="__blank"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>	
-
-
-<h3>Say Thanks! </h3>
-
-<a href="https://saythanks.io/to/ecsim"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"></a>

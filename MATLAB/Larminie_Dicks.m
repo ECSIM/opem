@@ -13,9 +13,9 @@ model = opem.Static.Larminie_Dicks;
 test_vector = opem.Params.Larminiee_Standard_Vector;
 
 % Model inputs
-test_vector{'A'} = 0.0587; % The slope of the Tafel line [V]
+test_vector{'A'} = 0.06; % The slope of the Tafel line [V]
 test_vector{'E0'} = 1.178; % Fuel cell reversible no loss voltage [V]
-test_vector{'B'} =  0.0517; % Constant in the mass transfer term [V]
+test_vector{'T'} =  328.15; % Cell operation temperature [K]
 test_vector{'RM'} = 0.0018; % The membrane and contact resistances [ohm]
 test_vector{'i_0'} =  0.00654; % Exchange current at which the overvoltage begins to move from zero [A]
 test_vector{'i_L'} = 100.0; % Limiting current [A]

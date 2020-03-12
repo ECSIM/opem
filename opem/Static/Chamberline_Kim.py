@@ -3,6 +3,7 @@
 import math
 from opem.Params import Chamberline_InputParams as InputParams
 from opem.Params import Chamberline_OutputParams as OutputParams
+from opem.Params import Chamberline_Params_Default as Defaults
 from opem.Static.Amphlett import Efficiency_Calc, Power_Calc, VStack_Calc, PowerStack_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 import opem.Functions
 from opem.Params import Chamberline_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
@@ -75,9 +76,11 @@ def Static_Analysis(
         Output_Dict = dict(
             zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if not TestMode:
-            Input_Dict = InputMethod(InputParams)
+            Input_Dict = InputMethod(InputParams, params_default=Defaults)
         else:
             Input_Dict = InputMethod
+            Input_Dict = opem.Functions.filter_default(
+                input_dict=Input_Dict, params_default=Defaults)
         if PrintMode:
             print("Analyzing . . .")
         Name = Input_Dict["Name"]
@@ -93,7 +96,7 @@ def Static_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        i = Input_Dict["i-start"]
+        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Efficiency_List = []
         Power_List = []

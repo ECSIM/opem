@@ -10,4 +10,4 @@
 
 #### Python Version
 
-#### OPEM Version
+#### OPEM Version (Use : `opem.__version__`)

@@ -194,6 +194,7 @@ def input_test(a):
     :param a: input
     :return: "1"
     """
+    _ = a
     return "1"
 
 
@@ -736,6 +737,28 @@ def filter_alpha(Input_Dict):
         return Input_Dict
     except Exception:
         return Input_Dict
+
+def filter_range(IStart,IEnd,IStep):
+    """
+    Filter current range.
+
+    :param IStart: current start point
+    :type IStart: float
+    :param IEnd: current end point
+    :type IEnd: float
+    :param IStep: current step
+    :type IStep: float
+    :return: filtered range as list
+    """
+    temp = None
+    IStartO = IStart
+    IEndO = IEnd
+    IStepO = abs(IStep)
+    if IStartO > IEndO:
+        temp = IStartO
+        IStartO = IEndO
+        IEndO = temp
+    return [IStartO,IEndO,IStepO]
 
 
 def warning_check_1(Vcell, I_Warning, I, warning_flag):

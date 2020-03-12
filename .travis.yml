@@ -30,6 +30,10 @@ matrix:
         - os: linux
           python: nightly
           dist: xenial
+        
+        - os: osx
+          language: generic
+          env: TOXENV=py36
           
     allow_failures:
         - os: linux
@@ -44,9 +48,11 @@ matrix:
           python: nightly
           dist: xenial
 install: 
+  - chmod +x .travis/install.sh
   - bash .travis/install.sh
 
 script: 
+  - chmod +x .travis/test.sh
   - bash .travis/test.sh
 
 after_success:

@@ -282,7 +282,7 @@ True
 -0.0372516118425709
 >>> Chamberline_Kim_Data["VE"][5]
 1.2138061679542624
->>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":5,"i-step":1,"Name":"test2"}
+>>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":5,"i-stop":1,"i-step":-1,"Name":"test2"}
 >>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chamberline-Kim-Model Simulation
