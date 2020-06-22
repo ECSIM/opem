@@ -1,5 +1,5 @@
 art==4.7
-requests==2.23.0
+requests==2.24.0
 codecov>=2.0.15
 pytest>=4.3.0
 pytest-cov>=2.6.1
