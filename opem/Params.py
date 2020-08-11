@@ -368,7 +368,6 @@ Padulles_Amphlett_InputParams = {
     "A": "Active area [cm^2]",
     "l": "Membrane thickness [cm]",
     "lambda": "An adjustable parameter with a min value of 14 and max value of 23",
-    "B": "An empirical constant depending on the cell and its operation state (Tafel slope) [V]",
     "JMax": "Maximum current density [A/(cm^2)]"}
 
 Padulles_Amphlett_Outparams = {
@@ -406,7 +405,6 @@ Padulles_Amphlett_Standard_Vector = {
     "t1": 2,
     "t2": 2,
     "tH2O": 18.418,
-    "B": 0.016,
     "rho": 1.168,
     "qMethanol": 0.0002,
     "CV": 2,
