@@ -559,13 +559,13 @@ Done!
 >>> Padulles_Amphlett_Data["Status"]
 True
 >>> Padulles_Amphlett_Data["P"][5]
-2.72491286817189
+2.724941943281497
 >>> Padulles_Amphlett_Data["I"][5]
 0.6
 >>> Padulles_Amphlett_Data["V"][5]
-4.54152144695315
+4.541569905469162
 >>> Padulles_Amphlett_Data["EFF"][5]
-0.582246339352968
+0.5822525519832258
 >>> Padulles_Amphlett_Data["PO2"][5]
 0.1905867044473064
 >>> Padulles_Amphlett_Data["PH2"][5]
@@ -573,13 +573,13 @@ True
 >>> Padulles_Amphlett_Data["PH2O"][5]
 0.2425966933860498
 >>> Padulles_Amphlett_Data["Ph"][5]
-0.9650871318281099
+0.9650580567185031
 >>> Padulles_Amphlett_Data["VE"][5]
-4.553477553120023
+4.553525621759973
 >>> Padulles_Amphlett_Data["V0"]
-4.698328442367755
+4.698326931114575
 >>> Padulles_Amphlett_Data["K"]
--0.24141814874622033
+-0.24133551559100302
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod={}, TestMode=True, PrintMode=False)
 >>> Padulles_Amphlett_Data["Status"]
 False
