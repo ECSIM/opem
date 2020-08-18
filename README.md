@@ -681,11 +681,6 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
 				<td align="center">JMax</td>
 				<td align="center">Maximum current density</td>
 				<td align="center">A/(cm^2)</td>
@@ -1173,7 +1168,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 7. Padulles-Amphlett Dynamic Model
 	```pycon
 	>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
-	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.016,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
+	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	```
 	<html>

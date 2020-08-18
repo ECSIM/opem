@@ -3,6 +3,11 @@ language: python
 matrix:
     include:
         - os: linux
+          python: 3.8
+          env: TOXENV=py38-linux
+          dist: xenial
+          
+        - os: linux
           python: 3.7
           env: TOXENV=py37-linux
           dist: xenial
@@ -26,6 +31,10 @@ matrix:
         - os: linux
           python: 3.8-dev
           dist: xenial
+        
+        - os: linux
+          python: 3.9-dev
+          dist: xenial
           
         - os: linux
           python: nightly
@@ -46,6 +55,10 @@ matrix:
           
         - os: linux
           python: nightly
+          dist: xenial
+        
+        - os: linux
+          python: 3.9-dev
           dist: xenial
 install: 
   - chmod +x .travis/install.sh

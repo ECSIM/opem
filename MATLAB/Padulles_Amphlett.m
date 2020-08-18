@@ -27,7 +27,6 @@ test_vector{'tO2'} = 6.74; % Oxygen time constant [s]
 test_vector{'t1'} = 2; % Reformer time constant [s]
 test_vector{'t2'} = 2; % Reformer time constant [s]
 test_vector{'tH2O'} = 18.418; % Water time constant [s]
-test_vector{'B'} = 0.016; % An empirical constant depending on the cell and its operation state (Tafel slope) [V]
 test_vector{'rho'} = 1.168; % Hydrogen-Oxygen flow rate
 test_vector{'qMethanol'} = 0.0002; % Molar flow of methanol [kmol.s^(-1)]
 test_vector{'CV'} = 2; % Conversion factor
