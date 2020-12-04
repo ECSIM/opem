@@ -412,6 +412,55 @@ Padulles_Amphlett_Standard_Vector = {
     "i-stop": 75,
     "i-step": 0.1,
     "Name": "Padulles_Amphlett_Test"}
+
+Chakraborty1_Params_Default = {"R": 0, "E0": 1.229}
+
+Chakraborty1_InputParams = {
+    "N0": "Number of cells",
+    "u": "Fuel utilization  ratio",
+    "E0": "No load voltage [V], Default Value:" + str(
+        Chakraborty1_Params_Default["E0"]),
+    "T": "Fuel cell temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
+    "rho": "Hydrogen-Oxygen flow rate",
+    "R": "R-Electronic [ohm] (*Optional)",
+    "i-start": "Cell operating current start point [A]",
+    "i-step": "Cell operating current step",
+    "i-stop": "Cell operating current end point [A]",
+    "KH2O": "Water valve constant [kmol.s^(-1).atm^(-1)]"}
+
+Chakraborty1_Outparams = {
+    "FC Voltage": "V",
+    "FC Power": "W",
+    "FC Efficiency": "",
+    "PO2": "atm",
+    "PH2": "atm",
+    "PH2O": "atm",
+    "E": "V",
+    "Power-Thermal": "W"}
+
+Chakraborty1_Description = '''
+The new dynamic model present two different modes of operation: constant fuel utilization control (constant stoichiometry condition)
+and constant fuel flow control (constant flow rate condition). The model solves the long-standing problem of mixing reversible and
+irreversible potentials (equilibrium and non-equilibrium states) in the Nernst voltage expression. Specifically, a Nernstian gain term
+is introduced for the constant fuel utilization condition, and it is shown that the Nernstian gain is an irreversibility in the computation
+of the output voltage of the fuel cell.
+'''
+
+Chakraborty1_Standard_Vector = {
+    "T": 1273,
+    "u":0.8,
+    "N0": 1,
+    "KO2": 0.281,
+    "KH2": 0.843,
+    "KH2O": 2.52,
+    "rho": 1.145,
+    "i-start": 0.1,
+    "i-stop": 75,
+    "i-step": 0.1,
+    "Name": "Chakraborty1_Test"}
+
 General_Padulles_Description = '''
 The Padulles dynamic model can predict the transient response of cell voltage, temperature of the cell, hydrogen/oxygen
 out flow rates and cathode and anode channel temperatures/pressures under sudden change in load current. Hence, a
