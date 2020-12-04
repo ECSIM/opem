@@ -168,7 +168,7 @@ def Dynamic_Analysis(
             try:
                 I_List.append(i)
                 Output_Dict["PO2"] = PO2_Calc(
-                    Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rHO"], i)
+                    Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rho"], i)
                 Output_Dict["PH2"] = PH2_Calc(
                     Input_Dict["KH2"], Input_Dict["u"], i)
                 PH2_List.append(Output_Dict["PH2"])
@@ -184,7 +184,7 @@ def Dynamic_Analysis(
                     Output_Dict["PO2"],
                     Output_Dict["PH2O"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Input_Dict["T"], i, Input_Dict["Rint"], Input_Dict["N0"])
+                    Output_Dict["E"], Input_Dict["T"], i, Input_Dict["R"], Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
@@ -246,7 +246,7 @@ def Dynamic_Analysis(
                 print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title,
-                Padulles_Amphlett_Description,
+                Chakraborty1_Description,
                 HTMLFile)
             opem.Functions.HTML_Input_Table(
                 Input_Dict=Input_Dict,
