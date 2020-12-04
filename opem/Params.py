@@ -479,6 +479,7 @@ Description_Menu = {
     "Padulles_Analysis II (Dynamic)": Padulles2_Description,
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Description,
     "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Description,
+    "Chakraborty_Analysis I (Dynamic)": Chakraborty1_Description,
     "General Padulles": General_Padulles_Description,
     "Overview": Overview,
     "Links": Links}
@@ -492,7 +493,8 @@ Description_Links = {
     "Padulles_Analysis I (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles1.html",
     "Padulles_Analysis II (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html",
     "Padulles_Hauer Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html",
-    "Padulles_Amphlett Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html"}
+    "Padulles_Amphlett Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html",
+    "Chakraborty_Analysis I (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Chakraborty1.html"}
 Vectors = {
     "Amphlett_Analysis (Static)": Amphlett_Standard_Vector,
     "Larminiee_Analysis (Static)": Larminiee_Standard_Vector,
@@ -500,7 +502,8 @@ Vectors = {
     "Padulles_Analysis I (Dynamic)": Padulles_Standard_Vector,
     "Padulles_Analysis II (Dynamic)": Padulles2_Standard_Vector,
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Standard_Vector,
-    "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Standard_Vector}
+    "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Standard_Vector,
+    "Chakraborty_Analysis I (Dynamic)": Chakraborty1_Standard_Vector}
 
 Overall_Params_Max_Description = {
     "Pmax": "Maximum power [W]",
