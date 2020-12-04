@@ -424,7 +424,7 @@ Chakraborty1_InputParams = {
     "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
     "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "rho": "Hydrogen-Oxygen flow rate",
-    "R": "R-Electronic [ohm] (*Optional)",
+    "R": "Internal  ohmic  resistance [ohm] (*Optional)",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
     "i-stop": "Cell operating current end point [A]",
