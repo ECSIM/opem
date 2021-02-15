@@ -10,7 +10,7 @@ from opem.Dynamic.Padulles1 import Dynamic_Analysis as Padulles1_Analysis
 from opem.Dynamic.Padulles2 import Dynamic_Analysis as Padulles2_Analysis
 from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analysis
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
-from opem.Dynamic.Chakraborty1 import Dynamic_Analysis as Chakraborty1_Analysis
+from opem.Dynamic.Chakraborty import Dynamic_Analysis as Chakraborty_Analysis
 from art import tprint
 from opem.Params import Version, Description_Menu, Description_Links, Vectors, Test_List, Mode_Menu
 from opem.Functions import check_update, description_print, description_control
@@ -27,7 +27,7 @@ if __name__ == "__main__":
         "Padulles_Analysis II (Dynamic)": Padulles2_Analysis,
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis,
-        "Chakraborty_Analysis I (Dynamic)": Chakraborty1_Analysis}
+        "Chakraborty_Analysis (Dynamic)": Chakraborty_Analysis}
     MENUKEYS = sorted(Menu.keys())
     EXITFLAG = False
     if "TEST" in ARGSUP:
