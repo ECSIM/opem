@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Chakraborty1 model functions."""
+"""Chakraborty model functions."""
 import os
 import math
-from opem.Params import Chakraborty1_InputParams as InputParams
-from opem.Params import Chakraborty1_Outparams as OutputParams
-from opem.Params import Chakraborty1_Params_Default as Defaults
+from opem.Params import Chakraborty_InputParams as InputParams
+from opem.Params import Chakraborty_Outparams as OutputParams
+from opem.Params import Chakraborty_Params_Default as Defaults
 from opem.Params import R,F
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 from opem.Dynamic.Padulles1 import Efficiency_Calc
 from opem.Dynamic.Padulles2 import Enernst_Calc
 import opem.Functions
-from opem.Params import Chakraborty1_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
+from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 
 def PH2_Calc(KH2, u, I):
     """
@@ -104,7 +104,7 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Chakraborty-I analysis.
+    Run Chakraborty analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag
@@ -123,7 +123,7 @@ def Dynamic_Analysis(
     I_Warning = 0
     Overall_Params_Max = {}
     Overall_Params_Linear = {}
-    Simulation_Title = "Chakraborty-I"
+    Simulation_Title = "Chakraborty"
     try:
 
         if PrintMode:
@@ -246,7 +246,7 @@ def Dynamic_Analysis(
                 print(Report_Message)
             opem.Functions.HTML_Desc(
                 Simulation_Title,
-                Chakraborty1_Description,
+                Chakraborty_Description,
                 HTMLFile)
             opem.Functions.HTML_Input_Table(
                 Input_Dict=Input_Dict,
