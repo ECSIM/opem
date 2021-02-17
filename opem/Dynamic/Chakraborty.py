@@ -182,9 +182,9 @@ def Dynamic_Analysis(
         Power_List = []
         Vstack_List = []
         Efficiency_List = []
-        PH2_List = []
-        PO2_List = []
-        PH2O_List = []
+        PH2_Init_List = []
+        PO2_Init_List = []
+        PH2O_Init_List = []
         Power_Thermal_List = []
         while i < IEnd:
             try:
@@ -193,11 +193,11 @@ def Dynamic_Analysis(
                     Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rho"], i)
                 Output_Dict["PH2-Initial"] = PH2_Init_Calc(
                     Input_Dict["KH2"], Input_Dict["u"], i)
-                PH2_List.append(Output_Dict["PH2-Initial"])
-                PO2_List.append(Output_Dict["PO2-Initial"])
+                PH2_Init_List.append(Output_Dict["PH2-Initial"])
+                PO2_Init_List.append(Output_Dict["PO2-Initial"])
                 Output_Dict["PH2O-Initial"] = PH2O_Init_Calc(
                     Input_Dict["KH2O"], i)
-                PH2O_List.append(Output_Dict["PH2O-Initial"])
+                PH2O_Init_List.append(Output_Dict["PH2O-Initial"])
                 Output_Dict["E"] = Enernst_Calc(
                     Input_Dict["E0"],
                     Input_Dict["N0"],
@@ -310,29 +310,29 @@ def Dynamic_Analysis(
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PO2_List),
+                y=str(PO2_Init_List),
                 color='	rgb(0, 255, 128)',
                 x_label="I(A)",
-                y_label="PO2(atm)",
-                chart_name="PO2",
+                y_label="PO2-Init(atm)",
+                chart_name="PO2-Init",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PH2_List),
+                y=str(PH2_Init_List),
                 color='	rgb(128, 0, 255)',
                 x_label="I(A)",
-                y_label="PH2(atm)",
-                chart_name="PH2",
+                y_label="PH2-Init(atm)",
+                chart_name="PH2-Init",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PH2O_List),
+                y=str(PH2O_Init_List),
                 color='	rgb(165, 185, 112)',
                 x_label="I(A)",
-                y_label="PH2O(atm)",
-                chart_name="PH2O",
+                y_label="PH2O-Init(atm)",
+                chart_name="PH2O-Init",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(x=str(list(map(opem.Functions.rounder,
@@ -377,9 +377,9 @@ def Dynamic_Analysis(
                 "I": I_List,
                 "V": Vstack_List,
                 "EFF": Efficiency_List,
-                "PO2": PO2_List,
-                "PH2": PH2_List,
-                "PH2O": PH2O_List,
+                "PO2-Init": PO2_Init_List,
+                "PH2-Init": PH2_Init_List,
+                "PH2O-Init": PH2O_Init_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
                 "K": B1,
