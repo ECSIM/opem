@@ -189,15 +189,15 @@ def Dynamic_Analysis(
         while i < IEnd:
             try:
                 I_List.append(i)
-                Output_Dict["PO2"] = PO2_Calc(
+                Output_Dict["PO2-Initial"] = PO2_Init_Calc(
                     Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rho"], i)
-                Output_Dict["PH2"] = PH2_Calc(
+                Output_Dict["PH2-Initial"] = PH2_Init_Calc(
                     Input_Dict["KH2"], Input_Dict["u"], i)
-                PH2_List.append(Output_Dict["PH2"])
-                PO2_List.append(Output_Dict["PO2"])
-                Output_Dict["PH2O"] = PH2O_Calc(
+                PH2_List.append(Output_Dict["PH2-Initial"])
+                PO2_List.append(Output_Dict["PO2-Initial"])
+                Output_Dict["PH2O-Initial"] = PH2O_Init_Calc(
                     Input_Dict["KH2O"], i)
-                PH2O_List.append(Output_Dict["PH2O"])
+                PH2O_List.append(Output_Dict["PH2O-Initial"])
                 Output_Dict["E"] = Enernst_Calc(
                     Input_Dict["E0"],
                     Input_Dict["N0"],
@@ -205,8 +205,9 @@ def Dynamic_Analysis(
                     Input_Dict["PH2"],
                     Input_Dict["PO2"],
                     Input_Dict["PH2O"])
+                Output_Dict["I-Ratio"] = I_Ratio_Calc(Output_Dict["PH2-Initial"], Output_Dict["PO2-Initial"], Output_Dict["PH2O-Initial"], i)
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Input_Dict["T"], i, Input_Dict["R"], Input_Dict["N0"])
+                    Output_Dict["E"], Input_Dict["T"], i, Output_Dict["I-Ratio"], Input_Dict["R"], Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
