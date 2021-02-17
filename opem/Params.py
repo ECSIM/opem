@@ -453,8 +453,9 @@ it is shown that the Nernstian gain is an irreversibility in the computation of 
 
 Chakraborty_Standard_Vector = {
     "T": 1273,
+    "E0": 0.6,
     "u":0.8,
-    "N0": 1,
+    "N0": 2,
     "PO2": 1,
     "PH2": 1,
     "PH2O": 1,
