@@ -413,7 +413,7 @@ Padulles_Amphlett_Standard_Vector = {
     "i-step": 0.1,
     "Name": "Padulles_Amphlett_Test"}
 
-Chakraborty_Params_Default = {"R": 0, "E0": 1.229}
+Chakraborty_Params_Default = {"R": 0, "E0": 0.6}
 
 Chakraborty_InputParams = {
     "N0": "Number of cells",
@@ -424,6 +424,9 @@ Chakraborty_InputParams = {
     "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
     "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
     "rho": "Hydrogen-Oxygen flow rate",
+    "PO2": "Oxygen partial pressure [atm]",
+    "PH2": "Hydrogen partial pressure [atm]",
+    "PH2O": "Water partial pressure [atm]",
     "R": "Internal  ohmic  resistance [ohm] (*Optional)",
     "i-start": "Cell operating current start point [A]",
     "i-step": "Cell operating current step",
@@ -434,9 +437,9 @@ Chakraborty_Outparams = {
     "FC Voltage": "V",
     "FC Power": "W",
     "FC Efficiency": "",
-    "PO2": "atm",
-    "PH2": "atm",
-    "PH2O": "atm",
+    "PO2 Initial": "atm",
+    "PH2 Initial": "atm",
+    "PH2O Initial": "atm",
     "E": "V",
     "Power-Thermal": "W"}
 
