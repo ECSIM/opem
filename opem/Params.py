@@ -445,11 +445,10 @@ Chakraborty_Outparams = {
     "Power-Thermal": "W"}
 
 Chakraborty_Description = '''
-The new dynamic model present two different modes of operation: constant fuel utilization control (constant stoichiometry condition)
-and constant fuel flow control (constant flow rate condition). The model solves the long-standing problem of mixing reversible and
-irreversible potentials (equilibrium and non-equilibrium states) in the Nernst voltage expression. Specifically, a Nernstian gain term
-is introduced for the constant fuel utilization condition, and it is shown that the Nernstian gain is an irreversibility in the computation
-of the output voltage of the fuel cell.
+The new dynamic model is presented based on constant fuel utilization control (constant stoichiometry condition).
+The model solves the long-standing problem of mixing reversible and irreversible potentials (equilibrium and non-equilibrium states)
+in the Nernst voltage expression. Specifically, a Nernstian gain term is introduced for the constant fuel utilization condition, and
+it is shown that the Nernstian gain is an irreversibility in the computation of the output voltage of the fuel cell.
 '''
 
 Chakraborty_Standard_Vector = {
