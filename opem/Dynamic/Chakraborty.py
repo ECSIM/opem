@@ -116,8 +116,8 @@ def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
         return result
     except TypeError:
         print(
-            "[Error] Vcell Calculation Error (Enernst:%s, T:%s, I:%s, Rint:%s, N:%s)" %
-            (str(Enernst), str(T), str(I), str(Rint), str(N)))
+            "[Error] Vcell Calculation Error (Enernst:%s, T:%s, I:%s, I-Ratio:%s, Rint:%s, N:%s)" %
+            (str(Enernst), str(T), str(I), str(I_ratio), str(Rint), str(N)))
 
 
 def Dynamic_Analysis(
