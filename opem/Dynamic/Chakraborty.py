@@ -12,7 +12,7 @@ from opem.Dynamic.Padulles2 import Enernst_Calc
 import opem.Functions
 from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 
-def PH2_init_Calc(KH2, u, I):
+def PH2_Init_Calc(KH2, u, I):
     """
     Calculate PH2-Initial.
 
@@ -32,7 +32,7 @@ def PH2_init_Calc(KH2, u, I):
             "[Error] PH2-Initial Calculation Failed (KH2:%s, u:%s, I:%s)" %
             (str(KH2), str(u), str(I)))
 
-def PO2_init_Calc(KO2, u, rHO, I):
+def PO2_Init_Calc(KO2, u, rHO, I):
     """
     Calculate PO2-Initial.
 
@@ -54,7 +54,7 @@ def PO2_init_Calc(KO2, u, rHO, I):
             "[Error] PO2-Initial Calculation Failed (KO2:%s, u:%s, rHO:%s, I:%s)" %
             (str(KO2), str(u), str(rHO), str(I)))
 
-def PH2O_init_Calc(KH2O, I):
+def PH2O_Init_Calc(KH2O, I):
     """
     Calculate PH2O-Initial.
 
@@ -72,7 +72,7 @@ def PH2O_init_Calc(KH2O, I):
             "[Error] PH2O-Initial Calculation Failed (KH2O:%s, I:%s)" %
             (str(KH2O), str(I)))
 
-def I_ratio_Calc(PH2_init, PO2_init, PH2O_init, I):
+def I_Ratio_Calc(PH2_init, PO2_init, PH2O_init, I):
     """
     Calculate I-Ratio.
 
@@ -90,7 +90,7 @@ def I_ratio_Calc(PH2_init, PO2_init, PH2O_init, I):
         result = I/(PH2_init*math.sqrt(PO2_init)/PH2O_init)
         return result
     except (TypeError, ZeroDivisionError):
-        print("[Error] I-Ratio Calculation Error (PH2_init:%s, PO2_init:%s, PH2O_init:%s, I:%s)" %(str(PH2_init), str(PO2_init), str(PH2O_init), str(I))
+        print("[Error] I-Ratio Calculation Error (PH2_init:%s, PO2_init:%s, PH2O_init:%s, I:%s)" %(str(PH2_init), str(PO2_init), str(PH2O_init), str(I)))
 
 def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
     """
