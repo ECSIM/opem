@@ -72,6 +72,26 @@ def PH2O_init_Calc(KH2O, I):
             "[Error] PH2O Initial Calculation Failed (KH2O:%s, I:%s)" %
             (str(KH2O), str(I)))
 
+def I_ratio_Calc(PH2_init, PO2_init, PH2O_init, I):
+    """
+    Calculate I-Ratio.
+
+    :param PH2_init: hydrogen partial pressure initial [atm]
+    :type PH2_init: float
+    :param PO2_init: oxygen partial pressure initial [atm]
+    :type PO2_init: float
+    :param PH2O_init: water partial pressure initial [atm]
+    :type PH2O_init: float
+    :param I: cell load current [A]
+    :type I: float
+    :return: I-Ratio
+    """
+    try:
+        result = I/(PH2_init*math.sqrt(PO2_init)/PH2O_init)
+        return result
+    except (TypeError, ZeroDivisionError):
+        print("[Error] I-Ratio Calculation Error (PH2_init:%s, PO2_init:%s, PH2O_init:%s, I:%s)" %(str(PH2_init), str(PO2_init), str(PH2O_init), str(I))
+
 def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
     """
     Calculate cell voltage.
@@ -82,7 +102,7 @@ def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
     :type T : float
     :param I: cell load current [A]
     :type I : float
-    :param I_ratio: cell load current ratio [A]
+    :param I_ratio: cell load current ratio
     :type I_ratio: float
     :param Rint: fuel cell internal resistance [ohm]
     :type Rint : float
