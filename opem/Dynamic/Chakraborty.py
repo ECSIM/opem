@@ -14,7 +14,7 @@ from opem.Params import Chakraborty_Description, Overall_Params_Max_Description,
 
 def PH2_init_Calc(KH2, u, I):
     """
-    Calculate PH2 initial.
+    Calculate PH2-Initial.
 
     :param KH2: hydrogen valve constant [kmol.s^(-1).atm^(-1)]
     :type KH2 : float
@@ -22,19 +22,19 @@ def PH2_init_Calc(KH2, u, I):
     :type u: float
     :param I: cell load current [A]
     :type I : float
-    :return: PH2 initial [atm] as float
+    :return: PH2-Initial [atm] as float
     """
     try:
         result = ((1 / KH2) * ((1/u) - 1) * I/(2*F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PH2 Initial Calculation Failed (KH2:%s, u:%s, I:%s)" %
+            "[Error] PH2-Initial Calculation Failed (KH2:%s, u:%s, I:%s)" %
             (str(KH2), str(u), str(I)))
 
 def PO2_init_Calc(KO2, u, rHO, I):
     """
-    Calculate PO2 initial.
+    Calculate PO2-Initial.
 
     :param KO2: oxygen valve constant [kmol.s^(-1).atm^(-1)]
     :type KO2 : float
@@ -44,32 +44,32 @@ def PO2_init_Calc(KO2, u, rHO, I):
     :type rHO: float
     :param I: cell load current [A]
     :type I : float
-    :return: PO2 initial [atm] as float
+    :return: PO2-Initial [atm] as float
     """
     try:
         result = ((1 / KO2) * ((1/(u*rHO)) - 0.5) * I/(2*F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PO2 Initial Calculation Failed (KO2:%s, u:%s, rHO:%s, I:%s)" %
+            "[Error] PO2-Initial Calculation Failed (KO2:%s, u:%s, rHO:%s, I:%s)" %
             (str(KO2), str(u), str(rHO), str(I)))
 
 def PH2O_init_Calc(KH2O, I):
     """
-    Calculate PH2O initial.
+    Calculate PH2O-Initial.
 
     :param KH2O: water valve constant [kmol.s^(-1).atm^(-1)]
     :type KH2O : float
     :param I: cell load current [A]
     :type I : float
-    :return: PH2O initial [atm] as float
+    :return: PH2O-Initial [atm] as float
     """
     try:
         result = ((1 / KH2O) * I/(2*F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PH2O Initial Calculation Failed (KH2O:%s, I:%s)" %
+            "[Error] PH2O-Initial Calculation Failed (KH2O:%s, I:%s)" %
             (str(KH2O), str(I)))
 
 def I_ratio_Calc(PH2_init, PO2_init, PH2O_init, I):
