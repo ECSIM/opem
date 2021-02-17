@@ -456,12 +456,16 @@ Chakraborty_Standard_Vector = {
     "T": 1273,
     "u":0.8,
     "N0": 1,
+    "PO2": 1,
+    "PH2": 1,
+    "PH2O": 1,
+    "R": 3.28125 * 10**(-4),
     "KO2": 0.000281,
     "KH2": 0.000843,
     "KH2O": 0.00252,
     "rho": 1.145,
     "i-start": 0.1,
-    "i-stop": 75,
+    "i-stop": 50,
     "i-step": 0.1,
     "Name": "Chakraborty_Test"}
 
