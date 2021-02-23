@@ -1,0 +1,54 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        python-version: [3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Installation
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        python setup.py install
+    - name: First test
+      run: |
+        python -m opem test
+        python -m opem
+    - name: Test requirements Installation
+      run: |
+        python otherfiles/requirements-splitter.py
+        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+    - name: Test with pytest
+      run: |
+        python -m pytest opem/Test --cov=opem --cov-report=term
+    - name: Version check
+      run: |
+        python version_check.py
+      if: matrix.python-version == 3.7
+    - name: Other tests
+      run: |
+          python -m vulture opem/ otherfiles/ version_check.py setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+          python -m bandit -r opem -s B322
+          python -m pydocstyle
+      if: matrix.python-version == 3.7
+    - name: Codecov
+      run: |
+        codecov
+      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+    - name: cProfile
+      run: |
+          python -m cProfile -s cumtime opem/Profile.py
