@@ -437,10 +437,9 @@ Chakraborty_Outparams = {
     "FC Voltage": "V",
     "FC Power": "W",
     "FC Efficiency": "",
-    "PO2-Initial": "atm",
-    "PH2-Initial": "atm",
-    "PH2O-Initial": "atm",
-    "I-Ratio": "",
+    "PO2": "atm",
+    "PH2": "atm",
+    "PH2O": "atm",
     "E": "V",
     "Power-Thermal": "W"}
 
