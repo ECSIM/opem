@@ -99,6 +99,21 @@ def PH2O_Calc(KH2O, I):
             (str(KH2O), str(I)))
 
 
+def Nernst_Gain_Calc(T, I):
+    """
+    Calculate Nernst gain.
+
+    :param T: cell operation temperature [K]
+    :type T : float
+    :param I: cell load current [A]
+    :type I : float
+    :return: Nernst gain [V} as float
+    """
+    try:
+        return ((R * T)/(4 * F)) * math.log(I)
+    except TypeError:
+        print("[Error] Nernst Gain Calculation Error (T:%s, I:%s)" %(str(T), str(I)))
+
 def Vcell_Calc(Enernst, T, I, Rint, N):
     """
     Calculate cell voltage.
