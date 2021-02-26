@@ -114,6 +114,22 @@ def Nernst_Gain_Calc(T, I):
     except TypeError:
         print("[Error] Nernst Gain Calculation Error (T:%s, I:%s)" %(str(T), str(I)))
 
+def Ohmic_Loss_Calc(Rint, I):
+    """
+    Calculate ohmic loss.
+
+    :param Rint: fuel cell internal resistance [ohm]
+    :type Rint : float
+    :param I: cell load current [A]
+    :type I : float
+    :return: ohmic loss [V] as float
+    """
+    try:
+        return Rint*I
+    except TypeError:
+        print("[Error] Ohmic Loss Calculation Error (Rint:%s, I:%s)" % (str(Rint), str(I)))
+
+
 def Vcell_Calc(Enernst, T, I, Rint, N):
     """
     Calculate cell voltage.
