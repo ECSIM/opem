@@ -238,9 +238,9 @@ def Dynamic_Analysis(
                     Input_Dict["E0"],
                     Input_Dict["N0"],
                     Input_Dict["T"],
-                    Input_Dict["PH2"],
-                    Input_Dict["PO2"],
-                    Input_Dict["PH2O"])
+                    Output_Dict["PH2"],
+                    Output_Dict["PO2"],
+                    Output_Dict["PH2O"])
                 Output_Dict["Nernst Gain"] = Nernst_Gain_Calc(Input_Dict["T"], i)
                 Output_Dict["Ohmic Loss"] = Ohmic_Loss_Calc(Input_Dict["R"], i)
                 Nernst_Gain_List.append(Output_Dict["Nernst Gain"])
