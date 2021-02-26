@@ -438,7 +438,9 @@ Chakraborty_Outparams = {
     "PH2": "atm",
     "PH2O": "atm",
     "E": "V",
-    "Power-Thermal": "W"}
+    "Power-Thermal": "W",
+    "Nernst Gain": "V",
+    "Ohmic Loss": "V"}
 
 Chakraborty_Description = '''
 The new dynamic model is presented based on constant fuel utilization control (constant stoichiometry condition).
