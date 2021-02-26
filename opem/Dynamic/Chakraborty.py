@@ -130,24 +130,22 @@ def Ohmic_Loss_Calc(Rint, I):
         print("[Error] Ohmic Loss Calculation Error (Rint:%s, I:%s)" % (str(Rint), str(I)))
 
 
-def Vcell_Calc(Enernst, T, I, Rint, N):
+def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
     """
     Calculate cell voltage.
 
     :param Enernst:  Enernst [V}
     :type Enernst : float
-    :param T: cell operation temperature [K]
-    :type T : float
-    :param I: cell load current [A]
-    :type I : float
-    :param Rint: fuel cell internal resistance [ohm]
-    :type Rint : float
+    :param Nernst_Gain: Nernst Gain [V]
+    :type Nernst_Gain: float
+    :param Ohmic_Loss: ohmic loss [V]
+    :type Ohmic_Loss: float
     :param N: number of fuel cells in the stack
     :type N : int
     :return:  cell voltage [V] as float
     """
     try:
-        loss = ((R * T)/(4 * F)) * math.log(I) - Rint*I
+        loss = Nernst_Gain - Ohmic_Loss
         result = Enernst + (N * loss)
         return result
     except TypeError:
@@ -222,6 +220,8 @@ def Dynamic_Analysis(
         PO2_List = []
         PH2O_List = []
         Power_Thermal_List = []
+        Ohmic_Loss_List = []
+        Nernst_Gain_List = []
         while i < IEnd:
             try:
                 I_List.append(i)
@@ -241,8 +241,12 @@ def Dynamic_Analysis(
                     Input_Dict["PH2"],
                     Input_Dict["PO2"],
                     Input_Dict["PH2O"])
+                Output_Dict["Nernst Gain"] = Nernst_Gain_Calc(Input_Dict["T"], i)
+                Output_Dict["Ohmic Loss"] = Ohmic_Loss_Calc(Input_Dict["R"], i)
+                Nernst_Gain_List.append(Output_Dict["Nernst Gain"])
+                Ohmic_Loss_List.append(Output_Dict["Ohmic Loss"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Input_Dict["T"], i, Input_Dict["R"], Input_Dict["N0"])
+                    Output_Dict["E"], Output_Dict["Nernst Gain"], Output_Dict["Ohmic Loss"], Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
@@ -329,6 +333,11 @@ def Dynamic_Analysis(
                     str(Vstack_List), str(Estimated_V)], color=[
                     'rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)", chart_name=[
                     "FC-Voltage", "Linear-Apx"], size="600px", file=HTMLFile)
+            opem.Functions.HTML_Chart(
+                x=str(I_List), y=[
+                    str(Nernst_Gain_List), str(Ohmic_Loss_List)], color=[
+                    'rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)", chart_name=[
+                    "Nernst Gain", "Ohmic Loss"], size="600px", file=HTMLFile)
             opem.Functions.HTML_Overall_Params_Table(
                 Overall_Params_Linear,
                 Overall_Params_Linear_Description,
