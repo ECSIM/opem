@@ -8,9 +8,35 @@ from opem.Params import Chakraborty_Params_Default as Defaults
 from opem.Params import R,F
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 from opem.Dynamic.Padulles1 import Efficiency_Calc
-from opem.Dynamic.Padulles2 import Enernst_Calc
 import opem.Functions
 from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
+
+def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
+    """
+    Calculate Enernst.
+
+    :param E0: open cell voltage [V]
+    :type E0 : float
+    :param N0: number of fuel cells in the stack
+    :type N0 : int
+    :param T: cell operation temperature [K]
+    :type T : float
+    :param PH2:  partial pressure [atm]
+    :type PH2 : float
+    :param PO2: partial pressure [atm]
+    :type PO2 : float
+    :param PH2O:  partial pressure [atm]
+    :type PH2O : float
+    :return: Enernest [V] as float
+    """
+    try:
+        result = N0 * (E0 - (R * T / (2 * F)) *
+                       math.log((PH2 * math.sqrt(PO2)) / PH2O))
+        return result
+    except (TypeError, ZeroDivisionError, OverflowError, ValueError):
+        print(
+            "[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s, PH2O:%s)" %
+            (str(E0), str(N0), str(T), str(PH2), str(PO2), str(PH2O)))
 
 def PH2_Calc(KH2, u, I):
     """
