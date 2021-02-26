@@ -461,7 +461,7 @@ Chakraborty_Standard_Vector = {
     "KO2": 0.00252,
     "rho": 1.145,
     "i-start": 0.1,
-    "i-stop": 50,
+    "i-stop": 300,
     "i-step": 0.1,
     "Name": "Chakraborty_Test"}
 
