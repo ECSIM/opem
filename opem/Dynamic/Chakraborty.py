@@ -73,7 +73,7 @@ def PH2O_Calc(KH2O, I):
             (str(KH2O), str(I)))
 
 
-def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
+def Vcell_Calc(Enernst, T, I, Rint, N):
     """
     Calculate cell voltage.
 
@@ -83,8 +83,6 @@ def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
     :type T : float
     :param I: cell load current [A]
     :type I : float
-    :param I_ratio: cell load current ratio
-    :type I_ratio: float
     :param Rint: fuel cell internal resistance [ohm]
     :type Rint : float
     :param N: number of fuel cells in the stack
@@ -92,13 +90,13 @@ def Vcell_Calc(Enernst, T, I, I_ratio, Rint, N):
     :return:  cell voltage [V] as float
     """
     try:
-        loss = ((R * T)/(4 * F)) * math.log(I_ratio) - Rint*I
+        loss = ((R * T)/(4 * F)) * math.log(I) - Rint*I
         result = Enernst + (N * loss)
         return result
     except TypeError:
         print(
-            "[Error] Vcell Calculation Error (Enernst:%s, T:%s, I:%s, I-Ratio:%s, Rint:%s, N:%s)" %
-            (str(Enernst), str(T), str(I), str(I_ratio), str(Rint), str(N)))
+            "[Error] Vcell Calculation Error (Enernst:%s, T:%s, I:%s, Rint:%s, N:%s)" %
+            (str(Enernst), str(T), str(I), str(Rint), str(N)))
 
 
 def Dynamic_Analysis(
