@@ -161,23 +161,22 @@ def Dynamic_Analysis(
         Power_List = []
         Vstack_List = []
         Efficiency_List = []
-        PH2_Init_List = []
-        PO2_Init_List = []
-        PH2O_Init_List = []
-        I_Ratio_List = []
+        PH2_List = []
+        PO2_List = []
+        PH2O_List = []
         Power_Thermal_List = []
         while i < IEnd:
             try:
                 I_List.append(i)
-                Output_Dict["PO2-Initial"] = PO2_Init_Calc(
+                Output_Dict["PO2"] = PO2_Calc(
                     Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rho"], i)
-                Output_Dict["PH2-Initial"] = PH2_Init_Calc(
+                Output_Dict["PH2"] = PH2_Calc(
                     Input_Dict["KH2"], Input_Dict["u"], i)
-                PH2_Init_List.append(Output_Dict["PH2-Initial"])
-                PO2_Init_List.append(Output_Dict["PO2-Initial"])
-                Output_Dict["PH2O-Initial"] = PH2O_Init_Calc(
+                PH2_List.append(Output_Dict["PH2"])
+                PO2_List.append(Output_Dict["PO2"])
+                Output_Dict["PH2O"] = PH2O_Calc(
                     Input_Dict["KH2O"], i)
-                PH2O_Init_List.append(Output_Dict["PH2O-Initial"])
+                PH2O_List.append(Output_Dict["PH2O"])
                 Output_Dict["E"] = Enernst_Calc(
                     Input_Dict["E0"],
                     Input_Dict["N0"],
@@ -185,10 +184,8 @@ def Dynamic_Analysis(
                     Input_Dict["PH2"],
                     Input_Dict["PO2"],
                     Input_Dict["PH2O"])
-                Output_Dict["I-Ratio"] = I_Ratio_Calc(Output_Dict["PH2-Initial"], Output_Dict["PO2-Initial"], Output_Dict["PH2O-Initial"], i)
-                I_Ratio_List.append(Output_Dict["I-Ratio"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Input_Dict["T"], i, Output_Dict["I-Ratio"], Input_Dict["R"], Input_Dict["N0"])
+                    Output_Dict["E"], Input_Dict["T"], i, Input_Dict["R"], Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
@@ -291,29 +288,29 @@ def Dynamic_Analysis(
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PO2_Init_List),
+                y=str(PO2_List),
                 color='	rgb(0, 255, 128)',
                 x_label="I(A)",
-                y_label="PO2-Init(atm)",
-                chart_name="PO2-Init",
+                y_label="PO2(atm)",
+                chart_name="PO2",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PH2_Init_List),
+                y=str(PH2_List),
                 color='	rgb(128, 0, 255)',
                 x_label="I(A)",
-                y_label="PH2-Init(atm)",
-                chart_name="PH2-Init",
+                y_label="PH2(atm)",
+                chart_name="PH2",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
-                y=str(PH2O_Init_List),
+                y=str(PH2O_List),
                 color='	rgb(165, 185, 112)',
                 x_label="I(A)",
-                y_label="PH2O-Init(atm)",
-                chart_name="PH2O-Init",
+                y_label="PH2O(atm)",
+                chart_name="PH2O",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(x=str(list(map(opem.Functions.rounder,
@@ -332,15 +329,6 @@ def Dynamic_Analysis(
                 x_label="I(A)",
                 y_label="P(W)",
                 chart_name="Power(Thermal)",
-                size="600px",
-                file=HTMLFile)
-            opem.Functions.HTML_Chart(
-                x=str(I_List),
-                y=str(I_Ratio_List),
-                color='	rgb(165, 185, 112)',
-                x_label="I(A)",
-                y_label="I-Ratio",
-                chart_name="I-Ratio",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.warning_print(
@@ -367,10 +355,9 @@ def Dynamic_Analysis(
                 "I": I_List,
                 "V": Vstack_List,
                 "EFF": Efficiency_List,
-                "PO2-Init": PO2_Init_List,
-                "PH2-Init": PH2_Init_List,
-                "PH2O-Init": PH2O_Init_List,
-                "I-Ratio": I_Ratio_List,
+                "PO2": PO2_List,
+                "PH2": PH2_List,
+                "PH2O": PH2O_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
                 "K": B1,
