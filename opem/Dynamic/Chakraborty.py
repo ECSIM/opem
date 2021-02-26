@@ -333,16 +333,16 @@ def Dynamic_Analysis(
                     str(Vstack_List), str(Estimated_V)], color=[
                     'rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)", chart_name=[
                     "FC-Voltage", "Linear-Apx"], size="600px", file=HTMLFile)
-            opem.Functions.HTML_Chart(
-                x=str(I_List), y=[
-                    str(Nernst_Gain_List), str(Ohmic_Loss_List)], color=[
-                    'rgba(99,100,255,1)', 'rgb(238, 210, 141)'], x_label="I(A)", y_label="V(V)", chart_name=[
-                    "Nernst Gain", "Ohmic Loss"], size="600px", file=HTMLFile)
             opem.Functions.HTML_Overall_Params_Table(
                 Overall_Params_Linear,
                 Overall_Params_Linear_Description,
                 file=HTMLFile,
                 header=False)
+            opem.Functions.HTML_Chart(
+                x=str(I_List), y=[
+                    str(Nernst_Gain_List), str(Ohmic_Loss_List)], color=[
+                    'rgba(99,100,255,1)', 'rgb(128, 0, 255)'], x_label="I(A)", y_label="V(V)", chart_name=[
+                    "Nernst Gain", "Ohmic Loss"], size="600px", file=HTMLFile)
             opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Efficiency_List),
