@@ -1568,6 +1568,9 @@ and Policy, University of California Davis.
 12- Rho, Y. W., Srinivasan, S., & Kho, Y. T. 1994. ''Mass transport phenomena in proton exchange membrane fuel cells using o 2/he, o 2/ar, and o 2/n 2 mixtures ii. Theoretical analysis.'' Journal of the Electrochemical Society, 141(8), 2089-2096. doi: 10.1149/1.2055066.
 </blockquote>
 
+<blockquote>
+13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
+</blockquote>
 
 
 ## Cite
