@@ -720,12 +720,75 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">Cell operating current end point</td>
 				<td align="center">A</td>
 			</tr>
-			
-				
 		</table>
 		</html>
 		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
-		
+	8. Chakraborty Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">Cell operation temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KH2O</td>
+				<td align="center">Water valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">Rint</td>
+				<td align="center">Fuel cell internal resistance</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+		</table>
+		</html>
+		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 		
 	- Find your reports in `Model_Name` folder			
 	
