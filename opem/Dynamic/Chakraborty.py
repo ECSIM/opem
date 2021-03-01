@@ -420,6 +420,8 @@ def Dynamic_Analysis(
                 "P": Power_List,
                 "I": I_List,
                 "V": Vstack_List,
+                "Nernst Gain": Nernst_Gain_List,
+                "Ohmic Loss": Ohmic_Loss_List,
                 "EFF": Efficiency_List,
                 "PO2": PO2_List,
                 "PH2": PH2_List,
