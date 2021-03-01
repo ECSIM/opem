@@ -649,7 +649,6 @@ False
 1.2
 >>> Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=None)
 [Error] Enernst Calculation Failed (E0:0.6, N0:2, T:1273, PH2:1, PO2:1, PH2O:None)
->>> PH2_Calc(KH2=0.0002, u=0.8, I=1)
 >>> PH2_Calc(KH2=0.0000002, u=0.8, I=1)
 0.006477717687589522
 >>> PH2_Calc(KH2=0.0000002, u=0.8, I=None)
