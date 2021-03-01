@@ -150,8 +150,8 @@ def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
         return result
     except TypeError:
         print(
-            "[Error] Vcell Calculation Error (Enernst:%s, T:%s, I:%s, Rint:%s, N:%s)" %
-            (str(Enernst), str(T), str(I), str(Rint), str(N)))
+            "[Error] Vcell Calculation Error (Enernst:%s, Nernst_Gain:%s, Ohmic_Loss:%s, N:%s)" %
+            (str(Enernst), str(Nernst_Gain), str(Ohmic_Loss), str(N)))
 
 
 def Dynamic_Analysis(
