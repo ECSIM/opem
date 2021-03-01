@@ -643,6 +643,33 @@ True
 False
 >>> Vcell_Calc(Enernst = 0.6, Nernst_Gain=0.2, Ohmic_Loss=0.1, N=1)
 0.7
+>>> Vcell_Calc(Enernst = 0.6, Nernst_Gain=0.2, Ohmic_Loss=0.1, N=None)
+[Error] Vcell Calculation Error (Enernst:0.6, Nernst_Gain:0.2, Ohmic_Loss:0.1, N:None)
+>>> Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=1)
+1.2
+>>> Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=None)
+[Error] Enernst Calculation Failed (E0:0.6, N0:2, T:1273, PH2:1, PO2:1, PH2O:None)
+>>> PH2_Calc(KH2=0.0002, u=0.8, I=1)
+>>> PH2_Calc(KH2=0.0000002, u=0.8, I=1)
+0.006477717687589522
+>>> PH2_Calc(KH2=0.0000002, u=0.8, I=None)
+[Error] PH2 Calculation Failed (KH2:2e-07, u:0.8, I:None)
+>>> PO2_Calc(KO2=0.00002, u=0.8, rHO=1.1145, I=1)
+0.00016105657884531684
+>>> PO2_Calc(KO2=0.00002, u=0.8, rHO=1.1145, I=None)
+[Error] PO2 Calculation Failed (KO2:2e-05, u:0.8, rHO:1.1145, I:None)
+>>> PH2O_Calc(KH2O=0.000002, I=1)
+0.002591087075035809
+>>> PH2O_Calc(KH2O=0.000002, I=None)
+[Error] PH2O Calculation Failed (KH2O:2e-06, I:None)
+>>> Nernst_Gain_Calc(T=1273, I=10)
+0.06314815567790123
+>>> Nernst_Gain_Calc(T=1273, I=None)
+[Error] Nernst Gain Calculation Error (T:1273, I:None)
+>>> Ohmic_Loss_Calc(Rint=2, I=10)
+20
+>>> Ohmic_Loss_Calc(Rint=None, I=10)
+[Error] Ohmic Loss Calculation Error (Rint:None, I:10)
 >>> Test_Vector={"T": 1273,"E0": 0.6,"u":0.8,"N0": 2,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 250,"i-stop":249 ,"i-step": -0.1,"Name": "Test"}
 >>> Chakraborty_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
