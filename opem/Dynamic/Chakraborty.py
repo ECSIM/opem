@@ -272,7 +272,7 @@ def Dynamic_Analysis(
                     warning_flag=Warning2)
                 Vstack_List.append(Output_Dict["FC Voltage"])
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(
-                    Output_Dict["FC Voltage"], Input_Dict["N0"])
+                    Output_Dict["FC Voltage"], Input_Dict["u"], Input_Dict["N0"])
                 Efficiency_List.append(Output_Dict["FC Efficiency"])
                 Output_Dict["FC Power"] = Power_Calc(
                     Output_Dict["FC Voltage"], i)
