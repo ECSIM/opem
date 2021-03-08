@@ -772,6 +772,11 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">--</td>
 			</tr>
 			<tr>
+				<td align="center">u</td>
+				<td align="center">The fuel utilization</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
 				<td align="center">i-start</td>
 				<td align="center">Cell operating current start point</td>
 				<td align="center">A</td>
