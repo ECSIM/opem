@@ -773,7 +773,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 			<tr>
 				<td align="center">u</td>
-				<td align="center">The fuel utilization</td>
+				<td align="center">Fuel utilization ratio</td>
 				<td align="center">--</td>
 			</tr>
 			<tr>
