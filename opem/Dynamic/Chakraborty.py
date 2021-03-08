@@ -5,9 +5,8 @@ import math
 from opem.Params import Chakraborty_InputParams as InputParams
 from opem.Params import Chakraborty_Outparams as OutputParams
 from opem.Params import Chakraborty_Params_Default as Defaults
-from opem.Params import R,F
+from opem.Params import R,F,HHV
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
-from opem.Dynamic.Padulles1 import Efficiency_Calc
 import opem.Functions
 from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 
@@ -153,6 +152,25 @@ def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
             "[Error] Vcell Calculation Error (Enernst:%s, Nernst_Gain:%s, Ohmic_Loss:%s, N:%s)" %
             (str(Enernst), str(Nernst_Gain), str(Ohmic_Loss), str(N)))
 
+def Efficiency_Calc(Vcell, u, N):
+    """
+    Calculate PEM cell efficiency.
+
+    :param Vcell: cell voltage [V]
+    :type Vcell:float
+    :param u: fuel utilization  ratio
+    :type u: float
+    :param N0: number of fuel cells in the stack
+    :type N0 : int
+    :return: efficiency as float
+    """
+    try:
+        result = (u * Vcell) / (N * HHV)
+        return result
+    except (TypeError, ZeroDivisionError):
+        print(
+            "[Error] PEM Efficiency Calculation Failed (Vcell:%s, u:%s, N:%s)" %
+            (str(Vcell), str(u), str(N)))
 
 def Dynamic_Analysis(
         InputMethod=opem.Functions.Get_Input,
