@@ -1329,7 +1329,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 8. Chakraborty Dynamic Model
 	```pycon
 	>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
-	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 2,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
+	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	```
 	<html>
