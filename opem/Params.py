@@ -417,7 +417,7 @@ Chakraborty_Params_Default = {"R": 0, "E0": 0.6}
 
 Chakraborty_InputParams = {
     "N0": "Number of cells",
-    "u": "Fuel utilization  ratio",
+    "u": "Fuel utilization ratio",
     "E0": "No load voltage [V], Default Value:" + str(
         Chakraborty_Params_Default["E0"]),
     "T": "Fuel cell temperature [K]",
