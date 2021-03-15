@@ -160,8 +160,8 @@ def Efficiency_Calc(Vcell, u, N):
     :type Vcell:float
     :param u: fuel utilization  ratio
     :type u: float
-    :param N0: number of fuel cells in the stack
-    :type N0 : int
+    :param N: number of fuel cells in the stack
+    :type N : int
     :return: efficiency as float
     """
     try:
