@@ -106,7 +106,7 @@ def Nernst_Gain_Calc(T, I):
     :type T : float
     :param I: cell load current [A]
     :type I : float
-    :return: Nernst gain [V} as float
+    :return: Nernst gain [V] as float
     """
     try:
         return ((R * T)/(4 * F)) * math.log(I)
