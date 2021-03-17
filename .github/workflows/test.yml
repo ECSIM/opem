@@ -38,7 +38,7 @@ jobs:
     - name: Other tests
       run: |
           python -m vulture opem/ otherfile/ version_check.py setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
-          python -m bandit -r opem -s B322
+          python -m bandit -r opem
           python -m pydocstyle
       if: matrix.python-version == 3.7
     - name: Codecov
