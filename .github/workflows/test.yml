@@ -26,7 +26,7 @@ jobs:
         python setup.py install
     - name: Test requirements Installation
       run: |
-        python otherfiles/requirements-splitter.py
+        python otherfile/requirements-splitter.py
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
     - name: Test with pytest
       run: |
@@ -37,7 +37,7 @@ jobs:
       if: matrix.python-version == 3.7
     - name: Other tests
       run: |
-          python -m vulture opem/ otherfiles/ version_check.py setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+          python -m vulture opem/ otherfile/ version_check.py setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
           python -m bandit -r opem -s B322
           python -m pydocstyle
       if: matrix.python-version == 3.7
