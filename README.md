@@ -720,12 +720,80 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">Cell operating current end point</td>
 				<td align="center">A</td>
 			</tr>
-			
-				
 		</table>
 		</html>
 		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
-		
+	8. Chakraborty Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">Cell operation temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KH2O</td>
+				<td align="center">Water valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">Rint</td>
+				<td align="center">Fuel cell internal resistance</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">u</td>
+				<td align="center">Fuel utilization ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+		</table>
+		</html>
+		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chakraborty.ipynb">here</a>
 		
 	- Find your reports in `Model_Name` folder			
 	
@@ -1258,6 +1326,94 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 									
 	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
 
+8. Chakraborty Dynamic Model
+	```pycon
+	>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
+	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
+	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Nernst Gain</td>
+				<td align="center">Nernst Gain</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ohmic Loss</td>
+				<td align="center">Ohmic Loss</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
+									
+	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chakraborty.ipynb">here</a>
+
 	#### Modes	
 
 	1. `TestMode` : Active test mode and get/return data as `dict`, (Default : `False`)
@@ -1417,6 +1573,9 @@ and Policy, University of California Davis.
 12- Rho, Y. W., Srinivasan, S., & Kho, Y. T. 1994. ''Mass transport phenomena in proton exchange membrane fuel cells using o 2/he, o 2/ar, and o 2/n 2 mixtures ii. Theoretical analysis.'' Journal of the Electrochemical Society, 141(8), 2089-2096. doi: 10.1149/1.2055066.
 </blockquote>
 
+<blockquote>
+13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
+</blockquote>
 
 
 ## Cite
