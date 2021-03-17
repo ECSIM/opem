@@ -11,6 +11,7 @@
 5. [Padulles Dynamic Model II](https://nbviewer.jupyter.org/github/ECSIM/opem/blob/master/Documents/Padulles2.ipynb "Padulles Dynamic Model II")
 6. [Padulles-Hauer Dynamic Model](https://nbviewer.jupyter.org/github/ECSIM/opem/blob/master/Documents/Padulles_Hauer.ipynb "Padulles-Hauer Dynamic Model")
 7. [Padulles-Amphlett Dynamic Model](https://nbviewer.jupyter.org/github/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb "Padulles-Amphlett Dynamic Model")
+8. [Chakraborty Dynamic Model](https://nbviewer.jupyter.org/github/ECSIM/opem/blob/master/Documents/Chakraborty.ipynb "Chakraborty Dynamic Model")
 
 																												
 

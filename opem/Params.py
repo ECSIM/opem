@@ -412,6 +412,58 @@ Padulles_Amphlett_Standard_Vector = {
     "i-stop": 75,
     "i-step": 0.1,
     "Name": "Padulles_Amphlett_Test"}
+
+Chakraborty_Params_Default = {"R": 0, "E0": 0.6}
+
+Chakraborty_InputParams = {
+    "N0": "Number of cells",
+    "u": "Fuel utilization ratio",
+    "E0": "No load voltage [V], Default Value:" + str(
+        Chakraborty_Params_Default["E0"]),
+    "T": "Fuel cell temperature [K]",
+    "KH2": "Hydrogen valve constant [kmol.s^(-1).atm^(-1)]",
+    "KO2": "Oxygen valve constant [kmol.s^(-1).atm^(-1)]",
+    "rho": "Hydrogen-Oxygen flow rate",
+    "R": "Internal  ohmic  resistance [ohm] (*Optional)",
+    "i-start": "Cell operating current start point [A]",
+    "i-step": "Cell operating current step",
+    "i-stop": "Cell operating current end point [A]",
+    "KH2O": "Water valve constant [kmol.s^(-1).atm^(-1)]"}
+
+Chakraborty_Outparams = {
+    "FC Voltage": "V",
+    "FC Power": "W",
+    "FC Efficiency": "",
+    "PO2": "atm",
+    "PH2": "atm",
+    "PH2O": "atm",
+    "E": "V",
+    "Power-Thermal": "W",
+    "Nernst Gain": "V",
+    "Ohmic Loss": "V"}
+
+Chakraborty_Description = '''
+The new dynamic model is presented based on constant fuel utilization control (constant stoichiometry condition).
+The model solves the long-standing problem of mixing reversible and irreversible potentials (equilibrium and non-equilibrium states)
+in the Nernst voltage expression. Specifically, a Nernstian gain term is introduced for the constant fuel utilization condition, and
+it is shown that the Nernstian gain is an irreversibility in the computation of the output voltage of the fuel cell.
+'''
+
+Chakraborty_Standard_Vector = {
+    "T": 1273,
+    "E0": 0.6,
+    "u":0.8,
+    "N0": 1,
+    "R": 3.28125 * 10**(-3),
+    "KH2O": 0.000281,
+    "KH2": 0.000843,
+    "KO2": 0.00252,
+    "rho": 1.145,
+    "i-start": 0.1,
+    "i-stop": 300,
+    "i-step": 0.1,
+    "Name": "Chakraborty_Test"}
+
 General_Padulles_Description = '''
 The Padulles dynamic model can predict the transient response of cell voltage, temperature of the cell, hydrogen/oxygen
 out flow rates and cathode and anode channel temperatures/pressures under sudden change in load current. Hence, a
@@ -430,6 +482,7 @@ Description_Menu = {
     "Padulles_Analysis II (Dynamic)": Padulles2_Description,
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Description,
     "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Description,
+    "Chakraborty_Analysis (Dynamic)": Chakraborty_Description,
     "General Padulles": General_Padulles_Description,
     "Overview": Overview,
     "Links": Links}
@@ -443,7 +496,8 @@ Description_Links = {
     "Padulles_Analysis I (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles1.html",
     "Padulles_Analysis II (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html",
     "Padulles_Hauer Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html",
-    "Padulles_Amphlett Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html"}
+    "Padulles_Amphlett Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html",
+    "Chakraborty_Analysis (Dynamic)": "http://www.ecsim.ir/opem/doc/Dynamic/Chakraborty.html"}
 Vectors = {
     "Amphlett_Analysis (Static)": Amphlett_Standard_Vector,
     "Larminiee_Analysis (Static)": Larminiee_Standard_Vector,
@@ -451,7 +505,8 @@ Vectors = {
     "Padulles_Analysis I (Dynamic)": Padulles_Standard_Vector,
     "Padulles_Analysis II (Dynamic)": Padulles2_Standard_Vector,
     "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Standard_Vector,
-    "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Standard_Vector}
+    "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Standard_Vector,
+    "Chakraborty_Analysis (Dynamic)": Chakraborty_Standard_Vector}
 
 Overall_Params_Max_Description = {
     "Pmax": "Maximum power [W]",
