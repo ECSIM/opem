@@ -75,14 +75,9 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		<td align="center">develop</td>	
 	</tr>
 	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=develop"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/develop?svg=true"></a></td>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/opem/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/opem/workflows/CI/badge.svg?branch=develop"></td>
 	</tr>
 </table>
 
