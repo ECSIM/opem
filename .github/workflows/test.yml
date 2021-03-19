@@ -42,7 +42,7 @@ jobs:
       run: |
           python -m vulture opem/ otherfile/ version_check.py setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
           python -m bandit -r opem
-          python -m pydocstyle
+          python -m pydocstyle -v
       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
     - name: Codecov
       run: |
