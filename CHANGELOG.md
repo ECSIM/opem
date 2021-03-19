@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub actions
 - Chakraborty dynamic model
 ### Changed
+- Test system modified
 - Padulles-Amphlett dynamic model modified
 - Travis and Appveyor configs updated
 - Dockerfile updated
