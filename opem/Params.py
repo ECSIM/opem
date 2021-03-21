@@ -40,6 +40,19 @@ xi4 = -1.93 * (10 ** -4)
 R = 8314.47
 F = 96484600
 Eth = 1.23
+
+HTML_Init_Template = """
+<html>
+<head>
+<title>{0}</title>
+<script>
+{1}
+</script>
+</head>
+<body>
+<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">OPEM</span> Report ({2} Model)</h1>
+"""
+
 Amphlett_InputParams = {
     "T": "Cell operation temperature [K]",
     "PH2": "Partial pressure [atm]",

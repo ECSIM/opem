@@ -3,7 +3,7 @@
 import datetime
 from art import text2art
 import opem.Script
-from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
+from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2, HTML_Init_Template
 import io
 import os
 import requests
@@ -371,15 +371,7 @@ def HTML_Init(Title, Name):
             ".html"),
         "w",
         encoding="utf-8")
-    HTMLFile.write("<html>\n")
-    HTMLFile.write("<head>\n")
-    HTMLFile.write("<title>" + Name + "</title>\n")
-    HTMLFile.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
-    HTMLFile.write("</head>\n<body>\n")
-    HTMLFile.write(
-        '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
-        'OPEM</span>'
-        ' Report (' + Title + " Model)" + '</h1>\n')
+    HTMLFile.write(HTML_Init_Template.format(Name, opem.Script.JS_SCRIPT, Title))
     return HTMLFile
 
 
