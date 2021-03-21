@@ -54,6 +54,16 @@ HTML_Init_Template = """
 <h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">OPEM</span> Report ({2} Model)</h1>
 """
 
+HTML_Input_Table_Template1 = """
+<h2 style="color:#ff7600;">Inputs</h2>
+<table style="border:1px solid black;border-collapse: collapse;margin:15px;">
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Input</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
+</tr>
+"""
+
 Amphlett_InputParams = {
     "T": "Cell operation temperature [K]",
     "PH2": "Partial pressure [atm]",
