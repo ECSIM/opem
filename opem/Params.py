@@ -64,6 +64,13 @@ HTML_Input_Table_Template1 = """
 </tr>
 """
 
+HTML_Input_Table_Template2 = """
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">{0}</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">{1}</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">{2}</td>
+"""
+
 Amphlett_InputParams = {
     "T": "Cell operation temperature [K]",
     "PH2": "Partial pressure [atm]",
