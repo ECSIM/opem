@@ -477,21 +477,7 @@ def HTML_Overall_Params_Table(
     file.write(HTML_Overall_Params_Table_Template1)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write(
-            '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            key +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            Input_Params[key] +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            str(
-                Input_Dict[key]) +
-            "\n</td>\n")
+        file.write(HTML_Input_Table_Template2.format(key, Input_Params[key], str(Input_Dict[key])))
     file.write("</table>\n")
     if header:
         file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
