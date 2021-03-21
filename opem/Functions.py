@@ -372,7 +372,7 @@ def HTML_Init(Title, Name):
             ".html"),
         "w",
         encoding="utf-8")
-    HTMLFile.write(HTML_Init_Template.format(Name, opem.Script.JS_SCRIPT, Title))
+    HTMLFile.write(HTML_Init_Template.format(opem.Script.JS_SCRIPT, Title))
     return HTMLFile
 
 

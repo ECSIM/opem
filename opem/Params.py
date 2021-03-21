@@ -45,13 +45,13 @@ HTML_Init_Template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>{0}</title>
+<title>OPEM Report ({1} Model)</title>
 <script>
-{1}
+{0}
 </script>
 </head>
 <body>
-<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">OPEM</span> Report ({2} Model)</h1>
+<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">OPEM</span> Report ({1} Model)</h1>
 """
 
 HTML_Input_Table_Template1 = """
