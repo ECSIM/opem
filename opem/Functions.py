@@ -3,8 +3,8 @@
 import datetime
 from art import text2art
 import opem.Script
-from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2, HTML_Init_Template, HTML_Input_Table_Template1, HTML_Input_Table_Template2, \
-    HTML_Overall_Params_Table_Template1, HTML_End_Template
+from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
+from opem.Params import HTML_Init_Template, HTML_Input_Table_Template1, HTML_Input_Table_Template2, HTML_Overall_Params_Table_Template1, HTML_End_Template
 import io
 import os
 import requests
