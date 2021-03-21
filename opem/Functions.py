@@ -416,6 +416,8 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     """
     chart_data = ""
     chart_title = str(chart_name)
+    if " " in chart_title:
+        chart_title = chart_title.replace(" ","-")
     if isinstance(y, list):
         y_data = list(map(None_Omit, y))
         for index, data in enumerate(y_data):
