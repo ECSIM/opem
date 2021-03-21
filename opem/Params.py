@@ -71,6 +71,15 @@ HTML_Input_Table_Template2 = """
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{2}</td>
 """
 
+HTML_Overall_Params_Table_Template1 = """
+<table style="border:1px solid black;border-collapse: collapse;margin:15px;">
+<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Parameter</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
+</tr>
+"""
+
 Amphlett_InputParams = {
     "T": "Cell operation temperature [K]",
     "PH2": "Partial pressure [atm]",

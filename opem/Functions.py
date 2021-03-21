@@ -3,7 +3,7 @@
 import datetime
 from art import text2art
 import opem.Script
-from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2, HTML_Init_Template, HTML_Input_Table_Template1, HTML_Input_Table_Template2
+from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2, HTML_Init_Template, HTML_Input_Table_Template1, HTML_Input_Table_Template2, HTML_Overall_Params_Table_Template1
 import io
 import os
 import requests
@@ -474,19 +474,7 @@ def HTML_Overall_Params_Table(
     """
     if header:
         file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
-    file.write(
-        '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write(
-        '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Parameter\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Description\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Value\n</td>\n</tr>\n")
+    file.write(HTML_Overall_Params_Table_Template1)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
         file.write(
