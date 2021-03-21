@@ -42,7 +42,8 @@ F = 96484600
 Eth = 1.23
 
 HTML_Init_Template = """
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>{0}</title>
 <script>
