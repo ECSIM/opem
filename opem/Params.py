@@ -57,7 +57,7 @@ HTML_Init_Template = """
 HTML_Input_Table_Template1 = """
 <h2 style="color:#ff7600;">Inputs</h2>
 <table style="border:1px solid black;border-collapse: collapse;margin:15px;">
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">Input</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
@@ -65,7 +65,7 @@ HTML_Input_Table_Template1 = """
 """
 
 HTML_Input_Table_Template2 = """
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{0}</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{1}</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{2}</td>
