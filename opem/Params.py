@@ -46,6 +46,16 @@ HTML_Init_Template = """
 <html lang="en">
 <head>
 <title>OPEM Report ({1} Model)</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
+<meta name="og:title" content="OPEM Report ({1} Model)">
+<meta name="og:description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
+<meta name="og:url" content="http://opem.ecsim.ir">
+<meta property="og:image" content="http://www.ecsim.ir/opem/images/opem-og.png">
+<meta name="twitter:image:src" content="http://www.ecsim.ir/opem/images/opem-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OPEM Report ({1} Model)">
+<meta name="twitter:description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
 <script>
 {0}
 </script>
