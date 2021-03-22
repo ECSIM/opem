@@ -81,7 +81,7 @@ HTML_Input_Table_Template2 = """
 </tr>
 """
 
-HTML_Overall_Params_Table_Template1 = """
+HTML_Overall_Params_Table_Template = """
 <table style="border:1px solid black;border-collapse: collapse;margin:15px;">
 <tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">Parameter</td>
