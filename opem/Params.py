@@ -41,8 +41,7 @@ R = 8314.47
 F = 96484600
 Eth = 1.23
 
-HTML_Init_Template = """
-<!DOCTYPE html>
+HTML_Init_Template = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>OPEM Report ({1} Model)</title>
