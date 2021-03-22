@@ -78,6 +78,7 @@ HTML_Input_Table_Template2 = """
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{0}</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{1}</td>
 <td style="border:1px solid black;padding:4px;border-collapse: collapse;">{2}</td>
+</tr>
 """
 
 HTML_Overall_Params_Table_Template1 = """
