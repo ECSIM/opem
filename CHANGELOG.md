@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Test system modified
 - Padulles-Amphlett dynamic model modified
-- Travis and Appveyor configs updated
+- HTML report modified
 - Dockerfile updated
 ## [1.2] - 2020-03-12
 ### Added
