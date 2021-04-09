@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Padulles-Amphlett dynamic model modified
 - HTML report modified
 - Dockerfile updated
+- `README.md` modified
+- Document modified
 ## [1.2] - 2020-03-12
 ### Added
 - `__version__` variable
