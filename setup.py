@@ -35,10 +35,9 @@ def read_description():
   reformers. OPEM is a platform for collaborative development of PEMFC models.'''
 
 
-
 setup(
     name='opem',
-    packages=['opem', 'opem.Static', 'opem.Dynamic','opem.Test'],
+    packages=['opem', 'opem.Static', 'opem.Dynamic', 'opem.Test'],
     version='1.2',
     description='Open Source PEM Cell Simulation Tool',
     long_description=read_description(),

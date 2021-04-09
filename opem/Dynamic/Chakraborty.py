@@ -5,10 +5,11 @@ import math
 from opem.Params import Chakraborty_InputParams as InputParams
 from opem.Params import Chakraborty_Outparams as OutputParams
 from opem.Params import Chakraborty_Params_Default as Defaults
-from opem.Params import R,F,HHV
+from opem.Params import R, F, HHV
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 import opem.Functions
 from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
+
 
 def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
     """
@@ -37,6 +38,7 @@ def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
             "[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s, PH2O:%s)" %
             (str(E0), str(N0), str(T), str(PH2), str(PO2), str(PH2O)))
 
+
 def PH2_Calc(KH2, u, I):
     """
     Calculate PH2.
@@ -50,12 +52,13 @@ def PH2_Calc(KH2, u, I):
     :return: PH2 [atm] as float
     """
     try:
-        result = ((1 / KH2) * ((1/u) - 1) * I/(2*F))
+        result = ((1 / KH2) * ((1 / u) - 1) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
             "[Error] PH2 Calculation Failed (KH2:%s, u:%s, I:%s)" %
             (str(KH2), str(u), str(I)))
+
 
 def PO2_Calc(KO2, u, rHO, I):
     """
@@ -72,12 +75,13 @@ def PO2_Calc(KO2, u, rHO, I):
     :return: PO2 [atm] as float
     """
     try:
-        result = ((1 / KO2) * ((1/(u*rHO)) - 0.5) * I/(2*F))
+        result = ((1 / KO2) * ((1 / (u * rHO)) - 0.5) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
             "[Error] PO2 Calculation Failed (KO2:%s, u:%s, rHO:%s, I:%s)" %
             (str(KO2), str(u), str(rHO), str(I)))
+
 
 def PH2O_Calc(KH2O, I):
     """
@@ -90,7 +94,7 @@ def PH2O_Calc(KH2O, I):
     :return: PH2O [atm] as float
     """
     try:
-        result = ((1 / KH2O) * I/(2*F))
+        result = ((1 / KH2O) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
@@ -109,9 +113,12 @@ def Nernst_Gain_Calc(T, I):
     :return: Nernst gain [V] as float
     """
     try:
-        return ((R * T)/(4 * F)) * math.log(I)
+        return ((R * T) / (4 * F)) * math.log(I)
     except TypeError:
-        print("[Error] Nernst Gain Calculation Error (T:%s, I:%s)" %(str(T), str(I)))
+        print(
+            "[Error] Nernst Gain Calculation Error (T:%s, I:%s)" %
+            (str(T), str(I)))
+
 
 def Ohmic_Loss_Calc(Rint, I):
     """
@@ -124,9 +131,11 @@ def Ohmic_Loss_Calc(Rint, I):
     :return: ohmic loss [V] as float
     """
     try:
-        return Rint*I
+        return Rint * I
     except TypeError:
-        print("[Error] Ohmic Loss Calculation Error (Rint:%s, I:%s)" % (str(Rint), str(I)))
+        print(
+            "[Error] Ohmic Loss Calculation Error (Rint:%s, I:%s)" %
+            (str(Rint), str(I)))
 
 
 def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
@@ -152,6 +161,7 @@ def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
             "[Error] Vcell Calculation Error (Enernst:%s, Nernst_Gain:%s, Ohmic_Loss:%s, N:%s)" %
             (str(Enernst), str(Nernst_Gain), str(Ohmic_Loss), str(N)))
 
+
 def Efficiency_Calc(Vcell, u, N):
     """
     Calculate PEM cell efficiency.
@@ -171,6 +181,7 @@ def Efficiency_Calc(Vcell, u, N):
         print(
             "[Error] PEM Efficiency Calculation Failed (Vcell:%s, u:%s, N:%s)" %
             (str(Vcell), str(u), str(N)))
+
 
 def Dynamic_Analysis(
         InputMethod=opem.Functions.Get_Input,
@@ -229,7 +240,8 @@ def Dynamic_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Power_List = []
         Vstack_List = []
@@ -259,12 +271,16 @@ def Dynamic_Analysis(
                     Output_Dict["PH2"],
                     Output_Dict["PO2"],
                     Output_Dict["PH2O"])
-                Output_Dict["Nernst Gain"] = Nernst_Gain_Calc(Input_Dict["T"], i)
+                Output_Dict["Nernst Gain"] = Nernst_Gain_Calc(
+                    Input_Dict["T"], i)
                 Output_Dict["Ohmic Loss"] = Ohmic_Loss_Calc(Input_Dict["R"], i)
                 Nernst_Gain_List.append(Output_Dict["Nernst Gain"])
                 Ohmic_Loss_List.append(Output_Dict["Ohmic Loss"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Output_Dict["Nernst Gain"], Output_Dict["Ohmic Loss"], Input_Dict["N0"])
+                    Output_Dict["E"],
+                    Output_Dict["Nernst Gain"],
+                    Output_Dict["Ohmic Loss"],
+                    Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
@@ -455,4 +471,7 @@ def Dynamic_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " + Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")

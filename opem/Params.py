@@ -207,7 +207,7 @@ Chamberline_OutputParams = {
     "Power-Stack": "W",
     "Power-Thermal": "W"}
 
-Chamberline_Params_Default = {"m": 3 * (10 ** -8),"n":8}
+Chamberline_Params_Default = {"m": 3 * (10 ** -8), "n": 8}
 
 Chamberline_Description = '''
 Chamberlin-Kim static model is an empirical equation which was developed to fit the experimental cell potential (E) vs.
@@ -506,7 +506,7 @@ it is shown that the Nernstian gain is an irreversibility in the computation of 
 Chakraborty_Standard_Vector = {
     "T": 1273,
     "E0": 0.6,
-    "u":0.8,
+    "u": 0.8,
     "N0": 1,
     "R": 3.28125 * 10**(-3),
     "KH2O": 0.000281,
@@ -576,4 +576,12 @@ Overall_Params_Linear_Description = {
 }
 
 
-Test_List = ['test_Amphlett.py', 'test_Chamberline_Kim.py', 'test_Functions.py', 'test_Larminie_Dicks.py', 'test_Padulles1.py', 'test_Padulles2.py', 'test_Padulles_Amphlett.py', 'test_Padulles_Hauer.py']
+Test_List = [
+    'test_Amphlett.py',
+    'test_Chamberline_Kim.py',
+    'test_Functions.py',
+    'test_Larminie_Dicks.py',
+    'test_Padulles1.py',
+    'test_Padulles2.py',
+    'test_Padulles_Amphlett.py',
+    'test_Padulles_Hauer.py']

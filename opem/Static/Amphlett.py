@@ -9,7 +9,8 @@ from opem.Params import xi1, xi3, xi4, HHV, uF, R, F, Amphlett_Description, Over
 import opem.Functions
 import os
 
-def B_Calc(T,n=2):
+
+def B_Calc(T, n=2):
     """
     Calculate B (Constant in the mass transfer term).
 
@@ -20,9 +21,10 @@ def B_Calc(T,n=2):
     :return: B as float
     """
     try:
-        return (R*T)/(n*F)
-    except (TypeError,ZeroDivisionError):
+        return (R * T) / (n * F)
+    except (TypeError, ZeroDivisionError):
         return None
+
 
 def Power_Thermal_Calc(VStack, N, i):
     """
@@ -493,7 +495,8 @@ def Static_Analysis(
         Precision = opem.Functions.get_precision(IStep)
         Output_Dict["Enernst"] = Enernst_Calc(
             Input_Dict["T"], Input_Dict["PH2"], Input_Dict["PO2"])
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"],IEnd,IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Efficiency_List = []
         Power_List = []
@@ -701,4 +704,7 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")

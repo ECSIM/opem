@@ -306,7 +306,7 @@ def Output_Init(InputDict, Title, Name):
     opem_file = open(os.path.join(Title, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
-               str(datetime.datetime.now()) + spliter)
+                    str(datetime.datetime.now()) + spliter)
     opem_file.write("**********" + spliter)
     opem_file.write(Title + " Model" + spliter * 2)
     opem_file.write("**********" + spliter)
@@ -417,7 +417,7 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     chart_data = ""
     chart_title = str(chart_name)
     if " " in chart_title:
-        chart_title = chart_title.replace(" ","-")
+        chart_title = chart_title.replace(" ", "-")
     if isinstance(y, list):
         y_data = list(map(None_Omit, y))
         for index, data in enumerate(y_data):
@@ -455,7 +455,10 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
     file.write(HTML_Input_Table_Template1)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write(HTML_Input_Table_Template2.format(key, Input_Params[key], str(Input_Dict[key])))
+        file.write(
+            HTML_Input_Table_Template2.format(
+                key, Input_Params[key], str(
+                    Input_Dict[key])))
     file.write("</table>\n")
 
 
@@ -480,7 +483,10 @@ def HTML_Overall_Params_Table(
     file.write(HTML_Overall_Params_Table_Template)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
-        file.write(HTML_Input_Table_Template2.format(key, Input_Params[key], str(Input_Dict[key])))
+        file.write(
+            HTML_Input_Table_Template2.format(
+                key, Input_Params[key], str(
+                    Input_Dict[key])))
     file.write("</table>\n")
     if header:
         file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
@@ -677,7 +683,8 @@ def filter_alpha(Input_Dict):
     except Exception:
         return Input_Dict
 
-def filter_range(IStart,IEnd,IStep):
+
+def filter_range(IStart, IEnd, IStep):
     """
     Filter current range.
 
@@ -697,7 +704,7 @@ def filter_range(IStart,IEnd,IStep):
         temp = IStartO
         IStartO = IEndO
         IEndO = temp
-    return [IStartO,IEndO,IStepO]
+    return [IStartO, IEndO, IStepO]
 
 
 def warning_check_1(Vcell, I_Warning, I, warning_flag):
