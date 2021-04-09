@@ -36,7 +36,7 @@ jobs:
         python -m pytest opem/Test --cov=opem --cov-report=term
     - name: Version check
       run: |
-        python version_check.py
+        python otherfile/version_check.py
       if: matrix.python-version == 3.7
     - name: Other tests
       run: |
