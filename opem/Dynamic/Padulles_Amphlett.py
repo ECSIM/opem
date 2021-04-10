@@ -8,7 +8,7 @@ from opem.Dynamic.Padulles1 import PH2_Calc, PO2_Calc, Kr_Calc, qO2_Calc, Effici
 from opem.Dynamic.Padulles2 import Enernst_Calc, PH2O_Calc
 from opem.Dynamic.Padulles_Hauer import qH2_Calc
 import opem.Functions
-from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description,Report_Message
+from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 import os
 
 
@@ -90,7 +90,8 @@ def Dynamic_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Power_List = []
         Vstack_List = []
@@ -349,4 +350,7 @@ def Dynamic_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")

@@ -36,7 +36,7 @@ if __name__ == "__main__":
         sys.exit(0)
     check_update(Version)
     while not EXITFLAG:
-        tprint("Models",font="larry3d")
+        tprint("Models", font="larry3d")
         for i, item in enumerate(MENUKEYS):
             print(str(i + 1) + "-" + item)
         try:
