@@ -38,6 +38,10 @@ jobs:
       run: |
         python otherfile/version_check.py
       if: matrix.python-version == 3.7
+    - name: Notebook check
+      run: |
+        python otherfile/notebook_check.py
+      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
     - name: Other tests
       run: |
           python -m vulture opem/ otherfile/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
