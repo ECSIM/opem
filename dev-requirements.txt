@@ -1,9 +1,10 @@
-art==4.5
-requests==2.23.0
+art==5.1
+requests==2.25.1
 codecov>=2.0.15
-pytest>=4.3.0
+pytest>=5.1.0
 pytest-cov>=2.6.1
 setuptools>=40.8.3
 bandit>=1.5.1
 vulture>=1.0
+notebook>=5.2.2
 pydocstyle>=3.0.0

@@ -4,6 +4,7 @@ import datetime
 from art import text2art
 import opem.Script
 from opem.Params import Version, Website, UpdateUrl, Warning_Message_1, Warning_Message_2
+from opem.Params import HTML_Init_Template, HTML_Input_Table_Template1, HTML_Input_Table_Template2, HTML_Overall_Params_Table_Template, HTML_End_Template
 import io
 import os
 import requests
@@ -305,7 +306,7 @@ def Output_Init(InputDict, Title, Name):
     opem_file = open(os.path.join(Title, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
-               str(datetime.datetime.now()) + spliter)
+                    str(datetime.datetime.now()) + spliter)
     opem_file.write("**********" + spliter)
     opem_file.write(Title + " Model" + spliter * 2)
     opem_file.write("**********" + spliter)
@@ -371,15 +372,7 @@ def HTML_Init(Title, Name):
             ".html"),
         "w",
         encoding="utf-8")
-    HTMLFile.write("<html>\n")
-    HTMLFile.write("<head>\n")
-    HTMLFile.write("<title>" + Name + "</title>\n")
-    HTMLFile.write("<script>\n" + opem.Script.JS_SCRIPT + "\n</script>\n")
-    HTMLFile.write("</head>\n<body>\n")
-    HTMLFile.write(
-        '<h1 style="border-bottom:1px solid black;text-align:center;padding:10px;"><span style="color:#ff7600;">'
-        'OPEM</span>'
-        ' Report (' + Title + " Model)" + '</h1>\n')
+    HTMLFile.write(HTML_Init_Template.format(opem.Script.JS_SCRIPT, Title))
     return HTMLFile
 
 
@@ -423,6 +416,8 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     """
     chart_data = ""
     chart_title = str(chart_name)
+    if " " in chart_title:
+        chart_title = chart_title.replace(" ", "-")
     if isinstance(y, list):
         y_data = list(map(None_Omit, y))
         for index, data in enumerate(y_data):
@@ -457,37 +452,13 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
     :type file : file object
     :return: None
     """
-    file.write('<h2 style="color:#ff7600;">Inputs</h2>\n')
-    file.write(
-        '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write(
-        '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Input\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Description\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Value\n</td>\n</tr>\n")
+    file.write(HTML_Input_Table_Template1)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
         file.write(
-            '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            key +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            Input_Params[key] +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            str(
-                Input_Dict[key]) +
-            "\n</td>\n")
+            HTML_Input_Table_Template2.format(
+                key, Input_Params[key], str(
+                    Input_Dict[key])))
     file.write("</table>\n")
 
 
@@ -509,36 +480,13 @@ def HTML_Overall_Params_Table(
     """
     if header:
         file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
-    file.write(
-        '<table style="border:1px solid black;border-collapse: collapse;margin:15px;">\n')
-    file.write(
-        '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Parameter\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Description\n</td>")
-    file.write(
-        '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-        "Value\n</td>\n</tr>\n")
+    file.write(HTML_Overall_Params_Table_Template)
     Input_Params_Keys = sorted(Input_Params.keys())
     for key in Input_Params_Keys:
         file.write(
-            '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n')
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            key +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            Input_Params[key] +
-            "\n</td>\n")
-        file.write(
-            '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">\n' +
-            str(
-                Input_Dict[key]) +
-            "\n</td>\n")
+            HTML_Input_Table_Template2.format(
+                key, Input_Params[key], str(
+                    Input_Dict[key])))
     file.write("</table>\n")
     if header:
         file.write('<h2 style="color:#ff7600;">Graphs</h2>\n')
@@ -552,10 +500,7 @@ def HTML_End(file):
     :type file : file object
     :return: None
     """
-    file.write(
-        '<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By '
-        '<a style="text-decoration:none;color:#ff7600;" '
-        'href="http://opem.ecsim.ir">OPEM</a> Version ' + str(Version) + '</p>\n')
+    file.write(HTML_End_Template.format(str(Version)))
     file.write("</body>\n")
     file.write("</html>")
 
@@ -738,7 +683,8 @@ def filter_alpha(Input_Dict):
     except Exception:
         return Input_Dict
 
-def filter_range(IStart,IEnd,IStep):
+
+def filter_range(IStart, IEnd, IStep):
     """
     Filter current range.
 
@@ -758,7 +704,7 @@ def filter_range(IStart,IEnd,IStep):
         temp = IStartO
         IStartO = IEndO
         IEndO = temp
-    return [IStartO,IEndO,IStepO]
+    return [IStartO, IEndO, IStepO]
 
 
 def warning_check_1(Vcell, I_Warning, I, warning_flag):

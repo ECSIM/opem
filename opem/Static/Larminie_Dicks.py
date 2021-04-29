@@ -5,7 +5,7 @@ from opem.Static.Amphlett import Power_Calc, Efficiency_Calc, VStack_Calc, Power
 from opem.Params import Larminiee_InputParams as InputParams
 from opem.Params import Larminiee_OutputParams as OutputParams
 import opem.Functions
-from opem.Params import Larminiee_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description,Report_Message
+from opem.Params import Larminiee_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 import os
 
 
@@ -96,7 +96,8 @@ def Static_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Efficiency_List = []
         Power_List = []
@@ -266,4 +267,7 @@ def Static_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")

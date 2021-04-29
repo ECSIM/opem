@@ -87,7 +87,8 @@ def Dynamic_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Power_List = []
         Vstack_List = []
@@ -307,4 +308,7 @@ def Dynamic_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")

@@ -75,14 +75,9 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		<td align="center">develop</td>	
 	</tr>
 	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/ECSIM/opem"><img src="https://travis-ci.org/ECSIM/opem.svg?branch=develop"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/ECSIM/opem"><img src="https://ci.appveyor.com/api/projects/status/h6qq5c806p1vu3v2/branch/develop?svg=true"></a></td>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=develop"></td>
 	</tr>
 </table>
 
@@ -172,7 +167,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table> 
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Amphlett.ipynb">here</a>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Amphlett.html">here</a>
 	2. Larminie-Dicks Static Model
 		<html>
 		<table>
@@ -239,7 +234,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Larminie_Dicks.ipynb">here</a>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Larminie_Dicks.html">here</a>
 	3. Chamberline-Kim Static Model
 		<html>
 		<table>
@@ -301,7 +296,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chamberline_Kim.ipynb">here</a>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Chamberline_Kim.html">here</a>
 	4. Padulles Dynamic Model I
 		<html>
 		<table>
@@ -389,7 +384,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles1.ipynb">here</a>				
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles1.html">here</a>				
 
 	5. Padulles Dynamic Model II
 		<html>
@@ -488,7 +483,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles2.ipynb">here</a>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html">here</a>
 	6. Padulles-Hauer Dynamic Model
 		<html>
 		<table>
@@ -601,7 +596,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Hauer.ipynb">here</a>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
 	7. Padulles-Amphlett Dynamic Model
 		<html>
 		<table>
@@ -681,11 +676,6 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">ohm</td>
 			</tr>
 			<tr>
-				<td align="center">B</td>
-				<td align="center">An empirical constant depending on the cell and its operation state (Tafel slope)</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
 				<td align="center">JMax</td>
 				<td align="center">Maximum current density</td>
 				<td align="center">A/(cm^2)</td>
@@ -725,12 +715,80 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				<td align="center">Cell operating current end point</td>
 				<td align="center">A</td>
 			</tr>
-			
-				
 		</table>
 		</html>
-		* For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
-		
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+	8. Chakraborty Dynamic Model
+		<html>
+		<table>
+			<tr>
+				<td align="center" >Input</td>
+				<td align="center">Description</td>
+				<td  align="center">Unit</td>
+			</tr>
+			<tr>
+				<td align="center">E0</td>
+				<td align="center">No load voltage</td>
+				<td align="center">V</td>
+			</tr>
+			<tr>
+				<td align="center">T</td>
+				<td align="center">Cell operation temperature</td>
+				<td align="center">K</td>
+			</tr>
+			<tr>
+				<td align="center">KH2</td>
+				<td align="center">Hydrogen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KH2O</td>
+				<td align="center">Water valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">KO2</td>
+				<td align="center">Oxygen valve constant</td>
+				<td align="center">kmol.s^(-1).atm^(-1)</td>
+			</tr>
+			<tr>
+				<td align="center">rho</td>
+				<td align="center">Hydrogen-Oxygen flow ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">Rint</td>
+				<td align="center">Fuel cell internal resistance</td>
+				<td align="center">ohm</td>
+			</tr>
+			<tr>
+				<td align="center">N0</td>
+				<td align="center">Number of cells</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">u</td>
+				<td align="center">Fuel utilization ratio</td>
+				<td align="center">--</td>
+			</tr>
+			<tr>
+				<td align="center">i-start</td>
+				<td align="center">Cell operating current start point</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-step</td>
+				<td align="center">Cell operating current step</td>
+				<td align="center">A</td>
+			</tr>
+			<tr>
+				<td align="center">i-stop</td>
+				<td align="center">Cell operating current end point</td>
+				<td align="center">A</td>
+			</tr>
+		</table>
+		</html>
+		* For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Chakraborty.html">here</a>
 		
 	- Find your reports in `Model_Name` folder			
 	
@@ -819,7 +877,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 		
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Amphlett.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Amphlett.html">here</a>
 2. Larminie-Dicks Static Model
 	```pycon
 	>>> from opem.Static.Larminie_Dicks import Static_Analysis
@@ -881,7 +939,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>	
 			
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Larminie_Dicks.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Larminie_Dicks.html">here</a>
 3. Chamberline-Kim Static Model
 	```pycon
 	>>> from opem.Static.Chamberline_Kim import Static_Analysis
@@ -943,7 +1001,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 			
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Chamberline_Kim.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Static/Chamberline_Kim.html">here</a>
 4. Padulles Dynamic Model I
 	```pycon
 	>>> from opem.Dynamic.Padulles1 import Dynamic_Analysis
@@ -1015,7 +1073,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 	
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles1.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles1.html">here</a>
 5. Padulles Dynamic Model II
 	```pycon
 	>>> from opem.Dynamic.Padulles2 import Dynamic_Analysis
@@ -1092,7 +1150,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 				
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles2.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles2.html">here</a>
 6. Padulles-Hauer Dynamic Model
 	```pycon
 	>>> from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis
@@ -1169,11 +1227,11 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 			
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Hauer.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
 7. Padulles-Amphlett Dynamic Model
 	```pycon
 	>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
-	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.016,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
+	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
 	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
 	```
 	<html>
@@ -1261,7 +1319,95 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		</html>
 									
-	- For more information about this model visit <a href="https://github.com/ECSIM/opem/blob/master/Documents/Padulles_Amphlett.ipynb">here</a>
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+
+8. Chakraborty Dynamic Model
+	```pycon
+	>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
+	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
+	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+	```
+	<html>
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Nernst Gain</td>
+				<td align="center">Nernst Gain</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ohmic Loss</td>
+				<td align="center">Ohmic Loss</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		</html>
+									
+	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Chakraborty.html">here</a>
 
 	#### Modes	
 
@@ -1422,6 +1568,9 @@ and Policy, University of California Davis.
 12- Rho, Y. W., Srinivasan, S., & Kho, Y. T. 1994. ''Mass transport phenomena in proton exchange membrane fuel cells using o 2/he, o 2/ar, and o 2/n 2 mixtures ii. Theoretical analysis.'' Journal of the Electrochemical Society, 141(8), 2089-2096. doi: 10.1149/1.2055066.
 </blockquote>
 
+<blockquote>
+13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
+</blockquote>
 
 
 ## Cite

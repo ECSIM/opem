@@ -3,12 +3,12 @@
 from opem.Params import Padulles_Amphlett_InputParams as InputParams
 from opem.Params import Padulles_Amphlett_Outparams as OutputParams
 from opem.Params import Padulles_Amphlett_Params_Default as Defaults
-from opem.Static.Amphlett import Power_Calc, Eta_Act_Calc, Eta_Conc_Calc, Eta_Ohmic_Calc, Loss_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
+from opem.Static.Amphlett import Power_Calc, Eta_Act_Calc, Eta_Conc_Calc, Eta_Ohmic_Calc, Loss_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc, B_Calc
 from opem.Dynamic.Padulles1 import PH2_Calc, PO2_Calc, Kr_Calc, qO2_Calc, Efficiency_Calc
 from opem.Dynamic.Padulles2 import Enernst_Calc, PH2O_Calc
 from opem.Dynamic.Padulles_Hauer import qH2_Calc
 import opem.Functions
-from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description,Report_Message
+from opem.Params import Padulles_Amphlett_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 import os
 
 
@@ -90,7 +90,8 @@ def Dynamic_Analysis(
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
-        [i, IEnd, IStep] = opem.Functions.filter_range(Input_Dict["i-start"], IEnd, IStep)
+        [i, IEnd, IStep] = opem.Functions.filter_range(
+            Input_Dict["i-start"], IEnd, IStep)
         I_List = []
         Power_List = []
         Vstack_List = []
@@ -109,6 +110,7 @@ def Dynamic_Analysis(
             Input_Dict["t1"],
             Input_Dict["t2"])
         qO2 = qO2_Calc(qH2, Input_Dict["rho"])
+        B = B_Calc(Input_Dict["T"])
         while i < IEnd:
             try:
                 I_List.append(i)
@@ -130,7 +132,7 @@ def Dynamic_Analysis(
                     R_elec=Input_Dict["R"])
                 Eta_Ohmic_List.append(Output_Dict["Eta Ohmic"])
                 Output_Dict["Eta Concentration"] = Eta_Conc_Calc(
-                    i, Input_Dict["A"], Input_Dict["B"], Input_Dict["JMax"])
+                    i, Input_Dict["A"], B, Input_Dict["JMax"])
                 Eta_Conc_List.append(Output_Dict["Eta Concentration"])
                 Output_Dict["Loss"] = Loss_Calc(
                     Output_Dict["Eta Activation"],
@@ -348,4 +350,7 @@ def Dynamic_Analysis(
                 "Message": "[Error] " +
                 Simulation_Title +
                 " Simulation Failed!(Check Your Inputs)"}
-        print("[Error] " +Simulation_Title +" Simulation Failed!(Check Your Inputs)")
+        print(
+            "[Error] " +
+            Simulation_Title +
+            " Simulation Failed!(Check Your Inputs)")
