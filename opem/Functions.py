@@ -608,6 +608,7 @@ def description_print(Analysis_Name, Description_Dict, Width=100):
     :return: None
     """
     line()
+    print(Analysis_Name.replace("_"," ")+" : \n")
     if Analysis_Name.find("Padulles") != -1:
         print("\n")
         print(
