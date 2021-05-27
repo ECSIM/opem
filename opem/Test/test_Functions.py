@@ -57,6 +57,9 @@ False
 ['Name', 'PH2', 'PO2', 'T']
 >>> description_print("Model1",{"Model1":"Test"})
 ###########
+Model1 :
+<BLANKLINE>
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 Test
