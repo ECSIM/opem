@@ -650,7 +650,7 @@ def description_control(
         webbrowser.open_new(Links_Dict[Analysis_Name])
     elif User_Input.upper() == "T":
         line()
-        print(Analysis_Name + " Standard Test Vector\n")
+        print(Analysis_Name.replace("_"," ") + " Standard Test Vector\n")
         Test_Vector = Vectors_Dict[Analysis_Name]
         for i in Test_Vector.keys():
             print(i + " : " + str(Test_Vector[i]))
