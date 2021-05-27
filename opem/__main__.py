@@ -26,14 +26,14 @@ if __name__ == "__main__":
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis,
         "Chakraborty_Analysis (Dynamic)": Chakraborty_Analysis}
-    MENU = {"(Static)  Amphlett_Analysis":"Amphlett_Analysis (Static)",
-            "(Static)  Larminiee_Analysis":"Larminiee_Analysis (Static)",
-            "(Static)  Chamberline_Kim_Analysis":"Chamberline_Kim_Analysis (Static)",
-            "(Dynamic) Padulles_Analysis I ":"Padulles_Analysis I (Dynamic)",
-            "(Dynamic) Padulles_Analysis II":"Padulles_Analysis II (Dynamic)",
-            "(Dynamic) Padulles_Hauer Analysis":"Padulles_Hauer Analysis (Dynamic)",
-            "(Dynamic) Padulles_Amphlett Analysis":"Padulles_Amphlett Analysis (Dynamic)",
-            "(Dynamic) Chakraborty_Analysis":"Chakraborty_Analysis (Dynamic)"}
+    MENU = {"(Static)  Amphlett Analysis":"Amphlett_Analysis (Static)",
+            "(Static)  Larminiee Analysis":"Larminiee_Analysis (Static)",
+            "(Static)  Chamberline Kim Analysis":"Chamberline_Kim_Analysis (Static)",
+            "(Dynamic) Padulles Analysis I ":"Padulles_Analysis I (Dynamic)",
+            "(Dynamic) Padulles Analysis II":"Padulles_Analysis II (Dynamic)",
+            "(Dynamic) Padulles Hauer Analysis":"Padulles_Hauer Analysis (Dynamic)",
+            "(Dynamic) Padulles Amphlett Analysis":"Padulles_Amphlett Analysis (Dynamic)",
+            "(Dynamic) Chakraborty Analysis":"Chakraborty_Analysis (Dynamic)"}
     MENUKEYS = sorted(MENU.keys())
     EXITFLAG = False
     tprint("OPEM")
