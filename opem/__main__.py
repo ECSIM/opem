@@ -26,7 +26,15 @@ if __name__ == "__main__":
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis,
         "Chakraborty_Analysis (Dynamic)": Chakraborty_Analysis}
-    MENUKEYS = sorted(ANALYSISLIST.keys())
+    MENU = {"(Static)  Amphlett_Analysis":"Amphlett_Analysis (Static)",
+            "(Static)  Larminiee_Analysis":"Larminiee_Analysis (Static)",
+            "(Static)  Chamberline_Kim_Analysis":"Chamberline_Kim_Analysis (Static)",
+            "(Dynamic) Padulles_Analysis I ":"Padulles_Analysis I (Dynamic)",
+            "(Dynamic) Padulles_Analysis II":"Padulles_Analysis II (Dynamic)",
+            "(Dynamic) Padulles_Hauer Analysis":"Padulles_Hauer Analysis (Dynamic)",
+            "(Dynamic) Padulles_Amphlett Analysis":"Padulles_Amphlett Analysis (Dynamic)",
+            "(Dynamic) Chakraborty_Analysis":"Chakraborty_Analysis (Dynamic)"}
+    MENUKEYS = sorted(MENU.keys())
     EXITFLAG = False
     tprint("OPEM")
     tprint("v" + str(Version))
@@ -44,7 +52,7 @@ if __name__ == "__main__":
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
-            ANALYSISNAME = MENUKEYS[ANALYSISINDEX - 1]
+            ANALYSISNAME = MENU[MENUKEYS[ANALYSISINDEX - 1]]
             description_print(ANALYSISNAME, Description_Menu)
             USERINPUT = input(Mode_Menu)
             description_control(
