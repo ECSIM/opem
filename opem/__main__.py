@@ -17,7 +17,7 @@ from opem.Functions import check_update, description_print, description_control
 if __name__ == "__main__":
     ARGS = sys.argv
     ARGSUP = list(map(str.upper, ARGS))
-    Menu = {
+    ANALYSISLIST = {
         "Amphlett_Analysis (Static)": Amphlett_Analysis,
         "Larminiee_Analysis (Static)": Larminiee_Analysis,
         "Chamberline_Kim_Analysis (Static)": Chamberline_Kim_Analysis,
@@ -26,7 +26,7 @@ if __name__ == "__main__":
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis,
         "Chakraborty_Analysis (Dynamic)": Chakraborty_Analysis}
-    MENUKEYS = sorted(Menu.keys())
+    MENUKEYS = sorted(ANALYSISLIST.keys())
     EXITFLAG = False
     tprint("OPEM")
     tprint("v" + str(Version))
@@ -49,7 +49,7 @@ if __name__ == "__main__":
             USERINPUT = input(Mode_Menu)
             description_control(
                 Analysis_Name=ANALYSISNAME,
-                Analysis_List=Menu,
+                Analysis_List=ANALYSISLIST,
                 User_Input=USERINPUT,
                 Links_Dict=Description_Links,
                 Vectors_Dict=Vectors)
