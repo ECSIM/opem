@@ -9,10 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub actions
 - Chakraborty dynamic model
 ### Changed
+- Menu modified
 - Test system modified
 - Padulles-Amphlett dynamic model modified
 - HTML report modified
 - Dockerfile updated
+- `description_print` function modified
+- `description_control` function modified
 - `README.md` modified
 - Document modified
 ## [1.2] - 2020-03-12

@@ -17,7 +17,7 @@ from opem.Functions import check_update, description_print, description_control
 if __name__ == "__main__":
     ARGS = sys.argv
     ARGSUP = list(map(str.upper, ARGS))
-    Menu = {
+    ANALYSISLIST = {
         "Amphlett_Analysis (Static)": Amphlett_Analysis,
         "Larminiee_Analysis (Static)": Larminiee_Analysis,
         "Chamberline_Kim_Analysis (Static)": Chamberline_Kim_Analysis,
@@ -26,7 +26,16 @@ if __name__ == "__main__":
         "Padulles_Hauer Analysis (Dynamic)": Padulles_Hauer_Analysis,
         "Padulles_Amphlett Analysis (Dynamic)": Padulles_Amphlett_Analysis,
         "Chakraborty_Analysis (Dynamic)": Chakraborty_Analysis}
-    MENUKEYS = sorted(Menu.keys())
+    MENU = {
+        "(Static)  Amphlett Analysis": "Amphlett_Analysis (Static)",
+        "(Static)  Larminiee Analysis": "Larminiee_Analysis (Static)",
+        "(Static)  Chamberline Kim Analysis": "Chamberline_Kim_Analysis (Static)",
+        "(Dynamic) Padulles Analysis I ": "Padulles_Analysis I (Dynamic)",
+        "(Dynamic) Padulles Analysis II": "Padulles_Analysis II (Dynamic)",
+        "(Dynamic) Padulles Hauer Analysis": "Padulles_Hauer Analysis (Dynamic)",
+        "(Dynamic) Padulles Amphlett Analysis": "Padulles_Amphlett Analysis (Dynamic)",
+        "(Dynamic) Chakraborty Analysis": "Chakraborty_Analysis (Dynamic)"}
+    MENUKEYS = sorted(MENU.keys())
     EXITFLAG = False
     tprint("OPEM")
     tprint("v" + str(Version))
@@ -44,12 +53,12 @@ if __name__ == "__main__":
         except Exception:
             ANALYSISINDEX = -1
         if ANALYSISINDEX - 1 in range(len(MENUKEYS)):
-            ANALYSISNAME = MENUKEYS[ANALYSISINDEX - 1]
+            ANALYSISNAME = MENU[MENUKEYS[ANALYSISINDEX - 1]]
             description_print(ANALYSISNAME, Description_Menu)
             USERINPUT = input(Mode_Menu)
             description_control(
                 Analysis_Name=ANALYSISNAME,
-                Analysis_List=Menu,
+                Analysis_List=ANALYSISLIST,
                 User_Input=USERINPUT,
                 Links_Dict=Description_Links,
                 Vectors_Dict=Vectors)
