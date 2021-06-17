@@ -66,7 +66,7 @@ Test
 <BLANKLINE>
 <BLANKLINE>
 ###########
->>> check_update(1.2)
+>>> check_update(1.3)
 >>> check_update(0.1)
 ###########
 New Version (1.2) Is Available!
