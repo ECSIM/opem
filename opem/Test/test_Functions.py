@@ -69,7 +69,7 @@ Test
 >>> check_update(1.3)
 >>> check_update(0.1)
 ###########
-New Version (1.2) Is Available!
+New Version (1.3) Is Available!
 Website : http://www.ecsim.ir/opem
 ###########
 
