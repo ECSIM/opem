@@ -34,7 +34,7 @@
    * [Cite](https://github.com/ECSIM/opem#cite)
    * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
    * [License](https://github.com/ECSIM/opem#license)
-   * [Donate](https://github.com/ECSIM/opem#donate-to-our-project)
+   * [Show Your Support](https://github.com/ECSIM/opem#show-your-support)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
 
@@ -1623,7 +1623,13 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
 
 
-## Donate to our project
+## Show your support
+								
+<h3>Star this repo</h3>					
+
+Give a ⭐️ if this project helped you!   
+
+<h3>Donate to our project</h3>
 								
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
