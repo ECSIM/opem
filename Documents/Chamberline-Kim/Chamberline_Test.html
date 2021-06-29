@@ -1,6 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Chamberline_Test</title>
+<title>OPEM Report (Chamberline-Kim Model)</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
+<meta name="og:title" content="OPEM Report (Chamberline-Kim Model)">
+<meta name="og:description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
+<meta name="og:url" content="http://opem.ecsim.ir">
+<meta property="og:image" content="http://www.ecsim.ir/opem/images/opem-og.png">
+<meta name="twitter:image:src" content="http://www.ecsim.ir/opem/images/opem-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OPEM Report (Chamberline-Kim Model)">
+<meta name="twitter:description" content="The Open-Source PEMFC Simulation Tool (OPEM) is an open-source mathematical simulation package for polymer electrolyte fuel cells">
 <script>
 
 /*!
@@ -33,179 +44,113 @@ variables, including the composition of the Membrane Electrode Assemblies(MEA), 
 the local temperature, pressure, and humidity of the MEA. They also depend on the stack itself, so that it can not
 be transposed to another fuel cell without new parameter identification.
 </p>
+
 <h2 style="color:#ff7600;">Inputs</h2>
 <table style="border:1px solid black;border-collapse: collapse;margin:15px;">
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Input
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Description
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Value
-</td>
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Input</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
 </tr>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-A
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Active area [cm^2]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-50.0
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-E0
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Open circuit voltage [V]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.982
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-N
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Number of single cells
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-1
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-R
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Resistance [ohm.cm^2]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.328
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-b
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Tafel's parameter for the oxygen reduction [V]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.0689
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-i-start
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell operating current start point [A]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-1
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-i-step
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell operating current step
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.1
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-i-stop
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell operating current end point [A]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-42.5
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-m
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Diffusion's parameters [V] (*Optional)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.000125
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-n
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Diffusion's parameters [(A^-1)(cm^2)] (*Optional)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-9.45
-</td>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">A</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Active area [cm^2]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">50.0</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">E0</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Open circuit voltage [V]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.982</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">N</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Number of single cells</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">1</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">R</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Resistance [ohm.cm^2]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.328</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">b</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Tafel's parameter for the oxygen reduction [V]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.0689</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">i-start</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell operating current start point [A]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">1</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">i-step</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell operating current step</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.1</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">i-stop</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell operating current end point [A]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">42.5</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">m</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Diffusion's parameters [V] (*Optional)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.000125</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">n</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Diffusion's parameters [(A^-1)(cm^2)] (*Optional)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">9.45</td>
+</tr>
 </table>
 <h2 style="color:#ff7600;">Overall Parameters</h2>
+
 <table style="border:1px solid black;border-collapse: collapse;margin:15px;">
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Parameter
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Description
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Value
-</td>
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Parameter</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
 </tr>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Efficiency|Pmax
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell efficiency at maximum power
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.4626668383075613
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Pmax
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Maximum power [W]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-24.106792943177172
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Ptotal(Elec)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Total electrical power [W]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-35.82827697893981
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Ptotal(Thermal)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Total thermal power [W]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-15.093723021060224
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-VFC|Pmax
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell voltage at maximum power [V]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.7217602677597956
-</td>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Efficiency|Pmax</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell efficiency at maximum power</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.4626668383075613</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Pmax</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Maximum power [W]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">24.106792943177172</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Ptotal(Elec)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Total electrical power [W]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">35.82827697893981</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Ptotal(Thermal)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Total thermal power [W]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">15.093723021060224</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">VFC|Pmax</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell voltage at maximum power [V]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.7217602677597956</td>
+</tr>
 </table>
 <h2 style="color:#ff7600;">Graphs</h2>
 
@@ -254,10 +199,10 @@ var myChart = new Chart(ctx, {
 </script>
 
 <div style="width:600px;margin:15px;">
-    <canvas id="['Voltage-Stack', 'Linear-Apx']" width="100" height="100"></canvas>
+    <canvas id="['Voltage-Stack',-'Linear-Apx']" width="100" height="100"></canvas>
         </div>
 <script>
-var ctx = document.getElementById("['Voltage-Stack', 'Linear-Apx']").getContext('2d');
+var ctx = document.getElementById("['Voltage-Stack',-'Linear-Apx']").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -306,56 +251,37 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+
 <table style="border:1px solid black;border-collapse: collapse;margin:15px;">
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Parameter
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Description
-</td><td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Value
-</td>
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Parameter</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Description</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Value</td>
 </tr>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-K
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Slope of the curve obtained by linear approximation [A^(-1)]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
--0.01612214066335869
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Pmax(L-Approx)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Maximum power obtained by linear approximation [W]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-22.8946129504538
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-V0
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Intercept of the curve obtained by linear approximation [V]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-1.2150887546518891
-</td>
-<tr align="center" style="border:1px solid black;border-collapse: collapse;">
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-VFC|Pmax(L-Approx)
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-Cell voltage at maximum power obtained by linear approximation [V]
-</td>
-<td style="border:1px solid black;padding:4px;border-collapse: collapse;">
-0.6075443773259446
-</td>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">K</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Slope of the curve obtained by linear approximation [A^(-1)]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">-0.01612214066335869</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Pmax(L-Approx)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Maximum power obtained by linear approximation [W]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">22.8946129504538</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">V0</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Intercept of the curve obtained by linear approximation [V]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">1.2150887546518891</td>
+</tr>
+
+<tr style="border:1px solid black;border-collapse: collapse;text-align:center;">
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">VFC|Pmax(L-Approx)</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">Cell voltage at maximum power obtained by linear approximation [V]</td>
+<td style="border:1px solid black;padding:4px;border-collapse: collapse;">0.6075443773259446</td>
+</tr>
 </table>
 
 <div style="width:600px;margin:15px;">
@@ -403,10 +329,10 @@ var myChart = new Chart(ctx, {
 </script>
 
 <div style="width:600px;margin:15px;">
-    <canvas id="Efficiency vs Power" width="100" height="100"></canvas>
+    <canvas id="Efficiency-vs-Power" width="100" height="100"></canvas>
         </div>
 <script>
-var ctx = document.getElementById("Efficiency vs Power").getContext('2d');
+var ctx = document.getElementById("Efficiency-vs-Power").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -489,6 +415,7 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-<p style="text-align:center;position:absoloute;border-top:1px solid black;">Generated By <a style="text-decoration:none;color:#ff7600;" href="http://opem.ecsim.ir">OPEM</a> Version 1.2</p>
+
+<p style="text-align:center;border-top:1px solid black;">Generated By <a style="text-decoration:none;color:#ff7600;" href="http://opem.ecsim.ir">OPEM</a> Version 1.3</p>
 </body>
 </html>

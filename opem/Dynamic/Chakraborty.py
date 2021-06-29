@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
-"""Padulles 1 model functions."""
+"""Chakraborty model functions."""
+import os
 import math
-from opem.Params import Padulles_InputParams as InputParams
-from opem.Params import Padulles_Outparams as OutputParams
-from opem.Params import R, F, uF, HHV, Padulles_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
+from opem.Params import Chakraborty_InputParams as InputParams
+from opem.Params import Chakraborty_Outparams as OutputParams
+from opem.Params import Chakraborty_Params_Default as Defaults
+from opem.Params import R, F, HHV
 from opem.Static.Amphlett import Power_Calc, Power_Thermal_Calc, Power_Total_Calc, Linear_Aprox_Params_Calc, Max_Params_Calc
 import opem.Functions
-import os
+from opem.Params import Chakraborty_Description, Overall_Params_Max_Description, Overall_Params_Linear_Description, Report_Message
 
 
-def Enernst_Calc(E0, N0, T, PH2, PO2):
+def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
     """
     Calculate Enernst.
 
@@ -23,143 +25,162 @@ def Enernst_Calc(E0, N0, T, PH2, PO2):
     :type PH2 : float
     :param PO2: partial pressure [atm]
     :type PO2 : float
+    :param PH2O:  partial pressure [atm]
+    :type PH2O : float
     :return: Enernest [V] as float
     """
     try:
-        result = N0 * (E0 + (R * T / (2 * F)) * math.log(PH2 * ((PO2)**0.5)))
+        result = N0 * (E0 - (R * T / (2 * F)) *
+                       math.log((PH2 * math.sqrt(PO2)) / PH2O))
         return result
     except (TypeError, ZeroDivisionError, OverflowError, ValueError):
         print(
-            "[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s)" %
-            (str(E0), str(N0), str(T), str(PH2), str(PO2)))
+            "[Error] Enernst Calculation Failed (E0:%s, N0:%s, T:%s, PH2:%s, PO2:%s, PH2O:%s)" %
+            (str(E0), str(N0), str(T), str(PH2), str(PO2), str(PH2O)))
 
 
-def PH2_Calc(KH2, tH2, Kr, I, qH2):
+def PH2_Calc(KH2, u, I):
     """
     Calculate PH2.
 
     :param KH2: hydrogen valve constant [kmol.s^(-1).atm^(-1)]
     :type KH2 : float
-    :param tH2: hydrogen time constant [s]
-    :type tH2 : float
-    :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
-    :type Kr : float
+    :param u: fuel utilization  ratio
+    :type u: float
     :param I: cell load current [A]
     :type I : float
-    :param qH2: molar flow of hydrogen [kmol.s^(-1)]
-    :type qH2 : float
     :return: PH2 [atm] as float
     """
     try:
-        result = ((1 / KH2) / (1 + tH2)) * (qH2 - 2 * Kr * I)
+        result = ((1 / KH2) * ((1 / u) - 1) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PH2 Calculation Failed (KH2:%s, tH2:%s, Kr:%s, I:%s, qH2:%s)" %
-            (str(KH2), str(tH2), str(Kr), str(I), str(qH2)))
+            "[Error] PH2 Calculation Failed (KH2:%s, u:%s, I:%s)" %
+            (str(KH2), str(u), str(I)))
 
 
-def PO2_Calc(KO2, tO2, Kr, I, qO2):
+def PO2_Calc(KO2, u, rHO, I):
     """
     Calculate PO2.
 
     :param KO2: oxygen valve constant [kmol.s^(-1).atm^(-1)]
     :type KO2 : float
-    :param tO2: oxygen time constant [s]
-    :type tO2 : float
-    :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
-    :type Kr : float
+    :param u: fuel utilization  ratio
+    :type u: float
+    :param rHO: ratio  of  hydrogen  to  oxygen  input  flow  rates
+    :type rHO: float
     :param I: cell load current [A]
     :type I : float
-    :param qO2: molar flow of oxygen [kmol.s^(-1)
-    :type qO2 : float
     :return: PO2 [atm] as float
     """
     try:
-        result = ((1 / KO2) / (1 + tO2)) * (qO2 - Kr * I)
+        result = ((1 / KO2) * ((1 / (u * rHO)) - 0.5) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PO2 Calculation Failed (KO2:%s, tO2:%s, Kr:%s, I:%s, qO2:%s)" %
-            (str(KO2), str(tO2), str(Kr), str(I), str(qO2)))
+            "[Error] PO2 Calculation Failed (KO2:%s, u:%s, rHO:%s, I:%s)" %
+            (str(KO2), str(u), str(rHO), str(I)))
 
 
-def Kr_Calc(N0):
+def PH2O_Calc(KH2O, I):
     """
-    Calculate Kr.
+    Calculate PH2O.
 
-    :param N0: number of fuel cells in the stack
-    :type N0 : int
-    :return: Kr [kmol.s^(-1).A^(-1)] as float
+    :param KH2O: water valve constant [kmol.s^(-1).atm^(-1)]
+    :type KH2O : float
+    :param I: cell load current [A]
+    :type I : float
+    :return: PH2O [atm] as float
     """
     try:
-        result = N0 / (4 * F)
+        result = ((1 / KH2O) * I / (2 * F))
         return result
     except (TypeError, ZeroDivisionError):
-        print("[Error] Kr Calculation Failed (N0:%s)" % str(N0))
+        print(
+            "[Error] PH2O Calculation Failed (KH2O:%s, I:%s)" %
+            (str(KH2O), str(I)))
 
 
-def Vcell_Calc(Enernst, B, C, I, Rint):
+def Nernst_Gain_Calc(T, I):
     """
-    Calculate Vcell.
+    Calculate Nernst gain.
 
-    :param Enernst: Enernst [V]
-    :type Enernst : float
-    :param B: activation voltage constant [V]
-    :type B: float
-    :param C: constant [A^(-1)
-    :type C : float
+    :param T: cell operation temperature [K]
+    :type T : float
     :param I: cell load current [A]
-    :type I: float
+    :type I : float
+    :return: Nernst gain [V] as float
+    """
+    try:
+        return ((R * T) / (4 * F)) * math.log(I)
+    except TypeError:
+        print(
+            "[Error] Nernst Gain Calculation Error (T:%s, I:%s)" %
+            (str(T), str(I)))
+
+
+def Ohmic_Loss_Calc(Rint, I):
+    """
+    Calculate ohmic loss.
+
     :param Rint: fuel cell internal resistance [ohm]
     :type Rint : float
-    :return: Vcell [V] as float
+    :param I: cell load current [A]
+    :type I : float
+    :return: ohmic loss [V] as float
     """
     try:
-        result = Enernst - B * math.log(C * I) - Rint * I
-        return result
-    except (TypeError, OverflowError, ValueError):
+        return Rint * I
+    except TypeError:
         print(
-            "[Error] Vcell Calculation Error (Enernst:%s, B:%s, C:%s, I:%s, Rint:%s)" %
-            (str(Enernst), str(B), str(C), str(I), str(Rint)))
+            "[Error] Ohmic Loss Calculation Error (Rint:%s, I:%s)" %
+            (str(Rint), str(I)))
 
 
-def qO2_Calc(qH2, rho):
+def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
     """
-    Calculate qO2.
+    Calculate cell voltage.
 
-    :param qH2: molar flow of hydrogen [kmol.s^(-1)]
-    :type qH2 : float
-    :param rho: hydrogen-oxygen flow rate
-    :type rho : float
-    :return: qO2 [kmol.s^(-1)] as float
+    :param Enernst:  Enernst [V}
+    :type Enernst : float
+    :param Nernst_Gain: Nernst Gain [V]
+    :type Nernst_Gain: float
+    :param Ohmic_Loss: ohmic loss [V]
+    :type Ohmic_Loss: float
+    :param N: number of fuel cells in the stack
+    :type N : int
+    :return:  cell voltage [V] as float
     """
     try:
-        result = (qH2 / rho)
+        loss = Nernst_Gain - Ohmic_Loss
+        result = Enernst + (N * loss)
         return result
-    except (TypeError, ZeroDivisionError):
+    except TypeError:
         print(
-            "[Error] qO2 Calculation Error (qH2:%s, rho:%s)" %
-            (str(qH2), str(rho)))
+            "[Error] Vcell Calculation Error (Enernst:%s, Nernst_Gain:%s, Ohmic_Loss:%s, N:%s)" %
+            (str(Enernst), str(Nernst_Gain), str(Ohmic_Loss), str(N)))
 
 
-def Efficiency_Calc(Vcell, N):
+def Efficiency_Calc(Vcell, u, N):
     """
     Calculate PEM cell efficiency.
 
     :param Vcell: cell voltage [V]
     :type Vcell:float
-    :param N0: number of fuel cells in the stack
-    :type N0 : int
+    :param u: fuel utilization  ratio
+    :type u: float
+    :param N: number of fuel cells in the stack
+    :type N : int
     :return: efficiency as float
     """
     try:
-        result = (uF * Vcell) / (N * HHV)
+        result = (u * Vcell) / (N * HHV)
         return result
     except (TypeError, ZeroDivisionError):
         print(
-            "[Error] PEM Efficiency Calculation Failed (Vcell:%s, N:%s)" %
-            (str(Vcell), str(N)))
+            "[Error] PEM Efficiency Calculation Failed (Vcell:%s, u:%s, N:%s)" %
+            (str(Vcell), str(u), str(N)))
 
 
 def Dynamic_Analysis(
@@ -168,7 +189,7 @@ def Dynamic_Analysis(
         PrintMode=True,
         ReportMode=True):
     """
-    Run Padulles I analysis.
+    Run Chakraborty analysis.
 
     :param InputMethod : input function or input test vector
     :param TestMode : test mode flag
@@ -187,7 +208,7 @@ def Dynamic_Analysis(
     I_Warning = 0
     Overall_Params_Max = {}
     Overall_Params_Linear = {}
-    Simulation_Title = "Padulles-I"
+    Simulation_Title = "Chakraborty"
     try:
 
         if PrintMode:
@@ -198,9 +219,12 @@ def Dynamic_Analysis(
         Output_Dict = dict(
             zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if not TestMode:
-            Input_Dict = InputMethod(InputParams)
+            Input_Dict = InputMethod(InputParams, params_default=Defaults)
         else:
             Input_Dict = InputMethod
+            Input_Dict = opem.Functions.filter_default(
+                input_dict=Input_Dict, params_default=Defaults)
+        Input_Dict = opem.Functions.filter_lambda(Input_Dict)
         if PrintMode:
             print("Analyzing . . .")
         Name = Input_Dict["Name"]
@@ -224,26 +248,39 @@ def Dynamic_Analysis(
         Efficiency_List = []
         PH2_List = []
         PO2_List = []
+        PH2O_List = []
         Power_Thermal_List = []
-        Kr = Kr_Calc(Input_Dict["N0"])
-        qO2 = qO2_Calc(Input_Dict["qH2"], Input_Dict["rho"])
+        Ohmic_Loss_List = []
+        Nernst_Gain_List = []
         while i < IEnd:
             try:
                 I_List.append(i)
                 Output_Dict["PO2"] = PO2_Calc(
-                    Input_Dict["KO2"], Input_Dict["tO2"], Kr, i, qO2)
+                    Input_Dict["KO2"], Input_Dict["u"], Input_Dict["rho"], i)
                 Output_Dict["PH2"] = PH2_Calc(
-                    Input_Dict["KH2"], Input_Dict["tH2"], Kr, i, Input_Dict["qH2"])
+                    Input_Dict["KH2"], Input_Dict["u"], i)
                 PH2_List.append(Output_Dict["PH2"])
                 PO2_List.append(Output_Dict["PO2"])
+                Output_Dict["PH2O"] = PH2O_Calc(
+                    Input_Dict["KH2O"], i)
+                PH2O_List.append(Output_Dict["PH2O"])
                 Output_Dict["E"] = Enernst_Calc(
                     Input_Dict["E0"],
                     Input_Dict["N0"],
                     Input_Dict["T"],
                     Output_Dict["PH2"],
-                    Output_Dict["PO2"])
+                    Output_Dict["PO2"],
+                    Output_Dict["PH2O"])
+                Output_Dict["Nernst Gain"] = Nernst_Gain_Calc(
+                    Input_Dict["T"], i)
+                Output_Dict["Ohmic Loss"] = Ohmic_Loss_Calc(Input_Dict["R"], i)
+                Nernst_Gain_List.append(Output_Dict["Nernst Gain"])
+                Ohmic_Loss_List.append(Output_Dict["Ohmic Loss"])
                 Output_Dict["FC Voltage"] = Vcell_Calc(
-                    Output_Dict["E"], Input_Dict["B"], Input_Dict["C"], i, Input_Dict["Rint"])
+                    Output_Dict["E"],
+                    Output_Dict["Nernst Gain"],
+                    Output_Dict["Ohmic Loss"],
+                    Input_Dict["N0"])
                 [Warning1, I_Warning] = opem.Functions.warning_check_1(
                     Output_Dict["FC Voltage"], I_Warning, i, Warning1)
                 Warning2 = opem.Functions.warning_check_2(
@@ -251,7 +288,7 @@ def Dynamic_Analysis(
                     warning_flag=Warning2)
                 Vstack_List.append(Output_Dict["FC Voltage"])
                 Output_Dict["FC Efficiency"] = Efficiency_Calc(
-                    Output_Dict["FC Voltage"], Input_Dict["N0"])
+                    Output_Dict["FC Voltage"], Input_Dict["u"], Input_Dict["N0"])
                 Efficiency_List.append(Output_Dict["FC Efficiency"])
                 Output_Dict["FC Power"] = Power_Calc(
                     Output_Dict["FC Voltage"], i)
@@ -304,7 +341,9 @@ def Dynamic_Analysis(
             if PrintMode:
                 print(Report_Message)
             opem.Functions.HTML_Desc(
-                Simulation_Title, Padulles_Description, HTMLFile)
+                Simulation_Title,
+                Chakraborty_Description,
+                HTMLFile)
             opem.Functions.HTML_Input_Table(
                 Input_Dict=Input_Dict,
                 Input_Params=InputParams,
@@ -334,6 +373,11 @@ def Dynamic_Analysis(
                 file=HTMLFile,
                 header=False)
             opem.Functions.HTML_Chart(
+                x=str(I_List), y=[
+                    str(Nernst_Gain_List), str(Ohmic_Loss_List)], color=[
+                    'rgba(99,100,255,1)', 'rgb(128, 0, 255)'], x_label="I(A)", y_label="V(V)", chart_name=[
+                    "Nernst Gain", "Ohmic Loss"], size="600px", file=HTMLFile)
+            opem.Functions.HTML_Chart(
                 x=str(I_List),
                 y=str(Efficiency_List),
                 color='rgb(255, 0, 255)',
@@ -358,6 +402,15 @@ def Dynamic_Analysis(
                 x_label="I(A)",
                 y_label="PH2(atm)",
                 chart_name="PH2",
+                size="600px",
+                file=HTMLFile)
+            opem.Functions.HTML_Chart(
+                x=str(I_List),
+                y=str(PH2O_List),
+                color='	rgb(165, 185, 112)',
+                x_label="I(A)",
+                y_label="PH2O(atm)",
+                chart_name="PH2O",
                 size="600px",
                 file=HTMLFile)
             opem.Functions.HTML_Chart(x=str(list(map(opem.Functions.rounder,
@@ -401,9 +454,12 @@ def Dynamic_Analysis(
                 "P": Power_List,
                 "I": I_List,
                 "V": Vstack_List,
+                "Nernst Gain": Nernst_Gain_List,
+                "Ohmic Loss": Ohmic_Loss_List,
                 "EFF": Efficiency_List,
                 "PO2": PO2_List,
                 "PH2": PH2_List,
+                "PH2O": PH2O_List,
                 "Ph": Power_Thermal_List,
                 "V0": B0,
                 "K": B1,

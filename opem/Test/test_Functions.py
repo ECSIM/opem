@@ -57,16 +57,19 @@ False
 ['Name', 'PH2', 'PO2', 'T']
 >>> description_print("Model1",{"Model1":"Test"})
 ###########
+Model1 :
+<BLANKLINE>
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 Test
 <BLANKLINE>
 <BLANKLINE>
 ###########
->>> check_update(1.2)
+>>> check_update(1.3)
 >>> check_update(0.1)
 ###########
-New Version (1.2) Is Available!
+New Version (1.3) Is Available!
 Website : http://www.ecsim.ir/opem
 ###########
 
