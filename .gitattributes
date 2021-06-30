@@ -1,2 +1,1 @@
-Documents/* linguist-vendored
-opem/Script.py linguist-vendored
+*.html linguist-detectable=false
