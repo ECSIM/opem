@@ -14,7 +14,7 @@
 	
 ----------				
 
-## Table of contents
+## Table of Contents
    * [What is PEM?](http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm)					
    * [Overview](https://github.com/ECSIM/opem#overview)
    * [Installation](https://github.com/ECSIM/opem/blob/master/INSTALL.md)
@@ -1623,13 +1623,13 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
 
 
-## Show your support
+## Show Your Support
 								
-<h3>Star this repo</h3>					
+<h3>Star This Repo</h3>					
 
 Give a ⭐️ if this project helped you!   
 
-<h3>Donate to our project</h3>
+<h3>Donate to Our Project</h3>
 								
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
