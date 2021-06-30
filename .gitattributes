@@ -1,1 +1,3 @@
 *.html linguist-detectable=false
+*.ipynb linguist-detectable=false
+opem/Script.py linguist-vendored
