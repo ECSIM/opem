@@ -26,7 +26,7 @@
    		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
-   * [Todo](https://github.com/ECSIM/opem#todo)
+   * [Todo](https://github.com/ECSIM/opem/blob/master/TODO.md)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
    * [Dependencies](https://github.com/ECSIM/opem#dependencies)
    * [Thanks](https://github.com/ECSIM/opem#thanks)
@@ -1447,52 +1447,6 @@ Gitter is another option :
 
 [![Gitter](https://badges.gitter.im/ECSIM/opem.svg)](https://gitter.im/ECSIM/opem?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-
-## Todo		
-
-- [x] Static Analysis
-  - [x] Amphlett Static Model
-  	- [x] Nernst Voltage
-  	- [x] PEMFC losses model
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-  - [x] Larminie-Dicks Static Model
-  	- [x] PEMFC losses model
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-  - [x] Chamberline-Kim Static Model
-  	- [x] PEMFC losses model
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-- [x] Flat Output
-    - [x] Simulation Result
-    - [X] CSV File
-    - [x] HTML
-- [x] GUI
-  - [x] Plot Graphs
-  - [x] Input/Output
-- [x] Dynamic Analysis
-  - [x] Padulles Dynamic Model I
-    - [x] Nernst Voltage
-  	- [x] Voltage of PEMFC
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-  - [x] Padulles Dynamic Model II
-    - [x] Nernst Voltage
-  	- [x] Voltage of PEMFC
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-  - [x] Padulles-Hauer Dynamic Model
-    - [x] Nernst Voltage
-  	- [x] Voltage of PEMFC
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-  - [x] Padulles-Amphlett Dynamic Model
-    - [x] Nernst Voltage
-  	- [x] Voltage of PEMFC
-  	- [x] Power of PEMFC
-  	- [x] Efficiency of PEMFC
-- [x] MATLAB
 
 ## Outputs	
 
