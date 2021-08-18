@@ -5,16 +5,10 @@ function redirect(flag){
             window.open("https://hamibash.com/ecsim");
             break;
         case 2:
-            swal("Bitocin Wallet","1XGr9qbZjBpUQJJSB6WtgBQbDTgrhPLPA");
-            break;
-        case 3:
-            window.open("https://beerpay.io/sepandhaghighi/lightsout");
-            break;
-        case 4:
-            window.open("https://www.payping.ir/sepandhaghighi");
+            window.open("https://www.ecsim.ir/opem/wallets.html");
             break;
         default:
-            window.open("https://saythanks.io/to/ecsim");
+            window.open("https://hamibash.com/ecsim");
             
     }
     
