@@ -60,7 +60,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/count/opem"><img src="http://pepy.tech/badge/opem"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/opem"><img src="http://pepy.tech/badge/opem"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
