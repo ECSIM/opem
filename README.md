@@ -33,7 +33,7 @@
    * [Reference](https://github.com/ECSIM/opem#reference)
    * [Cite](https://github.com/ECSIM/opem#cite)
    * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
-   * [License](https://github.com/ECSIM/opem#license)
+   * [License](https://github.com/ECSIM/opem/blob/master/LICENSE)
    * [Show Your Support](https://github.com/ECSIM/opem#show-your-support)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
@@ -1567,14 +1567,6 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 		<td align="center"><a href="https://www.researchgate.net/project/Open-Source-Electrochemistry-Simulation-Toolbox"><img src="https://img.shields.io/badge/Researchgate-OPEM-yellow.svg"></a></td>
 	</tr>
 </table>									
-
-
-
-
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
 
 
 ## Show Your Support
