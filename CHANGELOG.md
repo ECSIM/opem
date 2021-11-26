@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - License updated
+- `Python 3.10` added to `test.yml`
 ## [1.3] - 2021-06-30
 ### Added
 - GitHub actions
