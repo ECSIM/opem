@@ -23,13 +23,6 @@
 - Check [Conda Managing Package](https://conda.io)
 - `conda install -c ecsim opem` (Need root access)
 
-### Docker	
-
-- Run `docker pull ecsim/opem` (Need root access)
-- Configuration :
-	- Ubuntu 16.04
-	- Python 3.6
-
 ### GUI
 
 - OPEM GUI is available [here](https://github.com/ECSIM/gopem)			
