@@ -1525,7 +1525,7 @@ and Policy, University of California Davis.
 13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
 </blockquote>
 
-* Logo designed by [Zahra Mobasher](https://github.com/zhmbshr/zhmbshr)
+* Logo designed by [Zahra Mobasher](https://github.com/zhmbshr)
 
 
 ## Cite
