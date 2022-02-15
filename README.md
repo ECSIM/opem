@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=250px height=250px>
+<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=300px>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://codecov.io/gh/ECSIM/opem">
@@ -1524,6 +1524,8 @@ and Policy, University of California Davis.
 <blockquote>
 13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
 </blockquote>
+
+* Logo designed by [Zahra Mobasher](https://www.instagram.com/littleblackoyster/?hl=en)
 
 
 ## Cite
