@@ -1472,6 +1472,7 @@ Gitter is another option :
 * [Chart.js](https://github.com/chartjs/Chart.js "Chartjs")
 * [PyInstaller](https://github.com/pyinstaller/pyinstaller)
 * [Draw.io](https://www.draw.io/)
+* [Zahra Mobasher](https://www.instagram.com/littleblackoyster/?hl=en) (Logo design)
 
 ## Reference
 
@@ -1524,8 +1525,6 @@ and Policy, University of California Davis.
 <blockquote>
 13- U. Chakraborty, A New Model for Constant Fuel Utilization and Constant Fuel Flow in Fuel Cells, Appl. Sci. 9 (2019) 1066. https://doi.org/10.3390/app9061066.
 </blockquote>
-
-* Logo designed by [Zahra Mobasher](https://www.instagram.com/littleblackoyster/?hl=en)
 
 
 ## Cite
