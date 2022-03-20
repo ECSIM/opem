@@ -40,6 +40,7 @@ jobs:
       if: matrix.python-version == 3.7
     - name: Notebook check
       run: |
+        pip install notebook>=5.2.2
         python otherfile/notebook_check.py
       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
     - name: Other tests
