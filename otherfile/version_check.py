@@ -35,6 +35,9 @@ RC_ITEMS = [
     "(u'FileVersion', u'{0}.{1}.{2}.{3}'),",
     "(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
+
+META_ITEMS = ['% set version = "{0}" %']
+
 FILES = {
     "setup.py": SETUP_ITEMS, "INSTALL.md": INSTALL_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Documents", "Amphlett.ipynb"): DOCUMENT_ITEMS, os.path.join(
@@ -46,7 +49,8 @@ FILES = {
                                 "Documents", "Padulles2.ipynb"): DOCUMENT_ITEMS, os.path.join(
                                     "otherfile", "test.html"): HTML_ITEMS, os.path.join(
                                         "opem", "Params.py"): PARAMS_ITEMS, os.path.join(
-                                            "opem", "Test", "test_Functions.py"): TEST_ITEMS}
+                                            "opem", "Test", "test_Functions.py"): TEST_ITEMS, os.path.join(
+                                                "otherfile", "meta.yaml"): META_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) + 1
 
