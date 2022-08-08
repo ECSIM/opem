@@ -50,7 +50,7 @@ FILES = {
                                     "otherfile", "test.html"): HTML_ITEMS, os.path.join(
                                         "opem", "Params.py"): PARAMS_ITEMS, os.path.join(
                                             "opem", "Test", "test_Functions.py"): TEST_ITEMS,
-                                            os.path.join("otherfile", "meta.yaml"): META_ITEMS}
+    os.path.join("otherfile", "meta.yaml"): META_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) + 1
 
