@@ -36,7 +36,7 @@ RC_ITEMS = [
     "(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
 
-META_ITEMS = ['{% set version = "{0}" %}']
+META_ITEMS = ['% set version = "{0}" %']
 
 FILES = {
     "setup.py": SETUP_ITEMS, "INSTALL.md": INSTALL_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
