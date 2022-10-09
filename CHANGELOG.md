@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Logo updated
 - `AUTHORS.md` updated
 - `README.md` modified
+- Test system modified
 ## [1.3] - 2021-06-30
 ### Added
 - GitHub actions
