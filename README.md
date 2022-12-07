@@ -29,7 +29,6 @@
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem/blob/master/TODO.md)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
-   * [Dependencies](https://github.com/ECSIM/opem#dependencies)
    * [Thanks](https://github.com/ECSIM/opem#thanks)
    * [Reference](https://github.com/ECSIM/opem#reference)
    * [Cite](https://github.com/ECSIM/opem#cite)
@@ -95,7 +94,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 ### Executable
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m opem` or `python3 -m opem` (or run `OPEM.exe`)
+- Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
 	1. Amphlett Static Model
 		<html>
@@ -1456,19 +1455,6 @@ You can also join our discord server
 1. [HTML](http://www.ecsim.ir/opem/outputs/test.html)
 2. [CSV](https://github.com/ECSIM/opem/blob/master/otherfile/test.csv)
 3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
-
-## Dependencies
-
-<table>
-	<tr> 
-		<td align="center">master</td>	
-		<td align="center">develop</td>	
-	</tr>
-	<tr>
-		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=master"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
-		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a></td>
-	</tr>
-</table>
 
 
 ## Thanks
