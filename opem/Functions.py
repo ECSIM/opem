@@ -628,7 +628,7 @@ def description_print(Analysis_Name, Description_Dict, Width=100):
 
 def description_control(
         Analysis_Name,
-        Analysis_List,
+        Analysis_Dict,
         User_Input,
         Links_Dict,
         Vectors_Dict):
@@ -637,8 +637,8 @@ def description_control(
 
     :param Analysis_Name: analysis name
     :type Analysis_Name: str
-    :param Analysis_List: analysis list
-    :type Analysis_List: list
+    :param Analysis_Dict: analysis dict
+    :type Analysis_Dict: dict
     :param User_Input: user input
     :type User_Input: str
     :param Links_Dict: documents links
@@ -659,10 +659,10 @@ def description_control(
         line()
         input_temp = input("Press any key to continue")
         del input_temp
-        Analysis_List[Analysis_Name](
+        Analysis_Dict[Analysis_Name](
             InputMethod=Test_Vector, TestMode=True)
     else:
-        Analysis_List[Analysis_Name]()
+        Analysis_Dict[Analysis_Name]()
 
 
 def filter_alpha(Input_Dict):
