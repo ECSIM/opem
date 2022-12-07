@@ -71,4 +71,8 @@ setup(
         'Topic :: Scientific/Engineering :: Physics',
     ],
     license='MIT',
+    entry_points={
+        'console_scripts': [
+            'opem = opem.__main__:main',
+    ]}
 )
