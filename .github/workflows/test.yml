@@ -26,7 +26,8 @@ jobs:
         python setup.py install
     - name: First test
       run: |
-        python -m opem test
+        opem test
+        opem --version
     - name: Test requirements Installation
       run: |
         python otherfile/requirements-splitter.py
