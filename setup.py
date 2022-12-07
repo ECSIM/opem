@@ -74,5 +74,5 @@ setup(
     entry_points={
         'console_scripts': [
             'opem = opem.__main__:main',
-    ]}
+        ]}
 )

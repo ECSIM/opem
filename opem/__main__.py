@@ -78,5 +78,6 @@ def main():
                 if INPUTINDEX.upper() != "R":
                     EXITFLAG = True
 
+
 if __name__ == "__main__":
     main()
