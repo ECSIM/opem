@@ -113,7 +113,7 @@ def check_update(Version):
     :return: None
     """
     try:
-        update_obj = requests.get(UpdateUrl)
+        update_obj = requests.get(UpdateUrl, timeout=100)
         update_data = update_obj.text
         if float(update_data) > Version:
             line()

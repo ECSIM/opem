@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Test system modified
 - CLI mode updated
 - `description_control` function modified
+- `check_update` function modified
 ## [1.3] - 2021-06-30
 ### Added
 - GitHub actions
