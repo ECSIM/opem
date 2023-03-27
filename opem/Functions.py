@@ -367,7 +367,7 @@ def None_Omit(Input_Str):
     return result
 
 
-def HTML_Init(Title, Name):
+def HTML_Init(Title, Name, Folder):
     """
     Initialize html file.
 
@@ -375,12 +375,17 @@ def HTML_Init(Title, Name):
     :type Title : str
     :param Name: file name
     :type Name : str
+    :param Folder: output folder address
+    :type Folder: str
     :return: HTML file as file obj
     """
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
+    if Folder is None:
+        Folder = os.getcwd()
+    if Title not in os.listdir(Folder):
+        os.mkdir(os.path.join(Folder, Title))
     HTMLFile = io.open(
         os.path.join(
+            Folder,
             Title,
             Name +
             ".html"),
