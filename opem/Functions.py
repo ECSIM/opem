@@ -287,7 +287,7 @@ def Output_Save(
         print("###########")
 
 
-def Output_Init(InputDict, Title, Name):
+def Output_Init(InputDict, Title, Name, Folder=None):
     """
     Initialize output file.
 
@@ -295,15 +295,21 @@ def Output_Init(InputDict, Title, Name):
     :type InputDict:dict
     :param Title : simulation title
     :type Title :str
+    :param Name: file name
+    :type Name: str
+    :param Folder: output folder address
+    :type Folder: str
     :return: file object
     """
+    if Folder is None:
+        Folder = os.getcwd()
     spliter = "\n"
     if 'win' not in sys.platform:
         spliter = "\r\n"
     Art = text2art("Opem")
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
-    opem_file = open(os.path.join(Title, Name + ".opem"), "w")
+    if Title not in os.listdir(Folder):
+        os.mkdir(os.path.join(Folder, Title))
+    opem_file = open(os.path.join(Folder, Title, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
                     str(datetime.datetime.now()) + spliter)
