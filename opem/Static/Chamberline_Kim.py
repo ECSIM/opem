@@ -44,7 +44,8 @@ def Static_Analysis(
         InputMethod=opem.Functions.Get_Input,
         TestMode=False,
         PrintMode=True,
-        ReportMode=True):
+        ReportMode=True,
+        Folder=None):
     """
     Run Chamberline-Kim static analysis.
 
@@ -56,6 +57,8 @@ def Static_Analysis(
     :type PrintMode:bool
     :param ReportMode : report mode control flag (True : generate report)
     :type ReportMode: bool
+    :param Folder: output folder address
+    :type Folder: str
     :return: result as dict
     """
     OutputFile = None
@@ -86,13 +89,14 @@ def Static_Analysis(
         Name = Input_Dict["Name"]
         if ReportMode:
             OutputFile = opem.Functions.Output_Init(
-                Input_Dict, Simulation_Title, Name)
+                Input_Dict, Simulation_Title, Name, Folder)
             CSVFile = opem.Functions.CSV_Init(
                 OutputParamsKeys,
                 OutputParams,
                 Simulation_Title,
-                Name)
-            HTMLFile = opem.Functions.HTML_Init(Simulation_Title, Name)
+                Name,
+                Folder)
+            HTMLFile = opem.Functions.HTML_Init(Simulation_Title, Name, Folder)
         IEnd = Input_Dict["i-stop"]
         IStep = Input_Dict["i-step"]
         Precision = opem.Functions.get_precision(IStep)
