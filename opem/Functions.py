@@ -324,7 +324,7 @@ def Output_Init(InputDict, Title, Name, Folder=None):
     return opem_file
 
 
-def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
+def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder=None):
     """
     Initialize csv file.
 
@@ -367,7 +367,7 @@ def None_Omit(Input_Str):
     return result
 
 
-def HTML_Init(Title, Name, Folder):
+def HTML_Init(Title, Name, Folder=None):
     """
     Initialize html file.
 
