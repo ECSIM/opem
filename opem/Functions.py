@@ -324,7 +324,7 @@ def Output_Init(InputDict, Title, Name, Folder=None):
     return opem_file
 
 
-def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
+def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     """
     Initialize csv file.
 
@@ -332,11 +332,19 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     :type OutputParamsKeys : list
     :param OutputParams : output parameters
     :type OutputParams : dict
+    :param Title : simulation title
+    :type Title :str
+    :param Name: file name
+    :type Name: str
+    :param Folder: output folder address
+    :type Folder: str
     :return: file object
     """
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
-    csv_file = open(os.path.join(Title, Name + ".csv"), "w")
+    if Folder is None:
+        Folder = os.getcwd()
+    if Title not in os.listdir(Folder):
+        os.mkdir(os.path.join(Folder, Title))
+    csv_file = open(os.path.join(Folder, Title, Name + ".csv"), "w")
     csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
         csv_file.write(item + " (" + OutputParams[item] + ")")
