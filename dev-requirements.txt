@@ -1,6 +1,5 @@
 art==5.9
 requests==2.28.2
-codecov>=2.0.15
 pytest>=5.1.0
 pytest-cov>=2.6.1
 setuptools>=40.8.3
