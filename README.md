@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=250px height=250px>
+<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=300px>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://codecov.io/gh/ECSIM/opem">
@@ -7,9 +7,10 @@
 </a>
 <a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
-<a href = "https://hub.docker.com/r/ecsim/opem"><img alt="Docker Cloud Build Status" src="https://img.shields.io/docker/cloud/build/ecsim/opem"></a>
 <a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-
+<a href="https://discord.gg/v9RGYq9W5m">
+  <img src="https://img.shields.io/discord/1006472275920425012.svg" alt="Discord Channel">
+</a>
 </div>
 	
 ----------				
@@ -28,12 +29,11 @@
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
    * [Todo](https://github.com/ECSIM/opem/blob/master/TODO.md)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
-   * [Dependencies](https://github.com/ECSIM/opem#dependencies)
    * [Thanks](https://github.com/ECSIM/opem#thanks)
    * [Reference](https://github.com/ECSIM/opem#reference)
    * [Cite](https://github.com/ECSIM/opem#cite)
    * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
-   * [License](https://github.com/ECSIM/opem#license)
+   * [License](https://github.com/ECSIM/opem/blob/master/LICENSE)
    * [Show Your Support](https://github.com/ECSIM/opem#show-your-support)
    * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
@@ -60,7 +60,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/count/opem"><img src="http://pepy.tech/badge/opem"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/opem"><img src="http://pepy.tech/badge/opem"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
@@ -84,7 +84,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 <table>
 	<tr> 
 		<td align="center">Code Quality</td>
-		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/opem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/361480463fb1477180f066e8f945037d"/></a></td>	
+		<td align="center"><a href="https://www.codacy.com/gh/ECSIM/opem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/7e8bf5e11c0b455da3807ee4e493713e"/></a></td>	
 		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a></td>
 	</tr>
 </table>
@@ -94,7 +94,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 ### Executable
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m opem` or `python3 -m opem` (or run `OPEM.exe`)
+- Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
 	1. Amphlett Static Model
 		<html>
@@ -1443,9 +1443,11 @@ OPEM can be used online in interactive Jupyter Notebooks via the Binder service!
 Just fill an issue and describe it. We'll check it ASAP!							
 or send an email to [opem@ecsim.ir](mailto:opem@ecsim.ir "opem@ecsim.ir"). 
 
-Gitter is another option :				
+You can also join our discord server			
 
-[![Gitter](https://badges.gitter.im/ECSIM/opem.svg)](https://gitter.im/ECSIM/opem?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<a href="https://discord.gg/v9RGYq9W5m">
+  <img src="https://img.shields.io/discord/1006472275920425012.svg?style=for-the-badge" alt="Discord Channel">
+</a>
 
 
 ## Outputs	
@@ -1454,25 +1456,13 @@ Gitter is another option :
 2. [CSV](https://github.com/ECSIM/opem/blob/master/otherfile/test.csv)
 3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
 
-## Dependencies
-
-<table>
-	<tr> 
-		<td align="center">master</td>	
-		<td align="center">develop</td>	
-	</tr>
-	<tr>
-		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=master"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
-		<td align="center"><a href="https://requires.io/github/ECSIM/opem/requirements/?branch=develop"><img src="https://requires.io/github/ECSIM/opem/requirements.svg?branch=develop" alt="Requirements Status" /></a></td>
-	</tr>
-</table>
-
 
 ## Thanks
 
 * [Chart.js](https://github.com/chartjs/Chart.js "Chartjs")
 * [PyInstaller](https://github.com/pyinstaller/pyinstaller)
 * [Draw.io](https://www.draw.io/)
+* [Zahra Mobasher](https://www.instagram.com/littleblackoyster/?hl=en) (Logo design)
 
 ## Reference
 
@@ -1567,14 +1557,6 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 		<td align="center"><a href="https://www.researchgate.net/project/Open-Source-Electrochemistry-Simulation-Toolbox"><img src="https://img.shields.io/badge/Researchgate-OPEM-yellow.svg"></a></td>
 	</tr>
 </table>									
-
-
-
-
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FECSIM%2Fopem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FECSIM%2Fopem?ref=badge_large)
 
 
 ## Show Your Support

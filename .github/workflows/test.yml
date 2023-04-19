@@ -11,8 +11,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-20.04, windows-latest, macOS-latest]
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -26,7 +26,8 @@ jobs:
         python setup.py install
     - name: First test
       run: |
-        python -m opem test
+        opem test
+        opem --version
     - name: Test requirements Installation
       run: |
         python otherfile/requirements-splitter.py
@@ -37,21 +38,23 @@ jobs:
     - name: Version check
       run: |
         python otherfile/version_check.py
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == 3.8
     - name: Notebook check
       run: |
+        pip install notebook>=5.2.2
         python otherfile/notebook_check.py
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: Other tests
       run: |
           python -m vulture opem/ otherfile/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
           python -m bandit -r opem
           python -m pydocstyle -v
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
-    - name: Codecov
-      run: |
-        codecov
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+          fail_ci_if_error: true
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: cProfile
       run: |
           python -m cProfile -s cumtime opem/Profile.py
