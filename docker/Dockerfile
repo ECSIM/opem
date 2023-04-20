@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Add user with valid passwrd
 RUN useradd -ms /bin/bash user
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN (echo user ; echo user) | passwd user
 
 # Configure sudo
