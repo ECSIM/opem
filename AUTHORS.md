@@ -12,3 +12,4 @@
 ----------
 - [Sadra Sabouri](https://github.com/sadrasabouri)
 - [Nicholas Nadeau](https://github.com/nnadeau)
+- [Giovanni Rosa](https://github.com/grosa1)
