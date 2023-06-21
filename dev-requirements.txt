@@ -1,4 +1,4 @@
-art==5.9
+art==6.0
 requests==2.31.0
 pytest>=5.1.0
 pytest-cov>=2.6.1
