@@ -1409,12 +1409,12 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 									
 	- For more information about this model visit <a href="https://www.ecsim.ir/opem/doc/Dynamic/Chakraborty.html">here</a>
 
-	#### Modes	
+	#### Parameters
 
 	1. `TestMode` : Active test mode and get/return data as `dict`, (Default : `False`)
 	2. `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`) and print result in console, (Default : `True`)
 	3. `PrintMode` : Control printing in console, (Default : `True`)
-	4. `Folder` : Reports folder, (Default : `None`)
+	4. `Folder` : Reports folder, (Default : `os.getcwd()`)
 	
 	#### Note
 	
