@@ -46,7 +46,7 @@ def Static_Analysis(
         TestMode=False,
         PrintMode=True,
         ReportMode=True,
-        Folder=None):
+        Folder=os.getcwd()):
     """
     Run Larminie-Dicks static analysis.
 

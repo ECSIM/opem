@@ -287,7 +287,7 @@ def Output_Save(
         print("###########")
 
 
-def Output_Init(InputDict, Title, Name, Folder=None):
+def Output_Init(InputDict, Title, Name, Folder):
     """
     Initialize output file.
 
@@ -301,8 +301,6 @@ def Output_Init(InputDict, Title, Name, Folder=None):
     :type Folder: str
     :return: file object
     """
-    if Folder is None:
-        Folder = os.getcwd()
     spliter = "\n"
     if 'win' not in sys.platform:
         spliter = "\r\n"
@@ -324,7 +322,7 @@ def Output_Init(InputDict, Title, Name, Folder=None):
     return opem_file
 
 
-def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder=None):
+def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     """
     Initialize csv file.
 
@@ -340,8 +338,6 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder=None):
     :type Folder: str
     :return: file object
     """
-    if Folder is None:
-        Folder = os.getcwd()
     if Title not in os.listdir(Folder):
         os.mkdir(os.path.join(Folder, Title))
     csv_file = open(os.path.join(Folder, Title, Name + ".csv"), "w")
@@ -367,7 +363,7 @@ def None_Omit(Input_Str):
     return result
 
 
-def HTML_Init(Title, Name, Folder=None):
+def HTML_Init(Title, Name, Folder):
     """
     Initialize html file.
 
@@ -379,8 +375,6 @@ def HTML_Init(Title, Name, Folder=None):
     :type Folder: str
     :return: HTML file as file obj
     """
-    if Folder is None:
-        Folder = os.getcwd()
     if Title not in os.listdir(Folder):
         os.mkdir(os.path.join(Folder, Title))
     HTMLFile = io.open(

@@ -188,7 +188,7 @@ def Dynamic_Analysis(
         TestMode=False,
         PrintMode=True,
         ReportMode=True,
-        Folder=None):
+        Folder=os.getcwd()):
     """
     Run Chakraborty analysis.
 
