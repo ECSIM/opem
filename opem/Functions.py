@@ -338,8 +338,11 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     :type Folder: str
     :return: file object
     """
-    if Title not in os.listdir(Folder):
-        os.mkdir(os.path.join(Folder, Title))
+    if os.path.isdir(Folder) and not os.path.exists(Folder):
+        os.mkdir(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
     csv_file = open(os.path.join(Folder, Title, Name + ".csv"), "w")
     csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
