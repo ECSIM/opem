@@ -381,8 +381,11 @@ def HTML_Init(Title, Name, Folder):
     :type Folder: str
     :return: HTML file as file obj
     """
-    if Title not in os.listdir(Folder):
-        os.mkdir(os.path.join(Folder, Title))
+    if os.path.isdir(Folder) and not os.path.exists(Folder):
+        os.mkdir(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
     HTMLFile = io.open(
         os.path.join(
             Folder,
