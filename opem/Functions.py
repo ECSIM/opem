@@ -305,8 +305,11 @@ def Output_Init(InputDict, Title, Name, Folder):
     if 'win' not in sys.platform:
         spliter = "\r\n"
     Art = text2art("Opem")
-    if Title not in os.listdir(Folder):
-        os.mkdir(os.path.join(Folder, Title))
+    if os.path.isdir(Folder) and not os.path.exists(Folder):
+        os.mkdir(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
     opem_file = open(os.path.join(Folder, Title, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
