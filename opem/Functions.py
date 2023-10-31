@@ -310,7 +310,7 @@ def Output_Init(InputDict, Title, Name, Folder):
     sim_folder = os.path.join(Folder, Title)
     if not os.path.exists(sim_folder):
         os.mkdir(sim_folder)
-    opem_file = open(os.path.join(Folder, Title, Name + ".opem"), "w")
+    opem_file = open(os.path.join(sim_folder, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
                     str(datetime.datetime.now()) + spliter)
@@ -346,7 +346,7 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     sim_folder = os.path.join(Folder, Title)
     if not os.path.exists(sim_folder):
         os.mkdir(sim_folder)
-    csv_file = open(os.path.join(Folder, Title, Name + ".csv"), "w")
+    csv_file = open(os.path.join(sim_folder, Name + ".csv"), "w")
     csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
         csv_file.write(item + " (" + OutputParams[item] + ")")
@@ -388,8 +388,7 @@ def HTML_Init(Title, Name, Folder):
         os.mkdir(sim_folder)
     HTMLFile = io.open(
         os.path.join(
-            Folder,
-            Title,
+            sim_folder,
             Name +
             ".html"),
         "w",
