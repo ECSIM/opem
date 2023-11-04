@@ -673,7 +673,7 @@ False
 0.3778677462887989
 >>> Efficiency_Calc(0.7,None,1)
 [Error] PEM Efficiency Calculation Failed (Vcell:0.7, u:None, N:1)
->>> Test_Vector={"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 250,"i-stop":249 ,"i-step": -0.1,"Name": "Test"}
+>>> Test_Vector={"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 250,"i-stop":249 ,"i-step": -0.1,"Name": "test1"}
 >>> Chakraborty_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chakraborty-Model Simulation
@@ -801,6 +801,13 @@ Power-Thermal : 234.95098644050614 W
 ###########
 Report is generating ...
 Done!
+>>> sorted(os.listdir("Chakraborty")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 250,"i-stop":249 ,"i-step": -0.1,"Name": "test2"}
+>>> Chakraborty_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Chakraborty"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Chakraborty")
+>>> shutil.rmtree("Folder_Test")
 
 '''
