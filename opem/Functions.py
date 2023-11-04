@@ -305,7 +305,7 @@ def Output_Init(InputDict, Title, Name, Folder):
     if 'win' not in sys.platform:
         spliter = "\r\n"
     Art = text2art("Opem")
-    if os.path.isdir(Folder) and not os.path.exists(Folder):
+    if not os.path.exists(Folder):
         os.mkdir(Folder)
     sim_folder = os.path.join(Folder, Title)
     if not os.path.exists(sim_folder):
@@ -341,7 +341,7 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     :type Folder: str
     :return: file object
     """
-    if os.path.isdir(Folder) and not os.path.exists(Folder):
+    if not os.path.exists(Folder):
         os.mkdir(Folder)
     sim_folder = os.path.join(Folder, Title)
     if not os.path.exists(sim_folder):
@@ -381,7 +381,7 @@ def HTML_Init(Title, Name, Folder):
     :type Folder: str
     :return: HTML file as file obj
     """
-    if os.path.isdir(Folder) and not os.path.exists(Folder):
+    if not os.path.exists(Folder):
         os.mkdir(Folder)
     sim_folder = os.path.join(Folder, Title)
     if not os.path.exists(sim_folder):
