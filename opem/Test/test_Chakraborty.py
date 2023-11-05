@@ -2,7 +2,7 @@
 '''
 >>> from opem.Dynamic.Chakraborty import *
 >>> import shutil
->>> Test_Vector=Chakraborty_Standard_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 245,"i-stop": 250,"i-step": 0.1,"Name": "Test"}
+>>> Test_Vector=Chakraborty_Standard_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 245,"i-stop": 250,"i-step": 0.1,"Name": "test1"}
 >>> Chakraborty_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chakraborty-Model Simulation
