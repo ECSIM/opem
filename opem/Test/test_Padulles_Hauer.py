@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Dynamic.Padulles_Hauer import *
 >>> import shutil
->>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
+>>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Hauer-Model Simulation
@@ -429,7 +430,7 @@ True
 False
 >>> qH2_Calc(qMethanol=None,CV=2,t1=2,t2=2)
 [Error] qH2 Calculation Failed (qMethanol:None, CV:2, t1:2, t2:2)
->>> Test_Vector={"T":2,"E0":-0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":4,"i-stop":0.1,"i-step":-2,"Name":"test3"}
+>>> Test_Vector={"T":2,"E0":-0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":4,"i-stop":0.1,"i-step":-2,"Name":"test1"}
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Hauer-Model Simulation
@@ -458,6 +459,13 @@ Power-Thermal : 17.96863586480051 W
 Report is generating ...
 Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
 Done!
+>>> sorted(os.listdir("Padulles-Hauer")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"T":2,"E0":-0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":4,"i-stop":0.1,"i-step":-2,"Name":"test2"}
+>>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Padulles-Hauer"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Padulles-Hauer")
+>>> shutil.rmtree("Folder_Test")
 
 '''
