@@ -74,26 +74,26 @@ Test
 New Version (1.3) Is Available!
 Website : http://www.ecsim.ir/opem
 ###########
->>> file1 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test", Folder="CSV_Folder")
->>> file2 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test2", Folder="CSV_Folder")
+>>> file1 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test", Folder=os.path.join("CSV_Folder1", "CSV_Folder2"))
+>>> file2 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test2", Folder=os.path.join("CSV_Folder1", "CSV_Folder2"))
 >>> file1.close()
 >>> file2.close()
->>> sorted(os.listdir(os.path.join("CSV_Folder","CSV_Test"))) == ["CSV_Test.csv", "CSV_Test2.csv"]
+>>> sorted(os.listdir(os.path.join("CSV_Folder1", "CSV_Folder2"))) == ["CSV_Test.csv", "CSV_Test2.csv"]
 True
->>> file1 = HTML_Init(Title="HTML_Test", Name="HTML_Test", Folder="HTML_Folder")
->>> file2 = HTML_Init(Title="HTML_Test", Name="HTML_Test2", Folder="HTML_Folder")
+>>> file1 = HTML_Init(Title="HTML_Test", Name="HTML_Test", Folder=os.path.join("HTML_Folder1", "HTML_Folder2"))
+>>> file2 = HTML_Init(Title="HTML_Test", Name="HTML_Test2", Folder=os.path.join("HTML_Folder1", "HTML_Folder2"))
 >>> file1.close()
 >>> file2.close()
->>> sorted(os.listdir(os.path.join("HTML_Folder","HTML_Test"))) == ["HTML_Test.html", "HTML_Test2.html"]
+>>> sorted(os.listdir(os.path.join("HTML_Folder1", "HTML_Folder2"))) == ["HTML_Test.html", "HTML_Test2.html"]
 True
->>> file1 = Output_Init(InputDict={"1":"1"}, Title="OPEM_Test", Name="OPEM_Test", Folder="OPEM_Folder")
->>> file2 = Output_Init(InputDict={"1":"1"}, Title="OPEM_Test", Name="OPEM_Test2", Folder="OPEM_Folder")
+>>> file1 = Output_Init(InputDict={"1":"1"}, Title="OPEM_Test", Name="OPEM_Test", Folder=os.path.join("OPEM_Folder1", "OPEM_Folder2"))
+>>> file2 = Output_Init(InputDict={"1":"1"}, Title="OPEM_Test", Name="OPEM_Test2", Folder=os.path.join("OPEM_Folder1", "OPEM_Folder2"))
 >>> file1.close()
 >>> file2.close()
->>> sorted(os.listdir(os.path.join("OPEM_Folder","OPEM_Test"))) == ["OPEM_Test.opem", "OPEM_Test2.opem"]
+>>> sorted(os.listdir(os.path.join("OPEM_Folder1", "OPEM_Folder2"))) == ["OPEM_Test.opem", "OPEM_Test2.opem"]
 True
->>> shutil.rmtree("CSV_Folder")
->>> shutil.rmtree("HTML_Folder")
->>> shutil.rmtree("OPEM_Folder")
+>>> shutil.rmtree("CSV_Folder1")
+>>> shutil.rmtree("HTML_Folder1")
+>>> shutil.rmtree("OPEM_Folder1")
 
 '''
