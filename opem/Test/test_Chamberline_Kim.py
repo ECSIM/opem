@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Static.Chamberline_Kim import *
 >>> import shutil
 >>> E0=0.982
@@ -16,7 +17,7 @@
 >>> Chamberline_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Chamberline_Data["Status"]
 False
->>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1,"Name":"test2"}
+>>> Test_Vector={"A":50.0,"E0":0.982,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chamberline-Kim-Model Simulation
@@ -282,7 +283,7 @@ True
 -0.0372516118425709
 >>> Chamberline_Kim_Data["VE"][5]
 1.2138061679542624
->>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":5,"i-stop":1,"i-step":-1,"Name":"test2"}
+>>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":5,"i-stop":1,"i-step":-1,"Name":"test1"}
 >>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Chamberline-Kim-Model Simulation
@@ -323,6 +324,13 @@ Vcell : -4.85248351393204 V
 Report is generating ...
 Warning : The value of I(>1) leads to minus amount of V, please check your inputs
 Done!
+>>> sorted(os.listdir("Chamberline-Kim")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":5,"i-stop":1,"i-step":-1,"Name":"test2"}
+>>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Chamberline-Kim"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Chamberline-Kim")
+>>> shutil.rmtree("Folder_Test")
 
 '''

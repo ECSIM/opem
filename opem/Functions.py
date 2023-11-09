@@ -287,7 +287,7 @@ def Output_Save(
         print("###########")
 
 
-def Output_Init(InputDict, Title, Name):
+def Output_Init(InputDict, Title, Name, Folder):
     """
     Initialize output file.
 
@@ -295,15 +295,22 @@ def Output_Init(InputDict, Title, Name):
     :type InputDict:dict
     :param Title : simulation title
     :type Title :str
+    :param Name: file name
+    :type Name: str
+    :param Folder: output folder address
+    :type Folder: str
     :return: file object
     """
     spliter = "\n"
     if 'win' not in sys.platform:
         spliter = "\r\n"
     Art = text2art("Opem")
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
-    opem_file = open(os.path.join(Title, Name + ".opem"), "w")
+    if not os.path.exists(Folder):
+        os.makedirs(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
+    opem_file = open(os.path.join(sim_folder, Name + ".opem"), "w")
     opem_file.write(Art)
     opem_file.write("Simulation Date : " +
                     str(datetime.datetime.now()) + spliter)
@@ -318,7 +325,7 @@ def Output_Init(InputDict, Title, Name):
     return opem_file
 
 
-def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
+def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     """
     Initialize csv file.
 
@@ -326,11 +333,20 @@ def CSV_Init(OutputParamsKeys, OutputParams, Title, Name):
     :type OutputParamsKeys : list
     :param OutputParams : output parameters
     :type OutputParams : dict
+    :param Title : simulation title
+    :type Title :str
+    :param Name: file name
+    :type Name: str
+    :param Folder: output folder address
+    :type Folder: str
     :return: file object
     """
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
-    csv_file = open(os.path.join(Title, Name + ".csv"), "w")
+    if not os.path.exists(Folder):
+        os.makedirs(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
+    csv_file = open(os.path.join(sim_folder, Name + ".csv"), "w")
     csv_file.write("I (A),")
     for index, item in enumerate(OutputParamsKeys):
         csv_file.write(item + " (" + OutputParams[item] + ")")
@@ -353,7 +369,7 @@ def None_Omit(Input_Str):
     return result
 
 
-def HTML_Init(Title, Name):
+def HTML_Init(Title, Name, Folder):
     """
     Initialize html file.
 
@@ -361,13 +377,18 @@ def HTML_Init(Title, Name):
     :type Title : str
     :param Name: file name
     :type Name : str
+    :param Folder: output folder address
+    :type Folder: str
     :return: HTML file as file obj
     """
-    if Title not in os.listdir(os.getcwd()):
-        os.mkdir(Title)
+    if not os.path.exists(Folder):
+        os.makedirs(Folder)
+    sim_folder = os.path.join(Folder, Title)
+    if not os.path.exists(sim_folder):
+        os.mkdir(sim_folder)
     HTMLFile = io.open(
         os.path.join(
-            Title,
+            sim_folder,
             Name +
             ".html"),
         "w",

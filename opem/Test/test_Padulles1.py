@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Dynamic.Padulles1 import *
 >>> import shutil
->>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test3"}
+>>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-I-Model Simulation
@@ -409,7 +410,7 @@ False
 [Error] Kr Calculation Failed (N0:None)
 >>> qO2_Calc(qH2=2,rho=0)
 [Error] qO2 Calculation Error (qH2:2, rho:0)
->>> Test_Vector={"T":343,"E0":-0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":4,"i-stop":0,"i-step":-2,"Name":"test3"}
+>>> Test_Vector={"T":343,"E0":-0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":4,"i-stop":0,"i-step":-2,"Name":"test1"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-I-Model Simulation
@@ -440,6 +441,16 @@ Report is generating ...
 Warning : The value of I(>2) leads to minus amount of V, please check your inputs
 Warning : There are errors in the simulations in some of I amounts; please refer to the .opem file for review. If you are confident about this parameters, ignore this warning.
 Done!
+>>> sorted(os.listdir("Padulles-I")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"T":343,"E0":-0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":4,"i-stop":0,"i-step":-2,"Name":"test2"}
+>>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+[Error] Vcell Calculation Error (Enernst:-51.31149442586593, B:0.04777, C:0.0136, I:0, Rint:0.00303)
+[Error] PEM Efficiency Calculation Failed (Vcell:None, N:88)
+[Error] Power Calculation Error (Vcell:None, i:0)
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Padulles-I"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Padulles-I")
+>>> shutil.rmtree("Folder_Test")
 
 '''

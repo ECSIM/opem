@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Static.Amphlett import *
 >>> import random
 >>> import shutil
@@ -682,6 +683,13 @@ Vcell : 2584.716303790337 V
 Report is generating ...
 Warning : The value of I(>0) leads to minus amount of V, please check your inputs
 Done!
+>>> sorted(os.listdir("Amphlett")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":5,"i-stop":0,"i-step":-2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"Name":"test2"}
+>>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Amphlett"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Amphlett")
+>>> shutil.rmtree("Folder_Test")
 
 '''

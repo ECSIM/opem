@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Static.Larminie_Dicks import *
 >>> import shutil
 >>> E0=1.178
@@ -17,7 +18,7 @@
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Larminie_Dicks_Data["Status"]
 False
->>> Test_Vector={"A":0.06,"T":328.15,"E0":1.178,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test3"}
+>>> Test_Vector={"A":0.06,"T":328.15,"E0":1.178,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Larminie-Dicks-Model Simulation
@@ -355,7 +356,7 @@ True
 -0.8163936642494803
 >>> Larminie_Dicks_Data["VE"][5]
 20.333975212428435
->>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test3"}
+>>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test1"}
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Larminie-Dicks-Model Simulation
@@ -388,6 +389,13 @@ Vcell : -1.5745463043120576 V
 Report is generating ...
 Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
 Done!
+>>> sorted(os.listdir("Larminie-Dicks")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test2"}
+>>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Larminie-Dicks"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Larminie-Dicks")
+>>> shutil.rmtree("Folder_Test")
 
 '''

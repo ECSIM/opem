@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 '''
+>>> import os
 >>> from opem.Dynamic.Padulles_Amphlett import *
 >>> import shutil
->>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"Test"}
+>>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Amphlett-Model Simulation
@@ -587,7 +588,7 @@ False
 2.9
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)
 [Error] Vcell Calculation Error (Enernst:4.5, Loss:0.4, N:None)
->>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"Test"}
+>>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test1"}
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
 Padulles-Amphlett-Model Simulation
@@ -638,6 +639,13 @@ Power-Thermal : 3.757170500110593e+272 W
 Report is generating ...
 Warning : The value of I(>0.1) leads to minus amount of V, please check your inputs
 Done!
+>>> sorted(os.listdir("Padulles-Amphlett")) == ['test1.csv', 'test1.html', 'test1.opem']
+True
+>>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test2"}
+>>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True, PrintMode=False, Folder=os.path.join(os.getcwd(), "Folder_Test"))
+>>> sorted(os.listdir(os.path.join("Folder_Test", "Padulles-Amphlett"))) == ['test2.csv', 'test2.html', 'test2.opem']
+True
 >>> shutil.rmtree("Padulles-Amphlett")
+>>> shutil.rmtree("Folder_Test")
 
 '''

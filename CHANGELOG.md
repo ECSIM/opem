@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `check_update` function modified
 - `codecov` removed from `dev-requirements.txt`
 - Dockerfile updated
+- `Folder` parameter added to `Static_Analysis` function
+- `Folder` parameter added to `Dynamic_Analysis` function
+- Document modified
 ## [1.3] - 2021-06-30
 ### Added
 - GitHub actions
