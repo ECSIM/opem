@@ -37,6 +37,7 @@ RC_ITEMS = [
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
 
 META_ITEMS = ['% set version = "{0}" %']
+SPEC_ITEMS = ['opem_version = "{0}"']
 
 FILES = {
     "setup.py": SETUP_ITEMS, "INSTALL.md": INSTALL_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
@@ -50,7 +51,7 @@ FILES = {
                                     "otherfile", "test.html"): HTML_ITEMS, os.path.join(
                                         "opem", "Params.py"): PARAMS_ITEMS, os.path.join(
                                             "opem", "Test", "test_Functions.py"): TEST_ITEMS, os.path.join(
-                                                "otherfile", "meta.yaml"): META_ITEMS}
+                                                "otherfile", "meta.yaml"): META_ITEMS, "OPEM.spec": SPEC_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) + 1
 
