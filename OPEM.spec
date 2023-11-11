@@ -3,6 +3,9 @@
 block_cipher = None
 
 
+opem_version = "1.4"
+
+
 a = Analysis(['opem/__main__.py'],
              pathex=['opem'],
              binaries=[],
@@ -16,12 +19,14 @@ a = Analysis(['opem/__main__.py'],
              cipher=block_cipher)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
+	     
+	     
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='OPEM',
+          name='OPEM-'+opem_version,
           debug=False,
           strip=False,
           upx=True,
