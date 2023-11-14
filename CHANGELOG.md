@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `AUTHORS.md` updated
 - `README.md` modified
 - Test system modified
+- Setup system modified
 - CLI mode updated
 - `description_control` function modified
 - `check_update` function modified
