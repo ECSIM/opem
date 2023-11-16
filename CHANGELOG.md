@@ -12,9 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - License updated
 - `Python 3.10` added to `test.yml`
 - `Python 3.11` added to `test.yml`
+- `Python 3.12` added to `test.yml`
 - Logo updated
 - `AUTHORS.md` updated
 - `README.md` modified
+- `INSTALL.md` modified
 - Test system modified
 - Setup system modified
 - CLI mode updated
