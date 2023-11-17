@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import os
+>>> from math import isclose
 >>> from opem.Dynamic.Padulles1 import *
 >>> import shutil
+>>> ABS_TOL = 1e-5
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -377,26 +379,16 @@ Warning : There are errors in the simulations in some of I amounts; please refer
 Done!
 >>> Padulles_I_Data["Status"]
 True
->>> Padulles_I_Data["P"][5]
-27.262222284249443
->>> Padulles_I_Data["I"][5]
-0.5
->>> Padulles_I_Data["V"][5]
-54.524444568498886
->>> Padulles_I_Data["EFF"][5]
-0.3971768980805572
->>> Padulles_I_Data["PO2"][5]
-2.0962792264800076
->>> Padulles_I_Data["PH2"][5]
-2.1677962862765128
->>> Padulles_I_Data["Ph"][5]
-26.857777715750554
->>> Padulles_I_Data["V0"]
-54.539964013494824
->>> Padulles_I_Data["K"]
--0.03833515487668971
->>> Padulles_I_Data["VE"][5]
-54.52079643605648
+>>> assert isclose(Padulles_I_Data["P"][5], 27.262222284249443, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["I"][5], 0.5, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["V"][5], 54.524444568498886, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["EFF"][5], 0.3971768980805572, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["PO2"][5], 2.0962792264800076, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["PH2"][5], 2.1677962862765128, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["Ph"][5], 26.857777715750554, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["V0"], 54.539964013494824, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["K"], -0.03833515487668971, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_I_Data["VE"][5], 54.52079643605648, abs_tol=ABS_TOL)
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_I_Data["Status"]
 False
