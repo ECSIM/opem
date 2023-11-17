@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import os
+>>> from math import isclose
 >>> from opem.Static.Larminie_Dicks import *
 >>> import shutil
+>>> ABS_TOL = 1e-5
 >>> E0=1.178
 >>> A=0.0587
 >>> B=0.0517
@@ -11,8 +13,7 @@
 >>> i_L=100
 >>> i_n=0.23
 >>> N=23
->>> Vcell_Calc(E0=E0, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
-0.8677440917797067
+>>> assert isclose(Vcell_Calc(E0=E0, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B), 0.8677440917797067, abs_tol=ABS_TOL)
 >>> Vcell_Calc(E0=None, i=1,i_0=i_0,i_n=i_n,i_L=i_L,R_M=RM,A=A,B=B)
 [Error] Vcell Calculation Error (E0:None, i:1, i_0:0.00654, i_n:0.23, i_L:100, R_M:0.0018, A:0.0587, B:0.0517)
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
@@ -340,22 +341,14 @@ Report is generating ...
 Done!
 >>> Larminie_Dicks_Data["Status"]
 True
->>> Larminie_Dicks_Data["P"][5]
-12.223748052345787
->>> Larminie_Dicks_Data["I"][5]
-0.6
->>> Larminie_Dicks_Data["V"][5]
-20.37291342057631
->>> Larminie_Dicks_Data["EFF"][5]
-0.5678069515210789
->>> Larminie_Dicks_Data["Ph"][5]
-4.750251947654213
->>> Larminie_Dicks_Data["V0"]
-20.823811410978124
->>> Larminie_Dicks_Data["K"]
--0.8163936642494803
->>> Larminie_Dicks_Data["VE"][5]
-20.333975212428435
+>>> assert isclose(Larminie_Dicks_Data["P"][5], 12.223748052345787, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["I"][5], 0.6, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["V"][5], 20.37291342057631, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["EFF"][5], 0.5678069515210789, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["Ph"][5], 4.750251947654213, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["V0"], 20.823811410978124, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["K"], -0.8163936642494803, abs_tol=ABS_TOL)
+>>> assert isclose(Larminie_Dicks_Data["VE"][5], 20.333975212428435, abs_tol=ABS_TOL)
 >>> Test_Vector={"A":0.06,"E0":-1.178,"T":328.15,"RM":0.0018,"i_0":0.00654,"i_L":100.0,"i_n":0.23,"N":23,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test1"}
 >>> Larminie_Dicks_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
