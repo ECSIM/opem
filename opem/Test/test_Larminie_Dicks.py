@@ -4,7 +4,7 @@
 >>> from math import isclose
 >>> from opem.Static.Larminie_Dicks import *
 >>> import shutil
->>> ABS_TOL = 1e-5
+>>> ABS_TOL = 1e-7
 >>> E0=1.178
 >>> A=0.0587
 >>> B=0.0517
