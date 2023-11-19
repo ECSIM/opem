@@ -5,26 +5,17 @@
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Download [Version 1.3](https://github.com/ecsim/opem/archive/v1.3.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
-- Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
-- Run `python3 setup.py install` or `python setup.py install` (Need root access)				
+- Run `pip install .`			
 
 ### PyPI
-
-
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install opem` or `pip3 install opem` (Need root access)
-
-### Easy Install
-
-- Run `easy_install --upgrade opem` (Need root access)
+- Run `pip install opem==1.3`
 
 ### Conda
-
 - Check [Conda Managing Package](https://conda.io)
-- `conda install -c ecsim opem` (Need root access)
+- `conda install -c ecsim opem`
 
 ### GUI
-
 - OPEM GUI is available [here](https://github.com/ECSIM/gopem)			
 
 ### Exe Version (Only Windows)
@@ -43,7 +34,7 @@
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Run `pip install opem` or `pip3 install opem` (Need root access)
+- Run `pip install .`
 - Configure Python interpreter
 ```matlab
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH

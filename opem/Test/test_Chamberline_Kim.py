@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import os
+>>> from math import isclose
 >>> from opem.Static.Chamberline_Kim import *
 >>> import shutil
 >>> E0=0.982
@@ -10,8 +11,9 @@
 >>> n=9.45
 >>> i=1
 >>> A=50.0
->>> Vcell_Calc(E0,b,R,m,n,i,A)
-1.244827379954939
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
+>>> assert isclose(Vcell_Calc(E0,b,R,m,n,i,A), 1.244827379954939, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Vcell_Calc(None,b,R,m,n,i,A)
 [Error] Vcell Calculation Error (E0:None, b:0.0689, R:0.328, m:0.000125, n:9.45, i:1, A:50.0)
 >>> Chamberline_Data=Static_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
@@ -265,24 +267,16 @@ Vcell : 1.1319218672996567 V
 ###########
 Report is generating ...
 Done!
->>> Chamberline_Kim_Data["P"][5]
-1.820393802022961
+>>> assert isclose(Chamberline_Kim_Data["P"][5], 1.820393802022961, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Chamberline_Kim_Data["Status"]
 True
->>> Chamberline_Kim_Data["I"][5]
-1.5
->>> Chamberline_Kim_Data["V"][5]
-1.2135958680153074
->>> Chamberline_Kim_Data["EFF"][5]
-0.7779460692405816
->>> Chamberline_Kim_Data["Ph"][5]
-0.02460619797703889
->>> Chamberline_Kim_Data["V0"]
-1.2696835857181188
->>> Chamberline_Kim_Data["K"]
--0.0372516118425709
->>> Chamberline_Kim_Data["VE"][5]
-1.2138061679542624
+>>> assert isclose(Chamberline_Kim_Data["I"][5], 1.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["V"][5], 1.2135958680153074, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["EFF"][5], 0.7779460692405816, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["Ph"][5], 0.02460619797703889, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["V0"], 1.2696835857181188, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["K"], -0.0372516118425709, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chamberline_Kim_Data["VE"][5], 1.2138061679542624, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Test_Vector={"A":50.0,"E0":-5,"b":0.0689,"R":0.328,"m":0.000125,"n":9.45,"N":1,"i-start":5,"i-stop":1,"i-step":-1,"Name":"test1"}
 >>> Chamberline_Kim_Data=Static_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########

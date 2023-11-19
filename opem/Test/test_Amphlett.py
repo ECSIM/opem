@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import os
+>>> from math import isclose
 >>> from opem.Static.Amphlett import *
 >>> import random
 >>> import shutil
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
 >>> T=343.15
 >>> PH2=1
 >>> PO2=1
@@ -14,16 +17,11 @@
 >>> N=1
 >>> Jn=0.003
 >>> JMax=0.469
->>> Enernst_Calc(T,PH2,PO2)
-1.19075
->>> CH2_Calc(PH2,T)
-7.330294784824117e-07
->>> CO2_Calc(PO2,T)
-8.402541445801334e-07
->>> Rho_Calc(i,A,T,lambda_param)
-4.978789826264977
->>> Xi2_Calc(A,PH2,T)
-0.0030373688787134006
+>>> assert isclose(Enernst_Calc(T,PH2,PO2), 1.19075, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(CH2_Calc(PH2,T), 7.330294784824117e-07, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(CO2_Calc(PO2,T), 8.402541445801334e-07, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Rho_Calc(i,A,T,lambda_param), 4.978789826264977, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Xi2_Calc(A,PH2,T), 0.0030373688787134006, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Eta_Conc_Calc(i,A,Jn,JMax)
 0
 >>> Eta_Ohmic_Calc(i,l,A,T,lambda_param)
@@ -613,28 +611,17 @@ Report is generating ...
 Done!
 >>> Amphlett_Data["Status"]
 True
->>> Amphlett_Data["P"][5]
-0.4825573089702401
->>> Amphlett_Data["I"][5]
-0.5
->>> Amphlett_Data["V"][5]
-0.9651146179404801
->>> Amphlett_Data["EFF"][5]
-0.6186632166285129
->>> Amphlett_Data["Ph"][5]
-0.13244269102975992
->>> Amphlett_Data["V0"]
-1.004092712293457
->>> Amphlett_Data["K"]
--0.055817073316848265
->>> Amphlett_Data["Eta_Active"][5]
-0.22466052101362555
->>> Amphlett_Data["Eta_Conc"][5]
-9.772219884285375e-05
->>> Amphlett_Data["Eta_Ohmic"][5]
-0.0008771388470514419
->>> Amphlett_Data["VE"][5]
-0.9761841756350329
+>>> assert isclose(Amphlett_Data["P"][5], 0.4825573089702401, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["I"][5], 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["V"][5], 0.9651146179404801, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["EFF"][5], 0.6186632166285129, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["Ph"][5], 0.13244269102975992, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["V0"], 1.004092712293457, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["K"], -0.055817073316848265, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["Eta_Active"][5], 0.22466052101362555, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["Eta_Conc"][5], 9.772219884285375e-05, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["Eta_Ohmic"][5], 0.0008771388470514419, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Amphlett_Data["VE"][5], 0.9761841756350329, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Test_Vector={"T":3432222.15,"PH2":1,"PO2":1,"i-start":5,"i-stop":0,"i-step":-2,"A":50.6,"l":0.0178,"lambda":23,"N":1,"R":0,"JMax":1.5,"Name":"test1"}
 >>> Amphlett_Data=Static_Analysis(InputMethod=Test_Vector,TestMode=True)
 ###########

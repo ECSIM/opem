@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 '''
 >>> import os
+>>> from math import isclose
 >>> from opem.Dynamic.Padulles_Hauer import *
 >>> import shutil
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
 >>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -403,28 +406,17 @@ Report is generating ...
 Done!
 >>> Padulles_Hauer_Data["Status"]
 True
->>> Padulles_Hauer_Data["P"][5]
-1.8907754319000147
->>> Padulles_Hauer_Data["I"][5]
-0.6
->>> Padulles_Hauer_Data["V"][5]
-3.1512923865000246
->>> Padulles_Hauer_Data["EFF"][5]
-0.4040118444230801
->>> Padulles_Hauer_Data["PO2"][5]
-0.1905867044473064
->>> Padulles_Hauer_Data["PH2"][5]
-0.19710049042472996
->>> Padulles_Hauer_Data["PH2O"][5]
-0.2425966933860498
->>> Padulles_Hauer_Data["Ph"][5]
-1.7992245680999854
->>> Padulles_Hauer_Data["V0"]
-3.1748727715256186
->>> Padulles_Hauer_Data["K"]
--0.03643090556526363
->>> Padulles_Hauer_Data["VE"][5]
-3.1530142281864606
+>>> assert isclose(Padulles_Hauer_Data["P"][5], 1.8907754319000147, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["I"][5], 0.6, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["V"][5], 3.1512923865000246, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["EFF"][5], 0.4040118444230801, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["PO2"][5], 0.1905867044473064, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["PH2"][5], 0.19710049042472996, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["PH2O"][5], 0.2425966933860498, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["Ph"][5], 1.7992245680999854, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["V0"], 3.1748727715256186, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["K"], -0.03643090556526363, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Hauer_Data["VE"][5], 3.1530142281864606, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Padulles_Hauer_Data=Dynamic_Analysis(InputMethod={}, TestMode=True,PrintMode=False)
 >>> Padulles_Hauer_Data["Status"]
 False

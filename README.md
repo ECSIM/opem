@@ -1553,10 +1553,6 @@ Download [OPEM.bib](http://www.ecsim.ir/opem/OPEM.bib)(BibTeX Format)
 		<td align="center">Zenodo</td>
 		<td align="center"><a href="https://doi.org/10.5281/zenodo.1133110"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1133110.svg" alt="DOI"></a></td>
 	</tr>
-	<tr>
-		<td align="center">Researchgate</td>
-		<td align="center"><a href="https://www.researchgate.net/project/Open-Source-Electrochemistry-Simulation-Toolbox"><img src="https://img.shields.io/badge/Researchgate-OPEM-yellow.svg"></a></td>
-	</tr>
 </table>									
 
 
