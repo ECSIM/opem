@@ -34,7 +34,7 @@
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Run `pip install opem==1.3`
+- Run `pip install .`
 - Configure Python interpreter
 ```matlab
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH
