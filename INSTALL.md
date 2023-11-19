@@ -9,7 +9,7 @@
 
 ### PyPI
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install opem` or `pip3 install opem`
+- Run `pip install opem==1.3`
 
 ### Conda
 - Check [Conda Managing Package](https://conda.io)
@@ -34,7 +34,7 @@
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Run `pip install opem==1.2`
+- Run `pip install opem==1.3`
 - Configure Python interpreter
 ```matlab
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH
