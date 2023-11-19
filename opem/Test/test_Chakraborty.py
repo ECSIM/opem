@@ -5,6 +5,7 @@
 >>> from math import isclose
 >>> import shutil
 >>> ABS_TOL = 1e-7
+>>> REL_TOL = 0
 >>> Test_Vector=Chakraborty_Standard_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 245,"i-stop": 250,"i-step": 0.1,"Name": "test1"}
 >>> Chakraborty_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -615,45 +616,45 @@ Report is generating ...
 Done!
 >>> Chakraborty_Data["Status"]
 True
->>> assert isclose(Chakraborty_Data["P"][5], 74.69521188767807, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["I"][5], 245.5, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["V"][5], 0.3042574822308679, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["EFF"][5], 0.16424155586011763, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["PO2"][5], 0.0002987217000167565, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["PH2"][5], 0.0003772905557065783, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["PH2O"][5], 0.0045274866684789404, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["Ph"][5], 227.26978811232192, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["VE"][5], 0.3042574822308455, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["V0"], 1.109804357228015, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["K"], -0.0032812499999884705, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["Nernst Gain"][5], 0.1509273439765929, abs_tol=ABS_TOL)
->>> assert isclose(Chakraborty_Data["Ohmic Loss"][5], 0.805546875, abs_tol=ABS_TOL)
+>>> assert isclose(Chakraborty_Data["P"][5], 74.69521188767807, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["I"][5], 245.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["V"][5], 0.3042574822308679, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["EFF"][5], 0.16424155586011763, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["PO2"][5], 0.0002987217000167565, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["PH2"][5], 0.0003772905557065783, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["PH2O"][5], 0.0045274866684789404, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["Ph"][5], 227.26978811232192, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["VE"][5], 0.3042574822308455, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["V0"], 1.109804357228015, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["K"], -0.0032812499999884705, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["Nernst Gain"][5], 0.1509273439765929, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Chakraborty_Data["Ohmic Loss"][5], 0.805546875, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Chakraborty_Data=Dynamic_Analysis(InputMethod={}, TestMode=True, PrintMode=False)
 >>> Chakraborty_Data["Status"]
 False
->>> assert isclose(Vcell_Calc(Enernst = 0.6, Nernst_Gain=0.2, Ohmic_Loss=0.1, N=1), 0.7, abs_tol=ABS_TOL)
+>>> assert isclose(Vcell_Calc(Enernst = 0.6, Nernst_Gain=0.2, Ohmic_Loss=0.1, N=1), 0.7, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Vcell_Calc(Enernst = 0.6, Nernst_Gain=0.2, Ohmic_Loss=0.1, N=None)
 [Error] Vcell Calculation Error (Enernst:0.6, Nernst_Gain:0.2, Ohmic_Loss:0.1, N:None)
->>> assert isclose(Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=1), 1.2, abs_tol=ABS_TOL)
+>>> assert isclose(Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=1), 1.2, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Enernst_Calc(E0=0.6, N0=2, T=1273, PH2=1, PO2=1, PH2O=None)
 [Error] Enernst Calculation Failed (E0:0.6, N0:2, T:1273, PH2:1, PO2:1, PH2O:None)
->>> assert isclose(PH2_Calc(KH2=0.0000002, u=0.8, I=1), 0.006477717687589522, abs_tol=ABS_TOL)
+>>> assert isclose(PH2_Calc(KH2=0.0000002, u=0.8, I=1), 0.006477717687589522, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> PH2_Calc(KH2=0.0000002, u=0.8, I=None)
 [Error] PH2 Calculation Failed (KH2:2e-07, u:0.8, I:None)
->>> assert isclose(PO2_Calc(KO2=0.00002, u=0.8, rHO=1.1145, I=1), 0.00016105657884531684, abs_tol=ABS_TOL)
+>>> assert isclose(PO2_Calc(KO2=0.00002, u=0.8, rHO=1.1145, I=1), 0.00016105657884531684, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> PO2_Calc(KO2=0.00002, u=0.8, rHO=1.1145, I=None)
 [Error] PO2 Calculation Failed (KO2:2e-05, u:0.8, rHO:1.1145, I:None)
->>> assert isclose(PH2O_Calc(KH2O=0.000002, I=1), 0.002591087075035809, abs_tol=ABS_TOL)
+>>> assert isclose(PH2O_Calc(KH2O=0.000002, I=1), 0.002591087075035809, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> PH2O_Calc(KH2O=0.000002, I=None)
 [Error] PH2O Calculation Failed (KH2O:2e-06, I:None)
->>> assert isclose(Nernst_Gain_Calc(T=1273, I=10), 0.06314815567790123, abs_tol=ABS_TOL)
+>>> assert isclose(Nernst_Gain_Calc(T=1273, I=10), 0.06314815567790123, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Nernst_Gain_Calc(T=1273, I=None)
 [Error] Nernst Gain Calculation Error (T:1273, I:None)
 >>> Ohmic_Loss_Calc(Rint=2, I=10)
 20
 >>> Ohmic_Loss_Calc(Rint=None, I=10)
 [Error] Ohmic Loss Calculation Error (Rint:None, I:10)
->>> assert isclose(Efficiency_Calc(0.7,0.8,1), 0.3778677462887989, abs_tol=ABS_TOL)
+>>> assert isclose(Efficiency_Calc(0.7,0.8,1), 0.3778677462887989, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Efficiency_Calc(0.7,None,1)
 [Error] PEM Efficiency Calculation Failed (Vcell:0.7, u:None, N:1)
 >>> Test_Vector={"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 250,"i-stop":249 ,"i-step": -0.1,"Name": "test1"}

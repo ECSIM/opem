@@ -5,6 +5,7 @@
 >>> from opem.Dynamic.Padulles_Amphlett import *
 >>> import shutil
 >>> ABS_TOL = 1e-7
+>>> REL_TOL = 0
 >>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -561,21 +562,21 @@ Report is generating ...
 Done!
 >>> Padulles_Amphlett_Data["Status"]
 True
->>> assert isclose(Padulles_Amphlett_Data["P"][5], 2.724941943281497, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["I"][5], 0.6, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["V"][5], 4.541569905469162, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["EFF"][5], 0.5822525519832258, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["PO2"][5], 0.1905867044473064, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["PH2"][5], 0.19710049042472996, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["PH2O"][5], 0.2425966933860498, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["Ph"][5], 0.9650580567185031, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["VE"][5], 4.553525621759973, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["V0"], 4.698326931114575, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_Amphlett_Data["K"], -0.24133551559100302, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["P"][5], 2.724941943281497, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["I"][5], 0.6, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["V"][5], 4.541569905469162, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["EFF"][5], 0.5822525519832258, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["PO2"][5], 0.1905867044473064, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["PH2"][5], 0.19710049042472996, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["PH2O"][5], 0.2425966933860498, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["Ph"][5], 0.9650580567185031, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["VE"][5], 4.553525621759973, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["V0"], 4.698326931114575, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_Amphlett_Data["K"], -0.24133551559100302, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod={}, TestMode=True, PrintMode=False)
 >>> Padulles_Amphlett_Data["Status"]
 False
->>> assert isclose(Vcell_Calc(Enernst=4.5, Loss=0.4, N=4), 2.9, abs_tol=ABS_TOL)
+>>> assert isclose(Vcell_Calc(Enernst=4.5, Loss=0.4, N=4), 2.9, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Vcell_Calc(Enernst=4.5, Loss=0.4, N=None)
 [Error] Vcell Calculation Error (Enernst:4.5, Loss:0.4, N:None)
 >>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":2,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":5,"i-stop":0.1,"i-step":-2,"Name":"test1"}

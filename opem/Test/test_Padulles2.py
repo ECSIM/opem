@@ -5,6 +5,7 @@
 >>> from opem.Dynamic.Padulles2 import *
 >>> import shutil
 >>> ABS_TOL = 1e-7
+>>> REL_TOL = 0
 >>> Test_Vector={"T":343,"E0":0.6,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"tH2O":18.418,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_II_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)
 ###########
@@ -405,16 +406,16 @@ Report is generating ...
 Done!
 >>> Padulles_II_Data["Status"]
 True
->>> assert isclose(Padulles_II_Data["P"][5], 1.943937672649885, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["I"][5], 0.6, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["V"][5], 3.2398961210831416, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["EFF"][5], 0.4153712975747617, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["PO2"][5], 2.0969297192122687, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["PH2"][5], 2.1689484175688927, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["Ph"][5], 1.7460623273501152, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["V0"], 3.263468110052509, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["K"], -0.03641691581104169, abs_tol=ABS_TOL)
->>> assert isclose(Padulles_II_Data["VE"][5], 3.241617960565884, abs_tol=ABS_TOL)
+>>> assert isclose(Padulles_II_Data["P"][5], 1.943937672649885, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["I"][5], 0.6, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["V"][5], 3.2398961210831416, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["EFF"][5], 0.4153712975747617, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["PO2"][5], 2.0969297192122687, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["PH2"][5], 2.1689484175688927, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["Ph"][5], 1.7460623273501152, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["V0"], 3.263468110052509, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["K"], -0.03641691581104169, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(Padulles_II_Data["VE"][5], 3.241617960565884, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Enernst_Calc(E0=None,N0=0,T=1, PH2=2.1, PO2=2.1,PH2O=2.1)
 [Error] Enernst Calculation Failed (E0:None, N0:0, T:1, PH2:2.1, PO2:2.1, PH2O:2.1)
 >>> PH2O_Calc(KH2O=None,tH2O=1,Kr=0.3,I=3,qH2O=0.3)
