@@ -4,7 +4,7 @@
 >>> from math import isclose
 >>> from opem.Dynamic.Padulles1 import *
 >>> import shutil
->>> ABS_TOL = 1e-7
+>>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> Test_Vector={"T":343,"E0":0.6,"N0":88,"KO2":0.0000211,"KH2":0.0000422,"tH2":3.37,"tO2":6.74,"B":0.04777,"C":0.0136,"Rint":0.00303,"rho":1.168,"qH2":0.0004,"i-start":0,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_I_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)

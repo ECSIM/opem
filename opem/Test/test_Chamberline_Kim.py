@@ -11,7 +11,7 @@
 >>> n=9.45
 >>> i=1
 >>> A=50.0
->>> ABS_TOL = 1e-7
+>>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> assert isclose(Vcell_Calc(E0,b,R,m,n,i,A), 1.244827379954939, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> Vcell_Calc(None,b,R,m,n,i,A)

@@ -4,7 +4,7 @@
 >>> from math import isclose
 >>> from opem.Dynamic.Padulles_Amphlett import *
 >>> import shutil
->>> ABS_TOL = 1e-7
+>>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> Test_Vector={"A":50.6,"l":0.0178,"lambda":23,"JMax":1.5,"T":343,"N0":5,"KO2":0.0000211,"KH2":0.0000422,"KH2O":0.000007716,"tH2":3.37,"tO2":6.74,"t1":2,"t2":2,"tH2O":18.418,"rho":1.168,"qMethanol":0.0002,"CV":2,"i-start":0.1,"i-stop":4,"i-step":0.1,"Name":"test1"}
 >>> Padulles_Amphlett_Data=Dynamic_Analysis(InputMethod=Test_Vector, TestMode=True)

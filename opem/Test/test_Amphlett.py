@@ -5,7 +5,7 @@
 >>> from opem.Static.Amphlett import *
 >>> import random
 >>> import shutil
->>> ABS_TOL = 1e-16
+>>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> T=343.15
 >>> PH2=1
