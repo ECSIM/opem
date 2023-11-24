@@ -33,7 +33,7 @@ jobs:
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
     - name: Test with pytest
       run: |
-        python -m pytest opem/Test --cov=opem --cov-report=term
+        python -m pytest test --cov=opem --cov-report=term
     - name: Version check
       run: |
         python otherfile/version_check.py
