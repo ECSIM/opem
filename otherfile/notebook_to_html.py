@@ -43,7 +43,7 @@ if __name__ == "__main__":
     shutil.copytree(IMAGES_FOLDER_PATH, IMAGES_COPY_PATH)
     for folder in sorted(NOTEBOOKS_DICT):
         print("\n{0} Models:\n".format(folder))
-        folder_path = os.path.join("doc", folder)
+        folder_path = os.path.join(OUTPUT_FOLDER_PATH, folder)
         os.mkdir(folder_path)
         for index, notebook in enumerate(NOTEBOOKS_DICT[folder]):
             notebook_path = os.path.join(
@@ -59,7 +59,7 @@ if __name__ == "__main__":
                 ep.preprocess(
                     nb, {
                         'metadata': {
-                            'path': folder_path, 'title': notebook}})
+                            'path': folder_path}})
             with open(notebook_copy_path, 'w', encoding='utf-8') as f:
                 nbformat.write(nb, f)
             notebook_title = notebook.replace("_", "-")
@@ -70,4 +70,4 @@ if __name__ == "__main__":
             with open(html_file_path, "w", encoding="utf-8") as html_file:
                 html_file.write(output)
             os.remove(notebook_copy_path)
-            print("\t{0}.{1} [OK]".format(str(index + 1), notebook))
+            print("\t{0}.{1} [OK]".format(str(index + 1), notebook_title))
