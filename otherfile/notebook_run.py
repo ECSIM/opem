@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook-check script."""
+"""Notebook-run script."""
 import os
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
@@ -19,7 +19,7 @@ EXTENSION = ".ipynb"
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
-    tprint("Document", "bulbhead")
+    tprint("Document Run", "bulbhead")
     print("Processing ...")
     for index, notebook in enumerate(NOTEBOOKS_LIST):
         ep = ExecutePreprocessor(timeout=6000, kernel_name='python3')
