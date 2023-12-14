@@ -62,7 +62,7 @@ if __name__ == "__main__":
                             'path': folder_path, 'title': notebook}})
             with open(notebook_copy_path, 'w', encoding='utf-8') as f:
                 nbformat.write(nb, f)
-            notebook_title = notebook.replace("_","-")
+            notebook_title = notebook.replace("_", "-")
             exporter = HTMLExporter()
             output_notebook = nbformat.read(notebook_copy_path, as_version=4)
             output, resources = exporter.from_notebook_node(
