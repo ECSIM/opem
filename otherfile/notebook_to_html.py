@@ -41,11 +41,11 @@ if __name__ == "__main__":
     time.sleep(5)
     os.mkdir(OUTPUT_FOLDER_PATH)
     shutil.copytree(IMAGES_FOLDER_PATH, IMAGES_COPY_PATH)
-    for folder in sorted(NOTEBOOKS_DICT):
-        print("\n{0} Models:\n".format(folder))
+    for index1, folder in enumerate(sorted(NOTEBOOKS_DICT)):
+        print("\n{0}.{1} Models:\n".format(index1+1, folder))
         folder_path = os.path.join(OUTPUT_FOLDER_PATH, folder)
         os.mkdir(folder_path)
-        for index, notebook in enumerate(NOTEBOOKS_DICT[folder]):
+        for index2, notebook in enumerate(sorted(NOTEBOOKS_DICT[folder])):
             notebook_path = os.path.join(
                 DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
             notebook_copy_path = os.path.join(
@@ -70,4 +70,4 @@ if __name__ == "__main__":
             with open(html_file_path, "w", encoding="utf-8") as html_file:
                 html_file.write(output)
             os.remove(notebook_copy_path)
-            print("\t{0}.{1} [OK]".format(str(index + 1), notebook_title))
+            print("\t{0}.{1} [OK]".format(index2 + 1, notebook_title))
