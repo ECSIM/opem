@@ -35,14 +35,14 @@ IMAGES_COPY_PATH = os.path.join(OUTPUT_FOLDER_PATH, "images")
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
     tprint("Notebook Convert", "amc3line")
-    print("Processing ...\n")
+    print("Processing ...")
     if OUTPUT_FOLDER_PATH in os.listdir():
         shutil.rmtree(OUTPUT_FOLDER_PATH)
     time.sleep(5)
     os.mkdir(OUTPUT_FOLDER_PATH)
     shutil.copytree(IMAGES_FOLDER_PATH, IMAGES_COPY_PATH)
     for folder in sorted(NOTEBOOKS_DICT):
-        print("{0} Models:\n".format(folder))
+        print("\n{0} Models:\n".format(folder))
         folder_path = os.path.join("doc", folder)
         os.mkdir(folder_path)
         for index, notebook in enumerate(NOTEBOOKS_DICT[folder]):
@@ -70,4 +70,4 @@ if __name__ == "__main__":
             with open(html_file_path, "w", encoding="utf-8") as html_file:
                 html_file.write(output)
             os.remove(notebook_copy_path)
-            print("{0}.{1} [OK]".format(str(index + 1), notebook))
+            print("\t{0}.{1} [OK]".format(str(index + 1), notebook))
