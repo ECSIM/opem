@@ -24,20 +24,22 @@ NOTEBOOK_EXTENSION = ".ipynb"
 
 HTML_EXTENSION = ".html"
 
-OUTPUT_FOLDER = "doc"
+OUTPUT_FOLDER_PATH = "doc"
 
-IMAGES_FOLDER_PATH = os.path.join("Documents", "images")
+DOCUMENTS_FOLDER_PATH = "Documents"
 
-IMAGES_COPY_PATH = os.path.join(OUTPUT_FOLDER, "images")
+IMAGES_FOLDER_PATH = os.path.join(DOCUMENTS_FOLDER_PATH, "images")
+
+IMAGES_COPY_PATH = os.path.join(OUTPUT_FOLDER_PATH, "images")
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
     tprint("Notebook Convert", "amc3line")
     print("Processing ...\n")
-    if OUTPUT_FOLDER in os.listdir():
-        shutil.rmtree(OUTPUT_FOLDER)
+    if OUTPUT_FOLDER_PATH in os.listdir():
+        shutil.rmtree(OUTPUT_FOLDER_PATH)
     time.sleep(5)
-    os.mkdir(OUTPUT_FOLDER)
+    os.mkdir(OUTPUT_FOLDER_PATH)
     shutil.copytree(IMAGES_FOLDER_PATH, IMAGES_COPY_PATH)
     for folder in sorted(NOTEBOOKS_DICT):
         print("{0} Models:\n".format(folder))
@@ -45,7 +47,7 @@ if __name__ == "__main__":
         os.mkdir(folder_path)
         for index, notebook in enumerate(NOTEBOOKS_DICT[folder]):
             notebook_path = os.path.join(
-                "Documents", notebook + NOTEBOOK_EXTENSION)
+                DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
             notebook_copy_path = os.path.join(
                 folder_path, notebook + NOTEBOOK_EXTENSION)
             html_file_path = os.path.join(
@@ -60,10 +62,11 @@ if __name__ == "__main__":
                             'path': folder_path, 'title': notebook}})
             with open(notebook_copy_path, 'w', encoding='utf-8') as f:
                 nbformat.write(nb, f)
+            notebook_title = notebook.replace("_","-")
             exporter = HTMLExporter()
             output_notebook = nbformat.read(notebook_copy_path, as_version=4)
             output, resources = exporter.from_notebook_node(
-                output_notebook, {'metadata': {'name': notebook}})
+                output_notebook, {'metadata': {'name': notebook_title}})
             with open(html_file_path, "w", encoding="utf-8") as html_file:
                 html_file.write(output)
             os.remove(notebook_copy_path)
