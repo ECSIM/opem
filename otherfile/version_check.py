@@ -53,7 +53,7 @@ FILES = {
                                         "opem", "Params.py"): PARAMS_ITEMS, os.path.join(
                                             "test", "test_Functions.py"): TEST_ITEMS, os.path.join(
                                                 "otherfile", "meta.yaml"): META_ITEMS,
-                                                    "OPEM.spec": SPEC_ITEMS}
+    "OPEM.spec": SPEC_ITEMS}
 
 TEST_NUMBER = len(FILES.keys()) + 1
 
