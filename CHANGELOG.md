@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Anaconda workflow
 - Discord badge
+- `notebook_to_html.py` script
 ### Changed
 - License updated
 - `Python 3.10` added to `test.yml`
