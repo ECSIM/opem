@@ -19,7 +19,7 @@ EXTENSION = ".ipynb"
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
-    tprint("Document Run", "bulbhead")
+    tprint("Notebook Run", "amc3line")
     print("Processing ...")
     for index, notebook in enumerate(NOTEBOOKS_LIST):
         ep = ExecutePreprocessor(timeout=6000, kernel_name='python3')
