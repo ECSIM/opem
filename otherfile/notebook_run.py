@@ -2,6 +2,7 @@
 """Notebook-run script."""
 import os
 import shutil
+import opem
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 from art import tprint
@@ -24,6 +25,7 @@ NOTEBOOK_EXTENSION = ".ipynb"
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
+    tprint("v{0}".format(opem.__version__), "bulbhead")
     tprint("Notebook Run", "amc3line")
     print("Processing ...\n")
     for index, notebook in enumerate(NOTEBOOKS_LIST):
