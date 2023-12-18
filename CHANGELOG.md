@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dockerfile updated
 - `Folder` parameter added to `Static_Analysis` function
 - `Folder` parameter added to `Dynamic_Analysis` function
+- `notebook_check.py` renamed to `notebook_run.py`
 - Document modified
 ## [1.3] - 2021-06-30
 ### Added
