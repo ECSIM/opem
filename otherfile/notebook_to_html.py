@@ -42,7 +42,7 @@ if __name__ == "__main__":
     os.mkdir(OUTPUT_FOLDER_PATH)
     shutil.copytree(IMAGES_FOLDER_PATH, IMAGES_COPY_PATH)
     for index1, folder in enumerate(sorted(NOTEBOOKS_DICT)):
-        print("\n{0}.{1} Models:\n".format(index1+1, folder))
+        print("\n{0}.{1} Models:\n".format(index1 + 1, folder))
         folder_path = os.path.join(OUTPUT_FOLDER_PATH, folder)
         os.mkdir(folder_path)
         for index2, notebook in enumerate(sorted(NOTEBOOKS_DICT[folder])):
