@@ -3,6 +3,7 @@
 import os
 import time
 import shutil
+import opem
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 from nbconvert import HTMLExporter
@@ -34,6 +35,7 @@ IMAGES_COPY_PATH = os.path.join(OUTPUT_FOLDER_PATH, "images")
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
+    tprint("v{0}".format(opem.__version__), "bulbhead")
     tprint("Notebook Convert", "amc3line")
     print("Processing ...")
     if OUTPUT_FOLDER_PATH in os.listdir():
