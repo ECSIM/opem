@@ -34,8 +34,8 @@ if __name__ == "__main__":
             ep.preprocess(nb, {'metadata': {'path': 'Documents/'}})
         with open(path + NOTEBOOK_EXTENSION, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-        print("\t{0}.{1} [OK]".format(str(index + 1), notebook))
+        print("\t{0}.{1} [OK]".format(index + 1, notebook))
     print("\nCopying ...")
-    for item in sorted(COPY_DICT):
+    for index, item in enumerate(sorted(COPY_DICT)):
         shutil.copy(item, COPY_DICT[item])
-        print("\t{0} --> {1} [OK]".format(item, COPY_DICT[item]))
+        print("\t{0}.{1} --> {2} [OK]".format(index+1, item, COPY_DICT[item]))
