@@ -16,9 +16,9 @@ NOTEBOOKS_LIST = [
     "Padulles1",
     "Padulles2"]
 
-COPY_DICT = {os.path.join("Documents", "Amphlett_Test.csv"): os.path.join("otherfile", "test.csv"),
-             os.path.join("Documents", "Amphlett_Test.html"): os.path.join("otherfile", "test.html"),
-             os.path.join("Documents", "Amphlett_Test.opem"): os.path.join("otherfile", "test.opem")}
+COPY_DICT = {os.path.join("Documents", "Amphlett", "Amphlett_Test.csv"): os.path.join("otherfile", "test.csv"),
+             os.path.join("Documents", "Amphlett", "Amphlett_Test.html"): os.path.join("otherfile", "test.html"),
+             os.path.join("Documents", "Amphlett", "Amphlett_Test.opem"): os.path.join("otherfile", "test.opem")}
 
 NOTEBOOK_EXTENSION = ".ipynb"
 
