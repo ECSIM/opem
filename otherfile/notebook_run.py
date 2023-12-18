@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Notebook-run script."""
 import os
+import shutil
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 from art import tprint
@@ -15,18 +16,26 @@ NOTEBOOKS_LIST = [
     "Padulles1",
     "Padulles2"]
 
-EXTENSION = ".ipynb"
+COPY_DICT = {os.path.join("Documents", "Amphlett_Test.csv"): os.path.join("otherfile", "test.csv"),
+             os.path.join("Documents", "Amphlett_Test.html"): os.path.join("otherfile", "test.html"),
+             os.path.join("Documents", "Amphlett_Test.opem"): os.path.join("otherfile", "test.opem")}
+
+NOTEBOOK_EXTENSION = ".ipynb"
 
 if __name__ == "__main__":
     tprint("OPEM", "bulbhead")
     tprint("Notebook Run", "amc3line")
-    print("Processing ...")
+    print("Processing ...\n")
     for index, notebook in enumerate(NOTEBOOKS_LIST):
         ep = ExecutePreprocessor(timeout=6000, kernel_name='python3')
         path = os.path.join("Documents", notebook)
-        with open(path + EXTENSION, "r", encoding="utf-8") as f:
+        with open(path + NOTEBOOK_EXTENSION, "r", encoding="utf-8") as f:
             nb = nbformat.read(f, as_version=4)
             ep.preprocess(nb, {'metadata': {'path': 'Documents/'}})
-        with open(path + EXTENSION, 'w', encoding='utf-8') as f:
+        with open(path + NOTEBOOK_EXTENSION, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-        print("{0}.{1} [OK]".format(str(index + 1), notebook))
+        print("\t{0}.{1} [OK]".format(str(index + 1), notebook))
+    print("\nCopying ...")
+    for item in sorted(COPY_DICT):
+        shutil.copy(item, COPY_DICT[item])
+        print("\t{0} --> {1} [OK}".format(item, COPY_DICT[item]))
