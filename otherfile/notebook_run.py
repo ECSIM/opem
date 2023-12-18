@@ -38,4 +38,4 @@ if __name__ == "__main__":
     print("\nCopying ...")
     for item in sorted(COPY_DICT):
         shutil.copy(item, COPY_DICT[item])
-        print("\t{0} --> {1} [OK}".format(item, COPY_DICT[item]))
+        print("\t{0} --> {1} [OK]".format(item, COPY_DICT[item]))
