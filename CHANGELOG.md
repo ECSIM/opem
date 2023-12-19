@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Anaconda workflow
 - Discord badge
+- `notebook_to_html.py` script
 ### Changed
 - License updated
 - `Python 3.10` added to `test.yml`
@@ -27,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dockerfile updated
 - `Folder` parameter added to `Static_Analysis` function
 - `Folder` parameter added to `Dynamic_Analysis` function
+- `notebook_check.py` renamed to `notebook_run.py`
 - Document modified
 ## [1.3] - 2021-06-30
 ### Added

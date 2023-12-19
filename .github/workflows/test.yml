@@ -42,10 +42,14 @@ jobs:
       run: |
         python otherfile/version_check.py
       if: matrix.python-version == env.TEST_PYTHON_VERSION
-    - name: Notebook check
+    - name: Notebook run
       run: |
         pip install notebook>=5.2.2
-        python otherfile/notebook_check.py
+        python otherfile/notebook_run.py
+      if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
+    - name: Notebook to HTML
+      run: |
+        python otherfile/notebook_to_html.py
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: Other tests
       run: |

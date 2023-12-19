@@ -41,19 +41,22 @@ META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']
 
 FILES = {
-    "setup.py": SETUP_ITEMS, "INSTALL.md": INSTALL_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
-        "Documents", "Amphlett.ipynb"): DOCUMENT_ITEMS, os.path.join(
-            "Documents", "Chamberline_Kim.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                "Documents", "Larminie_Dicks.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                    "Documents", "Padulles_Amphlett.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                        "Documents", "Padulles_Hauer.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                            "Documents", "Padulles1.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                                "Documents", "Padulles2.ipynb"): DOCUMENT_ITEMS, os.path.join(
-                                    "otherfile", "test.html"): HTML_ITEMS, os.path.join(
-                                        "opem", "Params.py"): PARAMS_ITEMS, os.path.join(
-                                            "test", "test_Functions.py"): TEST_ITEMS, os.path.join(
-                                                "otherfile", "meta.yaml"): META_ITEMS,
-                                                    "OPEM.spec": SPEC_ITEMS}
+    "setup.py": SETUP_ITEMS,
+    "INSTALL.md": INSTALL_ITEMS,
+    "CHANGELOG.md": CHANGELOG_ITEMS,
+    "OPEM.spec": SPEC_ITEMS,
+    os.path.join("Documents", "Amphlett.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Chamberline_Kim.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Larminie_Dicks.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Padulles_Amphlett.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Padulles_Hauer.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Padulles1.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Documents", "Padulles2.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("otherfile", "test.html"): HTML_ITEMS,
+    os.path.join("opem", "Params.py"): PARAMS_ITEMS,
+    os.path.join("test", "test_Functions.py"): TEST_ITEMS,
+    os.path.join("otherfile", "meta.yaml"): META_ITEMS,
+}
 
 TEST_NUMBER = len(FILES.keys()) + 1
 
