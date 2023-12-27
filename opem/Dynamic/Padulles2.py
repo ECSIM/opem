@@ -98,7 +98,7 @@ def Dynamic_Analysis(
             print("###########")
             print(Simulation_Title + "-Model Simulation")
             print("###########")
-        OutputParamsKeys = sorted(OutputParams.keys())
+        OutputParamsKeys = sorted(OutputParams)
         Output_Dict = dict(
             zip(OutputParamsKeys, [None] * len(OutputParamsKeys)))
         if not TestMode:
