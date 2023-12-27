@@ -53,7 +53,7 @@ False
 >>> filter_range(500,0,-0.1)
 [0, 500, 0.1]
 >>> Input_dict=Get_Input({"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]"},input_item=input_test)
->>> Input_keys=list(Input_dict.keys())
+>>> Input_keys=list(Input_dict)
 >>> Input_keys.sort()
 >>> print(Input_keys)
 ['Name', 'PH2', 'PO2', 'T']
