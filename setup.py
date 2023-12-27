@@ -42,7 +42,7 @@ setup(
     description='Open Source PEM Cell Simulation Tool',
     long_description=read_description(),
     long_description_content_type='text/markdown',
-    author='Sepand Haghighi,Kasra Askari,Sarmin Hamidi,Mohammad Mahdi Rahimi',
+    author='ECSIM Development Team',
     author_email='opem@ecsim.ir',
     url='https://github.com/ecsim/opem',
     download_url='https://github.com/ecsim/opem/tarball/v1.3',
