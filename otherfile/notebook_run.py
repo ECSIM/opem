@@ -40,4 +40,4 @@ if __name__ == "__main__":
     print("\nCopying ...")
     for index, item in enumerate(sorted(COPY_DICT)):
         shutil.copy(item, COPY_DICT[item])
-        print("\t{0}.{1} --> {2} [OK]".format(index+1, item, COPY_DICT[item]))
+        print("\t{0}.{1} --> {2} [OK]".format(index + 1, item, COPY_DICT[item]))

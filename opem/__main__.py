@@ -39,7 +39,7 @@ def main():
         "(Dynamic) Padulles Hauer Analysis": "Padulles_Hauer Analysis (Dynamic)",
         "(Dynamic) Padulles Amphlett Analysis": "Padulles_Amphlett Analysis (Dynamic)",
         "(Dynamic) Chakraborty Analysis": "Chakraborty_Analysis (Dynamic)"}
-    MENUKEYS = sorted(MENU.keys())
+    MENUKEYS = sorted(MENU)
     EXITFLAG = False
     parser = argparse.ArgumentParser()
     parser.add_argument('--version', help='version', nargs="?", const=1)

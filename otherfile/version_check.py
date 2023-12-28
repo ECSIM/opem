@@ -58,7 +58,7 @@ FILES = {
     os.path.join("otherfile", "meta.yaml"): META_ITEMS,
 }
 
-TEST_NUMBER = len(FILES.keys()) + 1
+TEST_NUMBER = len(FILES) + 1
 
 
 def print_result(failed=False):
@@ -78,7 +78,7 @@ def print_result(failed=False):
 
 
 if __name__ == "__main__":
-    for file_name in FILES.keys():
+    for file_name in FILES:
         try:
             file_content = codecs.open(
                 file_name, "r", "utf-8", 'ignore').read()

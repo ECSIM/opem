@@ -134,8 +134,8 @@ def filter_default(input_dict, params_default):
     :type params_default : dict
     :return: modified input_dict as dict
     """
-    for i in params_default.keys():
-        if i not in input_dict.keys():
+    for i in params_default:
+        if i not in input_dict:
             input_dict[i] = params_default[i]
     return input_dict
 
@@ -209,7 +209,7 @@ def Get_Input(InputParams, input_item=input, params_default={}):
     :return: input dictionary
     """
     try:
-        Input_Keys = sorted(InputParams.keys())
+        Input_Keys = sorted(InputParams)
         Input_Values = []
         Name = ""
         while(True):
@@ -227,7 +227,7 @@ def Get_Input(InputParams, input_item=input, params_default={}):
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:
-                    if item in params_default.keys():
+                    if item in params_default:
                         Input_Item = params_default[item]
                         Input_Flag = True
                     else:
@@ -318,7 +318,7 @@ def Output_Init(InputDict, Title, Name, Folder):
     opem_file.write(Title + " Model" + spliter * 2)
     opem_file.write("**********" + spliter)
     opem_file.write("Simulation Inputs : " + spliter * 2)
-    Input_Keys = sorted(InputDict.keys())
+    Input_Keys = sorted(InputDict)
     for key in Input_Keys:
         opem_file.write(key + " : " + str(InputDict[key]) + spliter)
     opem_file.write("**********" + spliter)
@@ -474,7 +474,7 @@ def HTML_Input_Table(Input_Dict, Input_Params, file):
     :return: None
     """
     file.write(HTML_Input_Table_Template1)
-    Input_Params_Keys = sorted(Input_Params.keys())
+    Input_Params_Keys = sorted(Input_Params)
     for key in Input_Params_Keys:
         file.write(
             HTML_Input_Table_Template2.format(
@@ -502,7 +502,7 @@ def HTML_Overall_Params_Table(
     if header:
         file.write('<h2 style="color:#ff7600;">Overall Parameters</h2>\n')
     file.write(HTML_Overall_Params_Table_Template)
-    Input_Params_Keys = sorted(Input_Params.keys())
+    Input_Params_Keys = sorted(Input_Params)
     for key in Input_Params_Keys:
         file.write(
             HTML_Input_Table_Template2.format(
@@ -674,7 +674,7 @@ def description_control(
         line()
         print(Analysis_Name.replace("_", " ") + " Standard Test Vector\n")
         Test_Vector = Vectors_Dict[Analysis_Name]
-        for i in Test_Vector.keys():
+        for i in Test_Vector:
             print(i + " : " + str(Test_Vector[i]))
         print("\n")
         line()
