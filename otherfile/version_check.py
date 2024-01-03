@@ -39,7 +39,7 @@ TEST_ITEMS = ["New Version ({0}) Is Available!"]
 
 META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']
-ISSUE_TEMPLATE_ITEMS = ["- Opem {0}"]
+ISSUE_TEMPLATE_ITEMS = ["- OPEM {0}"]
 
 FILES = {
     "setup.py": SETUP_ITEMS,

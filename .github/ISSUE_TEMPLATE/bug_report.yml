@@ -82,22 +82,22 @@ body:
   - type: dropdown
     id: opem-version
     attributes:
-      label: Opem version
-      description: Which version of Opem are you using?
+      label: OPEM version
+      description: Which version of OPEM are you using?
       options:
-        - Opem 1.3
-        - Opem 1.2
-        - Opem 1.1
-        - Opem 1.0
-        - Opem 0.9
-        - Opem 0.8
-        - Opem 0.7
-        - Opem 0.6
-        - Opem 0.5
-        - Opem 0.4
-        - Opem 0.3
-        - Opem 0.2
-        - Opem 0.1
+        - OPEM 1.3
+        - OPEM 1.2
+        - OPEM 1.1
+        - OPEM 1.0
+        - OPEM 0.9
+        - OPEM 0.8
+        - OPEM 0.7
+        - OPEM 0.6
+        - OPEM 0.5
+        - OPEM 0.4
+        - OPEM 0.3
+        - OPEM 0.2
+        - OPEM 0.1
       default: 0
     validations:
       required: true
