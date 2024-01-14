@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `feature_request.yml` template
+- `config.yml` for issue template
 - Anaconda workflow
 - Discord badge
 - `notebook_to_html.py` script
 ### Changed
+- Bug report template modified
 - License updated
 - `Python 3.10` added to `test.yml`
 - `Python 3.11` added to `test.yml`

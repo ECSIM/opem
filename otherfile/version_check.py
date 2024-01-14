@@ -39,6 +39,7 @@ TEST_ITEMS = ["New Version ({0}) Is Available!"]
 
 META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']
+ISSUE_TEMPLATE_ITEMS = ["- OPEM {0}"]
 
 FILES = {
     "setup.py": SETUP_ITEMS,
@@ -56,6 +57,7 @@ FILES = {
     os.path.join("opem", "Params.py"): PARAMS_ITEMS,
     os.path.join("test", "test_Functions.py"): TEST_ITEMS,
     os.path.join("otherfile", "meta.yaml"): META_ITEMS,
+    os.path.join(".github", "ISSUE_TEMPLATE", "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
 }
 
 TEST_NUMBER = len(FILES) + 1
