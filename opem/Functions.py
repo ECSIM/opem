@@ -199,13 +199,15 @@ def input_test(a):
     return "1"
 
 
-def Get_Input(InputParams, input_item=input, params_default={}):
+def Get_Input(InputParams, input_item=input, params_default=()):
     """
     Get inputs from users.
 
     :param InputParams : input parameters  for each  model
     :type InputParams :dict
     :param input_item : input function (this parameter added for Get_Input doctest)
+    :param params_default: default parameters
+    :type params_default : dict
     :return: input dictionary
     """
     try:
