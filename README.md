@@ -75,8 +75,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</tr>
 	<tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=develop"></td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/actions/workflows/test.yml/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/actions/workflows/test.yml/badge.svg?branch=develop"></td>
 	</tr>
 </table>
 
