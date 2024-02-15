@@ -22,13 +22,6 @@
 - Download [Exe-Version 1.3](https://github.com/ECSIM/opem/releases/download/v1.3/OPEM-1.3.exe)
 - Run `OPEM-1.3.exe`
 
-
-### DMG Version (MacOS)
-- Download [DMG-Version 1.3](https://github.com/ECSIM/opem/releases/download/v1.3/OPEM-1.3.dmg)
-- Open DMG file
-- Copy `OPEM` into your system
-- Run `OPEM`
-
 ### MATLAB
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
