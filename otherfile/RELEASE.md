@@ -31,7 +31,7 @@
 	6. Need review (**1** reviewers)
 7. Merge `develop` branch into `master`
 	1. `git checkout master`
-	2. `git merge dev`
+	2. `git merge develop`
 	3. `git push origin master`
 	4. Wait for all CI pass
 8. Build EXE file
