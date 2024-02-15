@@ -19,8 +19,7 @@ INSTALL_ITEMS = [
     "[Version {0}](https://github.com/ecsim/opem/archive/v{0}.zip)",
     "Run `OPEM-{0}.exe`",
     "Run `pip install opem=={0}`",
-    "[Exe-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.exe)",
-    "[DMG-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.dmg)"]
+    "[Exe-Version {0}](https://github.com/ECSIM/opem/releases/download/v{0}/OPEM-{0}.exe)"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
     "https://github.com/ECSIM/opem/compare/v{0}...develop",
