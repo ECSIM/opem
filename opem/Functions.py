@@ -678,8 +678,7 @@ def description_control(
             print(i + " : " + str(Test_Vector[i]))
         print("\n")
         line()
-        input_temp = input("Press any key to continue")
-        del input_temp
+        _ = input("Press any key to continue")
         Analysis_Dict[Analysis_Name](
             InputMethod=Test_Vector, TestMode=True)
     else:
