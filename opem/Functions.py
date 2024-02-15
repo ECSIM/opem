@@ -199,13 +199,15 @@ def input_test(a):
     return "1"
 
 
-def Get_Input(InputParams, input_item=input, params_default={}):
+def Get_Input(InputParams, input_item=input, params_default=None):
     """
     Get inputs from users.
 
     :param InputParams : input parameters  for each  model
     :type InputParams :dict
     :param input_item : input function (this parameter added for Get_Input doctest)
+    :param params_default: default parameters
+    :type params_default : dict
     :return: input dictionary
     """
     try:
@@ -227,7 +229,7 @@ def Get_Input(InputParams, input_item=input, params_default={}):
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:
-                    if item in params_default:
+                    if params_default is not None and item in params_default:
                         Input_Item = params_default[item]
                         Input_Flag = True
                     else:
@@ -678,8 +680,7 @@ def description_control(
             print(i + " : " + str(Test_Vector[i]))
         print("\n")
         line()
-        input_temp = input("Press any key to continue")
-        del input_temp
+        _ = input("Press any key to continue")
         Analysis_Dict[Analysis_Name](
             InputMethod=Test_Vector, TestMode=True)
     else:

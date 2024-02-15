@@ -27,7 +27,6 @@
    		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
-   * [Todo](https://github.com/ECSIM/opem/blob/master/TODO.md)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
    * [Thanks](https://github.com/ECSIM/opem#thanks)
    * [Reference](https://github.com/ECSIM/opem#reference)
@@ -76,8 +75,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 	</tr>
 	<tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/ECSIM/opem/workflows/CI/badge.svg?branch=develop"></td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/actions/workflows/test.yml/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/ECSIM/opem/actions/workflows/test.yml/badge.svg?branch=develop"></td>
 	</tr>
 </table>
 
