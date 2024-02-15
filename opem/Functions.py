@@ -199,7 +199,7 @@ def input_test(a):
     return "1"
 
 
-def Get_Input(InputParams, input_item=input, params_default=()):
+def Get_Input(InputParams, input_item=input, params_default=None):
     """
     Get inputs from users.
 
@@ -229,7 +229,7 @@ def Get_Input(InputParams, input_item=input, params_default=()):
                 if isfloat(Input_Item):
                     Input_Flag = True
                 else:
-                    if item in params_default:
+                    if params_default is not None and item in params_default:
                         Input_Item = params_default[item]
                         Input_Flag = True
                     else:
