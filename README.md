@@ -27,7 +27,6 @@
    		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
    * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
    * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
-   * [Todo](https://github.com/ECSIM/opem/blob/master/TODO.md)
    * [Outputs](https://github.com/ECSIM/opem#outputs)
    * [Thanks](https://github.com/ECSIM/opem#thanks)
    * [Reference](https://github.com/ECSIM/opem#reference)
