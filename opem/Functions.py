@@ -17,9 +17,9 @@ def integrate(y_vals, h):
     Calculate integral with Simpson's Rule.
 
     :param y_vals: output values
-    :type y_valS : list
+    :type y_vals: list
     :param h: interval
-    :type h : float
+    :type h: float
     :return: integrate output as float
     """
     try:
@@ -38,12 +38,12 @@ def integrate(y_vals, h):
 
 def linear_plot(x, y):
     """
-    Clear input data and call estimate_coef.
+    Clear input data and call estimate_coef function.
 
     :param x:  x data
-    :type x : list
+    :type x: list
     :param y: y data
-    :type y : list
+    :type y: list
     :return: [estimated_y,intercept,slope] as list
     """
     clear_x = []
@@ -69,10 +69,10 @@ def estimate_coef(clear_x, clear_y):
     """
     Linear regression function.
 
-    :param clear_x: cleared_x
-    :type clear_x : list
-    :param clear_y: cleared_y
-    :type clear_y : list
+    :param clear_x: cleared x
+    :type clear_x: list
+    :param clear_y: cleared y
+    :type clear_y: list
     :return: [slope,intercept]
     """
     try:
@@ -97,10 +97,10 @@ def line(num=11, char="#"):
     """
     Print line of char.
 
-    :param num: number of character in this line
-    :type num : int
+    :param num: number of characters
+    :type num: int
     :param char: character
-    :type char : str
+    :type char: str
     :return: None
     """
     print(char * num)
@@ -108,8 +108,10 @@ def line(num=11, char="#"):
 
 def check_update(Version):
     """
-    Check for new opem version in website.
+    Check for new OPEM version in website.
 
+    :param Version: current version of OPEM
+    :type Version: float
     :return: None
     """
     try:
@@ -129,9 +131,9 @@ def filter_default(input_dict, params_default):
     Filter input parameters with default params.
 
     :param input_dict: input parameters
-    :type input_dict : dict
+    :type input_dict: dict
     :param params_default: default parameters
-    :type params_default : dict
+    :type params_default: dict
     :return: modified input_dict as dict
     """
     for i in params_default:
@@ -145,7 +147,7 @@ def get_precision(input_number):
     Return precision of input number.
 
     :param input_number: input number
-    :type input_number : float
+    :type input_number: float
     :return: precision as int
     """
     input_string = str(input_number)
@@ -160,7 +162,7 @@ def isfloat(value):
     Check input for float conversion.
 
     :param value: input value
-    :type value:str
+    :type value: str
     :return: True if input_value is a number and False otherwise
     """
     try:
@@ -177,8 +179,8 @@ def rounder(input_number, digit=2):
     :param input_number: input number
     :type input_number : anything
     :param digit: precision
-    :type digit : int
-    :return: round number as float
+    :type digit: int
+    :return: rounded number as float
     """
     try:
         if isfloat(input_number):
@@ -193,6 +195,7 @@ def input_test(a):
     Injected function for Get_Input testing.
 
     :param a: input
+    :type a: anything
     :return: "1"
     """
     _ = a
@@ -203,11 +206,12 @@ def Get_Input(InputParams, input_item=input, params_default=None):
     """
     Get inputs from users.
 
-    :param InputParams : input parameters  for each  model
-    :type InputParams :dict
-    :param input_item : input function (this parameter added for Get_Input doctest)
+    :param InputParams: input parameters  for each  model
+    :type InputParams: dict
+    :param input_item: input function (this parameter added for Get_Input doctest)
+    :type input_item: function
     :param params_default: default parameters
-    :type params_default : dict
+    :type params_default: dict
     :return: input dictionary
     """
     try:
@@ -254,15 +258,16 @@ def Output_Save(
     """
     Write analysis result in Simulation-Result.opem file.
 
-    :param OutputParamsKeys : output parameters keys
-    :type OutputParamsKeys : list
+    :param OutputParamsKeys: output parameters keys
+    :type OutputParamsKeys: list
     :param OutputDict: analysis result dictionary
     :type OutputDict: dict
-    :param OutputParams : output parameters
-    :type OutputParams : dict
+    :param OutputParams: output parameters
+    :type OutputParams: dict
     :param i: cell load current [A]
-    :type i : float
-    :param file : file object
+    :type i: float
+    :param file: file
+    :type file: file object
     :return: None
     """
     spliter = "\n"
@@ -295,8 +300,8 @@ def Output_Init(InputDict, Title, Name, Folder):
 
     :param InputDict: input test vector
     :type InputDict:dict
-    :param Title : simulation title
-    :type Title :str
+    :param Title: simulation title
+    :type Title:str
     :param Name: file name
     :type Name: str
     :param Folder: output folder address
@@ -329,14 +334,14 @@ def Output_Init(InputDict, Title, Name, Folder):
 
 def CSV_Init(OutputParamsKeys, OutputParams, Title, Name, Folder):
     """
-    Initialize csv file.
+    Initialize CSV file.
 
     :param OutputParamsKeys: output parameters Keys
-    :type OutputParamsKeys : list
-    :param OutputParams : output parameters
-    :type OutputParams : dict
-    :param Title : simulation title
-    :type Title :str
+    :type OutputParamsKeys: list
+    :param OutputParams: output parameters
+    :type OutputParams: dict
+    :param Title: simulation title
+    :type Title:str
     :param Name: file name
     :type Name: str
     :param Folder: output folder address
@@ -363,7 +368,7 @@ def None_Omit(Input_Str):
     Replace None object with "None" string.
 
     :param Input_Str: input string
-    :type Input_Str : str
+    :type Input_Str: str
     :return: modified string as str
     """
     result = Input_Str
@@ -373,12 +378,12 @@ def None_Omit(Input_Str):
 
 def HTML_Init(Title, Name, Folder):
     """
-    Initialize html file.
+    Initialize HTML file.
 
     :param Title: simulation title (analysis model)
-    :type Title : str
+    :type Title: str
     :param Name: file name
-    :type Name : str
+    :type Name: str
     :param Folder: output folder address
     :type Folder: str
     :return: HTML file as file obj
@@ -401,14 +406,14 @@ def HTML_Init(Title, Name, Folder):
 
 def HTML_Desc(Title, Description, file):
     """
-    Write model description in html file.
+    Write model description in HTML file.
 
     :param Title: simulation title (analysis model)
-    :type Title : str
+    :type Title: str
     :param Description: model description
-    :type Description : str
-    :param file: html file object
-    :type file : file object
+    :type Description: str
+    :param file: HTML file object
+    :type file: file object
     :return: None
     """
     file.write('<h2 style="color:#ff7600;">What is ' + Title + ' ?</h2>\n')
@@ -420,20 +425,22 @@ def HTML_Desc(Title, Description, file):
 
 def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
     """
-    Write chartjs chart in html file.
+    Write chartjs chart in HTML file.
 
     :param x: x data as a string list
-    :type x : str
+    :type x: str
     :param y: y data as string list (or list of y)
     :param color: color code of chart (or list of color)
+    :type color: str
     :param x_label:x-axis label
     :type x_label : str
     :param y_label:y-axis label
     :type y_label : str
     :param chart_name: chart name (or list of chart_name)
+    :type chart_name: str
     :param size: chart size in pixel
     :type size : str
-    :param file: html file object
+    :param file: HTML file object
     :type file : file object
     :return: None
     """
@@ -465,14 +472,14 @@ def HTML_Chart(x, y, color, x_label, y_label, chart_name, size, file):
 
 def HTML_Input_Table(Input_Dict, Input_Params, file):
     """
-    Add table to html file.
+    Add table to HTML file.
 
     :param Input_Dict: input values dictionary
-    :type Input_Dict : dict
+    :type Input_Dict: dict
     :param Input_Params: input parameters dictionary
-    :type Input_Params : dict
-    :param file: html file object
-    :type file : file object
+    :type Input_Params: dict
+    :param file: HTML file object
+    :type file: file object
     :return: None
     """
     file.write(HTML_Input_Table_Template1)
@@ -491,14 +498,14 @@ def HTML_Overall_Params_Table(
         file,
         header=False):
     """
-    Add table to html file.
+    Add table to HTML file.
 
     :param Input_Dict: input values dictionary
-    :type Input_Dict : dict
+    :type Input_Dict: dict
     :param Input_Params: input parameters dictionary
-    :type Input_Params : dict
-    :param file: html file object
-    :type file : file object
+    :type Input_Params: dict
+    :param file: HTML file object
+    :type file: file object
     :return: None
     """
     if header:
@@ -517,10 +524,10 @@ def HTML_Overall_Params_Table(
 
 def HTML_End(file):
     """
-    Add end part of html file.
+    Add end part of HTML file.
 
-    :param file: html file object
-    :type file : file object
+    :param file: HTML file object
+    :type file: file object
     :return: None
     """
     file.write(HTML_End_Template.format(str(Version)))
@@ -532,13 +539,14 @@ def CSV_Save(OutputParamsKeys, OutputDict, i, file):
     """
     Save parameters in CSV file.
 
-    :param OutputParamsKeys : output parameters keys
-    :type OutputParamsKeys : list
+    :param OutputParamsKeys: output parameters keys
+    :type OutputParamsKeys: list
     :param OutputDict: analysis result dictionary
     :type OutputDict:dict
     :param i: cell load current [A]
-    :type i : float
-    :param file : file object
+    :type i: float
+    :param file: file
+    :type file: file object
     :return: None
     """
     file.write(str(i) + ",")
@@ -554,7 +562,7 @@ def filter_lambda(Input_Dict):
     Filter lambda parameter.
 
     :param Input_Dict: input parameters dictionary
-    :type Input_Dict : dict
+    :type Input_Dict: dict
     :return: modified dictionary
     """
     try:
@@ -576,7 +584,7 @@ def left_justify(words, width):
     Left justify words.
 
     :param words: list of words
-    :type words : list
+    :type words: list
     :param width: width of each line
     :type width: int
     :return: left justified words as list
@@ -589,9 +597,9 @@ def justify(words, width):
     Justify input words.
 
     :param words: list of words
-    :type words : list
+    :type words: list
     :param width: width of each line
-    :type width : int
+    :type width: int
     :return: list of justified words as list
     """
     line = []
@@ -623,11 +631,11 @@ def description_print(Analysis_Name, Description_Dict, Width=100):
     Print justified text for overview and each model description in console.
 
     :param Analysis_Name: analysis model name
-    :type Analysis_Name : str
+    :type Analysis_Name: str
     :param Description_Dict: description dict (in params)
-    :type Description_Dict : dict
+    :type Description_Dict: dict
     :param Width: width of each line (for justify)
-    :type Width : int
+    :type Width: int
     :return: None
     """
     line()
@@ -692,7 +700,7 @@ def filter_alpha(Input_Dict):
     Filter alpha parameter.
 
     :param Input_Dict: input parameters dictionary
-    :type Input_Dict : dict
+    :type Input_Dict: dict
     :return: modified dictionary
     """
     try:
@@ -735,13 +743,13 @@ def warning_check_1(Vcell, I_Warning, I, warning_flag):
     Check Vcell is negative or not.
 
     :param Vcell: Vcell of FC voltage
-    :type Vcell : float
+    :type Vcell: float
     :param I_Warning: first I of negative range
-    :type I_Warning : float
+    :type I_Warning: float
     :param I: test current
-    :type I : float
+    :type I: float
     :param warning_flag: input warning flag
-    :type warning_flag : bool
+    :type warning_flag: bool
     :return:  update warning_flag and I_Warning [bool,float]
     """
     if not warning_flag:
@@ -760,10 +768,10 @@ def warning_check_2(Vcell, warning_flag):
     Check Vcell is None or not.
 
     :param Vcell: Vcell of FC Voltage
-    :type Vcell : float
+    :type Vcell: float
     :param warning_flag: input warning flag
-    :type warning_flag : bool
-    :return:  update warning_flag as bool
+    :type warning_flag: bool
+    :return: update warning_flag as bool
     """
     if not warning_flag:
         if Vcell is None:
@@ -782,14 +790,14 @@ def warning_print(
     Print warning message and write messages to HTML report.
 
     :param warning_flag_1: first warning message (Vcell <0)
-    :type warning_flag_1 : bool
+    :type warning_flag_1: bool
     :param warning_flag_2: second warning message (Vcell==None)
-    :type warning_flag_2 : bool
+    :type warning_flag_2: bool
     :param I_Warning: first I of negative range
-    :type I_Warning : float
-    :param file: html file object
-    :type file : file object
-    :param PrintMode : print mode control flag (True : print outputs)
+    :type I_Warning: float
+    :param file: HTML file object
+    :type file: file object
+    :param PrintMode: print mode control flag (True : print outputs)
     :type PrintMode: bool
     :return: None
     """
