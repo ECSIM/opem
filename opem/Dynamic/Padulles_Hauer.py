@@ -14,14 +14,14 @@ def qH2_Calc(qMethanol, CV, t1, t2):
     """
     Calculate qH2.
 
-    :param qMethanol: molar flow of methanol [kmol.s^(-1)
-    :type qMethanol : float
+    :param qMethanol: molar flow of methanol [kmol.s^(-1)]
+    :type qMethanol: float
     :param CV: conversion factor
-    :type CV : float
+    :type CV: float
     :param t1: reformer time constant
-    :type t1 : float
-    :param t2 : reformer time constant
-    :type t2 : float
+    :type t1: float
+    :param t2: reformer time constant
+    :type t2: float
     :return: qH2 as float
     """
     try:
@@ -40,15 +40,15 @@ def Dynamic_Analysis(
         ReportMode=True,
         Folder=os.getcwd()):
     """
-    Run Padulles Hauer analysis.
+    Run Padulles-Hauer analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
+    :type TestMode: bool
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str
