@@ -15,18 +15,18 @@ def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
     Calculate Enernst.
 
     :param E0: open cell voltage [V]
-    :type E0 : float
+    :type E0: float
     :param N0: number of fuel cells in the stack
-    :type N0 : int
+    :type N0: int
     :param T: cell operation temperature [K]
-    :type T : float
+    :type T: float
     :param PH2:  partial pressure [atm]
-    :type PH2 : float
+    :type PH2: float
     :param PO2: partial pressure [atm]
-    :type PO2 : float
+    :type PO2: float
     :param PH2O:  partial pressure [atm]
-    :type PH2O : float
-    :return: Enernest [V] as float
+    :type PH2O: float
+    :return: Enernest[V] as float
     """
     try:
         result = N0 * (E0 + (R * T / (2 * F)) *
@@ -43,16 +43,16 @@ def PH2O_Calc(KH2O, tH2O, Kr, I, qH2O):
     Calculate PH2O.
 
     :param KH2O: water valve constant [kmol.s^(-1).atm^(-1)]
-    :type KH2O : float
+    :type KH2O: float
     :param tH2O: water time constant [s]
-    :type tH2O : float
+    :type tH2O: float
     :param Kr: modeling constant [kmol.s^(-1).A^(-1)]
-    :type Kr : float
+    :type Kr: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :param qH2O: molar flow of water [kmol.s^(-1)]
-    :type qH2O : float
-    :return: PH2O [atm] as float
+    :type qH2O: float
+    :return: PH2O[atm] as float
     """
     try:
         result = ((1 / KH2O) / (1 + tH2O)) * (qH2O - 2 * Kr * I)
@@ -70,15 +70,15 @@ def Dynamic_Analysis(
         ReportMode=True,
         Folder=os.getcwd()):
     """
-    Run Padulles II analysis.
+    Run Padulles-II analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
+    :type TestMode: bool
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str
