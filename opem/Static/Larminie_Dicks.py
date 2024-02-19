@@ -13,23 +13,23 @@ def Vcell_Calc(E0, i, i_0, i_n, i_L, R_M, A, B):
     """
     Calculate cell voltage.
 
-    :param E0:  fuel Cell reversible no loss voltage [V]
-    :type E0 : float
-    :param i : cell operating current [A]
-    :type i : float
+    :param E0: fuel Cell reversible no loss voltage [V]
+    :type E0: float
+    :param i: cell operating current [A]
+    :type i: float
     :param i_0: exchange current at which the overvoltage begins to move from zero [A]
-    :type i_0 : float
-    :param i_n : internal current [A]
-    :type i_n : float
-    :param i_L : limiting current [A]
-    :type i_L : float
-    :param R_M : the membrane and contact resistances [ohm]
-    :type R_M : float
-    :param A : the slope of the Tafel line [V]
-    :type A : float
-    :param B : constant in the mass transfer term [V}
-    :type B : float
-    :return:  cell voltage [V]
+    :type i_0: float
+    :param i_n: internal current [A]
+    :type i_n: float
+    :param i_L: limiting current [A]
+    :type i_L: float
+    :param R_M: the membrane and contact resistances [ohm]
+    :type R_M: float
+    :param A: the slope of the Tafel line [V]
+    :type A: float
+    :param B: constant in the mass transfer term [V}
+    :type B: float
+    :return: cell voltage [V]
     """
     try:
         result = E0 - A * (math.log((i + i_n) / i_0)) - R_M * \
@@ -50,13 +50,13 @@ def Static_Analysis(
     """
     Run Larminie-Dicks static analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
+    :type TestMode: bool
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str
