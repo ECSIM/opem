@@ -15,20 +15,20 @@ def Vcell_Calc(E0, b, R, m, n, i, A):
     Calculate cell voltage.
 
     :param E0: open circuit voltage [V]
-    :type E0 : float
+    :type E0: float
     :param b: Tafel's parameter for the oxygen reduction [V]
-    :type b : float
+    :type b: float
     :param R: resistance [ohm.cm2]
-    :type R : float
+    :type R: float
     :param m: diffusion's parameters [V]
-    :type m : float
+    :type m: float
     :param n: diffusion's parameters [V]
-    :type n : float
+    :type n: float
     :param i: cell operating current [A]
-    :type i : float
+    :type i: float
     :param A: active area [cm2]
-    :type A : float
-    :return:  cell voltage [V]
+    :type A: float
+    :return: cell voltage [V]
     """
     try:
         J = i / A
@@ -49,13 +49,13 @@ def Static_Analysis(
     """
     Run Chamberline-Kim static analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
     :type TestMode: bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str
