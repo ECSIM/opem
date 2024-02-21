@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Test system modified
 - Test files moved to `test` folder
 - Setup system modified
+- Docstrings modified
 - CLI mode updated
 - `description_control` function modified
 - `check_update` function modified
