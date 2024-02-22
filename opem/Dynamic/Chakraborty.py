@@ -16,17 +16,17 @@ def Enernst_Calc(E0, N0, T, PH2, PO2, PH2O):
     Calculate Enernst.
 
     :param E0: open cell voltage [V]
-    :type E0 : float
+    :type E0: float
     :param N0: number of fuel cells in the stack
-    :type N0 : int
+    :type N0: int
     :param T: cell operation temperature [K]
-    :type T : float
-    :param PH2:  partial pressure [atm]
-    :type PH2 : float
+    :type T: float
+    :param PH2: partial pressure [atm]
+    :type PH2: float
     :param PO2: partial pressure [atm]
-    :type PO2 : float
+    :type PO2: float
     :param PH2O:  partial pressure [atm]
-    :type PH2O : float
+    :type PH2O: float
     :return: Enernest [V] as float
     """
     try:
@@ -44,11 +44,11 @@ def PH2_Calc(KH2, u, I):
     Calculate PH2.
 
     :param KH2: hydrogen valve constant [kmol.s^(-1).atm^(-1)]
-    :type KH2 : float
+    :type KH2: float
     :param u: fuel utilization  ratio
     :type u: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :return: PH2 [atm] as float
     """
     try:
@@ -65,13 +65,13 @@ def PO2_Calc(KO2, u, rHO, I):
     Calculate PO2.
 
     :param KO2: oxygen valve constant [kmol.s^(-1).atm^(-1)]
-    :type KO2 : float
+    :type KO2: float
     :param u: fuel utilization  ratio
     :type u: float
-    :param rHO: ratio  of  hydrogen  to  oxygen  input  flow  rates
+    :param rHO: ratio of hydrogen to oxygen input flow rates
     :type rHO: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :return: PO2 [atm] as float
     """
     try:
@@ -88,9 +88,9 @@ def PH2O_Calc(KH2O, I):
     Calculate PH2O.
 
     :param KH2O: water valve constant [kmol.s^(-1).atm^(-1)]
-    :type KH2O : float
+    :type KH2O: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :return: PH2O [atm] as float
     """
     try:
@@ -107,9 +107,9 @@ def Nernst_Gain_Calc(T, I):
     Calculate Nernst gain.
 
     :param T: cell operation temperature [K]
-    :type T : float
+    :type T: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :return: Nernst gain [V] as float
     """
     try:
@@ -125,9 +125,9 @@ def Ohmic_Loss_Calc(Rint, I):
     Calculate ohmic loss.
 
     :param Rint: fuel cell internal resistance [ohm]
-    :type Rint : float
+    :type Rint: float
     :param I: cell load current [A]
-    :type I : float
+    :type I: float
     :return: ohmic loss [V] as float
     """
     try:
@@ -142,15 +142,15 @@ def Vcell_Calc(Enernst, Nernst_Gain, Ohmic_Loss, N):
     """
     Calculate cell voltage.
 
-    :param Enernst:  Enernst [V}
-    :type Enernst : float
+    :param Enernst: Enernst [V}
+    :type Enernst: float
     :param Nernst_Gain: Nernst Gain [V]
     :type Nernst_Gain: float
     :param Ohmic_Loss: ohmic loss [V]
     :type Ohmic_Loss: float
     :param N: number of fuel cells in the stack
-    :type N : int
-    :return:  cell voltage [V] as float
+    :type N: int
+    :return: cell voltage [V] as float
     """
     try:
         loss = Nernst_Gain - Ohmic_Loss
@@ -167,11 +167,11 @@ def Efficiency_Calc(Vcell, u, N):
     Calculate PEM cell efficiency.
 
     :param Vcell: cell voltage [V]
-    :type Vcell:float
-    :param u: fuel utilization  ratio
+    :type Vcell: float
+    :param u: fuel utilization ratio
     :type u: float
     :param N: number of fuel cells in the stack
-    :type N : int
+    :type N: int
     :return: efficiency as float
     """
     try:
@@ -192,13 +192,13 @@ def Dynamic_Analysis(
     """
     Run Chakraborty analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
+    :type TestMode: bool
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str

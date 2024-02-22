@@ -16,11 +16,13 @@ def Vcell_Calc(Enernst, Loss, N):
     """
     Calculate cell voltage.
 
-    :param Enernst:  Enernst [V}
-    :type Enernst : float
-    :param Loss:  loss [V]
-    :type Loss : float
-    :return:  cell voltage [V] as float
+    :param Enernst: Enernst [V}
+    :type Enernst: float
+    :param Loss: loss [V]
+    :type Loss: float
+    :param N: number of fuel cells in the stack
+    :type N: int
+    :return: cell voltage [V] as float
     """
     try:
         result = Enernst - N * Loss
@@ -40,13 +42,13 @@ def Dynamic_Analysis(
     """
     Run Padulles-Amphlett analysis.
 
-    :param InputMethod : input function or input test vector
-    :param TestMode : test mode flag
-    :type InputMethod : dict or Get_Input function object
-    :type TestMode:bool
-    :param PrintMode : print mode control flag (True : print outputs)
-    :type PrintMode:bool
-    :param ReportMode : report mode control flag (True : generate report)
+    :param InputMethod: input function or input test vector
+    :type InputMethod: dict or Get_Input function object
+    :param TestMode: test mode flag
+    :type TestMode: bool
+    :param PrintMode: print mode control flag (True : print outputs)
+    :type PrintMode: bool
+    :param ReportMode: report mode control flag (True : generate report)
     :type ReportMode: bool
     :param Folder: output folder address
     :type Folder: str
