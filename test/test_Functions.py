@@ -72,7 +72,7 @@ Test
 >>> check_update(0.1)
 ###########
 New Version (1.3) Is Available!
-Website : http://www.ecsim.ir/opem
+Website : http://www.ecsim.site/opem
 ###########
 >>> file1 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test", Folder=os.path.join("CSV_Folder1", "CSV_Folder2"))
 >>> file2 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test2", Folder=os.path.join("CSV_Folder1", "CSV_Folder2"))
