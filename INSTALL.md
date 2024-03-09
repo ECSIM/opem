@@ -4,12 +4,12 @@
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 1.3](https://github.com/ecsim/opem/archive/v1.3.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
+- Download [Version 1.4](https://github.com/ecsim/opem/archive/v1.4.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
 - Run `pip install .`			
 
 ### PyPI
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install opem==1.3`
+- Run `pip install opem==1.4`
 
 ### Conda
 - Check [Conda Managing Package](https://conda.io)
@@ -19,8 +19,8 @@
 - OPEM GUI is available [here](https://github.com/ECSIM/gopem)			
 
 ### Exe Version (Only Windows)
-- Download [Exe-Version 1.3](https://github.com/ECSIM/opem/releases/download/v1.3/OPEM-1.3.exe)
-- Run `OPEM-1.3.exe`
+- Download [Exe-Version 1.4](https://github.com/ECSIM/opem/releases/download/v1.4/OPEM-1.4.exe)
+- Run `OPEM-1.4.exe`
 
 ### MATLAB
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
