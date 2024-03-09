@@ -34,7 +34,7 @@ RC_ITEMS = [
     "prodvers=({0}, {1}, {2}, {3})",
     "(u'FileVersion', u'{0}.{1}.{2}.{3}'),",
     "(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
-TEST_ITEMS = ["New Version ({0}) Is Available!"]
+TEST_ITEMS = ["check_update(1.4)"]
 
 META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']
