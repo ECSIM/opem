@@ -18,7 +18,7 @@ VSVersionInfo(
         StringStruct(u'FileDescription', u'OPEM.exe'),
         StringStruct(u'FileVersion', u'1.4.0.0'),
         StringStruct(u'InternalName', u'OPEM.exe'),
-        StringStruct(u'LegalCopyright', u'Copyright (c) 2023 ECSIM'),
+        StringStruct(u'LegalCopyright', u'Copyright (c) 2024 ECSIM'),
         StringStruct(u'OriginalFilename', u'OPEM.exe'),
         StringStruct(u'ProductName', u'OPEM'),
         StringStruct(u'ProductVersion', u'1, 4, 0, 0')])
