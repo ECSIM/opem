@@ -68,10 +68,10 @@ Test
 <BLANKLINE>
 <BLANKLINE>
 ###########
->>> check_update(1.3)
+>>> check_update(1.4)
 >>> check_update(0.1)
 ###########
-New Version (1.3) Is Available!
+...
 Website : http://www.ecsim.site/opem
 ###########
 >>> file1 = CSV_Init(OutputParamsKeys=["1","2","3"], OutputParams={"1":"1", "2":"2", "3":"3"}, Title="CSV_Test", Name="CSV_Test", Folder=os.path.join("CSV_Folder1", "CSV_Folder2"))

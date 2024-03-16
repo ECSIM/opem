@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-opem_version = "1.3"
+opem_version = "1.4"
 
 
 a = Analysis(['opem/__main__.py'],

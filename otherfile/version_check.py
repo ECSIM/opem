@@ -4,7 +4,7 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "1.3"
+VERSION = "1.4"
 
 VERSION_1 = VERSION.split(".")[0]
 VERSION_2 = str(int(float(VERSION) * 10 - int(VERSION_1) * 10))
@@ -34,7 +34,7 @@ RC_ITEMS = [
     "prodvers=({0}, {1}, {2}, {3})",
     "(u'FileVersion', u'{0}.{1}.{2}.{3}'),",
     "(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
-TEST_ITEMS = ["New Version ({0}) Is Available!"]
+TEST_ITEMS = ["check_update({0})"]
 
 META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']

@@ -85,6 +85,7 @@ body:
       label: OPEM version
       description: Which version of OPEM are you using?
       options:
+        - OPEM 1.4
         - OPEM 1.3
         - OPEM 1.2
         - OPEM 1.1

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """OPEM parameters."""
-Version = 1.3
+Version = 1.4
 Website = "http://www.ecsim.site/opem"
 UpdateUrl = "http://www.ecsim.site/opem/update"
 Overview = '''
