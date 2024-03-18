@@ -61,9 +61,7 @@ li {
     list-style-position: inside;
 }
 .OPEM_image{
-    height: 350px;
-    width: 500px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .moduland{
@@ -330,7 +328,6 @@ button {
 }
     .OPEM_image{
     width: 90%;
-    height: 50%;
 }
 
 .help {
