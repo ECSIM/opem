@@ -1,41 +1,27 @@
 <div align="center">
-<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=300px>
-<br/>
-<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-<a href="https://codecov.io/gh/ECSIM/opem">
-  <img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
-</a>
-<a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18"></a>
-<a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
-<a href="Documents/"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://discord.gg/v9RGYq9W5m">
-  <img src="https://img.shields.io/discord/1006472275920425012.svg" alt="Discord Channel">
-</a>
+	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=300px>
+	<br/>
+	<a href="https://www.python.org/">
+		<img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" />
+	</a>
+	<a href="https://codecov.io/gh/ECSIM/opem">
+		<img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" />
+	</a>
+	<a href="https://badge.fury.io/py/opem">
+		<img src="https://badge.fury.io/py/opem.svg" alt="PyPI version" height="18">
+	</a>
+	<a href="https://anaconda.org/ECSIM/opem">
+		<img src="https://anaconda.org/ecsim/opem/badges/version.svg">
+	</a>
+	<a href="Documents/">
+		<img src="https://img.shields.io/badge/doc-latest-orange.svg">
+	</a>
+	<a href="https://discord.gg/v9RGYq9W5m">
+		<img src="https://img.shields.io/discord/1006472275920425012.svg" alt="Discord Channel">
+	</a>
 </div>
 	
 ----------				
-
-## Table of Contents
-   * [What is PEM?](http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm)					
-   * [Overview](https://github.com/ECSIM/opem#overview)
-   * [Installation](https://github.com/ECSIM/opem/blob/master/INSTALL.md)
-   * [Usage](https://github.com/ECSIM/opem#usage)
-   		* [Executable](https://github.com/ECSIM/opem#executable)
-   		* [Library](https://github.com/ECSIM/opem#library)	
-   		* [Telegram Bot](https://github.com/ECSIM/opem#telegram-bot)
-   		* [Try OPEM in Your Browser!](https://github.com/ECSIM/opem#try-opem-in-your-browser)
-   		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
-   * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
-   * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
-   * [Outputs](https://github.com/ECSIM/opem#outputs)
-   * [Thanks](https://github.com/ECSIM/opem#thanks)
-   * [Reference](https://github.com/ECSIM/opem#reference)
-   * [Cite](https://github.com/ECSIM/opem#cite)
-   * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
-   * [License](https://github.com/ECSIM/opem/blob/master/LICENSE)
-   * [Show Your Support](https://github.com/ECSIM/opem#show-your-support)
-   * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
 
 ## Overview		
 
@@ -45,11 +31,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 </p>
 
 <div align="center">
-
-<img src="https://github.com/ECSIM/opem/raw/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
-<p>Fig1. OPEM Block Diagram</p>
-
-
+	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/OPEM_BLOCK_DIAGRAM.jpg">
+	<p>Fig1. OPEM Block Diagram</p>
 </div>
 
 <table>
@@ -95,1329 +78,1307 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
-	1. Amphlett Static Model
-		<html>
-		<table>
-			<tr>
-				<td align="center">Input</td>
-				<td align="center">Description</td>
-				<td align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Cell operation temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">PH2</td>
-				<td align="center">Partial pressure</td>
-				<td align="center">atm</td>
-			</tr>
-			<tr>
-				<td align="center">PO2</td>
-				<td align="center">Partial pressure</td>
-				<td align="center">atm</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">Active area</td>
-				<td align="center">cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">l</td>
-				<td align="center">Membrane thickness</td>
-				<td align="center">cm</td>
-			</tr>
-			<tr>
-				<td align="center">lambda</td>
-				<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">R(*Optional)</td>
-				<td align="center">R-Electronic</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">JMax</td>
-				<td align="center">Maximum current density</td>
-				<td align="center">A/(cm^2)</td>
-			</tr>
-			<tr>
-				<td align="center">N</td>
-				<td align="center">Number of single cells</td>
-				<td align="center">--</td>
-			</tr>
-				
-		</table> 
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
-	2. Larminie-Dicks Static Model
-		<html>
-		<table>
-			<tr>
-				<td align="center">Input</td>
-				<td align="center">Description</td>
-				<td align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">Fuel cell reversible no loss voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">The slope of the Tafel line</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Cell operation temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_n</td>
-				<td align="center">Internal current</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_0</td>
-				<td align="center">Exchange current at which the overvoltage begins to move from zero	</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_L</td>
-				<td align="center">Limiting current</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">RM</td>
-				<td align="center">The membrane and contact resistances</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">N</td>
-				<td align="center">Number of single cells</td>
-				<td align="center">--</td>
-			</tr>
-				
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
-	3. Chamberline-Kim Static Model
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">Open circuit voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">b</td>
-				<td align="center">Tafel's parameter for the oxygen reduction</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">R</td>
-				<td align="center">Resistance</td>
-				<td align="center">ohm.cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">Active area</td>
-				<td align="center">cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">m</td>
-				<td align="center">Diffusion's parameters</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">n</td>
-				<td align="center">Diffusion's parameters</td>
-				<td align="center">(A^-1)(cm^2)</td>
-			</tr>
-			<tr>
-				<td align="center">N</td>
-				<td align="center">Number of single cells</td>
-				<td align="center">--</td>
-			</tr>
-				
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
-	4. Padulles Dynamic Model I
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qH2</td>
-				<td align="center">Molar flow of hydrogen</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
 
-	5. Padulles Dynamic Model II
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qH2</td>
-				<td align="center">Molar flow of hydrogen</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
-	6. Padulles-Hauer Dynamic Model
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t1</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t2</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">CV</td>
-				<td align="center">Conversion factor</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qMethanol</td>
-				<td align="center">Molar flow of methanol</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
-	7. Padulles-Amphlett Dynamic Model
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t1</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t2</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">Active area</td>
-				<td align="center">cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">l</td>
-				<td align="center">Membrane thickness</td>
-				<td align="center">cm</td>
-			</tr>
-			<tr>
-				<td align="center">lambda</td>
-				<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">R(*Optional)</td>
-				<td align="center">R-Electronic</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">JMax</td>
-				<td align="center">Maximum current density</td>
-				<td align="center">A/(cm^2)</td>
-			</tr>
-			<tr>
-				<td align="center">CV</td>
-				<td align="center">Conversion factor</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qMethanol</td>
-				<td align="center">Molar flow of methanol</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
-	8. Chakraborty Dynamic Model
-		<html>
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Cell operation temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">u</td>
-				<td align="center">Fuel utilization ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-		</table>
-		</html>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+#### 1. Amphlett
+<table>
+	<tr>
+		<td align="center">Input</td>
+		<td align="center">Description</td>
+		<td align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Cell operation temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">PH2</td>
+		<td align="center">Partial pressure</td>
+		<td align="center">atm</td>
+	</tr>
+	<tr>
+		<td align="center">PO2</td>
+		<td align="center">Partial pressure</td>
+		<td align="center">atm</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">A</td>
+		<td align="center">Active area</td>
+		<td align="center">cm^2</td>
+	</tr>
+	<tr>
+		<td align="center">l</td>
+		<td align="center">Membrane thickness</td>
+		<td align="center">cm</td>
+	</tr>
+	<tr>
+		<td align="center">lambda</td>
+		<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">R(*Optional)</td>
+		<td align="center">R-Electronic</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">JMax</td>
+		<td align="center">Maximum current density</td>
+		<td align="center">A/(cm^2)</td>
+	</tr>
+	<tr>
+		<td align="center">N</td>
+		<td align="center">Number of single cells</td>
+		<td align="center">--</td>
+	</tr>		
+</table>
+ 
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
 		
-	- Find your reports in `Model_Name` folder			
+#### 2. Larminie-Dicks
+<table>
+	<tr>
+		<td align="center">Input</td>
+		<td align="center">Description</td>
+		<td align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">Fuel cell reversible no loss voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">A</td>
+		<td align="center">The slope of the Tafel line</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Cell operation temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i_n</td>
+		<td align="center">Internal current</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i_0</td>
+		<td align="center">Exchange current at which the overvoltage begins to move from zero	</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i_L</td>
+		<td align="center">Limiting current</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">RM</td>
+		<td align="center">The membrane and contact resistances</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">N</td>
+		<td align="center">Number of single cells</td>
+		<td align="center">--</td>
+	</tr>		
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
+		
+#### 3. Chamberline-Kim
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">Open circuit voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">b</td>
+		<td align="center">Tafel's parameter for the oxygen reduction</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">R</td>
+		<td align="center">Resistance</td>
+		<td align="center">ohm.cm^2</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">A</td>
+		<td align="center">Active area</td>
+		<td align="center">cm^2</td>
+	</tr>
+	<tr>
+		<td align="center">m</td>
+		<td align="center">Diffusion's parameters</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">n</td>
+		<td align="center">Diffusion's parameters</td>
+		<td align="center">(A^-1)(cm^2)</td>
+	</tr>
+	<tr>
+		<td align="center">N</td>
+		<td align="center">Number of single cells</td>
+		<td align="center">--</td>
+	</tr>		
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
+
+#### 4. Padulles I
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">No load voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Fuel cell temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">KH2</td>
+		<td align="center">Hydrogen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KO2</td>
+		<td align="center">Oxygen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">tH2</td>
+		<td align="center">Hydrogen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tO2</td>
+		<td align="center">Oxygen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">B</td>
+		<td align="center">Activation voltage constant</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">C</td>
+		<td align="center">Activation constant parameter</td>
+		<td align="center">A^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">Rint</td>
+		<td align="center">Fuel cell internal resistance</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">rho</td>
+		<td align="center">Hydrogen-Oxygen flow ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">qH2</td>
+		<td align="center">Molar flow of hydrogen</td>
+		<td align="center">kmol/s</td>
+	</tr>
+	<tr>
+		<td align="center">N0</td>
+		<td align="center">Number of cells</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>		
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
+
+#### 5. Padulles II
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">No load voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Fuel cell temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">KH2</td>
+		<td align="center">Hydrogen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KH2O</td>
+		<td align="center">Water valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KO2</td>
+		<td align="center">Oxygen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">tH2</td>
+		<td align="center">Hydrogen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tH2O</td>
+		<td align="center">Water time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tO2</td>
+		<td align="center">Oxygen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">B</td>
+		<td align="center">Activation voltage constant</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">C</td>
+		<td align="center">Activation constant parameter</td>
+		<td align="center">A^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">Rint</td>
+		<td align="center">Fuel cell internal resistance</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">rho</td>
+		<td align="center">Hydrogen-Oxygen flow ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">qH2</td>
+		<td align="center">Molar flow of hydrogen</td>
+		<td align="center">kmol/s</td>
+	</tr>
+	<tr>
+		<td align="center">N0</td>
+		<td align="center">Number of cells</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>		
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
 	
-	#### Screen Record
-	<div align="center">
-		<a href="https://asciinema.org/a/170416" target="_blank"><img src="https://asciinema.org/a/170416.png" /></a>
-		<p>Screen Record</p>
-	</div>
+#### 6. Padulles-Hauer
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">No load voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Fuel cell temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">KH2</td>
+		<td align="center">Hydrogen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KH2O</td>
+		<td align="center">Water valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KO2</td>
+		<td align="center">Oxygen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">tH2</td>
+		<td align="center">Hydrogen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tH2O</td>
+		<td align="center">Water time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tO2</td>
+		<td align="center">Oxygen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">t1</td>
+		<td align="center">Reformer time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">t2</td>
+		<td align="center">Reformer time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">B</td>
+		<td align="center">Activation voltage constant</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">C</td>
+		<td align="center">Activation constant parameter</td>
+		<td align="center">A^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">CV</td>
+		<td align="center">Conversion factor</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">Rint</td>
+		<td align="center">Fuel cell internal resistance</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">rho</td>
+		<td align="center">Hydrogen-Oxygen flow ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">qMethanol</td>
+		<td align="center">Molar flow of methanol</td>
+		<td align="center">kmol/s</td>
+	</tr>
+	<tr>
+		<td align="center">N0</td>
+		<td align="center">Number of cells</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>		
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
+	
+#### 7. Padulles-Amphlett
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">No load voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Fuel cell temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">KH2</td>
+		<td align="center">Hydrogen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KH2O</td>
+		<td align="center">Water valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KO2</td>
+		<td align="center">Oxygen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">tH2</td>
+		<td align="center">Hydrogen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tH2O</td>
+		<td align="center">Water time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">tO2</td>
+		<td align="center">Oxygen time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">t1</td>
+		<td align="center">Reformer time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">t2</td>
+		<td align="center">Reformer time constant</td>
+		<td align="center">s</td>
+	</tr>
+	<tr>
+		<td align="center">A</td>
+		<td align="center">Active area</td>
+		<td align="center">cm^2</td>
+	</tr>
+	<tr>
+		<td align="center">l</td>
+		<td align="center">Membrane thickness</td>
+		<td align="center">cm</td>
+	</tr>
+	<tr>
+		<td align="center">lambda</td>
+		<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">R(*Optional)</td>
+		<td align="center">R-Electronic</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">JMax</td>
+		<td align="center">Maximum current density</td>
+		<td align="center">A/(cm^2)</td>
+	</tr>
+	<tr>
+		<td align="center">CV</td>
+		<td align="center">Conversion factor</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">rho</td>
+		<td align="center">Hydrogen-Oxygen flow ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">qMethanol</td>
+		<td align="center">Molar flow of methanol</td>
+		<td align="center">kmol/s</td>
+	</tr>
+	<tr>
+		<td align="center">N0</td>
+		<td align="center">Number of cells</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+	
+#### 8. Chakraborty
+<table>
+	<tr>
+		<td align="center" >Input</td>
+		<td align="center">Description</td>
+		<td  align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">E0</td>
+		<td align="center">No load voltage</td>
+		<td align="center">V</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Cell operation temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">KH2</td>
+		<td align="center">Hydrogen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KH2O</td>
+		<td align="center">Water valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">KO2</td>
+		<td align="center">Oxygen valve constant</td>
+		<td align="center">kmol.s^(-1).atm^(-1)</td>
+	</tr>
+	<tr>
+		<td align="center">rho</td>
+		<td align="center">Hydrogen-Oxygen flow ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">Rint</td>
+		<td align="center">Fuel cell internal resistance</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">N0</td>
+		<td align="center">Number of cells</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">u</td>
+		<td align="center">Fuel utilization ratio</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
+</table>
+
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+		
+* Find your reports in `Model_Name` folder			
+	
+#### Screen Record
+<div align="center">
+	<a href="https://asciinema.org/a/170416" target="_blank">
+		<img src="https://asciinema.org/a/170416.png">
+	</a>
+	<p>Screen Record</p>
+</div>
 
 ### Library				
 
+#### 1. Amphlett Static Model
+```pycon
+>>> from opem.Static.Amphlett import Static_Analysis
+>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
+>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+ ```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Active</td>
+		<td align="center">Eta activation</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Conc</td>
+		<td align="center">Eta concentration</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Ohmic</td>
+		<td align="center">Eta ohmic</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+			
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
 
-1. Amphlett Static Model
-	```pycon
-	>>> from opem.Static.Amphlett import Static_Analysis
-	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	 ```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Active</td>
-				<td align="center">Eta activation</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Conc</td>
-				<td align="center">Eta concentration</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Ohmic</td>
-				<td align="center">Eta ohmic</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-		
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
-2. Larminie-Dicks Static Model
-	```pycon
-	>>> from opem.Static.Larminie_Dicks import Static_Analysis
-	>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	 ```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>	
-			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
-3. Chamberline-Kim Static Model
-	```pycon
-	>>> from opem.Static.Chamberline_Kim import Static_Analysis
-	>>> Test_Vector = {"A": 50.0,"E0": 0.982,"b": 0.0689,"R": 0.328,"m": 0.000125,"n": 9.45,"N": 1,"i-start": 1,"i-stop": 42.5,"i-step": 0.1,"Name": "Chamberline_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
-4. Padulles Dynamic Model I
-	```pycon
-	>>> from opem.Dynamic.Padulles1 import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 88,"KO2": 0.0000211,"KH2": 0.0000422,"tH2": 3.37,"tO2": 6.74,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0,"i-stop": 100,"i-step": 0.1,"Name": "PadullesI_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PO2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-	
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>
-5. Padulles Dynamic Model II
-	```pycon
-	>>> from opem.Dynamic.Padulles2 import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles2_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PO2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2O</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
+#### 2. Larminie-Dicks Static Model
+```pycon
+>>> from opem.Static.Larminie_Dicks import Static_Analysis
+>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
+>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
 				
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
-6. Padulles-Hauer Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles_Hauer_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PO2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2O</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
-7. Padulles-Amphlett Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
-	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PO2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2O</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Active</td>
-				<td align="center">Eta activation</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Conc</td>
-				<td align="center">Eta concentration</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Eta_Ohmic</td>
-				<td align="center">Eta ohmic</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-									
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
 
-8. Chakraborty Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
-	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<html>
-		<table>
-			<tr>
-				<td align="center" >Key</td>
-				<td align="center">Description</td>
-				<td  align="center">Type</td>
-			</tr>
-			<tr>
-				<td align="center" >Status</td>
-				<td align="center">Simulation status</td>
-				<td  align="center">Bool</td>
-			</tr>
-			<tr>
-				<td align="center" >P</td>
-				<td align="center">Power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >I</td>
-				<td align="center">Cell operating current</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V</td>
-				<td align="center">FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >EFF</td>
-				<td align="center">Efficiency</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PO2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >PH2O</td>
-				<td align="center">Partial pressure</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ph</td>
-				<td align="center">Thermal power</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Nernst Gain</td>
-				<td align="center">Nernst Gain</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >Ohmic Loss</td>
-				<td align="center">Ohmic Loss</td>
-				<td  align="center">List</td>
-			</tr>
-			<tr>
-				<td align="center" >V0</td>
-				<td align="center">Linear-Apx intercept</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >K</td>
-				<td align="center">Linear-Apx slope</td>
-				<td  align="center">Float</td>
-			</tr>
-			<tr>
-				<td align="center" >VE</td>
-				<td align="center">Estimated FC voltage</td>
-				<td  align="center">List</td>
-			</tr>
-		</table>
-		</html>
-									
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+#### 3. Chamberline-Kim Static Model
+```pycon
+>>> from opem.Static.Chamberline_Kim import Static_Analysis
+>>> Test_Vector = {"A": 50.0,"E0": 0.982,"b": 0.0689,"R": 0.328,"m": 0.000125,"n": 9.45,"N": 1,"i-start": 1,"i-stop": 42.5,"i-step": 0.1,"Name": "Chamberline_Test"}
+>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+				
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
 
-	#### Parameters
+#### 4. Padulles Dynamic Model I
+```pycon
+>>> from opem.Dynamic.Padulles1 import Dynamic_Analysis
+>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 88,"KO2": 0.0000211,"KH2": 0.0000422,"tH2": 3.37,"tO2": 6.74,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0,"i-stop": 100,"i-step": 0.1,"Name": "PadullesI_Test"}
+>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PO2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+		
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>
 
-	1. `TestMode` : Active test mode and get/return data as `dict`, (Default : `False`)
-	2. `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`) and print result in console, (Default : `True`)
-	3. `PrintMode` : Control printing in console, (Default : `True`)
-	4. `Folder` : Reports folder, (Default : `os.getcwd()`)
-	
-	#### Note
-	
-	- Return type : `dict`
+#### 5. Padulles Dynamic Model II
+```pycon
+>>> from opem.Dynamic.Padulles2 import Dynamic_Analysis
+>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles2_Test"}
+>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PO2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2O</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+					
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
+
+#### 6. Padulles-Hauer Dynamic Model
+```pycon
+>>> from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis
+>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles_Hauer_Test"}
+>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PO2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2O</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+				
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
+
+#### 7. Padulles-Amphlett Dynamic Model
+```pycon
+>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
+>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
+>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PO2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2O</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Active</td>
+		<td align="center">Eta activation</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Conc</td>
+		<td align="center">Eta concentration</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Eta_Ohmic</td>
+		<td align="center">Eta ohmic</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+										
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+
+#### 8. Chakraborty Dynamic Model
+```pycon
+>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
+>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
+>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+```
+<table>
+	<tr>
+		<td align="center" >Key</td>
+		<td align="center">Description</td>
+		<td  align="center">Type</td>
+	</tr>
+	<tr>
+		<td align="center" >Status</td>
+		<td align="center">Simulation status</td>
+		<td  align="center">Bool</td>
+	</tr>
+	<tr>
+		<td align="center" >P</td>
+		<td align="center">Power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >I</td>
+		<td align="center">Cell operating current</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V</td>
+		<td align="center">FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >EFF</td>
+		<td align="center">Efficiency</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PO2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >PH2O</td>
+		<td align="center">Partial pressure</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ph</td>
+		<td align="center">Thermal power</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Nernst Gain</td>
+		<td align="center">Nernst Gain</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >Ohmic Loss</td>
+		<td align="center">Ohmic Loss</td>
+		<td  align="center">List</td>
+	</tr>
+	<tr>
+		<td align="center" >V0</td>
+		<td align="center">Linear-Apx intercept</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >K</td>
+		<td align="center">Linear-Apx slope</td>
+		<td  align="center">Float</td>
+	</tr>
+	<tr>
+		<td align="center" >VE</td>
+		<td align="center">Estimated FC voltage</td>
+		<td  align="center">List</td>
+	</tr>
+</table>
+										
+* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+
+#### Parameters
+1. `TestMode` : Active test mode and get/return data as `dict`, (Default : `False`)
+2. `ReportMode` : Generate reports(`.csv`,`.opem`,`.html`) and print result in console, (Default : `True`)
+3. `PrintMode` : Control printing in console, (Default : `True`)
+4. `Folder` : Reports folder, (Default : `os.getcwd()`)
+		
+* Return type : `dict`
 
 
 ### Telegram Bot
@@ -1446,15 +1407,8 @@ or send an email to [opem@ecsim.site](mailto:opem@ecsim.site "opem@ecsim.site").
 You can also join our discord server			
 
 <a href="https://discord.gg/v9RGYq9W5m">
-  <img src="https://img.shields.io/discord/1006472275920425012.svg?style=for-the-badge" alt="Discord Channel">
+	<img src="https://img.shields.io/discord/1006472275920425012.svg?style=for-the-badge" alt="Discord Channel">
 </a>
-
-
-## Outputs	
-
-1. [HTML](http://www.ecsim.site/opem/outputs/test.html)
-2. [CSV](https://github.com/ECSIM/opem/blob/master/otherfile/test.csv)
-3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
 
 
 ## Thanks
