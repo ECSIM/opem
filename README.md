@@ -79,73 +79,74 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 - Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
 #### 1. Amphlett Static Model
-	<table>
+
+<table>
+	<tr>
+		<td align="center">Input</td>
+		<td align="center">Description</td>
+		<td align="center">Unit</td>
+	</tr>
+	<tr>
+		<td align="center">T</td>
+		<td align="center">Cell operation temperature</td>
+		<td align="center">K</td>
+	</tr>
+	<tr>
+		<td align="center">PH2</td>
+		<td align="center">Partial pressure</td>
+		<td align="center">atm</td>
+	</tr>
+	<tr>
+		<td align="center">PO2</td>
+		<td align="center">Partial pressure</td>
+		<td align="center">atm</td>
+	</tr>
+	<tr>
+		<td align="center">i-start</td>
+		<td align="center">Cell operating current start point</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-step</td>
+		<td align="center">Cell operating current step</td>
+		<td align="center">A</td>
+	</tr>
+	<tr>
+		<td align="center">i-stop</td>
+		<td align="center">Cell operating current end point</td>
+		<td align="center">A</td>
+	</tr>
 		<tr>
-			<td align="center">Input</td>
-			<td align="center">Description</td>
-			<td align="center">Unit</td>
-		</tr>
-		<tr>
-			<td align="center">T</td>
-			<td align="center">Cell operation temperature</td>
-			<td align="center">K</td>
-		</tr>
-		<tr>
-			<td align="center">PH2</td>
-			<td align="center">Partial pressure</td>
-			<td align="center">atm</td>
-		</tr>
-		<tr>
-			<td align="center">PO2</td>
-			<td align="center">Partial pressure</td>
-			<td align="center">atm</td>
-		</tr>
-		<tr>
-			<td align="center">i-start</td>
-			<td align="center">Cell operating current start point</td>
-			<td align="center">A</td>
-		</tr>
-		<tr>
-			<td align="center">i-step</td>
-			<td align="center">Cell operating current step</td>
-			<td align="center">A</td>
-		</tr>
-		<tr>
-			<td align="center">i-stop</td>
-			<td align="center">Cell operating current end point</td>
-			<td align="center">A</td>
-		</tr>
-		<tr>
-			<td align="center">A</td>
-			<td align="center">Active area</td>
-			<td align="center">cm^2</td>
-		</tr>
-		<tr>
-			<td align="center">l</td>
-			<td align="center">Membrane thickness</td>
-			<td align="center">cm</td>
-		</tr>
-		<tr>
-			<td align="center">lambda</td>
-			<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
-			<td align="center">--</td>
-		</tr>
-		<tr>
-			<td align="center">R(*Optional)</td>
-			<td align="center">R-Electronic</td>
-			<td align="center">ohm</td>
-		</tr>
-		<tr>
-			<td align="center">JMax</td>
-			<td align="center">Maximum current density</td>
-			<td align="center">A/(cm^2)</td>
-		</tr>
-		<tr>
-			<td align="center">N</td>
-			<td align="center">Number of single cells</td>
-			<td align="center">--</td>
-		</tr>		
-	</table>
+		<td align="center">A</td>
+		<td align="center">Active area</td>
+		<td align="center">cm^2</td>
+	</tr>
+	<tr>
+		<td align="center">l</td>
+		<td align="center">Membrane thickness</td>
+		<td align="center">cm</td>
+	</tr>
+	<tr>
+		<td align="center">lambda</td>
+		<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
+		<td align="center">--</td>
+	</tr>
+	<tr>
+		<td align="center">R(*Optional)</td>
+		<td align="center">R-Electronic</td>
+		<td align="center">ohm</td>
+	</tr>
+	<tr>
+		<td align="center">JMax</td>
+		<td align="center">Maximum current density</td>
+		<td align="center">A/(cm^2)</td>
+	</tr>
+	<tr>
+		<td align="center">N</td>
+		<td align="center">Number of single cells</td>
+		<td align="center">--</td>
+	</tr>		
+</table>
  
 	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
 		
