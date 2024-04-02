@@ -147,7 +147,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</tr>		
 	</table>
  
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
 		
 #### 2. Larminie-Dicks Static Model
 	<table>
@@ -212,554 +212,551 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			<td align="center">--</td>
 		</tr>		
 	</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
 		
-	#### 3. Chamberline-Kim Static Model
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">Open circuit voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">b</td>
-				<td align="center">Tafel's parameter for the oxygen reduction</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">R</td>
-				<td align="center">Resistance</td>
-				<td align="center">ohm.cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">Active area</td>
-				<td align="center">cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">m</td>
-				<td align="center">Diffusion's parameters</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">n</td>
-				<td align="center">Diffusion's parameters</td>
-				<td align="center">(A^-1)(cm^2)</td>
-			</tr>
-			<tr>
-				<td align="center">N</td>
-				<td align="center">Number of single cells</td>
-				<td align="center">--</td>
-			</tr>
-				
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
-	#### 4. Padulles Dynamic Model I
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qH2</td>
-				<td align="center">Molar flow of hydrogen</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
+#### 3. Chamberline-Kim Static Model
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">Open circuit voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">b</td>
+			<td align="center">Tafel's parameter for the oxygen reduction</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">R</td>
+			<td align="center">Resistance</td>
+			<td align="center">ohm.cm^2</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">A</td>
+			<td align="center">Active area</td>
+			<td align="center">cm^2</td>
+		</tr>
+		<tr>
+			<td align="center">m</td>
+			<td align="center">Diffusion's parameters</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">n</td>
+			<td align="center">Diffusion's parameters</td>
+			<td align="center">(A^-1)(cm^2)</td>
+		</tr>
+		<tr>
+			<td align="center">N</td>
+			<td align="center">Number of single cells</td>
+			<td align="center">--</td>
+		</tr>		
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
 
-	#### 5. Padulles Dynamic Model II
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qH2</td>
-				<td align="center">Molar flow of hydrogen</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
-	#### 6. Padulles-Hauer Dynamic Model
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t1</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t2</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">B</td>
-				<td align="center">Activation voltage constant</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">C</td>
-				<td align="center">Activation constant parameter</td>
-				<td align="center">A^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">CV</td>
-				<td align="center">Conversion factor</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qMethanol</td>
-				<td align="center">Molar flow of methanol</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			
-				
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
-	#### 7. Padulles-Amphlett Dynamic Model
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Fuel cell temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">tH2</td>
-				<td align="center">Hydrogen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tH2O</td>
-				<td align="center">Water time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">tO2</td>
-				<td align="center">Oxygen time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t1</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">t2</td>
-				<td align="center">Reformer time constant</td>
-				<td align="center">s</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">Active area</td>
-				<td align="center">cm^2</td>
-			</tr>
-			<tr>
-				<td align="center">l</td>
-				<td align="center">Membrane thickness</td>
-				<td align="center">cm</td>
-			</tr>
-			<tr>
-				<td align="center">lambda</td>
-				<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">R(*Optional)</td>
-				<td align="center">R-Electronic</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">JMax</td>
-				<td align="center">Maximum current density</td>
-				<td align="center">A/(cm^2)</td>
-			</tr>
-			<tr>
-				<td align="center">CV</td>
-				<td align="center">Conversion factor</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">qMethanol</td>
-				<td align="center">Molar flow of methanol</td>
-				<td align="center">kmol/s</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
-	#### 8. Chakraborty Dynamic Model
-		<table>
-			<tr>
-				<td align="center" >Input</td>
-				<td align="center">Description</td>
-				<td  align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">No load voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Cell operation temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">KH2</td>
-				<td align="center">Hydrogen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KH2O</td>
-				<td align="center">Water valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">KO2</td>
-				<td align="center">Oxygen valve constant</td>
-				<td align="center">kmol.s^(-1).atm^(-1)</td>
-			</tr>
-			<tr>
-				<td align="center">rho</td>
-				<td align="center">Hydrogen-Oxygen flow ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">Rint</td>
-				<td align="center">Fuel cell internal resistance</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">N0</td>
-				<td align="center">Number of cells</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">u</td>
-				<td align="center">Fuel utilization ratio</td>
-				<td align="center">--</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-		</table>
-		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+#### 4. Padulles Dynamic Model I
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">No load voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Fuel cell temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">KH2</td>
+			<td align="center">Hydrogen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KO2</td>
+			<td align="center">Oxygen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">tH2</td>
+			<td align="center">Hydrogen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tO2</td>
+			<td align="center">Oxygen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">B</td>
+			<td align="center">Activation voltage constant</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">C</td>
+			<td align="center">Activation constant parameter</td>
+			<td align="center">A^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">Rint</td>
+			<td align="center">Fuel cell internal resistance</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">rho</td>
+			<td align="center">Hydrogen-Oxygen flow ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">qH2</td>
+			<td align="center">Molar flow of hydrogen</td>
+			<td align="center">kmol/s</td>
+		</tr>
+		<tr>
+			<td align="center">N0</td>
+			<td align="center">Number of cells</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>		
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
+
+#### 5. Padulles Dynamic Model II
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">No load voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Fuel cell temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">KH2</td>
+			<td align="center">Hydrogen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KH2O</td>
+			<td align="center">Water valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KO2</td>
+			<td align="center">Oxygen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">tH2</td>
+			<td align="center">Hydrogen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tH2O</td>
+			<td align="center">Water time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tO2</td>
+			<td align="center">Oxygen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">B</td>
+			<td align="center">Activation voltage constant</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">C</td>
+			<td align="center">Activation constant parameter</td>
+			<td align="center">A^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">Rint</td>
+			<td align="center">Fuel cell internal resistance</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">rho</td>
+			<td align="center">Hydrogen-Oxygen flow ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">qH2</td>
+			<td align="center">Molar flow of hydrogen</td>
+			<td align="center">kmol/s</td>
+		</tr>
+		<tr>
+			<td align="center">N0</td>
+			<td align="center">Number of cells</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>		
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
+	
+#### 6. Padulles-Hauer Dynamic Model
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">No load voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Fuel cell temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">KH2</td>
+			<td align="center">Hydrogen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KH2O</td>
+			<td align="center">Water valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KO2</td>
+			<td align="center">Oxygen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">tH2</td>
+			<td align="center">Hydrogen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tH2O</td>
+			<td align="center">Water time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tO2</td>
+			<td align="center">Oxygen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">t1</td>
+			<td align="center">Reformer time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">t2</td>
+			<td align="center">Reformer time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">B</td>
+			<td align="center">Activation voltage constant</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">C</td>
+			<td align="center">Activation constant parameter</td>
+			<td align="center">A^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">CV</td>
+			<td align="center">Conversion factor</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">Rint</td>
+			<td align="center">Fuel cell internal resistance</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">rho</td>
+			<td align="center">Hydrogen-Oxygen flow ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">qMethanol</td>
+			<td align="center">Molar flow of methanol</td>
+			<td align="center">kmol/s</td>
+		</tr>
+		<tr>
+			<td align="center">N0</td>
+			<td align="center">Number of cells</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>		
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
+	
+#### 7. Padulles-Amphlett Dynamic Model
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">No load voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Fuel cell temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">KH2</td>
+			<td align="center">Hydrogen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KH2O</td>
+			<td align="center">Water valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KO2</td>
+			<td align="center">Oxygen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">tH2</td>
+			<td align="center">Hydrogen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tH2O</td>
+			<td align="center">Water time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">tO2</td>
+			<td align="center">Oxygen time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">t1</td>
+			<td align="center">Reformer time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">t2</td>
+			<td align="center">Reformer time constant</td>
+			<td align="center">s</td>
+		</tr>
+		<tr>
+			<td align="center">A</td>
+			<td align="center">Active area</td>
+			<td align="center">cm^2</td>
+		</tr>
+		<tr>
+			<td align="center">l</td>
+			<td align="center">Membrane thickness</td>
+			<td align="center">cm</td>
+		</tr>
+		<tr>
+			<td align="center">lambda</td>
+			<td align="center">An adjustable parameter with a min value of 14 and max value of 23</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">R(*Optional)</td>
+			<td align="center">R-Electronic</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">JMax</td>
+			<td align="center">Maximum current density</td>
+			<td align="center">A/(cm^2)</td>
+		</tr>
+		<tr>
+			<td align="center">CV</td>
+			<td align="center">Conversion factor</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">rho</td>
+			<td align="center">Hydrogen-Oxygen flow ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">qMethanol</td>
+			<td align="center">Molar flow of methanol</td>
+			<td align="center">kmol/s</td>
+		</tr>
+		<tr>
+			<td align="center">N0</td>
+			<td align="center">Number of cells</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+	
+#### 8. Chakraborty Dynamic Model
+	<table>
+		<tr>
+			<td align="center" >Input</td>
+			<td align="center">Description</td>
+			<td  align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">No load voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Cell operation temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">KH2</td>
+			<td align="center">Hydrogen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KH2O</td>
+			<td align="center">Water valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">KO2</td>
+			<td align="center">Oxygen valve constant</td>
+			<td align="center">kmol.s^(-1).atm^(-1)</td>
+		</tr>
+		<tr>
+			<td align="center">rho</td>
+			<td align="center">Hydrogen-Oxygen flow ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">Rint</td>
+			<td align="center">Fuel cell internal resistance</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">N0</td>
+			<td align="center">Number of cells</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">u</td>
+			<td align="center">Fuel utilization ratio</td>
+			<td align="center">--</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>
+	</table>
+	* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
 		
 	- Find your reports in `Model_Name` folder			
 	
-	#### Screen Record
+#### Screen Record
 	<div align="center">
 		<a href="https://asciinema.org/a/170416" target="_blank">
 			<img src="https://asciinema.org/a/170416.png">
