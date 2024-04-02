@@ -1411,13 +1411,6 @@ You can also join our discord server
 </a>
 
 
-## Outputs	
-
-1. [HTML](http://www.ecsim.site/opem/outputs/test.html)
-2. [CSV](https://github.com/ECSIM/opem/blob/master/otherfile/test.csv)
-3. [OPEM](https://github.com/ECSIM/opem/blob/master/otherfile/test.opem)	
-
-
 ## Thanks
 
 * [Chart.js](https://github.com/chartjs/Chart.js "Chartjs")
