@@ -78,7 +78,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
 - Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
-	1. Amphlett Static Model
+	#### 1. Amphlett Static Model
 		<table>
 			<tr>
 				<td align="center">Input</td>
@@ -148,7 +148,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table> 
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
-	2. Larminie-Dicks Static Model
+	#### 2. Larminie-Dicks Static Model
 		<table>
 			<tr>
 				<td align="center">Input</td>
@@ -213,7 +213,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
-	3. Chamberline-Kim Static Model
+	#### 3. Chamberline-Kim Static Model
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -273,7 +273,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
-	4. Padulles Dynamic Model I
+	#### 4. Padulles Dynamic Model I
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -360,7 +360,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
 
-	5. Padulles Dynamic Model II
+	#### 5. Padulles Dynamic Model II
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -456,7 +456,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
-	6. Padulles-Hauer Dynamic Model
+	#### 6. Padulles-Hauer Dynamic Model
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -567,7 +567,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 				
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
-	7. Padulles-Amphlett Dynamic Model
+	#### 7. Padulles-Amphlett Dynamic Model
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -686,7 +686,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			</tr>
 		</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
-	8. Chakraborty Dynamic Model
+	#### 8. Chakraborty Dynamic Model
 		<table>
 			<tr>
 				<td align="center" >Input</td>
@@ -769,597 +769,597 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 ### Library				
 
 
-1. Amphlett Static Model
-	```pycon
-	>>> from opem.Static.Amphlett import Static_Analysis
-	>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	 ```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Active</td>
-			<td align="center">Eta activation</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Conc</td>
-			<td align="center">Eta concentration</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Ohmic</td>
-			<td align="center">Eta ohmic</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-		
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
-2. Larminie-Dicks Static Model
-	```pycon
-	>>> from opem.Static.Larminie_Dicks import Static_Analysis
-	>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	 ```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
+	#### 1. Amphlett Static Model
+		```pycon
+		>>> from opem.Static.Amphlett import Static_Analysis
+		>>> Test_Vector={"T": 343.15,"PH2": 1,"PO2": 1,"i-start": 0,"i-stop": 75,"i-step": 0.1,"A": 50.6,"l": 0.0178,"lambda": 23,"N": 1,"R": 0,"JMax": 1.5,"Name": "Amphlett_Test"}
+		>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		 ```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Active</td>
+				<td align="center">Eta activation</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Conc</td>
+				<td align="center">Eta concentration</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Ohmic</td>
+				<td align="center">Eta ohmic</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
 			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
-3. Chamberline-Kim Static Model
-	```pycon
-	>>> from opem.Static.Chamberline_Kim import Static_Analysis
-	>>> Test_Vector = {"A": 50.0,"E0": 0.982,"b": 0.0689,"R": 0.328,"m": 0.000125,"n": 9.45,"N": 1,"i-start": 1,"i-stop": 42.5,"i-step": 0.1,"Name": "Chamberline_Test"}
-	>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
-4. Padulles Dynamic Model I
-	```pycon
-	>>> from opem.Dynamic.Padulles1 import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 88,"KO2": 0.0000211,"KH2": 0.0000422,"tH2": 3.37,"tO2": 6.74,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0,"i-stop": 100,"i-step": 0.1,"Name": "PadullesI_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PO2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-	
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>
-5. Padulles Dynamic Model II
-	```pycon
-	>>> from opem.Dynamic.Padulles2 import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles2_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PO2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2O</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
+#### 2. Larminie-Dicks Static Model
+		```pycon
+		>>> from opem.Static.Larminie_Dicks import Static_Analysis
+		>>> Test_Vector = {"A": 0.06,"E0": 1.178,"T": 328.15,"RM": 0.0018,"i_0": 0.00654,"i_L": 100.0,"i_n": 0.23,"N": 23,"i-start": 0.1,"i-stop": 98,"i-step": 0.1,"Name": "Larminiee_Test"}
+		>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		 ```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
 				
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
-6. Padulles-Hauer Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis
-	>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles_Hauer_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PO2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2O</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-			
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
-7. Padulles-Amphlett Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
-	>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PO2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2O</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Active</td>
-			<td align="center">Eta activation</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Conc</td>
-			<td align="center">Eta concentration</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Eta_Ohmic</td>
-			<td align="center">Eta ohmic</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-									
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
+#### 3. Chamberline-Kim Static Model
+		```pycon
+		>>> from opem.Static.Chamberline_Kim import Static_Analysis
+		>>> Test_Vector = {"A": 50.0,"E0": 0.982,"b": 0.0689,"R": 0.328,"m": 0.000125,"n": 9.45,"N": 1,"i-start": 1,"i-stop": 42.5,"i-step": 0.1,"Name": "Chamberline_Test"}
+		>>> data=Static_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+				
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
+#### 4. Padulles Dynamic Model I
+		```pycon
+		>>> from opem.Dynamic.Padulles1 import Dynamic_Analysis
+		>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 88,"KO2": 0.0000211,"KH2": 0.0000422,"tH2": 3.37,"tO2": 6.74,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0,"i-stop": 100,"i-step": 0.1,"Name": "PadullesI_Test"}
+		>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+		
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>
+#### 5. Padulles Dynamic Model II
+		```pycon
+		>>> from opem.Dynamic.Padulles2 import Dynamic_Analysis
+		>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qH2": 0.0004,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles2_Test"}
+		>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+					
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
+#### 6. Padulles-Hauer Dynamic Model
+		```pycon
+		>>> from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis
+		>>> Test_Vector = {"T": 343,"E0": 0.6,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"B": 0.04777,"C": 0.0136,"Rint": 0.00303,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 100,"i-step": 0.1,"Name": "Padulles_Hauer_Test"}
+		>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+				
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
+#### 7. Padulles-Amphlett Dynamic Model
+		```pycon
+		>>> from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis
+		>>> Test_Vector = {"A": 50.6,"l": 0.0178,"lambda": 23,"JMax": 1.5,"T": 343,"N0": 5,"KO2": 0.0000211,"KH2": 0.0000422,"KH2O": 0.000007716,"tH2": 3.37,"tO2": 6.74,"t1": 2,"t2": 2,"tH2O": 18.418,"rho": 1.168,"qMethanol": 0.0002,"CV": 2,"i-start": 0.1,"i-stop": 75,"i-step": 0.1,"Name": "Padulles_Amphlett_Test"}
+		>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Active</td>
+				<td align="center">Eta activation</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Conc</td>
+				<td align="center">Eta concentration</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Eta_Ohmic</td>
+				<td align="center">Eta ohmic</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+										
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
 
-8. Chakraborty Dynamic Model
-	```pycon
-	>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
-	>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
-	>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
-	```
-	<table>
-		<tr>
-			<td align="center" >Key</td>
-			<td align="center">Description</td>
-			<td  align="center">Type</td>
-		</tr>
-		<tr>
-			<td align="center" >Status</td>
-			<td align="center">Simulation status</td>
-			<td  align="center">Bool</td>
-		</tr>
-		<tr>
-			<td align="center" >P</td>
-			<td align="center">Power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >I</td>
-			<td align="center">Cell operating current</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V</td>
-			<td align="center">FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >EFF</td>
-			<td align="center">Efficiency</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PO2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >PH2O</td>
-			<td align="center">Partial pressure</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ph</td>
-			<td align="center">Thermal power</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Nernst Gain</td>
-			<td align="center">Nernst Gain</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >Ohmic Loss</td>
-			<td align="center">Ohmic Loss</td>
-			<td  align="center">List</td>
-		</tr>
-		<tr>
-			<td align="center" >V0</td>
-			<td align="center">Linear-Apx intercept</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >K</td>
-			<td align="center">Linear-Apx slope</td>
-			<td  align="center">Float</td>
-		</tr>
-		<tr>
-			<td align="center" >VE</td>
-			<td align="center">Estimated FC voltage</td>
-			<td  align="center">List</td>
-		</tr>
-	</table>
-									
-	- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
+#### 8. Chakraborty Dynamic Model
+		```pycon
+		>>> from opem.Dynamic.Chakraborty import Dynamic_Analysis
+		>>> Test_Vector = {"T": 1273,"E0": 0.6,"u":0.8,"N0": 1,"R": 3.28125 * 10**(-3),"KH2O": 0.000281,"KH2": 0.000843,"KO2": 0.00252,"rho": 1.145,"i-start": 0.1,"i-stop": 300,"i-step": 0.1,"Name": "Chakraborty_Test"}
+		>>> data=Dynamic_Analysis(InputMethod=Test_Vector,TestMode=True,PrintMode=False,ReportMode=False)
+		```
+		<table>
+			<tr>
+				<td align="center" >Key</td>
+				<td align="center">Description</td>
+				<td  align="center">Type</td>
+			</tr>
+			<tr>
+				<td align="center" >Status</td>
+				<td align="center">Simulation status</td>
+				<td  align="center">Bool</td>
+			</tr>
+			<tr>
+				<td align="center" >P</td>
+				<td align="center">Power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >I</td>
+				<td align="center">Cell operating current</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V</td>
+				<td align="center">FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >EFF</td>
+				<td align="center">Efficiency</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PO2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >PH2O</td>
+				<td align="center">Partial pressure</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ph</td>
+				<td align="center">Thermal power</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Nernst Gain</td>
+				<td align="center">Nernst Gain</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >Ohmic Loss</td>
+				<td align="center">Ohmic Loss</td>
+				<td  align="center">List</td>
+			</tr>
+			<tr>
+				<td align="center" >V0</td>
+				<td align="center">Linear-Apx intercept</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >K</td>
+				<td align="center">Linear-Apx slope</td>
+				<td  align="center">Float</td>
+			</tr>
+			<tr>
+				<td align="center" >VE</td>
+				<td align="center">Estimated FC voltage</td>
+				<td  align="center">List</td>
+			</tr>
+		</table>
+										
+		- For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
 
 	#### Parameters
 
