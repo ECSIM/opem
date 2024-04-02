@@ -79,7 +79,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 - Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
 
-#### 1. Amphlett Static Model
+#### 1. Amphlett
 <table>
 	<tr>
 		<td align="center">Input</td>
@@ -116,7 +116,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 		<td align="center">Cell operating current end point</td>
 		<td align="center">A</td>
 	</tr>
-		<tr>
+	<tr>
 		<td align="center">A</td>
 		<td align="center">Active area</td>
 		<td align="center">cm^2</td>
@@ -150,7 +150,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
  
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
 		
-#### 2. Larminie-Dicks Static Model
+#### 2. Larminie-Dicks
 <table>
 	<tr>
 		<td align="center">Input</td>
@@ -216,7 +216,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
 		
-#### 3. Chamberline-Kim Static Model
+#### 3. Chamberline-Kim
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -277,7 +277,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Chamberline_Kim.html">here</a>
 
-#### 4. Padulles Dynamic Model I
+#### 4. Padulles I
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -363,7 +363,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles1.html">here</a>				
 
-#### 5. Padulles Dynamic Model II
+#### 5. Padulles II
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -459,7 +459,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles2.html">here</a>
 	
-#### 6. Padulles-Hauer Dynamic Model
+#### 6. Padulles-Hauer
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -570,7 +570,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Hauer.html">here</a>
 	
-#### 7. Padulles-Amphlett Dynamic Model
+#### 7. Padulles-Amphlett
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -691,7 +691,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Padulles_Amphlett.html">here</a>
 	
-#### 8. Chakraborty Dynamic Model
+#### 8. Chakraborty
 <table>
 	<tr>
 		<td align="center" >Input</td>
@@ -762,7 +762,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 
 * For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Dynamic/Chakraborty.html">here</a>
 		
-	- Find your reports in `Model_Name` folder			
+* Find your reports in `Model_Name` folder			
 	
 #### Screen Record
 <div align="center">
