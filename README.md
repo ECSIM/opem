@@ -79,7 +79,7 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 - Run `opem` or `python -m opem` (or run `OPEM.exe`)
 - Enter PEM cell parameters (or run standard test vectors)
 #### 1. Amphlett Static Model
-<table>
+	<table>
 		<tr>
 			<td align="center">Input</td>
 			<td align="center">Description</td>
@@ -145,74 +145,75 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 			<td align="center">Number of single cells</td>
 			<td align="center">--</td>
 		</tr>		
-		</table>
+	</table>
  
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Amphlett.html">here</a>
-	#### 2. Larminie-Dicks Static Model
-		<table>
-			<tr>
-				<td align="center">Input</td>
-				<td align="center">Description</td>
-				<td align="center">Unit</td>
-			</tr>
-			<tr>
-				<td align="center">E0</td>
-				<td align="center">Fuel cell reversible no loss voltage</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">A</td>
-				<td align="center">The slope of the Tafel line</td>
-				<td align="center">V</td>
-			</tr>
-			<tr>
-				<td align="center">T</td>
-				<td align="center">Cell operation temperature</td>
-				<td align="center">K</td>
-			</tr>
-			<tr>
-				<td align="center">i-start</td>
-				<td align="center">Cell operating current start point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-step</td>
-				<td align="center">Cell operating current step</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i-stop</td>
-				<td align="center">Cell operating current end point</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_n</td>
-				<td align="center">Internal current</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_0</td>
-				<td align="center">Exchange current at which the overvoltage begins to move from zero	</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">i_L</td>
-				<td align="center">Limiting current</td>
-				<td align="center">A</td>
-			</tr>
-			<tr>
-				<td align="center">RM</td>
-				<td align="center">The membrane and contact resistances</td>
-				<td align="center">ohm</td>
-			</tr>
-			<tr>
-				<td align="center">N</td>
-				<td align="center">Number of single cells</td>
-				<td align="center">--</td>
-			</tr>
-				
-		</table>
+		
+#### 2. Larminie-Dicks Static Model
+	<table>
+		<tr>
+			<td align="center">Input</td>
+			<td align="center">Description</td>
+			<td align="center">Unit</td>
+		</tr>
+		<tr>
+			<td align="center">E0</td>
+			<td align="center">Fuel cell reversible no loss voltage</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">A</td>
+			<td align="center">The slope of the Tafel line</td>
+			<td align="center">V</td>
+		</tr>
+		<tr>
+			<td align="center">T</td>
+			<td align="center">Cell operation temperature</td>
+			<td align="center">K</td>
+		</tr>
+		<tr>
+			<td align="center">i-start</td>
+			<td align="center">Cell operating current start point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-step</td>
+			<td align="center">Cell operating current step</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i-stop</td>
+			<td align="center">Cell operating current end point</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i_n</td>
+			<td align="center">Internal current</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i_0</td>
+			<td align="center">Exchange current at which the overvoltage begins to move from zero	</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">i_L</td>
+			<td align="center">Limiting current</td>
+			<td align="center">A</td>
+		</tr>
+		<tr>
+			<td align="center">RM</td>
+			<td align="center">The membrane and contact resistances</td>
+			<td align="center">ohm</td>
+		</tr>
+		<tr>
+			<td align="center">N</td>
+			<td align="center">Number of single cells</td>
+			<td align="center">--</td>
+		</tr>		
+	</table>
 		* For more information about this model visit <a href="https://www.ecsim.site/opem/doc/Static/Larminie_Dicks.html">here</a>
+		
 	#### 3. Chamberline-Kim Static Model
 		<table>
 			<tr>
