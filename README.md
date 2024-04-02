@@ -15,28 +15,6 @@
 	
 ----------				
 
-## Table of Contents
-   * [What is PEM?](http://physics.oregonstate.edu/~hetheriw/energy/topics/doc/electrochemistry/fc/basic/The_Polymer_Electrolyte_Fuel_Cell.htm)					
-   * [Overview](https://github.com/ECSIM/opem#overview)
-   * [Installation](https://github.com/ECSIM/opem/blob/master/INSTALL.md)
-   * [Usage](https://github.com/ECSIM/opem#usage)
-   		* [Executable](https://github.com/ECSIM/opem#executable)
-   		* [Library](https://github.com/ECSIM/opem#library)	
-   		* [Telegram Bot](https://github.com/ECSIM/opem#telegram-bot)
-   		* [Try OPEM in Your Browser!](https://github.com/ECSIM/opem#try-opem-in-your-browser)
-   		* [MATLAB](https://github.com/ECSIM/opem/tree/master/MATLAB)
-   * [Issues & Bug Reports](https://github.com/ECSIM/opem#issues--bug-reports)
-   * [Contribution](https://github.com/ECSIM/opem/blob/master/.github/CONTRIBUTING.md)
-   * [Outputs](https://github.com/ECSIM/opem#outputs)
-   * [Thanks](https://github.com/ECSIM/opem#thanks)
-   * [Reference](https://github.com/ECSIM/opem#reference)
-   * [Cite](https://github.com/ECSIM/opem#cite)
-   * [Authors](https://github.com/ECSIM/opem/blob/master/AUTHORS.md)
-   * [License](https://github.com/ECSIM/opem/blob/master/LICENSE)
-   * [Show Your Support](https://github.com/ECSIM/opem#show-your-support)
-   * [Changelog](https://github.com/ECSIM/opem/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/ECSIM/opem/blob/master/.github/CODE_OF_CONDUCT.md)
-
 ## Overview		
 
 
