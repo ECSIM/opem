@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=300px>
+	<img src="https://github.com/ECSIM/opem/raw/logo/otherfile/logo.png" width=300px>
 	<br/>
 	<a href="https://www.python.org/">
 		<img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" />
