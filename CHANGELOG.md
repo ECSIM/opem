@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `README.md` modified
+- Logo updated
 ## [1.4] - 2024-03-16
 ### Added
 - `feature_request.yml` template
