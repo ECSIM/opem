@@ -1,4 +1,4 @@
-# Core Developers #
+# Core Developers
 
 ----------
 - Sepand Haghighi - ECSIM - ([GitHub](http://github.com/sepandhaghighi)) **
@@ -8,7 +8,7 @@
 
 ** **Maintainer**
 
-# Other Contributors #
+# Other Contributors
 
 ----------
 - [Sadra Sabouri](https://github.com/sadrasabouri)

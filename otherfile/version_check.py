@@ -39,11 +39,13 @@ TEST_ITEMS = ["check_update({0})"]
 META_ITEMS = ['% set version = "{0}" %']
 SPEC_ITEMS = ['opem_version = "{0}"']
 ISSUE_TEMPLATE_ITEMS = ["- OPEM {0}"]
+SECURITY_ITEMS = ["| {0}           | :white_check_mark: |", "| < {0}         | :x:                |"]
 
 FILES = {
     "setup.py": SETUP_ITEMS,
     "INSTALL.md": INSTALL_ITEMS,
     "CHANGELOG.md": CHANGELOG_ITEMS,
+    "SECURITY.md": SECURITY_ITEMS,
     "OPEM.spec": SPEC_ITEMS,
     os.path.join("Documents", "Amphlett.ipynb"): DOCUMENT_ITEMS,
     os.path.join("Documents", "Chamberline_Kim.ipynb"): DOCUMENT_ITEMS,
