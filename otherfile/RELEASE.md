@@ -1,19 +1,20 @@
 
 # OPEM Release Instructions
 
-#### Last Update: 2024-02-15
+**Last Update: 2024-05-06**
 
 1. Create the `release` branch under `develop`
 2. Update all version tags
 	1. `setup.py`
 	2. `INSTALL.md`
-	3. `otherfile/version_check.py`
-	4. `otherfile/meta.yaml`
-	5. `opem/Params.py`
-	6. `OPEM.spec`
-	7. `test/test_Functions.py`
-	8. `otherfile/Version.rc`
-	9. All notebooks (`Documents/*.ipynb`)
+	3. `SECURITY.md`
+	4. `otherfile/version_check.py`
+	5. `otherfile/meta.yaml`
+	6. `opem/Params.py`
+	7. `OPEM.spec`
+	8. `test/test_Functions.py`
+	9. `otherfile/Version.rc`
+	10. All notebooks (`Documents/*.ipynb`)
 3. Update `CHANGELOG.md`
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/ECSIM/opem/compare/v0.1...v0.2`)
