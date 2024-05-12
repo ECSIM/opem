@@ -1,7 +1,7 @@
 ## Installation		
 
 ### Source Code
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.6)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Download [Version 1.4](https://github.com/ecsim/opem/archive/v1.4.zip) or [Latest Source ](https://github.com/ecsim/opem/archive/master.zip)
@@ -24,7 +24,7 @@
 
 ### MATLAB
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.6, 64/32 bit) 
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Run `pip install .`

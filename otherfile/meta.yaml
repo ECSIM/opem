@@ -15,11 +15,11 @@ requirements:
     host:
         - pip
         - setuptools
-        - python >=3.5
+        - python >=3.6
     run:
         - art >0.7
         - requests >=2.20.0
-        - python >=3.5
+        - python >=3.6
 about:
     home: https://github.com/ECSIM/opem
     license: MIT
