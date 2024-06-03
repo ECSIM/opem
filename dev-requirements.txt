@@ -1,5 +1,5 @@
 art==6.2
-requests==2.32.2
+requests==2.32.3
 pytest>=5.1.0
 pytest-cov>=2.6.1
 setuptools>=40.8.3
