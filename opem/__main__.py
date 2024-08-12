@@ -11,7 +11,7 @@ from opem.Dynamic.Padulles_Hauer import Dynamic_Analysis as Padulles_Hauer_Analy
 from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett_Analysis
 from opem.Dynamic.Chakraborty import Dynamic_Analysis as Chakraborty_Analysis
 from art import tprint
-from opem.Params import Version, Description_Menu, Description_Links, Vectors, Mode_Menu
+from opem.Params import Version, Description_Menu, Description_Links, Vectors, Mode_Menu, Exit_Message
 from opem.Functions import check_update, description_print, description_control
 
 
@@ -80,4 +80,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print(Exit_Message)
