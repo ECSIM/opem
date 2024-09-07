@@ -11,6 +11,16 @@ import requests
 import webbrowser
 import sys
 
+def clear_screen():
+    """
+    Clear screen function.
+
+    :return: None
+    """
+    if sys.platform == "win32":
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def integrate(y_vals, h):
     """
