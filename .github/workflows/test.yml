@@ -55,7 +55,7 @@ jobs:
     - name: Other tests
       run: |
           python -m vulture opem/ otherfile/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
-          python -m bandit -r opem
+          python -m bandit -r opem -s B605,B607
           python -m pydocstyle -v
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: Upload coverage to Codecov

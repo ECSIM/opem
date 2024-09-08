@@ -12,7 +12,7 @@ from opem.Dynamic.Padulles_Amphlett import Dynamic_Analysis as Padulles_Amphlett
 from opem.Dynamic.Chakraborty import Dynamic_Analysis as Chakraborty_Analysis
 from art import tprint
 from opem.Params import Version, Description_Menu, Description_Links, Vectors, Mode_Menu, Exit_Message
-from opem.Functions import check_update, description_print, description_control
+from opem.Functions import check_update, description_print, description_control, clear_screen
 
 
 def main():
@@ -77,6 +77,8 @@ def main():
                     "Press [R] to restart OPEM or any other key to exit.")
                 if INPUTINDEX.upper() != "R":
                     EXITFLAG = True
+                else:
+                    clear_screen()
 
 
 if __name__ == "__main__":

@@ -7,12 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `SECURITY.md`
+- `clear_screen` function
 ### Changed
 - Test system modified
 - `README.md` modified
 - Logo updated
 - Exit message updated
 - Python 3.5 support dropped
+- Restart mode updated
 ## [1.4] - 2024-03-16
 ### Added
 - `feature_request.yml` template
