@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `SECURITY.md`
 - `clear_screen` function
 ### Changed
+- GitHub actions are limited to the `develop` and `master` branches
 - Test system modified
 - `README.md` modified
 - Logo updated

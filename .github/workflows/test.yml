@@ -3,7 +3,16 @@
 
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+  pull_request:
+    branches:
+      - master
+      - develop
 
 env:
   TEST_PYTHON_VERSION: 3.9
