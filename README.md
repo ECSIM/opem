@@ -1461,10 +1461,9 @@ and Policy, University of California Davis.
 
 ## Cite
 
-If you use OPEM in your research , please cite this paper :
+If you use OPEM in your research , please cite this paper:
 
-<pre>
-
+```bibtex
 @article{Haghighi2018,
   doi = {10.21105/joss.00676},
   url = {https://doi.org/10.21105/joss.00676},
@@ -1478,9 +1477,7 @@ If you use OPEM in your research , please cite this paper :
   title = {{OPEM} : Open Source {PEM} Cell Simulation Tool},
   journal = {Journal of Open Source Software}
 }
-
-
-</pre>
+```
 
 Download [OPEM.bib](http://www.ecsim.site/opem/OPEM.bib)(BibTeX Format)
 
