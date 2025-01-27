@@ -12,9 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub actions are limited to the `develop` and `master` branches
 - Test system modified
 - `README.md` modified
+- `AUTHORS.md` updated
 - Logo updated
 - Exit message updated
-- Python 3.5 support dropped
+- `Python 3.5` support dropped
 - `Python 3.13` added to `test.yml`
 - Restart mode updated
 ## [1.4] - 2024-03-16
