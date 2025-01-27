@@ -11,6 +11,10 @@
 # Other Contributors
 
 ----------
-- [Sadra Sabouri](https://github.com/sadrasabouri)
-- [Nicholas Nadeau](https://github.com/nnadeau)
-- [Giovanni Rosa](https://github.com/grosa1)
+- [@zhmbshr](https://github.com/zhmbshr) ++
+- [@sadrasabouri](https://github.com/sadrasabouri)
+- [@nnadeau](https://github.com/nnadeau)
+- [@grosa1](https://github.com/grosa1)
+
+
+++ **Graphic designer**
