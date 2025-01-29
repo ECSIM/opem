@@ -13,7 +13,7 @@
 ----------
 - [@zhmbshr](https://github.com/zhmbshr) ++
 - [@sadrasabouri](https://github.com/sadrasabouri)
-- [@nnadeau](https://github.com/nnadeau)
+- [@engnadeau](https://github.com/engnadeau)
 - [@grosa1](https://github.com/grosa1)
 
 
