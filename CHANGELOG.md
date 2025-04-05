@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub actions are limited to the `develop` and `master` branches
 - Test system modified
 - `README.md` modified
+- Document modified
 - `AUTHORS.md` updated
 - Logo updated
 - Exit message updated
