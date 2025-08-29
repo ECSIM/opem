@@ -1,8 +1,8 @@
 <div align="center">
-	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=320px>
+	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width="320">
 	<br/>
-	<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-	<a href="https://codecov.io/gh/ECSIM/opem"><img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" /></a>
+	<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+	<a href="https://codecov.io/gh/ECSIM/opem"><img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg"></a>
 	<a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version"></a>
 	<a href="https://github.com/ECSIM/opem"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ECSIM/opem"></a>
 	<a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
