@@ -55,8 +55,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 <table>
 	<tr> 
 		<td align="center">Code Quality</td>
-		<td align="center"><a href="https://www.codacy.com/gh/ECSIM/opem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/7e8bf5e11c0b455da3807ee4e493713e"/></a></td>	
-		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a></td>
+		<td align="center"><a href="https://app.codacy.com/gh/ECSIM/opem/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/7e8bf5e11c0b455da3807ee4e493713e"></a></td>	
+		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor"></a></td>
 	</tr>
 </table>
 
