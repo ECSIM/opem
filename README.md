@@ -1,8 +1,8 @@
 <div align="center">
-	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width=320px>
+	<img src="https://github.com/ECSIM/opem/raw/master/otherfile/logo.png" width="320">
 	<br/>
-	<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-	<a href="https://codecov.io/gh/ECSIM/opem"><img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg" /></a>
+	<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+	<a href="https://codecov.io/gh/ECSIM/opem"><img src="https://codecov.io/gh/ECSIM/opem/branch/master/graph/badge.svg"></a>
 	<a href="https://badge.fury.io/py/opem"><img src="https://badge.fury.io/py/opem.svg" alt="PyPI version"></a>
 	<a href="https://github.com/ECSIM/opem"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ECSIM/opem"></a>
 	<a href="https://anaconda.org/ECSIM/opem"><img src="https://anaconda.org/ecsim/opem/badges/version.svg"></a>
@@ -55,8 +55,8 @@ Modeling and simulation of proton-exchange membrane fuel cells (PEMFC) may work 
 <table>
 	<tr> 
 		<td align="center">Code Quality</td>
-		<td align="center"><a href="https://www.codacy.com/gh/ECSIM/opem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECSIM/opem&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/7e8bf5e11c0b455da3807ee4e493713e"/></a></td>	
-		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor" /></a></td>
+		<td align="center"><a href="https://app.codacy.com/gh/ECSIM/opem/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/7e8bf5e11c0b455da3807ee4e493713e"></a></td>	
+		<td align="center"><a href="https://www.codefactor.io/repository/github/ecsim/opem"><img src="https://www.codefactor.io/repository/github/ecsim/opem/badge" alt="CodeFactor"></a></td>
 	</tr>
 </table>
 
@@ -1498,5 +1498,5 @@ Give a ⭐️ if this project helped you!
 								
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
-<a href="https://www.ecsim.site/opem/donate.html" target="_blank"><img src="http://www.ecsim.site/images/Donate-Button.png" height="90px" width="270px" alt="OPEM Donation"></a>
+<a href="https://www.ecsim.site/opem/donate.html" target="_blank"><img src="http://www.ecsim.site/images/Donate-Button.png" width="270" alt="OPEM Donation"></a>
 
