@@ -1,7 +1,7 @@
 art==6.5
 requests==2.32.5
 pytest>=5.1.0
-pytest-cov>=2.6.1
+pytest-cov>=7.1.0
 setuptools>=40.8.3
 bandit>=1.5.1
 vulture>=1.0
