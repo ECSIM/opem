@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
-
-def get_requirements():
-    """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
-    return list(filter(lambda x: x != "", requirements.split()))
-
+from setuptools import setup
 
 def read_description():
     """Read README.md and CHANGELOG.md."""
@@ -46,13 +36,16 @@ setup(
     author_email='opem@ecsim.site',
     url='https://github.com/ecsim/opem',
     download_url='https://github.com/ecsim/opem/tarball/v1.4',
-    keywords="OPEM PEM FC CELL Fuel-Cell Chemistry",
+    keywords='OPEM PEM FC CELL Fuel-Cell Chemistry',
     project_urls={
         'Webpage': 'http://opem.ecsim.site',
         'Source': 'https://github.com/ecsim/opem',
     },
     platforms=["any"],
-    install_requires=get_requirements(),
+    install_requires=[
+        'art>0.7',
+        'requests>=2.20.0'
+    ],
     python_requires='>=3.7',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
