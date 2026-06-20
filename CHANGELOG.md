@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `AUTHORS.md` updated
 - Logo updated
 - Exit message updated
+- Dependencies structure modified
 - `Python 3.5` support dropped
 - `Python 3.6` support dropped
 - `Python 3.13` added to `test.yml`
