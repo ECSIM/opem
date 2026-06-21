@@ -41,10 +41,9 @@ jobs:
       run: |
         opem test
         opem --version
-    - name: Test requirements Installation
+    - name: Dev requirements Installation
       run: |
-        python otherfile/requirements-splitter.py
-        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+        pip install --upgrade --upgrade-strategy=only-if-needed -r requirements-dev.txt
     - name: Test with pytest
       run: |
         python -m pytest test --cov=opem --cov-report=term
