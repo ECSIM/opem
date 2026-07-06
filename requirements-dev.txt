@@ -1,6 +1,6 @@
 pytest>=5.1.0
 pytest-cov>=2.6.1
-setuptools>=40.8.3
+setuptools>=83.0.0
 bandit>=1.5.1
 vulture>=1.0
 pydocstyle>=6.3.0
