@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Python 3.13` added to `test.yml`
 - `Python 3.14` added to `test.yml`
 - Restart mode updated
+### Fixed
+- `filter_lambda` function bug (values below 14 were set to 23)
+- `get_precision` function bug with scientific notation steps
+- Infinite loop with zero current step
 ## [1.4] - 2024-03-16
 ### Added
 - `feature_request.yml` template

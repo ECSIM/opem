@@ -163,6 +163,9 @@ def get_precision(input_number):
     :return: precision as int
     """
     input_string = str(input_number)
+    if "e" in input_string.lower():
+        mantissa, exponent = input_string.lower().split("e")
+        return max(0, get_precision(mantissa) - int(exponent))
     if "." in input_string:
         splitted_input = input_string.split(".")
         return len(splitted_input[1])
@@ -583,7 +586,7 @@ def filter_lambda(Input_Dict):
             print(
                 "[Warning] Opem Automatically Set Lambda To Maximum Value (23) ")
         elif Input_Dict["lambda"] < 14:
-            Input_Dict["lambda"] = 23
+            Input_Dict["lambda"] = 14
             print(
                 "[Warning] Opem Automatically Set Lambda To Minimum Value (14) ")
         return Input_Dict
@@ -739,6 +742,8 @@ def filter_range(IStart, IEnd, IStep):
     :type IStep: float
     :return: filtered range as list
     """
+    if IStep == 0:
+        raise ValueError("[Error] Current step must not be zero")
     temp = None
     IStartO = IStart
     IEndO = IEnd
