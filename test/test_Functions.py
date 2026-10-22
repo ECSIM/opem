@@ -18,6 +18,12 @@
 0
 >>> get_precision(2.55)
 2
+>>> get_precision(1e-05)
+5
+>>> get_precision(1.5e-05)
+6
+>>> get_precision(1e+20)
+0
 >>> warning_check_1(-0.2, 10, 20, True)
 [True, 10]
 >>> warning_check_1(-0.2, 10, 20, False)
@@ -42,7 +48,7 @@ False
 {'alpha': 1}
 >>> filter_lambda({"lambda":13})
 [Warning] Opem Automatically Set Lambda To Minimum Value (14)
-{'lambda': 23}
+{'lambda': 14}
 >>> filter_alpha({"alpha":-0.1})
 [Warning] Opem Automatically Set Alpha To Maximum Value (0)
 {'alpha': 0}
@@ -52,6 +58,10 @@ False
 [0, 500, 0.1]
 >>> filter_range(500,0,-0.1)
 [0, 500, 0.1]
+>>> filter_range(0,100,0)
+Traceback (most recent call last):
+    ...
+ValueError: [Error] Current step must not be zero
 >>> Input_dict=Get_Input({"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]"},input_item=input_test)
 >>> Input_keys=list(Input_dict)
 >>> Input_keys.sort()
