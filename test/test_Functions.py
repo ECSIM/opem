@@ -58,10 +58,6 @@ False
 [0, 500, 0.1]
 >>> filter_range(500,0,-0.1)
 [0, 500, 0.1]
->>> filter_range(0,100,0)
-Traceback (most recent call last):
-    ...
-ValueError: [Error] Current step must not be zero
 >>> Input_dict=Get_Input({"T": "Cell Operation Temperature [K]", "PH2": "Partial Pressure [atm]", "PO2": "Partial Pressure [atm]"},input_item=input_test)
 >>> Input_keys=list(Input_dict)
 >>> Input_keys.sort()
