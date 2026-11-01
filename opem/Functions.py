@@ -742,8 +742,6 @@ def filter_range(IStart, IEnd, IStep):
     :type IStep: float
     :return: filtered range as list
     """
-    if IStep == 0:
-        raise ValueError("[Error] Current step must not be zero")
     temp = None
     IStartO = IStart
     IEndO = IEnd
