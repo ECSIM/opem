@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Python 3.6` support dropped
 - `Python 3.13` added to `test.yml`
 - `Python 3.14` added to `test.yml`
+- `Python 3.15` added to `test.yml`
 - Restart mode updated
 ## [1.4] - 2024-03-16
 ### Added
