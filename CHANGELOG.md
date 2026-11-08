@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Logo updated
 - Exit message updated
 - Dependencies structure modified
+- Build system modified
 - `filter_lambda` function bug fixed
 - `get_precision` function modified
 - `Python 3.5` support dropped
